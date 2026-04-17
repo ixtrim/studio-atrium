@@ -212,3 +212,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </script>
 {/literal}
 {/if}
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config = { corePlugins: { preflight: false } }</script>
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+<!-- Brand design tokens -->
+<style>
+:root {
+	--brand-red: oklch(0.62 0.22 27);
+	--brand-blue: oklch(0.74 0.11 232);
+	--brand-blue-strong: oklch(0.66 0.13 232);
+	--brand-dark: oklch(0.30 0.012 250);
+	--brand-darker: oklch(0.24 0.012 250);
+	--brand-orange: oklch(0.78 0.13 65);
+}
+</style>

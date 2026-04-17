@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.5.6, created on 2026-05-03 21:28:24
+/* Smarty version 4.5.6, created on 2026-05-27 16:43:08
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/HeadHTML.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.6',
-  'unifunc' => 'content_69f7a1d83855d3_48545254',
+  'unifunc' => 'content_6a1702fc9cada8_54368874',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2caf7189cf71a0154ad77cc024aa442356349989' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/HeadHTML.tpl',
-      1 => 1776175186,
+      1 => 1779892856,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_69f7a1d83855d3_48545254 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6a1702fc9cada8_54368874 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['pageTitle']->value) {?>
 	<title><?php echo $_smarty_tpl->tpl_vars['pageTitle']->value;?>
 </title>
@@ -71,7 +71,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="apple-mobile-web-app-status-bar" content="#cc1000">
 
 <?php if ($_smarty_tpl->tpl_vars['pageMetaDescription']->value) {?>
-	<meta name="description" content="<?php echo trim($_smarty_tpl->tpl_vars['pageMetaDescription']->value);?>
+	<meta name="description" content="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'trim' ][ 0 ], array( $_smarty_tpl->tpl_vars['pageMetaDescription']->value ));?>
 ">
 <?php } else { ?>
 	<meta name="description" content="">
@@ -330,6 +330,27 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     <?php echo '</script'; ?>
 >
 
-<?php }
+<?php }?>
+
+<!-- Tailwind CSS -->
+<?php echo '<script'; ?>
+ src="https://cdn.tailwindcss.com"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+>tailwind.config = { corePlugins: { preflight: false } }<?php echo '</script'; ?>
+>
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+<!-- Brand design tokens -->
+<style>
+:root {
+	--brand-red: oklch(0.62 0.22 27);
+	--brand-blue: oklch(0.74 0.11 232);
+	--brand-blue-strong: oklch(0.66 0.13 232);
+	--brand-dark: oklch(0.30 0.012 250);
+	--brand-darker: oklch(0.24 0.012 250);
+	--brand-orange: oklch(0.78 0.13 65);
 }
+</style>
+<?php }
 }

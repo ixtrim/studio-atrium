@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.5.6, created on 2026-05-03 21:54:24
+/* Smarty version 4.5.6, created on 2026-05-27 16:43:08
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.6',
-  'unifunc' => 'content_69f7a7f08b4472_39074179',
+  'unifunc' => 'content_6a1702fcbc3a49_07121509',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f68c881bff07f68173342c8f06edc155ee674935' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Footer.tpl',
-      1 => 1776175186,
+      1 => 1779892828,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_69f7a7f08b4472_39074179 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6a1702fcbc3a49_07121509 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="blue-overlay" id="ajax-info-overlay">
 	<div class="over-box" id="ajax-info-over-box"></div>
 	<button type="button" id="ajax-info-overlay-close" class="blue-overlay-close">Zamknij</button>
@@ -82,7 +82,7 @@ function content_69f7a7f08b4472_39074179 (Smarty_Internal_Template $_smarty_tpl)
 							<li><a href="/dokumenty/Reklama.html">Reklama w Studio Atrium</a></li>
 						</ul>
 					</li>
-					
+
 					<li>
 						<ul>
 							<li class="header client"><span>Obsługa klienta</span></li>
@@ -99,7 +99,7 @@ function content_69f7a7f08b4472_39074179 (Smarty_Internal_Template $_smarty_tpl)
 					</li>
 				</ul>
 			</li>
-			
+
 			<li>
 				<ul class="cat">
 					<li><a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'catalog','action'=>'form'),$_smarty_tpl ) );?>
@@ -111,7 +111,7 @@ function content_69f7a7f08b4472_39074179 (Smarty_Internal_Template $_smarty_tpl)
 " class="blue">zobacz katalog &raquo;</a>
 					</li>
 				</ul>
-				
+
 				<ul class="cat">
 					<li><a href="/dokumenty/Referencje.html"><img src="/img/medals.webp" alt="Konsumencki lider jakości" width="220" height="147"></a></li>
 					<li>
@@ -120,19 +120,19 @@ function content_69f7a7f08b4472_39074179 (Smarty_Internal_Template $_smarty_tpl)
 						<a href="/dokumenty/Referencje.html" class="blue">zobacz więcej &raquo;</a>
 					</li>
 				</ul>
+
 				
-				
-				
+
 							</li>
 		</ul>
-		
+
 		<ul class="social-media">
 			<li><a href="https://www.facebook.com/studioatrium" rel="nofollow">Facebook</a></li>
 			<li><a href="https://www.instagram.com/studioatrium.pl/" class="goo" rel="nofollow">Instagram</a></li>
 			<li><a href="https://www.pinterest.com/studioatrium/" class="pin" rel="nofollow">Pinterest</a></li>
 			<li><a href="https://www.youtube.com/user/StudioAtrium" class="yt" rel="nofollow">YouTube</a></li>
 		</ul>
-		
+
 		<p><strong>Copyright © Studio Atrium 1994-<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'date_format' ][ 0 ], array( time(),"%Y" ));?>
 </strong> | Korzystamy z danych zapisywanych w cookies. <span class="ajax-info" data-url="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'ajax','action'=>'get_cookie_info'),$_smarty_tpl ) );?>
 ">Kliknij tutaj</span> jeśli chcesz je zablokować.</p>
@@ -470,6 +470,10 @@ function content_69f7a7f08b4472_39074179 (Smarty_Internal_Template $_smarty_tpl)
 	</div>
 	<button type="button" id="cs-overlay-close" class="blue-overlay-close">Zamknij</button>
 </div>
+<!-- Swiper JS -->
+<?php echo '<script'; ?>
+ src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"><?php echo '</script'; ?>
+>
 <?php echo '<script'; ?>
  src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"><?php echo '</script'; ?>
 >

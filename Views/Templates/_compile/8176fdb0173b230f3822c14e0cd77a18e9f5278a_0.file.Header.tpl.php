@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.5.6, created on 2026-05-26 12:45:16
+/* Smarty version 4.5.6, created on 2026-05-26 15:24:07
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.6',
-  'unifunc' => 'content_6a1579bc0eb999_42427270',
+  'unifunc' => 'content_6a159ef75c3f01_68255509',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8176fdb0173b230f3822c14e0cd77a18e9f5278a' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Header.tpl',
-      1 => 1779792313,
+      1 => 1779792319,
       2 => 'file',
     ),
   ),
@@ -20,13 +20,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6a1579bc0eb999_42427270 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6a159ef75c3f01_68255509 (Smarty_Internal_Template $_smarty_tpl) {
 ?><header>
 	<nav id="nav">
 		<ul>
 			<li class="logo">
 				<p id="mobile-trigger" class="trigger"><span>Menu</span></p>
-				<a href="/">DDD
+				<a href="/">
 					<img src="/img/logo.png" alt="Studio Atrium" class="visible" id="logo" style="display: none;">
 				</a>
 			</li>

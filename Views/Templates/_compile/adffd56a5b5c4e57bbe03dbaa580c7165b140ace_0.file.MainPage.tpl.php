@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.5.6, created on 2026-05-03 21:41:37
+/* Smarty version 4.5.6, created on 2026-05-27 16:43:08
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/MainPage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.6',
-  'unifunc' => 'content_69f7a4f1331792_21718169',
+  'unifunc' => 'content_6a1702fca0c3b6_04040198',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'adffd56a5b5c4e57bbe03dbaa580c7165b140ace' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/MainPage.tpl',
-      1 => 1776175185,
+      1 => 1779892841,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:Include/HowToBuy.tpl' => 1,
   ),
 ),false)) {
-function content_69f7a4f1331792_21718169 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6a1702fca0c3b6_04040198 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/aronmaiden/studioatrium/studio-atrium/Vendors/smarty/smarty/libs/plugins/modifier.truncate.php','function'=>'smarty_modifier_truncate',),));
 if (!$_smarty_tpl->tpl_vars['isMobile']->value) {?>
 <div class="container" id="slider-box">
@@ -40,7 +40,7 @@ $_smarty_tpl->tpl_vars['_item']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['_item']->value) {
 $_smarty_tpl->tpl_vars['_item']->do_else = false;
 $_smarty_tpl->tpl_vars['_item']->iteration++;
-$__foreach__item_0_saved = $_smarty_tpl->tpl_vars['_item'];
+$__foreach__item_6_saved = $_smarty_tpl->tpl_vars['_item'];
 ?>
 				<?php if ($_smarty_tpl->tpl_vars['_item']->value['attachments']['CarouselBg'][0]) {?>		
 					 <div data-b="0" data-p="170.00" data-po="80% 55%" style="display: none;"<?php if ($_smarty_tpl->tpl_vars['idx']->value != 0) {?> class="sl"<?php }?>>
@@ -91,7 +91,7 @@ px;">
 					<?php $_smarty_tpl->_assignInScope('prev', $_smarty_tpl->tpl_vars['_item']->value['name']);?>
 				<?php }?>
 			<?php
-$_smarty_tpl->tpl_vars['_item'] = $__foreach__item_0_saved;
+$_smarty_tpl->tpl_vars['_item'] = $__foreach__item_6_saved;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </div>
@@ -131,7 +131,7 @@ $_smarty_tpl->tpl_vars['_item']->do_else = false;
 $_smarty_tpl->tpl_vars['_item']->iteration++;
 $_smarty_tpl->tpl_vars['__smarty_foreach_bbb']->value['index']++;
 $_smarty_tpl->tpl_vars['__smarty_foreach_bbb']->value['first'] = !$_smarty_tpl->tpl_vars['__smarty_foreach_bbb']->value['index'];
-$__foreach__item_1_saved = $_smarty_tpl->tpl_vars['_item'];
+$__foreach__item_7_saved = $_smarty_tpl->tpl_vars['_item'];
 ?>
 			<?php if ((isset($_smarty_tpl->tpl_vars['__smarty_foreach_bbb']->value['first']) ? $_smarty_tpl->tpl_vars['__smarty_foreach_bbb']->value['first'] : null)) {?>
 				<figure class="effect-sadie">
@@ -224,11 +224,11 @@ $_smarty_tpl->tpl_vars['comment']->do_else = false;
 									<?php }?>
 									<li>
 										<p class="comment-title"><a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'discuss','action'=>'thread','id'=>$_smarty_tpl->tpl_vars['threadId']->value),$_smarty_tpl ) );?>
-"><?php echo smarty_modifier_truncate(preg_replace('!<[^>]*?>!', ' ', (string) $_smarty_tpl->tpl_vars['topic']->value),24);?>
+"><?php echo smarty_modifier_truncate(call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'strip_tags' ][ 0 ], array( $_smarty_tpl->tpl_vars['topic']->value )),24);?>
  | <?php echo $_smarty_tpl->tpl_vars['comment']->value['nick'];?>
 </a></p>
 										<p><a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'discuss','action'=>'thread','id'=>$_smarty_tpl->tpl_vars['threadId']->value),$_smarty_tpl ) );?>
-"><?php echo smarty_modifier_truncate(preg_replace('!<[^>]*?>!', ' ', (string) $_smarty_tpl->tpl_vars['comment']->value['content']),100);?>
+"><?php echo smarty_modifier_truncate(call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'strip_tags' ][ 0 ], array( $_smarty_tpl->tpl_vars['comment']->value['content'] )),100);?>
 </a></p>
 									</li>
 								<?php
@@ -250,7 +250,7 @@ $_smarty_tpl->tpl_vars['article']->do_else = false;
 "><?php echo $_smarty_tpl->tpl_vars['article']->value['title'];?>
 </a></p>
 										<p><a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'article','action'=>'item','docId'=>$_smarty_tpl->tpl_vars['article']->value['id'],'link_title'=>$_smarty_tpl->tpl_vars['article']->value['title']),$_smarty_tpl ) );?>
-"><?php echo smarty_modifier_truncate(preg_replace('!<[^>]*?>!', ' ', (string) $_smarty_tpl->tpl_vars['article']->value['teaser']),100);?>
+"><?php echo smarty_modifier_truncate(call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'strip_tags' ][ 0 ], array( $_smarty_tpl->tpl_vars['article']->value['teaser'] )),100);?>
  <span>więcej &raquo;</span></a></p>
 									</li>
 								<?php
@@ -268,7 +268,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 				<?php }?>
 			<?php }?>	
 		<?php
-$_smarty_tpl->tpl_vars['_item'] = $__foreach__item_1_saved;
+$_smarty_tpl->tpl_vars['_item'] = $__foreach__item_7_saved;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		</div>
@@ -311,7 +311,7 @@ $_smarty_tpl->tpl_vars['_project']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['_project']->value) {
 $_smarty_tpl->tpl_vars['_project']->do_else = false;
 $_smarty_tpl->tpl_vars['_project']->index++;
-$__foreach__project_4_saved = $_smarty_tpl->tpl_vars['_project'];
+$__foreach__project_10_saved = $_smarty_tpl->tpl_vars['_project'];
 ?>
 		<div>
 			<figure>
@@ -372,7 +372,7 @@ if (call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'isNew'
 			<?php }?>
 		</div>
 	<?php
-$_smarty_tpl->tpl_vars['_project'] = $__foreach__project_4_saved;
+$_smarty_tpl->tpl_vars['_project'] = $__foreach__project_10_saved;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 	</div>
@@ -517,7 +517,7 @@ $_smarty_tpl->tpl_vars['_item']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['_item']->value) {
 $_smarty_tpl->tpl_vars['_item']->do_else = false;
 $_smarty_tpl->tpl_vars['_item']->iteration++;
-$__foreach__item_5_saved = $_smarty_tpl->tpl_vars['_item'];
+$__foreach__item_11_saved = $_smarty_tpl->tpl_vars['_item'];
 ?>
 		<?php if ($_smarty_tpl->tpl_vars['_item']->iteration == 1) {?>
 		<figure class="info">
@@ -550,7 +550,7 @@ $__foreach__item_5_saved = $_smarty_tpl->tpl_vars['_item'];
 			</figcaption>
 		</figure>
 		<?php
-$_smarty_tpl->tpl_vars['_item'] = $__foreach__item_5_saved;
+$_smarty_tpl->tpl_vars['_item'] = $__foreach__item_11_saved;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		
@@ -561,7 +561,7 @@ $_smarty_tpl->tpl_vars['_item']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['_item']->value) {
 $_smarty_tpl->tpl_vars['_item']->do_else = false;
 $_smarty_tpl->tpl_vars['_item']->iteration++;
-$__foreach__item_6_saved = $_smarty_tpl->tpl_vars['_item'];
+$__foreach__item_12_saved = $_smarty_tpl->tpl_vars['_item'];
 ?>
 		<?php if ($_smarty_tpl->tpl_vars['_item']->iteration == 1) {?>
 		<figure class="info green">
@@ -595,7 +595,7 @@ $__foreach__item_6_saved = $_smarty_tpl->tpl_vars['_item'];
 		</figure>
 		
 		<?php
-$_smarty_tpl->tpl_vars['_item'] = $__foreach__item_6_saved;
+$_smarty_tpl->tpl_vars['_item'] = $__foreach__item_12_saved;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		
@@ -606,7 +606,7 @@ $_smarty_tpl->tpl_vars['_item']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['_item']->value) {
 $_smarty_tpl->tpl_vars['_item']->do_else = false;
 $_smarty_tpl->tpl_vars['_item']->iteration++;
-$__foreach__item_7_saved = $_smarty_tpl->tpl_vars['_item'];
+$__foreach__item_13_saved = $_smarty_tpl->tpl_vars['_item'];
 ?>
 		<?php if ($_smarty_tpl->tpl_vars['_item']->iteration == 1) {?>
 		<figure class="info grey">
@@ -639,7 +639,7 @@ $__foreach__item_7_saved = $_smarty_tpl->tpl_vars['_item'];
 			</figcaption>
 		</figure>
 		<?php
-$_smarty_tpl->tpl_vars['_item'] = $__foreach__item_7_saved;
+$_smarty_tpl->tpl_vars['_item'] = $__foreach__item_13_saved;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 	</div>
@@ -687,19 +687,21 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </section>
 
 
-<section class="charity">
-	<div class="box">
-		<h3>Wspieramy potrzebujących</h3>
-		
+<section class="charity py-20 bg-[#ECECEC]">
+	<div class="max-w-[1280px] mx-auto px-12 grid md:grid-cols-2 gap-16 items-center">
+		<div class="flex items-center justify-center gap-12">
+			<a href="/dokumenty/Adopcja-serca.html">
+				<img class="lazy-image w-40 h-40 object-contain" data-uri="/img/maitri.png" src="img/xc.png" alt="Maitri" width="175" height="175">
+			</a>
+			<a href="http://www.drachma.org.pl/" rel="nofollow" target="_blank">
+				<img class="lazy-image w-40 h-40 object-contain" data-uri="/img/drachma.png" src="img/xc.png" alt="Fundacja Drachma" width="203" height="196">
+			</a>
+		</div>
 		<div>
-			<p>
+			<h2 class="text-[26px] font-bold text-[var(--brand-darker)] mb-6">Wspieramy potrzebujących</h2>
+			<p class="text-[15px] text-[var(--brand-darker)] leading-[1.7] max-w-md">
 				Biuro projektowe Studio Atrium działa na rynku od ponad 25 lat. Domy wybudowane według naszych projektów można spotkać w całym kraju. Jesteśmy przekonani, że mieszkają w nich szczęśliwe rodziny. Jednak zawsze staramy się pamiętać także o tych, których los nie zawsze traktuje z łagodnością.
 			</p>
-			
-			<ul>
-				<li><a href="/dokumenty/Adopcja-serca.html"><img class="lazy-image" data-uri="/img/maitri.png" src="img/xc.png" alt="Maitri" width="175" height="175"></a></li>
-				<li><a href="http://www.drachma.org.pl/" rel="nofollow" target="_blank"><img class="lazy-image" data-uri="/img/drachma.png" src="img/xc.png" alt="Fundacja Drachma" width="203" height="196"></a></li>
-			</ul>
 		</div>
 	</div>
 </section>

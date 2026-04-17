@@ -59,7 +59,7 @@
 							<li><a href="/dokumenty/Reklama.html">Reklama w Studio Atrium</a></li>
 						</ul>
 					</li>
-					
+
 					<li>
 						<ul>
 							<li class="header client"><span>Obsługa klienta</span></li>
@@ -76,7 +76,7 @@
 					</li>
 				</ul>
 			</li>
-			
+
 			<li>
 				<ul class="cat">
 					<li><a href="{url module=catalog action=form}"><img src="/img/catalogue.webp" alt="Katalog z projektami domów" width="235" height="142"></a></li>
@@ -86,7 +86,7 @@
 						<a href="{url module=catalog action=form}" class="blue">zobacz katalog &raquo;</a>
 					</li>
 				</ul>
-				
+
 				<ul class="cat">
 					<li><a href="/dokumenty/Referencje.html"><img src="/img/medals.webp" alt="Konsumencki lider jakości" width="220" height="147"></a></li>
 					<li>
@@ -95,7 +95,7 @@
 						<a href="/dokumenty/Referencje.html" class="blue">zobacz więcej &raquo;</a>
 					</li>
 				</ul>
-				
+
 				{*
 				<ul class="cat">
 					<li class="droid"><a href='https://play.google.com/store/apps/details?id=pl.studioatrium.studioatrium&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Pobierz z Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/pl_badge_web_generic.png'/></a>
@@ -108,7 +108,7 @@
 				</ul>
 				*}
 
-				
+
 				{*
 				<ul>
 					<li class="header partner"><span>Program partnerski</span></li>
@@ -119,14 +119,14 @@
 				*}
 			</li>
 		</ul>
-		
+
 		<ul class="social-media">
 			<li><a href="https://www.facebook.com/studioatrium" rel="nofollow">Facebook</a></li>
 			<li><a href="https://www.instagram.com/studioatrium.pl/" class="goo" rel="nofollow">Instagram</a></li>
 			<li><a href="https://www.pinterest.com/studioatrium/" class="pin" rel="nofollow">Pinterest</a></li>
 			<li><a href="https://www.youtube.com/user/StudioAtrium" class="yt" rel="nofollow">YouTube</a></li>
 		</ul>
-		
+
 		<p><strong>Copyright © Studio Atrium 1994-{$smarty.now|date_format:"%Y"}</strong> | Korzystamy z danych zapisywanych w cookies. <span class="ajax-info" data-url="{url module=ajax action=get_cookie_info}">Kliknij tutaj</span> jeśli chcesz je zablokować.</p>
 	</section>
 </footer>
@@ -552,6 +552,8 @@
 	<button type="button" id="cs-overlay-close" class="blue-overlay-close">Zamknij</button>
 </div>
 {*<script src="/js/app.js"></script>*}
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="/js/jquery.json-2.3.min.js"></script>

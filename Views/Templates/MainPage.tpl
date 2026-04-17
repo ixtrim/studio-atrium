@@ -502,20 +502,21 @@
 </section>
 *}
 
-<section class="charity">
-	<div class="box">
-		<h3>Wspieramy potrzebujących</h3>
-		
+<section class="charity py-20 bg-[#ECECEC]">
+	<div class="max-w-[1280px] mx-auto px-12 grid md:grid-cols-2 gap-16 items-center">
+		<div class="flex items-center justify-center gap-12">
+			<a href="/dokumenty/Adopcja-serca.html">
+				<img class="lazy-image w-40 h-40 object-contain" data-uri="/img/maitri.png" src="img/xc.png" alt="Maitri" width="175" height="175">
+			</a>
+			<a href="http://www.drachma.org.pl/" rel="nofollow" target="_blank">
+				<img class="lazy-image w-40 h-40 object-contain" data-uri="/img/drachma.png" src="img/xc.png" alt="Fundacja Drachma" width="203" height="196">
+			</a>
+		</div>
 		<div>
-			<p>
+			<h2 class="text-[26px] font-bold text-[var(--brand-darker)] mb-6">Wspieramy potrzebujących</h2>
+			<p class="text-[15px] text-[var(--brand-darker)] leading-[1.7] max-w-md">
 				Biuro projektowe Studio Atrium działa na rynku od ponad 25 lat. Domy wybudowane według naszych projektów można spotkać w całym kraju. Jesteśmy przekonani, że mieszkają w nich szczęśliwe rodziny. Jednak zawsze staramy się pamiętać także o tych, których los nie zawsze traktuje z łagodnością.
 			</p>
-			
-			<ul>
-				<li><a href="/dokumenty/Adopcja-serca.html"><img class="lazy-image" data-uri="/img/maitri.png" src="img/xc.png" alt="Maitri" width="175" height="175"></a></li>
-				<li><a href="http://www.drachma.org.pl/" rel="nofollow" target="_blank"><img class="lazy-image" data-uri="/img/drachma.png" src="img/xc.png" alt="Fundacja Drachma" width="203" height="196"></a></li>
-{*				<li><a href="http://www.domdlapsa.pl/" rel="nofollow" target="_blank"><img src="/img/domdlapsa.png" alt="Dom dla psa"></a></li>	*}
-			</ul>
 		</div>
 	</div>
 </section>
