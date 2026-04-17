@@ -213,11 +213,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 {/literal}
 {/if}
 
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com"></script>
+<!-- Tailwind CSS v4 -->
+<script src="https://cdn.tailwindcss.com/v4.min.js"></script>
 <script>tailwind.config = { corePlugins: { preflight: false } }</script>
 <!-- Swiper CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
 <!-- Brand design tokens -->
 <style>
 :root {
