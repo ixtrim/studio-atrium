@@ -1,0 +1,16 @@
+{
+	"name":"Projekty domów Studio Atrium",
+	"short_name":"Projekty domów",
+	"display":"standalone",
+	"start_url":"/",
+	"background_color":"#ffffff",
+	"theme_color":"#cc1000",
+	"orientation":"portrait-primary",
+	"icons": [
+		{
+			"src":"/img/logo144.png",
+			"type":"image/png",
+			"sizes":"144x144"
+		}
+	]
+}

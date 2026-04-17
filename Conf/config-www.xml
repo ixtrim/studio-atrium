@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+
+	<registry>
+		<global>
+			<!-- Application CommonLogger -->
+			<object global="true" name="application::commonlogger" type="Object" class="Point7_Log_PEARWrapper" lazy="true">
+				<param target="configure" name="file" value="{#LOG_PATH#}/%{year}-%{month}-messages.log" />
+				<param target="configure" name="format" value="%{timestamp} - %{message}" />
+			</object>
+
+			<!-- Application Cache -->
+			<object global="true" name="application::cache" type="Object" class="Point7_WebApp_Cache_File">
+				<param target="configure" name="path" value="{#APP_PATH#}/Cache" />
+			</object>
+			
+			<!-- Application User Cache -->
+			<object global="true" name="application::userCache" type="Object" class="Point7_WebApp_Cache_File">
+				<param target="configure" name="path" value="{#APP_PATH#}/Cache/Users" />
+			</object>
+
+			<!-- Application ErrorLogger -->
+			<object global="true" name="application::errorlogger" type="Object" class="Point7_Log_PEARWrapper" lazy="true">
+				<param target="configure" name="file" value="{#LOG_PATH#}/%{year}-%{month}-errors.log" />
+				<param target="configure" name="format" value="%{timestamp} - %{message}" />
+			</object>
+
+			<!-- Application DebugLogger -->
+			<object global="true" name="application::debuglogger" type="Object" class="Point7_Log_PEARWrapper" lazy="true">
+				<param target="configure" name="file" value="{#LOG_PATH#}/%{year}-%{month}-debug.log" />
+				<param target="configure" name="format" value="%{timestamp} - %{message}" />
+			</object>
+			
+			<!-- Application ConsultantLogger -->
+			<object global="true" name="application::consultantlogger" type="Object" class="Point7_Log_PEARWrapper" lazy="true">
+				<param target="configure" name="file" value="{#LOG_PATH#}/%{year}-%{month}-consultant.log" />
+				<param target="configure" name="format" value="%{timestamp} - %{message}" />
+			</object>
+
+			<!-- Application NotFoundLogger -->
+			<object global="true" name="application::notfoundlogger" type="Object" class="Point7_Log_PEARWrapper" lazy="true">
+			    <param target="configure" name="file" value="{#LOG_PATH#}/%{year}-%{month}-404.log" />
+			    <param target="configure" name="format" value="%{timestamp} - %{message}" />
+			</object>
+
+			<!-- Global PDO -->
+			<object global="true" name="dbconnection::pdo1" type="Object" class="PDO" lazy="true">
+				<param name="dsn" value="mysql:host=localhost;dbname=aronmaiden_studioatrium" />
+				<param name="username" value="root" />
+				<param name="passwd" value="IxtrimDev1234!" />
+			</object>
+
+			<!-- Application session -->
+			<object global="true" name="application::session" type="Object" class="Point7_WebApp_Session">
+				<param target="configure" name="name" value="__StudioAtrium" />
+				<param target="configure" name="lifetime" value="360000" />
+				<param target="configure" name="domain" value="studioatrium.local" />
+				<param target="configure" name="autostart" value="true" />
+			</object>
+
+			<!-- Application DAO Repository -->
+			<object global="true" name="application::daoRepository" type="Object" class="\StudioAtrium\Application\DAORepository" lazy="false" />
+
+			<!-- Request Resolver -->
+			<object global="true" name="application::requestResolver" type="Object" class="\StudioAtrium\Application\WWW\RequestResolver" >
+				<param name="request" value="{$application::request}" />
+			</object>
+
+			<!-- Smarty function registry-->
+			<object global="true" name="view::smartyFunctionsRegistry" type="Object" class="\StudioAtrium\Application\WWW\SmartyFunctionsRegistry">
+				<param target="configure" name="res_url" value="https://media.studioatrium.pl/document" />
+			</object>
+		</global>
+
+		<dao>
+			<include file="DaoRegistry.include.xml" />
+		</dao>
+
+		<!-- Listeners goes here -->
+		<listener>
+			<object name="listener::dao" type="Object" class="\StudioAtrium\Entity\DAOActivityListener">
+				<param target="configure" name="file" value="{#LOG_PATH#}/%{year}-%{month}-dao-activity.log" />
+				<param target="configure" name="format" value="%{timestamp} - %{message}" />
+			</object>
+		</listener>
+
+	</registry>
+
+	<!-- Connect listener to event -->
+	<dispatcher>
+		<connect event="dao_object_insert" listener="listener::dao" />
+		<connect event="dao_object_update" listener="listener::dao" />
+		<connect event="dao_object_delete" listener="listener::dao" />
+	</dispatcher>
+
+	<lib>
+		<include_path>{#POINT7_PACKAGES#}</include_path>
+		<include_path>{#POINT7_PACKAGES#}/Packages</include_path>
+	</lib>
+
+	<debug>
+		<error_level>22527</error_level>
+		<error_display>no</error_display>
+		<error_display_ip></error_display_ip>
+		<dev_messages>no</dev_messages>
+		<dev_email></dev_email>
+		<break_on_forwards>no</break_on_forwards>
+		<enable_firephp>no</enable_firephp>
+	</debug>
+
+	<modules>
+		<repository config_path="{#APP_PATH#}/Conf/Modules" class_path="{#APP_PATH#}/Modules" cache_path="" />
+	</modules>
+
+	<views>
+		<repository class_path="{#APP_PATH#}/Views" />
+		<smarty>
+			<template_dir>{#APP_PATH#}/Views/Templates</template_dir>
+			<compile_dir>{#APP_PATH#}/Views/Templates/_compile</compile_dir>
+			<config_dir>{#APP_PATH#}/Views/Templates</config_dir>
+		</smarty>
+	</views>
+
+	<paths>
+		<static>
+			<project>/7point.pl/app/2016.studioatrium.media/WebContent/project/</project>
+			<documents>/7point.pl/app/2016.studioatrium.media/WebContent/document/</documents>
+			<banner>/7point.pl/app/2016.studioatrium.media/WebContent/banner/</banner>
+			<app>/7point.pl/app/2016.studioatrium.media/WebContent/app/</app>
+			<carousel>/7point.pl/app/2016.studioatrium.media/WebContent/carousel/</carousel>
+			<stock>/7point.pl/app/2016.studioatrium.media/WebContent/stock/</stock>
+			<uploads>/7point.pl/app/2016.studioatrium.media/WebContent/uploads</uploads>
+			<tmp_uploads>/7point.pl/app/2016.studioatrium.media/WebContent/uploads/tmp</tmp_uploads>
+			<contest>/7point.pl/app/2016.studioatrium.media/WebContent/contest/</contest>
+			<avatar>/7point.pl/app/2016.studioatrium.media/WebContent/uploads/avatar</avatar>
+		</static>
+		<res>{#APP_PATH#}/Res</res>
+		<clicksearch_sets>/7point.pl/data/pl.studioatrium.www/ClickSearchSets.php</clicksearch_sets>
+		<realizations_list>/7point.pl/data/pl.studioatrium.www/RealizationsList.php</realizations_list>
+		<selfie_gallery>https://media.studioatrium.pl/app/selfie</selfie_gallery>
+		<selfie_uploads>/7point.pl/app/2016.studioatrium.media/WebContent/app/selfie</selfie_uploads>
+		<tmp_uploads>{#APP_PATH#}/Tmp</tmp_uploads>
+		<mirror_prefix>mirror</mirror_prefix>
+		<interior_prefix>interior</interior_prefix>
+		<realisation_prefix>realisation</realisation_prefix>
+		<comments_prefix>comment</comments_prefix>
+		<extra_prefix>extra</extra_prefix>
+		<file_prefix>file</file_prefix>
+		<watermark_1920x1280>{#APP_PATH#}/Res/watermark-1920x1280.png</watermark_1920x1280>
+		<watermark_1350x900>{#APP_PATH#}/Res/watermark-1350x900.png</watermark_1350x900>
+		<watermark_1024x683>{#APP_PATH#}/Res/watermark-1024x683.png</watermark_1024x683>
+		<watermark_1620x1080>{#APP_PATH#}/Res/watermark-1620x1080.png</watermark_1620x1080>
+	</paths>
+
+	<static>
+		<project>https://media.studioatrium.pl/project</project>
+		<stock>https://media.studioatrium.pl/stock</stock>
+		<uploads>https://media.studioatrium.pl/uploads</uploads>
+		<tmp_uploads>https://media.studioatrium.pl/uploads/tmp</tmp_uploads>
+		<documents>https://media.studioatrium.pl/document</documents>
+		<url>https://media.studioatrium.pl/</url>
+		<app>https://media.studioatrium.pl/app</app>
+		<about>https://media.studioatrium.pl/about</about>
+		<banner>https://media.studioatrium.pl/banner</banner>
+		<contest>https://media.studioatrium.pl/contest</contest>
+		<avatar>https://media.studioatrium.pl/uploads/avatar</avatar>
+		<showroom>https://media.studioatrium.pl/showroom</showroom>
+	</static>
+
+	<pdf>
+		<template_dir>{#APP_PATH#}/Views/Templates/StudioAtrium/pdf</template_dir>
+		<compile_dir>{#APP_PATH#}/Views/Templates/StudioAtrium/_compile</compile_dir>
+	</pdf>
+
+	<mailer>
+		<sender>
+			<transport>smtp</transport>
+			<smtp_transport>
+				<host>poczta.studioatrium.info</host>
+				<port>587</port>
+				<user>atrium@studioatrium.info</user>
+				<password>GP5[-OP7_{e2</password>
+			</smtp_transport>
+			<from_email>atrium@studioatrium.pl</from_email>
+		</sender>
+		<!--<sender>
+			<transport>smtp</transport>
+			<smtp_transport>
+				<host>smtp.gmail.com</host>
+				<port>465</port>
+				<encrypt>ssl</encrypt>
+				<user>studioatrium.bielsko@gmail.com</user>
+				<password>atriumStudioGLX!</password>
+			</smtp_transport>
+			<from_email>studioatrium.bielsko@gmail.com</from_email>
+		</sender>-->
+		<receiver>atrium@studioatrium.pl</receiver>
+		<consultant>konsultant@studioatrium.pl</consultant>
+		<order>zamowienia@studioatrium.pl</order>
+
+		<!--<receiver>studioatrium1994@gmail.com</receiver>
+		<consultant>studioatrium1994@gmail.com</consultant>
+		<order>studioatrium1994@gmail.com</order>-->
+
+		<notify>anita@studioatrium.pl</notify>
+		<notify2>ania@studioatrium.pl</notify2>
+		<test>wojtek@studioatrium.pl</test>
+	</mailer>
+	
+	<emails>
+		<template_dir>{#APP_PATH#}/Resources/Emails</template_dir>
+		<compile_dir>{#APP_PATH#}/Resources/Emails/_compile</compile_dir>
+		<atrium>atrium@studioatrium.pl</atrium>
+		<!-- <atrium>studioatrium1994@gmail.com</atrium> -->
+		<project_order_receiver>zamowienia@studioatrium.pl</project_order_receiver>
+		<dwt_project_order_receiver>zamowienia@studioatrium.pl</dwt_project_order_receiver>
+		<project_consultant_receiver>konsultant@studioatrium.pl</project_consultant_receiver>
+		<!-- <project_consultant_receiver>studioatrium1994@gmail.com</project_consultant_receiver> -->
+		<comment_receiver>anita@studioatrium.pl</comment_receiver>
+		<dm_consultant>konsultanci@dommodelowy.pl</dm_consultant>
+		<adaptations>mirek@studioatrium.pl</adaptations>
+		<monier_braas>Lukasz.grzywacz@monier.com</monier_braas>
+		<konkurs>atrium@studioatrium.pl</konkurs>
+		<catalog>ania@studioatrium.pl</catalog>
+	</emails>
+
+	<domain>
+		<fullurl>http://studioatrium.local/</fullurl>
+		<www>http://studioatrium.local</www>
+		<ip>127.0.0.1</ip>
+		<backend_ip>127.0.0.1</backend_ip>
+		<backend>http://studioatrium.local</backend>
+	</domain>
+
+	<commands>
+		<repository class_path="{#APP_PATH#}/Commands" />
+	</commands>
+
+	<prices>
+		<catalog>9.90</catalog>
+	</prices>
+	
+	<przelewy24>
+		<user_id>79146</user_id>
+		<api_key>a0e044c1228907b21c3bc73823154947</api_key>
+		<salt>81e0d5c7e05dc5e2</salt>
+		<sandbox_salt>389ca71c6add8e14</sandbox_salt>
+		<test_mode>1</test_mode>
+		<api_url>https://secure.przelewy24.pl</api_url>
+		<sandbox_api_url>https://sandbox.przelewy24.pl</sandbox_api_url>
+	</przelewy24>
+
+	<helpers>
+	    <search_tolerance>5</search_tolerance>
+	    <catalog_prompt>0</catalog_prompt>
+	    <pay_catalog_available>0</pay_catalog_available>
+	</helpers>
+
+	<secret>cj5kD7^ncLO92nsah^nds8a^mxKL8</secret>
+
+	<atrium_user_id>1</atrium_user_id>
+	<atrium_user_email>atrium@studioatrium.pl</atrium_user_email>
+	<contact_unavailable>0</contact_unavailable>
+	<technical_break>0</technical_break>
+</application>

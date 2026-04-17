@@ -1,0 +1,145 @@
+@import (reference) "../variables/colors.less";
+@import (reference) "../variables/dimensions.less";
+@import (reference) "../variables/fonts.less";
+@import (reference) "../variables/mixins.less";
+
+div.list-header {
+	background: @backLightGrey url(../img/catalog_head.webp) no-repeat center 110px;
+	
+	> div {
+		height: 255px;
+	}
+}
+
+h2 {
+	font-size: @headerFontSize;
+	text-transform: uppercase;
+	line-height: 1.2em;
+	margin: 48px 0 32px;
+}
+
+section {
+	
+	&.info {
+		background-color: @backUltraLightGrey;
+		padding-top: 30px;
+		
+
+		img {
+			height: auto;
+			max-width: 100%;
+			vertical-align: bottom;
+		}
+		
+		h3 {
+			color: #30383b;
+			font-size: @fontSize28;
+			margin-bottom: 16px;
+			text-transform: none;
+			line-height: 40px;
+			font-weight: bold;
+			+ p {
+				font-size: @fontSize24;
+				line-height: 1.2em;
+			}
+		}
+		
+		p {
+			&.nr {
+				color: @saBlue;
+				font-size: @fontSize39;
+				margin: 30px 0 0px;
+				
+				+ p.nr {
+					margin: 30px 0 32px;
+				}
+			}
+			
+			&.mail {
+				margin: 30px 0 32px;
+			}
+			
+			&.form {
+				color: @saBlue;
+				font-size: @fontSize39;
+				margin: 10px 0 20px;
+			}
+		}
+		
+		span {
+			&.uline {
+				text-decoration: underline;
+				cursor: pointer;
+				font-size: @fontSize24;
+				
+				&:hover {
+					color: @saBlue;
+				}
+			}
+		}
+		
+		
+	}
+}
+
+@media all and (max-width: 1240px) {
+	
+	h2 {
+		display: none;
+	}
+	
+	div.list-header {
+		background: none !important;
+		
+		&.activated:hover {
+			
+			h1 {
+				width: auto;
+			}
+			
+			div.header-wrapper {
+				width: auto;
+				height: auto;
+				transform: translate(0, 0);
+			}
+			
+			p {
+				text-align: left;
+			}
+		}
+		
+		> div {
+			height: auto;
+			padding-bottom: 48px;
+		}
+		
+		div.header-wrapper {
+			position: static;
+			top: auto;
+			left: auto;
+			display: inline-block;
+			width: 100%;
+			height: auto;
+			color: @defaultTextColor;
+			background-color: transparent;
+			padding: 12px;
+			overflow: visible;
+			transform: translate(0, 0);
+			
+			> div {
+				padding: 0;
+			}
+		}
+		
+		h1 {
+			white-space: normal;
+			text-align: left;
+			margin-top: 16px;
+			line-height: 1.2em;
+			
+			&::after {
+		    	opacity: 1;
+		    }
+		}
+	}
+}

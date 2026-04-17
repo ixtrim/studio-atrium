@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<classname>\StudioAtrium\Application\WWW\Module\ProjectExtend</classname>
+	<classfile>ProjectExtend</classfile>
+	<default_action>Plan</default_action>
+	<request>
+
+		<action name="Plan">
+			<allowed_methods get="yes" />
+			<param name="id" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+			<param name="version" required="no" default="normal">
+				<validator name="Choice" choices="normal,mirror" />
+			</param>
+		</action>
+		<action name="GetSituation">
+			<allowed_methods post="yes" />
+			<param name="id" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+		</action>
+		
+		<action name="GetPlotImage">
+			<allowed_methods get="yes" />
+			<param name="project_id" required="yes">
+				<validator name="Integer" />
+			</param>
+			<param name="mirror" required="no">
+				<validator name="Integer" />
+			</param>
+		</action>
+		
+		<action name="GetRooms">
+			<allowed_methods post="yes" />
+			<param name="id" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+			<param name="storey" required="no" default="0">
+				<validator name="Integer" />
+			</param>
+		</action>
+		
+		<action name="Sketch">
+			<allowed_methods get="yes" />
+			<param name="id" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+			<param name="storey" required="yes">
+				<validator name="\StudioAtrium\Validator\ProjectStorey" />
+				<filter name="Map" map="{'parter': 'ground_floor', 'piwnica': 'basement', 'pietro': '1st_floor', 'pietro2': '2nd_floor', 'poddasze': 'loft', 'przyziemie': 'low_ground_floor'}"/>
+			</param>
+			<param name="version" required="no" default="normal">
+				<validator name="Choice" choices="normal,mirror" />
+			</param>
+		</action>
+		
+		<action name="Addons">
+			<allowed_methods get="yes" />
+			<param name="id" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+		</action>
+		
+		<action name="ProjectAddons">
+			<allowed_methods post="yes" />
+			<param name="id" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+		</action>
+		
+		<action name="PromoInfoNotify">
+			<allowed_methods post="yes" />
+		</action>
+
+		<action name="PromoNotify">
+			<allowed_methods post="yes" />
+			<param name="pid" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+			<param name="email" required="yes">
+				<validator name="Email" msg_required="Podaj nr telefonu"/>
+			</param>
+			<param name="accept" required="yes">
+				<validator name="String" value="on" msg_required="Aby otrzymać powiadomienie o promocji musisz zaakceptować powyższe oświadczenie" />
+			</param>
+			<param name="newsletter" required="no">
+				<validator name="String" value="on" />
+			</param>
+		</action>
+	</request>
+
+	<commands>
+		<on_before_exec>
+			<include file="../defaultBeforeCommands.xml" />
+		</on_before_exec>
+	</commands>
+
+	<result_map>
+		<action name="Plan">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="ProjectExtend/Plan.tpl" />
+					<param name="smarty.css_includes">
+						<value>["sun.min.css?v=20200925"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["sun.js?v=20200925", "jquery.ui.touch-punch.min.js"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		<action name="GetSituation">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_error>
+		</action>
+		
+		<action name="GetPlotImage">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_SendGeneratedFile" />
+			</on_exec_ok>
+		</action>
+		
+		<action name="GetRooms">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_error>
+		</action>
+		
+		<action name="Sketch">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="ProjectExtend/Sketch.tpl" />
+					<param name="smarty.css_includes">
+						<value>["house.min.css?v=20210816"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["measure.js?v=20210816"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		
+		<action name="Addons">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="ProjectExtend/Addons.tpl" />
+					<param name="smarty.css_includes">
+						<value>["house.min.css?v=20180910"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["project.js"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Varia" action="Addons" />
+			</on_exec_error>
+		</action>
+		
+		<action name="ProjectAddons">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="template" value="ProjectExtend/ProjectAddons.tpl" />
+				</view>
+			</on_exec_ok>
+		</action>
+		
+		<action name="PromoInfoNotify">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="template" value="ProjectExtend/PromoInfoNotify.tpl" />
+				</view>
+			</on_exec_ok>
+		</action>
+		
+		<action name="PromoNotify">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_error>
+		</action>
+	</result_map>
+</module>

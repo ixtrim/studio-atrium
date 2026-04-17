@@ -1,0 +1,36 @@
+@import (reference) "../variables/colors.less";
+@import (reference) "../variables/dimensions.less";
+@import (reference) "../variables/fonts.less";
+@import (reference) "../variables/mixins.less";
+
+div.list-header {
+	background: @backLightGrey url(../img/favourite_head.jpg) no-repeat center 110px;
+	
+	> div {
+		height: 255px;
+	}
+}
+
+
+
+div.info-box {
+	padding: 64px 0;
+	
+	p.headline {
+		font-size: @fontSize24;
+		margin-bottom: 24px;
+		text-transform: uppercase;
+	}
+	
+	p.spaced {
+		margin-top: 32px;
+	}
+	
+	a {
+		color: @saBlue;
+		
+		&:hover {
+			color: @saRed;
+		}
+	}
+}

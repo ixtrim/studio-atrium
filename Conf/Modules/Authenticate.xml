@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<classname>\StudioAtrium\Application\WWW\Module\Authenticate</classname>
+	<classfile>Authenticate</classfile>
+	<default_action>Login</default_action>
+	<request>
+		<action name="Login">
+			<allowed_methods post="yes" get="yes" />
+			<param name="email" required="yes" msg_required="Podaj poprawny adres e-mail">
+				<filter name="Trim" />
+				<validator name="Email" />
+			</param>
+			<param name="password" required="yes" msg_required="Podaj swoje hasło">
+				<validator name="String" min_length="8" />
+			</param>
+		</action>
+
+		<action name="Logout">
+			<allowed_methods get="yes" />
+		</action>
+
+		<action name="Impersonate">
+			<allowed_methods get="yes" />
+			<param name="userId" required="yes">
+				<validator name="Integer" />
+			</param>
+		</action>
+		
+		<action name="LoginFromBackend">
+			<allowed_methods get="yes" />
+			<param name="secret" required="yes">
+				<validator name="String" />
+				<filter name="Trim" />
+			</param>
+			<param name="hash" required="yes">
+				<validator name="String" />
+				<filter name="Trim" />
+			</param>
+			<param name="id" required="yes">
+				<validator name="Integer" />
+			</param>
+		</action>
+		
+		<action name="LogoutToBackend">
+			<allowed_methods get="yes" />
+		</action>
+
+		<action name="Depersonate">
+			<allowed_methods get="yes" />
+		</action>
+		
+		<action name="AuthenticationRequired">
+			<allowed_methods get="yes" />
+		</action>
+
+	</request>
+
+	<commands>
+		<on_before_exec>
+			<include file="../defaultBeforeCommands.xml" />
+		</on_before_exec>
+	</commands>
+
+	<result_map>
+		<action name="Login">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON">
+					<param name="UseJSONContentType" value="application/json" />
+				</view>
+			</on_exec_ok>
+
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON">
+					<param name="UseJSONContentType" value="application/json" />
+				</view>
+			</on_exec_error>
+
+			<on_authorized>
+				<forward module="Index" />
+			</on_authorized>
+		</action>
+
+		<action name="Logout">
+			<on_exec_ok>
+				<forward module="Index" />
+			</on_exec_ok>
+		</action>
+
+		<action name="Impersonate">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_StudioAtrium" />
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Index" />
+			</on_exec_error>
+		</action>
+		
+		<action name="LoginFromBackend">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Dummy" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_Dummy" />
+			</on_exec_error>
+		</action>
+		
+		<action name="LogoutToBackend">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Dummy" />
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Index" />
+			</on_exec_error>
+		</action>
+
+		<action name="Depersonate">
+			<on_exec_ok>
+				<forward module="Index" />
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Index" />
+			</on_exec_error>
+		</action>
+		
+		<action name="AuthenticationRequired">
+			<on_exec_ok>
+				<forward module="Index" />
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Index" />
+			</on_exec_error>
+		</action>
+
+	</result_map>
+</module>

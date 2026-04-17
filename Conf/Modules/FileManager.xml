@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<classname>\StudioAtrium\Application\WWW\Module\FileManager</classname>
+	<classfile>FileManager</classfile>
+	<request>
+		<action name="UploadFile">
+			<allowed_methods post="yes" />
+			<param name="title" required="no">
+				<validator name="String" min_length="3" />
+			</param>
+			<param name="link" required="no">
+				<validator name="String" min_length="3" />
+			</param>
+			<param name="description" required="no">
+				<validator name="String" min_length="3" />
+			</param>
+			<param name="profile" required="yes">
+				<filter name="SanitizeAlphaNum" />
+				<validator name="String" min_length="3" max_length="64" />
+			</param>
+			<param name="upfile" required="yes">
+				<validator name="File" msg_required="Nie wskazano pliku do przesłania" />
+			</param>
+			<param name="upload_options" required="no">
+				<validator name="Array" />
+			</param>
+			<param name="owner_uid" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+			<param name="isTmpUID" required="no" default="0">
+				<validator name="Integer" />
+			</param>
+		</action>
+
+		<action name="UploadSingleFile">
+			<allowed_methods post="yes" />
+			<param name="title" required="no">
+				<validator name="String" min_length="3" />
+			</param>
+			<param name="description" required="no">
+				<validator name="String" min_length="3" />
+			</param>
+			<param name="profile" required="yes">
+				<filter name="SanitizeAlphaNum" />
+				<validator name="String" min_length="3" max_length="64" />
+			</param>
+			<param name="upfile" required="yes">
+				<validator name="File" msg_required="Nie wskazano pliku do przesłania" />
+			</param>
+			<param name="upload_options" required="no">
+				<validator name="Array" />
+			</param>
+			<param name="owner_uid" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+			<param name="isTmpUid" required="no" default="0">
+				<validator name="Integer" />
+			</param>
+		</action>
+
+		<action name="DeleteAttachment">
+			<allowed_methods post="yes" />
+			<param name="id" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+			<param name="owner_uid" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+			<param name="profile" required="yes">
+				<filter name="SanitizeAlphaNum" />
+				<validator name="String" min_length="3" max_length="64" />
+			</param>
+		</action>
+
+		<action name="RemoveSingleFile">
+			<allowed_methods post="yes" />
+			<param name="owner_uid" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+			<param name="is_tmp" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="id" required="yes">
+				<validator name="Integer" />
+			</param>
+		</action>
+
+		<action name="ListFiles">
+			<allowed_methods get="yes" post="yes" />
+			<param name="profile" required="yes">
+				<filter name="SanitizeAlphaNum" />
+				<validator name="String" min_length="3" max_length="64" />
+			</param>
+			<param name="owner_uid" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+		</action>
+
+		<action name="GetWysiwygImages">
+			<allowed_methods get="yes" post="yes" />
+			<param name="owner_uid" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+		</action>
+
+		<action name="GetWysiwygFiles">
+			<allowed_methods get="yes" post="yes" />
+			<param name="owner_uid" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+		</action>
+
+		<action name="SortFiles">
+			<allowed_methods post="yes" />
+			<param name="profile" required="yes">
+				<filter name="SanitizeAlphaNum" />
+				<validator name="String" min_length="3" max_length="64" />
+			</param>
+			<param name="current_sorting" required="yes">
+				<filter name="Trim" />
+				<validator name="String" />
+			</param>
+		</action>
+
+		<action name="UpdateInfo">
+			<allowed_methods post="yes" />
+			<param name="id" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+			<param name="info" required="yes">
+				<validator name="String" />
+			</param>
+		</action>
+	</request>
+
+	<commands>
+		<on_before_exec>
+			<include file="../defaultBeforeCommands.xml" />
+		</on_before_exec>
+	</commands>
+
+	<result_map>
+		<action name="UploadFile">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_error>
+		</action>
+
+		<action name="UploadSingleFile">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_error>
+		</action>
+
+		<action name="DeleteAttachment">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_error>
+		</action>
+
+		<action name="RemoveSingleFile">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_error>
+		</action>
+
+		<action name="ListFiles">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="template" value="FileManager/FileListing.tpl" />
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="template" value="FileManager/FileListing.tpl" />
+				</view>
+			</on_exec_error>
+		</action>
+
+		<action name="GetWysiwygImages">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JavaScript" />
+			</on_exec_ok>
+		</action>
+
+		<action name="GetWysiwygFiles">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JavaScript" />
+			</on_exec_ok>
+		</action>
+
+		<action name="SortFiles">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_error>
+		</action>
+
+		<action name="UpdateInfo">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_error>
+		</action>
+	</result_map>
+</module>

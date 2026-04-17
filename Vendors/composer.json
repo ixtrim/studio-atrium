@@ -1,0 +1,11 @@
+{
+    "require": {
+        "smarty/smarty": "^4.5",
+        "mobiledetect/mobiledetectlib": "^3.74",
+        "tecnickcom/tcpdf": "^6.7",
+        "monolog/monolog": "^3.0"
+    },
+    "config": {
+        "vendor-dir": "."
+    }
+}

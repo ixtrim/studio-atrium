@@ -1,0 +1,22 @@
+@CHARSET "UTF-8";
+
+@media all {
+	div.print-box-header,
+	div.print-box {
+		width: 630px;
+		margin: 12px;
+	}
+	
+	div.print-box-header::after {
+		content: '';
+		display: block;
+		height: 1;
+		clear: right;
+	}
+	
+	div.print-box-header ul {
+		float: right;
+		list-style-type: none;
+		margin: 0 0 32px;
+	}
+}

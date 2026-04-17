@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<classname>\StudioAtrium\Application\WWW\Module\Page</classname>
+	<classfile>Page</classfile>
+	<default_action>Display</default_action>
+	<request>
+		<action name="Display">
+			<allowed_methods get="yes" />
+		</action>
+		<action name="Display404">
+			<allowed_methods get="yes" />
+		</action>
+	</request>
+
+	<commands>
+		<on_before_exec>
+			<include file="../defaultBeforeCommands.xml" />
+		</on_before_exec>
+	</commands>
+
+	<result_map>
+		<action name="Display">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Page.tpl" />
+					<param name="smarty.css_includes">
+						<value>["article.min.css"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		<action name="Display404">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="404.tpl" />
+					<param name="smarty.css_includes">
+						<value>["article.min.css"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+		</action>
+	</result_map>
+</module>

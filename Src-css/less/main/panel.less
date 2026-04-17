@@ -1,0 +1,926 @@
+@import (reference) "../variables/colors.less";
+@import (reference) "../variables/dimensions.less";
+@import (reference) "../variables/fonts.less";
+@import (reference) "../variables/mixins.less";
+
+@import (less) "../css-includes/jquery.fancybox.css";
+
+
+div.list-header {
+	a {
+		position: absolute;
+		right: 0px;
+		bottom: 0px;
+		font-size: @fontSize18;
+		
+		&:hover {
+			text-decoration: underline;
+			color: inherit;
+		}
+	}
+	
+	&.panel1 {
+		background: @backLightGrey url(../img/panel_head1.jpg) no-repeat center 110px;
+	}
+	
+	&.panel2 {
+		background: @backLightGrey url(../img/panel_head2.jpg) no-repeat center 110px;
+	}
+}
+
+form.default.long {
+	width: auto;
+	
+	p.last {
+		margin-right: 0;
+	}
+		
+	input[type="text"], textarea {
+		width: 100%;
+		margin: 0;
+	}
+}
+
+form.default {
+	width: auto;
+	
+	> p.last {
+		margin-right: 0;
+	}
+	
+	input[type="text"],
+	input[type="password"] {
+		margin: 0 0 0 24px;
+	}
+} 
+
+div.panel-form-wrapper {
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+div.form-box {
+	display: inline-block;
+	text-align: left;
+	margin: 0 auto;
+	
+	&.max {
+		position: relative;
+		width: 100%;
+		text-align: center;
+		
+		p.last {
+			text-align: center;
+			margin-left: 445px;
+		}
+	}
+	
+	div#panelAvatar {
+		position: absolute;
+		top: 50px;
+		left: 55px;
+	
+		> span {
+			background-color: @saBlue;
+			color: #fff;
+			font-size: @fontSize30;
+			height:60px;
+		    line-height: 60px;
+		    width: 60px;
+		    border-radius: 50%;
+		    text-transform: uppercase;
+		    display: inline-block;
+		    text-align: center;
+		    float: left;
+		    overflow: hidden;
+		    
+		    > img {
+		    	border-radius: 50%;
+		    }
+		}
+		> p {
+			font-size: @fontSize14;
+			color: @saBlue;
+			cursor: pointer;
+			margin-left: -12px;
+			height: 20px;
+			bottom: -35px;
+			position: absolute;
+			width: 85px;
+		}
+		
+		img#thumbnailFileProgress {
+			margin-left: 20px;
+		}
+	}
+}
+
+nav.user {
+	background-color: @backUltraLightGrey;
+	width: 100%;
+	height: 132px;
+	
+	> div {
+		max-width: @defaultWidth;
+		margin: 0 auto;
+		
+		> a {
+			width: 177px;
+			display: inline-block;
+			color: @defaultTextColor;
+			font-size: @fontSize15;
+			text-transform: uppercase;
+			text-align: center;
+			position: relative;
+			float: left;
+			line-height: 184px;
+			height: 132px;
+			
+			&:hover, &.selected {
+				background-color: @defaultTextColor;
+				color: #fff;
+				
+				> span {
+					&.account {
+						background-position: -73px 0;
+					}
+						
+					&.message {
+						background-position: -74px -85px;
+					}
+						
+					&.favourite {
+						background-position: -79px -168px;
+					}
+						
+					&.blog {
+						background-position: -77px -250px;
+					}
+						
+					&.comment {
+						background-position: -76px -333px;
+					}
+						
+					&.promo {
+						background-position: -73px -416px;
+					}
+						
+					&.transaction {
+						background-position: -76px -493px;
+					}
+				}
+				
+				&:after, &:first-child:before {
+					display: none;
+				}
+				
+				> span:after {
+					position: absolute;
+					content: '';
+					bottom: -65px;
+					left: 19px;
+					width: 18px;
+					height: 10px;
+					background: url(../img/panel.png) 0 -566px;
+				}
+			}
+			
+			&:after, &:first-child:before {
+				position: absolute;
+				content: '';
+				right: 0;
+				top: 25px;
+				width: 1px;
+				height: 82px;
+				background-color: @greyPanelLine;
+			}
+			
+			&:first-child:before {
+				right: auto;
+				left: 0;
+			}
+			
+			> span {
+				background: url(../img/panel.png) no-repeat 6px 0;
+				width: 60px;
+				height: 60px;
+				position: absolute;
+				top: 17px;
+				left: 50%;
+				margin-left: -30px;
+				
+				&.message {
+					background-position: 4px -85px;
+				}
+				
+				&.favourite {
+					background-position: 0 -168px;
+				}
+				
+				&.blog {
+					background-position: 0 -250px;
+					&.notify:before {
+						top: 1px;
+						right: 9px;
+					}
+				}
+				
+				&.comment {
+					background-position: 2px -333px;
+					&.notify:before {
+						top: 6px;
+						right: 8px;
+					}
+				}
+				
+				&.promo {
+					background-position: 4px -416px;
+					&.notify:before {
+						top: 20px;
+						right: 22px;
+					}
+				}
+				
+				&.transaction {
+					background-position: 1px -493px;
+				}
+				
+				&.notify:before {
+					position: absolute;
+					top: 5px;
+					right: 5px;
+					width: 11px;
+					height: 11px;
+					content: '';
+					.iconsBg(0,-2007px);
+				}
+			}
+		}
+	}
+}
+
+div.content {
+	max-width: @defaultWidth;
+	text-align: center;
+	padding: 50px 0;
+	margin: 0 auto;
+	
+	&.noCenter {
+		text-align: left;
+	}
+	
+	&#Content {
+		position: relative;
+	}
+	
+	h2, h3 {
+		font-size: @fontSize24;
+		text-transform: uppercase;
+		position: relative;
+		margin: 0 0 48px 0;
+		
+		&:after {
+			position: absolute;
+			content: '';
+			width: 36px;
+			height: 2px;
+			background-color: @saRed;
+			bottom: -20px;
+			left: 0;
+		}
+	}
+	
+	h3 {
+		text-align: center;
+		margin: 30px 0;
+		
+		&.line {
+			border-top: 1px solid @panelLine;
+			margin-left: auto;
+			margin-right: auto;
+			padding: 25px;
+			
+			&:after { 
+				bottom: 0;
+			}
+		}
+		
+		&:after {
+			left: calc(~'50% - 18px');
+		}
+	}
+	
+	h4 {
+		text-align: center;
+		margin: 30px 0;
+		font-size: @fontSize24;
+		font-family: @boldFontFamily;
+		color: @saRed;
+	}
+	
+	ul.choice {
+		font-size: @fontSize18;
+		text-transform: uppercase;
+		margin-bottom: 32px;
+		text-align: left;
+		
+		li {
+			display: inline-block;
+			position: relative;
+			margin-right: 20px;
+			
+			span {
+				font-size: @fontSize24;
+			}
+			&:after {
+				content: "|";
+				position: absolute;
+				right: -15px;
+				top: -2px;
+				color: @defaultTextColor;
+			}
+			
+			&.last {
+				&:after {
+					content: '';
+				}
+			}
+			
+			&.selected {
+				color: @saRed;
+			}
+		}
+	}
+	
+	p {
+		margin: 10px 0;
+		
+		&.uline {
+			padding-bottom: 12px;
+			border-bottom: 1px solid @greyPanelLine;
+			
+			label {
+				cursor: pointer;
+			}
+		}
+		
+		&.block {
+			width: 60%;
+			margin: 10px auto;
+			padding: 25px 0;
+			border-top: 1px solid @panelLine;
+			border-bottom: 1px solid @panelLine;
+			text-align: center;
+			font-size: @fontSize18;
+			
+			> a {
+				color: @defaultTextColor;
+				position: relative;
+				
+				&:hover {
+					color: @saRed;
+				}
+				
+				&:after {
+					content: "›";
+				    display: inline-block;
+				    font-size: @fontSize25;
+				    line-height: 38px;
+				    margin-left: 6px;
+				    position: absolute;
+				    top: -10px;					
+				}
+			}
+		}
+		
+		&.txt {
+			text-align: center;
+			font-size: @fontSize16;
+			margin: 50px auto;
+		}
+		
+		&.shout {
+			color: @saBlue;
+			font-size: @fontSize30;
+			text-align: center;
+			text-transform: uppercase;
+			line-height: 1.2em;
+			margin: 100px auto;
+		}
+	}
+	
+	a.baton {
+    	height: 50px;
+		color: @defaultTextColor;
+		font-family: @defaultFontFamily;
+		font-size: @fontSize18;
+		text-transform: uppercase;
+		line-height: 49px;
+		padding: 2px 28px 0 28px;
+		background-color: #fff;
+		border: 1px solid @frameLinkColor;
+		cursor: pointer;
+		width: 200px;
+		display: inline-block;
+		
+		&:hover {
+			background-color: @saRed;
+			color: #fff;
+		}
+	}
+	
+	p.last.strong {
+		font-family: @boldFontFamily;
+		margin-bottom: 0 !important;
+	}
+	
+	div#thumbnailFile {
+		position: relative;
+		text-align: right;
+		margin-right: 186px;
+		
+		img#thumbnailFileProgress {
+			position: absolute; 
+			right: 220px; 
+			top: -71px;
+		}
+		
+		a {
+			vertical-align: middle;
+			position: relative;
+			margin-right: 10px;
+			
+			&.remove {
+				img {
+					position: relative;
+					top: 2px;
+					left: 0px;
+				}
+			}
+		}	
+	}
+	
+	input[type="checkbox"] + label {
+		font-size: @fontSize14;
+		padding:  1px 0 1px 22px;
+		.iconsBg(0, -2382px);
+	}
+
+	input[type="checkbox"]:checked + label {
+		padding-left: 22px;
+		.iconsBg(0, -2407px);
+	}
+
+}
+
+ul.messages {
+	margin-top: 50px;
+	text-align: left;
+	
+	> li {
+		margin-bottom: 80px;
+		
+		> span {
+			background-color: @saBlue;
+			color: #fff;
+			font-size: @fontSize30;
+			height:60px;
+		    line-height: 60px;
+		    width: 60px;
+		    border-radius: 50%;
+		    text-transform: uppercase;
+		    display: inline-block;
+		    text-align: center;
+		    float: left;
+		    > img {
+		    	border-radius: 50%;
+		    }
+		}
+		
+		a {
+			text-decoration: underline;
+		}
+		
+		> div {
+			margin-left: 110px;
+
+			> p {
+				font-size: @fontSize18;
+				&.title {
+					color: @saBlue;
+				
+					> span {
+						margin-left: 15px;
+						color: @grey;
+						font-size: @fontSize15;
+					}
+					
+					> i, > a {
+						font-size: @fontSize15;
+						font-style: italic;
+						margin-left: 15px;
+					}
+				}
+				
+				&.attachments a {
+					color: @saBlue;
+					&:hover {
+						color: @saRed;
+					}
+				}
+			}	
+		}
+		
+		&.child {
+			margin-left: 110px;
+			margin-top: -20px;
+			
+			> div > p.title > span {
+				margin-left: 0;
+			}
+			
+			> span {
+				.spritesBg(-10px,-929px);
+				border-radius: 0;
+				background-color: #fff;
+			}
+		}
+	}
+}
+
+ul.comments {
+	margin-top: 50px;
+	text-align: left;
+	
+	> li {
+		margin-bottom: 50px;
+		clear: left;
+		min-height: 170px;
+		border-bottom: 1px solid @panelLine;
+		padding-bottom: 30px;
+		
+		&:last-child {
+			border-bottom: none;
+		}
+		
+		> a {
+			color: @saBlue;
+			font-size: @fontSize18;
+			
+			&:hover {
+				color: @saRed;
+			}
+			
+			> img {
+				float: left;
+				margin-right: 45px;
+				margin-top: 5px;
+			}
+		}
+		small {
+			font-size: @fontSize12;
+		}
+	}
+	
+	a.edit-post {
+		color: @saBlue;
+		font-size: @fontSize14;
+	}	
+}
+
+
+ul.forum-header {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 32px;
+		
+	li {
+		width: 100%;
+		
+		&:first-child {
+			flex: 0 0 358px;
+		}
+	}
+	
+	p {
+		height: 50px;
+		font-size: @fontSize15;
+		text-align: center;
+		text-transform: uppercase;
+		line-height: 50px;
+		background-color: @backUltraLightGrey;	
+	}
+}
+
+div.message-thread {
+	+ div.message-thread {
+		padding-top: 32px;
+		border-top: 1px solid @backLightGrey;
+		margin-top: 32px;
+	}
+	
+	> ul {
+		display: flex;
+		text-align: left;
+		
+		&.reply {
+			> li {
+				padding-top: 16px;
+				margin-top: 16px;
+				
+				&:first-child {
+					padding-left: 126px;
+				}
+				
+				+ li {
+					border-top: 1px solid @backLightGrey;
+				}
+			}
+		}
+		
+		> li {
+			width: 100%;
+			
+			&:first-child {
+				flex: 0 0 358px;
+				padding-left: 78px;
+				
+				p {
+					position: relative;
+					font-size: @fontSize18;
+					
+					&::before {
+						content: attr(data-initial);
+						position: absolute;
+						left: -78px;
+						display: inline-block;
+						width: 60px;
+						height: 60px;
+						color: #fff;
+						font-size: @fontSize28;
+						text-align: center;
+						text-transform: uppercase;
+						line-height: 60px;
+						background-color: @saBlue;
+						border-radius: 50%;
+					}
+					
+					&.sa {
+						&::before {
+							content: '';
+							.spritesBg(center, -929px);
+							border-radius: 100%;
+						}
+					}
+					
+					&.avatar {
+						&::before {
+							content: '';
+							background-color: #fff;
+						}	
+						img {
+							position: absolute;
+							top: 0;
+							left: -78px;
+							border-radius: 50%;
+							margin-bottom: -15px;
+						}
+					}
+				}
+				
+				span {
+					font-size: @fontSize14;
+					
+					&.reply-post {
+						color: @saBlue;
+						font-size: @fontSize14;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	}
+	
+	p > span {
+		font-size: @fontSize14;
+	}
+}
+
+ul.projectList {
+	.clear;
+	
+	li {
+		display: inline-block;
+		margin: 10px 3px;
+	}
+}
+
+div.pager-box {
+	.clear;
+	
+	ol {
+		float: right;
+	}
+}
+
+div.blue-overlay.message {
+	div.over-box {
+	    max-width: 784px;
+	    margin: 72px auto 0;
+	}
+	
+	p {
+		+ p {
+			margin-top: 32px;
+		}
+		
+		+ div {
+			margin-top: 32px;
+		}
+		
+		&.send-box {
+			text-align: right;
+			padding-right: 24px;
+		}
+		
+		&.info-box {
+			text-align: center;
+		}
+		
+		label {
+			display: inline-block;
+			width: 180px;
+			text-align: right;
+		}
+		
+		input[type="text"] {
+			width: 550px;
+		}
+	}
+	
+	div {
+		
+		&.inner {
+			padding-left: 204px;
+		}
+		
+		+ div {
+			margin-top: 32px;
+		}
+		
+		label {
+			color: #000;
+			cursor: pointer;
+		}
+		
+		input[type="checkbox"] {
+			display: none;
+		}
+		
+		input[type="checkbox"] + label {
+			font-size: @fontSize14;
+			padding:  1px 0 1px 22px;
+			.iconsBg(0, -2382px);
+		}
+
+		input[type="checkbox"]:checked + label {
+			padding-left: 22px;
+			.iconsBg(0, -2407px);
+		}
+	}
+	
+	.baton:disabled {
+		background-color: @grey;
+	}
+}
+
+
+
+@media all and (max-width: 1280px) {
+	div.content {
+		padding: 50px 12px;
+	}
+}
+
+@media all and (max-width: 1240px) {
+	div.list-header {
+		h1 {
+			margin-bottom: 32px;
+		}
+	}
+}
+
+@media all and (max-width: 920px) {
+	nav.user {
+		> div {
+			> a {
+				width: 20%;
+				text-indent: -1000em;
+				padding: 0 12px;
+				
+				&:hover, &.selected {
+					> span:after {
+						bottom: -47px;
+					}
+				}
+				
+				> span {
+					top: 35px;
+				}
+			}
+		}
+	}
+	
+	div.content {
+		form.default > p {
+			> label {
+				display: block;
+				text-align: left;
+			}
+		}
+	}
+	
+	form.default {
+		input[type="text"],
+		input[type="password"] {
+			margin: 0;
+		}
+	}
+}
+
+@media all and (max-width: 900px) {
+	ul.forum-header {
+		display: none;
+	}
+	
+	div.message-thread {
+		> ul {
+			
+			&.reply {
+				> li {
+					&:first-child {
+						padding-left: 32px;
+					}
+				}
+			}
+			
+			> li {
+				&:first-child {
+					flex: 0 0 212px;
+					padding-left: 0;
+					
+					p {
+						&::before {
+							position: static;
+							left: auto;
+							display: block;
+							margin-bottom: 12px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+@media all and (max-width: 560px) {
+	div.message-thread {
+		> ul {
+			&.reply {
+				> li {
+					&:first-child {
+						padding-left: 16px;
+					}
+				}
+			}
+			
+			> li {
+				&:first-child {
+					flex: 0 0 128px;
+				}
+			}
+		}
+	}
+}
+
+
+@media all and (max-width: 440px) {
+	div.list-header {
+		h1 {
+			margin-bottom: 48px;
+		}
+		
+		a {
+			left: 0;
+			bottom: -58px;
+		}
+	}
+	
+	form.default {
+		input[type="text"],
+		input[type="password"] {
+			width: 300px;
+		}
+	}
+}

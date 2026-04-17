@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<classname>\StudioAtrium\Application\WWW\Module\Api</classname>
+	<classfile>Api</classfile>
+	<default_action>List</default_action>
+	<request>
+		<action name="List">
+			<allowed_methods get="yes" post="yes" />
+			<param name="limit" required="no" default="100">
+				<validator name="Integer" min="1" />
+			</param>
+			<param name="page" required="no" default="0">
+				<validator name="Integer" min="0" />
+			</param>
+			<param name="sort_by" required="no" default="id">
+				<validator name="\StudioAtrium\Validator\ProjectSorting" />
+				<filter name="Map" map="{'u': 'usable_area', 'n': 'name', 'i': 'id'}"/>
+			</param>
+			<param name="sort_order" required="no" default="ASC">
+				<validator name="Choice" choices="ASC,DESC"/>
+				<filter name="Map" map="{'a': 'ASC', 'd': 'DESC', 'undefined': 'ASC'}"/>
+				<filter name="StrToUpper" />
+			</param>
+			<param name="category" required="no" default="projekty-domow">
+				<validator name="String" />
+			</param>
+			<param name="signature" required="yes">
+				<validator name="String" />
+			</param>
+		</action>
+		<action name="Project">
+			<allowed_methods get="yes" post="yes" />
+			<param name="id" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+			<param name="signature" required="yes">
+				<validator name="String"/>
+			</param>
+		</action>
+	</request>
+
+	<commands>
+		<on_before_exec>
+			<include file="../defaultBeforeCommands.xml" />
+		</on_before_exec>
+	</commands>
+
+	<result_map>
+		<action name="Project">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_error>
+		</action>
+		<action name="List">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_error>
+		</action>
+	</result_map>
+</module>

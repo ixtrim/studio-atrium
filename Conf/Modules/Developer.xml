@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<classname>\StudioAtrium\Application\WWW\Module\Developer</classname>
+	<classfile>Developer</classfile>
+	<default_action>Page</default_action>
+	<request>
+		<action name="Page">
+			<allowed_methods get="yes" />
+		</action>
+	</request>
+
+	<commands>
+		<on_before_exec>
+			<include file="../defaultBeforeCommands.xml" />
+		</on_before_exec>
+	</commands>
+
+	<result_map>
+		<action name="Page">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Developer/Page.tpl" />
+					<param name="smarty.css_includes">
+						<value>["developer.min.css"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+		</action>
+	</result_map>
+</module>

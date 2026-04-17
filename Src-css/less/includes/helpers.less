@@ -1,0 +1,491 @@
+@import (reference) "../variables/colors.less";
+@import (reference) "../variables/dimensions.less";
+@import (reference) "../variables/fonts.less";
+@import (reference) "../variables/mixins.less";
+
+input::-moz-placeholder {
+    opacity: 1;
+}
+
+input:-moz-placeholder {
+    opacity: 1;
+}
+
+::-webkit-input-placeholder {
+   opacity: 1;
+}
+
+:-ms-input-placeholder {
+   opacity: 1;
+}
+
+input::-moz-focus-inner {
+	border: 0;
+}
+
+a::-moz-focus-inner,
+button::-moz-focus-inner {
+  border: 0;
+}
+
+:focus {outline:none;}
+
+* {
+    outline: 0;
+}
+
+li {
+    text-indent: 0;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.center {
+	text-align: center !important;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.rootContainer {
+	.rootContainer;
+}
+
+.tooltip {
+	position: relative;
+	z-index: 999;
+	
+	&:hover .tooltip-content {
+		opacity: 1;
+		pointer-events: auto;
+		transform: translate3d(0px, 0px, 0px);
+	}
+	
+	&:hover .tooltip-content > span {
+		transform: perspective(1000px) rotate3d(0, 1, 0, 0deg);
+	}
+	
+	.tooltip-content {
+		position: absolute;
+		left: 50%;
+		bottom: -160%;
+		height: 60px;
+		width: 114px;
+		text-align: center;
+		margin: 0 0 20px -57px;
+		cursor: default;
+		opacity: 0;
+		pointer-events: none;
+		backface-visibility: hidden;
+		transform: translate3d(0px, 10px, 0px);
+		transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+		z-index: 9999;
+		
+		> span {
+			float: left;
+			position: relative;
+			width: 100%;
+			height: 100%;
+			color: #fff;
+			font-size: @fontSize15;
+			line-height: 1.2em;
+			padding: 0.8em 0 0;
+			backface-visibility: hidden;
+			transition: transform 0.3s ease 0s;
+			
+			span {
+				display: block;
+			
+				&.minor {
+					font-size: @fontSize13;
+				}
+			}
+		}
+		
+		.tooltip-front {
+			background: @saBlue none repeat scroll 0 0;
+			transform: perspective(1000px) rotate3d(0, 1, 0, -90deg);
+			transform-origin: 50% 50% 0;
+			text-indent: 0;
+			
+			&::before,
+			&::after {
+				content: "";
+				height: 0;
+				position: absolute;
+				bottom: 100%;
+				width: 0;
+				border-bottom: 10px solid @saBlue;
+			}
+			
+			&::before {
+				border-left: 10px solid transparent;
+				left: 50%;
+				margin-left: -10px;
+			}
+
+			&::after {
+				border-right: 10px solid transparent;
+				left: 50%;
+			}
+		}
+	}
+}
+
+figure.effect-sadie {
+	figcaption {
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.7);
+			opacity: 0;
+		}
+		
+		h6 {
+			color: #fff;
+			left: 0;
+			position: absolute;
+			top: 30%;
+			transform: translate3d(0px, -50%, 0px);
+			transition: transform 0.35s ease 0s, color 0.35s ease 0s;
+			width: 100%;
+			opacity: 0;
+			.fontRenderFix;
+		}
+		
+		a.full span {
+			left: 0;
+			position: absolute;
+			top: 23%;
+			transform: translate3d(0px, -50%, 0px);
+			transition: transform 0.35s ease 0s, color 0.35s ease 0s;
+			width: 100%;
+			opacity: 0;
+			.fontRenderFix;
+		}
+		
+		> p,
+		> div {
+			position: absolute;
+			left: 0;
+			width: 100%;
+			opacity: 0;
+			transform: translate3d(0px, 80px, 0px);
+			.fontRenderFix;
+			
+			&.invert {
+				> p {
+					font-size: 0.8vw;
+				}
+				
+				> p.desc {
+					font-size: 1vw;
+					margin-bottom: 4px;
+				}
+			}
+			
+			> p {
+				line-height: 1.2em;
+			}
+			
+			> p + p {
+				margin-top: 6px;
+			}
+			
+			> p.desc {
+				font-size: 0.8vw;
+				padding: 0 10px;
+				margin-top: 8px;
+			}
+		}
+		
+		> p {
+			padding: 2em;
+			bottom: 20%;
+		}
+		
+		> div {
+			top: 35%;
+			
+			&.icons {
+				bottom: 32px;
+			}
+		}
+	}
+	
+	.framed {
+		position: absolute;
+		left: 0;
+		width: 100%;
+		bottom: 6%;
+		text-align: center;
+		opacity: 0;
+		transform: translate3d(0px, 50px, 0px);
+		z-index: 1100;
+	}
+	
+	.framed {
+		.fontRenderFix;
+	}
+	
+	&:hover > p,
+	&:hover > div {
+		transition-delay: 0.1s;
+	}
+	
+	&:hover a.framed,
+	&:hover span.frame {
+		transition-delay: 0.3s;
+	}
+}	
+
+figure.effect-sadie figcaption::before, 
+figure.effect-sadie figcaption > p,
+figure.effect-sadie figcaption > div {
+	transition: opacity 0.35s ease 0s, transform 0.35s ease 0s;
+}
+
+	figure.effect-sadie.on figcaption .framed {
+		transition: opacity 0.35s ease 0s, background-color ease-in 0.1s, transform 0.35s ease 0s;
+	}
+	
+	figure.effect-sadie.on figcaption h6 {
+		opacity: 1;
+		transform: translate3d(0px, -50%, 0px) translate3d(0px, -35px, 0px);
+		-webkit-transform: translate3d(0px, -50%, 0px) translate3d(0px, -35px, 0px);
+	}
+	
+	figure.effect-sadie.on figcaption a.full span {
+		opacity: 1;
+		transform: translate3d(0px, -50%, 0px) translate3d(0px, -35px, 0px);
+		-webkit-transform: translate3d(0px, -50%, 0px) translate3d(0px, -35px, 0px);
+	}
+	
+	figure.effect-sadie.on figcaption::before, 
+	figure.effect-sadie.on figcaption > p,
+	figure.effect-sadie.on figcaption > div,
+	figure.effect-sadie.on figcaption .framed {
+		opacity: 1;
+		transform: translate3d(0px, 0px, 0px);
+	}
+	
+	figure.effect-sadie.on .mobile-sadie {
+		opacity: 0;
+		transition: opacity 0.35s ease 0s, background-color ease-in 0.1s, transform 0.35s ease 0s;
+		z-index: 0;
+	}
+
+div.mobile-sadie {
+	display: inline-block;
+	transition: opacity 0.35s ease 0s, transform 0.35s ease 0s;
+}
+
+//@media all and (min-width: 1024px) {
+//	figure.effect-sadie figcaption:hover .framed {
+//		transition: opacity 0.35s ease 0s, background-color ease-in 0.1s, transform 0.35s ease 0s;
+//	}
+//	
+//	figure.effect-sadie figcaption:hover h6 {
+//		opacity: 1;
+//		transform: translate3d(0px, -50%, 0px) translate3d(0px, -40px, 0px);
+//	}
+//	
+//	figure.effect-sadie figcaption:hover::before, 
+//	figure.effect-sadie figcaption:hover > p,
+//	figure.effect-sadie figcaption:hover > div,
+//	figure.effect-sadie figcaption:hover .framed {
+//		opacity: 1;
+//		transform: translate3d(0px, 0px, 0px);
+//	}
+//}	
+
+
+figure.effect-chico {
+	figcaption
+	{
+	    position: absolute;
+	    left: 0;
+	    top: 0;
+		height: 100%;
+	    width: 100%;
+	    
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.6);
+			opacity: 0;
+		}
+	}
+}
+
+figure.effect-chico img {
+    transform: scale(1.01);
+    transition: transform 0.35s ease 0s;
+}
+
+figure.effect-chico:hover img {
+    transform: scale(1.12);
+}
+
+figure.effect-chico h6 {
+	opacity: 0;
+	transform: scale(1.5);
+    transition: opacity 0.35s ease 0s, transform 0.35s ease 0s;
+    .fontRenderFix;
+}
+
+figure.effect-chico p {
+	opacity: 0;
+    margin: 0 auto;
+    transform: scale(1.5);
+    transition: opacity 0.35s ease 0s, transform 0.35s ease 0s;
+    .fontRenderFix;
+}
+
+figure.effect-chico:hover h6,
+figure.effect-chico:hover p {
+    opacity: 1;
+    transform: scale(1);
+}
+
+figure.effect-chico:hover p {
+    transition-delay: 0.2s;
+}
+
+figure.effect-chico figcaption::before  {
+	transition: opacity 0.35s ease 0s, transform 0.35s ease 0s;
+}
+
+figure.effect-chico figcaption:hover::before {
+	opacity: 1;
+	transform: translate3d(0px, 0px, 0px);
+}
+/* fix only in firefox */
+@-moz-document url-prefix() {
+    /* 
+    div.grid span.framed,
+    div.grid figure h6,
+    figure.effect-chico p,
+    figure.effect-chico h6,
+    div.grid figure p {
+        text-shadow: 0 0 0;
+    }
+    */
+}
+
+@media all and (max-width: 1500px) {
+	figure.effect-sadie {
+		figcaption {
+			> p,
+			> div {
+				> p.rooms {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+
+@media all and (max-width: 1425px) {
+	figure.effect-sadie {
+		figcaption {
+			> p,
+			> div {
+				&.invert {
+					> p {
+						font-size: 1.0vw;
+					}
+					
+					> p.desc {
+						font-size: 1.2vw;
+					}
+				}
+				
+				> p {
+					font-size: 1.2vw;
+				}
+				
+				> p.desc {
+					font-size: 1.0vw;
+				}
+				
+				> p.rooms {
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+@media all and (max-width: 950px) {
+	figure.effect-sadie {
+		figcaption {
+			> p,
+			> div {
+				
+				&.invert {
+					> p {
+						font-size: 1.6vw;
+					}
+					
+					> p.desc {
+						font-size: 1.8vw;
+					}
+				}
+				
+				
+				> p {
+					font-size: 1.8vw;
+				}
+				
+				> p.desc {
+					font-size: 1.6vw;
+				}
+			}
+		}
+	}
+}
+
+@media all and (max-width: 475px) {
+	figure.effect-sadie {
+		figcaption {
+			> p,
+			> div {
+				
+				&.invert {
+					> p {
+						font-size: 3.2vw;
+					}
+					
+					> p.desc {
+						font-size: 3.4vw;
+					}
+				}
+				
+				> p {
+					font-size: 3.4vw;
+				}
+				
+				> p.desc {
+					font-size: 3.2vw;
+				}
+			}
+		}
+	}
+}

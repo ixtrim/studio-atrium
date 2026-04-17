@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<classname>\StudioAtrium\Application\WWW\Module\Index</classname>
+	<classfile>Index</classfile>
+	<default_action>MainPage</default_action>
+	<request>
+
+		<action name="MainPage">
+			<allowed_methods get="yes" />
+			<param name="page" required="no" default="0">
+				<validator name="Integer" />
+			</param>
+			<param name="limit" required="no" default="25">
+				<validator name="Integer" />
+			</param>
+		</action>
+	</request>
+
+	<commands>
+		<on_before_exec>
+			<include file="../defaultBeforeCommands.xml" />
+		</on_before_exec>
+	</commands>
+
+	<result_map>
+		<action name="MainPage">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="MainPage.tpl" />
+					<param name="smarty.css_includes">
+						<value>["flexslider.css?v=20170719","index.min.css?v=20250811"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["index.js?v=20201113"]</value>
+					</param>
+					<param name="smarty.js_lazy">
+						<value>["jquery.flexslider-min.js", "jquery.mCustomScrollbar.concat.min.js"]</value>
+					</param>
+					<param name="smarty.js_lazy_nomobie">
+						<value>["jssor.slider-21.1.6.min.js"]</value>
+					</param>
+					<param name="smarty.dynamic_css">
+						<value>/?module=css</value>
+					</param>
+					<param name="smarty.img_preload">
+						<value>["https://media.studioatrium.pl/stock/33/8481/655f220198eef-male-domy-box.webp", "https://media.studioatrium.pl/stock/33/1313/655f237896b16-black-kwadrat.webp"]</value>
+					</param>
+					<param name="smarty.showSchemaOrganization" value="1" />
+					<param name="smarty.showSchemaBrand" value="1" />
+					<param name="smarty.showSearchSchema" value="1" />
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+	</result_map>
+</module>

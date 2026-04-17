@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<classname>\StudioAtrium\Application\WWW\Module\Selfie</classname>
+	<classfile>Selfie</classfile>
+	<default_action>Display</default_action>
+	<request>
+		<action name="Display">
+			<allowed_methods get="yes" />
+			<param name="id" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+			<param name="version" required="no" default="normal">
+				<validator name="Choice" choices="normal,mirror" />
+			</param>
+		</action>
+		<action name="Upload">
+			<allowed_methods post="yes" />
+			<param name="project_id" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+			<param name="type_id" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+			<param name="generated_img" required="yes">
+				<validator name="String" />
+			</param>
+			<param name="email" required="yes">
+				<validator name="Email" />
+			</param>
+			<param name="name" required="no">
+				<validator name="String" />
+			</param>
+			<param name="accept" required="yes">
+				<validator name="Integer" />
+			</param>
+		</action>
+		<action name="Current">
+			<allowed_methods get="yes" />
+			<param name="stamp" required="yes">
+				<validator name="String" />
+			</param>
+			<param name="sid" required="yes">
+				<validator name="Integer" />
+			</param>
+			<param name="id" required="yes">
+				<validator name="Integer" />
+			</param>
+			<param name="delete" required="no">
+				<validator name="Integer" />
+			</param>
+		</action>
+		<action name="Public">
+			<allowed_methods get="yes" />
+			<param name="sid" required="yes">
+				<validator name="Integer" />
+			</param>
+			<param name="id" required="yes">
+				<validator name="Integer" />
+			</param>
+		</action>
+		<action name="Delete">
+			<allowed_methods post="yes" />
+			<param name="stamp" required="yes">
+				<validator name="String" />
+			</param>
+			<param name="id" required="yes">
+				<validator name="Integer" />
+			</param>
+			<param name="hash" required="no">
+				<validator name="String" />
+			</param>
+		</action>
+		<action name="Gallery">
+			<allowed_methods get="yes" />
+			<param name="page" required="no" default="1">
+				<validator name="Integer" />
+			</param>
+			<param name="limit" required="no" default="20">
+				<validator name="Integer" />
+			</param>
+		</action>
+	</request>
+
+	<commands>
+		<on_before_exec>
+			<include file="../defaultBeforeCommands.xml" />
+		</on_before_exec>
+	</commands>
+
+	<result_map>
+		<action name="Display">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Selfie/Display.tpl" />
+					<param name="smarty.css_includes">
+						<value>["selfie.min.css?v=20170926"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["jquery.fancybox.js", "selfie.js?v=20171116"]</value>
+					</param>
+					<param name="smarty.nochat" value="yes" />
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		<action name="Upload">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_error>
+		</action>
+		<action name="Current">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Selfie/Current.tpl" />
+					<param name="smarty.css_includes">
+						<value>["selfie.min.css"]</value>
+					</param>
+					<param name="smarty.nochat" value="yes" />
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		<action name="Public">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Selfie/Public.tpl" />
+					<param name="smarty.css_includes">
+						<value>["selfie.min.css"]</value>
+					</param>
+					<param name="smarty.nochat" value="yes" />
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		<action name="Delete">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_error>
+		</action>
+		<action name="Gallery">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Selfie/Gallery.tpl" />
+					<param name="smarty.css_includes">
+						<value>["list.min.css?v=20180416"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["jquery.fancybox.js","realizations.js?v=20191009"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+	</result_map>
+</module>

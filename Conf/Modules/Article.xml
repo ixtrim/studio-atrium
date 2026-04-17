@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<classname>\StudioAtrium\Application\WWW\Module\Article</classname>
+	<classfile>Article</classfile>
+	<default_action>HashTag</default_action>
+	<request>
+		<action name="HashTag">
+			<allowed_methods get="yes" />
+			<param name="tag" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="search" required="no">
+				<validator name="String" />
+			</param>
+			<param name="page" required="no" default="1">
+				<validator name="Integer" min="1" />
+			</param>
+			<param name="limit" required="no" default="10">
+				<filter name="PageLimit" />
+			</param>
+		</action>
+		<action name="Item">
+			<allowed_methods get="yes" />
+			<param name="docId" required="no">
+				<validator name="Integer" min="1" />
+			</param>
+			<param name="charId" required="no">
+				<validator name="String" />
+			</param>
+			<param name="search" required="no">
+				<validator name="String" />
+			</param>
+		</action>
+		<action name="Print">
+			<allowed_methods get="yes" />
+			<param name="docId" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+		</action>
+		<action name="Send">
+			<allowed_methods post="yes" />
+			<param name="docId" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+			<param name="receiver_email" required="yes">
+				<validator name="Email" />
+			</param>
+			<param name="sender_email" required="yes">
+				<validator name="Email" />
+			</param>
+			<param name="signature" required="no">
+				<filter name="Trim" />
+				<validator name="String" />
+			</param>
+			<param name="skip_validation_error" default="1">
+				<validator name="Integer" min="1" max="1" />
+			</param>
+		</action>
+	</request>
+
+	<commands>
+		<on_before_exec>
+			<include file="../defaultBeforeCommands.xml" />
+		</on_before_exec>
+	</commands>
+
+	<result_map>
+		<action name="HashTag">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Article/HashTag.tpl" />
+					<param name="smarty.css_includes">
+						<value>["article.min.css"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		<action name="Item">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Article/Item.tpl" />
+					<param name="smarty.css_includes">
+						<value>["article.min.css"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["article.js","jquery.fancybox.js"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		<action name="Print">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="PrintLayout.tpl" />
+					<param name="template" value="Article/Print.tpl" />
+					<param name="smarty.js_includes">
+						<value>["printMe.js"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+		</action>
+		<action name="Send">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_error>
+		</action>
+	</result_map>
+</module>

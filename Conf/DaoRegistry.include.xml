@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<include>
+	<object name="dao::attachment" type="Object" class="Point7_CMS_Attachment_DAO_PDOMySQL" global="true">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+		<param target="configure" name="table_name" value="attachment" />
+	</object>
+	<object name="dao::user" type="Object" class="StudioAtrium\Entity\User\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::project" type="Object" class="StudioAtrium\Entity\Project\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+		<object name="dao::project_category" type="Object" class="StudioAtrium\Entity\Project\Category\DAO\PDOMySQL">
+			<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+			<param target="configure" name="set_names" value="utf8" />
+		</object>
+		<object name="dao::project_feature" type="Object" class="StudioAtrium\Entity\Project\Feature\DAO\PDOMySQL">
+			<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+			<param target="configure" name="set_names" value="utf8" />
+		</object>
+		<object name="dao::project_similiar" type="Object" class="StudioAtrium\Entity\Project\Similiar\DAO\PDOMySQL">
+			<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+			<param target="configure" name="set_names" value="utf8" />
+		</object>
+		<object name="dao::project_comment" type="Object" class="StudioAtrium\Entity\Project\Comment\DAO\PDOMySQL">
+			<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+			<param target="configure" name="set_names" value="utf8" />
+		</object>
+		<object name="dao::project_param" type="Object" class="StudioAtrium\Entity\Project\Param\DAO\PDOMySQL">
+			<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+			<param target="configure" name="set_names" value="utf8" />
+		</object>
+		<object name="dao::project_to_param" type="Object" class="StudioAtrium\Entity\Project\ToParam\DAO\PDOMySQL">
+			<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+			<param target="configure" name="set_names" value="utf8" />
+		</object>
+		<object name="dao::project_to_sketch_param" type="Object" class="StudioAtrium\Entity\Project\ToSketchParam\DAO\PDOMySQL">
+			<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+			<param target="configure" name="set_names" value="utf8" />
+		</object>
+			<object name="dao::project_param_option" type="Object" class="StudioAtrium\Entity\Project\Param\Option\DAO\PDOMySQL">
+				<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+				<param target="configure" name="set_names" value="utf8" />
+			</object>
+			<object name="dao::project_param_listing" type="Object" class="StudioAtrium\Entity\Project\Param\Listing\DAO\PDOMySQL">
+				<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+				<param target="configure" name="set_names" value="utf8" />
+			</object>
+		<object name="dao::project_files_download" type="Object" class="StudioAtrium\Entity\Project\Files\Download\DAO\PDOMySQL">
+			<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+			<param target="configure" name="set_names" value="utf8" />
+		</object>
+		<object name="dao::project_promo_notify" type="Object" class="StudioAtrium\Entity\Project\Promo\Notify\DAO\PDOMySQL">
+			<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+			<param target="configure" name="set_names" value="utf8" />
+		</object>
+	<object name="dao::activity" type="Object" class="StudioAtrium\Entity\Activity\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::external" type="Object" class="StudioAtrium\Entity\External\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::param_template" type="Object" class="StudioAtrium\Entity\ParamTemplate\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::sketch_param" type="Object" class="StudioAtrium\Entity\SketchParam\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::transaction" type="Object" class="StudioAtrium\Entity\Transaction\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+		<object name="dao::transaction_item" type="Object" class="StudioAtrium\Entity\Transaction\Item\DAO\PDOMySQL">
+			<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+			<param target="configure" name="set_names" value="utf8" />
+		</object>
+		<object name="dao::transaction_user" type="Object" class="StudioAtrium\Entity\Transaction\User\DAO\PDOMySQL">
+			<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+			<param target="configure" name="set_names" value="utf8" />
+		</object>
+		<object name="dao::transaction_phone" type="Object" class="StudioAtrium\Entity\Transaction\Phone\DAO\PDOMySQL">
+			<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+			<param target="configure" name="set_names" value="utf8" />
+		</object>
+	<object name="dao::dealer" type="Object" class="StudioAtrium\Entity\Dealer\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::representative" type="Object" class="StudioAtrium\Entity\Representative\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::selfie_projects" type="Object" class="StudioAtrium\Entity\Selfie\Projects\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::selfie_types" type="Object" class="StudioAtrium\Entity\Selfie\Types\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::house_situation" type="Object" class="StudioAtrium\Entity\HouseSituation\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::house_situation_rooms" type="Object" class="StudioAtrium\Entity\HouseSituation\Rooms\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::adwords_campaigns" type="Object" class="StudioAtrium\Entity\Adwords\Campaigns\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::adwords_clicks" type="Object" class="StudioAtrium\Entity\Adwords\Clicks\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::adwords_sales" type="Object" class="StudioAtrium\Entity\Adwords\Sales\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::carousel" type="Object" class="StudioAtrium\Entity\Carousel\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::document" type="Object" class="StudioAtrium\Entity\Document\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::hash_tag" type="Object" class="StudioAtrium\Entity\HashTag\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::document_to_hash_tag" type="Object" class="StudioAtrium\Entity\Document\ToHashTag\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::newsletter_recipient" type="Object" class="StudioAtrium\Entity\NewsletterRecipient\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+		<object name="dao::box" type="Object" class="StudioAtrium\Entity\Box\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+		<object name="dao::user_message" type="Object" class="StudioAtrium\Entity\User\Message\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::extras" type="Object" class="StudioAtrium\Entity\Extras\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::extras_listing" type="Object" class="StudioAtrium\Entity\Extras\Listing\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::discount" type="Object" class="StudioAtrium\Entity\Discount\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::about" type="Object" class="StudioAtrium\Entity\About\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::about_gallery" type="Object" class="StudioAtrium\Entity\About\Gallery\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::wolf_clicks" type="Object" class="StudioAtrium\Entity\WolfClicks\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::forum_archive" type="Object" class="StudioAtrium\Entity\ForumArchive\Post\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::contest" type="Object" class="StudioAtrium\Entity\Contest\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::banner" type="Object" class="StudioAtrium\Entity\Banner\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::catalog_mailing" type="Object" class="StudioAtrium\Entity\CatalogMailing\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::settings" type="Object" class="StudioAtrium\Entity\Settings\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::discuss_post" type="Object" class="StudioAtrium\Entity\Discuss\Post\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::discuss_notify" type="Object" class="StudioAtrium\Entity\Discuss\Notify\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::discuss_message" type="Object" class="StudioAtrium\Entity\Discuss\Message\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::sketch_authorize" type="Object" class="StudioAtrium\Entity\SketchAuthorize\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::sketch_authorize_rooms" type="Object" class="StudioAtrium\Entity\SketchAuthorize\Rooms\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::showroom" type="Object" class="StudioAtrium\Entity\ShowroomProduct\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+	<object name="dao::render_authorize" type="Object" class="StudioAtrium\Entity\RenderAuthorize\DAO\PDOMySQL">
+		<param target="configure" name="pdo_handle" value="{$dbconnection::pdo1}" />
+		<param target="configure" name="set_names" value="utf8" />
+	</object>
+</include>

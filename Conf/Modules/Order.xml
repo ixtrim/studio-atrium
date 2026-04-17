@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<classname>\StudioAtrium\Application\WWW\Module\Order</classname>
+	<classfile>Order</classfile>
+	<default_action>Cart</default_action>
+	<request>
+		<action name="Cart">
+			<allowed_methods get="yes" />
+		</action>
+		<action name="CartStore">
+			<allowed_methods post="yes" />
+			<param name="data" required="yes">
+				<validator name="String" />
+			</param>
+		</action>
+		<action name="Data">
+			<allowed_methods get="yes" />
+		</action>
+		<action name="DataStore">
+			<allowed_methods post="yes" />
+			<param name="client_type" required="yes">
+				<validator name="Choice" choices="person,company" />
+			</param>
+			<param name="company_name" required="no">
+				<validator name="String" />
+			</param>
+			<param name="nip" required="no">
+				<validator name="String" />
+			</param>
+			<param name="fname" required="yes">
+				<validator name="String" />
+			</param>
+			<param name="lname" required="yes">
+				<validator name="String" />
+			</param>
+			<param name="postal_code" required="yes">
+				<validator name="String" />
+			</param>
+			<param name="city" required="yes">
+				<validator name="String" />
+			</param>
+			<param name="address" required="yes">
+				<validator name="String" />
+			</param>
+			<param name="phone" required="yes">
+				<validator name="String" />
+			</param>
+			<param name="email" required="yes">
+				<validator name="Email" />
+			</param>
+			<param name="send_data" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="send_fname" required="no">
+				<validator name="String" />
+			</param>
+			<param name="send_lname" required="no">
+				<validator name="String" />
+			</param>
+			<param name="send_postal_code" required="no">
+				<validator name="String" />
+			</param>
+			<param name="send_city" required="no">
+				<validator name="String" />
+			</param>
+			<param name="send_address" required="no">
+				<validator name="String" />
+			</param>
+			<param name="accept_marketing" required="yes">
+				<validator name="Integer" />
+			</param>
+			<param name="accept_isover" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="accept_regulations" required="yes">
+				<validator name="Integer" />
+			</param>
+			<param name="accept_mailing" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="notes" required="no">
+				<validator name="String" />
+			</param>
+		</action>
+		<action name="Error">
+			<allowed_methods get="yes" />
+		</action>
+		<action name="Summary">
+			<allowed_methods get="yes" />
+		</action>
+		<action name="StoreSummary">
+			<allowed_methods post="yes" />
+		</action>
+		<action name="Finish">
+			<allowed_methods get="yes" />
+			<param name="i" required="yes">
+				<validator name="Integer" />
+			</param>
+			<param name="e" required="no">
+				<validator name="Integer" />
+			</param>
+		</action>
+		<action name="Confirm">
+			<allowed_methods get="yes" />
+			<param name="hash" required="yes">
+				<validator name="String" />
+			</param>
+		</action>
+		
+		<action name="OnlinePayment">
+			<allowed_methods get="yes" post="yes" />
+			<param name="i" required="yes">
+				<validator name="Integer" />
+			</param>
+			<param name="e" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="mode" required="yes" default='register'>
+				<validator name="Choice" choices="register,verify" />
+			</param>
+		</action>
+	</request>
+
+	<commands>
+		<on_before_exec>
+			<include file="../defaultBeforeCommands.xml" />
+		</on_before_exec>
+	</commands>
+
+	<result_map>
+		<action name="Cart">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Order/Cart.tpl" />
+					<param name="smarty.css_includes">
+						<value>["order.min.css?v=20190523"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["jquery.mCustomScrollbar.concat.min.js","order.js?v=20251203"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Index" />
+			</on_exec_error>
+		</action>
+		<action name="CartStore">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_error>
+		</action>
+		<action name="Data">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Order/Data.tpl" />
+					<param name="smarty.css_includes">
+						<value>["order.min.css?v=20190212"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["order.js?v=20230414", "formvalidator.js"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Order" action="Cart" />
+			</on_exec_error>
+		</action>
+		<action name="DataStore">
+			<on_exec_ok>
+				<forward module="Order" action="Summary" />
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Order" action="Data" />
+			</on_exec_error>
+		</action>
+		<action name="Error">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Order/Error.tpl" />
+					<param name="smarty.css_includes">
+						<value>["order.min.css?v=20190212"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Order" action="Summary" />
+			</on_exec_error>
+		</action>
+		<action name="Summary">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Order/Summary.tpl" />
+					<param name="smarty.css_includes">
+						<value>["order.min.css?v=20190212"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Order" action="Cart" />
+			</on_exec_error>
+			<on_userData>
+				<forward module="Order" action="Data" />
+			</on_userData>
+		</action>
+		<action name="StoreSummary">
+			<on_exec_ok>
+				<forward module="Order" action="Finish" />
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Order" action="Cart" />
+			</on_exec_error>
+		</action>
+		<action name="Finish">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Order/Finish.tpl" />
+					<param name="smarty.css_includes">
+						<value>["order.min.css?v=20190212"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Index" />
+			</on_exec_error>
+		</action>
+		<action name="Confirm">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Order/PhoneConfirm.tpl" />
+					<param name="smarty.css_includes">
+						<value>["order.min.css?v=20190212"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Index" />
+			</on_exec_error>
+		</action>
+		<action name="OnlinePayment">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Dummy" />
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Index" />
+			</on_exec_error>
+		</action>
+	</result_map>
+</module>

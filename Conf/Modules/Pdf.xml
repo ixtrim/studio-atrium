@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<classname>\StudioAtrium\Application\WWW\Module\Pdf</classname>
+	<classfile>Pdf</classfile>
+	<default_action>Project</default_action>
+	<request>
+		<action name="Project">
+			<allowed_methods get="yes" />
+			<param name="id" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+			<param name="version" required="no" default="normal">
+				<validator name="Choice" choices="normal,mirror" />
+			</param>
+			<param name="token" required="yes">
+				<validator name="String" />
+			</param>
+		</action>
+		
+		<action name="Plot">
+			<allowed_methods post="yes" />
+			<param name="id" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+			<param name="img_data" required="yes">
+				<validator name="String" />
+			</param>
+		</action>
+	</request>
+
+	<commands>
+		<on_before_exec>
+			<include file="../defaultBeforeCommands.xml" />
+		</on_before_exec>
+	</commands>
+
+	<result_map>
+		<action name="Project">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_SendFile" />
+			</on_exec_ok>
+			<on_project_not_found>
+				<forward module="Index" />
+			</on_project_not_found>
+		</action>
+		
+		<action name="Plot">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_SendFile" />
+			</on_exec_ok>
+		</action>
+	</result_map>
+</module>

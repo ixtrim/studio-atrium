@@ -1,0 +1,1019 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<classname>\StudioAtrium\Application\WWW\Module\Project</classname>
+	<classfile>Project</classfile>
+	<default_action>List</default_action>
+	<request>
+		<action name="List">
+			<allowed_methods get="yes" post="yes" />
+<!-- 
+			<param name="type" required="no" default="house">
+				<validator name="\StudioAtrium\Validator\ProjectType" />
+			</param>
+ -->
+			<param name="category" required="no" default="projekty-domow">
+				<validator name="String" />
+			</param>
+			<param name="display_type" required="no" default="box">
+				<validator name="Choice" choices="box,list,detail" />
+				<filter name="Map" map="{'b': 'box', 'l': 'list', 'e': 'detail'}"/>
+			</param>
+			<param name="sort_by" required="no" default="id">
+				<validator name="\StudioAtrium\Validator\ProjectSorting" />
+				<filter name="Map" map="{'u': 'usable_area', 'n': 'name', 'i': 'id'}"/>
+			</param>
+			<param name="sort_order" required="no" default="ASC">
+				<validator name="Choice" choices="ASC,DESC"/>
+				<filter name="Map" map="{'a': 'ASC', 'd': 'DESC', 'undefined': 'ASC'}"/>
+				<filter name="StrToUpper" />
+			</param>
+			<param name="page" required="no" default="1">
+				<validator name="Integer" />
+			</param>
+			<param name="limit" required="no" default="18">
+				<validator name="Integer" />
+			</param>
+		</action>
+		
+		<action name="House">
+			<allowed_methods get="yes" />
+			<param name="id" required="yes">
+				<validator name="Integer" />
+			</param>
+			<param name="version" required="no" default="normal">
+				<validator name="Choice" choices="normal,mirror" />
+			</param>
+		</action>
+		
+		<action name="Garage">
+			<allowed_methods get="yes" />
+			<param name="id" required="yes">
+				<validator name="Integer" />
+			</param>
+			<param name="version" required="no" default="normal">
+				<validator name="Choice" choices="normal,mirror" />
+			</param>
+		</action>
+		
+		<action name="Other">
+			<allowed_methods get="yes" />
+			<param name="id" required="yes">
+				<validator name="Integer" />
+			</param>
+			<param name="category" required="yes">
+				<validator name="Choice" choices="wiaty,altany,osadniki,ogrodzenia,gospodarcze"/>
+			</param>
+			<param name="version" required="no" default="normal">
+				<validator name="Choice" choices="normal,mirror" />
+			</param>
+		</action>
+		
+		<action name="Realizations">
+			<allowed_methods get="yes" />
+			<param name="page" required="no" default="1">
+				<validator name="Integer" />
+			</param>
+			<param name="limit" required="no" default="20">
+				<validator name="Integer" />
+			</param>
+		</action>
+		<action name="RealizationsInterior">
+			<allowed_methods get="yes" />
+			<param name="page" required="no" default="1">
+				<validator name="Integer" />
+			</param>
+			<param name="limit" required="no" default="20">
+				<validator name="Integer" />
+			</param>
+		</action>
+		<action name="RealizationsBuilding">
+			<allowed_methods get="yes" />
+			<param name="page" required="no" default="1">
+				<validator name="Integer" />
+			</param>
+			<param name="limit" required="no" default="20">
+				<validator name="Integer" />
+			</param>
+		</action>
+		
+		<action name="Search">
+			<allowed_methods get="yes" post="yes" />
+			<param name="query" required="no">
+				<validator name="String" min_length="1" />
+ 				<filter name="SanitizeSqlQuery" />
+				<filter name="Trim" length="32" />
+			</param>
+			<param name="display_type" required="no" default="box">
+				<validator name="Choice" choices="box,list,detail" />
+				<filter name="Map" map="{'b': 'box', 'l': 'list', 'e': 'detail'}"/>
+			</param>
+			<param name="sort_by" required="no" default="id">
+				<validator name="\StudioAtrium\Validator\ProjectSorting" />
+				<filter name="Map" map="{'u': 'usable_area', 'n': 'name', 'i': 'id'}"/>
+			</param>
+			<param name="sort_order" required="no" default="ASC">
+				<validator name="Choice" choices="ASC,DESC"/>
+				<filter name="Map" map="{'a': 'ASC', 'd': 'DESC', 'undefined': 'ASC'}"/>
+				<filter name="StrToUpper" />
+			</param>
+			<param name="page" required="no" default="1">
+				<validator name="Integer" />
+			</param>
+			<param name="limit" required="no" default="12">
+				<validator name="Integer" />
+			</param>
+		</action>
+		
+		<action name="ClickSearch">
+			<allowed_methods get="yes" post="yes" />
+			
+			<param name="kategoria" required="no">
+				<validator name="String" />
+			</param>
+<!-- 
+			<param name="typ_projektu" required="no">
+				<validator name="Choice" choices="parterowe,z_poddaszem,pietrowe,blizniacze,dwulokalowe" />
+			</param>
+-->
+			<param name="typ_projektu" required="no">
+				<validator name="String" />
+			</param>
+			<param name="typdachu" required="no">
+				<validator name="Choice" choices="dwuspadowy,dwuspadowy_naczolki,mansardowy,stropodach,stozkowy,wielospadowy,wielospadowy_naczolki" />
+			</param>
+			<param name="pow_min" required="no">
+				<validator name="Number" />
+				<filter name="FixFloat" />
+			</param>
+			<param name="pow_max" required="no">
+				<validator name="Number" />
+			</param>
+			<param name="pow_zab_min" required="no">
+				<validator name="Number" />
+			</param>
+			<param name="pow_zab_max" required="no">
+				<validator name="Number" />
+			</param>
+			<param name="pow_total_min" required="no">
+				<validator name="Number" />
+			</param>
+			<param name="pow_total_max" required="no">
+				<validator name="Number" />
+			</param>
+			<param name="dzialka_szer" required="no">
+				<validator name="Number" />
+			</param>
+			<param name="dzialka_dl" required="no">
+				<validator name="Number" />
+			</param>
+			<param name="front_szer" required="no">
+				<validator name="Number" />
+			</param>
+			<param name="iloscpokoinaparterze" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="iloscpokoinaiikondygnacji" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="liczbalazieneknaparterze" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="liczbalazieneknaiikondygnacji" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="wysokoscbudynku" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="katnachyleniadachu" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="schody" required="no">
+				<validator name="Choice" choices="jednobiegowe,zabiegowe,krecone,ze_spocznikiem" />
+			</param>
+			<param name="lokalizacjagarazu" required="no">
+				<validator name="Choice" choices="dostawiony_do_bryly,w_bryle,wysuniety_od_frontu,w_piwnicy" />
+			</param>
+			<param name="rodzajstropu" required="no">
+				<validator name="Choice" choices="lekki,gestozebrowy,plyta_zelbetowa,drewniany_belkowy" />
+			</param>
+			<param name="kalenica" required="no">
+				<validator name="Choice" choices="brak,rownolegla_do_drogi,prostopadla_do_drogi" />
+			</param>
+			<param name="kuchniaodfrontu" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="kuchniaodogrodu" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="pralnia" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="tarasnadgarazem" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="centralnyodkurzacz" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="fotowoltaika" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="sauna" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="wyspakuchenna" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="spizarnia" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="garderoba" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="duza_kotlownia" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="kotlownia" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="zadaszonytaras" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="od_poludnia" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="wiatagarazowa" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="balkon" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="lukarna" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="masterbedroom" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="antresola" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="ryzalit" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="wykusz" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="portfenetr" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="narozneokno" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="pergola" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="osobnewc" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="garaz" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="piwnica" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="page" required="no" default="1">
+				<validator name="Integer" />
+			</param>
+			<param name="limit" required="no" default="12">
+				<validator name="Integer" />
+			</param>
+			<param name="sort_by" required="no" default="id">
+				<validator name="\StudioAtrium\Validator\ProjectSorting" />
+				<filter name="Map" map="{'u': 'usable_area', 'n': 'name', 'i': 'id'}"/>
+			</param>
+			<param name="sort_order" required="no" default="ASC">
+				<validator name="Choice" choices="ASC,DESC"/>
+				<filter name="Map" map="{'a': 'ASC', 'd': 'DESC', 'undefined': 'ASC'}"/>
+				<filter name="StrToUpper" />
+			</param>
+			<param name="display_type" required="no" default="box">
+				<validator name="Choice" choices="box,list,detail" />
+				<filter name="Map" map="{'b': 'box', 'l': 'list', 'e': 'detail'}"/>
+			</param>
+		</action>
+		
+		<action name="ClickSearchNumbers">
+			<allowed_methods post="yes" get="yes" />
+			
+			<param name="kategoria" required="no">
+				<validator name="String" />
+			</param>
+<!--  
+			<param name="typ_projektu" required="no">
+				<validator name="Choice" choices="parterowe,z_poddaszem,pietrowe,blizniacze,dwulokalowe" />
+			</param>
+-->	
+			<param name="typ_projektu" required="no">
+				<validator name="String" />
+			</param>
+			<param name="typdachu" required="no">
+				<validator name="Choice" choices="dwuspadowy,dwuspadowy_naczolki,mansardowy,stropodach,stozkowy,wielospadowy,wielospadowy_naczolki" />
+			</param>
+			<param name="pow_min" required="no">
+				<validator name="Number" />
+			</param>
+			<param name="pow_max" required="no">
+				<validator name="Number" />
+			</param>
+			<param name="pow_zab_min" required="no">
+				<validator name="Number" />
+			</param>
+			<param name="pow_zab_max" required="no">
+				<validator name="Number" />
+			</param>
+			<param name="pow_total_min" required="no">
+				<validator name="Number" />
+			</param>
+			<param name="pow_total_max" required="no">
+				<validator name="Number" />
+			</param>
+			<param name="dzialka_szer" required="no">
+				<validator name="Number" />
+			</param>
+			<param name="dzialka_dl" required="no">
+				<validator name="Number" />
+			</param>
+			<param name="front_szer" required="no">
+				<validator name="Number" />
+			</param>
+			<param name="iloscpokoinaparterze" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="iloscpokoinaiikondygnacji" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="liczbalazieneknaparterze" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="liczbalazieneknaiikondygnacji" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="wysokoscbudynku" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="katnachyleniadachu" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="schody" required="no">
+				<validator name="Choice" choices="jednobiegowe,zabiegowe,krecone,ze_spocznikiem" />
+			</param>
+			<param name="lokalizacjagarazu" required="no">
+				<validator name="Choice" choices="dostawiony_do_bryly,w_bryle,wysuniety_od_frontu,w_piwnicy" />
+			</param>
+			<param name="rodzajstropu" required="no">
+				<validator name="Choice" choices="lekki,gestozebrowy,plyta_zelbetowa,drewniany_belkowy" />
+			</param>
+			<param name="kalenica" required="no">
+				<validator name="Choice" choices="brak,rownolegla_do_drogi,prostopadla_do_drogi" />
+			</param>
+			<param name="kuchniaodfrontu" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="kuchniaodogrodu" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="pralnia" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="spizarnia" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="tarasnadgarazem" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="centralnyodkurzacz" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="fotowoltaika" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="sauna" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="wyspakuchenna" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="garderoba" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="duza_kotlownia" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="kotlownia" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="zadaszonytaras" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="od_poludnia" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="wiatagarazowa" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="balkon" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="lukarna" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="masterbedroom" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="antresola" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="ryzalit" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="wykusz" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="portfenetr" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="narozneokno" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="pergola" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="osobnewc" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="garaz" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="piwnica" required="no">
+				<validator name="Integer" />
+			</param>
+		</action>
+		<action name="Favourite">
+			<allowed_methods post="yes" />
+			<param name="id" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+			<param name="operation" required="yes">
+				<validator name="Choice" choices="add,remove" />
+			</param>
+		</action>
+		<action name="GetSlideshow">
+			<allowed_methods post="yes" />
+			<param name="id" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+		</action>
+		<action name="GetFavourite">
+			<allowed_methods post="yes" />
+		</action>
+		<action name="GetSimilar">
+			<allowed_methods post="yes" />
+			<param name="id" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+		</action>
+		<action name="GetPartner">
+			<allowed_methods post="yes" />
+		</action>
+		<action name="GetProjectRealizations">
+			<allowed_methods post="yes" />
+			<param name="id" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+		</action>
+		<action name="GetFaq">
+			<allowed_methods post="yes" />
+			<param name="id" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+		</action>
+		<action name="GetInteriors">
+			<allowed_methods post="yes" />
+			<param name="id" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+			<param name="version" required="no" default="normal">
+				<validator name="Choice" choices="normal,mirror" />
+			</param>
+		</action>
+		<action name="GetShowroom">
+			<allowed_methods post="yes" />
+			<param name="id" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+		</action>
+		<action name="AddComment">
+			<allowed_methods post="yes" />
+			<param name="project_id" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+			<param name="parent_id" required="no" default="0">
+				<validator name="Integer" min="0" />
+			</param>
+			<param name="comment_type" required="yes" default="100">
+				<validator name="Integer"/>
+			</param>
+			<param name="subject" required="yes">
+				<filter name="Trim" />
+				<validator name="String" msg_required="Podaj tytuł wpisu" />
+			</param>
+			<param name="comment" required="yes">
+				<validator name="String" msg_required="Podaj treść wpisu" />
+			</param>
+			<param name="age" required="no">
+				<filter name="Trim" />
+				<validator name="\StudioAtrium\Validator\Void" />
+			</param>
+			<param name="nick" required="yes">
+				<validator name="String" msg_required="Podaj swój nick" />
+			</param>
+			<param name="notify" required="no">
+				<validator name="String" />
+			</param>
+			<param name="email" required="no">
+				<validator name="Email" />
+			</param>
+			<param name="regulations" required="yes">
+				<validator name="String" msg_required="Musisz zaakceptować regulamin" />
+			</param>
+			<param name="isTmpUid" required="no">
+				<validator name="Integer"/>
+			</param>
+			<param name="ownerUid" required="no">
+				<validator name="Integer"/>
+			</param>
+		</action>
+		<action name="Send">
+			<allowed_methods post="yes" />
+			<param name="pid" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+			<param name="receiver_email" required="yes">
+				<validator name="Email" />
+			</param>
+			<param name="sender_email" required="yes">
+				<validator name="Email" />
+			</param>
+			<param name="signature" required="no">
+				<filter name="Trim" />
+				<validator name="String" />
+			</param>
+			<param name="skip_validation_error" default="1">
+				<validator name="Integer" min="1" max="1" />
+			</param>
+		</action>
+		<action name="GetProjectNames">
+			<allowed_methods post="yes" />
+			<param name="query" required="yes">
+				<filter name="Trim" />
+				<validator name="String" />
+			</param>
+		</action>
+		<action name="GetForumProjects">
+			<allowed_methods post="yes" />
+			<param name="id" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+		</action>
+		<action name="GetForum">
+			<allowed_methods post="yes" />
+			<param name="id" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+			<param name="cid" required="no" default="0">
+				<validator name="Integer" min="0" />
+			</param>
+		</action>
+		<action name="GetRequestForm">
+			<allowed_methods post="yes" />
+			<param name="type" required="no" default="sketch">
+				<validator name="Choice" choices="sketch,materials,estimate,parcel_dwg,parcel_pdf,woodwork,cost_extract" />
+			</param>
+			<param name="order" required="no" default="1">
+				<validator name="Integer" />
+			</param>
+		</action>
+		<action name="AddFileRequest">
+			<allowed_methods post="yes" />
+			<param name="project_id" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+			<param name="phone" required="yes">
+				<filter name="Trim" />
+				<validator name="String" msg_required="Podaj nr telefonu" />
+			</param>
+			<param name="order" required="yes">
+				<validator name="Integer"/>
+			</param>
+			<param name="time" required="yes">
+				<validator name="Integer" min="1" max="4" msg_required="Wybierz opcję" />
+			</param>
+			<param name="comment" required="no">
+				<validator name="String" />
+			</param>
+			<param name="accept" required="yes">
+				<validator name="String" value="on" msg_required="Aby zamówić katalog musisz zaakceptować powyższe oświadczenie" />
+			</param>
+			<param name="file_type" required="yes" detault="sketch">
+				<validator name="Choice" choices="sketch,materials,parcel_dwg,parcel_pdf,woodwork,cost_extract" />
+			</param>
+		</action>
+		<action name="AddGenfileRequest">
+			<allowed_methods post="yes" />
+			<param name="project_id" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+			<param name="phone" required="yes">
+				<filter name="Trim" />
+				<validator name="String" msg_required="Podaj nr telefonu" />
+			</param>
+			<param name="order" required="yes">
+				<validator name="Integer"/>
+			</param>
+			<param name="time" required="yes">
+				<validator name="Integer" min="1" max="4" msg_required="Wybierz opcję" />
+			</param>
+			<param name="comment" required="no">
+				<validator name="String" />
+			</param>
+			<param name="accept" required="yes">
+				<validator name="String" value="on" msg_required="Aby zamówić katalog musisz zaakceptować powyższe oświadczenie" />
+			</param>
+			<param name="file_type" required="yes" detault="estimate">
+				<validator name="Choice" choices="estimate" />
+			</param>
+			<param name="token" required="yes">
+				<validator name="String" />
+			</param>
+		</action>
+		<action name="Download">
+			<allowed_methods get="yes" />
+			<param name="file" required="yes">
+				<validator name="String" />
+			</param>
+		</action>
+		<action name="Opinions">
+			<allowed_methods get="yes" />
+			<param name="page" required="no" default="1">
+				<validator name="Integer" />
+			</param>
+			<param name="limit" required="no" default="20">
+				<validator name="Integer" />
+			</param>
+		</action>
+	</request>
+
+	<commands>
+		<on_before_exec>
+			<include file="../defaultBeforeCommands.xml" />
+		</on_before_exec>
+	</commands>
+
+	<result_map>
+		<action name="List">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Project/List.tpl" />
+					<param name="smarty.css_includes">
+						<value>["list.min.css?v=20201207"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["jquery.fancybox.js","jquery.mCustomScrollbar.concat.min.js","list.js?v=20191009"]</value>
+					</param>
+					<param name="smarty.showSearchSchema" value="1" />
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		<action name="House">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Project/House.tpl" />
+					<param name="smarty.css_includes">
+						<value>["flexslider.css","house.min.css?v=20230421","uploader.css"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["jquery.flexslider-min.js","jquery.fancybox.js","jquery.mCustomScrollbar.concat.min.js","formvalidator.js","uploader.js?v=20210602","project.js?v=20240417", "forumThread.js"]</value>
+					</param>
+					<param name="smarty.pinterest" value="1"/>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		
+		<action name="Garage">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Project/Garage.tpl" />
+					<param name="smarty.css_includes">
+						<value>["house.min.css?v=20190402"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["project.js?v=20191009","jquery.fancybox.js"]</value>
+					</param>
+					<param name="smarty.pinterest" value="1"/>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		
+		<action name="Other">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Project/Other.tpl" />
+					<param name="smarty.css_includes">
+						<value>["house.min.css?v=20190402"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["project.js?v=20180416","jquery.fancybox.js"]</value>
+					</param>
+					<param name="smarty.pinterest" value="1"/>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		
+		<action name="Realizations">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Project/Realizations.tpl" />
+					<param name="smarty.css_includes">
+						<value>["list.min.css?v=20190129"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["jquery.fancybox.js","realizations.js?v=20191009"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		<action name="RealizationsInterior">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Project/Realizations.tpl" />
+					<param name="smarty.css_includes">
+						<value>["list.min.css?v=20190129"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["jquery.fancybox.js","realizations.js?v=20191009"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		<action name="RealizationsBuilding">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Project/Realizations.tpl" />
+					<param name="smarty.css_includes">
+						<value>["list.min.css?v=20190129"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["jquery.fancybox.js","realizations.js?v=20191009"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+	
+		<action name="Search">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Project/List.tpl" />
+					<param name="smarty.css_includes">
+						<value>["list.min.css?v=20190129"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["jquery.fancybox.js","jquery.mCustomScrollbar.concat.min.js","list.js?v=20191009"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		
+		<action name="ClickSearch">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Project/List.tpl" />
+					<param name="smarty.css_includes">
+						<value>["list.min.css?v=20190129"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["jquery.fancybox.js","jquery.mCustomScrollbar.concat.min.js","list.js?v=20191009"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		
+		<action name="ClickSearchNumbers">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_error>
+		</action>
+		
+		<action name="Favourite">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+		</action>
+		
+		<action name="GetFavourite">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="template" value="Project/Ajax/Favourite.tpl" />
+				</view>
+			</on_exec_ok>
+		</action>
+		
+		<action name="GetSlideshow">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_error>
+		</action>
+		
+		<action name="GetSimilar">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="template" value="Project/Ajax/Similar.tpl" />
+				</view>
+			</on_exec_ok>
+		</action>
+		
+		<action name="GetPartner">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="template" value="Project/Ajax/Partner.tpl" />
+				</view>
+			</on_exec_ok>
+		</action>
+		
+		<action name="GetProjectRealizations">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="template" value="Project/Ajax/ProjectRealizations.tpl" />
+				</view>
+			</on_exec_ok>
+		</action>
+		
+		<action name="GetFaq">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="template" value="Project/Ajax/Faq.tpl" />
+				</view>
+			</on_exec_ok>
+		</action>
+		
+		<action name="GetInteriors">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="template" value="Project/Ajax/Interiors.tpl" />
+				</view>
+			</on_exec_ok>
+		</action>
+		
+		<action name="GetShowroom">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="template" value="Project/Ajax/Showroom.tpl" />
+				</view>
+			</on_exec_ok>
+		</action>
+		
+		<action name="AddComment">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_error>
+		</action>
+		
+		<action name="Send">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_error>
+		</action>
+		
+		<action name="GetProjectNames">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_error>
+		</action>
+		
+		<action name="GetForumProjects">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_error>
+		</action>
+		
+		<action name="GetForum">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="template" value="Project/Ajax/Forum.tpl" />
+				</view>
+			</on_exec_ok>
+		</action>
+		
+		<action name="GetRequestForm">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="template" value="Project/Ajax/RequestForm.tpl" />
+				</view>
+			</on_exec_ok>
+		</action>
+		
+		<action name="AddFileRequest">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_error>
+		</action>
+		
+		<action name="AddGenfileRequest">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_SendFile" />
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Project" action="House" />
+			</on_exec_error>
+		</action>
+		
+		<action name="Download">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_SendFile" />
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		
+		<action name="Opinions">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Project/Opinions.tpl" />
+					<param name="smarty.css_includes">
+						<value>["list.min.css?v=20200123"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+	</result_map>
+</module>

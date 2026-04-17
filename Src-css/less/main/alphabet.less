@@ -1,0 +1,34 @@
+@import (reference) "../variables/colors.less";
+@import (reference) "../variables/dimensions.less";
+@import (reference) "../variables/fonts.less";
+@import (reference) "../variables/mixins.less";
+
+
+nav.alphabet {
+	background-color: @backUltraLightGrey;
+	width: 100%;
+	height: auto;
+	display: inline-block;
+	padding: 15px;
+	
+	> div {
+		max-width: @defaultWidth;
+		margin: 0 auto;
+		
+		> a {
+			width: 40px;
+			display: inline-block;
+			color: @defaultTextColor;
+			font-size: @fontSize17;
+			text-transform: uppercase;
+			text-align: center;
+			position: relative;
+			float: left;
+			
+			&:hover, &.selected {
+				background-color: @defaultTextColor;
+				color: #fff;
+			}
+		}
+	}
+}

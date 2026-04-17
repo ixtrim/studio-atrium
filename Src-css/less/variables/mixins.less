@@ -1,0 +1,259 @@
+// mixins
+@import (reference) "../variables/colors.less";
+@import (reference) "../variables/dimensions.less";
+@import (reference) "../variables/fonts.less";
+
+
+.bold {
+	font-family: @boldFontFamily;
+}
+
+.standardBox {
+	margin: 0 auto;
+    max-width: @defaultWidth;
+}
+
+.icons {
+	background: url(/img/icon.png) no-repeat 0 0;
+}
+
+.spritesBg (@left, @top, @sprites: "sprite.png", @bgColor: transparent) {
+    background-color: @bgColor;
+    background-image: e(%("url(/img/%s)", @sprites));
+    background-repeat: no-repeat;
+    background-position: @left @top;
+}
+
+.iconsBg (@left, @top, @sprites: "icon.png", @bgColor: transparent) {
+    background-color: @bgColor;
+    background-image: e(%("url(/img/%s)", @sprites));
+    background-repeat: no-repeat;
+    background-position: @left @top;
+}
+
+.greyBluePointer(@top: 0, @margin: 6px) {
+	&::after {
+		content: "";
+	    display: inline-block;
+	    position: relative;
+	    top: @top;
+	    width: 8px;
+	    height: 10px;
+	    margin-left: @margin;
+	    .iconsBg (center, -95px, 'icon-mobile.png');
+	}
+	
+	&:hover {
+		&::after {
+			background-position: center -71px;
+		}
+	}
+}
+
+.whitePointer(@top: 0, @margin: 6px) {
+	&::after {
+		content: "";
+	    display: inline-block;
+	    position: relative;
+	    top: @top;
+	    width: 8px;
+	    height: 10px;
+	    margin-left: @margin;
+	    .iconsBg (center, -922px);
+	}
+}
+
+.greyWhitePointer(@top: 0, @margin: 6px) {
+	&::after {
+		content: "";
+	    display: inline-block;
+	    position: relative;
+	    top: @top;
+	    width: 8px;
+	    height: 10px;
+	    margin-left: @margin;
+	    .iconsBg (center, -95px, 'icon-mobile.png');
+	    transition: background-position ease-in 0.1s;
+	}
+	
+	&:hover {
+		&::after {
+			background-position: center -115px;
+		}
+	}
+}
+
+.whiteBluePointer(@top: 0, @margin: 6px) {
+	&::after {
+		content: "";
+	    display: inline-block;
+	    position: relative;
+	    top: @top;
+	    width: 8px;
+	    height: 10px;
+	    margin-left: @margin;
+	    .iconsBg (center, -922px);
+	}
+	
+	&:hover {
+		&::after {
+			background-position: center -2924px;
+		}
+	}
+}
+
+.whiteGreyPointer(@top: 0, @margin: 6px) {
+	&::after {
+		content: "";
+	    display: inline-block;
+	    position: relative;
+	    top: @top;
+	    width: 8px;
+	    height: 10px;
+	    margin-left: @margin;
+	    .iconsBg (center, -922px);
+	}
+	
+	&:hover {
+		&::after {
+			background-position: center -1008px;
+		}
+	}
+}
+
+.redWhitePointer(@top: 0, @margin: 6px) {
+	&::after {
+		content: "";
+	    display: inline-block;
+	    position: relative;
+	    top: @top;
+	    width: 8px;
+	    height: 10px;
+	    margin-left: @margin;
+	    .iconsBg (center, -3079px);
+	}
+	
+	&:hover {
+		&::after {
+			background-position: center -922px;
+		}
+	}
+}
+
+.framedLink(@color, @borderColor, @hoverColor, @height: 40px, @padding: 16px) {
+	display: inline-block;
+	height: @height;
+	line-height: @height;
+	color: @color;
+	font-size: @fontSize14;
+	text-transform: uppercase;
+	padding: 0 @padding;
+	border: 1px solid @borderColor;
+	transition: color ease-in 0.1s, border-color ease-in 0.1s;
+	
+	&:hover {
+		color: @hoverColor;
+		border-color: @hoverColor;
+	}
+}
+
+.framedBgLink(@color, @hoverColor, @height: 40px, @padding: 16px) {
+	display: inline-block;
+	height: @height;
+	color: @color;
+	font-size: @fontSize14;
+	text-transform: uppercase;
+	line-height: @height;
+	padding: 0 @padding;
+	border: 1px solid @color;
+	transition: color ease-in 0.1s, background-color ease-in 0.1s;
+	
+	&:hover {
+		color: @hoverColor;
+		background-color: @color;
+	}
+}
+
+.framedBgBorderLink(@color, @borderColor, @hoverColor, @hoverBgColor, @height: 40px, @padding: 16px) {
+	display: inline-block;
+	height: @height;
+	color: @color;
+	font-size: @fontSize14;
+	text-transform: uppercase;
+	line-height: @height;
+	padding: 0 @padding;
+	border: 1px solid @borderColor;
+	transition: color ease-in 0.1s, background-color ease-in 0.1s, border ease-in 0.1s;
+	
+	&:hover {
+		color: @hoverColor;
+		border-color: @hoverBgColor;
+		background-color: @hoverBgColor;
+	}
+}
+
+.fontRenderFix {
+	-webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.clear {
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+}
+
+// Not used - when used move up above that message
+
+.boxModel {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.rootContainer {
+    margin: 1px auto 0;
+    max-width: @containerWidth;
+    padding: 0 12px;
+    position: relative;
+    .boxModel;
+}
+
+.noDrag {
+    user-drag: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+}
+
+
+.absRect (@left, @top, @width, @height) {
+    left: @left;
+    top: @top;
+    width: @width;
+    height: @height;
+    position: absolute;
+}
+
+.absRectRight (@right, @top, @width, @height) {
+    right: @right;
+    top: @top;
+    width: @width;
+    height: @height;
+    position: absolute;
+}
+
+.borderRadius(@radius) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+
+.sprites {
+	background: url(/img/sprites.png) no-repeat 0 0;
+}

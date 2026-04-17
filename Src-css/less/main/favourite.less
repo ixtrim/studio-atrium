@@ -1,0 +1,430 @@
+@import (reference) "../variables/colors.less";
+@import (reference) "../variables/dimensions.less";
+@import (reference) "../variables/fonts.less";
+@import (reference) "../variables/mixins.less";
+
+@import (less) "../css-includes/jquery.fancybox.css";
+@import (less) "../css-includes/jquery.mCustomScrollbar.css";
+
+div.list-header {
+	background: @backLightGrey url(../img/favourite_head.jpg) no-repeat center 110px;
+}
+
+header + div.white {
+	background-color: #fff;
+}
+
+div.head-wrapper {
+	.clear;
+	margin: 48px 0 96px;
+	
+	h1 {
+		float: left;
+		font-size: @fontSize36;
+		text-transform: uppercase;
+		line-height: 44px;
+		
+		+ a {
+			float: right;
+			text-transform: uppercase;
+			
+			&.framed {
+				.framedLink(@defaultTextColor, @frameLinkColor, @saBlue, 42px);
+				.greyBluePointer;
+			}
+		}
+	}
+}
+
+div#over-pop.compare {
+	img {
+		margin: 0 auto;
+		border: 16px solid #fff;
+	}
+}
+
+ul.actions {
+	min-height: 74px;
+	.clear;
+	
+	li {
+		float: left;
+		display: inline-block;
+		font-size: @fontSize15;
+		line-height: 74px;
+				
+		&:last-child {
+			float: right;
+		}
+		
+		+ li {
+			margin-left: 148px;
+		}
+		
+		a {
+			text-transform: uppercase;
+			cursor: pointer;
+			
+			&.framed {
+				.framedLink(@defaultTextColor, @frameLinkColor, @saBlue, 42px);
+				.greyBluePointer;
+			}
+		}
+		
+		span {
+			text-transform: uppercase;
+			cursor: pointer;
+			
+			&.remove-all {
+				&:hover {
+					color: @saRed;
+					
+//					&::before {
+//						background-position: 0 -2710px;
+//					}
+				}
+//				
+//				&::before {
+//					content: '';
+//					display: inline-block;
+//					width: 27px;
+//					height: 27px;
+//					.iconsBg(0, -2678px);
+//					margin-right: 12px;
+//					vertical-align: middle;
+//				}
+			}
+			
+			&.share-links {
+				&:hover {
+					&::before {
+						background-position: 0 -2783px;
+					}
+				}
+				
+				&::before {
+					content: '';
+					display: inline-block;
+					width: 33px;
+					height: 33px;
+					.iconsBg(0, -2745px);
+					margin-right: 12px;
+					vertical-align: middle;
+				}
+			}
+			
+			&.check-by {
+				margin-right: 148px;
+				cursor: auto;
+				
+				&::after {
+					content: '';
+					display: inline-block;
+					width: 32px;
+					height: 25px;
+					.iconsBg(0, -2824px);
+					margin-left: 12px;
+					vertical-align: middle;
+				}
+				
+				&:hover {
+					&::after {
+						background-position: 0 -2886px;
+					}
+				}
+			}
+		}
+	}
+}
+
+#project-list {
+	margin-bottom: 48px;
+	
+	+ div.wrapper {
+		margin-bottom: 72px;
+	}
+}
+
+div.table-scroll-box {
+	position: relative;
+	max-width: 1240px;
+	overflow: hidden;
+}
+
+div.table-wrapper {
+	overflow: auto;
+}
+
+div.swipe-box {
+	text-align: right;
+}
+
+table {
+	width: 100%;
+	margin-bottom: 48px;
+	
+	
+	tr {
+		&:hover {
+			th {
+				background-color: #565656;
+			}
+			
+			td {
+				background-color: @backUltraLightGrey;
+				
+				&:nth-child(odd) {
+					background-color: @listSeparator;
+				}
+			}
+		}
+	}
+	
+	th, td {
+		font-size: @fontSize15;
+		text-transform: uppercase;
+		padding: 16px;
+	}
+	
+	th {
+		width: 241px;
+		color: #fff;
+		text-align: right;
+		background-color: @defaultTextColor;
+		padding-right: 42px;
+		border-top: 1px solid #838383;
+		vertical-align: middle;
+		
+		+ td {
+			padding-left: 32px;
+		}
+	}
+	
+	td {
+		min-width: 260px;
+		text-align: center;
+		border-top: 1px solid @backLightGrey;
+		vertical-align: middle;
+		
+		img {
+			width: 275px;
+			max-width: 100%;
+		}
+		
+		&:nth-child(odd) {
+			background-color: @backUltraLightGrey;
+		}
+		
+		span {
+			text-transform: none;
+			
+			&.overview {
+				cursor: pointer;
+			}
+		}
+		
+		sup {
+			position: relative;
+			top: -6px;
+			font-size: @fontSize12;
+		}
+	}
+}
+
+.clone {
+	position: absolute;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+}
+
+.clone th, .clone td {
+	visibility: hidden
+}
+
+.clone td, .clone th {
+	border-color:transparent
+}
+
+.clone tbody th {
+	visibility:visible;
+}
+
+.clone .fixed-side {
+	visibility: visible;
+}
+
+.clone thead, .clone tfoot{background:transparent;}
+
+
+p.nope {
+	margin-bottom: 48px;
+}
+
+p.no-result {
+	font-size: @fontSize36;
+	margin-top: 72px;
+	line-height: 1.2em;
+	
+	+ p {
+		margin: 48px 0 64px;
+	}
+}
+
+p.no-result-ib {
+	margin-bottom: 64px;
+}
+
+
+div.list-grid {
+	> div {
+		> span {
+			&.forfav {
+				top: 8px;
+				right: 11px;
+				width: 30px;
+				height: 28px;
+				.iconsBg(0, -2677px);
+				
+				&:hover {
+					background-position: 0 -2710px;
+				}
+			}
+			
+			&.forcompare {
+				top: 6px;
+				right: 56px;
+				width: 32px;
+				height: 25px;
+				.iconsBg(0, -2855px);
+				
+				&.on {
+					background-position: 0 -2886px;
+				}
+				
+//				&:hover {
+//					background-position: 0 -2886px;
+//				}
+			}
+			
+			&.overview {
+				right: 102px;
+			}
+		}
+	}
+}
+
+@media (hover: hover) {
+    div.list-grid {
+		> div {
+			> span {
+				&.forcompare {
+					&:hover {
+						background-position: 0 -2886px;
+					}
+				}
+			}
+		}
+	}
+}
+
+p.nofav-info {
+	color: @saRed;
+	margin: 48px 0 64px;
+}
+
+
+@media all and (max-width: 1239px) {
+	
+	div.head-wrapper {
+		margin: 32px 0 48px;
+		
+		h1 {
+			font-size: @fontSize24;
+			line-height: 32px;
+			margin-bottom: 16px;
+		}
+	}
+	
+	div.table-scroll-box {
+		margin-left: -12px;
+	}
+	
+	table {
+		th {
+			width: auto;
+			font-size: @fontSize14;
+			text-transform: none;
+			padding: 0 16px 0 8px;
+			
+			&:first-letter {
+			    text-transform: uppercase;
+			}
+			
+			+ td {
+				padding-left: 16px;
+			}
+		}
+	}
+}
+
+@media all and (max-width: 1220px) {
+	ul.actions {
+		li {
+			+ li {
+				margin-left: 32px;
+			}
+			
+			span {
+				&.check-by {
+					margin-right: 32px;
+				}
+			}
+		}
+	}
+}
+
+@media all and (max-width: 920px) {
+	ul.actions {
+		li {
+			width: 50%;
+			text-align: center;
+			
+			&:last-child {
+				width: 100%;
+			}
+			
+			+ li {
+				margin-left: 0;
+			}
+		}
+	}
+}
+
+//@media all and (max-width: 799px) {
+//	ul.actions {
+//		li:last-child {
+//			display: none;
+//		}
+//	}
+//	
+//	div.list-grid span.compare {
+//		display: none;
+//	}
+//}
+//
+@media all and (max-width: 480px) {
+	ul.actions {
+		li {
+			font-size: @fontSize13;
+			
+			&:first-child {
+				width: 40%;
+				
+				+ li {
+					width: 60%;
+				}
+			}
+		}
+	}
+}

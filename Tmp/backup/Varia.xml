@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<classname>\StudioAtrium\Application\WWW\Module\Varia</classname>
+	<classfile>Varia</classfile>
+	<default_action>Addons</default_action>
+	<request>
+		<action name="Addons">
+			<allowed_methods get="yes" />
+		</action>
+		
+		<action name="About">
+			<allowed_methods get="yes" />
+		</action>
+		
+		<action name="GetAboutGallery">
+			<allowed_methods post="yes" get="yes" />
+			<param name="entryId" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+			<param name="gid" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+		</action>
+		
+		<action name="Agent">
+			<allowed_methods get="yes"/>
+			<param name="limit" required="no" default="12">
+				<validator name="Integer" min="1" />
+			</param>
+			<param name="page" required="no" default="1">
+				<validator name="Integer" min="1" />
+			</param>
+			<param name="region" required="no" default="12">
+				<validator name="Integer" min="0" max="16" />
+			</param>
+			<param name="city" required="no">
+				<validator name="String" />
+			</param>
+		</action>
+		
+		<action name="AgentDetail">
+			<allowed_methods get="yes"/>
+			<param name="id" required="yes" default="1">
+				<validator name="Integer" min="1" />
+			</param>
+		</action>
+		
+		<action name="ProjectHelper">
+			<allowed_methods get="yes"/>
+		</action>
+		
+		<action name="SendHelper">
+			<allowed_methods post="yes" />
+			<param name="house_type" required="no">
+				<validator name="Array" />
+			</param>
+			<param name="area_from" required="no">
+				<validator name="Number" msg_invalid="Użyj kropki zamiast przecinka" />
+			</param>
+			<param name="area_to" required="no">
+				<validator name="Number" msg_invalid="Użyj kropki zamiast przecinka" />
+			</param>
+			<param name="parcel_width" required="no">
+				<validator name="Number" msg_invalid="Użyj kropki zamiast przecinka" />
+			</param>
+			<param name="roof_type" required="no">
+				<validator name="Array" />
+			</param>
+			<param name="room_count" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="garage_places" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="notice" required="no">
+				<validator name="String" />
+			</param>
+			<param name="email" required="yes">
+				<validator name="Email" />
+			</param>
+			<param name="phone" required="no">
+				<validator name="String" />
+			</param>
+			<param name="newsletter" required="no">
+				<validator name="String" value="on" />
+			</param>
+			<param name="accept" required="yes">
+				<validator name="String" value="on" msg_required="Musisz zaakceptować powyższe oświadczenie" />
+			</param>
+			<param name="accept_newsletter" required="no">
+				<validator name="String" value="on" />
+			</param>
+		</action>
+		
+		<action name="CustomProject">
+			<allowed_methods get="yes"/>
+		</action>
+		
+		<action name="SendCustomProject">
+			<allowed_methods post="yes" />
+			<param name="email" required="yes">
+				<validator name="Email" msg_required="Podaj adres email" />
+			</param>
+			<param name="message" required="yes">
+				<validator name="String" msg_required="Podaj treść wpisu" />
+			</param>
+			<param name="age" required="no">
+				<filter name="Trim" />
+				<validator name="\StudioAtrium\Validator\Void" />
+			</param>
+		</action>
+		
+		<action name="BuildOffer">
+			<allowed_methods get="yes"/>
+		</action>
+		
+		<action name="Financing">
+			<allowed_methods get="yes"/>
+		</action>
+<!-- Local test Trello API	
+		<action name="Trello">
+			<allowed_methods get="yes"/>
+		</action>
+ -->	
+	</request>
+
+	<commands>
+		<on_before_exec>
+			<include file="../defaultBeforeCommands.xml" />
+		</on_before_exec>
+	</commands>
+
+	<result_map>
+		<action name="Addons">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Varia/Addons.tpl" />
+					<param name="smarty.css_includes">
+						<value>["house.min.css?v=20170915"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["project.js"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		
+		<action name="About">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Varia/About.tpl" />
+					<param name="smarty.css_includes">
+						<value>["about.min.css?v=20220630"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["jquery.fancybox.js","about.js?v=20191009"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		
+		<action name="GetAboutGallery">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_error>
+		</action>
+		
+		<action name="Agent">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Varia/Agent.tpl" />
+					<param name="smarty.css_includes">
+						<value>["about.min.css?v=20220630"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		
+		<action name="AgentDetail">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Varia/AgentDetail.tpl" />
+					<param name="smarty.css_includes">
+						<value>["about.min.css?v=20220630"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		
+		<action name="ProjectHelper">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Varia/ProjectHelper.tpl" />
+					<param name="smarty.css_includes">
+						<value>["about.min.css?v=20220630"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["askforproject.js","formvalidator.js"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		
+		<action name="SendHelper">
+			<on_exec_ok>
+				<forward module="Varia" action="ProjectHelper" />
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Varia" action="ProjectHelper" />
+			</on_exec_error>
+		</action>
+		
+		<action name="CustomProject">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Varia/CustomProject.tpl" />
+					<param name="smarty.css_includes">
+						<value>["about.min.css?v=20220630","article.min.css"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["customProject.js","formvalidator.js"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		
+		<action name="SendCustomProject">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_error>
+		</action>
+		
+		<action name="BuildOffer">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Varia/BuildOffer.tpl" />
+					<param name="smarty.css_includes">
+						<value>["list.min.css?v=20220830","buildOffer.min.css?v=202201010"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["jquery.fancybox.js","jquery.mCustomScrollbar.concat.min.js","list.js?v=20220830", "buildoffer.js?v=202201010"]</value>
+					</param>
+					<param name="smarty.showSearchSchema" value="1" />
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		
+		<action name="Financing">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Varia/Financing.tpl" />
+					<param name="smarty.css_includes">
+						<value>["list.min.css?v=20220830","buildOffer.min.css"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["jquery.fancybox.js","jquery.mCustomScrollbar.concat.min.js","list.js?v=20220830"]</value>
+					</param>
+					<param name="smarty.showSearchSchema" value="1" />
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+<!-- 
+		<action name="Trello">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Dummy" />
+			</on_exec_ok>
+		</action>
+ -->	
+	</result_map>
+</module>

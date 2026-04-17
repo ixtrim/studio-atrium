@@ -1,0 +1,564 @@
+SetEnvIf Cookie ^.*_st=.*$ HAVE_TEST_COOKIE
+Header append P3P "CP=\"NOI DSP COR NID DEV PSA OUR IND\"" env=!HAVE_TEST_COOKIE
+Header append Set-Cookie "_st=%{UNIQUE_ID}e; expires=Sun, 21-Mar-2027 10:33:56 GMT; path=/" env=!HAVE_TEST_COOKIE
+
+# e-active 2018-01-08
+SetEnvIf Request_URI "^.*/pdf/.*$" norobots=1
+Header set X-Robots-Tag "noindex, nofollow" env=norobots
+
+RewriteEngine On
+
+# --------------------------------------------------------------------
+# SQL Injection Protection 
+# --------------------------------------------------------------------
+
+#RewriteCond %{QUERY_STRING} [^a-z](funion|union|char|sleep)[^a-z] [NC]
+#RewriteRule (.*) - [F,L]
+
+# --------------------------------------------------------------------
+
+RewriteCond %{HTTP_HOST} ^www.studio-atrium.com.pl [or]
+RewriteCond %{HTTP_HOST} ^studio-atrium.com.pl
+RewriteRule (.*) https://www.studioatrium.pl/$1 [R=301,L]
+
+## wyłączenie subdomeny test 2025-11-14 - wniosek sempai
+RewriteCond %{HTTP_HOST} ^www.test.studioatrium.pl [or]
+RewriteCond %{HTTP_HOST} ^test.studioatrium.pl
+RewriteRule (.*) https://www.studioatrium.pl/$1 [R=410,L]
+
+## wyłączenie subdomeny static 2025-12-03 - wniosek sempai
+RewriteCond %{HTTP_HOST} ^www.static.studioatrium.pl [or]
+RewriteCond %{HTTP_HOST} ^static.studioatrium.pl
+RewriteRule (.*) https://www.studioatrium.pl/$1 [R=410,L]
+
+# LOCALHOST: www-redirect disabled
+#RewriteCond %{HTTP_HOST} !^www.
+#RewriteCond %{REQUEST_URI} !\.well-known/acme-challenge
+#RewriteRule (.*) https://www.%{HTTP_HOST}/$1 [R=301,L]
+#RewriteCond %{HTTP_HOST} !^www.
+#RewriteCond %{REQUEST_URI} !\.well-known/acme-challenge
+#RewriteRule ^$ https://www.%{HTTP_HOST}%{SCRIPT_URI} [R=301,L]
+
+## wyłączenie mobilnej wersji na subdomenie 2016-01-19
+RewriteCond %{HTTP_HOST} ^www.m.studioatrium.pl [or]
+RewriteCond %{HTTP_HOST} ^m.studioatrium.pl
+RewriteRule (.*) https://www.studioatrium.pl/$1 [R=301,L]
+
+#2016-04-04 - https (LOCALHOST: disabled)
+#RewriteCond %{HTTPS} !=on
+#RewriteCond %{HTTP_HOST} ^www.studioatrium.pl
+#RewriteCond %{REQUEST_URI} !\.well-known/acme-challenge
+#RewriteRule ^(.*)$ https://%{SERVER_NAME}%{REQUEST_URI} [L,R=301]
+
+##### 301 - double slash - sempai 08.04.2026 ################################################
+
+#RewriteCond %{REQUEST_URI} ^(.*)//(.*)$
+#RewriteRule . %1/%2 [R=301,L]
+
+############################################################# 301 - 21.04.2023 ##############
+RewriteRule ^/?projekty-domow/z-pompa-ciepla/?$ /projekty-domow/ [L,R=301]
+RewriteRule ^/?projekty-domow/Lopez-pc,1635.html$ /projekty-domow/Lopez,1477.html [L,R=301]
+RewriteRule ^/?projekty-domow/Ricardo-pc,1615.html$ /projekty-domow/Ricardo,818.html [L,R=301]
+RewriteRule ^/?projekty-domow/Pliszka-iv-pc,1620.html$ /projekty-domow/Pliszka-iv,1314.html [L,R=301]
+RewriteRule ^/?projekty-domow/Ibis-ii-pc,1616.html$ /projekty-domow/Ibis-ii,1086.html [L,R=301]
+RewriteRule ^/?projekty-domow/Aurora-midi-szpc,1617.html$ /projekty-domow/Aurora-midi-sz,1291.html [L,R=301]
+RewriteRule ^/?projekty-domow/Aurora-maxi-pc,1619.html$ /projekty-domow/Aurora-maxi,1197.html [L,R=301]
+RewriteRule ^/?projekty-domow/Aurora-ii-szpc,1621.html$ /projekty-domow/Aurora-ii-sz,1284.html [L,R=301]
+RewriteRule ^/?projekty-domow/Morgan-ii-pc,1622.html$ /projekty-domow/Morgan-ii,1338.html [L,R=301]
+RewriteRule ^/?projekty-domow/Kos-maxi-pc,1623.html$ /projekty-domow/Kos-maxi,1315.html [L,R=301]
+RewriteRule ^/?projekty-domow/Malbec-pc,1624.html$ /projekty-domow/Malbec,1296.html [L,R=301]
+RewriteRule ^/?projekty-domow/Pliszka-v-pc,1625.html$ /projekty-domow/Pliszka-v,1333.html [L,R=301]
+RewriteRule ^/?projekty-domow/Pliszka-vi-pc,1626.html$ /projekty-domow/Pliszka-vi,1375.html [L,R=301]
+RewriteRule ^/?projekty-domow/Bursztyn-plus-maxi-pc,1627.html$ /projekty-domow/Bursztyn-plus-maxi,1370.html [L,R=301]
+RewriteRule ^/?projekty-domow/Roberto-pc,1628.html$ /projekty-domow/Roberto,1380.html [L,R=301]
+RewriteRule ^/?projekty-domow/Sfinks-vii-pc,1629.html$ /projekty-domow/Sfinks-vii,1379.html [L,R=301]
+RewriteRule ^/?projekty-domow/Pliszka-vii-pc,1633.html$ /projekty-domow/Pliszka-vii,1431.html [L,R=301]
+RewriteRule ^/?projekty-domow/Gustaw-ii-pc,1634.html$ /projekty-domow/Gustaw-ii,1457.html [L,R=301]
+RewriteRule ^/?projekty-domow/Bosfor-pc,1636.html$ /projekty-domow/Bosfor,1538.html [L,R=301]
+
+############################################################# 301 - ze starej strony ################################################################################################
+
+#baza wiedzy
+RewriteRule ^/?baza-wiedzy,([0-9]+),p-([0-9]+)/?$ index.php?module=relocator301&relocate=baza-wiedzy&params[page]=$2&params[tag]=$1 [L,NS]
+RewriteRule ^/?baza-wiedzy,p-([0-9]+)/?$ index.php?module=relocator301&relocate=baza-wiedzy&params[page]=$1 [L,NS,QSA]
+RewriteRule ^/?archiwum/Forum,([^,]*),([0-9]+),([0-9]+),([0-1]).html$ index.php?module=relocator301&relocate=archiwum-forum&params[title]=$1&params[id]=$2&params[page]=$3 [L,NS]
+
+#projekty garazy - lista i konkretny projekt
+RewriteRule ^/?projekty-garazy/wszystkie-projekty/([^,]*),([0-9]+).html$ index.php?module=relocator301&relocate=projekt-garazu&params[symbol]=$1&params[id]=$2 [L,NS]
+RewriteRule ^/?projekty-garazy/wszystkie-projekty/([^,]*),([0-9]+),lustro.html$ index.php?module=relocator301&relocate=projekt-garazu&params[symbol]=$1&params[id]=$2&params[lustro]=1 [L,NS]
+RewriteRule ^/?projekty-garazy/wszystkie-projekty/? /projekty-garazy/ [L,R=301]
+
+#projekt wiaty
+RewriteRule ^/?projekty/wiaty/S-A-([^,]*),([0-9]+).html$ index.php?module=relocator301&relocate=projekt-wiaty&params[symbol]=$1&params[id]=$2 [L,NS]
+
+#projekt altany
+RewriteRule ^/?projekty/altany/S-A-([^,]*),([0-9]+).html$ index.php?module=relocator301&relocate=projekt-altany&params[symbol]=$1&params[id]=$2 [L,NS]
+
+#projekt ogrodzenia
+RewriteRule ^/?projekty/ogrodzenia/S-OG-([^,]*),([0-9]+).html$ index.php?module=relocator301&relocate=projekt-ogrodzenia&params[symbol]=$1&params[id]=$2 [L,NS]
+
+#projekt domu
+RewriteRule ^/?projekty-domow/S-GL([^,]*),([0-9]+).html$ index.php?module=relocator301&relocate=projekt-domu&params[symbol]=$1&params[id]=$2 [L,NS]
+RewriteRule ^/?selfie/S-GL([^,]*),([0-9]+).html$ index.php?module=relocator301&relocate=selfie&params[id]=$2 [L,NS]
+RewriteRule ^/?projekty-domow/([^/]*)/S-GL([^,]*),([0-9]+).html$ index.php?module=relocator301&relocate=projekt-domu&params[symbol]=$2&params[id]=$3 [L,NS]
+RewriteRule ^/?O-budowie-projektu-S-GL([^,]*),([0-9]+).html$ index.php?module=relocator301&relocate=projekt-domu&params[symbol]=$1&params[id]=$2 [L,NS]
+RewriteRule ^/?projekty-domow/([^/]*)/S-GL([^,]*),([0-9]+),lustro.html$ index.php?module=relocator301&relocate=projekt-domu&params[symbol]=$2&params[id]=$3&params[mirror]=1 [L,NS]
+
+#inne od pozycjonerow
+RewriteRule ^Wyniki-vi-konkursu-studenckiego.html$ /dokumenty/Wyniki-vi-konkursu,385.html [L,R=301]
+RewriteRule ^dokumenty/O-nas,1102.html$ /dokumenty/O-nas.html [L,R=301]
+RewriteRule ^cennik/projekty-garazy/$	/projekty-garazy/ [L,R=301]
+RewriteRule ^cennik/projekty-domow/$	/projekty-domow/ [L,R=301]
+RewriteRule ^/?about/$ /dokumenty/O-nas.html [L,R=301]
+RewriteRule ^/?realizacje/?$ /projekty-domow/realizacje/ [L,R=301]
+
+RewriteCond %{QUERY_STRING} ^module=compare&action=list_favourites$
+RewriteRule ^ /ulubione/lista.html? [L,R=301]
+
+RewriteCond %{QUERY_STRING} ^module=project&action=list_categories$
+RewriteRule ^ /projekty-domow/? [L,R=301]
+
+RewriteCond %{QUERY_STRING} ^module=news&action=list(.*)$
+RewriteRule ^ /baza-wiedzy,2? [L,R=301]
+
+RewriteCond %{QUERY_STRING} ^module=article&action=category&catId=26$
+RewriteRule ^ /baza-wiedzy,56? [L,R=301]
+
+#kampanieseo 07.08.2018 / update 03.09.2018
+RewriteRule ^/?projekty-domow/mieszkanie-dla-mlodych-110/?$ /projekty-domow/do-110m2/ [L,R=301]
+RewriteRule ^/?projekty-domow/mieszkanie-dla-mlodych-110/(b|l|e{1}),(i|n|u{1}),(a|d{1})(,([0-9]*))?$ /projekty-domow/do-110m2/$1,$2,$3$4 [L,R=301]
+
+RewriteRule ^/?projekty-domow/mieszkanie-dla-mlodych-100/?$ /projekty-domow/do-100m2/ [L,R=301]
+RewriteRule ^/?projekty-domow/mieszkanie-dla-mlodych-100/(b|l|e{1}),(i|n|u{1}),(a|d{1})(,([0-9]*))?$ /projekty-domow/do-100m2/$1,$2,$3$4 [L,R=301]
+
+RewriteRule ^/?projekty-domow/domy-dla-deweloperow/?$ /projekty-domow/dla-deweloperow/ [L,R=301]
+RewriteRule ^/?projekty-domow/domy-dla-deweloperow/(b|l|e{1}),(i|n|u{1}),(a|d{1})(,([0-9]*))?$ /projekty-domow/dla-deweloperow/$1,$2,$3$4 [L,R=301]
+
+RewriteRule ^/?projekty-domow/domy-dwulokalowe/?$ /projekty-domow/dwulokalowe/ [L,R=301]
+RewriteRule ^/?projekty-domow/domy-dwulokalowe/(b|l|e{1}),(i|n|u{1}),(a|d{1})(,([0-9]*))?$ /projekty-domow/dwulokalowe/$1,$2,$3$4 [L,R=301]
+
+RewriteRule ^/?projekty-domow/domy-z-wnetrzami/?$ /projekty-domow/z-wizualizacja-wnetrz/ [L,R=301]
+RewriteRule ^/?projekty-domow/domy-z-wnetrzami/(b|l|e{1}),(i|n|u{1}),(a|d{1})(,([0-9]*))?$ /projekty-domow/z-wizualizacja-wnetrz/$1,$2,$3$4 [L,R=301]
+
+RewriteRule ^/?projekty-domow/rezydencje/?$ /projekty-domow/wille-i-rezydencje/ [L,R=301]
+RewriteRule ^/?projekty-domow/rezydencje/(b|l|e{1}),(i|n|u{1}),(a|d{1})(,([0-9]*))?$ /projekty-domow/wille-i-rezydencje/$1,$2,$3$4 [L,R=301]
+
+RewriteRule ^/?projekty-domow/beskidzkie/?$ /projekty-domow/regionalne/ [L,R=301]
+RewriteRule ^/?projekty-domow/beskidzkie/(b|l|e{1}),(i|n|u{1}),(a|d{1})(,([0-9]*))?$ /projekty-domow/regionalne/$1,$2,$3$4 [L,R=301]
+
+RewriteRule ^/?projekty-domow/nowa-stodola/?$ /projekty-domow/nowoczesna-stodola/ [L,R=301]
+RewriteRule ^/?projekty-domow/nowa-stodola/(b|l|e{1}),(i|n|u{1}),(a|d{1})(,([0-9]*))?$ /projekty-domow/nowoczesna-stodola/$1,$2,$3$4 [L,R=301]
+
+RewriteRule ^/?projekty-domow/domy-nowoczesne/?$ /projekty-domow/nowoczesne/ [L,R=301]
+RewriteRule ^/?projekty-domow/domy-nowoczesne/(b|l|e{1}),(i|n|u{1}),(a|d{1})(,([0-9]*))?$ /projekty-domow/nowoczesne/$1,$2,$3$4 [L,R=301]
+
+RewriteRule ^/?projekty-domow/domy-na-skarpe/?$ /projekty-domow/na-skarpe/ [L,R=301]
+RewriteRule ^/?projekty-domow/domy-na-skarpe/(b|l|e{1}),(i|n|u{1}),(a|d{1})(,([0-9]*))?$ /projekty-domow/na-skarpe/$1,$2,$3$4 [L,R=301]
+
+RewriteRule ^/?projekty-domow/domy-z-wjazdem-od-poludnia/?$ /projekty-domow/z-wjazdem-od-poludnia/ [L,R=301]
+RewriteRule ^/?projekty-domow/domy-z-wjazdem-od-poludnia/(b|l|e{1}),(i|n|u{1}),(a|d{1})(,([0-9]*))?$ /projekty-domow/z-wjazdem-od-poludnia/$1,$2,$3$4 [L,R=301]
+
+RewriteRule ^/?projekty-domow/domy-na-waska-dzialke/?$ /projekty-domow/na-waska-dzialke/ [L,R=301]
+RewriteRule ^/?projekty-domow/domy-na-waska-dzialke/(b|l|e{1}),(i|n|u{1}),(a|d{1})(,([0-9]*))?$ /projekty-domow/na-waska-dzialke/$1,$2,$3$4 [L,R=301]
+
+RewriteRule ^/?projekty-domow/domy-z-otwarta-przestrzenia/?$ /projekty-domow/z-antresola/ [L,R=301]
+RewriteRule ^/?projekty-domow/domy-z-otwarta-przestrzenia/(b|l|e{1}),(i|n|u{1}),(a|d{1})(,([0-9]*))?$ /projekty-domow/z-antresola/$1,$2,$3$4 [L,R=301]
+
+RewriteRule ^/?projekty-domow/domy-z-kotlownia-na-paliwo-stale/?$ /projekty-domow/z-kotlownia-na-paliwo-stale/ [L,R=301]
+RewriteRule ^/?projekty-domow/domy-z-kotlownia-na-paliwo-stale/(b|l|e{1}),(i|n|u{1}),(a|d{1})(,([0-9]*))?$ /projekty-domow/z-kotlownia-na-paliwo-stale/$1,$2,$3$4 [L,R=301]
+
+RewriteRule ^/?projekty-domow/domy-z-duza-kotlownia/?$ /projekty-domow/z-duza-kotlownia/ [L,R=301]
+RewriteRule ^/?projekty-domow/domy-z-duza-kotlownia/(b|l|e{1}),(i|n|u{1}),(a|d{1})(,([0-9]*))?$ /projekty-domow/z-duza-kotlownia/$1,$2,$3$4 [L,R=301]
+
+RewriteRule ^/?projekty-domow/domy-parterowe-ze-strychem/?$ /projekty-domow/ze-strychem/ [L,R=301]
+RewriteRule ^/?projekty-domow/domy-parterowe-ze-strychem/(b|l|e{1}),(i|n|u{1}),(a|d{1})(,([0-9]*))?$ /projekty-domow/ze-strychem/$1,$2,$3$4 [L,R=301]
+
+RewriteRule ^/?projekty-domow/domy-pietrowe/?$ /projekty-domow/pietrowe/ [L,R=301]
+RewriteRule ^/?projekty-domow/domy-pietrowe/(b|l|e{1}),(i|n|u{1}),(a|d{1})(,([0-9]*))?$ /projekty-domow/pietrowe/$1,$2,$3$4 [L,R=301]
+
+RewriteRule ^/?projekty-domow/domy-z-poddaszem/?$ /projekty-domow/z-poddaszem-uzytkowym/ [L,R=301]
+RewriteRule ^/?projekty-domow/domy-z-poddaszem/(b|l|e{1}),(i|n|u{1}),(a|d{1})(,([0-9]*))?$ /projekty-domow/z-poddaszem-uzytkowym/$1,$2,$3$4 [L,R=301]
+
+RewriteRule ^/?projekty-domow/domy-parterowe/?$ /projekty-domow/parterowe/ [L,R=301]
+RewriteRule ^/?projekty-domow/domy-parterowe/(b|l|e{1}),(i|n|u{1}),(a|d{1})(,([0-9]*))?$ /projekty-domow/parterowe/$1,$2,$3$4 [L,R=301]
+
+############################################################# 301 - 2017-08-02 ################################################################################################
+
+# duplikaty kategorii
+RewriteRule ^/?dodatki$ /dodatki/ [L,R=301]
+RewriteRule ^/?projekty/altany$ /projekty/altany/ [L,R=301]
+RewriteRule ^/?projekty-domow/beskidzkie$ /projekty-domow/beskidzkie/ [L,R=301]
+RewriteRule ^/?projekty-domow/realizacje$ /projekty-domow/realizacje/ [L,R=301]
+RewriteRule ^/?projekty-domow/opinie$ /projekty-domow/opinie/ [L,R=301]
+RewriteRule ^/?projekty-domow/blizniaki$ /projekty-domow/blizniaki/ [L,R=301]
+RewriteRule ^/?projekty-domow/dla-rodziny-2-2$ /projekty-domow/dla-rodziny-2-2/ [L,R=301]
+RewriteRule ^/?projekty-domow/dla-rodziny-2-3$ /projekty-domow/dla-rodziny-2-3/ [L,R=301]
+RewriteRule ^/?projekty-domow/domy-dla-deweloperow$ /projekty-domow/domy-dla-deweloperow/ [L,R=301]
+RewriteRule ^/?projekty-domow/domy-dwulokalowe$ /projekty-domow/domy-dwulokalowe/ [L,R=301]
+RewriteRule ^/?projekty-domow/domy-na-skarpe$ /projekty-domow/domy-na-skarpe/ [L,R=301]
+RewriteRule ^/?projekty-domow/domy-na-waska-dzialke$ /projekty-domow/domy-na-waska-dzialke/ [L,R=301]
+RewriteRule ^/?projekty-domow/domy-nowoczesne$ /projekty-domow/domy-nowoczesne/ [L,R=301]
+RewriteRule ^/?projekty-domow/domy-parterowe$ /projekty-domow/domy-parterowe/ [L,R=301]
+RewriteRule ^/?projekty-domow/domy-parterowe-ze-strychem$ /projekty-domow/domy-parterowe-ze-strychem/ [L,R=301]
+RewriteRule ^/?projekty-domow/domy-pietrowe$ /projekty-domow/domy-pietrowe/ [L,R=301]
+RewriteRule ^/?projekty-domow/domy-z-duza-kotlownia$ /projekty-domow/domy-z-duza-kotlownia/ [L,R=301]
+RewriteRule ^/?projekty-domow/domy-z-kotlownia-na-paliwo-stale$ /projekty-domow/domy-z-kotlownia-na-paliwo-stale/ [L,R=301]
+RewriteRule ^/?projekty-domow/domy-z-poddaszem$ /projekty-domow/domy-z-poddaszem/ [L,R=301]
+RewriteRule ^/?projekty-domow/domy-z-wjazdem-od-poludnia$ /projekty-domow/domy-z-wjazdem-od-poludnia/ [L,R=301]
+RewriteRule ^/?projekty-domow/domy-z-wnetrzami$ /projekty-domow/domy-z-wnetrzami/ [L,R=301]
+RewriteRule ^/?projekty-domow/duze$ /projekty-domow/duze/ [L,R=301]
+RewriteRule ^/?projekty-domow/male$ /projekty-domow/male/ [L,R=301]
+RewriteRule ^/?projekty-domow/mieszkanie-dla-mlodych-100$ /projekty-domow/mieszkanie-dla-mlodych-100/ [L,R=301]
+RewriteRule ^/?projekty-domow/mieszkanie-dla-mlodych-110$ /projekty-domow/mieszkanie-dla-mlodych-110/ [L,R=301]
+RewriteRule ^/?projekty-domow/nowosc$ /projekty-domow/nowosc/ [L,R=301]
+RewriteRule ^/?projekty-domow/promocje$ /projekty-domow/promocje/ [L,R=301]
+RewriteRule ^/?projekty-domow/rezydencje$ /projekty-domow/rezydencje/ [L,R=301]
+RewriteRule ^/?projekty-domow/srednie$ /projekty-domow/srednie/ [L,R=301]
+RewriteRule ^/?projekty-domow/szkieletowe$ /projekty-domow/szkieletowe/ [L,R=301]
+RewriteRule ^/?projekty-domow/tanie-w-budowie$ /projekty-domow/tanie-w-budowie/ [L,R=301]
+RewriteRule ^/?projekty-domow/uslugowe$ /projekty-domow/uslugowe/ [L,R=301]
+RewriteRule ^/?projekty-domow/z-garazem-dwustanowiskowym$ /projekty-domow/z-garazem-dwustanowiskowym/ [L,R=301]
+RewriteRule ^/?projekty-domow/z-plaskim-dachem$ /projekty-domow/z-plaskim-dachem/ [L,R=301]
+RewriteRule ^/?projekty-garazy$ /projekty-garazy/ [L,R=301]
+
+# braki stron, wyrzucone kategorie, wy??czone artyku?y
+RewriteRule ^/?projekty-domow/wszystkie-projekty/?$ /projekty-domow/ [L,R=301]
+RewriteRule ^/?projekty-domow/mieszkanie-dla-mlodych/?$ /projekty-domow/mieszkanie-dla-mlodych-100/ [L,R=301]
+RewriteRule ^/?projekty-domow/kolekcja-vip/?$ /projekty-domow/rezydencje/ [L,R=301]
+RewriteRule ^/?projekt-domu-GLZ-165,183,61,opis.html$ /projekty-domow/Lutnia-iii,183.html [L,R=301]
+RewriteRule ^/?projekt-domu-GL-49,61,61,opis.html$ /projekty-domow/Mikolaj,61.html [L,R=301]
+RewriteRule ^/?projekt-domu-GL-41,53,61,opis.html$ /projekty-domow/Finezja,53.html [L,R=301]
+RewriteRule ^/?projekt-domu-GL-221,239,61,opis.html$ /projekty-domow/Willa-barona,239.html [L,R=301]
+RewriteRule ^/?projekt-domu-GL-214,232,61,opis.html$ /projekty-domow/Toni,232.html [L,R=301]
+RewriteRule ^/?projekt-domu-GL-191,209,61,opis.html$ /projekty-domow/Ula,209.html [L,R=301]
+RewriteRule ^/?projekt-domu-GL-174,192,61,opis.html$ /projekty-domow/Ostoja,192.html [L,R=301]
+RewriteRule ^/?projekt-domu-GL-170,188,61,opis.html$ /projekty-domow/Filemon,188.html [L,R=301]
+RewriteRule ^/?projekt-domu-GL-163,181,61,opis.html$ /projekty-domow/Jawor,181.html [L,R=301]
+RewriteRule ^/?projekt-domu-GL-152,170,61,opis.html$ /projekty-domow/Tango,170.html [L,R=301]
+RewriteRule ^/?projekt-domu-GL-150,168,61,opis.html$ /projekty-domow/Jutrzenka,168.html [L,R=301]
+RewriteRule ^/?projekt-domu-GL-126,137,61,opis.html$ /projekty-domow/Bryza,137.html [L,R=301]
+RewriteRule ^/?projekt-domu-GL-124,135,61,opis.html$ /projekty-domow/Fistaszek,135.html [L,R=301]
+RewriteRule ^/?projekt-domu-GL-123,134,61,opis.html$ /projekty-domow/Ada,134.html [L,R=301]
+RewriteRule ^/?dokumenty/projekt-domu-GLX-19,18,61,opis.html$ /projekty-domow/Maks,18.html [L,R=301]
+RewriteRule ^/?Osiedle-nad-dolina-siedmiu-m$ /artykuly/Osiedle-nad-dolina-siedmiu-mlynow,888.html [L,R=301]
+RewriteRule ^/?oferta_dla_developerow.html$ /projekty-domow/domy-dla-deweloperow/ [L,R=301]
+RewriteRule ^/?Kredyty.html$ / [L,R=301]
+RewriteRule ^/?Konkurs-fotograficzny.html$ /konkurs/fotograficzny.html [L,R=301]
+RewriteRule ^/?Klub-Atrium-informacje.html$ / [L,R=301]
+RewriteRule ^/?Promocja,447.html$ /projekty-domow/promocje/ [L,R=301]
+RewriteRule ^/?kosztorysy-budowy.html$ / [L,R=301]
+RewriteRule ^/?res/regulamin.pdf /dokumenty/Zasady-sprzedazy.html [L,R=301]
+RewriteRule ^/?Domy-drewniane,10.html$ / [L,R=301]
+RewriteRule ^/?Trudna-sztuka-podlewania,94.html$ /artykuly/Trudna-sztuka-podlewania,94.html [L,R=301]
+
+############################################################# 301 - 2017-08-30 (search console) ################################################################################################
+
+RewriteRule ^/?osadniki/?$ /projekty/osadniki/ [L,R=301]
+RewriteRule ^/?najnowsze-artykuly/?$ /baza-wiedzy,1 [L,R=301]
+RewriteRule ^/?projekty-domow/(.*)/(.*),r,[a|d],([0-9]*),([0-9]*)$ /projekty-domow/$1/b,i,a,$4 [L,R=301]
+RewriteRule ^/?projekty-domow/(.*)/r,[a|d],([0-9]*),([0-9]*)$ /projekty-domow/$1/b,i,a,$3 [L,R=301]
+RewriteRule ^/?projekty-domow/(.*)/r,[a|d],([0-9]*)$ /projekty-domow/$1/ [L,R=301]
+
+RewriteRule ^/?projekty-garazy/(.*)/r,[a|d],([0-9]*),([0-9]*)$ /projekty-garazy/$1/b,i,a,$3 [L,R=301]
+
+RewriteRule ^/?projekty-garazy/(.*)/S-Z-([0-9]*),([0-9]*),lustro.html$ /projekty-garazy/Z-$2,$3,lustro.html [L,R=301]
+RewriteRule ^/?projekty-garazy/(.*)/S-Z-([0-9]*),([0-9]*).html$ /projekty-garazy/Z-$2,$3.html [L,R=301]
+
+RewriteRule ^/?projekt-domu-(GL|GLX)-([0-9]*),([0-9]*),([0-9]*),(opis|parter|garaze|domy-podobne|model3dl|model3dh|dzialka|model3d|przekroj|podpiwniczenie|szkielet|zamowienie).html$ index.php?module=relocator301&relocate=projekt-domu&params[symbol]=$2&params[id]=$3 [L,NS]
+RewriteRule ^/?bezplatny-katalog-projektow.html$ /katalog-projektow.html [L,R=301]
+RewriteRule ^/?projekty-domow/domy-podobne,([0-9]*).html$ index.php?module=relocator301&relocate=projekt-domu&params[id]=$1 [L,NS]
+
+############################################################# 301 - 2018-01-08 (404) ################################################################################################
+
+RewriteRule ^/?projekty-domow/dla-emerytow/?.*$ /projekty-domow/ [L,R=301]
+RewriteRule ^/?projekty-domow/dla-oszczednych/?.*$ /projekty-domow/ [L,R=301]
+RewriteRule ^/?projekty-domow/wszystkie-projekty/?.*$ /projekty-domow/ [L,R=301]
+RewriteRule ^/?projekty-domow/energooszczedne/?.*$ /projekty-domow/ [L,R=301]
+RewriteRule ^/?projekty-domow/dla-rodziny2-2/?.*$ /projekty-domow/dla-rodziny-2-2/ [L,R=301]
+RewriteRule ^/?projekty-domow/dla-zamoznych/?.*$ /projekty-domow/ [L,R=301]
+RewriteRule ^/?projekty-domow/dla-romantycznej-pary/?.*$ /projekty-domow/ [L,R=301]
+RewriteRule ^/?projekty-domow/na-czasie/?.*$ /projekty-domow/ [L,R=301]
+RewriteRule ^/?projekty-domow/dla-pracujacych-w-domu/?.*$ /projekty-domow/ [L,R=301]
+RewriteRule ^/?projekty-domow/dla-mieszczuchow/?.*$ /projekty-domow/ [L,R=301]
+RewriteRule ^/?projekty-domow/rodzina-na-swoim/?.*$ /projekty-domow/ [L,R=301]
+RewriteRule ^/?projekty-domow/budynki-uslugowe/?.*$ /projekty-domow/uslugowe/ [L,R=301]
+RewriteRule ^/?projekty-domow/dla-pani-domu/?.*$ /projekty-domow/ [L,R=301]
+RewriteRule ^/?projekty-domow/dla-turystow/?.*$ /projekty-domow/ [L,R=301]
+RewriteRule ^/?projekty-domow/do-100m2/?.*$ /projekty-domow/ [L,R=301]
+RewriteRule ^/?projekty-domow/do-110m2/?.*$ /projekty-domow/ [L,R=301]
+
+############################################################# 301 - wywalenie kategorii promocje #####################################################################################
+
+#RewriteRule ^/?projekty-domow/promocje/?.*$ /projekty-domow/ [L,R=301]
+RewriteRule ^/?projekty-domow/nowoczesna-stodola/?.*$ /projekty-domow/w-stylu-stodoly/ [L,R=301]
+
+RewriteRule ^/?partner/([0-9]*)$ /projekty-domow/ [L,R=301]
+
+############################################################# 301 - wycofanie projektow z oferty (2020-05-18) #########################################
+
+RewriteRule ^/?projekty-domow/New-box,1128.html$ /projekty-domow/ [L,R=301]
+RewriteRule ^/?projekty-domow/New-box-ii,1129.html$ /projekty-domow/ [L,R=301]
+RewriteRule ^/?projekty-domow/New-box-iii,1137.html$ /projekty-domow/ [L,R=301]
+
+############################################################# 301 - wycofanie kategorii (2022-12-20) #########################################
+RewriteRule ^/?projekty-domow/mini/?$ /projekty-domow/do-70m2/ [L,R=301]
+RewriteRule ^/?projekty-domow/male/?$ /projekty-domow/od-100-do-130m2/ [L,R=301]
+
+############################################################# 301 - brak slashy w kategoriach 2026-01-28 ###########################################################################
+
+RewriteRule ^/?projekty-domow/parterowe$ /projekty-domow/parterowe/ [L,R=301]
+RewriteRule ^/?projekty-domow/z-poddaszem-uzytkowym$ /projekty-domow/z-poddaszem-uzytkowym/ [L,R=301]
+RewriteRule ^/?projekty-domow/pietrowe$ /projekty-domow/pietrowe/ [L,R=301]
+RewriteRule ^/?projekty-domow/na-skarpe$ /projekty-domow/na-skarpe/ [L,R=301]
+RewriteRule ^/?projekty-domow/do-70-powierzchni-zabudowy$ /projekty-domow/do-70-powierzchni-zabudowy/ [L,R=301]
+RewriteRule ^/?projekty-domow/na-waska-dzialke$ /projekty-domow/na-waska-dzialke/ [L,R=301]
+RewriteRule ^/?projekty-domow/z-wjazdem-od-poludnia$ /projekty-domow/z-wjazdem-od-poludnia/ [L,R=301]
+RewriteRule ^/?projekty-domow/dwulokalowe$ /projekty-domow/dwulokalowe/ [L,R=301]
+RewriteRule ^/?projekty-domow/dla-deweloperow$ /projekty-domow/dla-deweloperow/ [L,R=301]
+RewriteRule ^/?projekty-domow/do-70m2$ /projekty-domow/do-70m2/ [L,R=301]
+RewriteRule ^/?projekty-domow/od-70-do-100m2$ /projekty-domow/od-70-do-100m2/ [L,R=301]
+RewriteRule ^/?projekty-domow/od-100-do-130m2$ /projekty-domow/od-100-do-130m2/ [L,R=301]
+RewriteRule ^/?projekty-domow/ze-strychem$ /projekty-domow/ze-strychem/ [L,R=301]
+RewriteRule ^/?projekty-domow/z-duza-kotlownia$ /projekty-domow/z-duza-kotlownia/ [L,R=301]
+RewriteRule ^/?projekty-domow/z-kotlownia-na-paliwo-stale$ /projekty-domow/z-kotlownia-na-paliwo-stale/ [L,R=301]
+RewriteRule ^/?projekty-domow/z-antresola$ /projekty-domow/z-antresola/ [L,R=301]
+RewriteRule ^/?projekty-domow/nowoczesne$ /projekty-domow/nowoczesne/ [L,R=301]
+RewriteRule ^/?projekty-domow/w-stylu-stodoly$ /projekty-domow/w-stylu-stodoly/ [L,R=301]
+RewriteRule ^/?projekty-domow/regionalne$ /projekty-domow/regionalne/ [L,R=301]
+RewriteRule ^/?projekty-domow/regionalne-nowoczesne$ /projekty-domow/regionalne-nowoczesne/ [L,R=301]
+RewriteRule ^/?projekty-domow/wille-i-rezydencje$ /projekty-domow/wille-i-rezydencje/ [L,R=301]
+RewriteRule ^/?projekty-domow/z-wizualizacja-wnetrz$ /projekty-domow/z-wizualizacja-wnetrz/ [L,R=301]
+RewriteRule ^/?projekty-domow/showroom$ /projekty-domow/showroom/ [L,R=301]
+RewriteRule ^/?projekty-domow/najlepsze-male-domy-z-poddaszem$ /projekty-domow/najlepsze-male-domy-z-poddaszem/ [L,R=301]
+RewriteRule ^/?projekty-domow/parterowe-bez-garazu$ /projekty-domow/parterowe-bez-garazu/ [L,R=301]
+RewriteRule ^/?projekty-domow/parterowe-z-dwuspadowym-dachem$ /projekty-domow/parterowe-z-dwuspadowym-dachem/ [L,R=301]
+RewriteRule ^/?projekty-domow/parterowe-z-garazem-jednostanowiskowym$ /projekty-domow/parterowe-z-garazem-jednostanowiskowym/ [L,R=301]
+RewriteRule ^/?projekty-domow/parterowe-z-garazem-dwustanowiskowym$ /projekty-domow/parterowe-z-garazem-dwustanowiskowym/ [L,R=301]
+RewriteRule ^/?projekty-domow/najlepsze-domy-parterowe$ /projekty-domow/najlepsze-domy-parterowe/ [L,R=301]
+RewriteRule ^/?projekty-domow/do-120m2$ /projekty-domow/do-120m2/ [L,R=301]
+RewriteRule ^/?projekty-domow/parterowe-na-waska-dzialke$ /projekty-domow/parterowe-na-waska-dzialke/ [L,R=301]
+RewriteRule ^/?projekty-domow/najlepsze-male-domy-parterowe$ /projekty-domow/najlepsze-male-domy-parterowe/ [L,R=301]
+RewriteRule ^/?projekty-domow$ /projekty-domow/ [L,R=301]
+
+RewriteRule ^/?projekty-garazy/jednostanowiskowe$ /projekty-garazy/jednostanowiskowe/ [L,R=301]
+RewriteRule ^/?projekty-garazy/wielostanowiskowe$ /projekty-garazy/wielostanowiskowe/ [L,R=301]
+RewriteRule ^/?projekty/wiaty$ /projekty/wiaty/ [L,R=301]
+RewriteRule ^/?projekty/ogrodzenia$ /projekty/ogrodzenia/ [L,R=301]
+RewriteRule ^/?projekty/osadniki$ /projekty/osadniki/ [L,R=301]
+RewriteRule ^/?projekty/gospodarcze$ /projekty/gospodarcze/ [L,R=301]
+RewriteRule ^/?projekty-domow/selfie$ /projekty-domow/selfie/ [L,R=301]
+RewriteRule ^/?baza-wiedzy$ /baza-wiedzy/ [L,R=301]
+
+######################################################################################################################################################################################
+
+
+#project
+RewriteRule ^/?(?:projekty-domow)/(?:[^,\/]*),([0-9]+).html$ index.php?module=project&action=house&id=$1 [L,NS]
+RewriteRule ^/?(?:projekty-domow)/(?:[^,\/]*),([0-9]+),lustro.html$ index.php?module=project&action=house&id=$1&version=mirror [L,NS]
+
+RewriteRule ^/?(?:projekty-garazy)/(?:[^,\/]*),([0-9]+).html$ index.php?module=project&action=garage&id=$1 [L,NS]
+RewriteRule ^/?(?:projekty-garazy)/(?:[^,\/]*),([0-9]+),lustro.html$ index.php?module=project&action=garage&id=$1&version=mirror [L,NS]
+
+RewriteRule ^/?(?:projekty)/(wiaty|altany|osadniki|ogrodzenia|gospodarcze)/(?:[^,\/]*),([0-9]+).html$ index.php?module=project&action=other&category=$1&id=$2 [L,NS]
+RewriteRule ^/?(?:projekty)/(gospodarcze)/(?:[^,\/]*),([0-9]+),lustro.html$ index.php?module=project&action=other&category=$1&id=$2&version=mirror [L,NS]
+
+RewriteRule ^/?dodatki/(?:[^,\/]*),([0-9]+).html$ index.php?module=project_extend&action=addons&id=$1 [L,NS]
+RewriteRule ^/?dodatki/?$ index.php?module=varia&action=addons [L,NS]
+
+RewriteRule ^/?usytuowanie/(?:[^,\/]*),([0-9]+).html$ index.php?module=project_extend&action=plan&id=$1 [L,NS]
+RewriteRule ^/?usytuowanie/(?:[^,\/]*),([0-9]+),lustro.html$ index.php?module=project_extend&action=plan&id=$1&version=mirror [L,NS]
+
+RewriteRule ^/?(piwnica|przyziemie|parter|pietro(?:[1-5]?)|poddasze|strych)/(?:[^,]*),([0-9]+).html$ index.php?module=project_extend&action=sketch&storey=$1&id=$2 [L,NS]
+RewriteRule ^/?(piwnica|przyziemie|parter|pietro(?:[1-5]?)|poddasze|strych)/(?:[^,]*),([0-9]+),lustro.html$ index.php?module=project_extend&action=sketch&storey=$1&id=$2&version=mirror [L,NS]
+
+RewriteRule ^/?ulubione/lista.html$ index.php?module=favourite&action=list [L,NS]
+RewriteRule ^/?ulubione/porownanie.html$ index.php?module=favourite&action=compare [L,NS]
+
+RewriteRule ^/?(selfie-)([^-]*)-([0-9]*)/(?:[^,]*),([0-9]+).html$ index.php?module=selfie&action=current&stamp=$2&sid=$3&id=$4 [L,NS]
+RewriteRule ^/?(selfieD-)([^-]*)-([0-9]*)/(?:[^,]*),([0-9]+).html$ index.php?module=selfie&action=current&stamp=$2&sid=$3&id=$4&delete=1 [L,NS]
+RewriteRule ^/?(selfie-)([0-9]*)/(?:[^,]*),([0-9]+).html$ index.php?module=selfie&action=public&sid=$2&id=$3 [L,NS]
+RewriteRule ^/?(selfie)/(?:[^,]*),([0-9]+).html$ index.php?module=selfie&id=$2 [L,NS]
+RewriteRule ^/?(selfie)/(?:[^,]*),([0-9]+),lustro.html$ index.php?module=selfie&id=$2&version=mirror [L,NS]
+
+RewriteRule ^/?pobierz-plik/([^/]*)$ index.php?module=project&action=download&file=$1 [L,NS]
+
+#ajax
+RewriteRule ^/?ajax/wolf/([0-9]+).html/?$ index.php?module=ajax&action=wolf&id=$1 [L,NS]
+
+#zamowienie
+RewriteRule ^/?zamowienie/koszyk.html$ index.php?module=order&action=cart [L,NS]
+RewriteRule ^/?zamowienie/dane.html$ index.php?module=order&action=data [L,NS]
+RewriteRule ^/?zamowienie/podsumowanie.html$ index.php?module=order&action=summary [L,NS]
+RewriteRule ^/?zamowienie-(.*).html$ index.php?module=order&action=confirm&hash=$1 [L,NS]
+
+#baza wiedzy
+RewriteRule ^/?baza-wiedzy,([0-9]+)/?$ index.php?module=article&action=hash_tag&tag=$1 [L,NS,QSA]
+RewriteRule ^/?baza-wiedzy,([0-9]+),([0-9]+)/?$ index.php?module=article&action=hash_tag&tag=$1&page=$2 [L,NS,QSA]
+RewriteRule ^/?baza-wiedzy/,([0-9]+)/?$ index.php?module=article&action=hash_tag&page=$1 [L,NS,QSA]
+RewriteRule ^/?baza-wiedzy/?$ index.php?module=article&action=hash_tag [L,NS,QSA]
+
+RewriteRule ^/?artykuly/(?:[^,]*),([0-9]+).html$ index.php?module=article&action=item&docId=$1 [L,NS]
+RewriteRule ^/?aktualnosci/(?:[^,]*),([0-9]+).html$ index.php?module=article&action=item&docId=$1 [L,NS]
+RewriteRule ^/?dokumenty/(?:[^/]*)/([^,]*),([0-9]+).html$ /dokumenty/$1,$2.html [R=301,L,NS]
+RewriteRule ^/?dokumenty/(?:[^,]*),([0-9]+).html$ index.php?module=article&action=item&docId=$1 [L,NS]
+RewriteRule ^/?dokumenty/(?:[^,]*),([aA-zZ_0-9]+).html$ index.php?module=article&action=item&docCharId=$1 [L,NS]
+
+#Documents
+RewriteRule ^/?dokumenty/Zasady-sprzedazy.html$ index.php?module=article&action=item&charId=sprzed [L,NS]
+RewriteRule ^/?dokumenty/Jak-kupowac.html$ index.php?module=article&action=item&charId=jak_kup [L,NS]
+RewriteRule ^/?dokumenty/Co-zawiera-projekt.html$ index.php?module=article&action=item&charId=co_zaw [L,NS]
+RewriteRule ^/?dokumenty/Referencje.html$ index.php?module=article&action=item&charId=refer [L,NS]
+RewriteRule ^/?dokumenty/Dane-teleadresowe.html$ index.php?module=article&action=item&charId=tele [L,NS]
+RewriteRule ^/?dokumenty/Wspolpraca.html$ index.php?module=article&action=item&charId=wspol [L,NS]
+RewriteRule ^/?dokumenty/Adopcja-serca.html$ index.php?module=article&action=item&charId=maitri [L,NS]
+RewriteRule ^/?dokumenty/Aplikacja-mobilna.html$ index.php?module=article&action=item&charId=mobile [L,NS]
+RewriteRule ^/?dokumenty/Polityka-prywatnosci.html$ index.php?module=article&action=item&charId=privacy [L,NS]
+RewriteRule ^/?dokumenty/Reklama.html$ index.php?module=article&action=item&charId=reklama [L,NS]
+RewriteRule ^/?dokumenty/Grafika.html$ index.php?module=article&action=item&charId=grafika [L,NS]
+RewriteRule ^/?dokumenty/Projekt-indywidualny.html$ index.php?module=article&action=item&charId=indywidu [L,NS]
+
+RewriteRule ^/?drukuj/artykuly/([0-9]+).html$ index.php?module=article&action=print&docId=$1 [L,NS]
+
+#forum
+RewriteRule ^/?forum/$ index.php?module=discuss [L,NS]
+RewriteRule ^/?forum/szukaj(,([0-9]+))?$ index.php?module=discuss&action=search&page=$2 [L,NS,QSA]
+RewriteRule ^/?forum/komentarze(,([0-9]+))?$ index.php?module=discuss&action=comments&page=$2 [L,NS]
+RewriteRule ^/?forum/([0-9]+)(,([0-9]+))?$ index.php?module=discuss&action=category&id=$1&page=$3 [L,NS]
+RewriteRule ^/?forum/post,([0-9]+)(,([0-9]+))?$ index.php?module=discuss&action=thread&id=$1&page=$3 [L,NS,QSA]
+RewriteRule ^/?forum/edycja/([0-9]+).html?$ index.php?module=discuss&action=edit_thread&id=$1 [L,NS]
+RewriteRule ^/?forum/edit/([0-9]+).html?$ index.php?module=discuss&action=edit_post&id=$1 [L,NS]
+RewriteRule ^/?forum/unsubscribe/(.{64})$ index.php?module=discuss&action=unsubscribe&hash=$1 [L,NS]
+
+#archiwum
+RewriteRule ^/?archiwum/Forum,([^,]*),([0-9]+).html$ index.php?module=forum_archive&title=$1&postId=$2 [L,NS]
+RewriteRule ^/?archiwum/Forum,([^,]*),([0-9]+),([0-9]+).html$ index.php?module=forum_archive&title=$1&postId=$2&page=$3 [L,NS]
+RewriteRule ^/?archiwum/Forum/Projekt,([^,]*),([0-9]+).html$ index.php?module=forum_archive&action=project&projectId=$2&title=$1 [L,NS]
+
+#pdf
+RewriteRule ^/?pdf/projekt/(?:[^,\/]*),([0-9]+).html$ index.php?module=pdf&action=project&id=$1 [L,NS,QSA]
+RewriteRule  ^/?pdf/projekt/(?:[^,\/]*),([0-9]+),lustro.html$ index.php?module=pdf&action=project&id=$1&version=mirror [L,NS,QSA]
+
+#search
+RewriteRule ^/?projekty-domow/szukaj/?$ index.php?module=project&action=search [L,NS,QSA]
+RewriteRule ^/?projekty-domow/szukaj/(b|l|e{1}),(i|n|u{1}),(a|d{1})(,([0-9]*))?$ index.php?module=project&action=search&display_type=$1&sort_by=$2&sort_order=$3&page=$5 [L,NS,QSA]
+
+#clicksearch
+RewriteRule ^/?wynik-wyszukiwania/$ index.php?module=project&action=click_search [L,NS,QSA]
+RewriteRule ^/?wynik-wyszukiwania/(b|l|e{1}),(i|n|u{1}),(a|d{1})(,([0-9]*))?$ index.php?module=project&action=click_search&display_type=$1&sort_by=$2&sort_order=$3&page=$5 [L,NS,QSA]
+
+#realizacje
+RewriteRule ^/?projekty-domow/realizacje/?$ index.php?module=project&action=realizations [L,NS]
+RewriteRule ^/?projekty-domow/realizacje/,([0-9]+)?$ index.php?module=project&action=realizations&page=$1 [L,NS]
+RewriteRule ^/?projekty-domow/realizacje-wnetrz/?$ index.php?module=project&action=realizations_interior [L,NS]
+RewriteRule ^/?projekty-domow/realizacje-wnetrz/,([0-9]+)?$ index.php?module=project&action=realizations_interior&page=$1 [L,NS]
+RewriteRule ^/?projekty-domow/realizacje-w-budowie/?$ index.php?module=project&action=realizations_building [L,NS]
+RewriteRule ^/?projekty-domow/realizacje-w-budowie/,([0-9]+)?$ index.php?module=project&action=realizations_building&page=$1 [L,NS]
+
+#opinie
+RewriteRule ^/?projekty-domow/opinie/?$ index.php?module=project&action=opinions [L,NS]
+RewriteRule ^/?projekty-domow/opinie/,([0-9]+)?$ index.php?module=project&action=opinions&page=$1 [L,NS]
+
+#selfie
+RewriteRule ^/?projekty-domow/selfie/?$ index.php?module=selfie&action=gallery [L,NS]
+RewriteRule ^/?projekty-domow/selfie/,([0-9]+)?$ index.php?module=selfie&action=gallery&page=$1 [L,NS]
+
+#project list
+RewriteRule ^/?(projekty-domow|projekty-garazy)/?$ index.php?module=project&action=list&category=$1 [L,NS,QSA]
+RewriteRule ^/?(projekty-domow|projekty-garazy)/(b|l|e{1}),(i|n|u{1}),(a|d{1})(,([0-9]*))?$ index.php?module=project&action=list&category=$1&display_type=$2&sort_by=$3&sort_order=$4&page=$6 [L,NS]
+RewriteRule ^/?((?:projekty-domow|projekty-garazy)/[^\/]+)/?$ index.php?module=project&action=list&category=$1 [L,NS,QSA]
+RewriteRule ^/?((?:projekty-domow|projekty-garazy)/[^\/]+)/(b|l|e{1}),(i|n|u{1}),(a|d{1})(,([0-9]*))?$ index.php?module=project&action=list&category=$1&display_type=$2&sort_by=$3&sort_order=$4&page=$6 [L,NS]
+RewriteRule ^/?(projekty/(?:wiaty|altany|osadniki|ogrodzenia|gospodarcze|mala-architektura))/?$ index.php?module=project&action=list&category=$1 [L,NS]
+
+#project's API
+RewriteRule ^/?api/([^\/]+)/project/([0-9]+).json$ index.php?module=api&action=project&id=$2&signature=$1 [L,NS]
+#RewriteRule ^/?api/([^\/]+)/list/([0-9]+)/([^\.]+).json$ index.php?module=api&action=list&category=$3&limit=$2&sort_order=ASC&signature=$1 [L,NS,QSA]
+#RewriteRule ^/?api/([^\/]+)/list/([^\.]+).json$ index.php?module=api&action=list&category=$2&signature=$1 [L,NS]
+
+#Katalog firm
+RewriteRule ^/?katalog-firm/lista.html?$ index.php?module=companies&action=list [L,NS]
+
+#PANEL I LOGOWANIE
+RewriteRule ^/?wyloguj/?$ index.php?module=authenticate&action=logout [L,NS]
+RewriteRule ^/?panel/?$ index.php?module=panel&action=helo [L,NS]
+RewriteRule ^/?panel/twoje-konto.html?$ index.php?module=panel&action=account [L,NS]
+RewriteRule ^/?panel/usun-konto.html?$ index.php?module=panel&action=account_delete [L,NS]
+RewriteRule ^/?panel/wiadomosci.html$ index.php?module=panel&action=messages [L,NS,QSA]
+RewriteRule ^/?panel/ulubione.html$ index.php?module=panel&action=favourite [L,NS]
+RewriteRule ^/?panel/blogi.html$ index.php?module=panel&action=blog [L,NS]
+RewriteRule ^/?panel/dyskusje.html$ index.php?module=panel&action=discuss [L,NS]
+RewriteRule ^/?panel/komentarze.html$ index.php?module=panel&action=comment [L,NS]
+RewriteRule ^/?panel/forum(,([0-9]+))?$ index.php?module=panel&action=forum&page=$2 [L,NS]
+RewriteRule ^/?panel/forum-wiadomosci.html$ index.php?module=panel&action=forum_message [L,NS]
+RewriteRule ^/?panel/promocje.html$ index.php?module=panel&action=promo [L,NS]
+RewriteRule ^/?panel/zamowienia.html$ index.php?module=panel&action=transaction [L,NS]
+
+#catalog
+RewriteRule ^/?katalog-projektow.html$ index.php?module=catalog&action=form [L,NS]
+RewriteRule ^/?katalog-projektow-online.html$ index.php?module=catalog&action=online [L,NS]
+RewriteRule ^/?katalog.html$ index.php?module=catalog&action=pay_form [L,NS]
+RewriteRule ^/?katalog/komunikat.html$ index.php?module=catalog&action=info [L,NS,QSA]
+RewriteRule ^/?katalog/potwierdzenie,([^,]*),([^,]*).html$ index.php?module=catalog&action=activate&trans_id=$1&email=$2 [L,NS]
+
+#varia
+RewriteRule ^/?dokumenty/O-nas.html$ index.php?module=varia&action=about [L,NS]
+RewriteRule ^/?przedstawiciele/([0-9]+)?$ index.php?module=varia&action=agent&region=$1 [L,NS,QSA]
+RewriteRule ^/?przedstawiciele/([0-9]+),([0-9]+)/?$ index.php?module=varia&action=agent&region=$1&page=$2 [L,NS,QSA]
+RewriteRule ^/?przedstawiciele/([^,]*),([0-9]+)\.html?$ index.php?module=varia&action=agent_detail&id=$2 [L,NS]
+RewriteRule ^/?konkurs/fotograficzny.html$ index.php?module=contest&action=form [L,NS]
+RewriteRule ^/?znajdziemy-dla-ciebie-projekt.html$ index.php?module=varia&action=project_helper [L,NS]
+RewriteRule ^/?projekt-indywidualny.html$ index.php?module=varia&action=custom_project [L,NS]
+RewriteRule ^/?oferty-domow-gotowych/?$ index.php?module=varia&action=build_offer [L,NS]
+RewriteRule ^/?finansowanie.html$ index.php?module=varia&action=financing [L,NS]
+RewriteRule ^/?kontakt/?$ index.php?module=contact&action=form [L,NS]
+
+#STRONY STATYCZNE
+RewriteRule ^/?brak-dostepu.html$ index.php?module=authenticate&action=authentication_required [L,NS]
+RewriteRule ^/?404.html$ index.php?module=page&action=display404 [L,NS]
+
+RewriteRule ^/?alfabetyczna-lista-projektow/([aA-zZ_0-9]+)??$ index.php?module=alphabet&action=list&letter=$1 [L,NS]
+
+############################################################# 301 - ze starej strony ################################################################################################
+#wyszukiwarka np: projekty-domow/szukaj/Y2hhdGthOzs7Ozs7Ozs7,r,d,28/
+RewriteRule ^/?projekty-domow/szukaj/([^,]+),(s|n|u|r{1}),(a|d{1}),([0-9]{1,2})	/projekty-domow/ [L,R=301]
+
+#dodane na wniosek Sempai - 25-11-2025
+ErrorDocument 404 /404.html
+
+AddType font/woff2 .woff2
+
+#
+<IfModule mod_expires.c>
+  ExpiresActive on
+  ExpiresByType image/webp                "access plus 1 year"
+  ExpiresByType image/gif                 "access plus 1 year"
+  ExpiresByType image/png                 "access plus 1 year"
+  ExpiresByType image/jpg                 "access plus 1 year"
+  ExpiresByType image/jpeg                "access plus 1 year"
+  ExpiresByType video/ogg                 "access plus 1 year"
+  ExpiresByType audio/ogg                 "access plus 1 year"
+  ExpiresByType video/mp4                 "access plus 1 year"
+  ExpiresByType video/webm                "access plus 1 year"
+  ExpiresByType font/truetype             "access plus 1 year"
+  ExpiresByType font/opentype             "access plus 1 year"
+  ExpiresByType font/woff2  			  "access plus 1 year"
+  ExpiresByType application/font-woff2    "access plus 1 year"
+  ExpiresByType application/x-font-woff   "access plus 1 year"
+  ExpiresByType image/svg+xml             "access plus 1 year"
+  ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+  ExpiresByType text/css                  "access plus 1 year"
+  ExpiresByType application/javascript    "access plus 1 year"
+  ExpiresByType text/javascript           "access plus 1 year"
+  ExpiresByType image/x-icon              "access plus 1 year"
+</IfModule>
+
+# BROWSER CACHING USING CACHE-CONTROL HEADERS
+<ifModule mod_headers.c>
+	# One year for image and video files
+    <filesMatch ".(flv|gif|ico|jpg|jpeg|mp4|mpeg|png|svg|swf|webp)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </filesMatch>
+</ifModule>
+
+<Files ~ "\.pdf$">
+  Header set X-Robots-Tag "noindex, nofollow"
+</Files>

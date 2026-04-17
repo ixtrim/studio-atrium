@@ -1,0 +1,354 @@
+@import (reference) "../variables/colors.less";
+@import (reference) "../variables/dimensions.less";
+@import (reference) "../variables/fonts.less";
+@import (reference) "../variables/mixins.less";
+
+div.list-header {
+	background: @backLightGrey url(../img/catalog_head.jpg) no-repeat center 110px;
+	
+	> div {
+		height: 255px;
+	}
+}
+
+h2 {
+	font-size: @fontSize28;
+	text-transform: uppercase;
+	line-height: 1.2em;
+	margin: 48px 0 32px;
+}
+
+form.default {
+    width: auto;
+    	
+	input[type="text"] {
+		margin: 4px 0 0;
+	}
+}
+
+div#photos-box {
+	background-color: @backUltraLightGrey;
+	min-height: 120px;
+	padding-top: 24px;
+	
+	div {
+		text-align: center;
+	}
+	
+	input[type="file"] {
+	    position: absolute;
+	    left: 0;
+	    opacity: 0;
+	    top: 0;
+	    height: 1px;
+	    width: 1px;
+	    z-index: 999;
+	    cursor: pointer;
+	}
+	
+	input[type="submit"] {
+		display: none;
+	}
+	
+	span#add-photo {
+		display: inline-block;
+		height: 50px;
+	    color: #fff;
+	    text-transform: uppercase;
+	    line-height: 50px;
+	    padding: 0 12px;
+	    background-color: @saRed;
+	    cursor: pointer;
+	}
+	
+	ul {
+		li {
+		    display: inline-block;
+		    max-width: 146px;
+		    text-align: right;
+		    padding: 16px 12px 42px;
+			border: 1px solid #cecece;
+		    margin: 0 12px 24px;
+		    
+		    span {
+			    text-transform: uppercase;
+			    cursor: pointer;
+		    }
+		}
+	}
+}
+
+div.contest-form-box {
+	display: flex;
+	justify-content: space-between;
+	max-width: 740px;
+	margin: 0 auto 48px;
+	
+	ul {
+		li + li {
+			margin-top: 32px;
+		}
+	}
+	
+	p:not(.error-field) {
+		font-size: @fontSize15;
+	}
+	
+	#region-box {
+		margin-top: 4px;
+	}
+	
+	p.error_message {
+		width: 350px;
+		font-size: @fontSize12;
+		padding-right: 6px;
+		margin-top: -22px;
+		margin-right: 0;
+	}
+	
+	div.jui-select-box {
+		.ui-selectmenu-text {
+			font-size: @fontSize16;
+		}
+		
+		.ui-button {
+			height: 50px;
+			line-height: 50px;
+		}
+		
+		.ui-selectmenu-icon.ui-icon {
+			margin-top: 16px;
+		}
+		
+		.ui-selectmenu-button.ui-button {
+		    width: 350px;
+		}
+		
+		.ui-menu {
+			.ui-menu-item-wrapper {
+				padding: 2px 12px;
+			}
+		}
+	}
+}
+
+div#reg-box {
+	p {
+		font-size: @fontSize16;
+		
+		+ p {
+			margin-top: 12px;
+		}
+	}
+	
+	p.error_message {
+		width: auto;
+		font-size: @fontSize12;
+		text-align: left;
+		margin-top: -4px;
+	}
+	
+	input[type="checkbox"] {
+		display: none;
+	}
+	
+	input[type="checkbox"] + label {
+		padding:  1px 0 1px 22px;
+		.iconsBg(0, -2382px);
+	}
+	
+	input[type="checkbox"]:checked + label {
+		padding-left: 22px;
+		.iconsBg(0, -2407px);
+	}
+	
+	label {
+		cursor: pointer;
+	}
+}
+
+div#submit-box {
+	text-align: center;
+	margin-top: 12px;
+	
+	input {
+	    height: 50px;
+	    color: #fff;
+	    font-family: @defaultFontFamily;
+	    font-size: @fontSize18;
+	    text-transform: uppercase;
+	    line-height: 50px;
+		background-color: @saRed;
+	    padding: 0 28px;
+	    border: none;
+	    cursor: pointer;
+	    
+	    &:hover {
+	    	background-color: @saRedHover;
+	    }
+	}
+}
+
+div.info-box {
+	padding: 64px 0;
+	
+	p.headline {
+		font-size: @fontSize24;
+		margin-bottom: 24px;
+		text-transform: uppercase;
+	}
+	
+	p + p {
+		margin-top: 4px;
+	}
+	
+	a {
+		text-decoration: underline;
+	}
+}
+
+div.contest-splash  {
+	margin-top: 50px;
+	
+	img {
+		max-width: 100%;
+	}
+}
+
+div.contest {
+	margin-top: 48px;
+	text-align: center;
+	
+	p {
+		&.info {
+			text-align: justify;
+			a {
+				color: @saRed;
+				&:hover {
+					color: @saRedHover;
+				}
+			}
+		}
+		
+		&.express {
+			font-size: @fontSize36;
+			text-transform: uppercase;
+			line-height: 1.2em;
+			margin-top: 72px;
+			
+			span {
+				color: @saBlue;
+			}
+			
+			+ p {
+				text-transform: uppercase;
+				font-size: @fontSize24;
+				line-height: 1.4em;
+				margin: 32px 0 48px;
+			}
+		}
+	}
+	
+	a {
+		&.bg {
+			display: inline-block;
+			height: 50px;
+			color: #fff;
+			text-transform: uppercase;
+			line-height: 50px;
+			background-color: @saBlue;
+			padding: 0 32px;
+			margin-bottom: 12px;
+		}
+	}
+}
+
+@media all and (max-width: 1240px) {
+	
+	h2 {
+		margin: 0 0 32px;
+	}
+	
+	div.list-header {
+		background: none !important;
+		
+		&.activated:hover {
+			
+			h1 {
+				width: auto;
+			}
+			
+			div.header-wrapper {
+				width: auto;
+				height: auto;
+				transform: translate(0, 0);
+			}
+			
+			p {
+				text-align: left;
+			}
+		}
+		
+		> div {
+			height: auto;
+			padding-bottom: 48px;
+		}
+		
+		div.header-wrapper {
+			position: static;
+			top: auto;
+			left: auto;
+			display: inline-block;
+			width: 100%;
+			height: auto;
+			color: @defaultTextColor;
+			background-color: transparent;
+			padding: 12px;
+			overflow: visible;
+			transform: translate(0, 0);
+			
+			> div {
+				padding: 0;
+			}
+		}
+		
+		h1 {
+			white-space: normal;
+			text-align: left;
+			margin-top: 16px;
+			line-height: 1.2em;
+			
+			&::after {
+		    	opacity: 1;
+		    }
+		}
+		
+		p {
+			position: static;
+			opacity: 1;
+			transform: translate3d(0px, 0px, 0px);
+		}
+	}
+}
+
+@media all and (max-width: 760px) {
+	div.contest-form-box {
+		flex-direction: column;
+		
+		div + div {
+			margin-top: 32px;
+		}
+	}
+}
+
+@media all and (max-width: 480px) {
+	div.contest-form-box {
+		input[type="text"] {
+			width: 320px;
+		}
+		
+		div.jui-select-box .ui-selectmenu-button.ui-button {
+		    width: 320px;
+		}
+	}
+}

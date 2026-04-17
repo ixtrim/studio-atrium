@@ -1,0 +1,363 @@
+@import (reference) "../variables/colors.less";
+@import (reference) "../variables/dimensions.less";
+@import (reference) "../variables/fonts.less";
+@import (reference) "../variables/mixins.less";
+
+@import (less) "../css-includes/jquery.fancybox.css";
+
+header + div {
+	background-color: #fff;
+    padding-top: 0;
+}
+
+	div#pro-box {
+		.standardBox;
+		position: relative;
+		margin-top: 150px;
+		margin-bottom: 200px;
+	}
+
+		div#pro-box span.header {
+			position: relative;
+			top: 6px;
+			font-size: @fontSize28;
+		}
+
+		div#pro-box span.header + a {
+			float: right;
+			color: @saRed;
+			line-height: 40px;
+		}
+		
+	div#canvas-box {
+		width: 1024px;
+		height: 683px;
+		position: relative;
+		margin-top: 50px;
+		overflow: hidden;
+		
+		> img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			max-width: 100%;
+			z-index: 0;
+		}
+		
+		canvas {
+			position: relative;
+			z-index: 50;
+		}
+		
+		div#selfie-box {
+			position: absolute;
+			border: 1px dashed #fff;
+			cursor: move;
+			z-index: 100;
+		}
+		
+		div#selfie-controls {
+			position: absolute;
+			z-index: 200;
+			
+			span {
+				position: absolute;
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				background-color: #fff;
+				border-radius: 50%;
+				cursor: pointer;
+				
+				&#rotate {
+					background-image: url('/img/rotate.png');
+				}
+				
+				&#resize {
+					background-image: url('/img/resize.png');
+				}
+			}
+		}
+	}
+	
+
+	img#myPhoto:hover {
+		cursor: move;
+	}
+
+	div#infoTrigger {
+		background-color: @saBlue;
+		padding: 5px;
+		width: 195px;
+		height: 40px;
+		position: absolute;
+		right: 0;
+		top: 78px;
+		color: #fff;
+		font-size: @fontSize18;
+		cursor: pointer;
+		line-height: 30px;
+	}
+
+	div#infoTrigger img {
+		margin: 3px 15px 0 10px;
+		float: left;
+	}
+
+	div#infoBox {
+		background-color: @saBlue;
+		padding: 5px;
+		width: 195px;
+		height: 220px;
+		position: absolute;
+		right: 0;
+		top: 117px;
+		overflow: none;
+		color: #fff;
+		font-size: @fontSize12;
+		z-index: 100;
+		cursor: pointer;
+		
+	}
+
+	div#infoBox > img {
+		float: left;
+		margin: 0 5px 5px 0;
+		margin-top: 5px;
+	}
+
+	div#selfieTypesBox {
+		z-index: 90;
+		padding: 5px;
+		width: 195px;
+		min-height: 500px;
+		position: absolute;
+		right: 0;
+		top: 140px;
+		
+		div#selfie-tools {
+			margin-top: 16px;
+		}
+		
+		ul {
+			
+			li {
+				div {
+					margin-top: 6px;
+				}
+			}
+			
+			li + li {
+				margin-top: 24px;
+			}
+		}
+		
+		label {
+			cursor: pointer;
+			font-size: @fontSize12;
+		}
+		
+		input[type="checkbox"] {
+			vertical-align: middle;
+		}
+	}
+
+	div#selfieTypesBox > h4 {
+		font-weight: 300;
+		font-size: 18px;
+		text-transform: uppercase;
+		margin-bottom: 15px;
+	}
+
+
+	div#selfieTypesBox a {
+		margin: 5px 3px 10px 3px;
+		display: inline-block;
+	}
+
+	div#selfieTypesBox p {
+		font-size: 12px;
+		margin-bottom: 10px;
+		position: relative;
+	}
+
+	div#selfieTypesBox a img {
+		-webkit-filter: grayscale(100%);
+		filter: grayscale(100%);
+	}
+
+	div#selfieTypesBox a.selected img,
+	div#selfieTypesBox a:hover img {
+		-webkit-filter: grayscale(0);
+		filter: grayscale(0);
+	}
+
+	input#fileTrigger {
+		position: absolute;
+		top: -100px;
+	}
+
+	div#uploadTrigger {
+		position: absolute;
+		z-index: 100;
+		top: 0px;
+		left: 0px;
+		width: 1024px;
+		height: 683px;
+		cursor: pointer;
+	}
+
+	.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+		width: 18px;
+		height: 18px;
+		background: none !important;
+		background-color: @saBlue !important;
+		border-radius: 50%;
+		border: 1px solid @saBlue !important;
+		cursor: pointer !important;
+		top: -10px !important;
+	}
+
+	.ui-widget-content {
+		height: 0px !important;
+		border: 1px solid #b7b7b7 !important;
+	}
+
+	div.currentSelfie a.button,
+	div#selfie-functions a.button {
+		margin-top: 30px;
+		min-width: 100px;
+		background-color: @saRed;
+		color: #fff;
+		text-transform: uppercase;
+		text-align: center;
+		font-size: @fontSize18;
+		padding: 10px 20px;
+		display: block;
+		
+		 &:hover {
+		 	background-color: @saRedHover;
+		 }
+	}
+	
+	div#selfie-functions {
+		position: relative;
+		margin-top: 28px;
+		
+		div {
+			display: inline-block;
+		}
+		
+		p {
+			display: inline-block;
+			
+			+ p {
+				margin-left: 16px;
+			}
+		}
+		
+		a.button {
+			margin-top: 0;
+		}
+		
+		a.button.grey {
+			background-color: @defaultTextColor;
+			
+			&:hover {
+				background-color: @saBlueHover;
+			}
+		}
+	}
+
+	div.currentSelfie a.button {
+		width: 200px;
+		margin-left: 109px;
+		float: left;
+	}
+
+	div.currentSelfie a.button + a.button {
+		float: right;
+		margin-right: 109px;
+	}
+
+	div#saveForm {
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: #fff;
+		
+		p {
+			font-size: @fontSize14;
+		}
+		
+		label {
+			cursor: pointer;
+			font-size: @fontSize14;
+		}
+		
+		input[type="checkbox"] {
+			vertical-align: middle;
+		}
+		
+		input[type="text"] {
+			font-size: @fontSize14;
+		}
+	}
+
+	div#saveForm input[type="text"] {
+		border: 1px solid #b7b7b7;
+	}
+
+	div#saveForm label.checkbox {
+		font-size: @fontSize14;
+	}
+
+	div.currentSelfie {
+		margin: 30px 0 30px 0;
+		text-align: center;
+		width: 100%;
+		display: inline-block;
+		position: relative;
+	}
+
+	div.fb-share-button {
+		position: absolute;
+		top: 717px;
+		right: 109px;
+	}
+
+	div#pro-box span.header + a.fancybox {
+		width: 200px;
+		line-height: 34px;
+		background: #30383b;
+		color: #fff;
+		text-transform: uppercase;
+		padding: 0;
+		text-align: center;
+	}
+	
+	
+#selfie-hide {
+	display: none;
+	padding: 168px 0 124px;
+	background-color: #fff;
+	
+	p.info {
+		font-size: @fontSize24;
+		margin-bottom: 32px;
+		
+		a {
+			color: @saRed;
+		}
+	}
+}
+	
+@media all and (max-width: 1239px) {
+	#selfie-hide {
+		display: block;
+	}
+	
+	#pro-box {
+		display: none;
+	}
+}

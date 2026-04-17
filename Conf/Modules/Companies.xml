@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<classname>\StudioAtrium\Application\WWW\Module\Companies</classname>
+	<classfile>Companies</classfile>
+	<default_action>List</default_action>
+	<request>
+
+		<action name="List">
+			<allowed_methods get="yes" />
+		</action>
+	</request>
+
+	<commands>
+		<on_before_exec>
+			<include file="../defaultBeforeCommands.xml" />
+		</on_before_exec>
+	</commands>
+
+	<result_map>
+		<action name="List">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Companies/List.tpl" />
+					<param name="smarty.noindexNofollow" value="1" />
+					
+					<param name="smarty.css_includes">
+						<value>["companies.min.css"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+		</action>
+	</result_map>
+</module>

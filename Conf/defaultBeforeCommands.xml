@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<include>
+	<command classname="AuthenticateUserCommand" priority="900" action="*" />
+	<command classname="AdwordsCommand" priority="800" action="*" />
+</include>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<classname>\StudioAtrium\Application\WWW\Module\ForumArchive</classname>
+	<classfile>ForumArchive</classfile>
+	<default_action>List</default_action>
+	<request>
+		<action name="List">
+			<allowed_methods get="yes" />
+			<param name="postId" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="page" required="no" default="1">
+				<validator name="Integer" />
+			</param>
+			<param name="title" required="no">
+				<validator name="String" />
+			</param>
+			<param name="limit" required="no" default="10">
+				<validator name="Integer" min="1" />
+			</param>
+		</action>
+		<action name="Project">
+			<allowed_methods get="yes" />
+			<param name="projectId" required="yes">
+				<validator name="Integer" />
+			</param>
+		</action>
+	</request>
+
+	<commands>
+		<on_before_exec>
+			<include file="../defaultBeforeCommands.xml" />
+		</on_before_exec>
+	</commands>
+
+	<result_map>
+		<action name="List">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="ForumArchive/List.tpl" />
+					<param name="smarty.css_includes">
+						<value>["article.min.css"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_thread_not_found>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="ForumArchive/NotFound.tpl" />
+					<param name="smarty.css_includes">
+						<value>["article.min.css"]</value>
+					</param>
+				</view>
+			</on_thread_not_found>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		<action name="Project">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Dummy" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_Dummy" />
+			</on_exec_error>
+		</action>
+	</result_map>
+</module>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<classname>\StudioAtrium\Application\WWW\Module\Contest</classname>
+	<classfile>Contest</classfile>
+	<default_action>Form</default_action>
+	<request>
+		<action name="Form">
+			<allowed_methods get="yes" />
+		</action>
+		<action name="Upload">
+			<allowed_methods post="yes" />
+			<param name="index" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+			<param name="dir" required="yes">
+				<validator name="String"/>
+			</param>
+		</action>
+		<action name="Remove">
+			<allowed_methods post="yes" />
+			<param name="index" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+			<param name="dir" required="yes">
+				<validator name="String"/>
+			</param>
+		</action>
+		<action name="Register">
+			<allowed_methods post="yes" />
+			<param name="project" required="yes">
+				<validator name="String" msg_required="Podaj nazwę projektu" />
+			</param>
+			<param name="fname" required="yes">
+				<validator name="String" msg_required="Podaj imię"/>
+			</param>
+			<param name="lname" required="yes">
+				<validator name="String" msg_required="Podaj nazwisko" />
+			</param>
+			<param name="city" required="yes">
+				<validator name="String" msg_required="Podaj miasto" />
+			</param>
+			<param name="address" required="yes">
+				<validator name="String"/>
+			</param>
+			<param name="postalcode" required="yes">
+				<filter name="Trim" />
+				<validator name="PostalCode" msg_required="Podaj kod pocztowy" />
+			</param>
+			<param name="region" required="yes">
+				<validator name="Choice"  msg_required="Wybierz województwo z listy" choices="dolnośląskie,kujawsko-pomorskie,lubelskie,lubuskie,łódzkie,małopolskie,mazowieckie,opolskie,podlaskie,pomorskie,podkarpackie,śląskie,świętokrzyskie,wielkopolskie,warmińsko-mazurskie,zachodniopomorskie,empty" />
+			</param>
+			<param name="phone" required="yes">
+				<validator name="String" msg_required="Podaj swój numer telefonu" />
+			</param>
+			<param name="semail" required="yes">
+				<filter name="Trim" />
+				<validator name="Email" msg_required="Podaj adres poczty e-mail" />
+			</param>
+			<param name="signature" required="yes">
+				<validator name="String" />
+			</param>
+			<param name="dir" required="yes">
+				<validator name="String"/>
+			</param>
+			<param name="accept-reg" required="yes">
+				<validator name="String" value="on"  msg_required="Zaznacz akceptację regulaminu" />
+			</param>
+			<param name="accept-data" required="yes">
+				<validator name="String" value="on" msg_required="Zaznacz akceptację zgody" />
+			</param>
+			<param name="accept-licence" required="yes">
+				<validator name="String" value="on" msg_required="Zaznacz akceptację zgody" />
+			</param>
+		</action>
+		
+		<action name="Finish">
+			<allowed_methods get="yes" />
+		</action>
+	</request>
+
+	<commands>
+		<on_before_exec>
+			<include file="../defaultBeforeCommands.xml" />
+		</on_before_exec>
+	</commands>
+
+	<result_map>
+		<action name="Form">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Contest/Form.tpl" />
+					<param name="smarty.css_includes">
+						<value>["contest.min.css?v=20180620"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["webtoolkit.aim.js", "formvalidator.js", "contest.js"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+		</action>
+		
+		<action name="Upload">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_error>
+		</action>
+		
+		<action name="Remove">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_error>
+		</action>
+		
+		<action name="Register">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+		</action>
+		
+		<action name="Finish">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Contest/Finish.tpl" />
+					<param name="smarty.css_includes">
+						<value>["contest.min.css"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+		</action>
+	</result_map>
+</module>

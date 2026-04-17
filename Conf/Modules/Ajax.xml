@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<classname>\StudioAtrium\Application\WWW\Module\Ajax</classname>
+	<classfile>Ajax</classfile>
+	<default_action>GetDoc</default_action>
+	<request>
+		<action name="Consultant">
+			<allowed_methods get="yes" />
+		</action>
+		<action name="GetDoc">
+			<allowed_methods post="yes" />
+			<param name="charid" required="yes">
+				<validator name="String" />
+			</param>
+		</action>
+		<action name="GetParamInfo">
+			<allowed_methods post="yes" />
+			<param name="id" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+		</action>
+		<action name="GetConsultantForm">
+			<allowed_methods post="yes" />
+			<param name="pid" required="no" default="0">
+				<validator name="Integer" />
+			</param>
+		</action>
+		<action name="GetCommentRegulations">
+			<allowed_methods post="yes" />
+		</action>
+		<action name="GetCustomerRegulations">
+			<allowed_methods post="yes" />
+		</action>
+		<action name="GetConsultantRegulations">
+			<allowed_methods post="yes" />
+		</action>
+		<action name="GetMailingRegulations">
+			<allowed_methods post="yes" />
+		</action>
+		<action name="GetFilesRegulations">
+			<allowed_methods post="yes" />
+		</action>
+		<action name="GetUserRegulations">
+			<allowed_methods post="yes" />
+		</action>
+		<action name="GetSkeletonTechnology">
+			<allowed_methods post="yes" />
+		</action>
+		<action name="ValidateDiscountCode">
+			<allowed_methods post="yes" />
+			<param name="code" required="yes">
+				<validator name="String" />
+			</param>
+			<param name="projects_id" required="no">
+				<validator name="String" />
+			</param>
+			<param name="projects_percent_id" required="no">
+				<validator name="String" />
+			</param>
+			<param name="selected_extras" required="no">
+				<validator name="String" />
+			</param>
+		</action>
+		<action name="Wolf">
+			<allowed_methods get="yes" />
+			<param name="id" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+		</action>
+		<action name="GetCookieInfo">
+			<allowed_methods post="yes" />
+		</action>
+		<action name="GetEstimateInfo">
+			<allowed_methods post="yes" />
+		</action>
+		<action name="GetEstimateInfo2">
+			<allowed_methods post="yes" />
+		</action>
+		<action name="GetSelfieRender">
+			<allowed_methods get="yes" />
+			<param name="project_id" required="yes">
+				<validator name="Integer" />
+			</param>
+			<param name="mirror" required="no">
+				<validator name="String" />
+			</param>
+		</action>
+		<action name="SelfieRules">
+			<allowed_methods post="yes" />
+		</action>
+		<action name="SendToFriend" comment="Stara akcja osbłużona żeby nie waliło błęami">
+			<allowed_methods get="yes" />
+			<param name="id" required="no">
+				<validator name="Integer" />
+			</param>
+		</action>
+		<action name="ProjectChanges">
+			<allowed_methods get="yes" />
+			<param name="id" required="no">
+				<validator name="Integer" min="1" />
+			</param>
+		</action>
+		<action name="UserPromoInfo">
+			<allowed_methods post="yes" />
+			<param name="status" required="tes">
+				<validator name="Integer" min="0" max="1" />
+			</param>
+		</action>
+		<action name="GetRealisationInfo">
+			<allowed_methods post="yes" />
+		</action>
+		<action name="GetBuildOfferInfo">
+			<allowed_methods post="yes" />
+			<param name="id" required="yes">
+				<validator name="String" />
+			</param>
+			<param name="project_id" required="yes">
+				<validator name="Integer" />
+			</param>
+		</action>
+<!-- 
+		<action name="GetNorthouseForm">
+			<allowed_methods post="yes" />
+			<param name="pid" required="yes">
+				<validator name="Integer" />
+			</param>
+		</action>
+ -->
+	</request>
+
+	<commands>
+		<on_before_exec>
+			<include file="../defaultBeforeCommands.xml" />
+		</on_before_exec>
+	</commands>
+
+	<result_map>
+		<action name="GetDoc">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="template" value="Ajax/Document.tpl" />
+				</view>
+			</on_exec_ok>
+		</action>
+		
+		<action name="GetParamInfo">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="template" value="Ajax/ParamInfo.tpl" />
+				</view>
+			</on_exec_ok>
+		</action>
+
+		<action name="GetCommentRegulations">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="template" value="Ajax/CommentRegulations.tpl" />
+				</view>
+			</on_exec_ok>
+		</action>
+		<action name="GetCustomerRegulations">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="template" value="Ajax/CustomerRegulations.tpl" />
+				</view>
+			</on_exec_ok>
+		</action>
+		<action name="GetConsultantForm">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="template" value="Ajax/ConsultantForm.tpl" />
+				</view>
+			</on_exec_ok>
+		</action>
+		<action name="GetConsultantRegulations">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="template" value="Ajax/ConsultantRegulations.tpl" />
+				</view>
+			</on_exec_ok>
+		</action>
+		<action name="GetMailingRegulations">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="template" value="Ajax/MailingRegulations.tpl" />
+				</view>
+			</on_exec_ok>
+		</action>
+		<action name="GetFilesRegulations">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="template" value="Ajax/FilesRegulations.tpl" />
+				</view>
+			</on_exec_ok>
+		</action>
+		<action name="GetUserRegulations">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="template" value="Ajax/UserRegulations.tpl" />
+				</view>
+			</on_exec_ok>
+		</action>
+		<action name="GetSkeletonTechnology">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="template" value="Ajax/SkeletonTechnology.tpl" />
+				</view>
+			</on_exec_ok>
+		</action>
+		<action name="ValidateDiscountCode">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_error>
+		</action>
+		<action name="Wolf">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="template" value="Ajax/Wolf.tpl" />
+				</view>
+			</on_exec_ok>
+		</action>
+		<action name="GetCookieInfo">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="template" value="Ajax/CookieInfo.tpl" />
+				</view>
+			</on_exec_ok>
+		</action>
+		<action name="GetEstimateInfo">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="template" value="Ajax/EstimateInfo.tpl" />
+				</view>
+			</on_exec_ok>
+		</action>
+		<action name="GetEstimateInfo2">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="template" value="Ajax/EstimateInfo.tpl" />
+				</view>
+			</on_exec_ok>
+		</action>
+		<action name="GetSelfieRender">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_SendGeneratedFile" />
+			</on_exec_ok>
+		</action>
+		<action name="SelfieRules">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="template" value="Ajax/SelfieRules.tpl" />
+				</view>
+			</on_exec_ok>
+		</action>
+		<action name="SendToFriend">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Dummy" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_Dummy" />
+			</on_exec_error>
+		</action>
+		<action name="ProjectChanges">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Dummy" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_Dummy" />
+			</on_exec_error>
+		</action>
+		<action name="UserPromoInfo">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_error>
+		</action>
+		<action name="GetRealisationInfo">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="template" value="Ajax/ProjectRealisationInfo.tpl" />
+				</view>
+			</on_exec_ok>
+		</action>
+		<action name="GetBuildOfferInfo">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="template" value="Ajax/BuildOfferInfo.tpl" />
+				</view>
+			</on_exec_ok>
+		</action>
+<!-- 
+		<action name="GetNorthouseForm">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="template" value="Ajax/NorthouseForm.tpl" />
+				</view>
+			</on_exec_ok>
+		</action>
+ -->
+	</result_map>
+</module>

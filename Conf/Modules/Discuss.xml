@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<classname>\StudioAtrium\Application\WWW\Module\Discuss</classname>
+	<classfile>Discuss</classfile>
+	<default_action>Forum</default_action>
+	<request>
+		<action name="Forum">
+			<allowed_methods get="yes" />
+		</action>
+		<action name="Search">
+			<allowed_methods get="yes" />
+			<param name="query" required="no">
+				<validator name="String" />
+			</param>
+			<param name="cid" required="no">
+				<validator name="Integer" min="0"/>
+			</param>
+			<param name="pid" required="no">
+				<validator name="Integer" min="0"/>
+			</param>
+			<param name="page" required="no" default="1">
+				<validator name="Integer" />
+			</param>
+			<param name="limit" required="no" default="20">
+				<validator name="Integer" />
+			</param>
+		</action>
+		<action name="Comments">
+			<allowed_methods get="yes" />
+			<param name="page" required="no" default="1">
+				<validator name="Integer" />
+			</param>
+			<param name="limit" required="no" default="20">
+				<validator name="Integer" />
+			</param>
+		</action>
+		<action name="Category">
+			<allowed_methods get="yes" />
+			<param name="id" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+			<param name="page" required="no" default="1">
+				<validator name="Integer" />
+			</param>
+			<param name="limit" required="no" default="20">
+				<validator name="Integer" />
+			</param>
+		</action>
+		<action name="AddThread">
+			<allowed_methods post="yes" />
+			<param name="categoryId" required="yes">
+				<validator name="Integer" />
+			</param>
+			<param name="projectId" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="subject" required="yes">
+				<filter name="Trim" />
+				<validator name="String" msg_required="Podaj tytuł wpisu" />
+			</param>
+			<param name="content" required="yes">
+				<filter name="Trim" />
+				<validator name="String" msg_required="Podaj treść wpisu" />
+			</param>
+			<param name="nick" required="yes">
+				<filter name="Trim" />
+				<validator name="String" msg_required="Podaj swój nick" />
+			</param>
+			<param name="regulations" required="yes">
+				<validator name="String" msg_required="Musisz zaakceptować regulamin" />
+			</param>
+			<param name="notify" required="no">
+				<validator name="String" />
+			</param>
+			<param name="email" required="no">
+				<validator name="Email" />
+			</param>
+			<param name="age" required="no">
+				<filter name="Trim" />
+				<validator name="\StudioAtrium\Validator\Void" />
+			</param>
+			<param name="isTmpUid" required="no">
+				<validator name="Integer"/>
+			</param>
+			<param name="ownerUid" required="no">
+				<validator name="Integer"/>
+			</param>
+		</action>
+		<action name="Thread">
+			<allowed_methods get="yes" />
+			<param name="id" required="yes">
+				<validator name="Integer" />
+			</param>
+			<param name="page" required="no" default="1">
+				<validator name="Integer" />
+			</param>
+			<param name="limit" required="no" default="20">
+				<validator name="Integer" />
+			</param>
+			<param name="ostatni" required="no">
+				<validator name="Integer" min="1" max="1" />
+			</param>
+		</action>
+		<action name="AddPost">
+			<allowed_methods post="yes" />
+			<param name="categoryId" required="yes">
+				<validator name="Integer" />
+			</param>
+			<param name="parentId" required="yes">
+				<validator name="Integer" />
+			</param>
+			<param name="projectId" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="content" required="yes">
+				<filter name="Trim" />
+				<validator name="String" msg_required="Podaj treść wpisu" />
+			</param>
+			<param name="nick" required="yes">
+				<filter name="Trim" />
+				<validator name="String" msg_required="Podaj swój nick" />
+			</param>
+			<param name="regulations" required="yes">
+				<validator name="String" />
+			</param>
+			<param name="notify" required="no">
+				<validator name="String" />
+			</param>
+			<param name="email" required="no">
+				<validator name="Email" />
+			</param>
+			<param name="age" required="no">
+				<filter name="Trim" />
+				<validator name="\StudioAtrium\Validator\Void" />
+			</param>
+			<param name="isTmpUid" required="no">
+				<validator name="Integer"/>
+			</param>
+			<param name="ownerUid" required="no">
+				<validator name="Integer"/>
+			</param>
+		</action>
+		<action name="EditThread">
+			<allowed_methods get="yes" />
+			<param name="id" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+		</action>
+		<action name="StoreThread">
+			<allowed_methods post="yes" />
+			<param name="postId" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+			<param name="projectId" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="subject" required="yes">
+				<filter name="Trim" />
+				<validator name="String" msg_required="Podaj tytuł wpisu" />
+			</param>
+			<param name="content" required="yes">
+				<filter name="Trim" />
+				<validator name="String" msg_required="Podaj treść wpisu" />
+			</param>
+			<param name="notify" required="no">
+				<validator name="String" />
+			</param>
+			<param name="isTmpUid" required="no">
+				<validator name="Integer"/>
+			</param>
+			<param name="ownerUid" required="no">
+				<validator name="Integer"/>
+			</param>
+		</action>
+		<action name="EditPost">
+			<allowed_methods get="yes" />
+			<param name="id" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+		</action>
+		<action name="StorePost">
+			<allowed_methods post="yes" />
+			<param name="postId" required="yes">
+				<validator name="Integer" min="1" />
+			</param>
+			<param name="content" required="yes">
+				<filter name="Trim" />
+				<validator name="String" msg_required="Podaj treść wpisu" />
+			</param>
+			<param name="notify" required="no">
+				<validator name="String" />
+			</param>
+			<param name="isTmpUid" required="no">
+				<validator name="Integer"/>
+			</param>
+			<param name="ownerUid" required="no">
+				<validator name="Integer"/>
+			</param>
+		</action>
+		<action name="SendMessage">
+			<allowed_methods post="yes" />
+			<param name="parentId" required="no" default="0">
+				<validator name="Integer" />
+			</param>
+			<param name="senderId" required="yes">
+				<validator name="Integer" />
+			</param>
+			<param name="receiverId" required="yes">
+				<validator name="Integer" />
+			</param>
+			<param name="title" required="yes">
+				<filter name="Trim" />
+				<validator name="String" />
+			</param>
+			<param name="content" required="yes">
+				<validator name="String" />
+			</param>
+			<param name="skip_validation_error" default="1">
+				<validator name="Integer" min="1" max="1" />
+			</param>
+		</action>
+		<action name="Unsubscribe">
+			<allowed_methods get="yes" />
+			<param name="hash" required="yes">
+				<validator name="String" />
+			</param>
+		</action>
+		<action name="SetNotification">
+			<allowed_methods post="yes" />
+			<param name="uid" required="yes">
+				<validator name="Integer" />
+			</param>
+			<param name="pid" required="yes">
+				<validator name="Integer" />
+			</param>
+			<param name="notify" required="yes">
+				<validator name="Choice" choices="no,yes" />
+			</param>
+			<param name="skip_validation_error" default="1">
+				<validator name="Integer" min="1" max="1" />
+			</param>
+		</action>
+	</request>
+
+	<commands>
+		<on_before_exec>
+			<include file="../defaultBeforeCommands.xml" />
+		</on_before_exec>
+	</commands>
+
+	<result_map>
+		<action name="Forum">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Discuss/Forum.tpl" />
+					<param name="smarty.css_includes">
+						<value>["discuss.min.css"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["forum.js"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		<action name="Search">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Discuss/Search.tpl" />
+					<param name="smarty.css_includes">
+						<value>["discuss.min.css"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["jquery.mCustomScrollbar.concat.min.js","forum.js","forumCategory.js"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		<action name="Comments">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Discuss/Comments.tpl" />
+					<param name="smarty.css_includes">
+						<value>["discuss.min.css"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["forum.js"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		<action name="Category">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Discuss/Category.tpl" />
+					<param name="smarty.css_includes">
+						<value>["discuss.min.css","uploader.css"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["jquery.mCustomScrollbar.concat.min.js","formvalidator.js","forum.js","forumCategory.js?v=20180925","forumForm.js","uploader.js"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		<action name="AddThread">
+			<on_exec_ok>
+				<forward module="Discuss" action="Category" />
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Discuss" action="Category" />
+			</on_exec_error>
+		</action>
+		<action name="Thread">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Discuss/Thread.tpl" />
+					<param name="smarty.css_includes">
+						<value>["discuss.min.css","uploader.css"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["jquery.mCustomScrollbar.concat.min.js","jquery.fancybox.js","formvalidator.js","forum.js","forumThread.js","uploader.js"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		<action name="AddPost">
+			<on_exec_ok>
+				<forward module="Discuss" action="Thread" />
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Discuss" action="Thread" />
+			</on_exec_error>
+		</action>
+		<action name="EditThread">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Discuss/EditThread.tpl" />
+					<param name="smarty.css_includes">
+						<value>["discuss.min.css","uploader.css"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["jquery.fancybox.js","formvalidator.js","forumForm.js","forumThread.js","uploader.js"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		<action name="StoreThread">
+			<on_exec_ok>
+				<forward module="Discuss" action="Thread" />
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Discuss" action="Thread" />
+			</on_exec_error>
+		</action>
+		<action name="EditPost">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Discuss/EditPost.tpl" />
+					<param name="smarty.css_includes">
+						<value>["discuss.min.css","uploader.css"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["jquery.fancybox.js","formvalidator.js","forumThread.js","uploader.js"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		<action name="StorePost">
+			<on_exec_ok>
+				<forward module="Discuss" action="Thread" />
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Discuss" action="Thread" />
+			</on_exec_error>
+		</action>
+		<action name="SendMessage">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_error>
+		</action>
+
+		<action name="Unsubscribe">
+			<on_exec_ok>
+				<forward module="Discuss" action="Forum" />
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Discuss" action="Forum" />
+			</on_exec_error>
+		</action>
+		<action name="SetNotification">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_error>
+		</action>
+>>>>>>> .r4899
+	</result_map>
+</module>

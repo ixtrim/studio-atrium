@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<classname>\StudioAtrium\Application\WWW\Module\Contact</classname>
+	<classfile>Contact</classfile>
+	<default_action>Send</default_action>
+	<request>
+		<action name="Form">
+			<allowed_methods get="yes" />
+		</action>
+		<action name="Send">
+			<allowed_methods post="yes" get="yes" />
+			<param name="email" required="yes">
+				<validator name="Email" />
+			</param>
+			<param name="query" required="yes">
+				<filter name="Trim" />
+				<validator name="String" />
+			</param>
+			<param name="name" required="no">
+				<filter name="Trim" />
+				<validator name="\StudioAtrium\Validator\Void" />
+			</param>
+			<param name="project_id" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="accept" required="yes">
+				<validator name="String" value="on" />
+			</param>
+		</action>
+		<action name="Skeleton">
+			<allowed_methods post="yes" />
+			<param name="project_name" required="yes">
+				<validator name="String" />
+			</param>
+			<param name="project_type" required="no">
+				<validator name="String" />
+			</param>
+			<param name="client" required="yes">
+				<filter name="Trim" />
+				<validator name="String" />
+			</param>
+			<param name="email" required="yes">
+				<validator name="Email" />
+			</param>
+			<param name="phone" required="yes">
+				<filter name="Trim" />
+				<validator name="String" />
+			</param>
+			<param name="age" required="no">
+				<filter name="Trim" />
+				<validator name="\StudioAtrium\Validator\Void" />
+			</param>
+		</action>
+	</request>
+
+	<commands>
+		<on_before_exec>
+			<include file="../defaultBeforeCommands.xml" />
+		</on_before_exec>
+	</commands>
+
+	<result_map>
+		<action name="Form">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Contact/Form.tpl" />
+					<param name="smarty.css_includes">
+						<value>["contact.min.css?v=20241114","article.min.css"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+		</action>
+	
+	
+		<action name="Send">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_error>
+		</action>
+		
+		<action name="Skeleton">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_error>
+		</action>
+	</result_map>
+</module>

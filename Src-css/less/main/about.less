@@ -1,0 +1,669 @@
+@import (reference) "../variables/colors.less";
+@import (reference) "../variables/dimensions.less";
+@import (reference) "../variables/fonts.less";
+@import (reference) "../variables/mixins.less";
+
+@import (less) "../css-includes/jquery.fancybox.css";
+
+
+sup {
+	position: relative;
+	top: -7px;
+	font-size: @fontSize12;
+	line-height: 0;
+}
+
+
+div {
+	&.varia-box {
+		max-width: 1240px;
+		margin: 48px auto 32px;
+		
+		> p {
+			margin: 0 12px;
+			
+			&.spaced {
+				margin-top: 32px;
+			}
+			
+		}
+		
+		a {
+			color: @saBlue;
+			
+			&:hover {
+				color: @saRed;
+			}
+		}
+	}
+	
+	&.article-box {
+		text-align: justify;
+		margin: 48px 0;
+	}
+	
+	&#works-wrapper {
+		margin-bottom: 48px;
+	}
+	
+	&.works {
+		font-size: @fontSize18;
+		background-color: #f2f2f2;
+		padding: 32px 28px;
+		
+		ul {
+			margin: 24px 0;
+			.clear;
+			
+			li {
+				float: left;
+				width: 45%;
+				vertical-align: top;
+				
+				+ li {
+					margin-left: 5%;
+					width: 50%;
+				}
+				
+				img {
+					max-width: 100%;
+				}
+			}
+		}
+		
+		p {
+			&.header {
+				font-size: @fontSize24;
+				margin-bottom: 24px;
+			}
+		}
+		
+		div {
+			&.links {
+				margin-top: 32px;
+				
+				a, span {
+					color: @defaultTextColor;
+					
+					&:hover {
+						color: @saBlue;
+					}
+				}
+				
+				span {
+					cursor: pointer;
+				}
+			}
+			
+		}
+	}
+}
+
+ul#holder {
+	
+	margin-bottom: 64px;
+	
+	&::after {
+		content: '';
+		display: block;
+	    height: 1px;
+	    clear: both;
+	}
+	
+	li {
+		float: left;
+		box-sizing: border-box;
+		width: 30.9%;
+		text-align: center;
+		background-color: #f2f2f2;
+		padding-bottom: 24px;
+		margin: 0 1.8%;
+		cursor: pointer;
+		
+		&:hover span.work-trigger {
+			background-position:  0 -2986px;
+		}
+		
+		&.editions {
+			margin-left: 0;
+		}
+		
+		&.architecture {
+			margin-right: 0;
+		}
+		
+		> div {
+			box-sizing: border-box;
+			height: 266px;
+			line-height: 266px;
+			padding: 0 12px;
+			margin: 24px 0;
+			
+			img {
+				max-width: 100%;
+				vertical-align: middle;
+			}
+		}
+		
+		p {
+			font-size: @fontSize24;
+			text-transform: uppercase;
+			margin-bottom: 12px;
+		}
+		
+		span {
+			display: inline-block;
+			height: 35px;
+			width: 35px;
+			.iconsBg(0, -2946px);
+			cursor: pointer;
+			
+			&.selected {
+				background-position:  0 -2986px;
+			}
+		}
+	}
+}
+
+ul {
+	&.form-wrapper {
+		display: flex;
+		justify-content: center;
+		margin: 48px auto 0;
+		
+		> li:first-child {
+			padding: 0 32px 0 12px;
+		}
+		
+		> li:first-child + li {
+			padding: 0 12px 0 32px;
+		}
+		
+		ul {
+			li {
+				margin-bottom: 32px;
+				
+				&.no-margin {
+					margin-bottom: 8px;
+				}
+				
+				&.submit-box {
+					text-align: right;
+					margin-bottom: 0;
+				}
+				
+				&.error_field {
+					label {
+						color: @saRed;
+					}
+					
+					input[type="text"] {
+						border-color: @saRed;
+					}
+				}
+			}
+		}
+		
+		p {
+			&.accept {
+				max-width: 332px;
+				font-size: @fontSize14;
+				text-align: justify;
+				
+				input[type="checkbox"] + label {
+					margin-right: 0;
+					text-decoration: underline;
+				}
+				
+				span {
+					text-decoration: underline;
+				}
+			}
+			
+			&.error_message {
+				color: @saRed;
+				font-size: @fontSize14;
+				text-align: right
+			}
+		}
+		
+		span.small {
+			font-size: @fontSize14;
+		}
+
+		label {
+			display: inline-block;
+			cursor: pointer;
+			min-width: 64px;
+			margin-right: 12px;
+			
+			&.small {
+				font-size: @fontSize14;
+				min-width: 0;
+			}
+		}
+		
+		input[type="text"] {
+			height: 32px;
+			width: 256px;
+			color: @defaultTextColor;
+			font-family: @defaultFontFamily;
+			font-size: @fontSize18;
+			padding: 0 6px;
+			border: 1px solid @formDefaultBorder;
+			
+			&.short {
+				width: 96px;
+			}
+		}
+		
+		input[type="text"] + label {
+			margin-left: 16px;
+		}
+		
+		
+		input[type="checkbox"] {
+			display: none;
+		}
+		
+		input[type="checkbox"] + label {
+			font-size: @fontSize14;
+			padding:  1px 0 1px 22px;
+			margin-right: 22px;
+			.iconsBg(0, -2376px);
+		}
+		
+		input[type="checkbox"]:checked + label {
+			.iconsBg(0, -2401px);
+		}
+		
+		textarea {
+			width: 100%;
+			height: 128px;
+		}
+		
+		input[type="submit"] {
+	    	height: 48px;
+			color: #fff;
+			font-family: @defaultFontFamily;
+			font-size: @fontSize18;
+			text-transform: uppercase;
+			line-height: 48px;
+			padding: 2px 28px 0 28px;
+			background-color: @saBlue;
+			border: none;
+			cursor: pointer;
+			
+			&:hover {
+				background-color: @saBlueHover;
+			}
+			
+			&.disabled {
+				background-color: @grey;
+			}
+		}
+	}
+}
+
+
+div.cp-wrapper {
+	padding: 0 16px;
+}
+
+ul {
+	&.cp-form-wrapper {
+		max-width: 512px;
+		justify-content: center;
+		margin: 48px auto 0;
+		
+		li + li {
+			margin-top: 16px;
+		}
+		
+		li.mystic {
+			display: none;
+		}
+		
+		div {
+			position: relative;
+			padding-bottom: 32px;
+		}
+		
+		textarea {
+			width: 100%;
+			height: 220px;
+			color: #606060;
+			font-family: LatoLatinWebLight,sans-serif;
+			font-size: 1.8rem;
+			padding: 12px;
+			border: 1px solid #bcbcbc;
+		}
+		
+		input[type="text"] {
+			width: 100%;
+			height: 50px;
+			color: #606060;
+			font-family: LatoLatinWebLight,sans-serif;
+			font-size: 1.8rem;
+			padding: 0 6px;
+			padding-left: 6px;
+			border: 1px solid #bcbcbc;
+		}
+		
+		input[type="submit"] {
+	    	height: 48px;
+			color: #fff;
+			font-family: @defaultFontFamily;
+			font-size: @fontSize18;
+			text-transform: uppercase;
+			line-height: 48px;
+			padding: 2px 28px 0 28px;
+			background-color: @saBlue;
+			border: none;
+			cursor: pointer;
+			
+			&:hover {
+				background-color: @saBlueHover;
+			}
+			
+			&.disabled {
+				background-color: @grey;
+			}
+		}
+		
+		p.error_message {
+		  position: absolute;
+		  bottom: 0;
+		  right: 0;
+		  color: #cc1000;
+		  font-size: 1.4rem;
+		}
+		
+		img {
+			vertical-align: -35%;
+			margin-left: 16px;
+		}
+	}
+}
+
+
+
+///////////////////////////////////////////////// AGENTS /////////////////////////////////////////////////////////////////////////
+	
+div#map {
+	text-align: left;
+	margin: -10px 50px 16px 0;
+	float: left;
+	+ p {
+		margin-top: 20px;
+	}
+}
+
+div.page-nav.agent {
+	clear: left;
+}
+
+div.agent {
+	
+	&.details {
+		p.back {
+			margin: 15px 0;	
+		}
+		
+		h2 {
+			font-size: @fontSize24;
+			text-transform: uppercase;
+			margin-bottom: 30px;
+			margin-top: 30px;
+			font-family: @boldFontFamily;
+		}
+		
+		p.logo {
+			margin: 25px 0 0 0;
+			+h2 {
+				margin-top: 15px;
+			}
+		}
+		
+		div.descr {
+			margin-top: 25px;
+		}
+		
+		div.map {
+			margin: 25px 0 0 0;
+    		padding: 0;
+   			width: 100%;
+   		 	height: 100%;
+		}	
+			div.map iframe {
+				margin-top: 25px;
+			}
+	}
+	
+	p {
+		&.spaced {
+			margin-top: 12px;
+		}
+		&.morespaced {
+			margin-top: 24px;
+		}
+	}
+	
+	form {
+		input[type="text"], select {
+			height: 50px;
+			width: 350px;
+			line-height: 50px;
+			padding: 0 6px;
+			font-size: @fontSize18;
+			background: none;
+			border: 1px solid @grey;
+			font-family: @defaultFontFamily;
+		}
+		
+		select {
+			width: 150px;
+		}
+		
+		input[type="submit"] {
+			width: 130px;
+			height: 50px;
+			color: #fff;
+			font-family: @defaultFontFamily;
+			font-size: @fontSize18;
+			text-transform: uppercase;
+			line-height: 50px;
+			background-color: @linkHoverColor;
+			border: none;
+			cursor: pointer;
+		}
+	}
+	
+	ul {
+		li {
+			padding: 16px 0;
+			border-top: 1px solid @socialBorderColor;
+			.clear;
+			
+			div {
+				float: left;
+				position: relative;
+			}
+			
+			div.info {
+				float: right;
+				width: 400px;
+			}
+			
+			a {
+				color: @saRed;
+				&:hover {
+					color: @saRedHover;
+				}
+				
+				&.blue {
+					color: @saBlue;
+					&:hover {
+						color: @saBlueHover;
+					}
+				}
+			}
+			
+			p {
+				padding-left: 35px;
+				
+				&.title {
+					padding-left: 0;
+					font-family: @boldFontFamily;
+					font-size: @fontSize19;
+				}
+				
+				&.info span {
+					margin-top: 15px;
+					display: block;
+				}
+				
+				&.hour {
+					font-style: italic;
+				}
+				
+				&.justify {
+					text-align: justify;
+				}
+				
+				&.ico {
+					position: relative;
+					margin-top: 15px;
+					
+					&:before {
+						content: '';
+						position: absolute;
+						left: 0;
+						top: -1px;
+						width: 25px;
+						height: 26px;
+						.iconsBg(left, 0, 'partners.png');
+					}
+					&.address:before {
+						background-position: 0 -25px;
+					}
+					&.phone:before {
+						background-position: 0 0;
+						top: 3px;
+						height: 25px;
+					}
+					&.email:before {
+						background-position: 0 -55px;
+						top: 1px;
+					}
+					&.www:before {
+						background-position: 0 -110px;
+						height: 24px;
+						top: 2px;
+					}
+					&.hour:before {
+						background-position: 0 -83px;
+					}
+					&.info:before {
+						background-position: 0 -134px;
+					}
+				}
+			}
+		}
+	}
+	
+	div.page-nav {
+		.clear;
+		margin-bottom: 12px;
+		
+		p.region {
+			float: left;
+			position: relative;
+			top: 6px;
+			line-height: 28px;
+			margin-top: 12px;
+			
+			span {
+				color: @saRed;
+			}
+		}
+		
+		ol {
+			float: right;
+			margin-top: 16px;
+		}
+	}
+}
+
+@media all and (max-width: 1100px) {
+	div.agent ul li div.info {
+		float: none;
+		clear: both;
+		padding-top: 15px;
+	}
+}
+
+@media all and (max-width: 900px) {
+	ul#holder {
+		li {
+			width: 32.66%;
+			margin: 0 0.5%;
+		}
+	}
+	
+	div.agent form {
+		clear: left;
+		input, select {
+			margin-bottom: 15px;
+		}
+	}
+}
+
+
+@media all and (max-width: 800px) {
+	ul#holder {
+		li {
+			width: 100%;
+			margin: 0;
+		}
+	}
+}
+
+
+@media all and (max-width: 670px) {
+	ul {
+		&.form-wrapper {
+			display: block;
+			
+			> li:first-child {
+				padding: 0 12px;
+			}
+			
+			> li:first-child + li {
+				padding: 0 12px;
+			}
+		}
+	}
+}
+
+
+
+@media all and (max-width: 600px) {
+	div {
+		&.works {
+			ul {
+				li {
+					float: none;
+					width: 100%;
+					
+					+ li {
+						margin-top: 32px;
+						margin-left: 0;
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+		

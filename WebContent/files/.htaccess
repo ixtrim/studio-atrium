@@ -1,0 +1,6 @@
+AuthType Basic
+AuthUserFile /home/studioatrium/7point.pl/app/2016.studioatrium.www/.passwd
+AuthName "Autoryzacja"
+order deny,allow
+allow from all
+require valid-user

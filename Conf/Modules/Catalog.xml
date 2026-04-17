@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<classname>\StudioAtrium\Application\WWW\Module\Catalog</classname>
+	<classfile>Catalog</classfile>
+	<default_action>Form</default_action>
+	<request>
+		<action name="Form">
+			<allowed_methods get="yes" />
+		</action>
+		<action name="PayForm">
+			<allowed_methods get="yes" />
+		</action>
+		<action name="Order">
+			<allowed_methods post="yes" />
+			<param name="fname" required="yes">
+				<filter name="Trim" />
+				<validator name="String" msg_required="Podaj swoje imię" />
+			</param>
+			<param name="lname" required="yes">
+				<filter name="Trim" />
+				<validator name="String" msg_required="Podaj swoje nazwisko" />
+			</param>
+			<param name="city" required="yes">
+				<filter name="Trim" />
+				<validator name="String" msg_required="Podaj nazwę miejscowości" />
+			</param>
+			<param name="street" required="no">
+				<filter name="Trim" />
+				<validator name="String" />
+			</param>
+			<param name="number" required="yes">
+				<filter name="Trim" />
+				<validator name="String" msg_required="Podaj numer domu" />
+			</param>
+			<param name="postalcode" required="yes">
+				<filter name="Trim" />
+				<validator name="PostalCode" msg_required="Podaj kod pocztowy" />
+			</param>
+			<param name="phone" required="yes">
+				<validator name="String" msg_required="Podaj swój numer telefonu" />
+			</param>
+			<param name="email" required="yes">
+				<filter name="Trim" />
+				<validator name="\StudioAtrium\Validator\PhpEmail" msg_required="Podaj adres e-mail" msg_invalid="Nieprawidłowy adres e-mail" />
+			</param>
+			<param name="accept" required="yes">
+				<validator name="String" value="on" msg_required="Aby zamówić katalog musisz zaakceptować powyższe oświadczenie" />
+			</param>
+<!--	
+			<param name="accept2" required="yes">
+				<validator name="String" value="on" msg_required="Aby zamówić katalog musisz zaakceptować powyższe oświadczenie" />
+			</param>
+-->
+		</action>
+		
+		<action name="PayOrder">
+			<allowed_methods post="yes" />
+			<param name="fname" required="yes">
+				<filter name="Trim" />
+				<validator name="String" msg_required="Podaj swoje imię" />
+			</param>
+			<param name="lname" required="yes">
+				<filter name="Trim" />
+				<validator name="String" msg_required="Podaj swoje nazwisko" />
+			</param>
+			<param name="city" required="yes">
+				<filter name="Trim" />
+				<validator name="String" msg_required="Podaj nazwę miejscowości" />
+			</param>
+			<param name="street" required="no">
+				<filter name="Trim" />
+				<validator name="String" />
+			</param>
+			<param name="number" required="yes">
+				<filter name="Trim" />
+				<validator name="String"  msg_required="Podaj numer domu" />
+			</param>
+			<param name="postalcode" required="yes">
+				<filter name="Trim" />
+				<validator name="PostalCode" msg_required="Podaj kod pocztowy" />
+			</param>
+			<param name="phone" required="yes">
+				<validator name="String" msg_required="Podaj swój numer telefonu" />
+			</param>
+			<param name="email" required="yes">
+				<filter name="Trim" />
+				<validator name="\StudioAtrium\Validator\PhpEmail" msg_required="Podaj adres e-mail" msg_invalid="Nieprawidłowy adres e-mail" />
+			</param>
+			<param name="accept" required="yes">
+				<validator name="String" value="on" msg_required="Aby zamówić katalog musisz zaakceptować powyższe oświadczenie" />
+			</param>
+			<param name="accept2" required="yes">
+				<validator name="String" value="on" msg_required="Aby zamówić katalog musisz zaakceptować powyższe oświadczenie" />
+			</param>
+		</action>
+		
+		<action name="Info">
+			<allowed_methods get="yes" />
+			<param name="ref" required="no">
+				<validator name="Choice" choices="platny" />
+			</param>
+		</action>
+		<action name="PayInfo">
+			<allowed_methods get="yes" />
+		</action>
+		<action name="Online">
+			<allowed_methods get="yes" />
+		</action>
+		<action name="Activate">
+			<allowed_methods get="yes" />
+			<param name="trans_id" required="yes">
+				<validator name="String" />
+			</param>
+			<param name="email" required="yes">
+				<validator name="String" />
+			</param>
+		</action>
+	</request>
+
+	<commands>
+		<on_before_exec>
+			<include file="../defaultBeforeCommands.xml" />
+		</on_before_exec>
+	</commands>
+
+	<result_map>
+		<action name="Form">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Catalog/Form.tpl" />
+					<param name="smarty.css_includes">
+						<value>["catalog.min.css?v=20170823"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["formvalidator.js"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		<action name="PayForm">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Catalog/PayForm.tpl" />
+					<param name="smarty.css_includes">
+						<value>["catalog.min.css?v=20170823"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["formvalidator.js"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		<action name="Order">
+			<on_exec_ok>
+				<forward module="Catalog" action="Info" />
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Catalog" action="Info" />
+			</on_exec_error>
+		</action>
+		<action name="PayOrder">
+			<on_exec_ok>
+				<forward module="Catalog" action="Info" />
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Catalog" action="Info" />
+			</on_exec_error>
+		</action>
+		<action name="Info">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Catalog/Info.tpl" />
+					<param name="smarty.css_includes">
+						<value>["catalog.min.css"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		<action name="Online">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Catalog/Online.tpl" />
+					<param name="smarty.css_includes">
+						<value>["catalog.min.css"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		<action name="Activate">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Catalog/Activation.tpl" />
+					<param name="smarty.css_includes">
+						<value>["catalog.min.css"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+	</result_map>
+</module>

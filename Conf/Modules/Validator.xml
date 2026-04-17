@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<classname>\StudioAtrium\Application\WWW\Module\Validator</classname>
+	<classfile>Validator</classfile>
+	<default_action>Execute</default_action>
+	<request>
+		<action name="Execute">
+			<allowed_methods post="yes" />
+			<param name="validate_module" required="yes">
+				<filter name="Trim" />
+				<validator name="String" />
+			</param>
+			<param name="validate_action" required="yes">
+				<filter name="Trim" />
+				<validator name="String" />
+			</param>
+			<param name="validate_data" required="yes">
+				<filter name="Trim" />
+				<validator name="String" />
+			</param>
+			<param name="validate_form" required="yes">
+				<validator name="Integer" />
+			</param>
+		</action>
+	</request>
+
+	<commands>
+		<on_before_exec>
+			<include file="../defaultBeforeCommands.xml" />
+		</on_before_exec>
+	</commands>
+
+	<result_map>
+		<action name="Execute">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_error>
+		</action>
+	</result_map>
+</module>

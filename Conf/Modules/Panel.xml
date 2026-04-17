@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<classname>\StudioAtrium\Application\WWW\Module\Panel</classname>
+	<classfile>Panel</classfile>
+	<default_action>Helo</default_action>
+	<request>
+		<action name="Helo">
+			<allowed_methods get="yes" />
+		</action>
+		<action name="Account">
+			<allowed_methods get="yes" />
+		</action>
+		<action name="AccountStore">
+			<allowed_methods post="yes" />
+			<param name="a_name" required="yes">
+				<validator name="String" msg_required="Nie podano imienia" />
+			</param>
+			<param name="a_surname" required="yes">
+				<validator name="String" msg_required="Nie podano nazwiska" />
+			</param>
+			<param name="a_nick" required="yes">
+				<validator name="String" msg_required="Nie podano nicka" />
+			</param>
+			<param name="a_email" required="yes">
+				<validator name="Email" msg_required="Nie podano adresu e-mail" />
+			</param>
+			<param name="a_phone" required="yes">
+				<validator name="String" msg_required="Nie podano numeru telefonu" />
+			</param>
+		</action>
+		<action name="GetLoginForm">
+			<allowed_methods post="yes" />
+		</action>
+		<action name="GetRegisterForm">
+			<allowed_methods post="yes" />
+		</action>
+		<action name="GetForgottenPasswordForm">
+			<allowed_methods post="yes" />
+		</action>
+		<action name="PasswordStore">
+			<allowed_methods post="yes" />
+			<param name="a_pass" required="yes">
+				<validator name="String" msg_required="Nie podano starego hasła" />
+			</param>
+			<param name="a_newpass" required="yes">
+				<validator name="String" msg_required="Nie podano nowego hasła" min_length="8" msg_min_length="Minimalna długość hasła to 8 znaków." />
+			</param>
+			<param name="a_newpass2" required="yes">
+				<validator name="String" msg_required="Nie powtórzono nowego hasła" min_length="8" msg_min_length="Minimalna długość hasła to 8 znaków." />
+			</param>
+		</action>
+		<action name="AccountDelete">
+			<allowed_methods get="yes" />
+		</action>
+		<action name="Register">
+			<allowed_methods post="yes" />
+			<param name="r_email" required="yes">
+				<validator name="Email" msg_required="Nie podano e-maila" />
+			</param>
+			<param name="r_name" required="yes">
+				<validator name="String" msg_required="Nie podano imienia" />
+			</param>
+			<param name="r_surname" required="yes">
+				<validator name="String" msg_required="Nie podano nazwiska" />
+			</param>
+			<param name="r_password" required="yes">
+				<validator name="String" min_length="8" msg_min_length="Minimalna długość hasła to 8 znaków." msg_required="Nie podano hasła" />
+				<filter name="Trim" />
+			</param>
+			<param name="r_repassword" required="yes">
+				<validator name="String" min_length="8" msg_min_length="Minimalna długość hasła to 8 znaków." msg_required="Nie podano powtórzenia hasła" />
+				<filter name="Trim" />
+			</param>
+			<param name="r_relocate" required="no">
+				<validator name="String" />
+			</param>
+			<param name="r_age" required="no">
+				<filter name="Trim" />
+				<validator name="\StudioAtrium\Validator\Void" />
+			</param>
+			<param name="r_accept_mailing_register" required="no">
+				<validator name="Integer" />
+			</param>
+		</action>
+		<action name="CheckEmail">
+			<allowed_methods post="yes" />
+			<param name="email" required="yes">
+				<validator name="Email" />
+			</param>
+		</action>
+		<action name="Activate">
+			<allowed_methods get="yes" />
+			<param name="key" required="yes">
+				<validator name="String" />
+				<filter name="Trim" />
+			</param>
+			<param name="relocate" required="no">
+				<validator name="String" />
+				<filter name="Trim" />
+			</param>
+		</action>
+		<action name="ResetPassword">
+			<allowed_methods get="yes" />
+			<param name="key" required="yes">
+				<validator name="String" max_length="32" />
+			</param>
+		</action>
+		<action name="SendResetPasswordLink">
+			<allowed_methods post="yes" />
+			<param name="email" required="yes">
+				<validator name="Email"/>
+			</param>
+		</action>
+		<action name="Messages">
+			<allowed_methods get="yes" />
+			<param name="pid" required="no">
+				<validator name="Integer"/>
+			</param>
+		</action>
+		<action name="MessageStore">
+			<allowed_methods post="yes" />
+			<param name="a_topic" required="yes">
+				<validator name="String"/>
+			</param>
+			<param name="a_message" required="yes">
+				<validator name="String"/>
+			</param>
+			<param name="isTmpUid" required="no">
+				<validator name="Integer"/>
+			</param>
+			<param name="ownerUid" required="no">
+				<validator name="Integer"/>
+			</param>
+			<param name="pid" required="no">
+				<validator name="Integer"/>
+			</param>
+		</action>
+		<action name="Promo">
+			<allowed_methods get="yes" />
+		</action>
+		<action name="Discuss">
+			<allowed_methods get="yes" />
+		</action>
+		<action name="Comment">
+			<allowed_methods get="yes" />
+		</action>
+		<action name="Forum">
+			<allowed_methods get="yes" />
+			<param name="page" required="no" default="1">
+				<validator name="Integer" />
+			</param>
+			<param name="limit" required="no" default="10">
+				<validator name="Integer" />
+			</param>
+		</action>
+		<action name="ForumMessage">
+			<allowed_methods get="yes" />
+		</action>
+		<action name="Transaction">
+			<allowed_methods get="yes" />
+		</action>
+		<action name="Landing">
+			<allowed_methods get="yes" />
+		</action>
+	</request>
+
+	<commands>
+		<on_before_exec>
+			<include file="../defaultBeforeCommands.xml" />
+		</on_before_exec>
+	</commands>
+
+	<result_map>
+		<action name="Register">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON">
+					<param name="UseJSONContentType" value="application/json" />
+				</view>
+			</on_exec_ok>
+
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON">
+					<param name="UseJSONContentType" value="application/json" />
+				</view>
+			</on_exec_error>
+
+			<on_authorized>
+				<forward module="Index" />
+			</on_authorized>
+		</action>
+		<action name="CheckEmail">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_error>
+		</action>
+		<action name="Activate">
+			<on_exec_ok>
+				<forward module="Index" />
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Index" />
+			</on_exec_error>
+		</action>
+		<action name="ResetPassword">
+			<on_exec_ok>
+				<forward module="Index" />
+			</on_exec_ok>
+
+			<on_exec_error>
+				<forward module="Index" />
+			</on_exec_error>
+
+			<on_authorized>
+				<forward module="Index" />
+			</on_authorized>
+		</action>
+		<action name="SendResetPasswordLink">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />	
+			</on_exec_ok>
+
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />	
+			</on_exec_error>
+		</action>
+		<action name="Helo">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Panel/Helo.tpl" />
+					<param name="smarty.css_includes">
+						<value>["panel.min.css"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		<action name="Account">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Panel/Account.tpl" />
+					<param name="smarty.css_includes">
+						<value>["panel.min.css", "uploader.css"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["formvalidator.js","uploader.js"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		<action name="AccountStore">
+			<on_exec_ok>
+				<forward module="Panel" action="Account" />
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Panel" action="Account" />
+			</on_exec_error>
+		</action>
+		<action name="GetForgottenPasswordForm">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="template" value="Panel/ForgottenPassForm.tpl" />
+				</view>
+			</on_exec_ok>
+		</action>
+		<action name="GetLoginForm">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="template" value="Panel/LoginForm.tpl" />
+				</view>
+			</on_exec_ok>
+		</action>
+		<action name="GetRegisterForm">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="template" value="Panel/RegisterForm.tpl" />
+				</view>
+			</on_exec_ok>
+		</action>
+		<action name="PasswordStore">
+			<on_exec_ok>
+				<forward module="Panel" action="Account" />
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Panel" action="Account" />
+			</on_exec_error>
+		</action>
+		<action name="AccountDelete">
+			<on_exec_ok>
+				<forward module="Index" />
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Panel" action="Account" />
+			</on_exec_error>
+		</action>
+		<action name="Messages">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Panel/Messages.tpl" />
+					<param name="smarty.css_includes">
+						<value>["panel.min.css?v=20171005", "uploader.css"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["formvalidator.js","uploader.js"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		<action name="MessageStore">
+			<on_exec_ok>
+				<forward module="Panel" action="Messages" />
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Panel" action="Messages" />
+			</on_exec_error>
+		</action>
+		<action name="Promo">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Panel/Promo.tpl" />
+					<param name="smarty.css_includes">
+						<value>["panel.min.css"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["panel.js"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		<action name="Discuss">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Panel/Discuss.tpl" />
+					<param name="smarty.css_includes">
+						<value>["panel.min.css"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		<action name="Comment">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Panel/Comment.tpl" />
+					<param name="smarty.css_includes">
+						<value>["panel.min.css"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		<action name="Forum">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Panel/Forum.tpl" />
+					<param name="smarty.css_includes">
+						<value>["panel.min.css"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["jquery.fancybox.js","forumThread.js"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		<action name="ForumMessage">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Panel/ForumMessage.tpl" />
+					<param name="smarty.css_includes">
+						<value>["panel.min.css"]</value>
+					</param>
+					<param name="smarty.js_includes">
+						<value>["panelForum.js"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		<action name="Transaction">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Panel/Transaction.tpl" />
+					<param name="smarty.css_includes">
+						<value>["panel.min.css"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		
+		<action name="Landing">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Panel/Landing.tpl" />
+					<param name="smarty.css_includes">
+						<value>["order.min.css?v=20190212"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+			<on_exec_error>
+				<forward module="Index" />
+			</on_exec_error>
+		</action>
+	</result_map>
+</module>

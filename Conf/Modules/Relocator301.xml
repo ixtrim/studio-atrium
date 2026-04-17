@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<classname>\StudioAtrium\Application\WWW\Module\Relocator301</classname>
+	<classfile>Relocator301</classfile>
+	<default_action>Relocate</default_action>
+	<request>
+
+		<action name="Relocate">
+			<allowed_methods get="yes" />
+			<param name="relocate" required="yes">
+				<validator name="String" />
+			</param>
+			<param name="params" required="no">
+				<validator name="Array" />
+			</param>
+		</action>
+	</request>
+
+	<commands>
+		<on_before_exec>
+			<include file="../defaultBeforeCommands.xml" />
+		</on_before_exec>
+	</commands>
+
+	<result_map>
+		<action name="Relocate">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Dummy" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_Dummy" />
+			</on_exec_error>
+		</action>
+	</result_map>
+</module>

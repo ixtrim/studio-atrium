@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<classname>\StudioAtrium\Application\WWW\Module\Alphabet</classname>
+	<classfile>Alphabet</classfile>
+	<default_action>List</default_action>
+	<request>
+		<action name="List">
+			<allowed_methods get="yes" />
+			<param name="letter" required="no" default="A">
+				<validator name="String" />
+			</param>
+		</action>
+	</request>
+	<commands>
+		<on_before_exec>
+			<include file="../defaultBeforeCommands.xml" />
+		</on_before_exec>
+	</commands>
+
+	<result_map>
+		<action name="List">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_Smarty3">
+					<param name="layout" value="Layout.tpl" />
+					<param name="template" value="Project/Alphabet.tpl" />
+					<param name="smarty.css_includes">
+						<value>["list.min.css?v=20250918","alphabet.min.css?v=20250918"]</value>
+					</param>
+				</view>
+			</on_exec_ok>
+		</action>
+	</result_map>
+</module>
