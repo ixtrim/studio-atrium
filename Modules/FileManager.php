@@ -22,7 +22,7 @@ class FileManager extends AbstractModule {
 	/**
 	 * @see AbstractModule::_initAction()
 	 */
-	protected function _initAction(
+	public function _initAction(
 		$action, \Point7_WebApp_Request_Filtered $request, AppContext $appContext, ResponseContext $responseContext
 	) {
 		parent::_initAction($action, $request, $appContext, $responseContext);

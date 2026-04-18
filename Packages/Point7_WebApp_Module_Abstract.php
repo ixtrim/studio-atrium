@@ -40,11 +40,11 @@ abstract class Point7_WebApp_Module_Abstract
 {
     protected mixed $_daoRepository = null;
 
-    protected function _initAction(
-        string $action,
+    public function _initAction(
+        $action,
         Point7_WebApp_Request $request,
-        Point7_WebApp_Context_Application $appContext,
-        Point7_WebApp_Context_Response $responseContext
+        $appContext,
+        $responseContext
     ): void {
         $this->_daoRepository = Point7_WebApp::getDAORepository();
     }

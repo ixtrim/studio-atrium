@@ -1,13 +1,6 @@
 <?php
 namespace StudioAtrium\Application;
 
-/**
- * Central DAO facade.
- *
- * Each getXxxFinder() / getXxxDAO() method returns the corresponding DAO object.
- * Methods are populated as entity classes are built.  Any not-yet-built method
- * returns a NullDAO that throws a descriptive RuntimeException on first use.
- */
 class DAORepository
 {
     private ?\PDO $pdo;
@@ -26,7 +19,7 @@ class DAORepository
     }
 
     // -----------------------------------------------------------------------
-    // Built-in Point7 attachment DAO
+    // Attachment
     // -----------------------------------------------------------------------
 
     public function getAttachmentDAO(): \Point7_CMS_Attachment_DAO_PDOMySQL
@@ -36,36 +29,64 @@ class DAORepository
         return $dao;
     }
 
-    /** Alias used by some modules as $this->_daoRepository->getAttachmentFinder() */
     public function getAttachmentFinder(): \Point7_CMS_Attachment_DAO_PDOMySQL
     {
         return $this->getAttachmentDAO();
     }
 
     // -----------------------------------------------------------------------
-    // Entity DAOs — stub until entity classes are built
-    // Each method below will be replaced when the corresponding Entity is ready.
+    // Carousel
     // -----------------------------------------------------------------------
 
-    public function getAdwordsClicksDAO(): object
+    public function getCarouselFinder(): \StudioAtrium\Entity\Carousel\Finder
     {
-        return $this->stub('AdwordsClicks');
+        return new \StudioAtrium\Entity\Carousel\Finder($this->pdo());
     }
 
-    public function getUserFinder(): object
+    // -----------------------------------------------------------------------
+    // Box
+    // -----------------------------------------------------------------------
+
+    public function getBoxFinder(): \StudioAtrium\Entity\Box\Finder
     {
-        return $this->stub('User');
+        return new \StudioAtrium\Entity\Box\Finder($this->pdo());
     }
 
-    public function getProjectFinder(?string $clicksearchSets = null): object
+    // -----------------------------------------------------------------------
+    // Document
+    // -----------------------------------------------------------------------
+
+    public function getDocumentFinder(): \StudioAtrium\Entity\Document\Finder
     {
-        return $this->stub('Project');
+        return new \StudioAtrium\Entity\Document\Finder($this->pdo());
     }
 
-    public function getProjectCategoryFinder(): object
+    // -----------------------------------------------------------------------
+    // Discuss
+    // -----------------------------------------------------------------------
+
+    public function getDiscussFinder(): \StudioAtrium\Entity\Discuss\Post\Finder
     {
-        return $this->stub('ProjectCategory');
+        return new \StudioAtrium\Entity\Discuss\Post\Finder($this->pdo());
     }
+
+    // -----------------------------------------------------------------------
+    // Project
+    // -----------------------------------------------------------------------
+
+    public function getProjectFinder(?string $clicksearchSets = null): \StudioAtrium\Entity\Project\Finder
+    {
+        return new \StudioAtrium\Entity\Project\Finder($this->pdo(), $clicksearchSets);
+    }
+
+    public function getProjectCategoryFinder(): \StudioAtrium\Entity\Project\Category\Finder
+    {
+        return new \StudioAtrium\Entity\Project\Category\Finder($this->pdo());
+    }
+
+    // -----------------------------------------------------------------------
+    // Project params / sketch params (stubs for now — used by PDF module)
+    // -----------------------------------------------------------------------
 
     public function getProjectParamFinder(): object
     {
@@ -82,67 +103,72 @@ class DAORepository
         return $this->stub('SketchParam');
     }
 
-    public function getExtrasFinder(): object
-    {
-        return $this->stub('Extras');
-    }
+    // -----------------------------------------------------------------------
+    // Settings
+    // -----------------------------------------------------------------------
 
-    public function getCarouselFinder(): object
+    public function getSettingsDAO(): \StudioAtrium\Entity\Settings\DAO
     {
-        return $this->stub('Carousel');
-    }
-
-    public function getBoxFinder(): object
-    {
-        return $this->stub('Box');
-    }
-
-    public function getDocumentFinder(): object
-    {
-        return $this->stub('Document');
-    }
-
-    public function getDiscussFinder(): object
-    {
-        return $this->stub('Discuss');
-    }
-
-    public function getSettingsDAO(): object
-    {
-        return $this->stub('Settings');
-    }
-
-    public function getOrderDAO(): object
-    {
-        return $this->stub('Order');
-    }
-
-    public function getTransactionDAO(): object
-    {
-        return $this->stub('Transaction');
-    }
-
-    public function getFavouriteDAO(): object
-    {
-        return $this->stub('Favourite');
-    }
-
-    public function getSelfieDAO(): object
-    {
-        return $this->stub('Selfie');
+        return new \StudioAtrium\Entity\Settings\DAO($this->pdo());
     }
 
     // -----------------------------------------------------------------------
+    // Adwords
+    // -----------------------------------------------------------------------
+
+    public function getAdwordsClicksDAO(): \StudioAtrium\Entity\Adwords\Clicks\DAO
+    {
+        return new \StudioAtrium\Entity\Adwords\Clicks\DAO($this->pdo());
+    }
+
+    // -----------------------------------------------------------------------
+    // User finder (used by Authenticate module)
+    // -----------------------------------------------------------------------
+
+    public function getUserFinder(): object
+    {
+        return $this->stub('User');
+    }
+
+    // -----------------------------------------------------------------------
+    // Remaining stubs
+    // -----------------------------------------------------------------------
+
+    public function getBannerFinder(): object { return $this->stub('Banner'); }
+    public function getHashTagFinder(): object { return $this->stub('HashTag'); }
+    public function getProjectCommentFinder(): object { return $this->stub('ProjectComment'); }
+    public function getProjectFeatureFinder(): object { return $this->stub('ProjectFeature'); }
+    public function getProjectPromoNotifyFinder(): object { return $this->stub('ProjectPromoNotify'); }
+    public function getContestFinder(): object { return $this->stub('Contest'); }
+    public function getTransactionFinder(): object { return $this->stub('Transaction'); }
+    public function getTransactionItemFinder(): object { return $this->stub('TransactionItem'); }
+    public function getRepresentativeFinder(): object { return $this->stub('Representative'); }
+    public function getNewsletterRecipientFinder(): object { return $this->stub('NewsletterRecipient'); }
+    public function getDealerFinder(): object { return $this->stub('Dealer'); }
+    public function getProjectFilesDownloadFinder(): object { return $this->stub('ProjectFilesDownload'); }
+    public function getRenderAuthorizeFinder(): object { return $this->stub('RenderAuthorize'); }
+    public function getSketchAuthorizeFinder(): object { return $this->stub('SketchAuthorize'); }
+    public function getSelfieProjectsFinder(): object { return $this->stub('SelfieProjects'); }
+    public function getShowroomProductFinder(): object { return $this->stub('ShowroomProduct'); }
+    public function getCRMContactFinder(): object { return $this->stub('CRMContact'); }
+    public function getDiscountFinder(): object { return $this->stub('Discount'); }
+    public function getPromotionFinder(): object { return $this->stub('Promotion'); }
+    public function getStatsFinder(): object { return $this->stub('Stats'); }
+    public function getForumFinder(): object { return $this->stub('Forum'); }
+    public function getProjectSimilarFinder(): object { return $this->stub('ProjectSimilar'); }
+    public function getProjectExtrasListingFinder(): object { return $this->stub('ProjectExtrasListing'); }
+    public function getHouseSituationFinder(): object { return $this->stub('HouseSituation'); }
+    public function getHouseSituationRoomsFinder(): object { return $this->stub('HouseSituationRooms'); }
+    public function getUserMessageFinder(): object { return $this->stub('UserMessage'); }
 
     private function stub(string $name): object
     {
         return new class($name) {
-            public function __construct(private string $dao) {}
-            public function __call(string $method, array $args): mixed
+            public function __construct(private string $name) {}
+            public function __call(string $method, array $args): never
             {
                 throw new \RuntimeException(
-                    "DAORepository::{$this->dao} is a stub — entity class not yet built. " .
-                    "Called method: {$method}()"
+                    "DAORepository::{$this->name} is a stub — entity class not yet built. Called method: {$method}()"
                 );
             }
         };

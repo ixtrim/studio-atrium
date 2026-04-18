@@ -99,7 +99,7 @@ class Point7_WebApp
 
         $moduleXml = APP_PATH . '/Conf/Modules/' . $moduleName . '.xml';
         if (!file_exists($moduleXml)) {
-            self::dispatch('Page', 'Display404', $depth + 1);
+            self::send404($depth);
             return;
         }
 
@@ -108,11 +108,20 @@ class Point7_WebApp
             ?? ucfirst(strtolower($_GET['action'] ?? ''))
             ?: $moduleConfig['default_action'];
 
+        // Load module PHP file from APP_PATH/Modules/ before class_exists check
+        $classfile = $moduleConfig['classfile'] ?? $moduleName;
+        $moduleFile = APP_PATH . '/Modules/' . $classfile . '.php';
+        if (file_exists($moduleFile)) {
+            require_once $moduleFile;
+        }
+
         // Build request + validate params
         $request = self::buildRequest($moduleConfig, $actionName);
 
-        // Application context
-        $appCtx = new Point7_WebApp_Context_Application();
+        // Application context — use app-level subclass if available
+        $appCtx = class_exists('\StudioAtrium\Application\WWW\AppContext')
+            ? new \StudioAtrium\Application\WWW\AppContext()
+            : new Point7_WebApp_Context_Application();
         $appCtx->setConfig(self::$config);
         $appCtx->setSecret((string)(self::$config['secret'] ?? ''));
 
@@ -132,7 +141,7 @@ class Point7_WebApp
         // Instantiate module
         $className = $moduleConfig['classname'];
         if (!class_exists($className)) {
-            self::dispatch('Page', 'Display404', $depth + 1);
+            self::send404($depth);
             return;
         }
 
@@ -148,7 +157,7 @@ class Point7_WebApp
             }
 
             if (!method_exists($module, $method)) {
-                self::dispatch('Page', 'Display404', $depth + 1);
+                self::send404($depth);
                 return;
             }
 
@@ -288,9 +297,29 @@ class Point7_WebApp
             $smarty->setCompileDir($compileDir);
         }
 
+        // Register Smarty plugins
+        if (class_exists('\StudioAtrium\Application\WWW\SmartyFunctionsRegistry')) {
+            $registry = new \StudioAtrium\Application\WWW\SmartyFunctionsRegistry();
+            $registry->setUrlGenerator(new \StudioAtrium\Application\WWW\UrlGenerator());
+            $registry->registerAll($smarty);
+        }
+
         // Assign all response data
         foreach ($responseCtx->getAll() as $key => $value) {
             $smarty->assign($key, $value);
+        }
+
+        // Always provide common template variables with safe defaults
+        $defaults = [
+            'request'     => $_GET ?? [],
+            'documentUrl' => self::getConfigParam('static.documents') ?? '',
+            'stockPath'   => self::getConfigParam('static.stock') ?? '',
+            'messageBox'  => ['errors' => [], 'messages' => []],
+        ];
+        foreach ($defaults as $k => $v) {
+            if (!array_key_exists($k, $responseCtx->getAll())) {
+                $smarty->assign($k, $v);
+            }
         }
 
         // Assign smarty.* params from result_map
@@ -316,7 +345,7 @@ class Point7_WebApp
         $template = $result['params']['template']  ?? null;
 
         if ($layout && $template) {
-            $smarty->assign('_contentTemplate', $template);
+            $smarty->assign('template', $template);
             $smarty->display($layout);
         } elseif ($template) {
             $smarty->display($template);
@@ -671,7 +700,7 @@ class Point7_WebApp
                     'action'   => (string)($child['action'] ?? '*'),
                 ];
             } elseif ($child->getName() === 'include') {
-                $path = realpath($baseDir . '/../' . (string)$child['file']);
+                $path = realpath($baseDir . '/' . (string)$child['file']);
                 if ($path && file_exists($path)) {
                     $inc = simplexml_load_file($path);
                     if ($inc) {
@@ -740,9 +769,21 @@ class Point7_WebApp
     // Helpers
     // -------------------------------------------------------------------------
 
+    private static function send404(int $depth): void
+    {
+        // Try the Page module's Display404 action exactly once (depth guard)
+        if ($depth === 0) {
+            self::dispatch('Page', 'Display404', 1);
+            return;
+        }
+        // Fallback: plain 404 response so we never loop
+        http_response_code(404);
+        echo '<h1>404 Not Found</h1>';
+    }
+
     private static function normalizeModuleName(string $name): string
     {
-        // 'index' → 'Index', 'myModule' → 'Mymodule' (framework convention)
+        // 'index' → 'Index', 'project' → 'Project'
         return ucfirst(strtolower($name));
     }
 

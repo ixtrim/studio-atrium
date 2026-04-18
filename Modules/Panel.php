@@ -25,7 +25,7 @@ class Panel extends AbstractModule {
 	/**
 	* @see Packages/7Point/WebApp/Module/Point7_WebApp_Module_Abstract::_initAction()
 	*/
-	protected function _initAction(
+	public function _initAction(
 		$action,
 		\Point7_WebApp_Request $request,
 		AppContext $appContext,

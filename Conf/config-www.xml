@@ -45,7 +45,7 @@
 
 			<!-- Global PDO -->
 			<object global="true" name="dbconnection::pdo1" type="Object" class="PDO" lazy="true">
-				<param name="dsn" value="mysql:host=localhost;dbname=aronmaiden_studioatrium" />
+				<param name="dsn" value="mysql:host=localhost;dbname=studioatrium2016new" />
 				<param name="username" value="root" />
 				<param name="passwd" value="IxtrimDev1234!" />
 			</object>

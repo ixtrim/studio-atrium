@@ -104,7 +104,24 @@ class Index extends WWW\AbstractModule
 		}
 		
 		$responseContext->set('featured', $featured);
-	
+
+		// Compare and favourite IDs from cookies
+		$compareIds = array();
+		if (!empty($_COOKIE['saCom'])) {
+			$compareIds = explode('|', $_COOKIE['saCom']);
+		}
+		$responseContext->set('compareIds', $compareIds);
+
+		$user = $appContext->getUser();
+		$favouriteIds = array();
+		if ($user) {
+			$props = $user->getProps(true) ?: array();
+			$favouriteIds = isset($props['favourite']) ? $props['favourite'] : array();
+		} elseif (!empty($_COOKIE['saFav'])) {
+			$favouriteIds = explode('|', $_COOKIE['saFav']);
+		}
+		$responseContext->set('favouriteIds', $favouriteIds);
+
 		//projects for google search results on mobile
 		$responseContext->set('mobileGoogleSearch', array_slice($featured, 0, 3));
 

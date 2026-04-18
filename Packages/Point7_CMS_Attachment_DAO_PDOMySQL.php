@@ -107,4 +107,70 @@ class Point7_CMS_Attachment_DAO_PDOMySQL
         $a->setSortOrder((int)($row['sort_order'] ?? 0));
         return $a;
     }
+
+    /**
+     * Get attachments by profile, optionally joined with their project owner.
+     * Uses slot formula: owner_uid = projectId * 256 + 2 for project attachments.
+     *
+     * @param string $profile  Profile name (e.g. 'ProjectRealisation')
+     * @param bool $onlyPublished  Only include attachments whose project is published
+     * @param int $limit
+     * @param bool $withOwner  Include owner project data in result
+     * @param bool $onlyMain  (ignored — reserved for future use)
+     * @param bool $asArray  (ignored — always returns array)
+     */
+    public function getAttachmentsByProfile(
+        string $profile,
+        bool $onlyPublished = true,
+        int $limit = 10,
+        bool $withOwner = true,
+        bool $onlyMain = false,
+        bool $asArray = true
+    ): array {
+        if ($withOwner) {
+            $sql = "SELECT a.*, p.id AS p_id, p.name AS p_name,
+                           p.symbol_alpha, p.symbol_num, p.type AS p_type, p.status AS p_status
+                    FROM `{$this->table}` a
+                    JOIN project p ON p.id = (a.owner_uid DIV 256)
+                    WHERE a.profile_name = :profile";
+            if ($onlyPublished) {
+                $sql .= " AND p.status = 'published'";
+            }
+            $sql .= ' ORDER BY a.id DESC LIMIT :limit';
+
+            $stmt = $this->pdo()->prepare($sql);
+            $stmt->bindValue(':profile', $profile);
+            $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
+            $stmt->execute();
+            $rows = $stmt->fetchAll();
+
+            return array_map(function (array $row) {
+                return [
+                    'id'           => (int)$row['id'],
+                    'profile_name' => $row['profile_name'],
+                    'owner_uid'    => $row['owner_uid'],
+                    'filename'     => $row['filename'],
+                    'path'         => $row['path'] ?? '',
+                    'title'        => $row['title'] ?? '',
+                    'props'        => $row['props'] ?? null,
+                    'sorting'      => (int)($row['sorting'] ?? 0),
+                    'object'       => [
+                        'id'           => (int)$row['p_id'],
+                        'name'         => $row['p_name'],
+                        'symbol_alpha' => $row['symbol_alpha'],
+                        'symbol_num'   => $row['symbol_num'],
+                        'type'         => $row['p_type'],
+                        'status'       => $row['p_status'],
+                    ],
+                ];
+            }, $rows);
+        }
+
+        $sql = "SELECT * FROM `{$this->table}` WHERE profile_name = :profile ORDER BY id DESC LIMIT :limit";
+        $stmt = $this->pdo()->prepare($sql);
+        $stmt->bindValue(':profile', $profile);
+        $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
 }

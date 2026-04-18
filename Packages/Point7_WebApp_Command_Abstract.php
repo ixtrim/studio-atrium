@@ -8,13 +8,13 @@ abstract class Point7_WebApp_Command_Abstract
         Point7_WebApp_Request $request,
         Point7_WebApp_Context_Application $appContext,
         Point7_WebApp_Context_Response $responseContext
-    ): string;
+    );
 
     public function execute(
         Point7_WebApp_Request $request,
         Point7_WebApp_Context_Application $appContext,
         Point7_WebApp_Context_Response $responseContext
-    ): string {
+    ) {
         return $this->_doExecute($request, $appContext, $responseContext);
     }
 }

@@ -7,6 +7,6 @@ class ProjectCategory
 
     public static function getDefaultHouseCategory(): string
     {
-        return 'wszystkie-projekty';
+        return 'projekty-domow';
     }
 }

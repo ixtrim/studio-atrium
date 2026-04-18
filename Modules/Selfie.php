@@ -19,7 +19,7 @@ class Selfie extends WWW\AbstractModule
 	/**
 	 * @see \Point7_WebApp_Module_Abstract::_initAction()
 	 */
-	protected function _initAction(
+	public function _initAction(
 		$action,\Point7_WebApp_Request_Filtered $request, WWW\AppContext $appContext, WWW\ResponseContext $responseContext
 	) {
 		parent::_initAction($action, $request, $appContext, $responseContext);

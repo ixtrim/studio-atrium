@@ -17,7 +17,7 @@ class Pdf extends WWW\AbstractModule
 	/**
 	 * @see \Point7_WebApp_Module_Abstract::_initAction()
 	 */
-	protected function _initAction($action,\Point7_WebApp_Request_Filtered $request, WWW\AppContext $appContext, WWW\ResponseContext $responseContext)
+	public function _initAction($action,\Point7_WebApp_Request_Filtered $request, WWW\AppContext $appContext, WWW\ResponseContext $responseContext)
 	{
 		parent::_initAction($action, $request, $appContext, $responseContext);
 		$this->_projectFinder = $this->_daoRepository->getProjectFinder(\Point7_WebApp::getConfigParam('paths.clicksearch_sets'));

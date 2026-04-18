@@ -1,56 +1,29 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2025-08-22 10:51:56
-         compiled from "/home/studioatrium/7point.pl/app/2016.studioatrium.www/Views/Templates/MainPage.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:38095029162b030502ee7b4-93789099%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
-$_valid = $_smarty_tpl->decodeProperties(array (
+<?php
+/* Smarty version 4.5.6, created on 2026-05-03 21:41:37
+  from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/MainPage.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.5.6',
+  'unifunc' => 'content_69f7a4f1331792_21718169',
+  'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'aa3799e0f1edf4ab3012ee13e93096c286bf23f4' => 
+    'adffd56a5b5c4e57bbe03dbaa580c7165b140ace' => 
     array (
-      0 => '/home/studioatrium/7point.pl/app/2016.studioatrium.www/Views/Templates/MainPage.tpl',
-      1 => 1755859908,
+      0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/MainPage.tpl',
+      1 => 1776175185,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '38095029162b030502ee7b4-93789099',
-  'function' => 
+  'includes' => 
   array (
+    'file:Include/HowToBuy.tpl' => 1,
   ),
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_62b030503abfe6_37737364',
-  'variables' => 
-  array (
-    'isMobile' => 0,
-    'mainCarousel' => 0,
-    '_item' => 0,
-    'idx' => 0,
-    'stockPath' => 0,
-    'prev' => 0,
-    'next' => 0,
-    'boxes' => 0,
-    'siteMenuStats' => 0,
-    '_key' => 0,
-    'comment' => 0,
-    'threadId' => 0,
-    'topic' => 0,
-    'article' => 0,
-    'featured' => 0,
-    '_project' => 0,
-    'isLocal' => 0,
-    'compareIds' => 0,
-    'favouriteIds' => 0,
-    'user' => 0,
-    'realisations' => 0,
-    'projectPath' => 0,
-    'interiors' => 0,
-    'unfinished' => 0,
-    'partners' => 0,
-    '_partner' => 0,
-  ),
-  'has_nocache_code' => false,
-),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_62b030503abfe6_37737364')) {function content_62b030503abfe6_37737364($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include '/home/studioatrium/7point.pl/lib/php/Packages/Smarty3/plugins/modifier.truncate.php';
-if (!is_callable('smarty_modifier_replace')) include '/home/studioatrium/7point.pl/lib/php/Packages/Smarty3/plugins/modifier.replace.php';
-?><?php if (!$_smarty_tpl->tpl_vars['isMobile']->value){?>
+),false)) {
+function content_69f7a4f1331792_21718169 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/aronmaiden/studioatrium/studio-atrium/Vendors/smarty/smarty/libs/plugins/modifier.truncate.php','function'=>'smarty_modifier_truncate',),));
+if (!$_smarty_tpl->tpl_vars['isMobile']->value) {?>
 <div class="container" id="slider-box">
 
 	<div id="loader-box">
@@ -58,39 +31,40 @@ if (!is_callable('smarty_modifier_replace')) include '/home/studioatrium/7point.
 	</div>
 
 	<div id="jssor_1">
-
         <div data-u="slides" class="slides">
-        	<?php $_smarty_tpl->tpl_vars['idx'] = new Smarty_variable(0, null, 0);?>
-            <?php  $_smarty_tpl->tpl_vars['_item'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['_item']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['mainCarousel']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
- $_smarty_tpl->tpl_vars['_item']->iteration=0;
-foreach ($_from as $_smarty_tpl->tpl_vars['_item']->key => $_smarty_tpl->tpl_vars['_item']->value){
-$_smarty_tpl->tpl_vars['_item']->_loop = true;
- $_smarty_tpl->tpl_vars['_item']->iteration++;
+        	<?php $_smarty_tpl->_assignInScope('idx', 0);?>
+            <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['mainCarousel']->value, '_item');
+$_smarty_tpl->tpl_vars['_item']->iteration = 0;
+$_smarty_tpl->tpl_vars['_item']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['_item']->value) {
+$_smarty_tpl->tpl_vars['_item']->do_else = false;
+$_smarty_tpl->tpl_vars['_item']->iteration++;
+$__foreach__item_0_saved = $_smarty_tpl->tpl_vars['_item'];
 ?>
-				<?php if ($_smarty_tpl->tpl_vars['_item']->value['attachments']['CarouselBg'][0]){?>		
-					 <div data-b="0" data-p="170.00" data-po="80% 55%" style="display: none;"<?php if ($_smarty_tpl->tpl_vars['idx']->value!=0){?> class="sl"<?php }?>>
-	               		<?php if ($_smarty_tpl->tpl_vars['_item']->value['link']){?><a href="<?php echo $_smarty_tpl->tpl_vars['_item']->value['link'];?>
+				<?php if ($_smarty_tpl->tpl_vars['_item']->value['attachments']['CarouselBg'][0]) {?>		
+					 <div data-b="0" data-p="170.00" data-po="80% 55%" style="display: none;"<?php if ($_smarty_tpl->tpl_vars['idx']->value != 0) {?> class="sl"<?php }?>>
+	               		<?php if ($_smarty_tpl->tpl_vars['_item']->value['link']) {?><a href="<?php echo $_smarty_tpl->tpl_vars['_item']->value['link'];?>
 "><?php }?>
 	                	<img data-u="image" data-src2="<?php echo $_smarty_tpl->tpl_vars['stockPath']->value;?>
 /<?php echo $_smarty_tpl->tpl_vars['_item']->value['attachments']['CarouselBg'][0]['path'];?>
 /<?php echo $_smarty_tpl->tpl_vars['_item']->value['attachments']['CarouselBg'][0]['filename'];?>
 " alt="<?php echo $_smarty_tpl->tpl_vars['_item']->value['name'];?>
 " />
-						<?php if ($_smarty_tpl->tpl_vars['_item']->value['text1']||$_smarty_tpl->tpl_vars['_item']->value['text2']||$_smarty_tpl->tpl_vars['_item']->value['text3']){?>
+						<?php if ($_smarty_tpl->tpl_vars['_item']->value['text1'] || $_smarty_tpl->tpl_vars['_item']->value['text2'] || $_smarty_tpl->tpl_vars['_item']->value['text3']) {?>
 		                	<div class="box">
-		                    	<?php if ($_smarty_tpl->tpl_vars['_item']->value['text1']){?><div data-u="caption" data-t="0" class="subbox1"><strong<?php if ($_smarty_tpl->tpl_vars['_item']->value['extra_data']['text1_bg']||$_smarty_tpl->tpl_vars['_item']->value['extra_data']['text1_opacity']){?> class="slideText1_<?php echo $_smarty_tpl->tpl_vars['_item']->value['id'];?>
+		                    	<?php if ($_smarty_tpl->tpl_vars['_item']->value['text1']) {?><div data-u="caption" data-t="0" class="subbox1"><strong<?php if ($_smarty_tpl->tpl_vars['_item']->value['extra_data']['text1_bg'] || $_smarty_tpl->tpl_vars['_item']->value['extra_data']['text1_opacity']) {?> class="slideText1_<?php echo $_smarty_tpl->tpl_vars['_item']->value['id'];?>
 "<?php }?>><?php echo $_smarty_tpl->tpl_vars['_item']->value['text1'];?>
 </strong></div><?php }?>
-		                    	<?php if ($_smarty_tpl->tpl_vars['_item']->value['text2']){?><div data-u="caption" data-t="1" class="subbox2"><span<?php if ($_smarty_tpl->tpl_vars['_item']->value['extra_data']['text2_bg']||$_smarty_tpl->tpl_vars['_item']->value['extra_data']['text2_opacity']){?> class="slideText2_<?php echo $_smarty_tpl->tpl_vars['_item']->value['id'];?>
+		                    	<?php if ($_smarty_tpl->tpl_vars['_item']->value['text2']) {?><div data-u="caption" data-t="1" class="subbox2"><span<?php if ($_smarty_tpl->tpl_vars['_item']->value['extra_data']['text2_bg'] || $_smarty_tpl->tpl_vars['_item']->value['extra_data']['text2_opacity']) {?> class="slideText2_<?php echo $_smarty_tpl->tpl_vars['_item']->value['id'];?>
 "<?php }?>><?php echo $_smarty_tpl->tpl_vars['_item']->value['text2'];?>
 </span></div><?php }?>
-		                   	 	<?php if ($_smarty_tpl->tpl_vars['_item']->value['text3']){?><div data-u="caption" data-t="2" class="subbox3"><span<?php if ($_smarty_tpl->tpl_vars['_item']->value['extra_data']['text3_bg']||$_smarty_tpl->tpl_vars['_item']->value['extra_data']['text3_opacity']){?> class="slideText3_<?php echo $_smarty_tpl->tpl_vars['_item']->value['id'];?>
+		                   	 	<?php if ($_smarty_tpl->tpl_vars['_item']->value['text3']) {?><div data-u="caption" data-t="2" class="subbox3"><span<?php if ($_smarty_tpl->tpl_vars['_item']->value['extra_data']['text3_bg'] || $_smarty_tpl->tpl_vars['_item']->value['extra_data']['text3_opacity']) {?> class="slideText3_<?php echo $_smarty_tpl->tpl_vars['_item']->value['id'];?>
 "<?php }?>><?php echo $_smarty_tpl->tpl_vars['_item']->value['text3'];?>
 </span></div><?php }?>
 		                	</div>
 		            	<?php }?> 
-		            	<?php if ($_smarty_tpl->tpl_vars['_item']->value['attachments']['CarouselImage'][0]){?>
+		            	<?php if ($_smarty_tpl->tpl_vars['_item']->value['attachments']['CarouselImage'][0]) {?>
 		            		<div class="img" data-u="caption" data-t="3">
 		            			<div style="width: <?php echo $_smarty_tpl->tpl_vars['_item']->value['attachments']['CarouselImage'][0]['props']['image_size']['width'];?>
 px; height: <?php echo $_smarty_tpl->tpl_vars['_item']->value['attachments']['CarouselImage'][0]['props']['image_size']['height'];?>
@@ -105,18 +79,21 @@ px;">
 		            			</div>
 		            		</div>
 		            	<?php }?>
-	                	<?php if ($_smarty_tpl->tpl_vars['_item']->value['link']){?></a><?php }?>
+	                	<?php if ($_smarty_tpl->tpl_vars['_item']->value['link']) {?></a><?php }?>
 		            </div>
 					<p class="hidden" id="arrowHelper_<?php echo $_smarty_tpl->tpl_vars['idx']->value;?>
 " data-name="<?php echo $_smarty_tpl->tpl_vars['_item']->value['name'];?>
 "></p>
-					<?php if ($_smarty_tpl->tpl_vars['idx']->value==1){?>
-						<?php $_smarty_tpl->tpl_vars['next'] = new Smarty_variable($_smarty_tpl->tpl_vars['_item']->value['name'], null, 0);?>
+					<?php if ($_smarty_tpl->tpl_vars['idx']->value == 1) {?>
+						<?php $_smarty_tpl->_assignInScope('next', $_smarty_tpl->tpl_vars['_item']->value['name']);?>
 					<?php }?>
-					<?php $_smarty_tpl->tpl_vars['idx'] = new Smarty_variable($_smarty_tpl->tpl_vars['idx']->value+1, null, 0);?>
-					<?php $_smarty_tpl->tpl_vars['prev'] = new Smarty_variable($_smarty_tpl->tpl_vars['_item']->value['name'], null, 0);?>
+					<?php $_smarty_tpl->_assignInScope('idx', $_smarty_tpl->tpl_vars['idx']->value+1);?>
+					<?php $_smarty_tpl->_assignInScope('prev', $_smarty_tpl->tpl_vars['_item']->value['name']);?>
 				<?php }?>
-			<?php } ?>
+			<?php
+$_smarty_tpl->tpl_vars['_item'] = $__foreach__item_0_saved;
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </div>
         <span id="arrowLeft" data-u="arrowleft" class="jssor_l" data-noscale="1" data-autocenter="2"><span class="icon"></span><h4><?php echo $_smarty_tpl->tpl_vars['prev']->value;?>
 </h4></span>
@@ -135,27 +112,28 @@ px;">
 	inwestorów oraz wykonawców. Domy wybudowane według naszych projektów znaleźć można na terenie całego kraju, ale również za granicą.
 	Nasze doświadczenie w projektowaniu to obecnie <strong>ponad 1400</strong> stworzonych projektów powtarzalnych. Na swoim koncie mamy także projekty tworzone na indywidualne zapotrzebowanie inwestorów. Ofertę naszego biura wzgobacają projekty garaży, altan, wiat i budynków usługowych 
 	oraz projekty wnętrz, z których wiele prezentujemy na łamach publikacji wydawniczych. "Domy w Tradycji" to katalog z gotowymi projektami domów, który regularnie ukazuje się na rynku już kilkanaście lat. 
-	Jeśli szukasz swojego wymarzonego projektu - u nas znajdziesz go z pewnością, a nasza profesjonalna, od lat pracująca w branży projektowo-budowlanej ekipa doradców z dużym doświadczeniem, chętnie Ci w tym pomoże! <a href="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0][0]->generateUrl(array('module'=>'varia','action'=>'project_helper'),$_smarty_tpl);?>
+	Jeśli szukasz swojego wymarzonego projektu - u nas znajdziesz go z pewnością, a nasza profesjonalna, od lat pracująca w branży projektowo-budowlanej ekipa doradców z dużym doświadczeniem, chętnie Ci w tym pomoże! <a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'varia','action'=>'project_helper'),$_smarty_tpl ) );?>
 ">Znajdziemy dla Ciebie projekt &raquo;</a></p>
 </section>
 </div>
 <div class="container">
 	<section>
 		<div class="grid">
-		<?php  $_smarty_tpl->tpl_vars['_item'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['_item']->_loop = false;
- $_smarty_tpl->tpl_vars['_key'] = new Smarty_Variable;
- $_from = $_smarty_tpl->tpl_vars['boxes']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
- $_smarty_tpl->tpl_vars['_item']->iteration=0;
- $_smarty_tpl->tpl_vars['_item']->index=-1;
-foreach ($_from as $_smarty_tpl->tpl_vars['_item']->key => $_smarty_tpl->tpl_vars['_item']->value){
-$_smarty_tpl->tpl_vars['_item']->_loop = true;
- $_smarty_tpl->tpl_vars['_key']->value = $_smarty_tpl->tpl_vars['_item']->key;
- $_smarty_tpl->tpl_vars['_item']->iteration++;
- $_smarty_tpl->tpl_vars['_item']->index++;
- $_smarty_tpl->tpl_vars['_item']->first = $_smarty_tpl->tpl_vars['_item']->index === 0;
- $_smarty_tpl->tpl_vars['smarty']->value['foreach']['bbb']['first'] = $_smarty_tpl->tpl_vars['_item']->first;
+		<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['boxes']->value, '_item', false, '_key', 'bbb', array (
+  'first' => true,
+  'index' => true,
+));
+$_smarty_tpl->tpl_vars['_item']->iteration = 0;
+$_smarty_tpl->tpl_vars['_item']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['_key']->value => $_smarty_tpl->tpl_vars['_item']->value) {
+$_smarty_tpl->tpl_vars['_item']->do_else = false;
+$_smarty_tpl->tpl_vars['_item']->iteration++;
+$_smarty_tpl->tpl_vars['__smarty_foreach_bbb']->value['index']++;
+$_smarty_tpl->tpl_vars['__smarty_foreach_bbb']->value['first'] = !$_smarty_tpl->tpl_vars['__smarty_foreach_bbb']->value['index'];
+$__foreach__item_1_saved = $_smarty_tpl->tpl_vars['_item'];
 ?>
-			<?php if ($_smarty_tpl->getVariable('smarty')->value['foreach']['bbb']['first']){?>
+			<?php if ((isset($_smarty_tpl->tpl_vars['__smarty_foreach_bbb']->value['first']) ? $_smarty_tpl->tpl_vars['__smarty_foreach_bbb']->value['first'] : null)) {?>
 				<figure class="effect-sadie">
 					<img class="lazy-image" data-uri="<?php echo $_smarty_tpl->tpl_vars['stockPath']->value;?>
 /<?php echo $_smarty_tpl->tpl_vars['_item']->value['attachments']['BoxBg'][0]['path'];?>
@@ -168,51 +146,50 @@ $_smarty_tpl->tpl_vars['_item']->_loop = true;
 						<a class="full" style="margin-top: 50%; height: 50%;" href="/projekty-domow/najlepsze-male-domy-z-poddaszem/">Projekty małych domów z poddaszem użytkowym</a>
 					</figcaption>
 				</figure>
-				
-			<?php }else{ ?>
-				<?php if (!$_smarty_tpl->tpl_vars['_item']->value['bg_color']){?>
+							<?php } else { ?>
+				<?php if (!$_smarty_tpl->tpl_vars['_item']->value['bg_color']) {?>
 				<figure class="effect-sadie">
 					<img class="lazy-image" data-uri="<?php echo $_smarty_tpl->tpl_vars['stockPath']->value;?>
 /<?php echo $_smarty_tpl->tpl_vars['_item']->value['attachments']['BoxBg'][0]['path'];?>
 /<?php echo $_smarty_tpl->tpl_vars['_item']->value['attachments']['BoxBg'][0]['filename'];?>
 " src="img/xc.png" width="480" height="480" alt="<?php echo $_smarty_tpl->tpl_vars['_item']->value['name'];?>
 ">
-					<?php if ($_smarty_tpl->tpl_vars['_item']->value['name']){?><div class="mobile-sadie"<?php if ($_smarty_tpl->tpl_vars['_item']->value['id']==37||$_smarty_tpl->tpl_vars['_item']->value['id']==21){?> style="background-color: rgba(255,0,0,0.75);"<?php }?>><span><?php echo $_smarty_tpl->tpl_vars['_item']->value['name'];?>
+					<?php if ($_smarty_tpl->tpl_vars['_item']->value['name']) {?><div class="mobile-sadie"<?php if ($_smarty_tpl->tpl_vars['_item']->value['id'] == 37 || $_smarty_tpl->tpl_vars['_item']->value['id'] == 21) {?> style="background-color: rgba(255,0,0,0.75);"<?php }?>><span><?php echo $_smarty_tpl->tpl_vars['_item']->value['name'];?>
 </span></div><?php }?>
 					<span class="close-sadie"></span>
 					
 					<figcaption>
 						<a class="full" href="<?php echo $_smarty_tpl->tpl_vars['_item']->value['link'];?>
 ">						
-						<?php if ($_smarty_tpl->tpl_vars['_item']->value['subtitle']){?>
+						<?php if ($_smarty_tpl->tpl_vars['_item']->value['subtitle']) {?>
 							<?php echo $_smarty_tpl->tpl_vars['_item']->value['subtitle'];?>
 
-						<?php }else{ ?>	
+						<?php } else { ?>	
 							<h6><?php echo $_smarty_tpl->tpl_vars['_item']->value['name'];?>
 </h6>
 						<?php }?>
 						</a>
-						<?php if ($_smarty_tpl->tpl_vars['_item']->value['description']){?>
+						<?php if ($_smarty_tpl->tpl_vars['_item']->value['description']) {?>
 							<p><?php echo $_smarty_tpl->tpl_vars['_item']->value['description'];?>
 </p>
 						<?php }?>
 						<a class="framed" href="<?php echo $_smarty_tpl->tpl_vars['_item']->value['link'];?>
 ">
-							<span>Zobacz wszystkie<?php if ($_smarty_tpl->tpl_vars['_item']->value['project_category_id']&&$_smarty_tpl->tpl_vars['siteMenuStats']->value[$_smarty_tpl->tpl_vars['_item']->value['project_category_id']]){?> <?php echo $_smarty_tpl->tpl_vars['siteMenuStats']->value[$_smarty_tpl->tpl_vars['_item']->value['project_category_id']];?>
-<?php }?></span>
+							<span>Zobacz wszystkie<?php if ($_smarty_tpl->tpl_vars['_item']->value['project_category_id'] && $_smarty_tpl->tpl_vars['siteMenuStats']->value[$_smarty_tpl->tpl_vars['_item']->value['project_category_id']]) {?> <?php echo $_smarty_tpl->tpl_vars['siteMenuStats']->value[$_smarty_tpl->tpl_vars['_item']->value['project_category_id']];
+}?></span>
 						</a>
 					</figcaption>
 				</figure>
-				<?php }else{ ?>
+				<?php } else { ?>
 				<figure class="<?php echo ('off mainPageBox_').($_smarty_tpl->tpl_vars['_key']->value);?>
 ">
 					<img src="img/dummy_tile.png" width="480" height="480" alt="box">
 					
-					<?php if ($_smarty_tpl->tpl_vars['_item']->value['type']=='articles'||$_smarty_tpl->tpl_vars['_item']->value['type']=='comments'){?>
+					<?php if ($_smarty_tpl->tpl_vars['_item']->value['type'] == 'articles' || $_smarty_tpl->tpl_vars['_item']->value['type'] == 'comments') {?>
 						<h6><a href="<?php echo $_smarty_tpl->tpl_vars['_item']->value['link'];?>
 "><?php echo $_smarty_tpl->tpl_vars['_item']->value['name'];?>
 </a></h6>
-					<?php }else{ ?>
+					<?php } else { ?>
 						<h6><?php echo $_smarty_tpl->tpl_vars['_item']->value['name'];?>
 </h6>
 					<?php }?>
@@ -223,59 +200,65 @@ $_smarty_tpl->tpl_vars['_item']->_loop = true;
 " src="img/xc.png" alt="<?php echo $_smarty_tpl->tpl_vars['_item']->value['name'];?>
 " width="1" height="1">
 						
-						<?php if ($_smarty_tpl->tpl_vars['_item']->value['description']){?>
+						<?php if ($_smarty_tpl->tpl_vars['_item']->value['description']) {?>
 							<p><?php echo $_smarty_tpl->tpl_vars['_item']->value['description'];?>
 </p>
 						<?php }?>
 						
-						<?php if ($_smarty_tpl->tpl_vars['_item']->value['type']=='comments'){?>
+						<?php if ($_smarty_tpl->tpl_vars['_item']->value['type'] == 'comments') {?>
 							<div class="flexslider">
 								<ul class="slides">
-								<?php  $_smarty_tpl->tpl_vars['comment'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['comment']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['_item']->value['content']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['comment']->key => $_smarty_tpl->tpl_vars['comment']->value){
-$_smarty_tpl->tpl_vars['comment']->_loop = true;
+								<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['_item']->value['content'], 'comment');
+$_smarty_tpl->tpl_vars['comment']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['comment']->value) {
+$_smarty_tpl->tpl_vars['comment']->do_else = false;
 ?>
 								
-									<?php if ($_smarty_tpl->tpl_vars['comment']->value['parent_id']){?>
-										<?php $_smarty_tpl->tpl_vars['threadId'] = new Smarty_variable($_smarty_tpl->tpl_vars['comment']->value['parent_id'], null, 0);?>
-										<?php $_smarty_tpl->tpl_vars['topic'] = new Smarty_variable($_smarty_tpl->tpl_vars['comment']->value['parent']['topic'], null, 0);?>
-									<?php }else{ ?>
-										<?php $_smarty_tpl->tpl_vars['threadId'] = new Smarty_variable($_smarty_tpl->tpl_vars['comment']->value['id'], null, 0);?>
-										<?php $_smarty_tpl->tpl_vars['topic'] = new Smarty_variable($_smarty_tpl->tpl_vars['comment']->value['topic'], null, 0);?>
+									<?php if ($_smarty_tpl->tpl_vars['comment']->value['parent_id']) {?>
+										<?php $_smarty_tpl->_assignInScope('threadId', $_smarty_tpl->tpl_vars['comment']->value['parent_id']);?>
+										<?php $_smarty_tpl->_assignInScope('topic', $_smarty_tpl->tpl_vars['comment']->value['parent']['topic']);?>
+									<?php } else { ?>
+										<?php $_smarty_tpl->_assignInScope('threadId', $_smarty_tpl->tpl_vars['comment']->value['id']);?>
+										<?php $_smarty_tpl->_assignInScope('topic', $_smarty_tpl->tpl_vars['comment']->value['topic']);?>
 									<?php }?>
 									<li>
-										<p class="comment-title"><a href="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0][0]->generateUrl(array('module'=>'discuss','action'=>'thread','id'=>$_smarty_tpl->tpl_vars['threadId']->value),$_smarty_tpl);?>
-"><?php echo smarty_modifier_truncate(preg_replace('!<[^>]*?>!', ' ', $_smarty_tpl->tpl_vars['topic']->value),24);?>
+										<p class="comment-title"><a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'discuss','action'=>'thread','id'=>$_smarty_tpl->tpl_vars['threadId']->value),$_smarty_tpl ) );?>
+"><?php echo smarty_modifier_truncate(preg_replace('!<[^>]*?>!', ' ', (string) $_smarty_tpl->tpl_vars['topic']->value),24);?>
  | <?php echo $_smarty_tpl->tpl_vars['comment']->value['nick'];?>
 </a></p>
-										<p><a href="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0][0]->generateUrl(array('module'=>'discuss','action'=>'thread','id'=>$_smarty_tpl->tpl_vars['threadId']->value),$_smarty_tpl);?>
-"><?php echo smarty_modifier_truncate(preg_replace('!<[^>]*?>!', ' ', $_smarty_tpl->tpl_vars['comment']->value['content']),100);?>
+										<p><a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'discuss','action'=>'thread','id'=>$_smarty_tpl->tpl_vars['threadId']->value),$_smarty_tpl ) );?>
+"><?php echo smarty_modifier_truncate(preg_replace('!<[^>]*?>!', ' ', (string) $_smarty_tpl->tpl_vars['comment']->value['content']),100);?>
 </a></p>
 									</li>
-								<?php } ?>
+								<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 								</ul>
 							</div>
-						<?php }elseif($_smarty_tpl->tpl_vars['_item']->value['type']=='articles'){?>
+						<?php } elseif ($_smarty_tpl->tpl_vars['_item']->value['type'] == 'articles') {?>
 							<div class="flexslider">
 								<ul class="slides">
-								<?php  $_smarty_tpl->tpl_vars['article'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['article']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['_item']->value['content']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['article']->key => $_smarty_tpl->tpl_vars['article']->value){
-$_smarty_tpl->tpl_vars['article']->_loop = true;
+								<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['_item']->value['content'], 'article');
+$_smarty_tpl->tpl_vars['article']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['article']->value) {
+$_smarty_tpl->tpl_vars['article']->do_else = false;
 ?>
 									<li>
-										<p class="title"><a href="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0][0]->generateUrl(array('module'=>'article','action'=>'item','docId'=>$_smarty_tpl->tpl_vars['article']->value['id'],'link_title'=>$_smarty_tpl->tpl_vars['article']->value['title']),$_smarty_tpl);?>
+										<p class="title"><a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'article','action'=>'item','docId'=>$_smarty_tpl->tpl_vars['article']->value['id'],'link_title'=>$_smarty_tpl->tpl_vars['article']->value['title']),$_smarty_tpl ) );?>
 "><?php echo $_smarty_tpl->tpl_vars['article']->value['title'];?>
 </a></p>
-										<p><a href="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0][0]->generateUrl(array('module'=>'article','action'=>'item','docId'=>$_smarty_tpl->tpl_vars['article']->value['id'],'link_title'=>$_smarty_tpl->tpl_vars['article']->value['title']),$_smarty_tpl);?>
-"><?php echo smarty_modifier_truncate(preg_replace('!<[^>]*?>!', ' ', $_smarty_tpl->tpl_vars['article']->value['teaser']),100);?>
+										<p><a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'article','action'=>'item','docId'=>$_smarty_tpl->tpl_vars['article']->value['id'],'link_title'=>$_smarty_tpl->tpl_vars['article']->value['title']),$_smarty_tpl ) );?>
+"><?php echo smarty_modifier_truncate(preg_replace('!<[^>]*?>!', ' ', (string) $_smarty_tpl->tpl_vars['article']->value['teaser']),100);?>
  <span>więcej &raquo;</span></a></p>
 									</li>
-								<?php } ?>
+								<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 								</ul>
 							</div>	
-						<?php }elseif($_smarty_tpl->tpl_vars['_item']->value['link']){?>
+						<?php } elseif ($_smarty_tpl->tpl_vars['_item']->value['link']) {?>
 							<a class="full dis" href="<?php echo $_smarty_tpl->tpl_vars['_item']->value['link'];?>
 "><?php echo $_smarty_tpl->tpl_vars['_item']->value['name'];?>
 </a>
@@ -284,7 +267,10 @@ $_smarty_tpl->tpl_vars['article']->_loop = true;
 				</figure>
 				<?php }?>
 			<?php }?>	
-		<?php } ?>
+		<?php
+$_smarty_tpl->tpl_vars['_item'] = $__foreach__item_1_saved;
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		</div>
 	</section>
 </div>
@@ -311,34 +297,37 @@ $_smarty_tpl->tpl_vars['article']->_loop = true;
 	</div>
 </section>
 
-<?php if ($_smarty_tpl->tpl_vars['featured']->value){?>
+<?php if ($_smarty_tpl->tpl_vars['featured']->value) {?>
 <div class="container" id="project-list">
 <section class="featured">
 	<div class="list-grid fav-wrapper" id="overlay-group">
 	
 	<h2><a href="/projekty-domow/">Polecane projekty</a></h2>
 	
-	<?php  $_smarty_tpl->tpl_vars['_project'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['_project']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['featured']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
- $_smarty_tpl->tpl_vars['_project']->index=-1;
-foreach ($_from as $_smarty_tpl->tpl_vars['_project']->key => $_smarty_tpl->tpl_vars['_project']->value){
-$_smarty_tpl->tpl_vars['_project']->_loop = true;
- $_smarty_tpl->tpl_vars['_project']->index++;
+	<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['featured']->value, '_project');
+$_smarty_tpl->tpl_vars['_project']->index = -1;
+$_smarty_tpl->tpl_vars['_project']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['_project']->value) {
+$_smarty_tpl->tpl_vars['_project']->do_else = false;
+$_smarty_tpl->tpl_vars['_project']->index++;
+$__foreach__project_4_saved = $_smarty_tpl->tpl_vars['_project'];
 ?>
 		<div>
 			<figure>
-				<img class="lazy-image" data-uri="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['image'][0][0]->fImage(array('type'=>'render','project'=>$_smarty_tpl->tpl_vars['_project']->value,'size'=>'box'),$_smarty_tpl);?>
+				<img class="lazy-image" data-uri="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['image'][0], array( array('type'=>'render','project'=>$_smarty_tpl->tpl_vars['_project']->value,'size'=>'box'),$_smarty_tpl ) );?>
 " src="img/xc.png" alt="Projekt domu <?php echo $_smarty_tpl->tpl_vars['_project']->value['name'];?>
 " width="640" height="427">
 
 				<figcaption>
-					<a href="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0][0]->generateUrl(array('module'=>'project','action'=>'item','id'=>$_smarty_tpl->tpl_vars['_project']->value['id'],'link_title'=>$_smarty_tpl->tpl_vars['_project']->value['name'],'catalog'=>'projekty-domow'),$_smarty_tpl);?>
+					<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'project','action'=>'item','id'=>$_smarty_tpl->tpl_vars['_project']->value['id'],'link_title'=>$_smarty_tpl->tpl_vars['_project']->value['name'],'catalog'=>'projekty-domow'),$_smarty_tpl ) );?>
 ">
-						<span>projekt domu <?php if ($_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['hasFloor'][0][0]->mHasFloor($_smarty_tpl->tpl_vars['_project']->value['params_general'],true)){?>piętrowego<?php }elseif($_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['hasLoft'][0][0]->mHasLoft($_smarty_tpl->tpl_vars['_project']->value['params_general'],true)){?>z poddaszem<?php }elseif($_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['isGroundFloor'][0][0]->mIsGroundFloor($_smarty_tpl->tpl_vars['_project']->value['params_general'],true)){?>parterowego<?php }?><?php if ($_smarty_tpl->tpl_vars['isLocal']->value){?> <?php echo $_smarty_tpl->tpl_vars['_project']->value['symbol_alpha'];?>
- <?php echo $_smarty_tpl->tpl_vars['_project']->value['symbol_num'];?>
-<?php }?></span>
+						<span>projekt domu <?php if (call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'hasFloor' ][ 0 ], array( $_smarty_tpl->tpl_vars['_project']->value['params_general'],true ))) {?>piętrowego<?php } elseif (call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'hasLoft' ][ 0 ], array( $_smarty_tpl->tpl_vars['_project']->value['params_general'],true ))) {?>z poddaszem<?php } elseif (call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'isGroundFloor' ][ 0 ], array( $_smarty_tpl->tpl_vars['_project']->value['params_general'],true ))) {?>parterowego<?php }
+if ($_smarty_tpl->tpl_vars['isLocal']->value) {?> <?php echo $_smarty_tpl->tpl_vars['_project']->value['symbol_alpha'];?>
+ <?php echo $_smarty_tpl->tpl_vars['_project']->value['symbol_num'];
+}?></span>
 						<strong><?php echo $_smarty_tpl->tpl_vars['_project']->value['name'];?>
- <span><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['usableArea'][0][0]->mUsableArea($_smarty_tpl->tpl_vars['_project']->value['params_general']);?>
+ <span><?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'usableArea' ][ 0 ], array( $_smarty_tpl->tpl_vars['_project']->value['params_general'] ));?>
  m<sup>2</sup></span></strong>
 					</a>
 				</figcaption>
@@ -346,43 +335,50 @@ $_smarty_tpl->tpl_vars['_project']->_loop = true;
 		
 			<span class="overview" data-id="<?php echo $_smarty_tpl->tpl_vars['_project']->value['id'];?>
 " data-idx="<?php echo $_smarty_tpl->tpl_vars['_project']->index;?>
-" data-img="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['image'][0][0]->fImage(array('type'=>'render','project'=>$_smarty_tpl->tpl_vars['_project']->value,'size'=>'presentation'),$_smarty_tpl);?>
-" data-ground="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['image'][0][0]->fImage(array('type'=>'sketch','project'=>$_smarty_tpl->tpl_vars['_project']->value),$_smarty_tpl);?>
-"<?php if ($_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['hasFloor'][0][0]->mHasFloor($_smarty_tpl->tpl_vars['_project']->value['params_general'],true)){?> data-floor="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['image'][0][0]->fImage(array('type'=>'sketch','project'=>$_smarty_tpl->tpl_vars['_project']->value,'storey'=>'1st_floor'),$_smarty_tpl);?>
-"<?php }?><?php if ($_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['hasLoft'][0][0]->mHasLoft($_smarty_tpl->tpl_vars['_project']->value['params_general'],true)){?> data-loft="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['image'][0][0]->fImage(array('type'=>'sketch','project'=>$_smarty_tpl->tpl_vars['_project']->value,'storey'=>'loft'),$_smarty_tpl);?>
-"<?php }?> data-link="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0][0]->generateUrl(array('module'=>'project','action'=>'item','id'=>$_smarty_tpl->tpl_vars['_project']->value['id'],'link_title'=>$_smarty_tpl->tpl_vars['_project']->value['name'],'catalog'=>'projekty-domow'),$_smarty_tpl);?>
-" data-price="<?php if ($_smarty_tpl->tpl_vars['_project']->value['price']){?><?php if ($_smarty_tpl->tpl_vars['_project']->value['discount']){?><strike><?php echo $_smarty_tpl->tpl_vars['_project']->value['price'];?>
-</strike> <?php echo $_smarty_tpl->tpl_vars['_project']->value['price']-$_smarty_tpl->tpl_vars['_project']->value['discount'];?>
-<?php }else{ ?><?php echo $_smarty_tpl->tpl_vars['_project']->value['price'];?>
-<?php }?><?php }else{ ?>-<?php }?>" data-name="<?php echo $_smarty_tpl->tpl_vars['_project']->value['name'];?>
-" data-area="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['usableArea'][0][0]->mUsableArea($_smarty_tpl->tpl_vars['_project']->value['params_general']);?>
-" data-parcel="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['parcelWidth'][0][0]->mParcelWidth($_smarty_tpl->tpl_vars['_project']->value['params_general']);?>
- x <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['parcelHeight'][0][0]->mParcelHeight($_smarty_tpl->tpl_vars['_project']->value['params_general']);?>
-" data-height="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['houseHeight'][0][0]->mHouseHeight($_smarty_tpl->tpl_vars['_project']->value['params_general']);?>
-" data-angle="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['roofAngle'][0][0]->mRoofAngle($_smarty_tpl->tpl_vars['_project']->value['params_general']);?>
-" data-version="<?php if ($_smarty_tpl->tpl_vars['_project']->value['type']=='skeleton'){?>wersja szkieletowa<?php }else{ ?>wersja murowana<?php }?>" data-rooms="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['roomCount'][0][0]->mRoomCount($_smarty_tpl->tpl_vars['_project']->value['params_general']);?>
+" data-img="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['image'][0], array( array('type'=>'render','project'=>$_smarty_tpl->tpl_vars['_project']->value,'size'=>'presentation'),$_smarty_tpl ) );?>
+" data-ground="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['image'][0], array( array('type'=>'sketch','project'=>$_smarty_tpl->tpl_vars['_project']->value),$_smarty_tpl ) );?>
+"<?php if (call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'hasFloor' ][ 0 ], array( $_smarty_tpl->tpl_vars['_project']->value['params_general'],true ))) {?> data-floor="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['image'][0], array( array('type'=>'sketch','project'=>$_smarty_tpl->tpl_vars['_project']->value,'storey'=>'1st_floor'),$_smarty_tpl ) );?>
+"<?php }
+if (call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'hasLoft' ][ 0 ], array( $_smarty_tpl->tpl_vars['_project']->value['params_general'],true ))) {?> data-loft="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['image'][0], array( array('type'=>'sketch','project'=>$_smarty_tpl->tpl_vars['_project']->value,'storey'=>'loft'),$_smarty_tpl ) );?>
+"<?php }?> data-link="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'project','action'=>'item','id'=>$_smarty_tpl->tpl_vars['_project']->value['id'],'link_title'=>$_smarty_tpl->tpl_vars['_project']->value['name'],'catalog'=>'projekty-domow'),$_smarty_tpl ) );?>
+" data-price="<?php if ($_smarty_tpl->tpl_vars['_project']->value['price']) {
+if ($_smarty_tpl->tpl_vars['_project']->value['discount']) {?><strike><?php echo $_smarty_tpl->tpl_vars['_project']->value['price'];?>
+</strike> <?php echo $_smarty_tpl->tpl_vars['_project']->value['price']-$_smarty_tpl->tpl_vars['_project']->value['discount'];
+} else {
+echo $_smarty_tpl->tpl_vars['_project']->value['price'];
+}
+} else { ?>-<?php }?>" data-name="<?php echo $_smarty_tpl->tpl_vars['_project']->value['name'];?>
+" data-area="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'usableArea' ][ 0 ], array( $_smarty_tpl->tpl_vars['_project']->value['params_general'] ));?>
+" data-parcel="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'parcelWidth' ][ 0 ], array( $_smarty_tpl->tpl_vars['_project']->value['params_general'] ));?>
+ x <?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'parcelHeight' ][ 0 ], array( $_smarty_tpl->tpl_vars['_project']->value['params_general'] ));?>
+" data-height="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'houseHeight' ][ 0 ], array( $_smarty_tpl->tpl_vars['_project']->value['params_general'] ));?>
+" data-angle="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'roofAngle' ][ 0 ], array( $_smarty_tpl->tpl_vars['_project']->value['params_general'] ));?>
+" data-version="<?php if ($_smarty_tpl->tpl_vars['_project']->value['type'] == 'skeleton') {?>wersja szkieletowa<?php } else { ?>wersja murowana<?php }?>" data-rooms="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'roomCount' ][ 0 ], array( $_smarty_tpl->tpl_vars['_project']->value['params_general'] ));?>
 " data-txt="<?php echo $_smarty_tpl->tpl_vars['_project']->value['short_description'];?>
 "></span>
 			<span id="compare-<?php echo $_smarty_tpl->tpl_vars['_project']->value['id'];?>
-" class="compare<?php if (in_array($_smarty_tpl->tpl_vars['_project']->value['id'],$_smarty_tpl->tpl_vars['compareIds']->value)){?> on<?php }?>" data-id="<?php echo $_smarty_tpl->tpl_vars['_project']->value['id'];?>
+" class="compare<?php if (in_array($_smarty_tpl->tpl_vars['_project']->value['id'],$_smarty_tpl->tpl_vars['compareIds']->value)) {?> on<?php }?>" data-id="<?php echo $_smarty_tpl->tpl_vars['_project']->value['id'];?>
 "></span>
 			<span id="fav-<?php echo $_smarty_tpl->tpl_vars['_project']->value['id'];?>
-" class="fav<?php if (in_array($_smarty_tpl->tpl_vars['_project']->value['id'],$_smarty_tpl->tpl_vars['favouriteIds']->value)){?> on<?php }?>" data-id="<?php echo $_smarty_tpl->tpl_vars['_project']->value['id'];?>
+" class="fav<?php if (in_array($_smarty_tpl->tpl_vars['_project']->value['id'],$_smarty_tpl->tpl_vars['favouriteIds']->value)) {?> on<?php }?>" data-id="<?php echo $_smarty_tpl->tpl_vars['_project']->value['id'];?>
 "></span>
 			
-			<?php if ($_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['isNew'][0][0]->mIsNew($_smarty_tpl->tpl_vars['_project']->value)||$_smarty_tpl->tpl_vars['_project']->value['discount']){?>
+			<?php if (call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'isNew' ][ 0 ], array( $_smarty_tpl->tpl_vars['_project']->value )) || $_smarty_tpl->tpl_vars['_project']->value['discount']) {?>
 			<div>
-				<?php if ($_smarty_tpl->tpl_vars['_project']->value['discount']){?><span class="discount">rabat <?php echo $_smarty_tpl->tpl_vars['_project']->value['discount'];?>
-</span><?php }?><?php if ($_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['isNew'][0][0]->mIsNew($_smarty_tpl->tpl_vars['_project']->value)){?><span class="new">nowość</span><?php }?>
+				<?php if ($_smarty_tpl->tpl_vars['_project']->value['discount']) {?><span class="discount">rabat <?php echo $_smarty_tpl->tpl_vars['_project']->value['discount'];?>
+</span><?php }
+if (call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'isNew' ][ 0 ], array( $_smarty_tpl->tpl_vars['_project']->value ))) {?><span class="new">nowość</span><?php }?>
 			</div> 
 			<?php }?>
 		</div>
-	<?php } ?>
+	<?php
+$_smarty_tpl->tpl_vars['_project'] = $__foreach__project_4_saved;
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 	</div>
 </section>
 </div>
 <?php }?>
-
 
 
 <section class="more-info">
@@ -494,7 +490,7 @@ $_smarty_tpl->tpl_vars['_project']->_loop = true;
 				<p class="nr"><a href="tel:+48602303160" rel="nofollow">602 303 160</a></p>
 				
 				<p>lub <span class="uline consultant">napisz do nas</span>. Na pewno odpowiemy.</p>
-				<?php if (!$_smarty_tpl->tpl_vars['user']->value){?>
+				<?php if (!$_smarty_tpl->tpl_vars['user']->value) {?>
 				<p>
 					<a href="javascript:" class="account register-trigger">Załóż konto</a>
 				</p>
@@ -514,14 +510,16 @@ $_smarty_tpl->tpl_vars['_project']->_loop = true;
 
 <section class="real">
 	<div class="real-grid" id="real-grid">
-		<?php  $_smarty_tpl->tpl_vars['_item'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['_item']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['realisations']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
- $_smarty_tpl->tpl_vars['_item']->iteration=0;
-foreach ($_from as $_smarty_tpl->tpl_vars['_item']->key => $_smarty_tpl->tpl_vars['_item']->value){
-$_smarty_tpl->tpl_vars['_item']->_loop = true;
- $_smarty_tpl->tpl_vars['_item']->iteration++;
+		<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['realisations']->value, '_item');
+$_smarty_tpl->tpl_vars['_item']->iteration = 0;
+$_smarty_tpl->tpl_vars['_item']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['_item']->value) {
+$_smarty_tpl->tpl_vars['_item']->do_else = false;
+$_smarty_tpl->tpl_vars['_item']->iteration++;
+$__foreach__item_5_saved = $_smarty_tpl->tpl_vars['_item'];
 ?>
-		<?php if ($_smarty_tpl->tpl_vars['_item']->iteration==1){?>
+		<?php if ($_smarty_tpl->tpl_vars['_item']->iteration == 1) {?>
 		<figure class="info">
 			<img src="/img/dummy_real.png" width="475" height="317" alt="">
 			
@@ -529,7 +527,7 @@ $_smarty_tpl->tpl_vars['_item']->_loop = true;
 				<h6>Realizacje</h6>
 				<p>Zobacz realizacje naszych projektów. Jeśli wybudowałeś dom według naszego projektu weź udział w <a href="/konkurs/fotograficzny.html">fotokonkursie</a> z nagrodami.</p>
 			
-				<a href="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0][0]->generateUrl(array('module'=>'project','action'=>'realizations'),$_smarty_tpl);?>
+				<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'project','action'=>'realizations'),$_smarty_tpl ) );?>
 ">Zobacz wszystkie realizacje</a>
 			</figcaption>
 		</figure>
@@ -537,30 +535,35 @@ $_smarty_tpl->tpl_vars['_item']->_loop = true;
 		<figure class="real">
 			<img class="lazy-image" data-uri="<?php echo $_smarty_tpl->tpl_vars['projectPath']->value;?>
 /<?php echo $_smarty_tpl->tpl_vars['_item']->value['path'];?>
-/<?php echo smarty_modifier_replace($_smarty_tpl->tpl_vars['_item']->value['filename'],"realizacja-","realizacja-317-");?>
+/<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'replace' ][ 0 ], array( $_smarty_tpl->tpl_vars['_item']->value['filename'],"realizacja-","realizacja-317-" ));?>
 " src="img/xc.png" width="475" height="317" alt="Projekt <?php echo $_smarty_tpl->tpl_vars['_item']->value['object']['name'];?>
  - realizacja">
 			
 			<figcaption>
-				<a href="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0][0]->generateUrl(array('module'=>'project','action'=>'item','id'=>$_smarty_tpl->tpl_vars['_item']->value['object']['id'],'link_title'=>$_smarty_tpl->tpl_vars['_item']->value['object']['name'],'catalog'=>'projekty-domow'),$_smarty_tpl);?>
+				<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'project','action'=>'item','id'=>$_smarty_tpl->tpl_vars['_item']->value['object']['id'],'link_title'=>$_smarty_tpl->tpl_vars['_item']->value['object']['name'],'catalog'=>'projekty-domow'),$_smarty_tpl ) );?>
 #realizacje">
-					<span>projekt domu <?php if ($_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['hasFloor'][0][0]->mHasFloor($_smarty_tpl->tpl_vars['_item']->value['object']['params_general'],true)){?>piętrowego<?php }elseif($_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['hasLoft'][0][0]->mHasLoft($_smarty_tpl->tpl_vars['_item']->value['object']['params_general'],true)){?>z poddaszem<?php }elseif($_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['isGroundFloor'][0][0]->mIsGroundFloor($_smarty_tpl->tpl_vars['_item']->value['object']['params_general'],true)){?>parterowego<?php }?></span>
+					<span>projekt domu <?php if (call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'hasFloor' ][ 0 ], array( $_smarty_tpl->tpl_vars['_item']->value['object']['params_general'],true ))) {?>piętrowego<?php } elseif (call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'hasLoft' ][ 0 ], array( $_smarty_tpl->tpl_vars['_item']->value['object']['params_general'],true ))) {?>z poddaszem<?php } elseif (call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'isGroundFloor' ][ 0 ], array( $_smarty_tpl->tpl_vars['_item']->value['object']['params_general'],true ))) {?>parterowego<?php }?></span>
 					<strong><?php echo $_smarty_tpl->tpl_vars['_item']->value['object']['name'];?>
- <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['usableArea'][0][0]->mUsableArea($_smarty_tpl->tpl_vars['_item']->value['object']['params_general']);?>
+ <?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'usableArea' ][ 0 ], array( $_smarty_tpl->tpl_vars['_item']->value['object']['params_general'] ));?>
  <span>m<sup>2</sup></span></strong>
 				</a>
 			</figcaption>
 		</figure>
-		<?php } ?>
+		<?php
+$_smarty_tpl->tpl_vars['_item'] = $__foreach__item_5_saved;
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		
-		<?php  $_smarty_tpl->tpl_vars['_item'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['_item']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['interiors']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
- $_smarty_tpl->tpl_vars['_item']->iteration=0;
-foreach ($_from as $_smarty_tpl->tpl_vars['_item']->key => $_smarty_tpl->tpl_vars['_item']->value){
-$_smarty_tpl->tpl_vars['_item']->_loop = true;
- $_smarty_tpl->tpl_vars['_item']->iteration++;
+		<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['interiors']->value, '_item');
+$_smarty_tpl->tpl_vars['_item']->iteration = 0;
+$_smarty_tpl->tpl_vars['_item']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['_item']->value) {
+$_smarty_tpl->tpl_vars['_item']->do_else = false;
+$_smarty_tpl->tpl_vars['_item']->iteration++;
+$__foreach__item_6_saved = $_smarty_tpl->tpl_vars['_item'];
 ?>
-		<?php if ($_smarty_tpl->tpl_vars['_item']->iteration==1){?>
+		<?php if ($_smarty_tpl->tpl_vars['_item']->iteration == 1) {?>
 		<figure class="info green">
 			<img src="/img/dummy_real.png" width="475" height="317" alt="">
 			
@@ -568,7 +571,7 @@ $_smarty_tpl->tpl_vars['_item']->_loop = true;
 				<h6>Aranżacje</h6>
 				<p>Zobacz aranżacje wnętrz naszych Klientów. Weź udział w <a href="/konkurs/fotograficzny.html">fotokonkursie</a> z nagrodami jeśli mieszkasz w domu wybudowanym według naszego projektu.</p>
 			
-				<a href="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0][0]->generateUrl(array('module'=>'project','action'=>'realizations_interior'),$_smarty_tpl);?>
+				<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'project','action'=>'realizations_interior'),$_smarty_tpl ) );?>
 ">Zobacz wszystkie aranżacje</a>
 			</figcaption>
 		</figure>
@@ -576,31 +579,36 @@ $_smarty_tpl->tpl_vars['_item']->_loop = true;
 		<figure class="real">
 			<img class="lazy-image" data-uri="<?php echo $_smarty_tpl->tpl_vars['projectPath']->value;?>
 /<?php echo $_smarty_tpl->tpl_vars['_item']->value['path'];?>
-/<?php echo smarty_modifier_replace($_smarty_tpl->tpl_vars['_item']->value['filename'],"budowa-","budowa-317-");?>
+/<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'replace' ][ 0 ], array( $_smarty_tpl->tpl_vars['_item']->value['filename'],"budowa-","budowa-317-" ));?>
 " src="img/xc.png" width="475" height="317" alt="Projekt <?php echo $_smarty_tpl->tpl_vars['_item']->value['object']['name'];?>
  - realizacja wnętrza">
 			
 			<figcaption>
-				<a href="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0][0]->generateUrl(array('module'=>'project','action'=>'item','id'=>$_smarty_tpl->tpl_vars['_item']->value['object']['id'],'link_title'=>$_smarty_tpl->tpl_vars['_item']->value['object']['name'],'catalog'=>'projekty-domow'),$_smarty_tpl);?>
+				<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'project','action'=>'item','id'=>$_smarty_tpl->tpl_vars['_item']->value['object']['id'],'link_title'=>$_smarty_tpl->tpl_vars['_item']->value['object']['name'],'catalog'=>'projekty-domow'),$_smarty_tpl ) );?>
 #realizacje">
-					<span>projekt domu <?php if ($_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['hasFloor'][0][0]->mHasFloor($_smarty_tpl->tpl_vars['_item']->value['object']['params_general'],true)){?>piętrowego<?php }elseif($_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['hasLoft'][0][0]->mHasLoft($_smarty_tpl->tpl_vars['_item']->value['object']['params_general'],true)){?>z poddaszem<?php }elseif($_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['isGroundFloor'][0][0]->mIsGroundFloor($_smarty_tpl->tpl_vars['_item']->value['object']['params_general'],true)){?>parterowego<?php }?></span>
+					<span>projekt domu <?php if (call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'hasFloor' ][ 0 ], array( $_smarty_tpl->tpl_vars['_item']->value['object']['params_general'],true ))) {?>piętrowego<?php } elseif (call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'hasLoft' ][ 0 ], array( $_smarty_tpl->tpl_vars['_item']->value['object']['params_general'],true ))) {?>z poddaszem<?php } elseif (call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'isGroundFloor' ][ 0 ], array( $_smarty_tpl->tpl_vars['_item']->value['object']['params_general'],true ))) {?>parterowego<?php }?></span>
 					<strong><?php echo $_smarty_tpl->tpl_vars['_item']->value['object']['name'];?>
- <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['usableArea'][0][0]->mUsableArea($_smarty_tpl->tpl_vars['_item']->value['object']['params_general']);?>
+ <?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'usableArea' ][ 0 ], array( $_smarty_tpl->tpl_vars['_item']->value['object']['params_general'] ));?>
  <span>m<sup>2</sup></span></strong>
 				</a>
 			</figcaption>
 		</figure>
 		
-		<?php } ?>
+		<?php
+$_smarty_tpl->tpl_vars['_item'] = $__foreach__item_6_saved;
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		
-		<?php  $_smarty_tpl->tpl_vars['_item'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['_item']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['unfinished']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
- $_smarty_tpl->tpl_vars['_item']->iteration=0;
-foreach ($_from as $_smarty_tpl->tpl_vars['_item']->key => $_smarty_tpl->tpl_vars['_item']->value){
-$_smarty_tpl->tpl_vars['_item']->_loop = true;
- $_smarty_tpl->tpl_vars['_item']->iteration++;
+		<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['unfinished']->value, '_item');
+$_smarty_tpl->tpl_vars['_item']->iteration = 0;
+$_smarty_tpl->tpl_vars['_item']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['_item']->value) {
+$_smarty_tpl->tpl_vars['_item']->do_else = false;
+$_smarty_tpl->tpl_vars['_item']->iteration++;
+$__foreach__item_7_saved = $_smarty_tpl->tpl_vars['_item'];
 ?>
-		<?php if ($_smarty_tpl->tpl_vars['_item']->iteration==1){?>
+		<?php if ($_smarty_tpl->tpl_vars['_item']->iteration == 1) {?>
 		<figure class="info grey">
 			<img src="/img/dummy_real.png" width="475" height="317" alt="">
 			
@@ -608,7 +616,7 @@ $_smarty_tpl->tpl_vars['_item']->_loop = true;
 				<h6>W budowie</h6>
 				<p>Zobacz nasze domy w trakcie budowy. Jeśli budujesz dom według naszego projektu, weź udział w <a href="/konkurs/fotograficzny.html">fotokonkursie</a> z nagrodami.</p>
 			
-				<a href="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0][0]->generateUrl(array('module'=>'project','action'=>'realizations_building'),$_smarty_tpl);?>
+				<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'project','action'=>'realizations_building'),$_smarty_tpl ) );?>
 ">Zobacz wszystkie budowy</a>
 			</figcaption>
 		</figure>
@@ -616,21 +624,24 @@ $_smarty_tpl->tpl_vars['_item']->_loop = true;
 		<figure class="real">
 			<img class="lazy-image" data-uri="<?php echo $_smarty_tpl->tpl_vars['projectPath']->value;?>
 /<?php echo $_smarty_tpl->tpl_vars['_item']->value['path'];?>
-/<?php echo smarty_modifier_replace($_smarty_tpl->tpl_vars['_item']->value['filename'],"budowa-","budowa-317-");?>
+/<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'replace' ][ 0 ], array( $_smarty_tpl->tpl_vars['_item']->value['filename'],"budowa-","budowa-317-" ));?>
 " src="img/xc.png" width="475" height="317" alt="Projekt <?php echo $_smarty_tpl->tpl_vars['_item']->value['object']['name'];?>
  w budowie">
 			
 			<figcaption>
-				<a href="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0][0]->generateUrl(array('module'=>'project','action'=>'item','id'=>$_smarty_tpl->tpl_vars['_item']->value['object']['id'],'link_title'=>$_smarty_tpl->tpl_vars['_item']->value['object']['name'],'catalog'=>'projekty-domow'),$_smarty_tpl);?>
+				<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'project','action'=>'item','id'=>$_smarty_tpl->tpl_vars['_item']->value['object']['id'],'link_title'=>$_smarty_tpl->tpl_vars['_item']->value['object']['name'],'catalog'=>'projekty-domow'),$_smarty_tpl ) );?>
 #realizacje">
-					<span>projekt domu <?php if ($_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['hasFloor'][0][0]->mHasFloor($_smarty_tpl->tpl_vars['_item']->value['object']['params_general'],true)){?>piętrowego<?php }elseif($_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['hasLoft'][0][0]->mHasLoft($_smarty_tpl->tpl_vars['_item']->value['object']['params_general'],true)){?>z poddaszem<?php }elseif($_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['isGroundFloor'][0][0]->mIsGroundFloor($_smarty_tpl->tpl_vars['_item']->value['object']['params_general'],true)){?>parterowego<?php }?></span>
+					<span>projekt domu <?php if (call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'hasFloor' ][ 0 ], array( $_smarty_tpl->tpl_vars['_item']->value['object']['params_general'],true ))) {?>piętrowego<?php } elseif (call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'hasLoft' ][ 0 ], array( $_smarty_tpl->tpl_vars['_item']->value['object']['params_general'],true ))) {?>z poddaszem<?php } elseif (call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'isGroundFloor' ][ 0 ], array( $_smarty_tpl->tpl_vars['_item']->value['object']['params_general'],true ))) {?>parterowego<?php }?></span>
 					<strong><?php echo $_smarty_tpl->tpl_vars['_item']->value['object']['name'];?>
- <?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER]['usableArea'][0][0]->mUsableArea($_smarty_tpl->tpl_vars['_item']->value['object']['params_general']);?>
+ <?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'usableArea' ][ 0 ], array( $_smarty_tpl->tpl_vars['_item']->value['object']['params_general'] ));?>
  <span>m<sup>2</sup></span></strong>
 				</a>
 			</figcaption>
 		</figure>
-		<?php } ?>
+		<?php
+$_smarty_tpl->tpl_vars['_item'] = $__foreach__item_7_saved;
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 	</div>
 </section>
 
@@ -652,7 +663,7 @@ $_smarty_tpl->tpl_vars['_item']->_loop = true;
 					</li>
 				</ul>
 				<div>
-					<a  class="styled" href="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0][0]->generateUrl(array('module'=>'varia','action'=>'about'),$_smarty_tpl);?>
+					<a  class="styled" href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'varia','action'=>'about'),$_smarty_tpl ) );?>
 ">Zobacz co jeszcze robimy</a>
 				</div>
 			</li>
@@ -676,7 +687,6 @@ $_smarty_tpl->tpl_vars['_item']->_loop = true;
 </section>
 
 
-
 <section class="charity">
 	<div class="box">
 		<h3>Wspieramy potrzebujących</h3>
@@ -689,7 +699,6 @@ $_smarty_tpl->tpl_vars['_item']->_loop = true;
 			<ul>
 				<li><a href="/dokumenty/Adopcja-serca.html"><img class="lazy-image" data-uri="/img/maitri.png" src="img/xc.png" alt="Maitri" width="175" height="175"></a></li>
 				<li><a href="http://www.drachma.org.pl/" rel="nofollow" target="_blank"><img class="lazy-image" data-uri="/img/drachma.png" src="img/xc.png" alt="Fundacja Drachma" width="203" height="196"></a></li>
-
 			</ul>
 		</div>
 	</div>
@@ -697,27 +706,29 @@ $_smarty_tpl->tpl_vars['_item']->_loop = true;
 
 
 
-<?php echo $_smarty_tpl->getSubTemplate ("Include/HowToBuy.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
-
+<?php $_smarty_tpl->_subTemplateRender("file:Include/HowToBuy.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
 <div class="partners">
 	<p>Współpracujemy</p>
 	
 	<div>
-		<?php  $_smarty_tpl->tpl_vars['_partner'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['_partner']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['partners']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['_partner']->key => $_smarty_tpl->tpl_vars['_partner']->value){
-$_smarty_tpl->tpl_vars['_partner']->_loop = true;
+		<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['partners']->value, '_partner');
+$_smarty_tpl->tpl_vars['_partner']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['_partner']->value) {
+$_smarty_tpl->tpl_vars['_partner']->do_else = false;
 ?>
-			<?php if ($_smarty_tpl->tpl_vars['_partner']->value['title']=='Hörmann'||$_smarty_tpl->tpl_vars['_partner']->value['title']=='Fakro'||$_smarty_tpl->tpl_vars['_partner']->value['title']=='Termo Organika'||$_smarty_tpl->tpl_vars['_partner']->value['title']=='Aluprof'){?>
+			<?php if ($_smarty_tpl->tpl_vars['_partner']->value['title'] == 'Hörmann' || $_smarty_tpl->tpl_vars['_partner']->value['title'] == 'Fakro' || $_smarty_tpl->tpl_vars['_partner']->value['title'] == 'Termo Organika' || $_smarty_tpl->tpl_vars['_partner']->value['title'] == 'Aluprof') {?>
 			<a href="/dokumenty/Wspolpraca.html#par<?php echo $_smarty_tpl->tpl_vars['_partner']->value['id'];?>
-"><img class="lazy-image" data-uri="<?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['articleImage'][0][0]->fArticleImage(array('document'=>$_smarty_tpl->tpl_vars['_partner']->value),$_smarty_tpl);?>
+"><img class="lazy-image" data-uri="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['articleImage'][0], array( array('document'=>$_smarty_tpl->tpl_vars['_partner']->value),$_smarty_tpl ) );?>
 " src="img/xc.png" alt="<?php echo $_smarty_tpl->tpl_vars['_partner']->value['title'];?>
 " width="1" height="1"></a>
 			<?php }?>
-		<?php } ?>
-		
-	</div>
+		<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+			</div>
 </div>
 
 <div class="overlay">
@@ -752,4 +763,5 @@ $_smarty_tpl->tpl_vars['_partner']->_loop = true;
 	</div>
 	
 	<button type="button" id="overlay-close" class="overlay-close">Zamknij</button>
-</div><?php }} ?>
+</div><?php }
+}
