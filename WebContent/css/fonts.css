@@ -17,7 +17,7 @@
 	
 	/* Webfont: LatoLatin-Light */
 	@font-face {
-	    font-family: 'LatoLatinWebLight';
+	    font-family: 'Lato';
 	    src: url('/fonts/LatoLatin-Light.eot'); /* IE9 Compat Modes */
 	    src: url('/fonts/LatoLatin-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
 	         url('/fonts/LatoLatin-Light.woff2') format('woff2'), /* Modern Browsers */

@@ -217,15 +217,45 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 {/literal}
 {/if}
 
-<!-- Tailwind CSS v4 -->
-<script src="https://cdn.tailwindcss.com/v4.min.js"></script>
-<script>tailwind.config = { corePlugins: { preflight: false } }</script>
+<!-- Tailwind CSS v3.4.17 (MUST LOAD FIRST) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { 
+	corePlugins: { preflight: false },
+	theme: {
+		fontFamily: {
+			sans: ['Lato', 'sans-serif']
+		}
+	}
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
 <!-- Swiper CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 <!-- Lucide Icons -->
 <script src="https://unpkg.com/lucide@latest"></script>
+<script>
+	// Initialize Lucide Icons when DOM is ready
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', function() {
+			lucide.createIcons();
+		});
+	} else {
+		lucide.createIcons();
+	}
+	
+	// Re-create icons when content changes dynamically
+	const observer = new MutationObserver(() => {
+		lucide.createIcons();
+	});
+	observer.observe(document.body, { childList: true, subtree: true });
+</script>
 <!-- Brand design tokens -->
 <style>
 :root {

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.5.6, created on 2026-05-27 16:43:08
+/* Smarty version 4.5.6, created on 2026-05-28 15:28:14
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/HeadHTML.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.6',
-  'unifunc' => 'content_6a1702fc9cada8_54368874',
+  'unifunc' => 'content_6a1842ee826f83_69726589',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2caf7189cf71a0154ad77cc024aa442356349989' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/HeadHTML.tpl',
-      1 => 1779892856,
+      1 => 1779974846,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6a1702fc9cada8_54368874 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6a1842ee826f83_69726589 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['pageTitle']->value) {?>
 	<title><?php echo $_smarty_tpl->tpl_vars['pageTitle']->value;?>
 </title>
@@ -136,6 +136,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
 <link rel="preload" href="/css/common.min.css?v=<?php echo $_smarty_tpl->tpl_vars['version']->value;?>
 " as="style">
 <link rel="stylesheet" href="/css/common.min.css?v=<?php echo $_smarty_tpl->tpl_vars['version']->value;?>
+">
+
+<!-- Theme 2026 - High Priority -->
+<link rel="preload" href="/css/theme2026.css?v=<?php echo $_smarty_tpl->tpl_vars['version']->value;?>
+" as="style">
+<link rel="stylesheet" href="/css/theme2026.css?v=<?php echo $_smarty_tpl->tpl_vars['version']->value;?>
 ">
 
 <?php
@@ -332,15 +338,55 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
 <?php }?>
 
-<!-- Tailwind CSS -->
+<!-- Tailwind CSS v3.4.17 (MUST LOAD FIRST) -->
 <?php echo '<script'; ?>
  src="https://cdn.tailwindcss.com"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
->tailwind.config = { corePlugins: { preflight: false } }<?php echo '</script'; ?>
 >
+tailwind.config = { 
+	corePlugins: { preflight: false },
+	theme: {
+		fontFamily: {
+			sans: ['Lato', 'sans-serif']
+		}
+	}
+}
+<?php echo '</script'; ?>
+>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
 <!-- Swiper CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+<!-- Swiper JS -->
+<?php echo '<script'; ?>
+ src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"><?php echo '</script'; ?>
+>
+<!-- Lucide Icons -->
+<?php echo '<script'; ?>
+ src="https://unpkg.com/lucide@latest"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+>
+	// Initialize Lucide Icons when DOM is ready
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', function() {
+			lucide.createIcons();
+		});
+	} else {
+		lucide.createIcons();
+	}
+	
+	// Re-create icons when content changes dynamically
+	const observer = new MutationObserver(() => {
+		lucide.createIcons();
+	});
+	observer.observe(document.body, { childList: true, subtree: true });
+<?php echo '</script'; ?>
+>
 <!-- Brand design tokens -->
 <style>
 :root {

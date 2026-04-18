@@ -10,7 +10,7 @@ class Catalog extends WWW\AbstractModule
 	/**
 	 * @see \Point7_WebApp_Module_Abstract::_initAction()
 	 */
-	public function _initAction($action,\Point7_WebApp_Request_Filtered $request, WWW\AppContext $appContext, WWW\ResponseContext $responseContext)
+	public function _initAction($action, \Point7_WebApp_Request $request, $appContext, $responseContext): void
 	{
 		parent::_initAction($action, $request, $appContext, $responseContext);
 	
