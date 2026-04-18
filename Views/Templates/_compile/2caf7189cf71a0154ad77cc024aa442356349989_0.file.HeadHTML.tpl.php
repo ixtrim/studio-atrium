@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.5.6, created on 2026-05-28 15:28:14
+/* Smarty version 4.5.6, created on 2026-08-23 19:49:19
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/HeadHTML.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.6',
-  'unifunc' => 'content_6a1842ee826f83_69726589',
+  'unifunc' => 'content_6a8b4ebf0de752_64097402',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2caf7189cf71a0154ad77cc024aa442356349989' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/HeadHTML.tpl',
-      1 => 1779974846,
+      1 => 1787028780,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6a1842ee826f83_69726589 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6a8b4ebf0de752_64097402 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['pageTitle']->value) {?>
 	<title><?php echo $_smarty_tpl->tpl_vars['pageTitle']->value;?>
 </title>
@@ -222,7 +222,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		}],
 		"sameAs":[
 			"https://www.facebook.com/studioatrium",
-			"https://pl.pinterest.com/studioatrium/",
+			"https://www.instagram.com/studioatrium.pl/",
+			"https://www.pinterest.com/studioatrium/",
 			"https://www.youtube.com/user/StudioAtrium"
 		]
 }<?php echo '</script'; ?>
@@ -385,6 +386,26 @@ tailwind.config = {
 		lucide.createIcons();
 	});
 	observer.observe(document.body, { childList: true, subtree: true });
+<?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+>
+
+(function () {
+	document.documentElement.style.userSelect = 'text';
+	document.onselectstart = null;
+	document.oncopy = null;
+	document.oncontextmenu = null;
+	document.addEventListener('copy', function (e) {
+		var t = e.target;
+		if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+		var sel = window.getSelection ? window.getSelection().toString() : '';
+		if (!sel) return;
+		e.clipboardData.setData('text/plain', sel + '\n\nŹródło: ' + window.location.href);
+		e.preventDefault();
+	});
+})();
+
 <?php echo '</script'; ?>
 >
 <!-- Brand design tokens -->

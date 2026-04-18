@@ -15,260 +15,98 @@
 <footer class="bg-[#3a3a3a] text-white pt-16 pb-10">
 	<div class="max-w-[1480px] mx-auto px-12">
 		<div class="grid grid-cols-1 md:grid-cols-4 gap-10">
-			<div class="space-y-6">
-				<a href="#"
-					class="block text-white text-[15px] font-bold hover:text-[var(--brand-blue)] transition">Regulamin</a>
-				<a href="#" class="block text-white text-[15px] font-bold hover:text-[var(--brand-blue)] transition">Polityka
-					Prywatności</a>
-				<a href="#" class="block text-white text-[15px] font-bold hover:text-[var(--brand-blue)] transition">O nas</a>
-				<a href="#" class="block text-white text-[15px] font-bold hover:text-[var(--brand-blue)] transition">Reklama w
-					Studio
-					Atrium</a>
-				<div class="flex items-center gap-3 pt-4">
-					<a href="https://www.facebook.com/studioatrium" rel="nofollow"
-						class="text-white hover:text-[var(--brand-blue)] transition">
-						<svg fill="#ffffff" width="24" height="24" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg">
-							<path
-								d="m1416.013 791.915-30.91 225.617h-371.252v789.66H788.234v-789.66H449.808V791.915h338.426V585.137c0-286.871 176.207-472.329 449.09-472.329 116.87 0 189.744 6.205 231.822 11.845l-3.272 213.66-173.5.338c-4.737-.451-117.771-9.25-199.332 65.655-52.568 48.169-79.191 117.433-79.191 205.65v181.96h402.162Zm-247.276-304.018c44.446-41.401 113.71-36.889 118.787-36.663l289.467-.113 6.204-417.504-43.544-10.717C1511.675 16.02 1426.053 0 1237.324 0 901.268 0 675.425 235.206 675.425 585.137v93.97H337v451.234h338.425V1920h451.234v-789.66h356.7l61.932-451.233H1126.66v-69.152c0-54.937 14.214-96 42.078-122.058Z"
-								fill-rule="evenodd" />
-						</svg>
-					</a>
-					<a href="https://www.instagram.com/studioatrium.pl/" rel="nofollow"
-						class="text-white hover:text-[var(--brand-blue)] transition">
-						<svg fill="#ffffff" width="24" height="24" viewBox="0 0 24 24" fill="none"
-							xmlns="http://www.w3.org/2000/svg">
-							<path
-								d="M12 7.90001C11.1891 7.90001 10.3964 8.14048 9.72218 8.59099C9.04794 9.0415 8.52243 9.68184 8.21211 10.431C7.90179 11.1802 7.8206 12.0046 7.9788 12.7999C8.13699 13.5952 8.52748 14.3258 9.10088 14.8992C9.67427 15.4725 10.4048 15.863 11.2001 16.0212C11.9955 16.1794 12.8198 16.0982 13.569 15.7879C14.3182 15.4776 14.9585 14.9521 15.409 14.2779C15.8596 13.6036 16.1 12.8109 16.1 12C16.1013 11.4612 15.9962 10.9275 15.7906 10.4295C15.585 9.93142 15.2831 9.47892 14.9021 9.09794C14.5211 8.71695 14.0686 8.415 13.5706 8.20942C13.0725 8.00385 12.5388 7.8987 12 7.90001ZM12 14.67C11.4719 14.67 10.9557 14.5134 10.5166 14.22C10.0776 13.9267 9.73534 13.5097 9.53326 13.0218C9.33117 12.5339 9.2783 11.9971 9.38132 11.4791C9.48434 10.9612 9.73863 10.4854 10.112 10.112C10.4854 9.73863 10.9612 9.48434 11.4791 9.38132C11.9971 9.2783 12.5339 9.33117 13.0218 9.53326C13.5097 9.73534 13.9267 10.0776 14.22 10.5166C14.5134 10.9557 14.67 11.4719 14.67 12C14.67 12.7081 14.3887 13.3873 13.888 13.888C13.3873 14.3887 12.7081 14.67 12 14.67ZM17.23 7.73001C17.23 7.9278 17.1714 8.12114 17.0615 8.28558C16.9516 8.45003 16.7954 8.57821 16.6127 8.65389C16.43 8.72958 16.2289 8.74938 16.0349 8.7108C15.8409 8.67221 15.6628 8.57697 15.5229 8.43712C15.3831 8.29727 15.2878 8.11909 15.2492 7.92511C15.2106 7.73112 15.2304 7.53006 15.3061 7.34733C15.3818 7.16461 15.51 7.00843 15.6744 6.89855C15.8389 6.78866 16.0322 6.73001 16.23 6.73001C16.4952 6.73001 16.7496 6.83537 16.9371 7.02291C17.1247 7.21044 17.23 7.4648 17.23 7.73001ZM19.94 8.73001C19.9691 7.48684 19.5054 6.28261 18.65 5.38001C17.7522 4.5137 16.5474 4.03897 15.3 4.06001C14 4.00001 10 4.00001 8.70001 4.06001C7.45722 4.0331 6.25379 4.49652 5.35001 5.35001C4.49465 6.25261 4.03093 7.45684 4.06001 8.70001C4.00001 10 4.00001 14 4.06001 15.3C4.03093 16.5432 4.49465 17.7474 5.35001 18.65C6.25379 19.5035 7.45722 19.9669 8.70001 19.94C10.02 20.02 13.98 20.02 15.3 19.94C16.5432 19.9691 17.7474 19.5054 18.65 18.65C19.5054 17.7474 19.9691 16.5432 19.94 15.3C20 14 20 10 19.94 8.70001V8.73001ZM18.24 16.73C18.1042 17.074 17.8993 17.3863 17.6378 17.6478C17.3763 17.9093 17.064 18.1142 16.72 18.25C15.1676 18.5639 13.5806 18.6715 12 18.57C10.4228 18.6716 8.83902 18.564 7.29001 18.25C6.94608 18.1142 6.63369 17.9093 6.37223 17.6478C6.11076 17.3863 5.90579 17.074 5.77001 16.73C5.35001 15.67 5.44001 13.17 5.44001 12.01C5.44001 10.85 5.35001 8.34001 5.77001 7.29001C5.90196 6.94268 6.10547 6.62698 6.36733 6.36339C6.62919 6.09981 6.94355 5.89423 7.29001 5.76001C8.83902 5.44599 10.4228 5.33839 12 5.44001C13.5806 5.33856 15.1676 5.44616 16.72 5.76001C17.064 5.89579 17.3763 6.10076 17.6378 6.36223C17.8993 6.62369 18.1042 6.93608 18.24 7.28001C18.66 8.34001 18.56 10.84 18.56 12C18.56 13.16 18.66 15.67 18.24 16.72V16.73Z" />
-						</svg>
-					</a>
-					<a href="https://www.pinterest.com/studioatrium/" rel="nofollow"
-						class="text-white hover:text-[var(--brand-blue)] transition" aria-label="Pinterest">
-						<svg fill="#ffffff" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-							<path
-								d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.403.042-3.441.219-.937 1.407-5.965 1.407-5.965s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z" />
-						</svg>
-					</a>
-					<a href="https://www.youtube.com/user/StudioAtrium" rel="nofollow"
-						class="text-white hover:text-[var(--brand-blue)] transition" aria-label="YouTube">
-						<svg fill="#ffffff" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-							<path
-								d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-						</svg>
-					</a>
-				</div>
+			<div class="space-y-6 footer-menu-col-a">
+				{foreach $footer_menus.a as $link}
+				<a href="{$link.url}"{if $link.target != '_self'} target="{$link.target}"{/if} class="block text-white text-[15px] font-bold hover:text-[var(--brand-blue)] transition">{$link.label}</a>
+				{/foreach}
+								{if $social.facebook || $social.instagram || $social.pinterest || $social.youtube}
+					<div class="flex items-center gap-3 pt-4">
+						{if $social.facebook}
+							<a href="{$social.facebook}" rel="nofollow" target="_blank"
+								class="text-white hover:text-[var(--brand-blue)] transition" aria-label="Facebook">
+								<svg fill="#ffffff" width="24" height="24" viewBox="0 0 1920 1920"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="m1416.013 791.915-30.91 225.617h-371.252v789.66H788.234v-789.66H449.808V791.915h338.426V585.137c0-286.871 176.207-472.329 449.09-472.329 116.87 0 189.744 6.205 231.822 11.845l-3.272 213.66-173.5.338c-4.737-.451-117.771-9.25-199.332 65.655-52.568 48.169-79.191 117.433-79.191 205.65v181.96h402.162Zm-247.276-304.018c44.446-41.401 113.71-36.889 118.787-36.663l289.467-.113 6.204-417.504-43.544-10.717C1511.675 16.02 1426.053 0 1237.324 0 901.268 0 675.425 235.206 675.425 585.137v93.97H337v451.234h338.425V1920h451.234v-789.66h356.7l61.932-451.233H1126.66v-69.152c0-54.937 14.214-96 42.078-122.058Z"
+										fill-rule="evenodd" />
+								</svg>
+							</a>
+						{/if}
+						{if $social.instagram}
+							<a href="{$social.instagram}" rel="nofollow" target="_blank"
+								class="text-white hover:text-[var(--brand-blue)] transition" aria-label="Instagram">
+								<svg fill="#ffffff" width="24" height="24" viewBox="0 0 24 24" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M12 7.90001C11.1891 7.90001 10.3964 8.14048 9.72218 8.59099C9.04794 9.0415 8.52243 9.68184 8.21211 10.431C7.90179 11.1802 7.8206 12.0046 7.9788 12.7999C8.13699 13.5952 8.52748 14.3258 9.10088 14.8992C9.67427 15.4725 10.4048 15.863 11.2001 16.0212C11.9955 16.1794 12.8198 16.0982 13.569 15.7879C14.3182 15.4776 14.9585 14.9521 15.409 14.2779C15.8596 13.6036 16.1 12.8109 16.1 12C16.1013 11.4612 15.9962 10.9275 15.7906 10.4295C15.585 9.93142 15.2831 9.47892 14.9021 9.09794C14.5211 8.71695 14.0686 8.415 13.5706 8.20942C13.0725 8.00385 12.5388 7.8987 12 7.90001ZM12 14.67C11.4719 14.67 10.9557 14.5134 10.5166 14.22C10.0776 13.9267 9.73534 13.5097 9.53326 13.0218C9.33117 12.5339 9.2783 11.9971 9.38132 11.4791C9.48434 10.9612 9.73863 10.4854 10.112 10.112C10.4854 9.73863 10.9612 9.48434 11.4791 9.38132C11.9971 9.2783 12.5339 9.33117 13.0218 9.53326C13.5097 9.73534 13.9267 10.0776 14.22 10.5166C14.5134 10.9557 14.67 11.4719 14.67 12C14.67 12.7081 14.3887 13.3873 13.888 13.888C13.3873 14.3887 12.7081 14.67 12 14.67ZM17.23 7.73001C17.23 7.9278 17.1714 8.12114 17.0615 8.28558C16.9516 8.45003 16.7954 8.57821 16.6127 8.65389C16.43 8.72958 16.2289 8.74938 16.0349 8.7108C15.8409 8.67221 15.6628 8.57697 15.5229 8.43712C15.3831 8.29727 15.2878 8.11909 15.2492 7.92511C15.2106 7.73112 15.2304 7.53006 15.3061 7.34733C15.3818 7.16461 15.51 7.00843 15.6744 6.89855C15.8389 6.78866 16.0322 6.73001 16.23 6.73001C16.4952 6.73001 16.7496 6.83537 16.9371 7.02291C17.1247 7.21044 17.23 7.4648 17.23 7.73001ZM19.94 8.73001C19.9691 7.48684 19.5054 6.28261 18.65 5.38001C17.7522 4.5137 16.5474 4.03897 15.3 4.06001C14 4.00001 10 4.00001 8.70001 4.06001C7.45722 4.0331 6.25379 4.49652 5.35001 5.35001C4.49465 6.25261 4.03093 7.45684 4.06001 8.70001C4.00001 10 4.00001 14 4.06001 15.3C4.03093 16.5432 4.49465 17.7474 5.35001 18.65C6.25379 19.5035 7.45722 19.9669 8.70001 19.94C10.02 20.02 13.98 20.02 15.3 19.94C16.5432 19.9691 17.7474 19.5054 18.65 18.65C19.5054 17.7474 19.9691 16.5432 19.94 15.3C20 14 20 10 19.94 8.70001V8.73001ZM18.24 16.73C18.1042 17.074 17.8993 17.3863 17.6378 17.6478C17.3763 17.9093 17.064 18.1142 16.72 18.25C15.1676 18.5639 13.5806 18.6715 12 18.57C10.4228 18.6716 8.83902 18.564 7.29001 18.25C6.94608 18.1142 6.63369 17.9093 6.37223 17.6478C6.11076 17.3863 5.90579 17.074 5.77001 16.73C5.35001 15.67 5.44001 13.17 5.44001 12.01C5.44001 10.85 5.35001 8.34001 5.77001 7.29001C5.90196 6.94268 6.10547 6.62698 6.36733 6.36339C6.62919 6.09981 6.94355 5.89423 7.29001 5.76001C8.83902 5.44599 10.4228 5.33839 12 5.44001C13.5806 5.33856 15.1676 5.44616 16.72 5.76001C17.064 5.89579 17.3763 6.10076 17.6378 6.36223C17.8993 6.62369 18.1042 6.93608 18.24 7.28001C18.66 8.34001 18.56 10.84 18.56 12C18.56 13.16 18.66 15.67 18.24 16.72V16.73Z" />
+								</svg>
+							</a>
+						{/if}
+						{if $social.pinterest}
+							<a href="{$social.pinterest}" rel="nofollow" target="_blank"
+								class="text-white hover:text-[var(--brand-blue)] transition" aria-label="Pinterest">
+								<svg fill="#ffffff" width="24" height="24" viewBox="0 0 24 24"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.403.042-3.441.219-.937 1.407-5.965 1.407-5.965s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z" />
+								</svg>
+							</a>
+						{/if}
+						{if $social.youtube}
+							<a href="{$social.youtube}" rel="nofollow" target="_blank"
+								class="text-white hover:text-[var(--brand-blue)] transition" aria-label="YouTube">
+								<svg fill="#ffffff" width="24" height="24" viewBox="0 0 24 24"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+								</svg>
+							</a>
+						{/if}
+					</div>
+				{/if}
 			</div>
-			<div class="space-y-6"><a href="#"
-					class="block text-white text-[15px] font-bold hover:text-[var(--brand-blue)] transition">Nasze
-					certyfikaty</a><a href="#"
-					class="block text-white text-[15px] font-bold hover:text-[var(--brand-blue)] transition">Pełne dane
-					teleadresowe</a><a href="#"
-					class="block text-white text-[15px] font-bold hover:text-[var(--brand-blue)] transition">Blog</a></div>
-			<div class="space-y-6"><a href="#"
-					class="block text-white text-[15px] font-bold hover:text-[var(--brand-blue)] transition">Polecani
-					Przedstawiciele</a><a href="#"
-					class="block text-white text-[15px] font-bold hover:text-[var(--brand-blue)] transition">Dodatki do
-					projektów</a><a href="#"
-					class="block text-white text-[15px] font-bold hover:text-[var(--brand-blue)] transition">Jak kupować</a><a
-					href="#" class="block text-white text-[15px] font-bold hover:text-[var(--brand-blue)] transition">Co zawiera
-					projekt</a><a href="#"
-					class="block text-white text-[15px] font-bold hover:text-[var(--brand-blue)] transition">Projekty domów
-					alfabetycznie</a><a href="#"
-					class="block text-white text-[15px] font-bold hover:text-[var(--brand-blue)] transition">Dziennik budowy</a>
+			<div class="space-y-6 footer-menu-col-b">
+				{foreach $footer_menus.b as $link}
+				<a href="{$link.url}"{if $link.target != '_self'} target="{$link.target}"{/if} class="block text-white text-[15px] font-bold hover:text-[var(--brand-blue)] transition">{$link.label}</a>
+				{/foreach}
 			</div>
-			<div class="space-y-3">
-				<div class="text-white text-[15px] font-bold">Kontakt</div><a href="tel:602303160"
-					class="block text-[var(--brand-red)] font-black text-[28px] leading-tight">602 303 160</a><a
-					href="tel:338229496" class="block text-[var(--brand-red)] font-black text-[28px] leading-tight">33 822 94
-					96</a>
-				<div class="text-[var(--brand-red)] text-[13px] font-bold">33 810 66 54, 33 816 40 69, fax w. 108</div><a
-					href="mailto:atrium@studioatrium.pl"
-					class="block text-white font-black text-[24px] pt-3 hover:text-[var(--brand-blue)]">atrium@studioatrium.pl</a>
-				<div class="text-white text-[14px] font-bold pt-3 leading-relaxed">STUDIO ATRIUM Lelek, Godlewski Spółka
-					Jawna<br>43-300 Bielsko-Biała<br>ul. Malczewskiego 1</div><a href="#"
-					class="text-[var(--brand-blue)] text-[14px] underline">zobacz dojazd</a>
+						<div class="space-y-6 footer-menu-col-c">
+				{foreach $footer_menus.c as $link}
+				<a href="{$link.url}"{if $link.target != '_self'} target="{$link.target}"{/if} class="block text-white text-[15px] font-bold hover:text-[var(--brand-blue)] transition">{$link.label}</a>
+				{/foreach}
+			</div>
+						<div class="space-y-3">
+				<div class="text-white text-[15px] font-bold">{$contact.header|default:'Kontakt'}</div>
+				{if $contact.phone1}
+				<a href="tel:{$contact.phone1|replace:' ':''}" class="block text-[var(--brand-red)] font-black text-[28px] leading-tight">{$contact.phone1}</a>
+				{/if}
+				{if $contact.phone2}
+				<a href="tel:{$contact.phone2|replace:' ':''}" class="block text-[var(--brand-red)] font-black text-[28px] leading-tight">{$contact.phone2}</a>
+				{/if}
+				{if $contact.extra_phones}
+				<div class="text-[var(--brand-red)] text-[13px] font-bold">{$contact.extra_phones}</div>
+				{/if}
+				{if $contact.email}
+				<a href="mailto:{$contact.email}" class="block text-white font-black text-[24px] pt-3 hover:text-[var(--brand-blue)]">{$contact.email}</a>
+				{/if}
+				{if $contact.details}
+				<div class="text-white text-[14px] font-bold pt-3 leading-relaxed">{$contact.details|nl2br}</div>
+				{/if}
+				{if $contact.map_url}
+				<a href="{$contact.map_url}" class="text-[var(--brand-blue)] text-[14px] underline">{$contact.map_text|default:'zobacz dojazd'}</a>
+				{/if}
 			</div>
 		</div>
+		{if $seo_links_header || $seo_links}
 		<div class="mt-16">
-			<h3 class="text-white font-black text-[15px] tracking-wide mb-4">DOSTĘPNE PROJEKTY DOMÓW JEDNORODZINNYCH W STUDIO
-				ATRIUM</h3>
-			<div class="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-7 gap-x-6 gap-y-1 text-[12px]"><a href="/projekty"
-					class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów parterowych</a><a
-					href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów z
-					poddaszem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					piętrowych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					nowoczesnych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów z garażem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					małych domów</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów energooszczędnych</a><a href="/projekty"
-					class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów parterowych</a><a
-					href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów z
-					poddaszem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					piętrowych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					nowoczesnych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów z garażem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					małych domów</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów energooszczędnych</a><a href="/projekty"
-					class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów parterowych</a><a
-					href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów z
-					poddaszem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					piętrowych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					nowoczesnych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów z garażem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					małych domów</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów energooszczędnych</a><a href="/projekty"
-					class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów parterowych</a><a
-					href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów z
-					poddaszem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					piętrowych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					nowoczesnych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów z garażem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					małych domów</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów energooszczędnych</a><a href="/projekty"
-					class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów parterowych</a><a
-					href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów z
-					poddaszem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					piętrowych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					nowoczesnych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów z garażem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					małych domów</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów energooszczędnych</a><a href="/projekty"
-					class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów parterowych</a><a
-					href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów z
-					poddaszem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					piętrowych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					nowoczesnych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów z garażem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					małych domów</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów energooszczędnych</a><a href="/projekty"
-					class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów parterowych</a><a
-					href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów z
-					poddaszem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					piętrowych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					nowoczesnych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów z garażem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					małych domów</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów energooszczędnych</a><a href="/projekty"
-					class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów parterowych</a><a
-					href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów z
-					poddaszem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					piętrowych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					nowoczesnych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów z garażem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					małych domów</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów energooszczędnych</a><a href="/projekty"
-					class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów parterowych</a><a
-					href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów z
-					poddaszem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					piętrowych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					nowoczesnych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów z garażem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					małych domów</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów energooszczędnych</a><a href="/projekty"
-					class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów parterowych</a><a
-					href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów z
-					poddaszem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					piętrowych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					nowoczesnych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów z garażem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					małych domów</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów energooszczędnych</a><a href="/projekty"
-					class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów parterowych</a><a
-					href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów z
-					poddaszem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					piętrowych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					nowoczesnych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów z garażem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					małych domów</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów energooszczędnych</a><a href="/projekty"
-					class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów parterowych</a><a
-					href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów z
-					poddaszem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					piętrowych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					nowoczesnych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów z garażem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					małych domów</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów energooszczędnych</a><a href="/projekty"
-					class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów parterowych</a><a
-					href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów z
-					poddaszem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					piętrowych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					nowoczesnych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów z garażem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					małych domów</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów energooszczędnych</a><a href="/projekty"
-					class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów parterowych</a><a
-					href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów z
-					poddaszem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					piętrowych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					nowoczesnych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów z garażem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					małych domów</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów energooszczędnych</a><a href="/projekty"
-					class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów parterowych</a><a
-					href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów z
-					poddaszem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					piętrowych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					nowoczesnych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów z garażem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					małych domów</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów energooszczędnych</a><a href="/projekty"
-					class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów parterowych</a><a
-					href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów z
-					poddaszem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					piętrowych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					nowoczesnych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów z garażem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					małych domów</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów energooszczędnych</a><a href="/projekty"
-					class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów parterowych</a><a
-					href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów z
-					poddaszem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					piętrowych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					nowoczesnych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów z garażem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					małych domów</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów energooszczędnych</a><a href="/projekty"
-					class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów parterowych</a><a
-					href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów z
-					poddaszem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					piętrowych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					nowoczesnych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów z garażem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					małych domów</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów energooszczędnych</a><a href="/projekty"
-					class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów parterowych</a><a
-					href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów z
-					poddaszem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					piętrowych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					nowoczesnych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów z garażem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					małych domów</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów energooszczędnych</a><a href="/projekty"
-					class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów parterowych</a><a
-					href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów z
-					poddaszem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					piętrowych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					nowoczesnych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów z garażem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					małych domów</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów energooszczędnych</a><a href="/projekty"
-					class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów parterowych</a><a
-					href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów z
-					poddaszem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					piętrowych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					nowoczesnych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów z garażem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					małych domów</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów energooszczędnych</a><a href="/projekty"
-					class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów parterowych</a><a
-					href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów z
-					poddaszem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					piętrowych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty domów
-					nowoczesnych</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów z garażem</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					małych domów</a><a href="/projekty" class="text-white/85 hover:text-[var(--brand-blue)] truncate">Projekty
-					domów energooszczędnych</a></div>
+			<h3 class="text-white font-black text-[15px] tracking-wide mb-4">{$seo_links_header|escape}</h3>
+			<div class="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-7 gap-x-6 gap-y-1 text-[12px]">
+				{foreach $seo_links as $sl}
+					<a href="{$sl.url|escape}" class="text-white/85 hover:text-[var(--brand-blue)] truncate">{$sl.label|escape}</a>
+				{/foreach}
+			</div>
 		</div>
+		{/if}
 	</div>
 </footer>
 
@@ -400,7 +238,8 @@
 		</div>
 
 		<div class="form-box">
-			<p class="info">Lub wybierz parametry projektu i kliknij przycisk "Pokaż projekty" znajdujący się pod formularzem
+			<p class="info">Lub wybierz parametry projektu i kliknij przycisk "Pokaż projekty" znajdujący się pod
+				formularzem
 			</p>
 			<form id="click-search-form" method="post" action="/">
 				<div class="cs-box">
@@ -410,8 +249,9 @@
 								<p class="head">kategoria:</p>
 								<ul>
 									<li>
-										<input type="checkbox" id="cs-category" name="kategoria" value="{$csCategory}" checked><label
-											for="cs-category">{$category.name}</label> <span class="count" id="cs-category-count">(0)</span>
+										<input type="checkbox" id="cs-category" name="kategoria" value="{$csCategory}"
+											checked><label for="cs-category">{$category.name}</label> <span class="count"
+											id="cs-category-count">(0)</span>
 									</li>
 								</ul>
 							</li>
@@ -422,8 +262,9 @@
 								<p class="head">wybrany filtr:</p>
 								<ul>
 									<li>
-										<input type="checkbox" id="{$csTag.id}-1" name="{$csTag.csname}" value="1" checked><label
-											for="{$csTag.id}-1">{$csTag.name}</label> <span class="count" id="{$csTag.id}-1-count">(0)</span>
+										<input type="checkbox" id="{$csTag.id}-1" name="{$csTag.csname}" value="1"
+											checked><label for="{$csTag.id}-1">{$csTag.name}</label> <span class="count"
+											id="{$csTag.id}-1-count">(0)</span>
 									</li>
 								</ul>
 							</li>
@@ -434,11 +275,11 @@
 								<p class="head">wybrany filtr:</p>
 								<ul>
 									<li>
-										<input type="checkbox" id="{$csTagSelect.id}-{$csTagSelect.value}" name="{$csTagSelect.csname}"
-											value="{$csTagSelect.value}" checked><label
+										<input type="checkbox" id="{$csTagSelect.id}-{$csTagSelect.value}"
+											name="{$csTagSelect.csname}" value="{$csTagSelect.value}" checked><label
 											for="{$csTagSelect.id}-{$csTagSelect.value}">{$csTagSelect.name} :
-											{$csValueNames[$csTagSelect.value]|default:$csTagSelect.value}</label> <span class="count"
-											id="{$csTagSelect.id}-{$csTagSelect.value}-count">(0)</span>
+											{$csValueNames[$csTagSelect.value]|default:$csTagSelect.value}</label> <span
+											class="count" id="{$csTagSelect.id}-{$csTagSelect.value}-count">(0)</span>
 									</li>
 								</ul>
 							</li>
@@ -454,21 +295,27 @@
 									{/if*}
 
 									<option id="parterowe" value="parterowe"
-										{if $request.typ_projektu == 'parterowe' || $csType == 'parterowe'} selected{/if}>parterowe</option>
+										{if $request.typ_projektu == 'parterowe' || $csType == 'parterowe'}
+										selected{/if}>parterowe</option>
 									<option id="z_poddaszem" value="z_poddaszem"
-										{if $request.typ_projektu == 'z_poddaszem' || $csType == 'z_poddaszem'} selected{/if}>z poddaszem
+										{if $request.typ_projektu == 'z_poddaszem' || $csType == 'z_poddaszem'}
+										selected{/if}>z poddaszem
 									</option>
 									<option id="pietrowe" value="pietrowe"
-										{if $request.typ_projektu == 'pietrowe' || $csType == 'pietrowe'} selected{/if}>piętrowe</option>
+										{if $request.typ_projektu == 'pietrowe' || $csType == 'pietrowe'} selected{/if}>
+										piętrowe</option>
 									<option id="nothing" value="" disabled>--------</option>
 									<option id="szkieletowe" value="szkieletowe"
-										{if $request.typ_projektu == 'szkieletowe' || $csType == 'szkieletowe'} selected{/if}>szkieletowe
+										{if $request.typ_projektu == 'szkieletowe' || $csType == 'szkieletowe'}
+										selected{/if}>szkieletowe
 									</option>
 									<option id="blizniacze" value="blizniacze"
-										{if $request.typ_projektu == 'blizniacze' || $csType == 'blizniacze'} selected{/if}>bliźniacze
+										{if $request.typ_projektu == 'blizniacze' || $csType == 'blizniacze'}
+										selected{/if}>bliźniacze
 									</option>
 									<option id="dwulokalowe" value="dwulokalowe"
-										{if $request.typ_projektu == 'dwulokalowe' || $csType == 'dwulokalowe'} selected{/if}>dwulokalowe
+										{if $request.typ_projektu == 'dwulokalowe' || $csType == 'dwulokalowe'}
+										selected{/if}>dwulokalowe
 									</option>
 
 								</select>
@@ -477,16 +324,20 @@
 							<div class="jui-select-box right white cs-select" id="roof-type-box">
 								<select name="typdachu" id="54">
 									<option value="">typ dachu</option>
-									<option id="54-dwuspadowy" value="dwuspadowy" {if $request.typdachu == 'dwuspadowy'} selected{/if}>
+									<option id="54-dwuspadowy" value="dwuspadowy" {if $request.typdachu == 'dwuspadowy'}
+										selected{/if}>
 										dwuspadowy</option>
-									<option id="54-mansardowy" value="mansardowy" {if $request.typdachu == 'mansardowy'} selected{/if}>
+									<option id="54-mansardowy" value="mansardowy" {if $request.typdachu == 'mansardowy'}
+										selected{/if}>
 										mansardowy</option>
-									<option id="54-stropodach" value="stropodach" {if $request.typdachu == 'stropodach'} selected{/if}>
+									<option id="54-stropodach" value="stropodach" {if $request.typdachu == 'stropodach'}
+										selected{/if}>
 										płaski</option>
-									<option id="54-stozkowy" value="stozkowy" {if $request.typdachu == 'stozkowy'} selected{/if}>stożkowy
+									<option id="54-stozkowy" value="stozkowy" {if $request.typdachu == 'stozkowy'}
+										selected{/if}>stożkowy
 									</option>
-									<option id="54-wielospadowy" value="wielospadowy" {if $request.typdachu == 'wielospadowy'}
-										selected{/if}>wielospadowy</option>
+									<option id="54-wielospadowy" value="wielospadowy"
+										{if $request.typdachu == 'wielospadowy'} selected{/if}>wielospadowy</option>
 								</select>
 							</div>
 						</li>
@@ -504,7 +355,8 @@
 							<label for="pow-zab-min">od</label>
 							<input type="text" name="pow_zab_min" id="pow-zab-min" value="{$request.pow_zab_min}">
 							<span class="sep"><label for="pow-zab-max">do</label></span>
-							<input type="text" name="pow_zab_max" id="pow-zab-max" value="{$request.pow_zab_max}"> m<sup>2</sup>
+							<input type="text" name="pow_zab_max" id="pow-zab-max" value="{$request.pow_zab_max}">
+							m<sup>2</sup>
 						</li>
 
 						<li>
@@ -512,7 +364,8 @@
 							<label for="pow-total-min">od</label>
 							<input type="text" name="pow_total_min" id="pow-total-min" value="{$request.pow_total_min}">
 							<span class="sep"><label for="pow-total-max">do</label></span>
-							<input type="text" name="pow_total_max" id="pow-total-max" value="{$request.pow_total_max}"> m<sup>2</sup>
+							<input type="text" name="pow_total_max" id="pow-total-max" value="{$request.pow_total_max}">
+							m<sup>2</sup>
 						</li>
 
 						<li>
@@ -533,43 +386,43 @@
 								<input type="radio" id="69-0" name="iloscpokoinaparterze" value="-1"><label for="69-0"
 									class="spaced breaker">Dowolna</label>
 								<input type="radio" id="69-1" name="iloscpokoinaparterze" value="1"
-									{if $request.iloscpokoinaparterze == 1} checked{/if}><label for="69-1">1</label> <span class="count"
-									id="69-1-count">(0)</span>
+									{if $request.iloscpokoinaparterze == 1} checked{/if}><label for="69-1">1</label>
+								<span class="count" id="69-1-count">(0)</span>
 								<input type="radio" id="69-2" name="iloscpokoinaparterze" value="2"
-									{if $request.iloscpokoinaparterze == 2} checked{/if}><label for="69-2">2</label> <span class="count"
-									id="69-2-count">(0)</span>
+									{if $request.iloscpokoinaparterze == 2} checked{/if}><label for="69-2">2</label>
+								<span class="count" id="69-2-count">(0)</span>
 								<input type="radio" id="69-3" name="iloscpokoinaparterze" value="3"
-									{if $request.iloscpokoinaparterze == 3} checked{/if}><label for="69-3">3</label> <span class="count"
-									id="69-3-count">(0)</span>
+									{if $request.iloscpokoinaparterze == 3} checked{/if}><label for="69-3">3</label>
+								<span class="count" id="69-3-count">(0)</span>
 								<input type="radio" id="69-4" name="iloscpokoinaparterze" value="4"
-									{if $request.iloscpokoinaparterze == 4} checked{/if}><label for="69-4">4</label> <span class="count"
-									id="69-4-count">(0)</span>
+									{if $request.iloscpokoinaparterze == 4} checked{/if}><label for="69-4">4</label>
+								<span class="count" id="69-4-count">(0)</span>
 								<input type="radio" id="69-5" name="iloscpokoinaparterze" value="5"
-									{if $request.iloscpokoinaparterze == 5} checked{/if}><label for="69-5">5</label> <span class="count"
-									id="69-5-count">(0)</span>
+									{if $request.iloscpokoinaparterze == 5} checked{/if}><label for="69-5">5</label>
+								<span class="count" id="69-5-count">(0)</span>
 							</div>
 						</li>
 
 						<li class="half-spaced">
 							<p class="head">ilość pokoi na II kondygnacji:</p>
 							<div>
-								<input type="radio" id="71-0" name="iloscpokoinaiikondygnacji" value="-1"><label for="71-0"
-									class="spaced breaker">Dowolna</label>
+								<input type="radio" id="71-0" name="iloscpokoinaiikondygnacji" value="-1"><label
+									for="71-0" class="spaced breaker">Dowolna</label>
 								<input type="radio" id="71-1" name="iloscpokoinaiikondygnacji" value="1"
-									{if $request.iloscpokoinaiikondygnacji == 1} checked{/if}><label for="71-1">1</label> <span
-									class="count" id="71-1-count">(0)</span>
+									{if $request.iloscpokoinaiikondygnacji == 1} checked{/if}><label
+									for="71-1">1</label> <span class="count" id="71-1-count">(0)</span>
 								<input type="radio" id="71-2" name="iloscpokoinaiikondygnacji" value="2"
-									{if $request.iloscpokoinaiikondygnacji == 2} checked{/if}><label for="71-2">2</label> <span
-									class="count" id="71-2-count">(0)</span>
+									{if $request.iloscpokoinaiikondygnacji == 2} checked{/if}><label
+									for="71-2">2</label> <span class="count" id="71-2-count">(0)</span>
 								<input type="radio" id="71-3" name="iloscpokoinaiikondygnacji" value="3"
-									{if $request.iloscpokoinaiikondygnacji == 3} checked{/if}><label for="71-3">3</label> <span
-									class="count" id="71-3-count">(0)</span>
+									{if $request.iloscpokoinaiikondygnacji == 3} checked{/if}><label
+									for="71-3">3</label> <span class="count" id="71-3-count">(0)</span>
 								<input type="radio" id="71-4" name="iloscpokoinaiikondygnacji" value="4"
-									{if $request.iloscpokoinaiikondygnacji == 4} checked{/if}><label for="71-4">4</label> <span
-									class="count" id="71-4-count">(0)</span>
+									{if $request.iloscpokoinaiikondygnacji == 4} checked{/if}><label
+									for="71-4">4</label> <span class="count" id="71-4-count">(0)</span>
 								<input type="radio" id="71-5" name="iloscpokoinaiikondygnacji" value="5"
-									{if $request.iloscpokoinaiikondygnacji == 5} checked{/if}><label for="71-5">5</label> <span
-									class="count" id="71-5-count">(0)</span>
+									{if $request.iloscpokoinaiikondygnacji == 5} checked{/if}><label
+									for="71-5">5</label> <span class="count" id="71-5-count">(0)</span>
 							</div>
 						</li>
 
@@ -578,20 +431,20 @@
 							<div>
 								<span class="dist">Na parterze</span>
 								<input type="radio" name="liczbalazieneknaparterze" value="2" id="45-2"
-									{if $request.liczbalazieneknaparterze == 2} checked{/if}><label for="45-2">2</label> <span
-									class="count" id="45-2-count">(0)</span>
+									{if $request.liczbalazieneknaparterze == 2} checked{/if}><label for="45-2">2</label>
+								<span class="count" id="45-2-count">(0)</span>
 								<input type="radio" name="liczbalazieneknaparterze" value="3" id="45-3"
-									{if $request.liczbalazieneknaparterze == 3} checked{/if}><label for="45-3">3</label> <span
-									class="count" id="45-3-count">(0)</span>
+									{if $request.liczbalazieneknaparterze == 3} checked{/if}><label for="45-3">3</label>
+								<span class="count" id="45-3-count">(0)</span>
 							</div>
 							<div>
 								<span class="dist">Na II kondygnacji</span>
 								<input type="radio" name="liczbalazieneknaiikondygnacji" value="2" id="46-2"
-									{if $request.liczbalazieneknaiikondygnacji == 2} checked{/if}><label for="46-2">2</label> <span
-									class="count" id="46-2-count">(0)</span>
+									{if $request.liczbalazieneknaiikondygnacji == 2} checked{/if}><label
+									for="46-2">2</label> <span class="count" id="46-2-count">(0)</span>
 								<input type="radio" name="liczbalazieneknaiikondygnacji" value="3" id="46-3"
-									{if $request.liczbalazieneknaiikondygnacji == 3} checked{/if}><label for="46-3">3</label> <span
-									class="count" id="46-3-count">(0)</span>
+									{if $request.liczbalazieneknaiikondygnacji == 3} checked{/if}><label
+									for="46-3">3</label> <span class="count" id="46-3-count">(0)</span>
 							</div>
 						</li>
 					</ul>
@@ -603,26 +456,37 @@
 							<div class="jui-select-box white cs-select" id="height-box">
 								<select name="wysokoscbudynku" id="26">
 									<option value="">maks. wys. budynku</option>
-									<option id="26-1" value="1" {if $request.wysokoscbudynku == 1} selected{/if}>do 6 m</option>
-									<option id="26-2" value="2" {if $request.wysokoscbudynku == 2} selected{/if}>od 6 m do 7 m</option>
-									<option id="26-3" value="3" {if $request.wysokoscbudynku == 3} selected{/if}>od 7 m do 8 m</option>
-									<option id="26-4" value="4" {if $request.wysokoscbudynku == 4} selected{/if}>od 8 m do 9 m</option>
-									<option id="26-5" value="5" {if $request.wysokoscbudynku == 5} selected{/if}>od 9 m do 10 m</option>
-									<option id="26-6" value="6" {if $request.wysokoscbudynku == 6} selected{/if}>powyżej 10 m</option>
+									<option id="26-1" value="1" {if $request.wysokoscbudynku == 1} selected{/if}>do 6 m
+									</option>
+									<option id="26-2" value="2" {if $request.wysokoscbudynku == 2} selected{/if}>od 6 m
+										do 7 m</option>
+									<option id="26-3" value="3" {if $request.wysokoscbudynku == 3} selected{/if}>od 7 m
+										do 8 m</option>
+									<option id="26-4" value="4" {if $request.wysokoscbudynku == 4} selected{/if}>od 8 m
+										do 9 m</option>
+									<option id="26-5" value="5" {if $request.wysokoscbudynku == 5} selected{/if}>od 9 m
+										do 10 m</option>
+									<option id="26-6" value="6" {if $request.wysokoscbudynku == 6} selected{/if}>powyżej
+										10 m</option>
 								</select>
 							</div>
 
 							<div class="jui-select-box right white cs-select" id="angle-box">
 								<select name="katnachyleniadachu" id="27">
 									<option value="">kąt nach. dachu</option>
-									<option id="27-1" value="1" {if $request.katnachyleniadachu == 1} selected{/if}>do 30&deg;</option>
-									<option id="27-2" value="2" {if $request.katnachyleniadachu == 2} selected{/if}>30&deg; do 35&deg;
+									<option id="27-1" value="1" {if $request.katnachyleniadachu == 1} selected{/if}>do
+										30&deg;</option>
+									<option id="27-2" value="2" {if $request.katnachyleniadachu == 2} selected{/if}>
+										30&deg; do 35&deg;
 									</option>
-									<option id="27-3" value="3" {if $request.katnachyleniadachu == 3} selected{/if}>35&deg; do 40&deg;
+									<option id="27-3" value="3" {if $request.katnachyleniadachu == 3} selected{/if}>
+										35&deg; do 40&deg;
 									</option>
-									<option id="27-4" value="4" {if $request.katnachyleniadachu == 4} selected{/if}>40&deg; do 45&deg;
+									<option id="27-4" value="4" {if $request.katnachyleniadachu == 4} selected{/if}>
+										40&deg; do 45&deg;
 									</option>
-									<option id="27-5" value="5" {if $request.katnachyleniadachu == 5} selected{/if}>45&deg; i więcej
+									<option id="27-5" value="5" {if $request.katnachyleniadachu == 5} selected{/if}>
+										45&deg; i więcej
 									</option>
 								</select>
 							</div>
@@ -632,13 +496,16 @@
 							<div class="jui-select-box white cs-select" id="ceiling-box">
 								<select name="rodzajstropu" id="28">
 									<option value="">strop nad parterem</option>
-									<option id="28-lekki" value="lekki" {if $request.rodzajstropu == 'lekki'} selected{/if}>lekki</option>
-									<option id="28-gestozebrowy" value="gestozebrowy" {if $request.rodzajstropu == 'gestozebrowy'}
-										selected{/if}>gęstożebrowy</option>
+									<option id="28-lekki" value="lekki" {if $request.rodzajstropu == 'lekki'}
+										selected{/if}>lekki</option>
+									<option id="28-gestozebrowy" value="gestozebrowy"
+										{if $request.rodzajstropu == 'gestozebrowy'} selected{/if}>gęstożebrowy</option>
 									<option id="28-plyta_zelbetowa" value="plyta_zelbetowa"
-										{if $request.rodzajstropu == 'plyta_zelbetowa'} selected{/if}>płyta żelbetowa</option>
+										{if $request.rodzajstropu == 'plyta_zelbetowa'} selected{/if}>płyta żelbetowa
+									</option>
 									<option id="28-drewniany_belkowy" value="drewniany_belkowy"
-										{if $request.rodzajstropu == 'drewniany_belkowy'} selected{/if}>drewniany belkowy</option>
+										{if $request.rodzajstropu == 'drewniany_belkowy'} selected{/if}>drewniany
+										belkowy</option>
 								</select>
 							</div>
 
@@ -646,10 +513,13 @@
 								<select name="kalenica" id="103">
 									<option value="">kalenica</option>
 									<option id="103-rownolegla_do_drogi" value="rownolegla_do_drogi"
-										{if $request.kalenica == 'rownolegla_do_drogi'} selected{/if}>równoległa do drogi</option>
+										{if $request.kalenica == 'rownolegla_do_drogi'} selected{/if}>równoległa do
+										drogi</option>
 									<option id="103-prostopadla_do_drogi" value="prostopadla_do_drogi"
-										{if $request.kalenica == 'prostopadla_do_drogi'} selected{/if}>prostopadła do drogi</option>
-									<option id="103-brak" value="brak" {if $request.kalenica == 'brak'} selected{/if}>brak</option>
+										{if $request.kalenica == 'prostopadla_do_drogi'} selected{/if}>prostopadła do
+										drogi</option>
+									<option id="103-brak" value="brak" {if $request.kalenica == 'brak'} selected{/if}>
+										brak</option>
 								</select>
 							</div>
 						</li>
@@ -659,17 +529,19 @@
 							<div>
 								<ul class="input-box">
 									<li>
-										<input type="checkbox" id="65-1" name="spizarnia" value="1" {if $request.spizarnia}
-											checked{/if}><label for="65-1">Spiżarnia</label> <span class="count" id="65-1-count">(0)</span>
+										<input type="checkbox" id="65-1" name="spizarnia" value="1"
+											{if $request.spizarnia} checked{/if}><label for="65-1">Spiżarnia</label>
+										<span class="count" id="65-1-count">(0)</span>
 									</li>
 									<li>
-										<input type="checkbox" id="57-1" name="garderoba" value="1" {if $request.garderoba}
-											checked{/if}><label for="57-1">Garderoba</label> <span class="count" id="57-1-count">(0)</span>
+										<input type="checkbox" id="57-1" name="garderoba" value="1"
+											{if $request.garderoba} checked{/if}><label for="57-1">Garderoba</label>
+										<span class="count" id="57-1-count">(0)</span>
 									</li>
 									<li>
-										<input type="checkbox" id="c18-1" name="duza_kotlownia" value="1" {if $request.duza_kotlownia}
-											checked{/if}><label for="c18-1">Duża kotłownia</label> <span class="count"
-											id="c18-1-count">(0)</span>
+										<input type="checkbox" id="c18-1" name="duza_kotlownia" value="1"
+											{if $request.duza_kotlownia} checked{/if}><label for="c18-1">Duża
+											kotłownia</label> <span class="count" id="c18-1-count">(0)</span>
 									</li>
 								</ul>
 							</div>
@@ -678,17 +550,19 @@
 							<div>
 								<ul class="input-box">
 									<li>
-										<input type="checkbox" id="47-1" name="wiatagarazowa" value="1" {if $request.wiatagarazowa}
-											checked{/if}><label for="47-1">Wiata</label> <span class="count" id="47-1-count">(0)</span>
+										<input type="checkbox" id="47-1" name="wiatagarazowa" value="1"
+											{if $request.wiatagarazowa} checked{/if}><label for="47-1">Wiata</label>
+										<span class="count" id="47-1-count">(0)</span>
 									</li>
 									<li>
-										<input type="checkbox" id="96-1" name="pralnia" value="1" {if $request.pralnia} checked{/if}><label
-											for="96-1">Pralnia</label> <span class="count" id="96-1-count">(0)</span>
+										<input type="checkbox" id="96-1" name="pralnia" value="1" {if $request.pralnia}
+											checked{/if}><label for="96-1">Pralnia</label> <span class="count"
+											id="96-1-count">(0)</span>
 									</li>
 									<li>
-										<input type="checkbox" id="c26-1" name="od_poludnia" value="1" {if $request.od_poludnia}
-											checked{/if}><label for="c26-1">Wjazd od południa</label> <span class="count"
-											id="c26-1-count">(0)</span>
+										<input type="checkbox" id="c26-1" name="od_poludnia" value="1"
+											{if $request.od_poludnia} checked{/if}><label for="c26-1">Wjazd od
+											południa</label> <span class="count" id="c26-1-count">(0)</span>
 									</li>
 								</ul>
 							</div>
@@ -697,74 +571,86 @@
 							<div>
 								<ul class="input-box">
 									<li>
-										<input type="checkbox" id="104-1" name="balkon" value="1" {if $request.balkon} checked{/if}><label
-											for="104-1">Balkon</label> <span class="count" id="104-1-count">(0)</span>
+										<input type="checkbox" id="104-1" name="balkon" value="1" {if $request.balkon}
+											checked{/if}><label for="104-1">Balkon</label> <span class="count"
+											id="104-1-count">(0)</span>
 									</li>
 									<li>
-										<input type="checkbox" id="105-1" name="lukarna" value="1" {if $request.lukarna} checked{/if}><label
-											for="105-1">Lukarna</label> <span class="count" id="105-1-count">(0)</span>
+										<input type="checkbox" id="105-1" name="lukarna" value="1" {if $request.lukarna}
+											checked{/if}><label for="105-1">Lukarna</label> <span class="count"
+											id="105-1-count">(0)</span>
 									</li>
 									<li>
-										<input type="checkbox" id="113-1" name="masterbedroom" value="1" {if $request.masterbedroom}
-											checked{/if}><label for="113-1">Master bedroom</label> <span class="count"
-											id="113-1-count">(0)</span>
+										<input type="checkbox" id="113-1" name="masterbedroom" value="1"
+											{if $request.masterbedroom} checked{/if}><label for="113-1">Master
+											bedroom</label> <span class="count" id="113-1-count">(0)</span>
 									</li>
 								</ul>
 							</div>
 						</li>
 						<li>
 							<div>
-								<input type="checkbox" id="59-1" name="kuchniaodfrontu" value="1" {if $request.kuchniaodfrontu}
-									checked{/if}><label for="59-1">Kuchnia od frontu</label> <span class="count"
-									id="59-1-count">(0)</span>
+								<input type="checkbox" id="59-1" name="kuchniaodfrontu" value="1"
+									{if $request.kuchniaodfrontu} checked{/if}><label for="59-1">Kuchnia od
+									frontu</label> <span class="count" id="59-1-count">(0)</span>
 								<div class="fright">
-									<input type="checkbox" id="60-1" name="kuchniaodogrodu" value="1" {if $request.kuchniaodogrodu}
-										checked{/if}><label for="60-1">Kuchnia od ogrodu</label> <span class="count"
-										id="60-1-count">(0)</span>
+									<input type="checkbox" id="60-1" name="kuchniaodogrodu" value="1"
+										{if $request.kuchniaodogrodu} checked{/if}><label for="60-1">Kuchnia od
+										ogrodu</label> <span class="count" id="60-1-count">(0)</span>
 								</div>
 							</div>
 						</li>
 						<li>
 							<div>
-								<input type="checkbox" id="c19-1" name="kotlownia" value="1" {if $request.kotlownia} checked{/if}><label
-									for="c19-1">Kotłownia na paliwo stałe</label> <span class="count" id="c19-1-count">(0)</span>
+								<input type="checkbox" id="c19-1" name="kotlownia" value="1" {if $request.kotlownia}
+									checked{/if}><label for="c19-1">Kotłownia na paliwo stałe</label> <span
+									class="count" id="c19-1-count">(0)</span>
 								<div class="fright">
-									<input type="checkbox" id="67-1" name="zadaszonytaras" value="1" {if $request.zadaszonytaras}
-										checked{/if}><label for="67-1">Zadaszony taras</label> <span class="count"
-										id="67-1-count">(0)</span>
+									<input type="checkbox" id="67-1" name="zadaszonytaras" value="1"
+										{if $request.zadaszonytaras} checked{/if}><label for="67-1">Zadaszony
+										taras</label> <span class="count" id="67-1-count">(0)</span>
 								</div>
 							</div>
 						</li>
 						<li class="half-spaced">
 							<div>
-								<input type="checkbox" id="94-1" name="antresola" value="1" {if $request.antresola} checked{/if}><label
-									for="94-1">Otwarta przestrzeń</label> <span class="count" id="94-1-count">(0)</span>
+								<input type="checkbox" id="94-1" name="antresola" value="1" {if $request.antresola}
+									checked{/if}><label for="94-1">Otwarta przestrzeń</label> <span class="count"
+									id="94-1-count">(0)</span>
 								<div class="fright">
-									<input type="checkbox" id="119-1" name="osobnewc" value="1" {if $request.osobnewc} checked{/if}><label
-										for="119-1">Osobne w.c.</label> <span class="count" id="119-1-count">(0)</span>
+									<input type="checkbox" id="119-1" name="osobnewc" value="1" {if $request.osobnewc}
+										checked{/if}><label for="119-1">Osobne w.c.</label> <span class="count"
+										id="119-1-count">(0)</span>
 								</div>
 							</div>
 						</li>
 						<li>
 							<p class="head">Garaż</p>
 							<div>
-								<input type="radio" id="78-0" name="garaz" value="0"><label for="78-0" class="spaced">Dowolnie</label>
-								<input type="radio" id="78-1" name="garaz" value="1" {if $request.garaz == 1} checked{/if}><label
-									for="78-1">1 stanowisko</label> <span class="count" id="78-1-count">(0)</span>
-								<input type="radio" id="78-2" name="garaz" value="2" {if $request.garaz == 2} checked{/if}><label
-									for="78-2">2 i więcej</label> <span class="count" id="78-2-count">(0)</span>
-								<input type="radio" id="78-3" name="garaz" value="3" {if $request.garaz == 3} checked{/if}><label
-									for="78-3">nie</label> <span class="count" id="78-3-count">(0)</span>
+								<input type="radio" id="78-0" name="garaz" value="0"><label for="78-0"
+									class="spaced">Dowolnie</label>
+								<input type="radio" id="78-1" name="garaz" value="1" {if $request.garaz == 1}
+									checked{/if}><label for="78-1">1 stanowisko</label> <span class="count"
+									id="78-1-count">(0)</span>
+								<input type="radio" id="78-2" name="garaz" value="2" {if $request.garaz == 2}
+									checked{/if}><label for="78-2">2 i więcej</label> <span class="count"
+									id="78-2-count">(0)</span>
+								<input type="radio" id="78-3" name="garaz" value="3" {if $request.garaz == 3}
+									checked{/if}><label for="78-3">nie</label> <span class="count"
+									id="78-3-count">(0)</span>
 							</div>
 						</li>
 						<li class="half-spaced">
 							<p class="head">Piwnica</p>
 							<div>
-								<input type="radio" id="2-0" name="piwnica" value="0"><label for="2-0" class="spaced">Dowolnie</label>
-								<input type="radio" id="2-1" name="piwnica" value="1" {if $request.piwnica == 1} checked{/if}><label
-									for="2-1">tak</label> <span class="count" id="2-1-count">(0)</span>
-								<input type="radio" id="2-2" name="piwnica" value="2" {if $request.piwnica == 2} checked{/if}><label
-									for="2-2">nie</label> <span class="count" id="2-2-count">(0)</span>
+								<input type="radio" id="2-0" name="piwnica" value="0"><label for="2-0"
+									class="spaced">Dowolnie</label>
+								<input type="radio" id="2-1" name="piwnica" value="1" {if $request.piwnica == 1}
+									checked{/if}><label for="2-1">tak</label> <span class="count"
+									id="2-1-count">(0)</span>
+								<input type="radio" id="2-2" name="piwnica" value="2" {if $request.piwnica == 2}
+									checked{/if}><label for="2-2">nie</label> <span class="count"
+									id="2-2-count">(0)</span>
 							</div>
 						</li>
 						<li>

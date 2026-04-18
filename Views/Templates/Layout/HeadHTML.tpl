@@ -141,7 +141,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		}],
 		"sameAs":[
 			"https://www.facebook.com/studioatrium",
-			"https://pl.pinterest.com/studioatrium/",
+			"https://www.instagram.com/studioatrium.pl/",
+			"https://www.pinterest.com/studioatrium/",
 			"https://www.youtube.com/user/StudioAtrium"
 		]
 }</script>
@@ -255,6 +256,24 @@ tailwind.config = {
 		lucide.createIcons();
 	});
 	observer.observe(document.body, { childList: true, subtree: true });
+</script>
+<script>
+{literal}
+(function () {
+	document.documentElement.style.userSelect = 'text';
+	document.onselectstart = null;
+	document.oncopy = null;
+	document.oncontextmenu = null;
+	document.addEventListener('copy', function (e) {
+		var t = e.target;
+		if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+		var sel = window.getSelection ? window.getSelection().toString() : '';
+		if (!sel) return;
+		e.clipboardData.setData('text/plain', sel + '\n\nŹródło: ' + window.location.href);
+		e.preventDefault();
+	});
+})();
+{/literal}
 </script>
 <!-- Brand design tokens -->
 <style>

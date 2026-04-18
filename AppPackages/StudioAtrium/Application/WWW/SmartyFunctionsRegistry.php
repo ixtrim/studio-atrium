@@ -40,6 +40,83 @@ class SmartyFunctionsRegistry
         return $url;
     }
 
+    private function fetchSocialUrls(): array
+    {
+        try {
+            $pdo  = \Point7_WebApp::getPDO();
+            $stmt = $pdo->query(
+                "SELECT REPLACE(char_id, 'social_', '') AS platform, string_value AS url
+                 FROM settings
+                 WHERE char_id IN ('social_facebook','social_instagram','social_pinterest','social_youtube')"
+            );
+            $defaults = [
+                'facebook'  => 'https://www.facebook.com/studioatrium',
+                'instagram' => 'https://www.instagram.com/studioatrium.pl/',
+                'pinterest' => 'https://www.pinterest.com/studioatrium/',
+                'youtube'   => 'https://www.youtube.com/user/StudioAtrium',
+            ];
+            $fromDb = $stmt->fetchAll(\PDO::FETCH_KEY_PAIR) ?: [];
+            return array_merge($defaults, array_filter($fromDb));
+        } catch (\Exception $e) {
+            return [
+                'facebook'  => 'https://www.facebook.com/studioatrium',
+                'instagram' => 'https://www.instagram.com/studioatrium.pl/',
+                'pinterest' => 'https://www.pinterest.com/studioatrium/',
+                'youtube'   => 'https://www.youtube.com/user/StudioAtrium',
+            ];
+        }
+    }
+
+    private function fetchSeoData(): array
+    {
+        try {
+            $pdo  = \Point7_WebApp::getPDO();
+            $stmt = $pdo->query("SELECT string_value FROM settings WHERE char_id = 'seo_links_header' LIMIT 1");
+            $row  = $stmt->fetch(\PDO::FETCH_ASSOC);
+
+            $stmt  = $pdo->query('SELECT label, url FROM footer_seo ORDER BY sorting ASC');
+            $links = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+            return ['header' => $row ? $row['string_value'] : '', 'links' => $links];
+        } catch (\Exception $e) {
+            return ['header' => '', 'links' => []];
+        }
+    }
+
+    private function fetchContactData(): array
+    {
+        try {
+            $pdo  = \Point7_WebApp::getPDO();
+            $stmt = $pdo->query(
+                "SELECT REPLACE(char_id, 'contact_', '') AS key_name, string_value AS val
+                 FROM settings
+                 WHERE char_id IN ('contact_header','contact_phone1','contact_phone2','contact_extra_phones','contact_email','contact_details','contact_map_url','contact_map_text')"
+            );
+            return $stmt->fetchAll(\PDO::FETCH_KEY_PAIR);
+        } catch (\Exception $e) {
+            return [];
+        }
+    }
+
+    private function fetchMenuColumns(): array
+    {
+        try {
+            $pdo  = \Point7_WebApp::getPDO();
+            $stmt = $pdo->query('SELECT label, url, target, col FROM footer_menus ORDER BY col ASC, sorting ASC');
+            $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+            $cols = ['a' => [], 'b' => [], 'c' => []];
+            foreach ($rows as $row) {
+                $col = $row['col'];
+                if (isset($cols[$col])) {
+                    $cols[$col][] = $row;
+                }
+            }
+            return $cols;
+        } catch (\Exception $e) {
+            return ['a' => [], 'b' => [], 'c' => []];
+        }
+    }
+
     public function registerAll(\Smarty $smarty): void
     {
         $resUrl = $this->resUrl;
@@ -58,6 +135,20 @@ class SmartyFunctionsRegistry
 
         // {articleImage} — returns URL of main image for a document/article
         $smarty->registerPlugin('function', 'articleImage', [$this, 'fArticleImage']);
+
+        // Assign social media URLs from settings table — available as $social.facebook etc.
+        $smarty->assign('social', $this->fetchSocialUrls());
+
+        // Assign contact data from settings table — available as $contact.phone1 etc.
+        $smarty->assign('contact', $this->fetchContactData());
+
+        // Assign SEO links header and repeater rows from footer_seo table
+        $seoData = $this->fetchSeoData();
+        $smarty->assign('seo_links_header', $seoData['header']);
+        $smarty->assign('seo_links', $seoData['links']);
+
+        // Assign footer menu columns (a/b/c) from footer_menus table
+        $smarty->assign('footer_menus', $this->fetchMenuColumns());
 
         // Modifiers used in project listings
         $paramsHelper = new ProjectParamsHelper();

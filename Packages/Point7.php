@@ -5,15 +5,16 @@
  */
 class Point7
 {
-    private static string $baseDir = '';
+    private static $baseDir = '';
 
-    public static function load(string $component): void
+    public static function load(string $component)
     {
         self::$baseDir = self::$baseDir ?: __DIR__;
 
         $map = [
             'WebApp'      => [
                 'Point7_WebApp',
+                'Point7_WebApp_DAORepository',
                 'Point7_WebApp_Session',
                 'Point7_WebApp_Cache_File',
                 'Point7_Log_PEARWrapper',
