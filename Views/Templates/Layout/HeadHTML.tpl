@@ -87,6 +87,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preload" href="/css/common.min.css?v={$version}" as="style">
 <link rel="stylesheet" href="/css/common.min.css?v={$version}">
 
+<!-- Theme 2026 - High Priority -->
+<link rel="preload" href="/css/theme2026.css?v={$version}" as="style">
+<link rel="stylesheet" href="/css/theme2026.css?v={$version}">
+
 {foreach $css_includes as $_css}
 	<link rel="preload" href="/css/{$_css}" as="style">
 	<link rel="stylesheet" href="/css/{$_css}">
