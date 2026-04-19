@@ -2721,8 +2721,11 @@ class Project extends WWW\AbstractModule
 // 				if($paramId == 'type') {
 // 					continue;
 				if($key == 'type') {
-					$type = Helper\ClickSearchMap::getTypeParamId($request->getParam($value));
-					$csParams[$type] = 1;
+					// Kept under a non-numeric key: typ_projektu maps to a
+					// project_category id, which can numerically collide with
+					// a project_param id used elsewhere in this same array
+					// (e.g. category 46/59 vs. param 46/59).
+					$csParams['_typ_projektu'] = $request->getParam($value);
 				} else {
 					if($request->getParam($value) > -1) {
 						$param = $request->getParam($value);

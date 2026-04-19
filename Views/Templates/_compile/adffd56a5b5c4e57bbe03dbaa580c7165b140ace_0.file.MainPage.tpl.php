@@ -1,27 +1,30 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-08-24 05:36:26
+/* Smarty version 3.1.48, created on 2026-08-24 10:17:09
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/MainPage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6a8bbc3abdb782_00206007',
+  'unifunc' => 'content_6a8bfe058121e0_35297477',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'adffd56a5b5c4e57bbe03dbaa580c7165b140ace' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/MainPage.tpl',
-      1 => 1782217527,
+      1 => 1787559422,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:Include/ArticlesTicks.tpl' => 1,
   ),
 ),false)) {
-function content_6a8bbc3abdb782_00206007 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6a8bfe058121e0_35297477 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:Include/ArticlesTicks.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
+
 <div class="overlay">
 	<div class="overlay-project-box" id="over-pop">
 		<div id="over-img-box">

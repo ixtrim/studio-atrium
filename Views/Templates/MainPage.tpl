@@ -14,8 +14,8 @@
 {include file="Include/Tips.tpl"}
 {include file="Include/Offer.tpl"}
 {include file="Include/Initiative.tpl"}
-{include file="Include/Charity.tpl"}
-{include file="Include/ArticlesTicks.tpl"} *}
+{include file="Include/Charity.tpl"} *}
+{include file="Include/ArticlesTicks.tpl"}
 
 <div class="overlay">
 	<div class="overlay-project-box" id="over-pop">

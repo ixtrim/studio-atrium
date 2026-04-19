@@ -136,6 +136,7 @@ var ClickSearch = (function()
 	}
 	
 	
+	
 	function _getNumbers()
 	{
 		var params = _getParams();
@@ -148,10 +149,18 @@ var ClickSearch = (function()
 			dataType: 'json',
 			
 			beforeSend: function() {
-				$('#cs-fetch').prop('disabled', true);
-				$('#cs-fetch').addClass('disabled');
-				$('#data-read').text('trwa wczytywanie danych');
-				$('#data-read').show();
+				var $btn = $('#cs-fetch');
+
+				// zapamiętaj oryginalny HTML (raz)
+				if (!$btn.data('orig-html')) {
+					$btn.data('orig-html', $btn.html());
+				}
+
+				// blokada + napis "Ładowanie danych…"
+				$btn.prop('disabled', true).addClass('disabled').html('Ładowanie danych…');
+
+				// ukryj stary komunikat tekstowy, jeśli był używany
+				$('#data-read').hide();
 			},
 
 			success: function(response)
@@ -168,30 +177,36 @@ var ClickSearch = (function()
 					}
 				}
 				
-				total = response.feedback.stats.total
+				total = response.feedback.stats.total;
+				$('#cs-fetch #total-count').text('(' + total + ')');
 				
-				$.each(response.feedback.stats.types, function(key, count) 
-				{
-					element = $('#' + key);
-	
-					if(element.length > 0) {
-						switch(element[0].nodeName.toLowerCase()) {
-							case 'option':
-//								$.each(set, function(setkey, count) 
-//								{
-									element.find('span').detach();
-									element.html(element.html().replace(/(\s?\(.*\))/, '') + ' <span>(' + count + ')</span>');
-									
-									if(count == 0) {
-										element.attr('disabled', true);
-									} else {
-										element.attr('disabled', false);
-									}
-//								});
-							break;
-						}
+				// "Typ projektu" jest teraz checkboxami (typ_projektu[]); wspieramy też starą wersję (radio bez [])
+				if (response.feedback && response.feedback.stats && response.feedback.stats.types) {
+				$.each(response.feedback.stats.types, function(setkey, count) {
+					// znajdź input (najpierw wersja tablicowa, potem fallback do starej)
+					var $inputs = $('#filters-project-type input[name="typ_projektu[]"][value="' + setkey + '"]');
+					if (!$inputs.length) {
+						$inputs = $('#filters-project-type input[name="typ_projektu"][value="' + setkey + '"]');
 					}
+
+					// licznik: #typ_projektu-<value>-count albo .count w labelu
+					var $counter = $('#typ_projektu-' + setkey + '-count');
+					if (!$counter.length && $inputs.length) {
+						var $label = $inputs.first().attr('id')
+						? $('label[for="' + $inputs.first().attr('id') + '"]')
+						: $inputs.first().closest('label');
+						if ($label.length) $counter = $label.find('.count').first();
+					}
+
+					if ($counter.length) $counter.text('(' + count + ')');
+
+					// włącz/wyłącz element zgodnie z liczbą wyników
+					$inputs.each(function() {
+						var disable = (count === 0);
+						$(this).prop('disabled', disable);
+					});
 				});
+				}
 				
 				$.each(response.feedback.stats.sets, function(key, set) 
 				{
@@ -248,15 +263,23 @@ var ClickSearch = (function()
 				});
 			},
 
-			complete: function()
-			{
-				$('#click-search-form select').selectmenu('refresh');
-				if(total > 0) {
-					$('#cs-fetch').prop('disabled', false);
-					$('#cs-fetch').removeClass('disabled');
+			complete: function() {
+				var $btn = $('#cs-fetch');
+				var orig = $btn.data('orig-html');
+
+				// przywróć oryginalny wygląd przycisku
+				if (orig) $btn.html(orig);
+
+				// ustaw licznik (może nie istnieć tuż po restore, więc ustawiamy teraz)
+				if (total > 0) {
+					$('#cs-fetch').prop('disabled', false).removeClass('disabled');
+					$('#cs-fetch #total-count').text('(' + total + ')');
 					$('#data-read').hide();
 				} else {
-					$('#data-read').text('brak wyników wyszukiwania');
+					$('#cs-fetch').prop('disabled', true).addClass('disabled');
+					// jeśli chcesz — możesz zostawić komunikat tekstowy:
+					// $('#data-read').text('brak wyników wyszukiwania').show();
+					$('#cs-fetch #total-count').text('(0)');
 				}
 			}
 		});

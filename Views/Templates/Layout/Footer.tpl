@@ -232,447 +232,756 @@
 	<button type="button" id="help-overlay-close" class="blue-overlay-close">Zamknij</button>
 </div>
 *}
+<!-- Wyszukiwarka projektów -->
 <div class="blue-overlay cs">
 	<div id="cs-wrapper">
-		<div>
+		<div class="search-header">
+			<h2 id="filter-header">Znajdź idealny projekt</h2>
 			<form method="get" action="{url module='project' action='search'}" id="search-form">
 				<div id="search-project">
-					<label for="search-name" class="black">Wpisz nazwę projektu</label>
-					<input type="text" name="query" id="search-name" class="long">
-					<input type="submit" id="search-name-submit" value="Wyszukaj" class="baton disabled" disabled>
-					<a href="{url module=varia action=project_helper}" class="wired help">Pomoc</a>
+					<label for="search-name" class="black search-label">Wpisz nazwę projektu</label>
+					<div class="search-input-wrapper">
+						<input type="text" name="query" id="search-name" class="long">
+						<input type="submit" id="search-name-submit" value="Wyszukaj" class="baton disabled" disabled>
+						<a href="{url module=varia action=project_helper}" class="wired help">Pomoc</a>
+					</div>
 				</div>
 			</form>
+			<div class="quick-presets">
+				<label class="chip">
+					<input type="radio" data-type="" checked> <span>Wszystkie</span>
+				</label>
+				<label class="chip">
+					<input type="radio" data-type="parterowe"> <span>Parterowe</span>
+				</label>
+				<label class="chip">
+					<input type="radio" data-type="z_poddaszem_do_adaptacji"> <span>Z poddaszem użytkowym</span>
+				</label>
+				<label class="chip">
+					<input type="radio" data-type="pietrowe"> <span>Piętrowe</span>
+				</label>
+			</div>
 		</div>
 
 		<div class="form-box">
-			<p class="info">Lub wybierz parametry projektu i kliknij przycisk "Pokaż projekty" znajdujący się pod
-				formularzem
-			</p>
 			<form id="click-search-form" method="post" action="/">
-				<div class="cs-box">
-					<ul>
-						{if $csCategory}
-							<li class="half-spaced">
-								<p class="head">kategoria:</p>
-								<ul>
-									<li>
-										<input type="checkbox" id="cs-category" name="kategoria" value="{$csCategory}"
-											checked><label for="cs-category">{$category.name}</label> <span class="count"
-											id="cs-category-count">(0)</span>
-									</li>
-								</ul>
+				<ul id="filter-labels">
+					{if $csCategory}
+					<li class="half-spaced">
+						<p class="head">kategoria:</p>
+						<ul>
+							<li>
+								<input type="checkbox" id="cs-category" name="kategoria" value="{$csCategory}" checked><label for="cs-category">{$category.name}</label> <span class="count" id="cs-category-count">(0)</span>
 							</li>
+						</ul>
+					</li>
+					{/if}
+					
+					{if $csTag}
+					<li class="half-spaced">
+						<p class="head">wybrany filtr:</p>
+						<ul>
+							<li>
+								<input type="checkbox" id="{$csTag.id}-1" name="{$csTag.csname}" value="1" checked><label for="{$csTag.id}-1">{$csTag.name}</label> <span class="count" id="{$csTag.id}-1-count">(0)</span>
+							</li>
+						</ul>
+					</li>
+					{/if}
+
+					{if $csTagSelect}
+					<li class="half-spaced">
+						<p class="head">wybrany filtr:</p>
+						<ul>
+							<li>
+								<input type="checkbox" id="{$csTagSelect.id}-{$csTagSelect.value}" name="{$csTagSelect.csname}" value="{$csTagSelect.value}" checked><label for="{$csTagSelect.id}-{$csTagSelect.value}">{$csTagSelect.name} : {$csValueNames[$csTagSelect.value]|default:$csTagSelect.value}</label> <span class="count" id="{$csTagSelect.id}-{$csTagSelect.value}-count">(0)</span>
+							</li>
+						</ul>
+					</li>
+					{/if}
+				
+					<li class="filter-tab-label is-active" id="tab_project-type" data-target="#filters-project-type">
+						Typ projektu
+						<ul class="active-filters"></ul>
+					</li>
+
+					<li class="filter-tab-label" id="tab_roof" data-target="#filters-roof">
+						Typ dachu
+						<ul class="active-filters"></ul>
+					</li>
+
+					<li class="filter-tab-label" id="tab_pow" data-target="#filters-pow">
+						Powierzchnia
+						<ul class="active-filters"></ul>
+					</li>
+
+					<li class="filter-tab-label" id="tab_parcel-dimensions" data-target="#filters-parcel">
+						Szerokość | długość działki
+						<ul class="active-filters"></ul>
+					</li>
+
+					<li class="filter-tab-label" id="tab_front-width" data-target="#filters-front-width">
+						Maks. szerokość elewacji frontowej
+						<ul class="active-filters"></ul>
+					</li>
+
+					<li class="filter-tab-label" id="tab_rooms" data-target="#filters-rooms">
+						Pomieszczenia
+						<ul class="active-filters"></ul>
+					</li>
+
+					<li class="filter-tab-label" id="tab_height" data-target="#filters-height">
+						Wysokość budynku
+						<ul class="active-filters"></ul>
+					</li>
+
+					<li class="filter-tab-label" id="tab_roof-angle" data-target="#filters-roof-angle">
+						Kąt nachylenia dachu
+						<ul class="active-filters"></ul>
+					</li>
+
+					<li class="filter-tab-label" id="tab_strop" data-target="#filters-strop">
+						Rodzaj stropu
+						<ul class="active-filters"></ul>
+					</li>
+
+					<li class="filter-tab-label" id="tab_kalenica" data-target="#filters-kalenica">
+						Kalenica
+						<ul class="active-filters"></ul>
+					</li>
+
+					<li class="filter-tab-label" id="tab_dodatkowe" data-target="#filters-dodatkowe">
+						Dodatkowe udogodnienia
+						<ul class="active-filters"></ul>
+					</li>
+
+					<li class="filter-tab-label" id="tab_garaz" data-target="#filters-garaz">
+						Garaż
+						<ul class="active-filters"></ul>
+					</li>
+
+					<li class="filter-tab-label" id="tab_piwnica" data-target="#filters-piwnica">
+						Piwnica
+						<ul class="active-filters"></ul>
+					</li>
+
+					<li class="filter-tab-label" id="tab_kolekcje" data-target="#filters-kolekcje">
+						Kolekcje
+						<ul class="active-filters"></ul>
+					</li>
+
+				</ul>
+
+
+
+				<div id="filter-options">
+
+					<div id="filters-project-type" class="filter-tab radio-group">
+						<h3 class="filter-header">Typ projektu</h3>
+
+						{* jeśli jest customowa kategoria *}
+						{if $csCustomCategory}
+							<label class="custom-radio" for="typ_projektu-{$csCustomCategory}">
+								<input
+								type="radio"
+								name="typ_projektu"
+								id="typ_projektu-{$csCustomCategory}"
+								value="{$csCustomCategory}"
+								{if $request.typ_projektu == $csCustomCategory || $csType == $csCustomCategory} checked{/if}>
+								<span>{$category.name|truncate:16:"...":true} <span class="count" id="typ_projektu-{$csCustomCategory}-count">(0)</span></span>
+							</label>
 						{/if}
 
-						{if $csTag}
-							<li class="half-spaced">
-								<p class="head">wybrany filtr:</p>
-								<ul>
-									<li>
-										<input type="checkbox" id="{$csTag.id}-1" name="{$csTag.csname}" value="1"
-											checked><label for="{$csTag.id}-1">{$csTag.name}</label> <span class="count"
-											id="{$csTag.id}-1-count">(0)</span>
-									</li>
-								</ul>
-							</li>
-						{/if}
+						<label for="typ_projektu-bez_garazu" class="custom-radio">
+							<input type="radio" name="typ_projektu"
+								id="typ_projektu-bez_garazu" value="bez_garazu"
+								{if $request.typ_projektu == 'bez_garazu' || $csType == 'bez_garazu'} checked{/if}>
+							<span>Bez garażu <span class="count" id="typ_projektu-bez_garazu-count">(0)</span></span>
+						</label>
 
-						{if $csTagSelect}
-							<li class="half-spaced">
-								<p class="head">wybrany filtr:</p>
-								<ul>
-									<li>
-										<input type="checkbox" id="{$csTagSelect.id}-{$csTagSelect.value}"
-											name="{$csTagSelect.csname}" value="{$csTagSelect.value}" checked><label
-											for="{$csTagSelect.id}-{$csTagSelect.value}">{$csTagSelect.name} :
-											{$csValueNames[$csTagSelect.value]|default:$csTagSelect.value}</label> <span
-											class="count" id="{$csTagSelect.id}-{$csTagSelect.value}-count">(0)</span>
-									</li>
-								</ul>
-							</li>
-						{/if}
+						<label for="typ_projektu-beskidzkie" class="custom-radio">
+							<input type="radio" name="typ_projektu"
+								id="typ_projektu-beskidzkie" value="beskidzkie"
+								{if $request.typ_projektu == 'beskidzkie' || $csType == 'beskidzkie'} checked{/if}>
+							<span>Beskidzkie <span class="count" id="typ_projektu-beskidzkie-count">(0)</span></span>
+						</label>
 
-						<li class="spaced">
-							<div class="jui-select-box white cs-select" id="project-type-box">
-								<select name="typ_projektu" id="project-type">
-									<option value="">typ projektu</option>
+						<label class="custom-radio" for="typ_projektu-blizniacze">
+							<input type="radio" name="typ_projektu"
+								id="typ_projektu-blizniacze" value="blizniacze"
+								{if $request.typ_projektu == 'blizniacze' || $csType == 'blizniacze'} checked{/if}>
+							<span>Bliźniacze <span class="count" id="typ_projektu-blizniacze-count">(0)</span></span>
+						</label>
 
-									{*if $csCustomCategory}
-										<option id="{$csCustomCategory}" value="{$csCustomCategory}" selected>{$category.name|truncate:16:"...":true}</option>
-									{/if*}
+						<label class="custom-radio" for="typ_projektu-dla_rodziny_2plus2">
+							<input type="radio" name="typ_projektu"
+								id="typ_projektu-dla_rodziny_2plus2" value="dla_rodziny_2+2"
+								{if $request.typ_projektu == 'dla_rodziny_2+2' || $csType == 'dla_rodziny_2+2'} checked{/if}>
+							<span>Dla rodziny 2+2 <span class="count" id="typ_projektu-dla_rodziny_2plus2-count">(0)</span></span>
+						</label>
 
-									<option id="parterowe" value="parterowe"
-										{if $request.typ_projektu == 'parterowe' || $csType == 'parterowe'}
-										selected{/if}>parterowe</option>
-									<option id="z_poddaszem" value="z_poddaszem"
-										{if $request.typ_projektu == 'z_poddaszem' || $csType == 'z_poddaszem'}
-										selected{/if}>z poddaszem
-									</option>
-									<option id="pietrowe" value="pietrowe"
-										{if $request.typ_projektu == 'pietrowe' || $csType == 'pietrowe'} selected{/if}>
-										piętrowe</option>
-									<option id="nothing" value="" disabled>--------</option>
-									<option id="szkieletowe" value="szkieletowe"
-										{if $request.typ_projektu == 'szkieletowe' || $csType == 'szkieletowe'}
-										selected{/if}>szkieletowe
-									</option>
-									<option id="blizniacze" value="blizniacze"
-										{if $request.typ_projektu == 'blizniacze' || $csType == 'blizniacze'}
-										selected{/if}>bliźniacze
-									</option>
-									<option id="dwulokalowe" value="dwulokalowe"
-										{if $request.typ_projektu == 'dwulokalowe' || $csType == 'dwulokalowe'}
-										selected{/if}>dwulokalowe
-									</option>
+						<label class="custom-radio" for="typ_projektu-dla_rodziny_2plus3">
+							<input type="radio" name="typ_projektu"
+								id="typ_projektu-dla_rodziny_2plus3" value="dla_rodziny_2+3"
+								{if $request.typ_projektu == 'dla_rodziny_2+3' || $csType == 'dla_rodziny_2+3'} checked{/if}>
+							<span>Dla rodziny 2+3 <span class="count" id="typ_projektu-dla_rodziny_2plus3-count">(0)</span></span>
+						</label>
 
-								</select>
+						<label class="custom-radio" for="typ_projektu-dwulokalowe">
+							<input type="radio" name="typ_projektu"
+								id="typ_projektu-dwulokalowe" value="dwulokalowe"
+								{if $request.typ_projektu == 'dwulokalowe' || $csType == 'dwulokalowe'} checked{/if}>
+							<span>Dwulokalowe <span class="count" id="typ_projektu-dwulokalowe-count">(0)</span></span>
+						</label>
+
+						<label class="custom-radio" for="typ_projektu-male_do_70m2">
+							<input type="radio" name="typ_projektu"
+								id="typ_projektu-male_do_70m2" value="male_do_70m2"
+								{if $request.typ_projektu == 'male_do_70m2' || $csType == 'male_do_70m2'} checked{/if}>
+							<span>Małe do 70m2 <span class="count" id="typ_projektu-male_do_70m2-count">(0)</span></span>
+						</label>
+
+						<label class="custom-radio" for="typ_projektu-na_skarpe">
+							<input type="radio" name="typ_projektu"
+								id="typ_projektu-na_skarpe" value="na_skarpe"
+								{if $request.typ_projektu == 'na_skarpe' || $csType == 'na_skarpe'} checked{/if}>
+							<span>Na skarpę <span class="count" id="typ_projektu-na_skarpe-count">(0)</span></span>
+						</label>
+
+						<label class="custom-radio" for="typ_projektu-na_waska_dzialke">
+							<input type="radio" name="typ_projektu"
+								id="typ_projektu-na_waska_dzialke" value="na_waska_dzialke"
+								{if $request.typ_projektu == 'na_waska_dzialke' || $csType == 'na_waska_dzialke'} checked{/if}>
+							<span>Na wąską działkę <span class="count" id="typ_projektu-na_waska_dzialke-count">(0)</span></span>
+						</label>
+
+						<label class="custom-radio" for="typ_projektu-nowoczesna_stodola">
+							<input type="radio" name="typ_projektu"
+								id="typ_projektu-nowoczesna_stodola" value="nowoczesna_stodola"
+								{if $request.typ_projektu == 'nowoczesna_stodola' || $csType == 'nowoczesna_stodola'} checked{/if}>
+							<span>Nowoczesna stodoła <span class="count" id="typ_projektu-nowoczesna_stodola-count">(0)</span></span>
+						</label>
+
+						<label class="custom-radio" for="typ_projektu-nowoczesne">
+							<input type="radio" name="typ_projektu"
+								id="typ_projektu-nowoczesne" value="nowoczesne"
+								{if $request.typ_projektu == 'nowoczesne' || $csType == 'nowoczesne'} checked{/if}>
+							<span>Nowoczesne <span class="count" id="typ_projektu-nowoczesne-count">(0)</span></span>
+						</label>
+
+						<label for="typ_projektu-parterowe" class="custom-radio">
+							<input type="radio" name="typ_projektu"
+								id="typ_projektu-parterowe" value="parterowe"
+								{if $request.typ_projektu == 'parterowe' || $csType == 'parterowe'} checked{/if}>
+							<span>Parterowe <span class="count" id="typ_projektu-parterowe-count">(0)</span></span>
+						</label>
+
+						<label class="custom-radio" for="typ_projektu-pietrowe">
+							<input type="radio" name="typ_projektu"
+								id="typ_projektu-pietrowe" value="pietrowe"
+								{if $request.typ_projektu == 'pietrowe' || $csType == 'pietrowe'} checked{/if}>
+							<span>Piętrowe <span class="count" id="typ_projektu-pietrowe-count">(0)</span></span>
+						</label>
+
+						<label class="custom-radio" for="typ_projektu-rezydencje">
+							<input type="radio" name="typ_projektu"
+								id="typ_projektu-rezydencje" value="rezydencje"
+								{if $request.typ_projektu == 'rezydencje' || $csType == 'rezydencje'} checked{/if}>
+							<span>Rezydencje <span class="count" id="typ_projektu-rezydencje-count">(0)</span></span>
+						</label>
+
+						<label class="custom-radio" for="typ_projektu-szkieletowe">
+							<input type="radio" name="typ_projektu"
+								id="typ_projektu-szkieletowe" value="szkieletowe"
+								{if $request.typ_projektu == 'szkieletowe' || $csType == 'szkieletowe'} checked{/if}>
+							<span>Szkieletowe <span class="count" id="typ_projektu-szkieletowe-count">(0)</span></span>
+						</label>
+
+						<label class="custom-radio" for="typ_projektu-z_garazem">
+							<input type="radio" name="typ_projektu"
+								id="typ_projektu-z_garazem" value="z_garazem"
+								{if $request.typ_projektu == 'z_garazem' || $csType == 'z_garazem'} checked{/if}>
+							<span>Z garażem <span class="count" id="typ_projektu-z_garazem-count">(0)</span></span>
+						</label>
+
+						<label class="custom-radio" for="typ_projektu-z_plaskim_dachem">
+							<input type="radio" name="typ_projektu"
+								id="typ_projektu-z_plaskim_dachem" value="z_plaskim_dachem"
+								{if $request.typ_projektu == 'z_plaskim_dachem' || $csType == 'z_plaskim_dachem'} checked{/if}>
+							<span>Z płaskim dachem <span class="count" id="typ_projektu-z_plaskim_dachem-count">(0)</span></span>
+						</label>
+
+						<label class="custom-radio" for="typ_projektu-z_poddaszem">
+							<input type="radio" name="typ_projektu"
+								id="typ_projektu-z_poddaszem" value="z_poddaszem"
+								{if $request.typ_projektu == 'z_poddaszem' || $csType == 'z_poddaszem'} checked{/if}>
+							<span>Z poddaszem <span class="count" id="typ_projektu-z_poddaszem-count">(0)</span></span>
+						</label>
+
+						<label class="custom-radio" for="typ_projektu-z_poddaszem_do_adaptacji">
+							<input type="radio" name="typ_projektu"
+								id="typ_projektu-z_poddaszem_do_adaptacji" value="z_poddaszem_do_adaptacji"
+								{if $request.typ_projektu == 'z_poddaszem_do_adaptacji' || $csType == 'z_poddaszem_do_adaptacji'} checked{/if}>
+							<span>Z poddaszem do adaptacji <span class="count" id="typ_projektu-z_poddaszem_do_adaptacji-count">(0)</span></span>
+						</label>
+					</div>
+
+					<div id="filters-roof" class="filter-tab radio-group">
+						<h3 class="filter-header">Typ dachu</h3>
+
+						<label class="custom-radio" for="54-dwuspadowy">
+							<input type="radio" name="typdachu" id="54-dwuspadowy" value="dwuspadowy"
+							{if $request.typdachu == 'dwuspadowy'} checked{/if}>
+							<span>dwuspadowy <span class="count" id="54-dwuspadowy-count">(0)</span></span>
+						</label>
+
+						<label class="custom-radio" for="54-mansardowy">
+							<input type="radio" name="typdachu" id="54-mansardowy" value="mansardowy"
+							{if $request.typdachu == 'mansardowy'} checked{/if}>
+							<span>mansardowy <span class="count" id="54-mansardowy-count">(0)</span></span>
+						</label>
+
+						<label class="custom-radio" for="54-stropodach">
+							<input type="radio" name="typdachu" id="54-stropodach" value="stropodach"
+							{if $request.typdachu == 'stropodach'} checked{/if}>
+							<span>płaski <span class="count" id="54-stropodach-count">(0)</span></span>
+						</label>
+
+						<label class="custom-radio" for="54-stozkowy">
+							<input type="radio" name="typdachu" id="54-stozkowy" value="stozkowy"
+							{if $request.typdachu == 'stozkowy'} checked{/if}>
+							<span>stożkowy <span class="count" id="54-stozkowy-count">(0)</span></span>
+						</label>
+
+						<label class="custom-radio" for="54-wielospadowy">
+							<input type="radio" name="typdachu" id="54-wielospadowy" value="wielospadowy"
+							{if $request.typdachu == 'wielospadowy'} checked{/if}>
+							<span>wielospadowy <span class="count" id="54-wielospadowy-count">(0)</span></span>
+						</label>
+					</div>
+
+					<div id="filters-pow" class="filter-tab">
+						<h3 class="filter-header">Powierzchnia użytkowa</h3>
+
+						<!-- select z predefiniowanymi przedziałami -->
+						<select id="pow-range" class="range-select no-ui">
+							<option value=""        data-min=""    data-max="">Dowolna</option>
+							<option value="0-70"    data-min=""    data-max="70">do 70 m²</option>
+							<option value="100-130" data-min="100" data-max="130">100–130 m²</option>
+							<option value="130-180" data-min="130" data-max="180">130–180 m²</option>
+							<option value="180+"    data-min="180" data-max="">od 180 m²</option>
+						</select>
+
+						<!-- ręczne min/max dla użytkowej (wysyłane do backendu) -->
+						<div class="area-inputs">
+							<div class="input-unit">
+								<input type="text" name="pow_min" id="pow-min" value="{$request.pow_min}" placeholder="od">
+								<span class="unit">m²</span>
 							</div>
-
-							<div class="jui-select-box right white cs-select" id="roof-type-box">
-								<select name="typdachu" id="54">
-									<option value="">typ dachu</option>
-									<option id="54-dwuspadowy" value="dwuspadowy" {if $request.typdachu == 'dwuspadowy'}
-										selected{/if}>
-										dwuspadowy</option>
-									<option id="54-mansardowy" value="mansardowy" {if $request.typdachu == 'mansardowy'}
-										selected{/if}>
-										mansardowy</option>
-									<option id="54-stropodach" value="stropodach" {if $request.typdachu == 'stropodach'}
-										selected{/if}>
-										płaski</option>
-									<option id="54-stozkowy" value="stozkowy" {if $request.typdachu == 'stozkowy'}
-										selected{/if}>stożkowy
-									</option>
-									<option id="54-wielospadowy" value="wielospadowy"
-										{if $request.typdachu == 'wielospadowy'} selected{/if}>wielospadowy</option>
-								</select>
+							<div class="input-unit">
+								<input type="text" name="pow_max" id="pow-max" value="{$request.pow_max}" placeholder="do">
+								<span class="unit">m²</span>
 							</div>
-						</li>
+						</div>
 
-						<li>
-							<p class="area">Powierzchnia użytkowa</p>
-							<label for="pow-min">od</label>
-							<input type="text" name="pow_min" id="pow-min" value="{$request.pow_min}">
-							<span class="sep"><label for="pow-max">do</label></span>
-							<input type="text" name="pow_max" id="pow-max" value="{$request.pow_max}"> m<sup>2</sup>
-						</li>
+						<h3 class="filter-header inner-filter-header">Powierzchnia zabudowy</h3>
+						<div class="area-inputs">
+							<div class="input-unit">
+								<input type="text" name="pow_zab_min" id="pow-zab-min" value="{$request.pow_zab_min}" placeholder="od">
+								<span class="unit">m²</span>
+							</div>
+							<div class="input-unit">
+								<input type="text" name="pow_zab_max" id="pow-zab-max" value="{$request.pow_zab_max}" placeholder="do">
+								<span class="unit">m²</span>
+							</div>
+						</div>
 
-						<li>
-							<p class="area">Powierzchnia zabudowy</p>
-							<label for="pow-zab-min">od</label>
-							<input type="text" name="pow_zab_min" id="pow-zab-min" value="{$request.pow_zab_min}">
-							<span class="sep"><label for="pow-zab-max">do</label></span>
-							<input type="text" name="pow_zab_max" id="pow-zab-max" value="{$request.pow_zab_max}">
-							m<sup>2</sup>
-						</li>
+						<h3 class="filter-header inner-filter-header">Powierzchnia całkowita</h3>
+						<div class="area-inputs">
+							<div class="input-unit">
+								<input type="text" name="pow_total_min" id="pow-total-min" value="{$request.pow_total_min}" placeholder="od">
+								<span class="unit">m²</span>
+							</div>
+							<div class="input-unit">
+								<input type="text" name="pow_total_max" id="pow-total-max" value="{$request.pow_total_max}" placeholder="do">
+								<span class="unit">m²</span>
+							</div>
+						</div>
+					</div>
 
-						<li>
-							<p class="area">Powierzchnia całkowita</p>
-							<label for="pow-total-min">od</label>
-							<input type="text" name="pow_total_min" id="pow-total-min" value="{$request.pow_total_min}">
-							<span class="sep"><label for="pow-total-max">do</label></span>
-							<input type="text" name="pow_total_max" id="pow-total-max" value="{$request.pow_total_max}">
-							m<sup>2</sup>
-						</li>
-
-						<li>
-							<p class="dim">Szerokość | długość działki</p>
+					<div id="filters-parcel" class="filter-tab">
+						<h3 class="filter-header">Szerokość działki</h3>
+						<div class="area-inputs">
+							<div class="input-unit">
 							<input type="text" name="dzialka_szer" id="parcel-width" value="{$request.dzialka_szer}">
-							<span class="sep center">|</span>
-							<input type="text" name="dzialka_dl" id="parcel-height" value="{$request.dzialka_dl}"> m
-						</li>
-
-						<li class="spaced">
-							<p class="long">Maks. szerokość elewacji frontowej</p>
-							<input type="text" name="front_szer" id="front-width" value="{$request.front_szer}"> m
-						</li>
-
-						<li class="half-spaced">
-							<p class="head">ilość pokoi na parterze:</p>
-							<div>
-								<input type="radio" id="69-0" name="iloscpokoinaparterze" value="-1"><label for="69-0"
-									class="spaced breaker">Dowolna</label>
-								<input type="radio" id="69-1" name="iloscpokoinaparterze" value="1"
-									{if $request.iloscpokoinaparterze == 1} checked{/if}><label for="69-1">1</label>
-								<span class="count" id="69-1-count">(0)</span>
-								<input type="radio" id="69-2" name="iloscpokoinaparterze" value="2"
-									{if $request.iloscpokoinaparterze == 2} checked{/if}><label for="69-2">2</label>
-								<span class="count" id="69-2-count">(0)</span>
-								<input type="radio" id="69-3" name="iloscpokoinaparterze" value="3"
-									{if $request.iloscpokoinaparterze == 3} checked{/if}><label for="69-3">3</label>
-								<span class="count" id="69-3-count">(0)</span>
-								<input type="radio" id="69-4" name="iloscpokoinaparterze" value="4"
-									{if $request.iloscpokoinaparterze == 4} checked{/if}><label for="69-4">4</label>
-								<span class="count" id="69-4-count">(0)</span>
-								<input type="radio" id="69-5" name="iloscpokoinaparterze" value="5"
-									{if $request.iloscpokoinaparterze == 5} checked{/if}><label for="69-5">5</label>
-								<span class="count" id="69-5-count">(0)</span>
+							<span class="unit">m</span>
 							</div>
-						</li>
+						</div>
 
-						<li class="half-spaced">
-							<p class="head">ilość pokoi na II kondygnacji:</p>
-							<div>
-								<input type="radio" id="71-0" name="iloscpokoinaiikondygnacji" value="-1"><label
-									for="71-0" class="spaced breaker">Dowolna</label>
-								<input type="radio" id="71-1" name="iloscpokoinaiikondygnacji" value="1"
-									{if $request.iloscpokoinaiikondygnacji == 1} checked{/if}><label
-									for="71-1">1</label> <span class="count" id="71-1-count">(0)</span>
-								<input type="radio" id="71-2" name="iloscpokoinaiikondygnacji" value="2"
-									{if $request.iloscpokoinaiikondygnacji == 2} checked{/if}><label
-									for="71-2">2</label> <span class="count" id="71-2-count">(0)</span>
-								<input type="radio" id="71-3" name="iloscpokoinaiikondygnacji" value="3"
-									{if $request.iloscpokoinaiikondygnacji == 3} checked{/if}><label
-									for="71-3">3</label> <span class="count" id="71-3-count">(0)</span>
-								<input type="radio" id="71-4" name="iloscpokoinaiikondygnacji" value="4"
-									{if $request.iloscpokoinaiikondygnacji == 4} checked{/if}><label
-									for="71-4">4</label> <span class="count" id="71-4-count">(0)</span>
-								<input type="radio" id="71-5" name="iloscpokoinaiikondygnacji" value="5"
-									{if $request.iloscpokoinaiikondygnacji == 5} checked{/if}><label
-									for="71-5">5</label> <span class="count" id="71-5-count">(0)</span>
+						<h3 class="filter-header inner-filter-header">Długość działki</h3>
+						<div class="area-inputs">
+							<div class="input-unit">
+							<input type="text" name="dzialka_dl" id="parcel-height" value="{$request.dzialka_dl}">
+							<span class="unit">m</span>
 							</div>
-						</li>
+						</div>
+					</div>
 
-						<li>
-							<p class="head">Ilość łazienek</p>
-							<div>
-								<span class="dist">Na parterze</span>
-								<input type="radio" name="liczbalazieneknaparterze" value="2" id="45-2"
-									{if $request.liczbalazieneknaparterze == 2} checked{/if}><label for="45-2">2</label>
-								<span class="count" id="45-2-count">(0)</span>
-								<input type="radio" name="liczbalazieneknaparterze" value="3" id="45-3"
-									{if $request.liczbalazieneknaparterze == 3} checked{/if}><label for="45-3">3</label>
-								<span class="count" id="45-3-count">(0)</span>
+					<div id="filters-front-width" class="filter-tab">
+						<h3 class="filter-header">Maks. szerokość elewacji frontowej</h3>
+						<div class="area-inputs">
+							<div class="input-unit">
+							<input type="text" name="front_szer" id="front-width" value="{$request.front_szer}">
+							<span class="unit">m</span>
 							</div>
-							<div>
-								<span class="dist">Na II kondygnacji</span>
-								<input type="radio" name="liczbalazieneknaiikondygnacji" value="2" id="46-2"
-									{if $request.liczbalazieneknaiikondygnacji == 2} checked{/if}><label
-									for="46-2">2</label> <span class="count" id="46-2-count">(0)</span>
-								<input type="radio" name="liczbalazieneknaiikondygnacji" value="3" id="46-3"
-									{if $request.liczbalazieneknaiikondygnacji == 3} checked{/if}><label
-									for="46-3">3</label> <span class="count" id="46-3-count">(0)</span>
+						</div>
+					</div>
+
+					<div id="filters-rooms" class="filter-tab">
+						<h3 class="filter-header">Pomieszczenia</h3>
+
+						<!-- Parter -->
+						<div class="rooms-box">
+							<p class="head">Pokoje: parter (z salonem)</p>
+							<div class="chips">
+							<label class="chip" for="69-1">
+								<input type="radio" name="iloscpokoinaparterze" id="69-1" value="1" {if $request.iloscpokoinaparterze == 1} checked{/if}>
+								<span>1 <span class="count" id="69-1-count">(0)</span></span>
+							</label>
+							<label class="chip" for="69-2">
+								<input type="radio" name="iloscpokoinaparterze" id="69-2" value="2" {if $request.iloscpokoinaparterze == 2} checked{/if}>
+								<span>2 <span class="count" id="69-2-count">(0)</span></span>
+							</label>
+							<label class="chip" for="69-3">
+								<input type="radio" name="iloscpokoinaparterze" id="69-3" value="3" {if $request.iloscpokoinaparterze == 3} checked{/if}>
+								<span>3 <span class="count" id="69-3-count">(0)</span></span>
+							</label>
+							<label class="chip" for="69-4">
+								<input type="radio" name="iloscpokoinaparterze" id="69-4" value="4" {if $request.iloscpokoinaparterze == 4} checked{/if}>
+								<span>4 <span class="count" id="69-4-count">(0)</span></span>
+							</label>
+							<label class="chip" for="69-5">
+								<input type="radio" name="iloscpokoinaparterze" id="69-5" value="5" {if $request.iloscpokoinaparterze == 5} checked{/if}>
+								<span>5 <span class="count" id="69-5-count">(0)</span></span>
+							</label>
+							<!-- <label class="chip" for="69-5plus">
+								<input type="radio" name="iloscpokoinaparterze" id="69-5plus" value="5+">
+								<span>5+ <span class="count" id="69-5plus-count">(0)</span></span>
+							</label> -->
+							<label class="chip chip-ghost" for="69-0">
+								<input type="radio" name="iloscpokoinaparterze" id="69-0" value="-1" checked {if $request.iloscpokoinaparterze == -1} checked{/if}>
+								<span>Dowolna</span>
+							</label>
 							</div>
-						</li>
-					</ul>
+						</div>
+
+						<!-- Piętro -->
+						<div id="roomsFloor" class="rooms-box">
+							<p class="head">Pokoje: piętro</p>
+							<div class="chips">
+							<label class="chip" for="71-1">
+								<input type="radio" name="iloscpokoinaiikondygnacji" id="71-1" value="1" {if $request.iloscpokoinaiikondygnacji == 1} checked{/if}>
+								<span>1 <span class="count" id="71-1-count">(0)</span></span>
+							</label>
+							<label class="chip" for="71-2">
+								<input type="radio" name="iloscpokoinaiikondygnacji" id="71-2" value="2" {if $request.iloscpokoinaiikondygnacji == 2} checked{/if}>
+								<span>2 <span class="count" id="71-2-count">(0)</span></span>
+							</label>
+							<label class="chip" for="71-3">
+								<input type="radio" name="iloscpokoinaiikondygnacji" id="71-3" value="3" {if $request.iloscpokoinaiikondygnacji == 3} checked{/if}>
+								<span>3 <span class="count" id="71-3-count">(0)</span></span>
+							</label>
+							<label class="chip" for="71-4">
+								<input type="radio" name="iloscpokoinaiikondygnacji" id="71-4" value="4" {if $request.iloscpokoinaiikondygnacji == 4} checked{/if}>
+								<span>4 <span class="count" id="71-4-count">(0)</span></span>
+							</label>
+							<label class="chip" for="71-5">
+								<input type="radio" name="iloscpokoinaiikondygnacji" id="71-5" value="5" {if $request.iloscpokoinaiikondygnacji == 5} checked{/if}>
+								<span>5 <span class="count" id="71-5-count">(0)</span></span>
+							</label>
+							<!-- <label class="chip" for="71-5plus">
+								<input type="radio" name="iloscpokoinaiikondygnacji" id="71-5plus" value="5+">
+								<span>5+ <span class="count" id="71-5plus-count">(0)</span></span>
+							</label> -->
+							<label class="chip chip-ghost" for="71-0">
+								<input type="radio" name="iloscpokoinaiikondygnacji" id="71-0" value="-1" checked {if $request.iloscpokoinaiikondygnacji == -1} checked{/if}>
+								<span>Dowolna</span>
+							</label>
+							</div>
+						</div>
+					</div>
+
+					<div id="filters-height" class="filter-tab radio-group">
+						<h3 class="filter-header">Maks. wysokość budynku</h3>
+
+						<label class="custom-radio" for="26-1">
+							<input type="radio" name="wysokoscbudynku" id="26-1" value="1" {if $request.wysokoscbudynku == 1} checked{/if}>
+							<span>do 6 m <span class="count" id="26-1-count">(0)</span></span>
+						</label>
+
+						<label class="custom-radio" for="26-2">
+							<input type="radio" name="wysokoscbudynku" id="26-2" value="2" {if $request.wysokoscbudynku == 2} checked{/if}>
+							<span>od 6 m do 7 m <span class="count" id="26-2-count">(0)</span></span>
+						</label>
+
+						<label class="custom-radio" for="26-3">
+							<input type="radio" name="wysokoscbudynku" id="26-3" value="3" {if $request.wysokoscbudynku == 3} checked{/if}>
+							<span>od 7 m do 8 m <span class="count" id="26-3-count">(0)</span></span>
+						</label>
+
+						<label class="custom-radio" for="26-4">
+							<input type="radio" name="wysokoscbudynku" id="26-4" value="4" {if $request.wysokoscbudynku == 4} checked{/if}>
+							<span>od 8 m do 9 m <span class="count" id="26-4-count">(0)</span></span>
+						</label>
+
+						<label class="custom-radio" for="26-5">
+							<input type="radio" name="wysokoscbudynku" id="26-5" value="5" {if $request.wysokoscbudynku == 5} checked{/if}>
+							<span>od 9 m do 10 m <span class="count" id="26-5-count">(0)</span></span>
+						</label>
+
+						<label class="custom-radio" for="26-6">
+							<input type="radio" name="wysokoscbudynku" id="26-6" value="6" {if $request.wysokoscbudynku == 6} checked{/if}>
+							<span>powyżej 10 m <span class="count" id="26-6-count">(0)</span></span>
+						</label>
+					</div>
+
+					<div id="filters-roof-angle" class="filter-tab radio-group">
+						<h3 class="filter-header">Kąt nachylenia dachu</h3>
+
+						<label class="custom-radio" for="27-1">
+							<input type="radio" name="katnachyleniadachu" id="27-1" value="1" {if $request.katnachyleniadachu == 1} checked{/if}>
+							<span>do 30&deg; <span class="count" id="27-1-count">(0)</span></span>
+						</label>
+
+						<label class="custom-radio" for="27-2">
+							<input type="radio" name="katnachyleniadachu" id="27-2" value="2" {if $request.katnachyleniadachu == 2} checked{/if}>
+							<span>30&deg; do 35&deg; <span class="count" id="27-2-count">(0)</span></span>
+						</label>
+
+						<label class="custom-radio" for="27-3">
+							<input type="radio" name="katnachyleniadachu" id="27-3" value="3" {if $request.katnachyleniadachu == 3} checked{/if}>
+							<span>35&deg; do 40&deg; <span class="count" id="27-3-count">(0)</span></span>
+						</label>
+
+						<label class="custom-radio" for="27-4">
+							<input type="radio" name="katnachyleniadachu" id="27-4" value="4" {if $request.katnachyleniadachu == 4} checked{/if}>
+							<span>40&deg; do 45&deg; <span class="count" id="27-4-count">(0)</span></span>
+						</label>
+
+						<label class="custom-radio" for="27-5">
+							<input type="radio" name="katnachyleniadachu" id="27-5" value="5" {if $request.katnachyleniadachu == 5} checked{/if}>
+							<span>45&deg; i więcej <span class="count" id="27-5-count">(0)</span></span>
+						</label>
+					</div>
+
+					<div id="filters-strop" class="filter-tab radio-group">
+						<h3 class="filter-header">Strop nad parterem</h3>
+
+						<label class="custom-radio" for="28-lekki">
+							<input type="radio" name="rodzajstropu" id="28-lekki" value="lekki" {if $request.rodzajstropu == 'lekki'} checked{/if}>
+							<span>lekki <span class="count" id="28-lekki-count">(0)</span></span>
+						</label>
+
+						<label class="custom-radio" for="28-gestozebrowy">
+							<input type="radio" name="rodzajstropu" id="28-gestozebrowy" value="gestozebrowy" {if $request.rodzajstropu == 'gestozebrowy'} checked{/if}>
+							<span>gęstożebrowy <span class="count" id="28-gestozebrowy-count">(0)</span></span>
+						</label>
+
+						<label class="custom-radio" for="28-plyta_zelbetowa">
+							<input type="radio" name="rodzajstropu" id="28-plyta_zelbetowa" value="plyta_zelbetowa" {if $request.rodzajstropu == 'plyta_zelbetowa'} checked{/if}>
+							<span>płyta żelbetowa <span class="count" id="28-plyta_zelbetowa-count">(0)</span></span>
+						</label>
+
+						<label class="custom-radio" for="28-drewniany_belkowy">
+							<input type="radio" name="rodzajstropu" id="28-drewniany_belkowy" value="drewniany_belkowy" {if $request.rodzajstropu == 'drewniany_belkowy'} checked{/if}>
+							<span>drewniany belkowy <span class="count" id="28-drewniany_belkowy-count">(0)</span></span>
+						</label>
+					</div>
+
+					<div id="filters-kalenica" class="filter-tab radio-group">
+						<h3 class="filter-header">Kalenica</h3>
+
+						<label class="custom-radio" for="103-rownolegla_do_drogi">
+							<input type="radio" name="kalenica" id="103-rownolegla_do_drogi" value="rownolegla_do_drogi" {if $request.kalenica == 'rownolegla_do_drogi'} checked{/if}>
+							<span>równoległa do drogi <span class="count" id="103-rownolegla_do_drogi-count">(0)</span></span>
+						</label>
+
+						<label class="custom-radio" for="103-prostopadla_do_drogi">
+							<input type="radio" name="kalenica" id="103-prostopadla_do_drogi" value="prostopadla_do_drogi" {if $request.kalenica == 'prostopadla_do_drogi'} checked{/if}>
+							<span>prostopadła do drogi <span class="count" id="103-prostopadla_do_drogi-count">(0)</span></span>
+						</label>
+
+						<label class="custom-radio" for="103-brak">
+							<input type="radio" name="kalenica" id="103-brak" value="brak" {if $request.kalenica == 'brak'} checked{/if}>
+							<span>brak <span class="count" id="103-brak-count">(0)</span></span>
+						</label>
+					</div>
+
+					<div id="filters-dodatkowe" class="filter-tab">
+						<h3 class="filter-header">Dodatkowe udogodnienia</h3>
+
+						<div class="chips">
+							<label class="chk" for="104-1">
+								<input type="checkbox" id="104-1" name="balkon" value="1" {if $request.balkon} checked{/if}>
+								<span>Balkon <span class="count" id="104-1-count">(0)</span></span>
+							</label>
+
+							<label class="chk" for="c18-1">
+								<input type="checkbox" id="c18-1" name="duza_kotlownia" value="1" {if $request.duza_kotlownia} checked{/if}>
+								<span>Duża kotłownia <span class="count" id="c18-1-count">(0)</span></span>
+							</label>
+
+							<label class="chk" for="57-1">
+								<input type="checkbox" id="57-1" name="garderoba" value="1" {if $request.garderoba} checked{/if}>
+								<span>Garderoba <span class="count" id="57-1-count">(0)</span></span>
+							</label>
+
+							<label class="chk" for="c19-1">
+								<input type="checkbox" id="c19-1" name="kotlownia" value="1" {if $request.kotlownia} checked{/if}>
+								<span>Kotłownia na paliwo stałe <span class="count" id="c19-1-count">(0)</span></span>
+							</label>
+
+							<label class="chk" for="59-1">
+								<input type="checkbox" id="59-1" name="kuchniaodfrontu" value="1" {if $request.kuchniaodfrontu} checked{/if}>
+								<span>Kuchnia od frontu <span class="count" id="59-1-count">(0)</span></span>
+							</label>
+
+							<label class="chk" for="60-1">
+								<input type="checkbox" id="60-1" name="kuchniaodogrodu" value="1" {if $request.kuchniaodogrodu} checked{/if}>
+								<span>Kuchnia od ogrodu <span class="count" id="60-1-count">(0)</span></span>
+							</label>
+
+							<label class="chk" for="105-1">
+								<input type="checkbox" id="105-1" name="lukarna" value="1" {if $request.lukarna} checked{/if}>
+								<span>Lukarna <span class="count" id="105-1-count">(0)</span></span>
+							</label>
+
+							<label class="chk" for="113-1">
+								<input type="checkbox" id="113-1" name="masterbedroom" value="1" {if $request.masterbedroom} checked{/if}>
+								<span>Master bedroom <span class="count" id="113-1-count">(0)</span></span>
+							</label>
+
+							<label class="chk" for="c26-1">
+								<input type="checkbox" id="c26-1" name="od_poludnia" value="1" {if $request.od_poludnia} checked{/if}>
+								<span>Wjazd od południa <span class="count" id="c26-1-count">(0)</span></span>
+							</label>
+
+							<label class="chk" for="94-1">
+								<input type="checkbox" id="94-1" name="antresola" value="1" {if $request.antresola} checked{/if}>
+								<span>Otwarta przestrzeń <span class="count" id="94-1-count">(0)</span></span>
+							</label>
+
+							<label class="chk" for="119-1">
+								<input type="checkbox" id="119-1" name="osobnewc" value="1" {if $request.osobnewc} checked{/if}>
+								<span>Osobne w.c. <span class="count" id="119-1-count">(0)</span></span>
+							</label>
+
+							<label class="chk" for="96-1">
+								<input type="checkbox" id="96-1" name="pralnia" value="1" {if $request.pralnia} checked{/if}>
+								<span>Pralnia <span class="count" id="96-1-count">(0)</span></span>
+							</label>
+
+							<label class="chk" for="65-1">
+							<input type="checkbox" id="65-1" name="spizarnia" value="1" {if $request.spizarnia} checked{/if}>
+							<span>Spiżarnia <span class="count" id="65-1-count">(0)</span></span>
+							</label>
+
+							<label class="chk" for="47-1">
+								<input type="checkbox" id="47-1" name="wiatagarazowa" value="1" {if $request.wiatagarazowa} checked{/if}>
+								<span>Wiata <span class="count" id="47-1-count">(0)</span></span>
+							</label>
+
+							<label class="chk" for="c30-1">
+								<input type="checkbox" id="c30-1" name="zantresola" value="1" {if $request.zantresola} checked{/if}>
+								<span>Z antresolą <span class="count" id="c30-1-count">(0)</span></span>
+							</label>
+
+							<label class="chk" for="c31-1">
+								<input type="checkbox" id="c31-1" name="zestrychem" value="1" {if $request.zestrychem} checked{/if}>
+								<span>Ze strychem <span class="count" id="c31-1-count">(0)</span></span>
+							</label>
+
+							<label class="chk" for="67-1">
+								<input type="checkbox" id="67-1" name="zadaszonytaras" value="1" {if $request.zadaszonytaras} checked{/if}>
+								<span>Zadaszony taras <span class="count" id="67-1-count">(0)</span></span>
+							</label>
+						</div>
+					</div>
+
+					<div id="filters-garaz" class="filter-tab">
+						<h3 class="filter-header">Garaż</h3>
+						<div class="chips">
+							<label class="chk" for="78-0">
+								<input type="radio" id="78-0" name="garaz" value="-1" checked>
+								<span>Dowolnie</span>
+							</label>
+
+							<label class="chk" for="78-1">
+								<input type="radio" id="78-1" name="garaz" value="1" {if $request.garaz == 1} checked{/if}>
+								<span>1 stanowisko <span class="count" id="78-1-count">(0)</span></span>
+							</label>
+
+							<label class="chk" for="78-2">
+								<input type="radio" id="78-2" name="garaz" value="2" {if $request.garaz == 2} checked{/if}>
+								<span>2 i więcej <span class="count" id="78-2-count">(0)</span></span>
+							</label>
+
+							<label class="chk" for="78-3">
+								<input type="radio" id="78-3" name="garaz" value="3" {if $request.garaz == 3} checked{/if}>
+								<span>nie <span class="count" id="78-3-count">(0)</span></span>
+							</label>
+						</div>
+					</div>
+
+					<div id="filters-piwnica" class="filter-tab">
+						<h3 class="filter-header">Piwnica</h3>
+						<div class="chips">
+							<label class="chk" for="2-0">
+								<input type="radio" id="2-0" name="piwnica" value="-1" checked>
+								<span>Dowolnie</span>
+							</label>
+
+							<label class="chk" for="2-1">
+								<input type="radio" id="2-1" name="piwnica" value="1" {if $request.piwnica == 1} checked{/if}>
+								<span>tak <span class="count" id="2-1-count">(0)</span></span>
+							</label>
+
+							<label class="chk" for="2-2">
+								<input type="radio" id="2-2" name="piwnica" value="2" {if $request.piwnica == 2} checked{/if}>
+								<span>nie <span class="count" id="2-2-count">(0)</span></span>
+							</label>
+						</div>
+					</div>
+
+					<div id="filters-kolekcje" class="filter-tab radio-group">
+						<h3 class="filter-header">Kolekcje</h3>
+
+						<label class="custom-radio" for="kolekcje-sardynia">
+							<input type="radio" name="kolekcje" id="kolekcje-sardynia" value="sardynia" {if $request.kolekcje == 'sardynia'} checked{/if}>
+							<span>SARDYNIA <span class="count" id="kolekcje-sardynia-count">(0)</span></span>
+						</label>
+					</div>
+
 				</div>
 
-				<div class="cs-box">
-					<ul>
-						<li class="half-spaced">
-							<div class="jui-select-box white cs-select" id="height-box">
-								<select name="wysokoscbudynku" id="26">
-									<option value="">maks. wys. budynku</option>
-									<option id="26-1" value="1" {if $request.wysokoscbudynku == 1} selected{/if}>do 6 m
-									</option>
-									<option id="26-2" value="2" {if $request.wysokoscbudynku == 2} selected{/if}>od 6 m
-										do 7 m</option>
-									<option id="26-3" value="3" {if $request.wysokoscbudynku == 3} selected{/if}>od 7 m
-										do 8 m</option>
-									<option id="26-4" value="4" {if $request.wysokoscbudynku == 4} selected{/if}>od 8 m
-										do 9 m</option>
-									<option id="26-5" value="5" {if $request.wysokoscbudynku == 5} selected{/if}>od 9 m
-										do 10 m</option>
-									<option id="26-6" value="6" {if $request.wysokoscbudynku == 6} selected{/if}>powyżej
-										10 m</option>
-								</select>
-							</div>
 
-							<div class="jui-select-box right white cs-select" id="angle-box">
-								<select name="katnachyleniadachu" id="27">
-									<option value="">kąt nach. dachu</option>
-									<option id="27-1" value="1" {if $request.katnachyleniadachu == 1} selected{/if}>do
-										30&deg;</option>
-									<option id="27-2" value="2" {if $request.katnachyleniadachu == 2} selected{/if}>
-										30&deg; do 35&deg;
-									</option>
-									<option id="27-3" value="3" {if $request.katnachyleniadachu == 3} selected{/if}>
-										35&deg; do 40&deg;
-									</option>
-									<option id="27-4" value="4" {if $request.katnachyleniadachu == 4} selected{/if}>
-										40&deg; do 45&deg;
-									</option>
-									<option id="27-5" value="5" {if $request.katnachyleniadachu == 5} selected{/if}>
-										45&deg; i więcej
-									</option>
-								</select>
-							</div>
-						</li>
 
-						<li class="spaced">
-							<div class="jui-select-box white cs-select" id="ceiling-box">
-								<select name="rodzajstropu" id="28">
-									<option value="">strop nad parterem</option>
-									<option id="28-lekki" value="lekki" {if $request.rodzajstropu == 'lekki'}
-										selected{/if}>lekki</option>
-									<option id="28-gestozebrowy" value="gestozebrowy"
-										{if $request.rodzajstropu == 'gestozebrowy'} selected{/if}>gęstożebrowy</option>
-									<option id="28-plyta_zelbetowa" value="plyta_zelbetowa"
-										{if $request.rodzajstropu == 'plyta_zelbetowa'} selected{/if}>płyta żelbetowa
-									</option>
-									<option id="28-drewniany_belkowy" value="drewniany_belkowy"
-										{if $request.rodzajstropu == 'drewniany_belkowy'} selected{/if}>drewniany
-										belkowy</option>
-								</select>
-							</div>
-
-							<div class="jui-select-box right white cs-select" id="ridge-box">
-								<select name="kalenica" id="103">
-									<option value="">kalenica</option>
-									<option id="103-rownolegla_do_drogi" value="rownolegla_do_drogi"
-										{if $request.kalenica == 'rownolegla_do_drogi'} selected{/if}>równoległa do
-										drogi</option>
-									<option id="103-prostopadla_do_drogi" value="prostopadla_do_drogi"
-										{if $request.kalenica == 'prostopadla_do_drogi'} selected{/if}>prostopadła do
-										drogi</option>
-									<option id="103-brak" value="brak" {if $request.kalenica == 'brak'} selected{/if}>
-										brak</option>
-								</select>
-							</div>
-						</li>
-
-						<li>
-							<p class="head">Funkcja - opcje dodatkowe</p>
-							<div>
-								<ul class="input-box">
-									<li>
-										<input type="checkbox" id="65-1" name="spizarnia" value="1"
-											{if $request.spizarnia} checked{/if}><label for="65-1">Spiżarnia</label>
-										<span class="count" id="65-1-count">(0)</span>
-									</li>
-									<li>
-										<input type="checkbox" id="57-1" name="garderoba" value="1"
-											{if $request.garderoba} checked{/if}><label for="57-1">Garderoba</label>
-										<span class="count" id="57-1-count">(0)</span>
-									</li>
-									<li>
-										<input type="checkbox" id="c18-1" name="duza_kotlownia" value="1"
-											{if $request.duza_kotlownia} checked{/if}><label for="c18-1">Duża
-											kotłownia</label> <span class="count" id="c18-1-count">(0)</span>
-									</li>
-								</ul>
-							</div>
-						</li>
-						<li>
-							<div>
-								<ul class="input-box">
-									<li>
-										<input type="checkbox" id="47-1" name="wiatagarazowa" value="1"
-											{if $request.wiatagarazowa} checked{/if}><label for="47-1">Wiata</label>
-										<span class="count" id="47-1-count">(0)</span>
-									</li>
-									<li>
-										<input type="checkbox" id="96-1" name="pralnia" value="1" {if $request.pralnia}
-											checked{/if}><label for="96-1">Pralnia</label> <span class="count"
-											id="96-1-count">(0)</span>
-									</li>
-									<li>
-										<input type="checkbox" id="c26-1" name="od_poludnia" value="1"
-											{if $request.od_poludnia} checked{/if}><label for="c26-1">Wjazd od
-											południa</label> <span class="count" id="c26-1-count">(0)</span>
-									</li>
-								</ul>
-							</div>
-						</li>
-						<li>
-							<div>
-								<ul class="input-box">
-									<li>
-										<input type="checkbox" id="104-1" name="balkon" value="1" {if $request.balkon}
-											checked{/if}><label for="104-1">Balkon</label> <span class="count"
-											id="104-1-count">(0)</span>
-									</li>
-									<li>
-										<input type="checkbox" id="105-1" name="lukarna" value="1" {if $request.lukarna}
-											checked{/if}><label for="105-1">Lukarna</label> <span class="count"
-											id="105-1-count">(0)</span>
-									</li>
-									<li>
-										<input type="checkbox" id="113-1" name="masterbedroom" value="1"
-											{if $request.masterbedroom} checked{/if}><label for="113-1">Master
-											bedroom</label> <span class="count" id="113-1-count">(0)</span>
-									</li>
-								</ul>
-							</div>
-						</li>
-						<li>
-							<div>
-								<input type="checkbox" id="59-1" name="kuchniaodfrontu" value="1"
-									{if $request.kuchniaodfrontu} checked{/if}><label for="59-1">Kuchnia od
-									frontu</label> <span class="count" id="59-1-count">(0)</span>
-								<div class="fright">
-									<input type="checkbox" id="60-1" name="kuchniaodogrodu" value="1"
-										{if $request.kuchniaodogrodu} checked{/if}><label for="60-1">Kuchnia od
-										ogrodu</label> <span class="count" id="60-1-count">(0)</span>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div>
-								<input type="checkbox" id="c19-1" name="kotlownia" value="1" {if $request.kotlownia}
-									checked{/if}><label for="c19-1">Kotłownia na paliwo stałe</label> <span
-									class="count" id="c19-1-count">(0)</span>
-								<div class="fright">
-									<input type="checkbox" id="67-1" name="zadaszonytaras" value="1"
-										{if $request.zadaszonytaras} checked{/if}><label for="67-1">Zadaszony
-										taras</label> <span class="count" id="67-1-count">(0)</span>
-								</div>
-							</div>
-						</li>
-						<li class="half-spaced">
-							<div>
-								<input type="checkbox" id="94-1" name="antresola" value="1" {if $request.antresola}
-									checked{/if}><label for="94-1">Otwarta przestrzeń</label> <span class="count"
-									id="94-1-count">(0)</span>
-								<div class="fright">
-									<input type="checkbox" id="119-1" name="osobnewc" value="1" {if $request.osobnewc}
-										checked{/if}><label for="119-1">Osobne w.c.</label> <span class="count"
-										id="119-1-count">(0)</span>
-								</div>
-							</div>
-						</li>
-						<li>
-							<p class="head">Garaż</p>
-							<div>
-								<input type="radio" id="78-0" name="garaz" value="0"><label for="78-0"
-									class="spaced">Dowolnie</label>
-								<input type="radio" id="78-1" name="garaz" value="1" {if $request.garaz == 1}
-									checked{/if}><label for="78-1">1 stanowisko</label> <span class="count"
-									id="78-1-count">(0)</span>
-								<input type="radio" id="78-2" name="garaz" value="2" {if $request.garaz == 2}
-									checked{/if}><label for="78-2">2 i więcej</label> <span class="count"
-									id="78-2-count">(0)</span>
-								<input type="radio" id="78-3" name="garaz" value="3" {if $request.garaz == 3}
-									checked{/if}><label for="78-3">nie</label> <span class="count"
-									id="78-3-count">(0)</span>
-							</div>
-						</li>
-						<li class="half-spaced">
-							<p class="head">Piwnica</p>
-							<div>
-								<input type="radio" id="2-0" name="piwnica" value="0"><label for="2-0"
-									class="spaced">Dowolnie</label>
-								<input type="radio" id="2-1" name="piwnica" value="1" {if $request.piwnica == 1}
-									checked{/if}><label for="2-1">tak</label> <span class="count"
-									id="2-1-count">(0)</span>
-								<input type="radio" id="2-2" name="piwnica" value="2" {if $request.piwnica == 2}
-									checked{/if}><label for="2-2">nie</label> <span class="count"
-									id="2-2-count">(0)</span>
-							</div>
-						</li>
-						<li>
-							<button id="cs-reset" class="wired">Resetuj wyszukiwarkę</button>
-							<button id="cs-fetch" class="baton">Pokaż projekty</button>
-							<p id="data-read" style="display: none;">trwa wczytywanie danych</p>
-						</li>
-					</ul>
+			
+				<div id="filters-footer">
+					<button id="cs-reset">✖ Wyczyść filtry</button>
+					<div class="filters-footer-right">
+						<p id="data-read" style="display: none;">trwa wczytywanie danych</p>
+						<button id="cs-fetch" class="baton">Pokaż projekty <span id="total-count"></span> <!-- ➞ --></button>
+					</div>					
 				</div>
+
 			</form>
 		</div>
 	</div>
-	<button type="button" id="cs-overlay-close" class="blue-overlay-close">Zamknij</button>
+	<button type="button" id="cs-overlay-close" class="blue-overlay-close"><span class="close-x">✖</span> Zamknij</button>
 </div>
+
+<div class="dark-overlay"></div>
+
 {*<script src="/js/app.js"></script>*}
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
@@ -683,6 +992,7 @@
 <script src="/js/storage.js"></script>
 <script src="/js/clicksearch.js?v={$version}"></script>
 <script src="/js/common.js?v={$version}"></script>
+<script src="/js/filters.js?v={$version}"></script>
 
 {foreach $js_includes as $_js}
 	<script src="/js/{$_js}"></script>

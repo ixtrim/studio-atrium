@@ -104,7 +104,7 @@ class Point7_WebApp
 
         $moduleConfig = self::parseModuleXml($moduleXml);
         $actionName   = $forcedAction
-            ?? ucfirst(strtolower($_GET['action'] ?? ''))
+            ?? self::normalizeActionName($_GET['action'] ?? '')
             ?: $moduleConfig['default_action'];
 
         // Load module PHP file from APP_PATH/Modules/ before class_exists check
@@ -788,6 +788,12 @@ class Point7_WebApp
     {
         // 'index' → 'Index', 'project' → 'Project'
         return ucfirst(strtolower($name));
+    }
+
+    private static function normalizeActionName(string $name): string
+    {
+        // 'search' → 'Search', 'click_search_numbers' → 'ClickSearchNumbers'
+        return str_replace('_', '', ucwords(strtolower($name), '_'));
     }
 
     public static function resolveValue(string $value): string

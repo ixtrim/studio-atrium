@@ -96,6 +96,42 @@ class SmartyFunctionsRegistry
         }
     }
 
+    private function fetchArticlesTicks(): array
+    {
+        $defaults = [
+            [
+                'title'      => 'Wszystkie projekty domów',
+                'teaser'     => 'Fragment tekstu pierwsze zdania zajawki',
+                'link_url'   => '#',
+                'link_label' => 'Czytaj dalej...',
+            ],
+            [
+                'title'      => 'Dlaczego warto zdecydować się na projekty domów Studio Atrium',
+                'teaser'     => 'Fragment tekstu',
+                'link_url'   => '#',
+                'link_label' => 'Czytaj dalej...',
+            ],
+            [
+                'title'      => 'Najczęściej zadawane pytania',
+                'teaser'     => 'Fragment tekstu pierwsze zdania zajawki',
+                'link_url'   => '#',
+                'link_label' => 'Czytaj dalej...',
+            ],
+        ];
+        try {
+            $pdo  = \Point7_WebApp::getPDO();
+            $stmt = $pdo->query(
+                'SELECT title, teaser, link_url, link_label
+                 FROM homepage_articles_ticks
+                 ORDER BY sorting ASC, id ASC'
+            );
+            $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+            return $rows ?: $defaults;
+        } catch (\Exception $e) {
+            return $defaults;
+        }
+    }
+
     private function fetchContactData(): array
     {
         try {
@@ -162,6 +198,9 @@ class SmartyFunctionsRegistry
 
         // Assign header promo marquee text from settings table
         $smarty->assign('promo_marquee_text', $this->fetchPromoMarqueeText());
+
+        // Assign homepage article ticks (zajawki artykułów)
+        $smarty->assign('articles_ticks', $this->fetchArticlesTicks());
 
         // Assign footer menu columns (a/b/c) from footer_menus table
         $smarty->assign('footer_menus', $this->fetchMenuColumns());

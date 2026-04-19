@@ -8,6 +8,7 @@ class Finder
 {
         private $pdo;
     private $clicksearchSets;
+    private $lastClickSearchStats;
 
     public function __construct(\PDO $pdo, $clicksearchSets = null)
     {
@@ -48,6 +49,74 @@ class Finder
         $stmt->execute();
         $rows = $stmt->fetchAll();
         return new EntityCollection(array_map([$this, 'hydrate'], $rows));
+    }
+
+    /**
+     * Runs the "click search" filter query. The actual DB query lives in
+     * site-backend's ProjectSearch module (called over HTTP, server-to-server) —
+     * see AppPackages/StudioAtrium/Application/Helper/ClickSearchMap.php for how
+     * $searchParams/$csParams are keyed (project_param.id => value/range).
+     * $arg4/$arg5 are accepted for call-site compatibility but currently unused.
+     *
+     * @return int[] matching project ids
+     */
+    public function clickSearch(array $searchParams, array $csParams, $categoryId = null, $arg4 = false, $arg5 = false, $sortByArea = false): array
+    {
+        $result = $this->_callClickSearchApi($searchParams, $csParams, $categoryId);
+        $this->lastClickSearchStats = $result['stats'] ?? ['total' => 0, 'types' => [], 'sets' => []];
+        return $result['projectIds'] ?? [];
+    }
+
+    /**
+     * Per-facet result counts from the most recent clickSearch() call.
+     * Must be called after clickSearch() — matches the calling convention
+     * already used in Modules/Project.php's doClickSearchNumbers().
+     */
+    public function getClickSearchStats(): array
+    {
+        return $this->lastClickSearchStats ?? ['total' => 0, 'types' => [], 'sets' => []];
+    }
+
+    private function _callClickSearchApi(array $searchParams, array $csParams, $categoryId): array
+    {
+        $url = \Point7_WebApp::getConfigParam('helpers.clicksearch_api');
+        if (!$url) {
+            return ['projectIds' => [], 'stats' => ['total' => 0, 'types' => [], 'sets' => []]];
+        }
+
+        $typProjektu = $csParams['_typ_projektu'] ?? null;
+        unset($csParams['_typ_projektu']);
+
+        $payload = json_encode([
+            'searchParams' => $searchParams,
+            'csParams'     => $csParams,
+            'categoryId'   => $categoryId,
+            'typProjektu'  => $typProjektu,
+        ]);
+
+        $ch = curl_init($url);
+        curl_setopt_array($ch, [
+            CURLOPT_POST           => true,
+            CURLOPT_POSTFIELDS     => $payload,
+            CURLOPT_HTTPHEADER     => ['Content-Type: application/json'],
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_CONNECTTIMEOUT => 3,
+            CURLOPT_TIMEOUT        => 8,
+        ]);
+        $body = curl_exec($ch);
+        $ok   = $body !== false && curl_getinfo($ch, CURLINFO_HTTP_CODE) === 200;
+        curl_close($ch);
+
+        if (!$ok) {
+            return ['projectIds' => [], 'stats' => ['total' => 0, 'types' => [], 'sets' => []]];
+        }
+
+        $decoded = json_decode($body, true);
+        if (!is_array($decoded) || ($decoded['status'] ?? null) !== 'ok') {
+            return ['projectIds' => [], 'stats' => ['total' => 0, 'types' => [], 'sets' => []]];
+        }
+
+        return $decoded;
     }
 
     private function hydrate(array $row): Project

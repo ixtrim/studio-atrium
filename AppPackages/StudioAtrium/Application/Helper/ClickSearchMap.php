@@ -5,6 +5,8 @@ class ClickSearchMap
 {
     private static $map = [
         'type' => 'typ_projektu',
+        2      => 'piwnica',
+        3      => 'garaz',
         26     => 'wysokoscbudynku',
         27     => 'katnachyleniadachu',
         28     => 'rodzajstropu',
