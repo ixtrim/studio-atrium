@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $link = 'https://www.studioatrium.pl/';
 $search = 'wynik-wyszukiwania/?';

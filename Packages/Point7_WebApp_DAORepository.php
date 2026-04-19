@@ -8,13 +8,15 @@
  */
 abstract class Point7_WebApp_DAORepository
 {
-    private array $daoInstances = [];
+    private $daoInstances = [];
+    private $pdo;
 
-    public function __construct(private ?PDO $pdo = null)
+    public function __construct($pdo = null)
     {
+        $this->pdo = $pdo;
     }
 
-    public function getPDO(): ?PDO
+    public function getPDO()
     {
         return $this->pdo;
     }
@@ -23,18 +25,25 @@ abstract class Point7_WebApp_DAORepository
      * Resolve and cache a DAO instance by its 'dao::key' identifier.
      * Add a case here once the corresponding Entity DAO class exists.
      */
-    protected function _getDAO(string $key): mixed
+    protected function _getDAO($key)
     {
         if (isset($this->daoInstances[$key])) {
             return $this->daoInstances[$key];
         }
 
-        $dao = match ($key) {
-            'dao::attachment' => $this->buildAttachmentDAO(),
-            'dao::settings' => new \StudioAtrium\Entity\Settings\DAO($this->pdo),
-            'dao::adwords_clicks' => new \StudioAtrium\Entity\Adwords\Clicks\DAO($this->pdo),
-            default => null,
-        };
+        switch ($key) {
+            case 'dao::attachment':
+                $dao = $this->buildAttachmentDAO();
+                break;
+            case 'dao::settings':
+                $dao = new \StudioAtrium\Entity\Settings\DAO($this->pdo);
+                break;
+            case 'dao::adwords_clicks':
+                $dao = new \StudioAtrium\Entity\Adwords\Clicks\DAO($this->pdo);
+                break;
+            default:
+                $dao = null;
+        }
 
         if ($dao === null) {
             throw new \RuntimeException(

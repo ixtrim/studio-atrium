@@ -7,21 +7,20 @@
  */
 class Point7_WebApp
 {
-    private static array                       $config        = [];
-    private static ?Point7_WebApp_Session      $session       = null;
-    private static ?Point7_WebApp_Cache_File   $cache         = null;
-    private static ?Point7_WebApp_Cache_File   $userCache     = null;
-    private static array                       $loggers       = [];
-    private static mixed                       $daoRepository = null;
-    private static array                       $registry      = [];
-    private static ?PDO                        $pdo           = null;
-    private static ?Point7_WebApp_Context_Application $appCtx = null;
-
+    private static $config        = [];
+    private static $session       = null;
+    private static $cache         = null;
+    private static $userCache     = null;
+    private static $loggers       = [];
+    private static $daoRepository = null;
+    private static $registry      = [];
+    private static $pdo           = null;
+    private static $appCtx = null;
     // -------------------------------------------------------------------------
     // Bootstrap
     // -------------------------------------------------------------------------
 
-    public static function init(object $initConfig): void
+    public static function init($initConfig)
     {
         $configFile = APP_PATH . '/Conf/config-www.xml';
         self::$config = self::parseConfig($configFile);
@@ -81,7 +80,7 @@ class Point7_WebApp
     // Request Dispatch
     // -------------------------------------------------------------------------
 
-    public static function run(): void
+    public static function run()
     {
         $moduleName = ucfirst(strtolower($_GET['module'] ?? 'index'));
         $moduleName = self::normalizeModuleName($moduleName);
@@ -89,7 +88,7 @@ class Point7_WebApp
         self::dispatch($moduleName, null, 0);
     }
 
-    private static function dispatch(string $moduleName, ?string $forcedAction, int $depth): void
+    private static function dispatch(string $moduleName, $forcedAction, int $depth)
     {
         if ($depth > 10) {
             http_response_code(500);
@@ -190,12 +189,12 @@ class Point7_WebApp
         array $moduleConfig,
         string $actionName,
         bool $exitOk,
-        ?string $resultKey,
+        $resultKey,
         Point7_WebApp_Request $request,
         Point7_WebApp_Context_Application $appCtx,
         Point7_WebApp_Context_Response $responseCtx,
         int $depth
-    ): void {
+    ) {
         $resultMap = $moduleConfig['result_map'][$actionName] ?? [];
 
         // Determine which result_map key to use
@@ -226,7 +225,7 @@ class Point7_WebApp
         Point7_WebApp_Context_Response $responseCtx,
         array $result,
         int $depth
-    ): void {
+    ) {
         $type = $result['type'] ?? 'dummy';
 
         switch ($type) {
@@ -286,7 +285,7 @@ class Point7_WebApp
         }
     }
 
-    private static function renderSmarty(array $result, Point7_WebApp_Context_Response $responseCtx): void
+    private static function renderSmarty(array $result, Point7_WebApp_Context_Response $responseCtx)
     {
         $smarty = new Smarty();
         $tplDir     = self::getConfigParam('views.smarty.template_dir') ?? '';
@@ -325,9 +324,9 @@ class Point7_WebApp
 
         // Assign smarty.* params from result_map; JSON-decode arrays
         foreach ($result['params'] ?? [] as $k => $v) {
-            if (str_starts_with($k, 'smarty.')) {
+            if (strpos($k, 'smarty.') === 0) {
                 $varName = substr($k, 7);
-                if (is_string($v) && str_starts_with(ltrim($v), '[')) {
+                if (is_string($v) && strpos(ltrim($v), '[') === 0) {
                     $decoded = json_decode($v, true);
                     if (is_array($decoded)) $v = $decoded;
                 }
@@ -419,10 +418,10 @@ class Point7_WebApp
     private static function applyValidator(
         Point7_WebApp_Request_Filtered $request,
         string $paramName,
-        mixed $value,
+        $value,
         string $validator,
         array $paramDef
-    ): void {
+    ) {
         switch ($validator) {
             case 'Integer':
                 if (!is_numeric($value) || (string)(int)$value !== (string)$value) {
@@ -469,7 +468,7 @@ class Point7_WebApp
         $results  = [];
         $commands = $moduleConfig['commands']['before'] ?? [];
         // Sort by priority descending
-        usort($commands, fn($a, $b) => (int)$b['priority'] - (int)$a['priority']);
+        usort($commands, function($a, $b) { return (int)$b['priority'] - (int)$a['priority']; });
 
         foreach ($commands as $cmd) {
             $action = $cmd['action'] ?? '*';
@@ -684,15 +683,13 @@ class Point7_WebApp
 
     private static function mapViewType(string $class): string
     {
-        return match (true) {
-            str_contains($class, 'JSON')            => 'json',
-            str_contains($class, 'JavaScript')      => 'javascript',
-            str_contains($class, 'Smarty3')         => 'smarty3',
-            str_contains($class, 'SendGeneratedFile'),
-            str_contains($class, 'File')            => 'file',
-            str_contains($class, 'Dummy')           => 'dummy',
-            default                                  => 'smarty3',
-        };
+        if (strpos($class, 'JSON') !== false) return 'json';
+        if (strpos($class, 'JavaScript') !== false) return 'javascript';
+        if (strpos($class, 'Smarty3') !== false) return 'smarty3';
+        if (strpos($class, 'SendGeneratedFile') !== false) return 'file';
+        if (strpos($class, 'File') !== false) return 'file';
+        if (strpos($class, 'Dummy') !== false) return 'dummy';
+        return 'smarty3';
     }
 
     private static function parseCommandIncludes(\SimpleXMLElement $node, string $baseDir): array
@@ -722,7 +719,7 @@ class Point7_WebApp
     // Static service accessors
     // -------------------------------------------------------------------------
 
-    public static function getConfigParam(string $key): mixed
+    public static function getConfigParam(string $key)
     {
         $parts = explode('.', $key);
         $node  = self::$config;
@@ -756,17 +753,17 @@ class Point7_WebApp
         return self::$cache ?? (self::$cache = new Point7_WebApp_Cache_File());
     }
 
-    public static function getDAORepository(): mixed
+    public static function getDAORepository()
     {
         return self::$daoRepository;
     }
 
-    public static function getRegistryObject(string $key): mixed
+    public static function getRegistryObject(string $key)
     {
         return self::$registry[$key] ?? null;
     }
 
-    public static function getPDO(): ?PDO
+    public static function getPDO()
     {
         return self::$pdo;
     }
@@ -775,7 +772,7 @@ class Point7_WebApp
     // Helpers
     // -------------------------------------------------------------------------
 
-    private static function send404(int $depth): void
+    private static function send404(int $depth)
     {
         // Try the Page module's Display404 action exactly once (depth guard)
         if ($depth === 0) {

@@ -1,18 +1,22 @@
 <?php
 class Point7_CMS_Attachment_DAO_PDOMySQL
 {
-    private ?PDO    $pdo       = null;
-    private string  $table     = 'attachment';
-    private string  $setNames  = 'utf8';
-
-    public function configure(string $key, mixed $value): void
+    private $pdo       = null;
+    private $table     = 'attachment';
+    private $setNames  = 'utf8';
+    public function configure(string $key, $value)
     {
-        match ($key) {
-            'pdo_handle' => $this->pdo      = $value,
-            'table_name' => $this->table    = (string)$value,
-            'set_names'  => $this->setNames = (string)$value,
-            default      => null,
-        };
+        switch ($key) {
+            case 'pdo_handle':
+                $this->pdo = $value;
+                break;
+            case 'table_name':
+                $this->table = (string)$value;
+                break;
+            case 'set_names':
+                $this->setNames = (string)$value;
+                break;
+        }
     }
 
     private function pdo(): PDO
@@ -23,7 +27,7 @@ class Point7_CMS_Attachment_DAO_PDOMySQL
         return $this->pdo;
     }
 
-    public function getForObject(string $uid, ?string $profile = null): array
+    public function getForObject(string $uid, $profile = null): array
     {
         $sql    = "SELECT * FROM `{$this->table}` WHERE owner_uid = :uid";
         $params = [':uid' => $uid];
@@ -37,7 +41,7 @@ class Point7_CMS_Attachment_DAO_PDOMySQL
         return array_map([$this, 'hydrate'], $stmt->fetchAll());
     }
 
-    public function getWithChildren(int $id): ?Point7_CMS_Attachment
+    public function getWithChildren(int $id)
     {
         $stmt = $this->pdo()->prepare("SELECT * FROM `{$this->table}` WHERE id = :id");
         $stmt->execute([':id' => $id]);
@@ -55,7 +59,7 @@ class Point7_CMS_Attachment_DAO_PDOMySQL
         return $attachment;
     }
 
-    public function store(Point7_CMS_Attachment $a): void
+    public function store(Point7_CMS_Attachment $a)
     {
         if ($a->getId()) {
             $stmt = $this->pdo()->prepare(

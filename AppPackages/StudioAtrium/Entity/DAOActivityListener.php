@@ -3,16 +3,16 @@ namespace StudioAtrium\Entity;
 
 class DAOActivityListener
 {
-    private string $file   = '';
-    private string $format = '%{timestamp} - %{message}';
+    private $file   = '';
+    private $format = '%{timestamp} - %{message}';
 
-    public function configure(string $key, string $value): void
+    public function configure(string $key, string $value)
     {
         if ($key === 'file')   $this->file   = $value;
         if ($key === 'format') $this->format = $value;
     }
 
-    public function onEvent(string $event, mixed $object): void
+    public function onEvent(string $event, $object)
     {
         if (!$this->file) return;
         $file = \Point7_WebApp::resolveValue($this->file);

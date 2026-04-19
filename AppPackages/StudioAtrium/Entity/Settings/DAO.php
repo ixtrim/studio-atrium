@@ -6,13 +6,18 @@ use StudioAtrium\Entity\EntityCollection;
 
 class DAO
 {
-    public function __construct(private \PDO $pdo) {}
+        private $pdo;
+
+    public function __construct(\PDO $pdo)
+    {
+        $this->pdo = $pdo;
+    }
 
     /**
      * Find settings matching the given params.
      * Returns EntityCollection or false if nothing found.
      */
-    public function find(\Point7_AbstractDAO_FinderParams $params): EntityCollection|false
+    public function find(\Point7_AbstractDAO_FinderParams $params)
     {
         $result = $params->buildWhere();
         $whereClause = $result['sql'] ?? '';

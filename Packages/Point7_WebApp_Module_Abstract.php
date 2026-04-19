@@ -3,10 +3,13 @@
 /** Thrown by _exit() to stop module execution and signal a result. */
 class Point7_WebApp_ExitException extends RuntimeException
 {
-    public function __construct(
-        public readonly bool    $isOk      = true,
-        public readonly ?string $resultKey = null
-    ) {
+    public $isOk;
+    public $resultKey;
+
+    public function __construct($isOk = true, $resultKey = null)
+    {
+        $this->isOk      = $isOk;
+        $this->resultKey = $resultKey;
         parent::__construct();
     }
 }
@@ -14,10 +17,13 @@ class Point7_WebApp_ExitException extends RuntimeException
 /** Thrown by _forward() to dispatch to another module/action. */
 class Point7_WebApp_ForwardException extends RuntimeException
 {
-    public function __construct(
-        public readonly string  $module,
-        public readonly ?string $action = null
-    ) {
+    public $module;
+    public $action;
+
+    public function __construct($module, $action = null)
+    {
+        $this->module = $module;
+        $this->action = $action;
         parent::__construct();
     }
 }
@@ -25,10 +31,10 @@ class Point7_WebApp_ForwardException extends RuntimeException
 /** Thrown by _redirect() to issue an HTTP redirect. */
 class Point7_WebApp_RedirectException extends RuntimeException
 {
-    public readonly string $url;
-    public readonly int    $httpCode;
+    public $url;
+    public $httpCode;
 
-    public function __construct(string $url, int $httpCode = 302)
+    public function __construct($url, $httpCode = 302)
     {
         $this->url      = $url;
         $this->httpCode = $httpCode;
@@ -38,14 +44,14 @@ class Point7_WebApp_RedirectException extends RuntimeException
 
 abstract class Point7_WebApp_Module_Abstract
 {
-    protected mixed $_daoRepository = null;
+    protected $_daoRepository = null;
 
     public function _initAction(
         $action,
         Point7_WebApp_Request $request,
         $appContext,
         $responseContext
-    ): void {
+    ) {
         $this->_daoRepository = Point7_WebApp::getDAORepository();
     }
 
@@ -54,17 +60,17 @@ abstract class Point7_WebApp_Module_Abstract
      * $isOk selects on_exec_ok vs on_exec_error fallback.
      * $resultKey triggers on_{resultKey} in the result_map if set.
      */
-    protected function _exit(bool $isOk = true, ?string $resultKey = null): never
+    protected function _exit($isOk = true, $resultKey = null)
     {
         throw new Point7_WebApp_ExitException($isOk, $resultKey);
     }
 
-    protected function _forward(string $module, ?string $action = null): never
+    protected function _forward($module, $action = null)
     {
         throw new Point7_WebApp_ForwardException($module, $action);
     }
 
-    protected function _redirect(string $url, int $httpCode = 302): never
+    protected function _redirect($url, $httpCode = 302)
     {
         throw new Point7_WebApp_RedirectException($url, $httpCode);
     }

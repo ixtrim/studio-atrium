@@ -6,11 +6,9 @@
  */
 class Point7_WebApp_View_Smarty3_Wrapper
 {
-    public string $template_dir = '';
-    public string $compile_dir  = '';
-
-    private ?Smarty $smarty = null;
-
+    public $template_dir = '';
+    public $compile_dir  = '';
+    private $smarty = null;
     private function getSmarty(): Smarty
     {
         if ($this->smarty === null) {
@@ -24,7 +22,7 @@ class Point7_WebApp_View_Smarty3_Wrapper
         return $this->smarty;
     }
 
-    public function assign(string $var, mixed $value): void
+    public function assign(string $var, $value)
     {
         $this->getSmarty()->assign($var, $value);
     }
@@ -34,7 +32,7 @@ class Point7_WebApp_View_Smarty3_Wrapper
         return $this->getSmarty()->fetch($template);
     }
 
-    public function display(string $template): void
+    public function display(string $template)
     {
         $this->getSmarty()->display($template);
     }

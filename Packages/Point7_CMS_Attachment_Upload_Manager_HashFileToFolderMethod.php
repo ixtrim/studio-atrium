@@ -1,8 +1,7 @@
 <?php
 class Point7_CMS_Attachment_Upload_Manager_HashFileToFolderMethod
 {
-    private int $buckets;
-
+    private $buckets;
     public function __construct(int $buckets = 100)
     {
         $this->buckets = $buckets;

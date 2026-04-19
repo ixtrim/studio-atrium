@@ -6,7 +6,12 @@ use StudioAtrium\Entity\Carousel;
 
 class Finder
 {
-    public function __construct(private \PDO $pdo) {}
+        private $pdo;
+
+    public function __construct(\PDO $pdo)
+    {
+        $this->pdo = $pdo;
+    }
 
     public function getList(bool $onlyEnabled = true): EntityCollection
     {
@@ -50,6 +55,6 @@ class Finder
             }
         }
 
-        return new EntityCollection(array_map(fn($d) => new Carousel($d), array_values($carousels)));
+        return new EntityCollection(array_map(function($d) { return new Carousel($d); }, array_values($carousels)));
     }
 }

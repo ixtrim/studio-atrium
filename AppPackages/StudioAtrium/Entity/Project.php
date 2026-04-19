@@ -7,74 +7,73 @@ class Project
     const STATUS_DRAFT     = 'draft';
     const STATUS_HIDDEN    = 'hidden';
 
-    private int $id = 0;
-    private ?int $idOld = null;
-    private string $symbolAlpha = '';
-    private int $symbolNum = 0;
-    private string $name = '';
-    private ?string $alternateName = null;
-    private ?string $searchNames = null;
-    private ?string $shortDescription = null;
-    private ?string $description = null;
-    private ?string $alternateDescription = null;
-    private ?string $price = null;
-    private ?string $discount = null;
-    private string $type = 'house';
-    private string $status = 'published';
-    private ?string $paramsGeneral = null;
-    private ?string $paramsList = null;
-    private ?string $buildCost = null;
-    private ?string $metaTitle = null;
-    private ?string $metaDescription = null;
-    private ?string $modifyDate = null;
-    private ?string $technology = null;
-    private ?string $extraData = null;
-    private array $attachmentsByType = [];
-
+    private $id = 0;
+    private $idOld = null;
+    private $symbolAlpha = '';
+    private $symbolNum = 0;
+    private $name = '';
+    private $alternateName = null;
+    private $searchNames = null;
+    private $shortDescription = null;
+    private $description = null;
+    private $alternateDescription = null;
+    private $price = null;
+    private $discount = null;
+    private $type = 'house';
+    private $status = 'published';
+    private $paramsGeneral = null;
+    private $paramsList = null;
+    private $buildCost = null;
+    private $metaTitle = null;
+    private $metaDescription = null;
+    private $modifyDate = null;
+    private $technology = null;
+    private $extraData = null;
+    private $attachmentsByType = [];
     public function getId(): int { return $this->id; }
-    public function setId(int $v): void { $this->id = $v; }
-    public function getIdOld(): ?int { return $this->idOld; }
-    public function setIdOld(?int $v): void { $this->idOld = $v; }
+    public function setId(int $v) { $this->id = $v; }
+    public function getIdOld() { return $this->idOld; }
+    public function setIdOld($v) { $this->idOld = $v; }
     public function getSymbolAlpha(): string { return $this->symbolAlpha; }
-    public function setSymbolAlpha(string $v): void { $this->symbolAlpha = $v; }
+    public function setSymbolAlpha(string $v) { $this->symbolAlpha = $v; }
     public function getSymbolNum(): int { return $this->symbolNum; }
-    public function setSymbolNum(int $v): void { $this->symbolNum = $v; }
+    public function setSymbolNum(int $v) { $this->symbolNum = $v; }
     public function getName(): string { return $this->name; }
-    public function setName(string $v): void { $this->name = $v; }
-    public function getAlternateName(): ?string { return $this->alternateName; }
-    public function setAlternateName(?string $v): void { $this->alternateName = $v; }
-    public function getShortDescription(): ?string { return $this->shortDescription; }
-    public function setShortDescription(?string $v): void { $this->shortDescription = $v; }
-    public function getDescription(): ?string { return $this->description; }
-    public function setDescription(?string $v): void { $this->description = $v; }
-    public function getAlternateDescription(): ?string { return $this->alternateDescription; }
-    public function setAlternateDescription(?string $v): void { $this->alternateDescription = $v; }
-    public function getPrice(): ?string { return $this->price; }
-    public function setPrice(?string $v): void { $this->price = $v; }
-    public function getDiscount(): ?string { return $this->discount; }
-    public function setDiscount(?string $v): void { $this->discount = $v; }
+    public function setName(string $v) { $this->name = $v; }
+    public function getAlternateName() { return $this->alternateName; }
+    public function setAlternateName($v) { $this->alternateName = $v; }
+    public function getShortDescription() { return $this->shortDescription; }
+    public function setShortDescription($v) { $this->shortDescription = $v; }
+    public function getDescription() { return $this->description; }
+    public function setDescription($v) { $this->description = $v; }
+    public function getAlternateDescription() { return $this->alternateDescription; }
+    public function setAlternateDescription($v) { $this->alternateDescription = $v; }
+    public function getPrice() { return $this->price; }
+    public function setPrice($v) { $this->price = $v; }
+    public function getDiscount() { return $this->discount; }
+    public function setDiscount($v) { $this->discount = $v; }
     public function getType(): string { return $this->type; }
-    public function setType(string $v): void { $this->type = $v; }
+    public function setType(string $v) { $this->type = $v; }
     public function getStatus(): string { return $this->status; }
-    public function setStatus(string $v): void { $this->status = $v; }
-    public function getParamsGeneral(): ?string { return $this->paramsGeneral; }
-    public function setParamsGeneral(?string $v): void { $this->paramsGeneral = $v; }
-    public function getParamsList(): ?string { return $this->paramsList; }
-    public function setParamsList(?string $v): void { $this->paramsList = $v; }
-    public function getBuildCost(): ?string { return $this->buildCost; }
-    public function setBuildCost(?string $v): void { $this->buildCost = $v; }
-    public function getMetaTitle(): ?string { return $this->metaTitle; }
-    public function setMetaTitle(?string $v): void { $this->metaTitle = $v; }
-    public function getMetaDescription(): ?string { return $this->metaDescription; }
-    public function setMetaDescription(?string $v): void { $this->metaDescription = $v; }
-    public function getModifyDate(): ?string { return $this->modifyDate; }
-    public function setModifyDate(?string $v): void { $this->modifyDate = $v; }
-    public function getTechnology(): ?string { return $this->technology; }
-    public function setTechnology(?string $v): void { $this->technology = $v; }
-    public function getExtraData(): ?string { return $this->extraData; }
-    public function setExtraData(?string $v): void { $this->extraData = $v; }
+    public function setStatus(string $v) { $this->status = $v; }
+    public function getParamsGeneral() { return $this->paramsGeneral; }
+    public function setParamsGeneral($v) { $this->paramsGeneral = $v; }
+    public function getParamsList() { return $this->paramsList; }
+    public function setParamsList($v) { $this->paramsList = $v; }
+    public function getBuildCost() { return $this->buildCost; }
+    public function setBuildCost($v) { $this->buildCost = $v; }
+    public function getMetaTitle() { return $this->metaTitle; }
+    public function setMetaTitle($v) { $this->metaTitle = $v; }
+    public function getMetaDescription() { return $this->metaDescription; }
+    public function setMetaDescription($v) { $this->metaDescription = $v; }
+    public function getModifyDate() { return $this->modifyDate; }
+    public function setModifyDate($v) { $this->modifyDate = $v; }
+    public function getTechnology() { return $this->technology; }
+    public function setTechnology($v) { $this->technology = $v; }
+    public function getExtraData() { return $this->extraData; }
+    public function setExtraData($v) { $this->extraData = $v; }
 
-    public function setAttachmentsByType(array $byType): void { $this->attachmentsByType = $byType; }
+    public function setAttachmentsByType(array $byType) { $this->attachmentsByType = $byType; }
 
     public function getAttachmentsByType(string $type): \StudioAtrium\Entity\EntityCollection
     {

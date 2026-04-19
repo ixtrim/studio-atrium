@@ -3,7 +3,7 @@ namespace StudioAtrium\Application\Helper;
 
 class ClickSearchMap
 {
-    private static array $map = [
+    private static $map = [
         'type' => 'typ_projektu',
         26     => 'wysokoscbudynku',
         27     => 'katnachyleniadachu',
@@ -39,8 +39,7 @@ class ClickSearchMap
         134    => 'sauna',
         135    => 'wyspakuchenna',
     ];
-
-    private static array $paramsNames = [
+    private static $paramsNames = [
         26  => 'wysokość budynku',
         27  => 'kąt nachylenia dachu',
         28  => 'rodzaj stropu',
@@ -75,8 +74,7 @@ class ClickSearchMap
         134 => 'sauna',
         135 => 'wyspa kuchenna',
     ];
-
-    private static array $valueNames = [
+    private static $valueNames = [
         'lekki'             => 'lekki',
         'gęstożebrowy'      => 'gęstożebrowy',
         'płyta żelbetowa'   => 'płyta żelbetowa',
@@ -98,8 +96,7 @@ class ClickSearchMap
         'krecone'           => 'kręcone',
         'zespocznikiem'     => 'ze spocznikiem',
     ];
-
-    private static array $paramsUnits = [
+    private static $paramsUnits = [
         26 => 'm',
         27 => '°',
         45 => '',
@@ -107,16 +104,14 @@ class ClickSearchMap
         69 => '',
         71 => '',
     ];
-
-    private static array $checkboxParams = [47, 57, 59, 60, 65, 67, 94, 96, 102, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 119, 134, 135];
-    private static array $selectParams   = [28, 54, 109, 110];
-
+    private static $checkboxParams = [47, 57, 59, 60, 65, 67, 94, 96, 102, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 119, 134, 135];
+    private static $selectParams   = [28, 54, 109, 110];
     public static function getMap(): array
     {
         return self::$map;
     }
 
-    public static function getParamId(string $value): int|string
+    public static function getParamId(string $value)
     {
         $flipped = array_flip(self::$map);
         return $flipped[$value] ?? 0;
@@ -192,17 +187,17 @@ class ClickSearchMap
         ];
     }
 
-    public static function getTypeParam(string $key): ?string
+    public static function getTypeParam(string $key)
     {
         return null;
     }
 
-    public static function getTypeName(string $typeId): ?string
+    public static function getTypeName(string $typeId)
     {
         return null;
     }
 
-    public static function getTypeParamId(string $type): ?string
+    public static function getTypeParamId(string $type)
     {
         return null;
     }

@@ -6,9 +6,14 @@ use StudioAtrium\Entity\EntityCollection;
 
 class Finder
 {
-    public function __construct(private \PDO $pdo) {}
+        private $pdo;
 
-    public function getById(int $id): ?Category
+    public function __construct(\PDO $pdo)
+    {
+        $this->pdo = $pdo;
+    }
+
+    public function getById(int $id)
     {
         $stmt = $this->pdo->prepare('SELECT * FROM project_category WHERE id = :id');
         $stmt->execute([':id' => $id]);
@@ -16,7 +21,7 @@ class Finder
         return $row ? $this->hydrate($row) : null;
     }
 
-    public function getByLink(string $link): ?Category
+    public function getByLink(string $link)
     {
         $stmt = $this->pdo->prepare("SELECT * FROM project_category WHERE link = :link AND status = 'published' LIMIT 1");
         $stmt->execute([':link' => $link]);
@@ -70,7 +75,7 @@ class Finder
                         $children[] = $this->rowToMenuArray($row, []);
                     }
                 }
-                usort($children, fn($a, $b) => $a['sorting'] <=> $b['sorting']);
+                usort($children, function($a, $b) { return $a['sorting'] - $b['sorting']; });
                 $root['children'] = $children;
             }
             unset($root);

@@ -3,28 +3,27 @@ namespace StudioAtrium\Entity;
 
 class Settings
 {
-    private int $id = 0;
-    private string $name = '';
-    private string $charId = '';
-    private string $valueType = 'string';
-    private ?float $numValue = null;
-    private ?string $stringValue = null;
-    private ?string $family = null;
-
+    private $id = 0;
+    private $name = '';
+    private $charId = '';
+    private $valueType = 'string';
+    private $numValue = null;
+    private $stringValue = null;
+    private $family = null;
     public function getId(): int { return $this->id; }
-    public function setId(int $v): void { $this->id = $v; }
+    public function setId(int $v) { $this->id = $v; }
     public function getName(): string { return $this->name; }
-    public function setName(string $v): void { $this->name = $v; }
+    public function setName(string $v) { $this->name = $v; }
     public function getCharId(): string { return $this->charId; }
-    public function setCharId(string $v): void { $this->charId = $v; }
+    public function setCharId(string $v) { $this->charId = $v; }
     public function getValueType(): string { return $this->valueType; }
-    public function setValueType(string $v): void { $this->valueType = $v; }
-    public function getNumValue(): ?float { return $this->numValue; }
-    public function setNumValue(?float $v): void { $this->numValue = $v; }
-    public function getStringValue(): ?string { return $this->stringValue; }
-    public function setStringValue(?string $v): void { $this->stringValue = $v; }
-    public function getFamily(): ?string { return $this->family; }
-    public function setFamily(?string $v): void { $this->family = $v; }
+    public function setValueType(string $v) { $this->valueType = $v; }
+    public function getNumValue() { return $this->numValue; }
+    public function setNumValue($v) { $this->numValue = $v; }
+    public function getStringValue() { return $this->stringValue; }
+    public function setStringValue($v) { $this->stringValue = $v; }
+    public function getFamily() { return $this->family; }
+    public function setFamily($v) { $this->family = $v; }
 
     public function toArray(): array
     {

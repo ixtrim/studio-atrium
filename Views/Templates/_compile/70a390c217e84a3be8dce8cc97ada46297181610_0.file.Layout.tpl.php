@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.6, created on 2026-08-23 19:49:19
+/* Smarty version 3.1.48, created on 2026-08-24 05:36:26
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '4.5.6',
-  'unifunc' => 'content_6a8b4ebf0cc7c9_50640540',
+  'version' => '3.1.48',
+  'unifunc' => 'content_6a8bbc3abbf9e6_08576862',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:Layout/Footer.tpl' => 1,
   ),
 ),false)) {
-function content_6a8b4ebf0cc7c9_50640540 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6a8bbc3abbf9e6_08576862 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="pl">
 	<head>

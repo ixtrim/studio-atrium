@@ -5,14 +5,14 @@
  */
 
 if (!function_exists('p7_array_get')) {
-    function p7_array_get(array $arr, string $key, mixed $default = null): mixed
+    function p7_array_get(array $arr, string $key, $default = null)
     {
         return $arr[$key] ?? $default;
     }
 }
 
 if (!function_exists('p7_dot_get')) {
-    function p7_dot_get(array $arr, string $key, mixed $default = null): mixed
+    function p7_dot_get(array $arr, string $key, $default = null)
     {
         $parts = explode('.', $key);
         $node  = $arr;

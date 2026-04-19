@@ -1,12 +1,11 @@
 <?php
 class Point7_WebApp_Request
 {
-    protected array  $params  = [];
-    protected array  $raw     = [];
-    protected array  $files   = [];
-    protected array  $cookies = [];
-    protected string $method  = 'GET';
-
+    protected $params  = [];
+    protected $raw     = [];
+    protected $files   = [];
+    protected $cookies = [];
+    protected $method  = 'GET';
     public function __construct(
         array $get     = [],
         array $post    = [],
@@ -21,7 +20,7 @@ class Point7_WebApp_Request
         $this->method  = strtoupper($method);
     }
 
-    public static function fromGlobals(): static
+    public static function fromGlobals()
     {
         return new static(
             $_GET    ?? [],
@@ -32,12 +31,12 @@ class Point7_WebApp_Request
         );
     }
 
-    public function getParam(string $name): mixed
+    public function getParam(string $name)
     {
         return $this->params[$name] ?? null;
     }
 
-    public function getRawParam(string $name): mixed
+    public function getRawParam(string $name)
     {
         return $this->raw[$name] ?? null;
     }
@@ -52,12 +51,12 @@ class Point7_WebApp_Request
         return $this->method;
     }
 
-    public function getCookieParam(string $name): mixed
+    public function getCookieParam(string $name)
     {
         return $this->cookies[$name] ?? null;
     }
 
-    public function getFile(string $name): mixed
+    public function getFile(string $name)
     {
         return $this->files[$name] ?? null;
     }

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.6, created on 2026-08-23 19:49:19
+/* Smarty version 3.1.48, created on 2026-08-24 05:36:26
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/MainPage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '4.5.6',
-  'unifunc' => 'content_6a8b4ebf0e3eb1_75562633',
+  'version' => '3.1.48',
+  'unifunc' => 'content_6a8bbc3abdb782_00206007',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6a8b4ebf0e3eb1_75562633 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6a8bbc3abdb782_00206007 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="overlay">
 	<div class="overlay-project-box" id="over-pop">

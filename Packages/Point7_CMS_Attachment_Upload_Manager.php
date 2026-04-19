@@ -1,13 +1,12 @@
 <?php
 class Point7_CMS_Attachment_Upload_Manager
 {
-    private string  $ownerUid;
-    private string  $tmpPath;
-    private string  $resourcePath;
-    private int     $dirMode       = 0775;
-    private ?object $hashMethod    = null;
-    private int     $folderBuckets = 100;
-
+    private $ownerUid;
+    private $tmpPath;
+    private $resourcePath;
+    private $dirMode       = 0775;
+    private $hashMethod    = null;
+    private $folderBuckets = 100;
     public function __construct(string $ownerUid, string $tmpPath, string $resourcePath)
     {
         $this->ownerUid     = $ownerUid;
@@ -15,17 +14,17 @@ class Point7_CMS_Attachment_Upload_Manager
         $this->resourcePath = rtrim($resourcePath, '/');
     }
 
-    public function setDirMode(int $mode): void
+    public function setDirMode(int $mode)
     {
         $this->dirMode = $mode;
     }
 
-    public function setHashFileMethod(object $method): void
+    public function setHashFileMethod($method)
     {
         $this->hashMethod = $method;
     }
 
-    public function setFolderBuckets(int $buckets): void
+    public function setFolderBuckets(int $buckets)
     {
         $this->folderBuckets = $buckets;
     }

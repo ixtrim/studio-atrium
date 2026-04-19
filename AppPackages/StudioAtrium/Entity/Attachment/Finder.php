@@ -3,7 +3,12 @@ namespace StudioAtrium\Entity\Attachment;
 
 class Finder
 {
-    public function __construct(private \Point7_CMS_Attachment_DAO_PDOMySQL $dao) {}
+        private $dao;
+
+    public function __construct(\Point7_CMS_Attachment_DAO_PDOMySQL $dao)
+    {
+        $this->dao = $dao;
+    }
 
     public function getAttachmentsByProfile(
         string $profile,

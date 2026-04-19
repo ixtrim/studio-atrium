@@ -3,40 +3,58 @@ namespace StudioAtrium\Application\WWW;
 
 class UrlGenerator
 {
-    private string $baseUrl = '';
-
+    private $baseUrl = '';
     public function __construct(string $baseUrl = '')
     {
         $this->baseUrl = rtrim($baseUrl, '/');
     }
 
-    public function generateUrl(array $params, mixed $tpl = null): string
+    public function generateUrl(array $params, $tpl = null): string
     {
         $module = $params['module'] ?? '';
         $action = $params['action'] ?? '';
 
-        $url = match(true) {
-            $module === 'project' && in_array($action, ['item','house']) => $this->projectUrl($params),
-            $module === 'project' && $action === 'garage'               => $this->garageUrl($params),
-            $module === 'project' && $action === 'other'                => $this->otherProjectUrl($params),
-            $module === 'project' && $action === 'realizations'         => '/projekty-domow/realizacje/',
-            $module === 'panel'   && $action === 'account'              => '/panel',
-            $module === 'panel'   && $action === 'message'              => '/panel/wiadomosci' . (isset($params['project_id']) ? '?project_id=' . (int)$params['project_id'] : ''),
-            $module === 'panel'                                         => '/panel',
-            $module === 'favourite' && $action === 'list'               => '/ulubione/lista.html',
-            $module === 'favourite' && $action === 'compare'            => '/ulubione/porownanie.html',
-            $module === 'order'   && $action === 'cart'                 => '/zamowienie/koszyk.html',
-            $module === 'discuss' && $action === 'forum'                => '/forum/',
-            $module === 'discuss' && $action === 'category'             => '/forum/' . (int)($params['id'] ?? 0),
-            $module === 'discuss' && $action === 'thread'               => '/forum/post,' . (int)($params['id'] ?? 0),
-            $module === 'catalog' && $action === 'form'                 => '/katalog/zapytanie',
-            $module === 'article' && $action === 'hash_tag'             => '/baza-wiedzy' . (isset($params['tag']) ? ',' . (int)$params['tag'] : '') . '/',
-            $module === 'article' && $action === 'item'                 => $this->articleUrl($params),
-            $module === 'project_extend' && $action === 'addons'        => '/dodatki/' . $this->slugify('') . ',' . (int)($params['id'] ?? 0) . '.html',
-            $module === 'contact'                                       => '/kontakt',
-            $module === 'varia'   && $action === 'addons'               => '/dodatki/',
-            default => '/?module=' . urlencode($module) . '&action=' . urlencode($action) . $this->extraParams($params),
-        };
+        if ($module === 'project' && in_array($action, ['item','house'])) {
+            $url = $this->projectUrl($params);
+        } elseif ($module === 'project' && $action === 'garage') {
+            $url = $this->garageUrl($params);
+        } elseif ($module === 'project' && $action === 'other') {
+            $url = $this->otherProjectUrl($params);
+        } elseif ($module === 'project' && $action === 'realizations') {
+            $url = '/projekty-domow/realizacje/';
+        } elseif ($module === 'panel' && $action === 'account') {
+            $url = '/panel';
+        } elseif ($module === 'panel' && $action === 'message') {
+            $url = '/panel/wiadomosci' . (isset($params['project_id']) ? '?project_id=' . (int)$params['project_id'] : '');
+        } elseif ($module === 'panel') {
+            $url = '/panel';
+        } elseif ($module === 'favourite' && $action === 'list') {
+            $url = '/ulubione/lista.html';
+        } elseif ($module === 'favourite' && $action === 'compare') {
+            $url = '/ulubione/porownanie.html';
+        } elseif ($module === 'order' && $action === 'cart') {
+            $url = '/zamowienie/koszyk.html';
+        } elseif ($module === 'discuss' && $action === 'forum') {
+            $url = '/forum/';
+        } elseif ($module === 'discuss' && $action === 'category') {
+            $url = '/forum/' . (int)($params['id'] ?? 0);
+        } elseif ($module === 'discuss' && $action === 'thread') {
+            $url = '/forum/post,' . (int)($params['id'] ?? 0);
+        } elseif ($module === 'catalog' && $action === 'form') {
+            $url = '/katalog/zapytanie';
+        } elseif ($module === 'article' && $action === 'hash_tag') {
+            $url = '/baza-wiedzy' . (isset($params['tag']) ? ',' . (int)$params['tag'] : '') . '/';
+        } elseif ($module === 'article' && $action === 'item') {
+            $url = $this->articleUrl($params);
+        } elseif ($module === 'project_extend' && $action === 'addons') {
+            $url = '/dodatki/' . $this->slugify('') . ',' . (int)($params['id'] ?? 0) . '.html';
+        } elseif ($module === 'contact') {
+            $url = '/kontakt';
+        } elseif ($module === 'varia' && $action === 'addons') {
+            $url = '/dodatki/';
+        } else {
+            $url = '/?module=' . urlencode($module) . '&action=' . urlencode($action) . $this->extraParams($params);
+        }
 
         return $this->baseUrl . $url;
     }

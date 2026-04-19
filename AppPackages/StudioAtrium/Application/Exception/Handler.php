@@ -3,7 +3,7 @@ namespace StudioAtrium\Application\Exception;
 
 class Handler
 {
-    public function handleException(\Throwable $e): void
+    public function handleException(\Throwable $e)
     {
         $code = $e->getCode() ?: 500;
         if (!headers_sent()) {
@@ -26,7 +26,7 @@ class Handler
                 $smarty->setCompileDir(APP_PATH . '/Views/Templates/_compile');
                 $smarty->assign('exception', $e);
                 $smarty->display('Error/500.tpl');
-            } catch (\Throwable) {
+            } catch (\Throwable $t) {
                 echo '<h1>Internal Server Error</h1>';
             }
         } else {

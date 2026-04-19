@@ -6,7 +6,12 @@ use StudioAtrium\Entity\EntityCollection;
 
 class Finder
 {
-    public function __construct(private \PDO $pdo) {}
+        private $pdo;
+
+    public function __construct(\PDO $pdo)
+    {
+        $this->pdo = $pdo;
+    }
 
     /**
      * @param string|false|null $doctype  false = article+news, null = all, string = specific type
@@ -14,15 +19,15 @@ class Finder
      * @param string|null $status
      * @param int|null $limit
      * @param int $offset
-     * @param mixed $catId  (ignored)
+     * @param $catId  (ignored)
      * @param int $notListing  if 1, include not_listing docs
      * @param bool $latestFirst
      */
     public function getList(
         $doctype = null,
-        ?string $charId = null,
-        ?string $status = null,
-        ?int $limit = null,
+        $charId = null,
+        $status = null,
+        $limit = null,
         int $offset = 0,
         $catId = null,
         int $notListing = 0,

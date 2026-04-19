@@ -16,7 +16,7 @@ class Favourite extends WWW\AbstractModule
 	/**
 	 * @see Point7_WebApp_Module_Abstract::_initAction()
 	 */
-	public function _initAction($action, \Point7_WebApp_Request $request, $appContext, $responseContext): void
+	public function _initAction($action, \Point7_WebApp_Request $request, $appContext, $responseContext)
 	{
 		parent::_initAction($action, $request, $appContext, $responseContext);
 		$this->_projectFinder = $this->_daoRepository->getProjectFinder(\Point7_WebApp::getConfigParam('paths.clicksearch_sets'));

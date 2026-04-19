@@ -1,16 +1,15 @@
 <?php
 class Point7_CMS_Attachment_DeleteHelper
 {
-    private Point7_CMS_Attachment_DAO_PDOMySQL $dao;
-    private string $resourcePath;
-
+    private $dao;
+    private $resourcePath;
     public function __construct(Point7_CMS_Attachment_DAO_PDOMySQL $dao, string $resourcePath)
     {
         $this->dao          = $dao;
         $this->resourcePath = rtrim($resourcePath, '/');
     }
 
-    public function deleteAttachment(Point7_CMS_Attachment $attachment): void
+    public function deleteAttachment(Point7_CMS_Attachment $attachment)
     {
         // Delete children first
         foreach ($attachment->getChildAttachments() as $child) {

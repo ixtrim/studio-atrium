@@ -3,8 +3,7 @@ namespace StudioAtrium\Application\WWW;
 
 class RequestResolver
 {
-    private \Point7_WebApp_Request $request;
-
+    private $request;
     public function __construct(\Point7_WebApp_Request $request)
     {
         $this->request = $request;

@@ -12,14 +12,13 @@ if (!defined('PDF_IMAGE_SCALE_RATIO'))define('PDF_IMAGE_SCALE_RATIO',1.25);
 
 class ProjectPDF extends \TCPDF
 {
-    private string $footerHtml = '';
-
-    public function setFooterHTML(string $html): void
+    private $footerHtml = '';
+    public function setFooterHTML(string $html)
     {
         $this->footerHtml = $html;
     }
 
-    public function Footer(): void
+    public function Footer()
     {
         if ($this->footerHtml) {
             $this->writeHTML($this->footerHtml, true, false, true, false, '');

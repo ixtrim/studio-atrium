@@ -6,7 +6,12 @@ use StudioAtrium\Entity\EntityCollection;
 
 class Finder
 {
-    public function __construct(private \PDO $pdo) {}
+        private $pdo;
+
+    public function __construct(\PDO $pdo)
+    {
+        $this->pdo = $pdo;
+    }
 
     public function getLastPosts(int $limit = 5): EntityCollection
     {

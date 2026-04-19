@@ -1,23 +1,22 @@
 <?php
 class Point7_WebApp_Cache_File
 {
-    private string $path = '';
-
-    public function configure(string $key, string $value): void
+    private $path = '';
+    public function configure(string $key, string $value)
     {
         if ($key === 'path') {
             $this->path = $value;
         }
     }
 
-    public function init(): void
+    public function init()
     {
         if ($this->path && !is_dir($this->path)) {
             @mkdir($this->path, 0775, true);
         }
     }
 
-    public function get(string $key): mixed
+    public function get(string $key)
     {
         $file = $this->keyFile($key);
         if (!$file || !file_exists($file)) {
@@ -31,7 +30,7 @@ class Point7_WebApp_Cache_File
         return $data['val'];
     }
 
-    public function set(string $key, mixed $value, int $ttl = 3600): void
+    public function set(string $key, $value, int $ttl = 3600)
     {
         $file = $this->keyFile($key);
         if (!$file) return;
@@ -40,7 +39,7 @@ class Point7_WebApp_Cache_File
         file_put_contents($file, serialize(['val' => $value, 'exp' => time() + $ttl]), LOCK_EX);
     }
 
-    public function delete(string $key): void
+    public function delete(string $key)
     {
         $file = $this->keyFile($key);
         if ($file && file_exists($file)) @unlink($file);

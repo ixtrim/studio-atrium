@@ -11,48 +11,47 @@ class Document
     const DOCTYPE_NEWS     = 'news';
     const DOCTYPE_PARTNER  = 'partner';
 
-    private int $id = 0;
-    private string $title = '';
-    private ?string $teaser = null;
-    private ?string $content = null;
-    private string $status = 'published';
-    private string $doctype = 'article';
-    private ?string $charId = null;
-    private ?string $keywords = null;
-    private ?string $publishDate = null;
-    private ?string $metaTitle = null;
-    private ?string $metaDescription = null;
-    private ?string $extraData = null;
-    private int $notListing = 0;
-    private array $attachments = [];
-
+    private $id = 0;
+    private $title = '';
+    private $teaser = null;
+    private $content = null;
+    private $status = 'published';
+    private $doctype = 'article';
+    private $charId = null;
+    private $keywords = null;
+    private $publishDate = null;
+    private $metaTitle = null;
+    private $metaDescription = null;
+    private $extraData = null;
+    private $notListing = 0;
+    private $attachments = [];
     public function getId(): int { return $this->id; }
-    public function setId(int $v): void { $this->id = $v; }
+    public function setId(int $v) { $this->id = $v; }
     public function getTitle(): string { return $this->title; }
-    public function setTitle(string $v): void { $this->title = $v; }
-    public function getTeaser(): ?string { return $this->teaser; }
-    public function setTeaser(?string $v): void { $this->teaser = $v; }
-    public function getContent(): ?string { return $this->content; }
-    public function setContent(?string $v): void { $this->content = $v; }
+    public function setTitle(string $v) { $this->title = $v; }
+    public function getTeaser() { return $this->teaser; }
+    public function setTeaser($v) { $this->teaser = $v; }
+    public function getContent() { return $this->content; }
+    public function setContent($v) { $this->content = $v; }
     public function getStatus(): string { return $this->status; }
-    public function setStatus(string $v): void { $this->status = $v; }
+    public function setStatus(string $v) { $this->status = $v; }
     public function getDoctype(): string { return $this->doctype; }
-    public function setDoctype(string $v): void { $this->doctype = $v; }
-    public function getCharId(): ?string { return $this->charId; }
-    public function setCharId(?string $v): void { $this->charId = $v; }
-    public function getKeywords(): ?string { return $this->keywords; }
-    public function setKeywords(?string $v): void { $this->keywords = $v; }
-    public function getPublishDate(): ?string { return $this->publishDate; }
-    public function setPublishDate(?string $v): void { $this->publishDate = $v; }
-    public function getMetaTitle(): ?string { return $this->metaTitle; }
-    public function setMetaTitle(?string $v): void { $this->metaTitle = $v; }
-    public function getMetaDescription(): ?string { return $this->metaDescription; }
-    public function setMetaDescription(?string $v): void { $this->metaDescription = $v; }
-    public function getExtraData(): ?string { return $this->extraData; }
-    public function setExtraData(?string $v): void { $this->extraData = $v; }
+    public function setDoctype(string $v) { $this->doctype = $v; }
+    public function getCharId() { return $this->charId; }
+    public function setCharId($v) { $this->charId = $v; }
+    public function getKeywords() { return $this->keywords; }
+    public function setKeywords($v) { $this->keywords = $v; }
+    public function getPublishDate() { return $this->publishDate; }
+    public function setPublishDate($v) { $this->publishDate = $v; }
+    public function getMetaTitle() { return $this->metaTitle; }
+    public function setMetaTitle($v) { $this->metaTitle = $v; }
+    public function getMetaDescription() { return $this->metaDescription; }
+    public function setMetaDescription($v) { $this->metaDescription = $v; }
+    public function getExtraData() { return $this->extraData; }
+    public function setExtraData($v) { $this->extraData = $v; }
     public function getNotListing(): int { return $this->notListing; }
-    public function setNotListing(int $v): void { $this->notListing = $v; }
-    public function setAttachments(array $v): void { $this->attachments = $v; }
+    public function setNotListing(int $v) { $this->notListing = $v; }
+    public function setAttachments(array $v) { $this->attachments = $v; }
     public function getAttachments(): array { return $this->attachments; }
 
     public function toArray(): array

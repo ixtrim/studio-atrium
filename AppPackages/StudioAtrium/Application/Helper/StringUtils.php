@@ -3,11 +3,10 @@ namespace StudioAtrium\Application\Helper;
 
 class StringUtils
 {
-    private static array $map = [
+    private static $map = [
         'ą'=>'a','ć'=>'c','ę'=>'e','ł'=>'l','ń'=>'n','ó'=>'o','ś'=>'s','ź'=>'z','ż'=>'z',
         'Ą'=>'A','Ć'=>'C','Ę'=>'E','Ł'=>'L','Ń'=>'N','Ó'=>'O','Ś'=>'S','Ź'=>'Z','Ż'=>'Z',
     ];
-
     public static function polishToLatin(string $text): string
     {
         return strtr($text, self::$map);

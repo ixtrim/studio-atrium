@@ -3,13 +3,12 @@ namespace StudioAtrium\Application\WWW;
 
 class ImageHelper
 {
-    private string $mediaBase = 'https://media.studioatrium.pl';
-
+    private $mediaBase = 'https://media.studioatrium.pl';
     /**
      * {image} Smarty function — generates image URL for a project.
      * Types: 'render', 'sketch'
      */
-    public function fImage(array $params, mixed $tpl = null): string
+    public function fImage(array $params, $tpl = null): string
     {
         $type    = $params['type']    ?? 'render';
         $project = $params['project'] ?? [];

@@ -10,51 +10,50 @@ class User
     const STATUS_DISABLED = 'disabled';
     const STATUS_PENDING  = 'pending';
 
-    private int     $id           = 0;
-    private string  $email        = '';
-    private string  $password     = '';
-    private string  $name         = '';
-    private string  $surname      = '';
-    private string  $nick         = '';
-    private string  $phone        = '';
-    private string  $type         = self::TYPE_USER;
-    private string  $status       = self::STATUS_ENABLED;
-    private ?string $hash         = null;
-    private bool    $impersonated = false;
-
+    private $id           = 0;
+    private $email        = '';
+    private $password     = '';
+    private $name         = '';
+    private $surname      = '';
+    private $nick         = '';
+    private $phone        = '';
+    private $type         = self::TYPE_USER;
+    private $status       = self::STATUS_ENABLED;
+    private $hash         = null;
+    private $impersonated = false;
     public function getId(): int               { return $this->id; }
-    public function setId(int $v): void        { $this->id = $v; }
+    public function setId(int $v)        { $this->id = $v; }
 
     public function getEmail(): string         { return $this->email; }
-    public function setEmail(string $v): void  { $this->email = $v; }
+    public function setEmail(string $v)  { $this->email = $v; }
 
     public function getPassword(): string         { return $this->password; }
-    public function setPassword(string $v): void  { $this->password = $v; }
+    public function setPassword(string $v)  { $this->password = $v; }
 
     public function getName(): string          { return $this->name; }
-    public function setName(string $v): void   { $this->name = $v; }
+    public function setName(string $v)   { $this->name = $v; }
 
     public function getSurname(): string           { return $this->surname; }
-    public function setSurname(string $v): void    { $this->surname = $v; }
+    public function setSurname(string $v)    { $this->surname = $v; }
 
     public function getNick(): string          { return $this->nick; }
-    public function setNick(string $v): void   { $this->nick = $v; }
+    public function setNick(string $v)   { $this->nick = $v; }
 
     public function getPhone(): string         { return $this->phone; }
-    public function setPhone(string $v): void  { $this->phone = $v; }
+    public function setPhone(string $v)  { $this->phone = $v; }
 
     public function getType(): string          { return $this->type; }
-    public function setType(string $v): void   { $this->type = $v; }
+    public function setType(string $v)   { $this->type = $v; }
 
     public function getStatus(): string            { return $this->status; }
-    public function setStatus(string $v): void     { $this->status = $v; }
+    public function setStatus(string $v)     { $this->status = $v; }
 
-    public function getHash(): ?string         { return $this->hash; }
-    public function setHash(?string $v): void  { $this->hash = $v; }
+    public function getHash()         { return $this->hash; }
+    public function setHash($v)  { $this->hash = $v; }
 
     public function isImpersonated(): bool     { return $this->impersonated; }
 
-    public function impersonate(int $originalId): void
+    public function impersonate(int $originalId)
     {
         $this->impersonated = true;
     }

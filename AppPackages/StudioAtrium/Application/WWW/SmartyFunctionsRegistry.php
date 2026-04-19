@@ -3,20 +3,19 @@ namespace StudioAtrium\Application\WWW;
 
 class SmartyFunctionsRegistry
 {
-    private string $resUrl = '';
-    private ?UrlGenerator $urlGenerator = null;
-
-    public function configure(string $key, string $value): void
+    private $resUrl = '';
+    private $urlGenerator = null;
+    public function configure(string $key, string $value)
     {
         if ($key === 'res_url') $this->resUrl = $value;
     }
 
-    public function setUrlGenerator(UrlGenerator $gen): void
+    public function setUrlGenerator(UrlGenerator $gen)
     {
         $this->urlGenerator = $gen;
     }
 
-    public function fArticleImage(array $params, mixed $tpl = null): string
+    public function fArticleImage(array $params, $tpl = null): string
     {
         $doc = $params['document'] ?? null;
         if (!$doc) return '';
@@ -117,7 +116,7 @@ class SmartyFunctionsRegistry
         }
     }
 
-    public function registerAll(\Smarty $smarty): void
+    public function registerAll(\Smarty $smarty)
     {
         $resUrl = $this->resUrl;
         $urlGen = $this->urlGenerator ?? new UrlGenerator();
@@ -162,24 +161,24 @@ class SmartyFunctionsRegistry
         $smarty->registerPlugin('modifier', 'roofAngle',      [$paramsHelper, 'mRoofAngle']);
         $smarty->registerPlugin('modifier', 'roomCount',      [$paramsHelper, 'mRoomCount']);
         $smarty->registerPlugin('modifier', 'isNew',          [$paramsHelper, 'mIsNew']);
-        $smarty->registerPlugin('modifier', 'replace',        fn($str, $find, $replace) => str_replace($find, $replace, $str));
+        $smarty->registerPlugin('modifier', 'replace',        function($str, $find, $replace) { return str_replace($find, $replace, $str); });
         $smarty->registerPlugin('modifier', 'unicode',        function($str) {
             if (!is_string($str)) return $str;
-            return preg_replace_callback('/\\\\u([0-9a-fA-F]{4})/', fn($m) => mb_convert_encoding(pack('H*', $m[1]), 'UTF-8', 'UCS-2BE'), $str);
+            return preg_replace_callback('/\\\\u([0-9a-fA-F]{4})/', function($m) { return mb_convert_encoding(pack('H*', $m[1]), 'UTF-8', 'UCS-2BE'); }, $str);
         });
-        $smarty->registerPlugin('modifier', 'number_format',  fn($n, $decimals = 0, $dec = '.', $sep = ',') => number_format((float)$n, $decimals, $dec, $sep));
-        $smarty->registerPlugin('modifier', 'date_format',    fn($date, $fmt = '%b %e, %Y') => strftime($fmt, is_numeric($date) ? $date : strtotime($date)));
-        $smarty->registerPlugin('modifier', 'nl2br',          fn($str) => nl2br($str));
-        $smarty->registerPlugin('modifier', 'json_encode',    fn($val) => json_encode($val, JSON_UNESCAPED_UNICODE));
-        $smarty->registerPlugin('modifier', 'strip_tags',     fn($str, $allowed = '') => strip_tags((string)$str, $allowed));
-        $smarty->registerPlugin('modifier', 'htmlspecialchars', fn($str) => htmlspecialchars((string)$str, ENT_QUOTES, 'UTF-8'));
-        $smarty->registerPlugin('modifier', 'htmlspecialchars_decode', fn($str) => htmlspecialchars_decode((string)$str, ENT_QUOTES));
-        $smarty->registerPlugin('modifier', 'substr',         fn($str, $start, $len = null) => $len !== null ? mb_substr($str, $start, $len) : mb_substr($str, $start));
-        $smarty->registerPlugin('modifier', 'strlen',         fn($str) => mb_strlen((string)$str));
-        $smarty->registerPlugin('modifier', 'strtolower',     fn($str) => mb_strtolower((string)$str));
-        $smarty->registerPlugin('modifier', 'strtoupper',     fn($str) => mb_strtoupper((string)$str));
-        $smarty->registerPlugin('modifier', 'trim',           fn($str) => trim((string)$str));
-        $smarty->registerPlugin('modifier', 'strpos',         fn($str, $find, $offset = 0) => strpos((string)$str, (string)$find, $offset));
-        $smarty->registerPlugin('modifier', 'count',          fn($arr) => is_countable($arr) ? count($arr) : 0);
+        $smarty->registerPlugin('modifier', 'number_format',  function($n, $decimals = 0, $dec = '.', $sep = ',') { return number_format((float)$n, $decimals, $dec, $sep); });
+        $smarty->registerPlugin('modifier', 'date_format',    function($date, $fmt = '%b %e, %Y') { return strftime($fmt, is_numeric($date) ? $date : strtotime($date)); });
+        $smarty->registerPlugin('modifier', 'nl2br',          function($str) { return nl2br($str); });
+        $smarty->registerPlugin('modifier', 'json_encode',    function($val) { return json_encode($val, JSON_UNESCAPED_UNICODE); });
+        $smarty->registerPlugin('modifier', 'strip_tags',     function($str, $allowed = '') { return strip_tags((string)$str, $allowed); });
+        $smarty->registerPlugin('modifier', 'htmlspecialchars', function($str) { return htmlspecialchars((string)$str, ENT_QUOTES, 'UTF-8'); });
+        $smarty->registerPlugin('modifier', 'htmlspecialchars_decode', function($str) { return htmlspecialchars_decode((string)$str, ENT_QUOTES); });
+        $smarty->registerPlugin('modifier', 'substr',         function($str, $start, $len = null) { return $len !== null ? mb_substr($str, $start, $len) : mb_substr($str, $start); });
+        $smarty->registerPlugin('modifier', 'strlen',         function($str) { return mb_strlen((string)$str); });
+        $smarty->registerPlugin('modifier', 'strtolower',     function($str) { return mb_strtolower((string)$str); });
+        $smarty->registerPlugin('modifier', 'strtoupper',     function($str) { return mb_strtoupper((string)$str); });
+        $smarty->registerPlugin('modifier', 'trim',           function($str) { return trim((string)$str); });
+        $smarty->registerPlugin('modifier', 'strpos',         function($str, $find, $offset = 0) { return strpos((string)$str, (string)$find, $offset); });
+        $smarty->registerPlugin('modifier', 'count',          function($arr) { return (is_array($arr) || $arr instanceof \Countable) ? count($arr) : 0; });
     }
 }

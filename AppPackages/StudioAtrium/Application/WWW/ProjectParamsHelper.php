@@ -3,7 +3,7 @@ namespace StudioAtrium\Application\WWW;
 
 class ProjectParamsHelper
 {
-    private function decode(mixed $paramsGeneral): array
+    private function decode($paramsGeneral): array
     {
         if (is_string($paramsGeneral) && $paramsGeneral !== '') {
             $decoded = json_decode($paramsGeneral, true);
@@ -12,19 +12,19 @@ class ProjectParamsHelper
         return [];
     }
 
-    public function mHasFloor(mixed $params, bool $strict = false): bool
+    public function mHasFloor($params, bool $strict = false): bool
     {
         $p = $this->decode($params);
         return isset($p['floors']) && (int)$p['floors'] >= 2;
     }
 
-    public function mHasLoft(mixed $params, bool $strict = false): bool
+    public function mHasLoft($params, bool $strict = false): bool
     {
         $p = $this->decode($params);
         return isset($p['loft']) && (bool)$p['loft'];
     }
 
-    public function mIsGroundFloor(mixed $params, bool $strict = false): bool
+    public function mIsGroundFloor($params, bool $strict = false): bool
     {
         $p = $this->decode($params);
         $floors = (int)($p['floors'] ?? 0);
@@ -32,43 +32,43 @@ class ProjectParamsHelper
         return $floors <= 1 && !$loft;
     }
 
-    public function mUsableArea(mixed $params): string
+    public function mUsableArea($params): string
     {
         $p = $this->decode($params);
         return isset($p['usable_area']) ? number_format((float)$p['usable_area'], 2, '.', '') : '';
     }
 
-    public function mParcelWidth(mixed $params): string
+    public function mParcelWidth($params): string
     {
         $p = $this->decode($params);
         return $p['parcel_width'] ?? '';
     }
 
-    public function mParcelHeight(mixed $params): string
+    public function mParcelHeight($params): string
     {
         $p = $this->decode($params);
         return $p['parcel_height'] ?? '';
     }
 
-    public function mHouseHeight(mixed $params): string
+    public function mHouseHeight($params): string
     {
         $p = $this->decode($params);
         return $p['house_height'] ?? '';
     }
 
-    public function mRoofAngle(mixed $params): string
+    public function mRoofAngle($params): string
     {
         $p = $this->decode($params);
         return $p['roof_angle'] ?? '';
     }
 
-    public function mRoomCount(mixed $params): string
+    public function mRoomCount($params): string
     {
         $p = $this->decode($params);
         return $p['room_count'] ?? '';
     }
 
-    public function mIsNew(mixed $params): bool
+    public function mIsNew($params): bool
     {
         if (!is_array($params)) return false;
         $modifyDate = $params['modify_date'] ?? '';

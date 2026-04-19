@@ -16,20 +16,19 @@ class Point7_AbstractDAO_FinderParams
     const SORT_ASC  = 'ASC';
     const SORT_DESC = 'DESC';
 
-    public array $filters          = [];
-    public array $functionFilters  = [];
-    public array $explicitFilters  = [];
-    public ?array $sorting         = null;
-    public ?int   $limit           = null;
-    public ?int   $offset          = null;
-
-    public function addFilter(string $field, mixed $value, string $operator = self::OPERATOR_EQUAL): self
+    public $filters          = [];
+    public $functionFilters  = [];
+    public $explicitFilters  = [];
+    public $sorting         = null;
+    public $limit           = null;
+    public $offset          = null;
+    public function addFilter(string $field, $value, string $operator = self::OPERATOR_EQUAL): self
     {
         $this->filters[] = ['field' => $field, 'value' => $value, 'op' => $operator];
         return $this;
     }
 
-    public function addFunctionFilter(string $field, mixed $value): self
+    public function addFunctionFilter(string $field, $value): self
     {
         $this->functionFilters[] = ['field' => $field, 'value' => $value];
         return $this;
@@ -98,13 +97,13 @@ class Point7_AbstractDAO_FinderParams
                     break;
                 case self::OPERATOR_IN:
                     $vals = (array)$f['value'];
-                    $phs  = array_map(fn($n) => ':fp' . $i++, $vals);
+                    $phs  = array_map(function($n) use ($i) { return ':fp' . $i++; }, $vals);
                     foreach (array_values($vals) as $k => $v) $params[$phs[$k]] = $v;
                     $parts[] = "`{$f['field']}` IN (" . implode(',', $phs) . ')';
                     break;
                 case self::OPERATOR_NOT_IN:
                     $vals = (array)$f['value'];
-                    $phs  = array_map(fn($n) => ':fp' . $i++, $vals);
+                    $phs  = array_map(function($n) use ($i) { return ':fp' . $i++; }, $vals);
                     foreach (array_values($vals) as $k => $v) $params[$phs[$k]] = $v;
                     $parts[] = "`{$f['field']}` NOT IN (" . implode(',', $phs) . ')';
                     break;

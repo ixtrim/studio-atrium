@@ -6,9 +6,16 @@ use StudioAtrium\Entity\EntityCollection;
 
 class Finder
 {
-    public function __construct(private \PDO $pdo, private ?string $clicksearchSets = null) {}
+        private $pdo;
+    private $clicksearchSets;
 
-    public function getById(int $id): ?Project
+    public function __construct(\PDO $pdo, $clicksearchSets = null)
+    {
+        $this->pdo = $pdo;
+        $this->clicksearchSets = $clicksearchSets;
+    }
+
+    public function getById(int $id)
     {
         $stmt = $this->pdo->prepare('SELECT * FROM project WHERE id = :id');
         $stmt->execute([':id' => $id]);

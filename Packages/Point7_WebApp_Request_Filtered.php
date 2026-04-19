@@ -5,19 +5,18 @@
  */
 class Point7_WebApp_Request_Filtered extends Point7_WebApp_Request
 {
-    private bool   $valid         = true;
-    private array  $errors        = [];
-    private array  $invalidFields = [];
-    private array  $allowedNames  = [];
-
-    public function markInvalid(string $field, string $message): void
+    private $valid         = true;
+    private $errors        = [];
+    private $invalidFields = [];
+    private $allowedNames  = [];
+    public function markInvalid(string $field, string $message)
     {
         $this->valid           = false;
         $this->errors[]        = $message;
         $this->invalidFields[] = $field;
     }
 
-    public function setAllowedParams(array $names): void
+    public function setAllowedParams(array $names)
     {
         $this->allowedNames = $names;
     }

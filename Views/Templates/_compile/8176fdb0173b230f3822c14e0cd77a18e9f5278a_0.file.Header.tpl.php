@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.6, created on 2026-08-23 20:02:17
+/* Smarty version 3.1.48, created on 2026-08-24 05:36:26
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '4.5.6',
-  'unifunc' => 'content_6a8b51c9ded5c5_00020101',
+  'version' => '3.1.48',
+  'unifunc' => 'content_6a8bbc3abdaa47_61236518',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6a8b51c9ded5c5_00020101 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6a8bbc3abdaa47_61236518 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="bg-[#ECECEC] text-[#7a7a7a] text-[13px] overflow-hidden">
 	<div class="h-9 flex items-center whitespace-nowrap gap-24 px-8"><span class="tracking-wide">Rabat 350 zł na
 			WSZYSTKO do 30.11</span><span class="tracking-wide">Rabat 350 zł na WSZYSTKO do 30.11</span><span

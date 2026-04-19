@@ -10,7 +10,7 @@ if (class_exists('Point7', false)) {
     Point7::load('AbstractDAO');
 }
 
-spl_autoload_register(function (string $class): void {
+spl_autoload_register(function (string $class) {
     if (strpos($class, 'StudioAtrium\\') !== 0 && strpos($class, 'StudioAtrium_') !== 0) {
         return;
     }

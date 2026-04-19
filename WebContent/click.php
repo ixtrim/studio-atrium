@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $link = 'https://www.studioatrium.pl';
 $statsFile = '../Log/' . date('Y-m') . '-bannerStats.log';

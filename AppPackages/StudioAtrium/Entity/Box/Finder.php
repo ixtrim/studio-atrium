@@ -6,7 +6,12 @@ use StudioAtrium\Entity\EntityCollection;
 
 class Finder
 {
-    public function __construct(private \PDO $pdo) {}
+        private $pdo;
+
+    public function __construct(\PDO $pdo)
+    {
+        $this->pdo = $pdo;
+    }
 
     public function getList(bool $onlyPublished = true, bool $withAttachments = false): EntityCollection
     {

@@ -6,7 +6,7 @@ class Project
     const MAX_USER_FILES_DOWNLOAD = 3;
     const EXTRAS_RECUPERATION_ID  = 1;
 
-    private static array $paramsMap = [
+    private static $paramsMap = [
         'recuperation_included' => 50,
         'under_construction'    => 51,
         'available_mirror'      => 52,
@@ -14,8 +14,7 @@ class Project
         'alternative_link'      => 95,
         'realisations_link'     => 91,
     ];
-
-    private static array $clickSearchParamsMap = [
+    private static $clickSearchParamsMap = [
         'area_usable'   => 1,
         'area_build'    => 23,
         'area_total'    => 22,
@@ -23,8 +22,7 @@ class Project
         'parcel_length' => 76,
         'front_width'   => 117,
     ];
-
-    private static array $categoryTypeMap = [
+    private static $categoryTypeMap = [
         'projekty-domow'     => 'house',
         'projekty-garazy'    => 'garage',
         'wiaty'              => 'carport',
@@ -34,8 +32,7 @@ class Project
         'gospodarcze'        => 'outbuilding',
         'mala-architektura'  => 'small',
     ];
-
-    private static array $typeNames = [
+    private static $typeNames = [
         'house'       => 'Projekt domu',
         'skeleton'    => 'Projekt domu szkieletowego',
         'garage'      => 'Projekt garażu',
@@ -46,14 +43,12 @@ class Project
         'outbuilding' => 'Projekt budynku gospodarczego',
         'export'      => 'Projekt eksportowy',
     ];
-
-    private static array $orderTimesMap = [
+    private static $orderTimesMap = [
         '1' => 'do miesiąca',
         '2' => 'do 6 miesięcy',
         '3' => 'do roku',
         '4' => 'powyżej roku',
     ];
-
     public static function getParamsMap(string $key): int
     {
         return self::$paramsMap[$key] ?? 0;
@@ -67,7 +62,7 @@ class Project
     public static function getTypeForCategory(string $category): string
     {
         foreach (self::$categoryTypeMap as $slug => $type) {
-            if (str_contains($category, $slug)) {
+            if (strpos($category, $slug) !== false) {
                 return $type;
             }
         }
@@ -120,12 +115,12 @@ class Project
         return [];
     }
 
-    public static function getCsTagParam(string $key): ?array
+    public static function getCsTagParam(string $key)
     {
         return null;
     }
 
-    public static function getCsTagSelectParam(string $key): ?array
+    public static function getCsTagSelectParam(string $key)
     {
         return null;
     }

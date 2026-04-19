@@ -1,12 +1,15 @@
 {
     "require": {
-        "smarty/smarty": "^4.5",
-        "mobiledetect/mobiledetectlib": "^3.74",
-        "tecnickcom/tcpdf": "^6.7",
-        "monolog/monolog": "^3.0"
+        "smarty/smarty": "^3.1",
+        "mobiledetect/mobiledetectlib": "^2.8 || ^3",
+        "tecnickcom/tcpdf": "^6.0",
+        "monolog/monolog": "^1.6"
     },
     "config": {
-        "vendor-dir": "."
+        "vendor-dir": ".",
+        "platform": {
+            "php": "7.0.33"
+        }
     },
     "autoload": {
         "files": ["compat.php"]

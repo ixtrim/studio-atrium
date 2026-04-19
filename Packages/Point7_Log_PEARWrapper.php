@@ -5,11 +5,10 @@
  */
 class Point7_Log_PEARWrapper
 {
-    private string $file   = '';
-    private string $format = '%{timestamp} - %{message}';
-    private ?\Monolog\Logger $monolog = null;
-
-    public function configure(string $name, string $value): void
+    private $file   = '';
+    private $format = '%{timestamp} - %{message}';
+    private $monolog = null;
+    public function configure(string $name, string $value)
     {
         if ($name === 'file')   $this->file   = $value;
         if ($name === 'format') $this->format = $value;
@@ -44,27 +43,27 @@ class Point7_Log_PEARWrapper
         return $file ?: sys_get_temp_dir() . '/point7.log';
     }
 
-    public function log(string $message, int $level = 200): void
+    public function log(string $message, int $level = 200)
     {
         $this->getLogger()->log(\Monolog\Level::from($level), $message);
     }
 
-    public function error(string $message): void
+    public function error(string $message)
     {
         $this->getLogger()->error($message);
     }
 
-    public function info(string $message): void
+    public function info(string $message)
     {
         $this->getLogger()->info($message);
     }
 
-    public function debug(string $message): void
+    public function debug(string $message)
     {
         $this->getLogger()->debug($message);
     }
 
-    public function warn(string $message): void
+    public function warn(string $message)
     {
         $this->getLogger()->warning($message);
     }

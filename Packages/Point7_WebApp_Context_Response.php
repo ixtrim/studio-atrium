@@ -1,31 +1,30 @@
 <?php
 class Point7_WebApp_Context_Response
 {
-    private array  $data           = [];
-    private ?string $errorMessage  = null;
-    private ?string $infoMessage   = null;
-    private array  $jsonResponse   = [];
-    private ?string $jsResponse    = null;
-    private mixed  $fileToSend     = null;
-    private ?string $filename      = null;
-    private ?string $fileContent   = null;
-    private array  $headers        = [];
-    private array  $meta           = [];
-    private array  $forwardParams  = [];
-
-    public function set(string $key, mixed $value): void
+    private $data           = [];
+    private $errorMessage  = null;
+    private $infoMessage   = null;
+    private $jsonResponse   = [];
+    private $jsResponse    = null;
+    private $fileToSend     = null;
+    private $filename      = null;
+    private $fileContent   = null;
+    private $headers        = [];
+    private $meta           = [];
+    private $forwardParams  = [];
+    public function set(string $key, $value)
     {
         $this->data[$key] = $value;
     }
 
-    public function setOnce(string $key, mixed $value): void
+    public function setOnce(string $key, $value)
     {
         if (!array_key_exists($key, $this->data)) {
             $this->data[$key] = $value;
         }
     }
 
-    public function get(string $key): mixed
+    public function get(string $key)
     {
         return $this->data[$key] ?? null;
     }
@@ -35,34 +34,34 @@ class Point7_WebApp_Context_Response
         return $this->data;
     }
 
-    public function setErrorMessage(string $msg): void
+    public function setErrorMessage(string $msg)
     {
         $this->errorMessage = $msg;
     }
 
-    public function getErrorMessage(): ?string
+    public function getErrorMessage()
     {
         return $this->errorMessage;
     }
 
-    public function setInfoMessage(string $msg): void
+    public function setInfoMessage(string $msg)
     {
         $this->infoMessage = $msg;
     }
 
-    public function getInfoMessage(): ?string
+    public function getInfoMessage()
     {
         return $this->infoMessage;
     }
 
     // Note: PHP method names are case-insensitive, so setJSONResponse and
     // setJSONREsponse (the typo variant used in some modules) resolve to the same method.
-    public function setJSONResponse(string $name, mixed $data): void
+    public function setJSONResponse(string $name, $data)
     {
         $this->jsonResponse[$name] = $data;
     }
 
-    public function setJSONResponseData(mixed $data): void
+    public function setJSONResponseData($data)
     {
         $this->jsonResponse = is_array($data) ? $data : ['data' => $data];
     }
@@ -72,47 +71,47 @@ class Point7_WebApp_Context_Response
         return $this->jsonResponse;
     }
 
-    public function setJavaScriptResponse(string $js): void
+    public function setJavaScriptResponse(string $js)
     {
         $this->jsResponse = $js;
     }
 
-    public function getJavaScriptResponse(): ?string
+    public function getJavaScriptResponse()
     {
         return $this->jsResponse;
     }
 
-    public function setFileToSend(mixed $file): void
+    public function setFileToSend($file)
     {
         $this->fileToSend = $file;
     }
 
-    public function getFileToSend(): mixed
+    public function getFileToSend()
     {
         return $this->fileToSend;
     }
 
-    public function setFilename(string $name): void
+    public function setFilename(string $name)
     {
         $this->filename = $name;
     }
 
-    public function getFilename(): ?string
+    public function getFilename()
     {
         return $this->filename;
     }
 
-    public function setFileContent(string $content): void
+    public function setFileContent(string $content)
     {
         $this->fileContent = $content;
     }
 
-    public function getFileContent(): ?string
+    public function getFileContent()
     {
         return $this->fileContent;
     }
 
-    public function setHTTPResponseHeader(string $name, string $value): void
+    public function setHTTPResponseHeader(string $name, string $value)
     {
         $this->headers[$name] = $value;
     }
@@ -122,7 +121,7 @@ class Point7_WebApp_Context_Response
         return $this->headers;
     }
 
-    public function setMeta(string $name, string $value): void
+    public function setMeta(string $name, string $value)
     {
         $this->meta[$name] = $value;
     }
@@ -132,7 +131,7 @@ class Point7_WebApp_Context_Response
         return $this->meta;
     }
 
-    public function setForwardParam(string $name, mixed $value): void
+    public function setForwardParam(string $name, $value)
     {
         $this->forwardParams[$name] = $value;
     }

@@ -6,9 +6,14 @@ use StudioAtrium\Entity\EntityCollection;
 
 class DAO
 {
-    public function __construct(private \PDO $pdo) {}
+        private $pdo;
 
-    public function find(\Point7_AbstractDAO_FinderParams $params): EntityCollection|false
+    public function __construct(\PDO $pdo)
+    {
+        $this->pdo = $pdo;
+    }
+
+    public function find(\Point7_AbstractDAO_FinderParams $params)
     {
         $result = $params->buildWhere();
         $whereClause = $result['sql'] ?? '';
@@ -23,7 +28,7 @@ class DAO
         return new EntityCollection(array_map([$this, 'hydrate'], $rows));
     }
 
-    public function store(Clicks $c): void
+    public function store(Clicks $c)
     {
         if ($c->getId()) {
             $stmt = $this->pdo->prepare(

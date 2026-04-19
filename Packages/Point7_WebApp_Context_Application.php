@@ -1,22 +1,21 @@
 <?php
 class Point7_WebApp_Context_Application
 {
-    private array  $config          = [];
-    private mixed  $user            = null;
-    private string $secret          = '';
-    private array  $commandResults  = [];
-
-    public function setConfig(array $config): void
+    private $config          = [];
+    private $user            = null;
+    private $secret          = '';
+    private $commandResults  = [];
+    public function setConfig(array $config)
     {
         $this->config = $config;
     }
 
-    public function setSecret(string $secret): void
+    public function setSecret(string $secret)
     {
         $this->secret = $secret;
     }
 
-    public function getConfigParam(string $key): mixed
+    public function getConfigParam(string $key)
     {
         $parts = explode('.', $key);
         $node  = $this->config;
@@ -34,17 +33,17 @@ class Point7_WebApp_Context_Application
         return $this->secret;
     }
 
-    public function getUser(): mixed
+    public function getUser()
     {
         return $this->user;
     }
 
-    public function setUser(mixed $user): void
+    public function setUser($user)
     {
         $this->user = $user;
     }
 
-    public function recordCommandResult(string $commandClass, bool $ok): void
+    public function recordCommandResult(string $commandClass, bool $ok)
     {
         $this->commandResults[$commandClass] = $ok;
     }
