@@ -1,0 +1,138 @@
+/**
+ * Header 2026 — legacy CSS isolation
+ * Load AFTER Tailwind CDN so utilities (with important: true) win over common.min.css.
+ * Covers properties Tailwind does not set on every element (appearance, inherit fixes).
+ */
+
+/* Rem is fixed on html for big desktops in theme2026.css (1rem = 16px).
+ * Keep a local 16px text base on the header so inherited font-size stays stable. */
+#site-header {
+  font-size: 16px;
+}
+
+#site-header,
+#site-header *,
+#site-header *::before,
+#site-header *::after {
+  box-sizing: border-box;
+  border-radius: 0 !important;
+  font-family: "Nexa", "Montserrat", system-ui, -apple-system, sans-serif;
+}
+
+/* Lucide icons: honor explicit px width/height classes (Figma specs) */
+#site-header svg.lucide,
+#site-header [data-lucide] {
+  display: block;
+  flex-shrink: 0;
+}
+
+#site-header svg.lucide {
+  width: 100%;
+  height: 100%;
+}
+
+/* Neutralize common.min.css global text-input rules (Lato, 1.8rem, 50px height, etc.) */
+#site-header input[type="text"],
+#site-header input[type="search"],
+#site-header input[type="password"],
+#site-header textarea {
+  -webkit-appearance: none;
+  appearance: none;
+  font-family: inherit;
+  text-transform: none;
+  letter-spacing: normal;
+  box-shadow: none;
+}
+
+#site-header form {
+  margin: 0;
+  width: auto;
+  max-width: none;
+}
+
+/* Reset legacy button chrome; Tailwind classes supply border/background/colors */
+#site-header button {
+  margin: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  line-height: inherit;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-transform: none;
+  letter-spacing: inherit;
+  overflow: visible;
+  cursor: pointer;
+  box-shadow: none;
+  background-image: none;
+}
+
+#site-header button:not([class*="border"]) {
+  border: none;
+}
+
+#site-header button:not([class*="bg-"]) {
+  background-color: transparent;
+}
+
+/* Figma Group 33 — filter bar; child buttons stay transparent so parent blue shows through */
+#site-header #site-header-filters {
+  width: auto !important;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #1d99e1 !important;
+  height: 54px;
+}
+
+#site-header #site-header-filters button {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  color: #fff !important;
+  font-size: 14px !important;
+  font-weight: 800;
+  line-height: 17px;
+  height: auto;
+  padding: 0;
+  border: 0;
+}
+
+#site-header #site-header-filters button:hover {
+  color: #fff !important;
+  opacity: 0.88;
+}
+
+/* Figma Group 32 — ZNAJDŹ PROJEKT */
+#site-header #search-trigger {
+  background-color: #ed1d24 !important;
+  background-image: none !important;
+  width: 264px;
+  height: 54px;
+  color: #fff !important;
+  font-size: 14px !important;
+  font-weight: 800;
+  line-height: 17px;
+  border: 0;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+#site-header #search-trigger:hover {
+  background-color: #d11a20 !important;
+}
+
+#site-header a {
+  text-decoration: none;
+}
+
+#site-header .site-mega-panel {
+  border-radius: 0 !important;
+}
+
+#site-mega-dropdown.is-open {
+  pointer-events: auto;
+}
+
+#site-mega-dropdown.is-open .site-mega-panel {
+  pointer-events: auto;
+}

@@ -1,6 +1,22 @@
 /* Theme 2026 - Main Theme Stylesheet | Agency AronMaiden - developed by Sara Kozinska */
 /* High Priority Theme Styles */
 
+@font-face {
+  font-family: "Nexa";
+  src: url("/fonts/Nexa-ExtraLight.ttf") format("truetype");
+  font-weight: 200 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nexa";
+  src: url("/fonts/Nexa-Heavy.ttf") format("truetype");
+  font-weight: 500 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -128,13 +144,20 @@
     border-color: var(--color-border);
   }
 
+  html,
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    font-family: "Lato", system-ui, -apple-system, sans-serif;
+    font-family: "Nexa", "Montserrat", system-ui, -apple-system, sans-serif;
     font-weight: 400;
   }
-  h1, h2, h3, h4, h5 { font-family: "Lato", sans-serif; font-weight: 700; }
+  h1, h2, h3, h4, h5 {
+    font-family: "Nexa", "Montserrat", sans-serif;
+    font-weight: 700;
+  }
+  button, input, select, textarea {
+    font-family: inherit;
+  }
 }
 
 @theme inline {
@@ -146,7 +169,7 @@
   --color-brand-darker: var(--brand-darker);
   --color-brand-orange: var(--brand-orange);
   --color-topbar: var(--topbar);
-  --font-display: "Lato", sans-serif;
+  --font-display: "Nexa", "Montserrat", sans-serif;
 }
 
 @keyframes marquee {
@@ -188,3 +211,32 @@
     animation: none;
   }
 }
+
+/* Force Nexa site-wide over legacy Lato rules from common.min.css */
+body,
+button,
+input,
+select,
+textarea,
+.baton,
+.wired {
+  font-family: "Nexa", "Montserrat", system-ui, -apple-system, sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+strong, b {
+  font-family: "Nexa", "Montserrat", sans-serif !important;
+}
+
+/*
+ * Rem base: common.min.css sets html { font-size: 62.5% } → 1rem = 10px.
+ * On big desktops restore the standard root so 1rem = 16px (Tailwind / Figma).
+ * Smaller viewports keep the legacy 10px rem for existing rem-based UI.
+ */
+@media (min-width: 1280px) {
+  html {
+    font-size: 100%; /* 16px at default browser settings → 1rem = 16px */
+  }
+}
+
+/* Header legacy isolation lives in header2026.css (loaded after Tailwind) */

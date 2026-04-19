@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-08-24 05:36:26
+/* Smarty version 3.1.48, created on 2026-08-24 08:15:59
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/HeadHTML.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6a8bbc3abd6a70_43902894',
+  'unifunc' => 'content_6a8be19fc7f900_77887479',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2caf7189cf71a0154ad77cc024aa442356349989' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/HeadHTML.tpl',
-      1 => 1787028780,
+      1 => 1787552027,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6a8bbc3abd6a70_43902894 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6a8be19fc7f900_77887479 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['pageTitle']->value) {?>
 	<title><?php echo $_smarty_tpl->tpl_vars['pageTitle']->value;?>
 </title>
@@ -198,8 +198,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 >
 <?php }?>
 
-<link rel="preload" as="font" type="font/woff2" href="/fonts/LatoLatin-Regular.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="/fonts/LatoLatin-Light.woff2" crossorigin>
+<link rel="preload" as="font" type="font/ttf" href="/fonts/Nexa-ExtraLight.ttf" crossorigin>
+<link rel="preload" as="font" type="font/ttf" href="/fonts/Nexa-Heavy.ttf" crossorigin>
 
 <?php if ($_smarty_tpl->tpl_vars['showSchemaOrganization']->value) {?>
 	
@@ -339,26 +339,35 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
 <?php }?>
 
-<!-- Tailwind CSS v3.4.17 (MUST LOAD FIRST) -->
+<!-- Tailwind CSS v3.4.17 (after legacy CSS; utilities use !important to beat common.min.css) -->
 <?php echo '<script'; ?>
  src="https://cdn.tailwindcss.com"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
 >
-tailwind.config = { 
+tailwind.config = {
+	important: true,
 	corePlugins: { preflight: false },
 	theme: {
 		fontFamily: {
-			sans: ['Lato', 'sans-serif']
+			sans: ['Nexa', 'Montserrat', 'sans-serif'],
+			display: ['Nexa', 'Montserrat', 'sans-serif']
 		}
 	}
 }
 <?php echo '</script'; ?>
 >
+<link rel="stylesheet" href="/css/header2026.css?v=<?php echo $_smarty_tpl->tpl_vars['version']->value;?>
+">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+html, body {
+	font-family: "Nexa", "Montserrat", system-ui, -apple-system, sans-serif;
+}
+</style>
 
 <!-- Swiper CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
@@ -412,6 +421,7 @@ tailwind.config = {
 <style>
 :root {
 	--brand-red: oklch(0.62 0.22 27);
+	--brand-red-hover: oklch(0.55 0.22 27);
 	--brand-blue: oklch(0.74 0.11 232);
 	--brand-blue-strong: oklch(0.66 0.13 232);
 	--brand-dark: oklch(0.30 0.012 250);

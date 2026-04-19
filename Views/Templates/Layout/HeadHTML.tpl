@@ -118,8 +118,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>
 {/if}
 
-<link rel="preload" as="font" type="font/woff2" href="/fonts/LatoLatin-Regular.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="/fonts/LatoLatin-Light.woff2" crossorigin>
+<link rel="preload" as="font" type="font/ttf" href="/fonts/Nexa-ExtraLight.ttf" crossorigin>
+<link rel="preload" as="font" type="font/ttf" href="/fonts/Nexa-Heavy.ttf" crossorigin>
 
 {if $showSchemaOrganization}
 {literal}	
@@ -218,22 +218,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 {/literal}
 {/if}
 
-<!-- Tailwind CSS v3.4.17 (MUST LOAD FIRST) -->
+<!-- Tailwind CSS v3.4.17 (after legacy CSS; utilities use !important to beat common.min.css) -->
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
-tailwind.config = { 
+tailwind.config = {
+	important: true,
 	corePlugins: { preflight: false },
 	theme: {
 		fontFamily: {
-			sans: ['Lato', 'sans-serif']
+			sans: ['Nexa', 'Montserrat', 'sans-serif'],
+			display: ['Nexa', 'Montserrat', 'sans-serif']
 		}
 	}
 }
 </script>
+<link rel="stylesheet" href="/css/header2026.css?v={$version}">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+html, body {
+	font-family: "Nexa", "Montserrat", system-ui, -apple-system, sans-serif;
+}
+</style>
 
 <!-- Swiper CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
@@ -279,6 +287,7 @@ tailwind.config = {
 <style>
 :root {
 	--brand-red: oklch(0.62 0.22 27);
+	--brand-red-hover: oklch(0.55 0.22 27);
 	--brand-blue: oklch(0.74 0.11 232);
 	--brand-blue-strong: oklch(0.66 0.13 232);
 	--brand-dark: oklch(0.30 0.012 250);
