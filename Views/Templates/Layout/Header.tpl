@@ -1,10 +1,25 @@
-<div class="bg-[#ECECEC] text-[#7a7a7a] text-[13px] overflow-hidden">
-	<div class="h-9 flex items-center whitespace-nowrap gap-24 px-8"><span class="tracking-wide">Rabat 350 zł na
-			WSZYSTKO do 30.11</span><span class="tracking-wide">Rabat 350 zł na WSZYSTKO do 30.11</span><span
-			class="tracking-wide">Rabat 350 zł na WSZYSTKO do 30.11</span><span class="tracking-wide">Rabat 350 zł na
-			WSZYSTKO do 30.11</span><span class="tracking-wide">Rabat 350 zł na WSZYSTKO do 30.11</span><span
-			class="tracking-wide">Rabat 350 zł na WSZYSTKO do 30.11</span></div>
+{if $promo_marquee_text}
+<div class="promo-marquee" aria-label="{$promo_marquee_text|escape}">
+	<div class="promo-marquee__track">
+		<div class="promo-marquee__group">
+			<span>{$promo_marquee_text|escape}</span>
+			<span>{$promo_marquee_text|escape}</span>
+			<span>{$promo_marquee_text|escape}</span>
+			<span>{$promo_marquee_text|escape}</span>
+			<span>{$promo_marquee_text|escape}</span>
+			<span>{$promo_marquee_text|escape}</span>
+		</div>
+		<div class="promo-marquee__group" aria-hidden="true">
+			<span>{$promo_marquee_text|escape}</span>
+			<span>{$promo_marquee_text|escape}</span>
+			<span>{$promo_marquee_text|escape}</span>
+			<span>{$promo_marquee_text|escape}</span>
+			<span>{$promo_marquee_text|escape}</span>
+			<span>{$promo_marquee_text|escape}</span>
+		</div>
+	</div>
 </div>
+{/if}
 
 {*
 <header>

@@ -153,3 +153,38 @@
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
+
+.promo-marquee {
+  background: #ececec;
+  color: #7a7a7a;
+  font-size: 13px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.promo-marquee__track {
+  display: flex;
+  width: max-content;
+  animation: marquee 45s linear infinite;
+  will-change: transform;
+}
+
+.promo-marquee__group {
+  display: flex;
+  align-items: center;
+  height: 2.25rem; /* h-9 */
+  white-space: nowrap;
+  gap: 6rem; /* gap-24 */
+  padding: 0 2rem;
+  flex-shrink: 0;
+}
+
+.promo-marquee__group span {
+  letter-spacing: 0.025em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .promo-marquee__track {
+    animation: none;
+  }
+}

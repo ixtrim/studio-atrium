@@ -82,6 +82,20 @@ class SmartyFunctionsRegistry
         }
     }
 
+    private function fetchPromoMarqueeText(): string
+    {
+        $default = 'Rabat 350 zł na WSZYSTKO do 30.11';
+        try {
+            $pdo  = \Point7_WebApp::getPDO();
+            $stmt = $pdo->query("SELECT string_value FROM settings WHERE char_id = 'promo_marquee_text' LIMIT 1");
+            $row  = $stmt->fetch(\PDO::FETCH_ASSOC);
+            $text = $row ? trim((string) $row['string_value']) : '';
+            return $text !== '' ? $text : $default;
+        } catch (\Exception $e) {
+            return $default;
+        }
+    }
+
     private function fetchContactData(): array
     {
         try {
@@ -145,6 +159,9 @@ class SmartyFunctionsRegistry
         $seoData = $this->fetchSeoData();
         $smarty->assign('seo_links_header', $seoData['header']);
         $smarty->assign('seo_links', $seoData['links']);
+
+        // Assign header promo marquee text from settings table
+        $smarty->assign('promo_marquee_text', $this->fetchPromoMarqueeText());
 
         // Assign footer menu columns (a/b/c) from footer_menus table
         $smarty->assign('footer_menus', $this->fetchMenuColumns());
