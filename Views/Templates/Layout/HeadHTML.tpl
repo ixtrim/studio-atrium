@@ -36,11 +36,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 {/if}
 <meta name="p:domain_verify" content="46eb45dafec5620ae0746f34b1c0c299">
 <meta name="google-site-verification" content="N4VPO2yZZ3HL2Yegp8cAdQAsZ4Xj17gVs1vtLramZcY" /> {* google merchant i studioatrium1994 *}
-<meta name="theme-color" content="#cc1000">
+<meta name="theme-color" content="#ed1d24">
 <link rel="shortcut icon" type="image/icon" href="/img/favicon.ico">
 <link rel="manifest" href="/manifest.json">
 <link rel="apple-touch-icon" href="/img/logo144.png">
-<meta name="apple-mobile-web-app-status-bar" content="#cc1000">
+<meta name="apple-mobile-web-app-status-bar" content="#ed1d24">
 
 {if $pageMetaDescription}
 	<meta name="description" content="{$pageMetaDescription|trim}">
@@ -233,7 +233,7 @@ tailwind.config = {
 }
 </script>
 <link rel="stylesheet" href="/css/header2026.css?v={$version}">
-<link rel="stylesheet" href="/css/search2026.css?v={$version}">
+<link rel="stylesheet" href="/css/search-engine.css?v={$version}">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

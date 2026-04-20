@@ -1,10 +1,10 @@
-/* ----------------------------------------------------------- BLUE OVERLAY ---------------------------------------- */
+/* ----------------------------------------------------------- BLUE OVERLAY (2026 white / grey / red) ---------------------------------------- */
 div.blue-overlay {
   position: fixed;
   left: 0;
   top: 0;
-  color: #fff;
-  background: rgba(35, 156, 225, 0.95) none repeat scroll 0 0; none repeat scroll 0 0;
+  color: #2d2d2d;
+  background: #ffffff none repeat scroll 0 0;
   padding: 0 12px;
   opacity: 0;
   transform: scale(0.9);
@@ -12,28 +12,33 @@ div.blue-overlay {
   visibility: hidden;
   z-index: 10010;
   overflow: auto;
-  --color-accent: #ffa800;
-  --color-background: #044971;
-  --color-background-light: #0d5681;
-  --color-background-lighter: #206a95;
-  --color-background-darkish: #063b5a;
-  --color-background-dark: #02314d;
-  --color-text-bright: white;
-  --color-border: #3684b1;
+  border: none;
+  --color-accent: var(--brand-red, #ed1d24);
+  --color-accent-hover: var(--brand-red-hover, #a80d00);
+  --color-background: #ffffff;
+  --color-background-light: #f5f5f5;
+  --color-background-lighter: #ececec;
+  --color-background-darkish: #f8f8f8;
+  --color-background-dark: #fafafa;
+  --color-text-bright: var(--brand-darker, #2d2d2d);
+  --color-text-muted: #7a7a7a;
+  --color-border: rgba(0, 0, 0, 0.12);
   --font-size-base: 16px;
 }
 div.blue-overlay.cs {
   z-index: 10000000000;
-  background: var(--color-background) none repeat scroll 0 0;
+  background: #ffffff none repeat scroll 0 0;
   height: 85%;
   left: 50%;
   top: 50%;
   width: clamp(320px, 97.5vw, 1100px);
   overflow: hidden;
   padding: 0;
+  border: none;
+  box-shadow: 0 28px 80px -16px rgba(0, 0, 0, 0.35);
 }
 div.blue-overlay.cs label, div.blue-overlay.cs p {
-  color: white !important;
+  color: var(--color-text-bright) !important;
 }
 div.blue-overlay.cs.open {
   transform: scale(1) translateX(-50%) translateY(-50%);
@@ -45,7 +50,7 @@ div.blue-overlay.cs.open ~ .dark-overlay {
   top: 0;
   left: 0;
   z-index: 1000000000;
-  background: rgb(8 35 51 / 60%) none repeat scroll 0 0;
+  background: rgba(0, 0, 0, 0.65) none repeat scroll 0 0;
 }
 body:has(.blue-overlay.cs.open) {
   overflow: hidden;
@@ -86,7 +91,7 @@ div.blue-overlay.cs .search-label {
   margin-top: 1px;
 
   scrollbar-width: thin;    /* Firefox: cienki scrollbar */
-  scrollbar-color: #2a6a86 transparent; /* Firefox: kolory */
+  scrollbar-color: #c8c8c8 transparent; /* Firefox: kolory */
   direction: rtl;          /* odwrócenie kierunku */
   text-align: left;        /* wymuszenie normalnego wyrównania tekstu */
 }
@@ -100,10 +105,12 @@ div.blue-overlay.cs .search-label {
   border-top: 1px solid transparent;
   cursor:pointer;
   transition: all .15s ease;
+  color: var(--color-text-bright);
 }
 .filter-tab-label:hover {
   scale: 1.025;
   border-top: 1px solid var(--color-border);
+  background: var(--color-background-light);
 }
 .filter-tab-label:after {
   position: absolute;
@@ -112,6 +119,7 @@ div.blue-overlay.cs .search-label {
   right: 24px;
   font-size: var(--font-size-base);
   transform: translateY(-50%);
+  color: var(--color-text-muted);
 }
 
 /* Chrome, Edge, Safari */
@@ -125,12 +133,12 @@ div.blue-overlay.cs .search-label {
 }
 #filter-labels::-webkit-scrollbar-thumb,
 #filter-options::-webkit-scrollbar-thumb {
-  background: #2a6a86;      /* kolor suwaka */
+  background: #c8c8c8;      /* kolor suwaka */
   border-radius: 8px;       /* zaokrąglenia */
 }
 #filter-labels::-webkit-scrollbar-thumb:hover,
 #filter-options::-webkit-scrollbar-thumb:hover {
-  background: #368db0;      /* kolor po najechaniu */
+  background: #aaa;      /* kolor po najechaniu */
 }
 
 #filter-labels .active-filters:has(.af-chip) {
@@ -176,7 +184,7 @@ div.blue-overlay.cs .search-label {
   margin-top: 1px;
 
   scrollbar-width: thin;    /* Firefox: cienki scrollbar */
-  scrollbar-color: #2a6a86 transparent; /* Firefox: kolory */
+  scrollbar-color: #c8c8c8 transparent; /* Firefox: kolory */
 }
 .filter-header {
   color: var(--color-text-bright);
@@ -270,9 +278,10 @@ div.blue-overlay.cs .search-label {
 
 /* zaznaczone */
 .custom-radio input:checked + span {
-  background: var(--color-background-lighter);
+  background: #fff;
   font-weight: 600;
-  color: var(--color-accent); /* jasny tekst */
+  color: var(--color-accent);
+  border-color: var(--color-accent);
 }
 
 
@@ -286,7 +295,7 @@ div.blue-overlay.cs .search-label {
 }
 
 .area-inputs label {
-  color: #eaf3f7; /* jasny tekst */
+  color: var(--color-text-muted);
   display: flex;
   gap: 8px;
   align-items: center;
@@ -302,8 +311,8 @@ div.blue-overlay.cs .search-label {
   width: 100px;
   padding: 7px 36px 5px 8px !important; /* padding-right większy na jednostkę */
   border: 1px solid var(--color-border) !important;
-  background: var(--color-background-light) !important;
-  color: #fff;
+  background: #fff !important;
+  color: var(--color-text-bright);
   text-align: right;
   font-size: calc(.875 * var(--font-size-base));
   transition: border-color 0.2s, background 0.2s;
@@ -311,8 +320,8 @@ div.blue-overlay.cs .search-label {
 
 .input-unit input:focus {
   outline: none;
-  border-color: #33a1d2;
-  background: #145d7e;
+  border-color: var(--color-accent);
+  background: #fff;
 }
 
 .input-unit .unit {
@@ -321,19 +330,18 @@ div.blue-overlay.cs .search-label {
   top: 2px;
   height: calc(100% - 4px);
   font-size: calc(.75 * var(--font-size-base));
-  color: #eaf3f7;
+  color: var(--color-text-muted);
   pointer-events: none;
   padding: 8px 6px 2px 7px;
-  background-color: #0b486b;
+  background-color: var(--color-background-light);
   border-left: 1px solid var(--color-border);
 }
 
 
 /* „pudełka” sekcji w zakładce */
 .rooms-box{
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  /* border-radius: 14px; */
+  background: var(--color-background-dark);
+  border: 1px solid var(--color-border);
   padding: 12px 14px;
   margin-top: 12px;
 }
@@ -369,7 +377,7 @@ div.blue-overlay.cs .search-label {
   display: inline-block;
   min-width: 44px;
   text-align: center;
-  padding: 6px 10px;
+  padding: 0 10px;
   /* border-radius: 10px; */
   background: #f5f7fa;
   color: #0f2130;
@@ -388,8 +396,8 @@ div.blue-overlay.cs .search-label {
   scale: 1.025;
 }
 .chip input:checked + span{
-  background: var(--color-accent);   /* Twój akcent z mocka – pomarańcz/czerwień */
-  color: var(--color-background-dark);
+  background: var(--color-accent);
+  color: #fff;
   border-color: var(--color-accent);
 }
 
@@ -397,7 +405,7 @@ div.blue-overlay.cs .search-label {
 #filters-funkcja .chips{
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 12px;
+  gap: 0 10px;
   margin-top: 10px;
 }
 
@@ -417,15 +425,15 @@ div.blue-overlay.cs .search-label {
   align-items: center;
   gap: 6px; /* odstęp między nazwą a licznikiem */
   padding: 5px 12px;
-  /* border-radius: 10px; */
-  background: var(--color-text-bright);
-  color: #0f2130;
+  background: #fff;
+  color: var(--color-text-bright);
+  border: 1px solid var(--color-border);
   font-weight: 600;
   transition: all .15s ease;
 }
 .chk input:checked + span {
   background: var(--color-accent);
-  color: var(--color-background-dark);
+  color: #fff;
   border-color: var(--color-accent);
 }
 
@@ -469,7 +477,7 @@ div.blue-overlay.cs .search-label {
 
   transition: all .2s ease;
   background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%237a7a7a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 14px center;
   background-size: 16px;
@@ -499,8 +507,8 @@ div.blue-overlay.cs .search-label {
 
 /* Opcje w rozwinięciu (dla kompatybilnych przeglądarek) */
 #pow-range.range-select.no-ui option {
-  background-color: var(--color-background-darkish);
-  color: #fff;
+  background-color: #fff;
+  color: var(--color-text-bright);
 }
 
 /* Dla focusowanego selecta — żeby nie skakał układ */
@@ -514,8 +522,11 @@ div.blue-overlay.cs .search-label {
 .filter-tab.active{ display: flex; flex-direction: column; gap: 8px; }
 
 .filter-tab-label.is-active{
-  /* opcjonalnie podświetlenie aktywnej pozycji */
-  background:var(--color-background-light);
+  background: var(--color-background-light);
+  color: var(--color-accent);
+}
+.filter-tab-label.is-active:after {
+  color: var(--color-accent);
 }
 
 #total-count {
@@ -692,7 +703,8 @@ div.blue-overlay.cs .search-label {
 
 
 div.blue-overlay.catalog {
-  background: rgba(0, 0, 0, 0.8) none repeat scroll 0 0;
+  background: #ffffff none repeat scroll 0 0;
+  border: none;
 }
 div.blue-overlay#ajax-info-overlay {
   z-index: 10011;
@@ -710,52 +722,59 @@ div.blue-overlay .nocaps {
 }
 div.blue-overlay a.help {
   text-decoration: none;
-  font-family: 'LatoLatinWebLight', sans-serif;
-  font-size: 1.8rem;
+  font-family: 'Nexa', 'Montserrat', sans-serif;
+  font-size: 14px;
   padding: 0 28px;
   display: inline-block;
   width: fit-content;
-  color: var(--color-accent);
+  color: var(--color-text-bright);
   font-weight: 600;
   letter-spacing: 1px;
-  border: 2px solid var(--color-accent);
+  border: 1px solid var(--color-border);
+  background: #fff;
   text-align: center;
   transition: all .3s ease;
 }
 div.blue-overlay a.help:hover {
   background-color: var(--color-accent);
-  color: var(--color-background);
+  color: #fff;
+  border-color: var(--color-accent);
 }
 div.blue-overlay .baton {
   height: 40px;
-  line-height: 43px;
-  color: var(--color-background-dark);
-  font-family: 'LatoLatinWebLight', sans-serif;
-  font-size: 1.8rem;
+  line-height: 40px;
+  color: #fff;
+  font-family: 'Nexa', 'Montserrat', sans-serif;
+  font-size: 14px;
   padding: 0 28px;
-  font-weight: 600;
+  font-weight: 800;
+  text-transform: uppercase;
   background-color: var(--color-accent);
   border: none;
   cursor: pointer;
-  transition: filter .3s ease;
+  transition: background-color .2s ease;
 }
 div.blue-overlay .baton:not(.disabled):hover {
-  filter: brightness(1.15);
+  background-color: var(--color-accent-hover);
+  filter: none;
 }
 div.blue-overlay .baton.disabled {
-  filter: brightness(0.75) grayscale(.5);
+  filter: none;
+  opacity: 0.45;
+  background-color: #ccc;
+  color: #fff;
   cursor: not-allowed;
 }
 
 div.blue-overlay .wired {
   height: 40px;
   width: 272px;
-  color: #fff;
-  font-family: 'LatoLatinWebLight', sans-serif;
-  font-size: 1.8rem;
+  color: var(--color-text-bright);
+  font-family: 'Nexa', 'Montserrat', sans-serif;
+  font-size: 14px;
   line-height: 40px;
-  background: none;
-  border: 1px solid #fff;
+  background: #fff;
+  border: 1px solid var(--color-border);
   cursor: pointer;
 }
 div.blue-overlay .black {
@@ -777,35 +796,37 @@ div.blue-overlay input[type="text"] {
   width: 105px;
   height: 37px;
   line-height: 37px;
-  color: #fff;
-  font-family: 'LatoLatinWebLight', sans-serif;
-  font-size: 1.6rem;
-  background: none;
+  color: var(--color-text-bright);
+  font-family: 'Nexa', 'Montserrat', sans-serif;
+  font-size: 14px;
+  background: #fff;
   padding: 1px 4px 0 4px;
-  border: 1px solid #fff;
+  border: 1px solid var(--color-border);
 }
 div.blue-overlay input[type="password"].long,
 div.blue-overlay input[type="text"].long {
   width: 350px;
-  font-size: 1.8rem;
+  font-size: 14px;
   margin: 0 24px;
   height: 40px;
   padding: 0 12px;
-  background-color: var(--color-background-light);
+  background-color: #fff;
+  color: var(--color-text-bright);
+  border: 1px solid var(--color-border);
 }
 div.blue-overlay input[type="password"].error_field,
 div.blue-overlay input[type="text"].error_field {
-  border: 1px solid #cc1000;
+  border: 1px solid #ed1d24;
 }
 div.blue-overlay textarea {
   width: 550px;
   height: 196px;
-  color: #fff;
-  font-family: 'LatoLatinWebLight', sans-serif;
-  font-size: 1.6rem;
-  background: none;
+  color: var(--color-text-bright);
+  font-family: 'Nexa', 'Montserrat', sans-serif;
+  font-size: 14px;
+  background: #fff;
   padding: 4px;
-  border: 1px solid #fff;
+  border: 1px solid var(--color-border);
   margin: 0 24px;
   vertical-align: top;
 }
@@ -1068,13 +1089,13 @@ div.blue-overlay div.form-wrapper > form > p {
 }
 div.blue-overlay div.form-wrapper > form p.error_field > label,
 div.blue-overlay div.form-wrapper > form p.error_field > span {
-  color: #cc1000;
+  color: #ed1d24;
 }
 div.blue-overlay div.form-wrapper > form p.error_message {
   position: absolute;
   right: 0;
   bottom: -30px;
-  color: #cc1000;
+  color: #ed1d24;
   font-size: 1.2rem;
   text-align: right;
 }
@@ -1091,7 +1112,7 @@ div.blue-overlay div.form-wrapper div.group-wrapper {
   margin: 12px 0 35px;
 }
 div.blue-overlay div.form-wrapper div.group-wrapper.error_field > span {
-  color: #cc1000;
+  color: #ed1d24;
 }
 div.blue-overlay div.form-wrapper div.group-wrapper > span {
   display: inline-block;
@@ -1132,7 +1153,7 @@ div.blue-overlay div.form-wrapper div.radio-box {
   margin-left: 24px;
 }
 div.blue-overlay div.form-wrapper div.radio-box.error_field > span {
-  color: #cc1000;
+  color: #ed1d24;
 }
 div.blue-overlay div.form-wrapper div.radio-box p.error_message {
   position: absolute;
@@ -1260,8 +1281,8 @@ div.blue-overlay div#cs-wrapper p.long {
 }
 div.blue-overlay div#cs-wrapper p#data-read {
   width: 100%;
-  color: #fff;
-  font-size: 1.3rem;
+  color: var(--color-text-muted);
+  font-size: 13px;
   text-transform: none;
   text-align: right;
 }
@@ -1393,5 +1414,102 @@ div.blue-overlay.open {
   transform: scale(1);
   transition: transform 0.4s ease 0s, opacity 0.4s ease 0s;
   visibility: visible;
+}
+
+/* CS overlay — screenshot: white panel, grey chrome, red accents, no outer border */
+div.blue-overlay.cs {
+  border: none !important;
+  outline: none;
+  background: #fff !important;
+  color: var(--color-text-bright);
+}
+div.blue-overlay.cs #filter-header {
+  color: var(--color-text-bright);
+  font-family: "Nexa", "Montserrat", sans-serif;
+}
+div.blue-overlay.cs .search-header {
+  background: #fff;
+  border-bottom: 1px solid var(--color-border);
+}
+div.blue-overlay.cs .search-label,
+div.blue-overlay.cs #search-project label {
+  color: var(--color-text-muted) !important;
+  font-size: 13px !important;
+}
+div.blue-overlay.cs input[type="text"]#search-name {
+  color: var(--color-text-bright) !important;
+  background: #fff !important;
+  border: 1px solid var(--color-border) !important;
+}
+div.blue-overlay.cs #filters-footer {
+  background-color: #fff;
+  border-top: 1px solid var(--color-border);
+}
+div.blue-overlay.cs #filters-footer #cs-reset {
+  color: var(--color-text-muted);
+  font-family: "Nexa", "Montserrat", sans-serif;
+  font-size: 14px;
+}
+div.blue-overlay.cs #filters-footer #cs-reset:hover {
+  color: var(--color-accent);
+}
+div.blue-overlay.cs #cs-fetch.baton {
+  background-color: var(--color-accent);
+  color: #fff;
+  border: none;
+  border-radius: 0;
+}
+div.blue-overlay.cs .blue-overlay-close {
+  width: auto;
+  height: auto;
+  min-width: 0;
+  text-indent: 0;
+  overflow: visible;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  font-family: "Nexa", "Montserrat", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+}
+div.blue-overlay.cs .blue-overlay-close .close-x {
+  position: static;
+  width: auto;
+  height: auto;
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+div.blue-overlay.cs .blue-overlay-close:hover,
+div.blue-overlay.cs .blue-overlay-close:hover .close-x {
+  color: var(--color-accent);
+}
+div.blue-overlay.cs .count {
+  color: var(--color-text-muted);
+}
+div.blue-overlay.cs .quick-presets .chip span:not(.count) {
+  background: #fff;
+  color: var(--color-text-bright);
+  border: 1px solid var(--color-border);
+  font-weight: 800;
+  text-transform: none;
+  padding: 10px 16px;
+}
+div.blue-overlay.cs .quick-presets .chip input:checked + span {
+  background: var(--color-accent);
+  color: #fff;
+  border-color: var(--color-accent);
+}
+div.blue-overlay.cs .custom-radio span:not(.count) {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-bright);
+}
+div.blue-overlay.cs a.help.wired {
+  width: auto;
+  color: var(--color-text-bright);
+  border: 1px solid var(--color-border);
+  background: #fff;
 }
 

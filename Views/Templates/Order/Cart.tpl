@@ -214,7 +214,7 @@
 				</div>
 				
 				{* if $sandbox == 1}
-				<p style="margin-top: 16px; font-size: 1.4rem; color: #cc1000;">Z uwagi na prace techniczne płatność online jest chwilowo niedostępna. W razie potrzeby prosimy o kontakt z konsultantem: tel. 33 822 94 96</p>
+				<p style="margin-top: 16px; font-size: 1.4rem; color: #ed1d24;">Z uwagi na prace techniczne płatność online jest chwilowo niedostępna. W razie potrzeby prosimy o kontakt z konsultantem: tel. 33 822 94 96</p>
 				{/if *}
 			</div>
 			

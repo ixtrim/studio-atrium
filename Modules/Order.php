@@ -697,7 +697,7 @@ class Order extends WWW\AbstractModule
 			    $deliveryAndDiscount .= '<br>Przyznany rabat za rejestrację konta: <b>' . $formData['registerUserDiscount'] . '</b> zł';
 			}
 				
-			$deliveryAndDiscount .= '<br><br><span style="color: #cc1000;">Razem do zapłaty: <b>' . $formData['total'] . '</b> zł</span>';
+			$deliveryAndDiscount .= '<br><br><span style="color: #ed1d24;">Razem do zapłaty: <b>' . $formData['total'] . '</b> zł</span>';
 		
 			$content = 'Twoje zamówienie w serwisie studioatrium.pl zostało złożone.';
 			
@@ -707,7 +707,7 @@ class Order extends WWW\AbstractModule
 			
 			$content .= '<br><br>Numer zamówienia: <strong style="font-weight: 700;">'. $transaction->getId() . '</strong>' . '<br>Zawartość:';
 			$content .= $projectsMailContent;
-			$content .= '<br><p style="border-top: 1px solid #cc1000; padding: 5px; padding-top: 10px; vertical-align: middle; line-height: 34px;">Dane do faktury:</p>';
+			$content .= '<br><p style="border-top: 1px solid #ed1d24; padding: 5px; padding-top: 10px; vertical-align: middle; line-height: 34px;">Dane do faktury:</p>';
 			$content .= $userDataForEmail;
 			$content .= $paymentType;
 			$content .= $paymentInfo;

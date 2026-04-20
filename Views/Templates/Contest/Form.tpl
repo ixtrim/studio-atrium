@@ -135,7 +135,7 @@
 		
 					<div id="reg-box">
 						<p id="accept-reg">
-							<input type="checkbox" name="accept-reg" id="accept-r" value="on"> <label for="accept-r">Zapoznałem się i akceptuję</label> <a href="{$staticStockUrl}/docs/regulamin.pdf" target="_new" style="color: #cc1000;">regulamin konkursu</a>
+							<input type="checkbox" name="accept-reg" id="accept-r" value="on"> <label for="accept-r">Zapoznałem się i akceptuję</label> <a href="{$staticStockUrl}/docs/regulamin.pdf" target="_new" style="color: #ed1d24;">regulamin konkursu</a>
 						</p>
 						
 						<p id="accept-data">
@@ -143,7 +143,7 @@
 						</p>
 						
 						<p id="accept-licence">
-							<input type="checkbox" name="accept-licence" id="accept-l" value="on"> <label for="accept-l">Przesyłając zdjęcia do konkursu fotograficznego we wskazany w późniejszej korespondencji sposób, udzielam</label> jednocześnie nieodpłatnej licencji dla STUDIA ATRIUM na korzystanie ze zdjęć na polach eksploatacji wskazanych w <a href="/res/regulamin.pdf" target="_new" style="color: #cc1000;">regulaminie konkursu</a> fotograficznego tj. w szczególności w zakresie publikacji w katalogach, materiałach prasowych oraz na stronach internetowych będących własnością STUDIA ATRIUM.
+							<input type="checkbox" name="accept-licence" id="accept-l" value="on"> <label for="accept-l">Przesyłając zdjęcia do konkursu fotograficznego we wskazany w późniejszej korespondencji sposób, udzielam</label> jednocześnie nieodpłatnej licencji dla STUDIA ATRIUM na korzystanie ze zdjęć na polach eksploatacji wskazanych w <a href="/res/regulamin.pdf" target="_new" style="color: #ed1d24;">regulaminie konkursu</a> fotograficznego tj. w szczególności w zakresie publikacji w katalogach, materiałach prasowych oraz na stronach internetowych będących własnością STUDIA ATRIUM.
 						</p>
 					</div>
 					

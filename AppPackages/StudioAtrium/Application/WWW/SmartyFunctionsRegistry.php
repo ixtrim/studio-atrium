@@ -98,7 +98,69 @@ class SmartyFunctionsRegistry
 
     private function fetchArticlesTicks(): array
     {
-        $defaults = [
+        $defaults = $this->getArticlesTicksDefaults();
+        try {
+            $pdo = \Point7_WebApp::getPDO();
+            $this->ensureArticlesTicksTable($pdo);
+            $stmt = $pdo->query(
+                'SELECT title, teaser, link_url, link_label
+                 FROM homepage_articles_ticks
+                 ORDER BY sorting ASC, id ASC'
+            );
+            if (!$stmt) {
+                return $defaults;
+            }
+            $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+            return !empty($rows) ? $rows : $defaults;
+        } catch (\Throwable $e) {
+            return $defaults;
+        }
+    }
+
+    /**
+     * Create homepage_articles_ticks if missing and seed default rows once.
+     * If the table already exists, leave its content alone.
+     */
+    private function ensureArticlesTicksTable(\PDO $pdo)
+    {
+        $exists = $pdo->query("SHOW TABLES LIKE 'homepage_articles_ticks'");
+        if ($exists && $exists->fetchColumn()) {
+            return;
+        }
+
+        $created = $pdo->exec(
+            'CREATE TABLE homepage_articles_ticks (
+                id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+                title VARCHAR(255) NOT NULL DEFAULT \'\',
+                teaser VARCHAR(512) NOT NULL DEFAULT \'\',
+                link_url VARCHAR(512) NOT NULL DEFAULT \'\',
+                link_label VARCHAR(128) NOT NULL DEFAULT \'Czytaj dalej...\',
+                sorting INT UNSIGNED NOT NULL DEFAULT 0,
+                PRIMARY KEY (id)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4'
+        );
+        if ($created === false) {
+            throw new \RuntimeException('Could not create homepage_articles_ticks');
+        }
+
+        $stmt = $pdo->prepare(
+            'INSERT INTO homepage_articles_ticks (title, teaser, link_url, link_label, sorting)
+             VALUES (:title, :teaser, :link_url, :link_label, :sorting)'
+        );
+        foreach ($this->getArticlesTicksDefaults() as $i => $row) {
+            $stmt->execute([
+                ':title'      => $row['title'],
+                ':teaser'     => $row['teaser'],
+                ':link_url'   => $row['link_url'],
+                ':link_label' => $row['link_label'],
+                ':sorting'    => $i,
+            ]);
+        }
+    }
+
+    private function getArticlesTicksDefaults(): array
+    {
+        return [
             [
                 'title'      => 'Wszystkie projekty domów',
                 'teaser'     => 'Fragment tekstu pierwsze zdania zajawki',
@@ -118,18 +180,6 @@ class SmartyFunctionsRegistry
                 'link_label' => 'Czytaj dalej...',
             ],
         ];
-        try {
-            $pdo  = \Point7_WebApp::getPDO();
-            $stmt = $pdo->query(
-                'SELECT title, teaser, link_url, link_label
-                 FROM homepage_articles_ticks
-                 ORDER BY sorting ASC, id ASC'
-            );
-            $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-            return $rows ?: $defaults;
-        } catch (\Exception $e) {
-            return $defaults;
-        }
     }
 
     private function fetchContactData(): array

@@ -6212,11 +6212,11 @@ data-id="{$_project.id}"></span>
 <div>
 <p>Z przyjemnością prezentujemy Państwu gotowe projekty domów. Przygotowali je doświadczeni specjaliści,
 którzy tworzą personel naszej firmy. W ofercie znajdą Państwo między innymi <a
-href="/projekty-domow/blizniaki/" style="color: #cc1000;">projekty domów bliźniaczych</a>, <a
-href="/projekty-domow/nowoczesne/" style="color: #cc1000;">projekty domów nowoczesnych</a>, <a
+href="/projekty-domow/blizniaki/" style="color: #ed1d24;">projekty domów bliźniaczych</a>, <a
+href="/projekty-domow/nowoczesne/" style="color: #ed1d24;">projekty domów nowoczesnych</a>, <a
 href="/projekty-domow/na-waska-dzialke/">na wąską działkę</a>, parterowych i piętrowych. Polecamy
-także <a href="/projekty-domow/tanie-w-budowie/" style="color: #cc1000;">domy tanie w budowie</a> oraz
-<a href="/projekty-domow/z-plaskim-dachem/" style="color: #cc1000;">z płaskim dachem</a>. Wszystkie
+także <a href="/projekty-domow/tanie-w-budowie/" style="color: #ed1d24;">domy tanie w budowie</a> oraz
+<a href="/projekty-domow/z-plaskim-dachem/" style="color: #ed1d24;">z płaskim dachem</a>. Wszystkie
 dostosowane są do polskich warunków budowlanych. Udostępniamy także wzory małych obiektów, ponieważ
 wiemy jak ważna jest obecnie oszczędność i funkcjonalność. Posiadamy wieloletnie doświadczenie we
 współpracy z inwestorami budującymi tego typu obiekty, propozycje zostały więc opracowane na podstawie
@@ -6224,7 +6224,7 @@ wytycznych ekspertów. Projekty domów gotowych do realizacji to wygodne i prakt
 szczególnie dla osób, które nie zetknęły się wcześniej z tą branżą. Mogą w ten sposób nabyć wzór, który
 jest uniwersalny i sprawdzony w praktyce. Mamy świadomość tego, iż wybór odpowiedniej propozycji to
 poważna decyzja, dlatego chętnie służymy Państwu radą. Wszystkie nasze <a href="/projekty-domow/"
-style="color: #cc1000;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
+style="color: #ed1d24;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
 najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczekiwania.
 </p>
 <h3>Najpopularniejsze typy domów</h3>
@@ -6233,7 +6233,7 @@ najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczeki
 takiego rozwiązania jest umieszczenie stref mieszkalnych, dziennej i nocnej, na jednym poziomie -
 parterze, bez konieczności budowania schodów i stropu. Warto także podkreślić bezpośredni kontakt z
 otaczającą budynek zielenią, dostępną niemal "za ścianą". Małe <a href="/projekty-domow/parterowe/"
-style="color: #cc1000;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
+style="color: #ed1d24;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
 propozycji na rynku. Koszt budowy jak i ich użytkowania zaliczyć można do najniższych. Rozległe
 rezydencje parterowe natomiast, najbardziej przypominają nowoczesne siedliska. W naszej ofercie projekty
 domów parterowych traktowane są wyjątkowo - bez trudu znajdą tutaj Państwo coś dla siebie. Od
@@ -6247,9 +6247,9 @@ różnorodne kształty. Od typowych, prostych konstrukcji, przykrytych dwuspadow
 finezyjne bryły ozdobione licznymi detalami architektonicznymi i bazujące na nowoczesnych trendach.
 Przygotowane przez nas budynki to wspaniała propozycja dla typowych rodzin 2+2 i 2+3. Ich funkcjonalność
 została specjalnie zaprojektowana dla wygody kilku użytkowników, którzy spędzają czas w swoim domu. <a
-href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #cc1000;">Gotowe projekty domów z
+href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #ed1d24;">Gotowe projekty domów z
 poddaszem użytkowym</a> stanowią w naszej ofercie najliczniejszą grupę koncepcji, które wcielamy w
-życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #cc1000;">Zobacz dodatki</a>
+życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #ed1d24;">Zobacz dodatki</a>
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Projekty domów
 jednorodzinnych Studio Atrium</h2>
@@ -6272,7 +6272,7 @@ Atrium cieszy się bardzo dobrą opinią wśród klientów. Nasi klienci w recen
 wysoką jakość obsługi, solidność projektów, oraz indywidualne podejście do potrzeb inwestorów. Ponadto
 jako firma zdobyliśmy uznanie w branży, m.in. poprzez wyróżnienia takie jak Konsumencki Lider Jakości,
 co świadczy o dbałości o klienta. Jeżeli nadal masz wątpliwości, już dziś <a
-href="https://www.studioatrium.pl/kontakt/" style="color: #cc1000;">skontaktuj się z naszym
+href="https://www.studioatrium.pl/kontakt/" style="color: #ed1d24;">skontaktuj się z naszym
 konsultantem</a> lub odwiedź naszą siedzibę mieszczącą się w Bielsku-Białej przy ulicy J.
 Malczewskiego 1. Jesteśmy otwarci dla Ciebie od poniedziałku do piątku w godzinach od 8:00 do 17:00.
 Skontaktuj się z nami i poznaj przyjemność pracy ze specjalistami!</p>
@@ -6327,7 +6327,7 @@ możemy zaoferować! Twój wymarzony dom zaczyna się od pierwszego kliknięcia.
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Odwiedź nasze
 forum dyskusyjne</h2>
 <p>Nasza strona internetowa zawiera zakładkę <a href="https://www.studioatrium.pl/forum/"
-style="color: #cc1000;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
+style="color: #ed1d24;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
 architektonicznego wymieniają się swoimi poglądami oraz przemyśleniami w tej dziedzinie. To świetna
 okazja, by wymienić się doświadczeniami; co więcej, w dyskusjach poruszanych na forum biorą udział nasi
 eksperci, którzy otwarcie dzielą się swoim doświadczeniem. Forum na stronie internetowej Studio Atrium
@@ -6391,7 +6391,7 @@ konkretny, spełniający wszelkie oczekiwania Inwestora.</p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Nasz katalog
 projektów domów - co w nim znajdziesz?</h2>
 <p>Katalog projektów to narzędzie przydatne dla interesantów, chętnych pogłębić swoją wiedzę. <a
-href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #cc1000;">Nasz darmowy
+href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #ed1d24;">Nasz darmowy
 katalog</a> prezentuje liczne propozycje projektów. Znajdziesz w nim projekty domów parterowych i
 piętrowych, projekty z przystosowaniem do różnych typów działek, projekty garaży wolnostojących oraz
 inne wyselekcjonowane projekty domów. Jeżeli chcesz zobaczyć więcej projektów oferowanych przez Studio
@@ -6433,7 +6433,7 @@ antresolą)</p>
 <p>• W zależności od stylu (nowoczesne, w stylu stodoły, regionalne beskidzkie, nowoczesne beskidzkie, z
 płaskim dachem, rezydencje dla zamożnych)</p>
 <h3 style="font-size:2.4rem;">Projekty domów piętrowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #ed1d24;">Projekty domów
 piętrowych</a> wyróżniają się świetnym zagospodarowaniem wnętrza, które z łatwością można podzielić
 na strefę dzienną, składającą się z kuchni, salonu i innych pomieszczeń integralnych oraz strefę nocną
 dedykowaną sypialniom, łazienkom i różnego rodzaju gabinetom domowym. Domy składające się z więcej niż
@@ -6443,7 +6443,7 @@ stanowią podstawę do ciekawej aranżacji bryły. Takie rozwiązanie świetnie 
 rodzin z dziećmi, łącząc estetykę i komfort w jednej bryle. Warto podkreślić, że domy piętrowe idealnie
 nadają się w przypadku mniejszej działki - takie rozwiązanie pozwala zaoszczędzić przestrzeń.</p>
 <h3 style="font-size:2.4rem;">Projekty domów parterowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #ed1d24;">Projekty domów
 parterowych</a> stanowią idealne rozwiązanie dla klientów ceniących sobie wygodę, estetykę oraz
 funkcjonalność. Głównym atutem tego typu projektów jest brak schodów. Jedna kondygnacja, z której składa
 się cała bryła może okazać się idealnym rozwiązaniem dla rodzin z małymi dziećmi lub dla osób z
@@ -6464,7 +6464,7 @@ idealnie sprawdza się jako dodatkowy składzik lub pomieszczenie gospodarcze. W
 parterowy z poddaszem to świetna alternatywa dla Inwestorów, którzy chcą rozłożyć budowę domu na etapy,
 ponieważ poddasze nie musi być wykańczane od razu.</p>
 <h3 style="font-size:2.4rem;">Projekty domów bliźniaczych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #ed1d24;">Projekty domów
 bliźniaczych</a> to charakterystyczne budowle, które wyróżniają się podziałem bryły na dwa oddzielne
 i niezależne od siebie segmenty. Konstrukcja składa się z jednego wspólnego dachu oraz murów
 zewnętrznych, natomiast zawiera dwa oddzielne i niezależne wejścia do mieszkania. Ta alternatywa jest
@@ -6481,7 +6481,7 @@ nasi projektanci uwzględnili w projektach domów takie rozwiązania jak systemy
 energii odnawialnej, systemy zarządzania energią oraz wiele innych zastosowań, definiujących projekty
 Studio Atrium jako energooszczędne.</p>
 <h3 style="font-size:2.4rem;">Projekty domów nowoczesnych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #ed1d24;">Projekty domów
 nowoczesnych</a> wyróżniają się uwzględnieniem minimalizmu i prostoty. W tym celu ogranicza się
 ozdoby i dekoracje do minimum, co sprawia, że cena wybudowania takiego domu staje się atrakcyjniejsza.
 Zastosowanie dużych przeszklonych okien wpuszcza do domu naturalne światło, co pozwala zaoszczędzić
@@ -6489,7 +6489,7 @@ energię elektryczną. Inwestorzy często decydują się również na zastosowan
 cegły, aby dom był bardziej przytulny. Wyżej opisane elementy to przykładowe detale, którymi cechują się
 projekty domów nowoczesnych.</p>
 <h3 style="font-size:2.4rem;">Projekty w stylu stodoły</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #cc1000;">Projekty
+<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #ed1d24;">Projekty
 domów w stylu stodoły</a>, czyli tzw. Barn House, coraz częściej stają się obiektem zainteresowań
 Inwestorów. Charakteryzują się prostokątną bryłą budynku oraz wielkoformatowymi oknami. Są to typy domów
 z dachem dwuspadowym. Wnętrza cechują wysokie sufity i otwarte przestrzenie z uwzględnieniem antresoli
@@ -6498,7 +6498,7 @@ takich jak drewniane bele i stara cegła, w połączeniu z nowoczesnymi metalowy
 wykończeniami. </p>
 <h3 style="font-size:2.4rem;">Projekty domów z poddaszem użytkowym</h3>
 <p><a href="https://www.studioatrium.pl/projekty-domow/z-poddaszem-uzytkowym/"
-style="color: #cc1000;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
+style="color: #ed1d24;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
 wszystkim decyzję o zagospodarowaniu poddasza podejmuje Inwestor, co więcej poddasze użytkowe to
 możliwość podzielenia wykończenia domu na etapy. Poddasze to przestrzeń wypełniona licznymi skosami,
 które przy odpowiedniej aranżacji kreują przytulną przestrzeń dla mieszkańców. Zastosowanie tego rodzaju
@@ -6520,7 +6520,7 @@ na dłuższy okres czasu.</p>
 <p>Bardzo często zdarza się, że najistotniejszym dla inwestora jest mały metraż działki, który automatycznie
 uniemożliwia wybudowanie pewnych brył. Dla specjalistów Studio Atrium wąska działka nie stanowi
 ograniczenia a jedynie podstawę do tworzenia kreatywnych rozwiązań dla klienta. <a
-href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #cc1000;">Projekty
+href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #ed1d24;">Projekty
 domów na wąską działkę</a> najczęściej skupiają się na maksymalnym wykorzystaniu działki poprzez
 zastosowanie podłużnej, prostokątnej bryły, tak aby jak najbardziej wykorzystać ograniczoną
 powierzchnię. W przypadku wąskich działek idealnie sprawdzają się domy piętrowe lub takie z poddaszem
@@ -6528,7 +6528,7 @@ użytkowym.</p>
 <h3 style="font-size:2.4rem;">Projekty domów z kosztorysem</h3>
 <p>Decydując się na zakup projektu domu z kosztorysem, inwestor nabywa gotowe plany budowlane z
 uwzględnieniem szczegółowych informacji <a
-href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #cc1000;">kosztów
+href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #ed1d24;">kosztów
 budowy domów</a>. Takie rozwiązanie świetnie sprawdza się w przypadku Inwestorów, którym zależy na
 dokładnej kontroli budżetu. Jest to również możliwość do lepszego rozplanowania etapów budowy i płynnego
 zarządzania zapleczem finansowym. Jeżeli budujesz dom po raz pierwszy, masz ograniczony budżet lub
@@ -6537,7 +6537,7 @@ kosztorysem jest odpowiednia dla Ciebie. Aktualna cena to 750 zł za szczegóło
 <h3 style="font-size:2.4rem;">Projekty małych domów</h3>
 <p>Małe domy wyróżnia nieduży metraż; dlatego istotne jest uwzględnienie w projekcie praktycznych zastosowań
 przy maksymalnym zagospodarowaniu powierzchni użytkowej. <a
-href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #cc1000;">Projekty małych
+href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #ed1d24;">Projekty małych
 domów</a> to idealne rozwiązanie dla par lub osób w podeszłym wieku; co więcej takie projekty
 idealnie sprawdzają się w przypadku ograniczeń związanych z małym metrażem działki. Jeżeli cenisz sobie
 praktyczność połączoną z przytulnymi aranżacjami wnętrz, projekt małego domu jest właśnie dla Ciebie.
@@ -6550,7 +6550,7 @@ wielopoziomowych układów kondygnacji, aby w pełni wykorzystać dostępną prz
 umożliwia ulokowanie parteru lub piwnicy w częściowym zagłębieniu w skarpie, natomiast wyższe
 kondygnacje są wysuwane. Dom ulokowany na wzniesieniu oferuje panoramiczne widoki, co wpływa na jego
 atrakcyjność. <a href="https://www.studioatrium.pl/projekty-domow/na-skarpe/"
-style="color: #cc1000;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
+style="color: #ed1d24;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
 połączeniu z zastosowaniem dużych okien stanowi energooszczędne rozwiązanie doświetlające wnętrze domu.
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Co należy
@@ -6609,11 +6609,11 @@ mieszkańców, stylowi życia i możliwościom finansowym.</p>
 <div>
 <p>Z przyjemnością prezentujemy Państwu gotowe projekty domów. Przygotowali je doświadczeni specjaliści,
 którzy tworzą personel naszej firmy. W ofercie znajdą Państwo między innymi <a
-href="/projekty-domow/blizniaki/" style="color: #cc1000;">projekty domów bliźniaczych</a>, <a
-href="/projekty-domow/nowoczesne/" style="color: #cc1000;">projekty domów nowoczesnych</a>, <a
+href="/projekty-domow/blizniaki/" style="color: #ed1d24;">projekty domów bliźniaczych</a>, <a
+href="/projekty-domow/nowoczesne/" style="color: #ed1d24;">projekty domów nowoczesnych</a>, <a
 href="/projekty-domow/na-waska-dzialke/">na wąską działkę</a>, parterowych i piętrowych. Polecamy
-także <a href="/projekty-domow/tanie-w-budowie/" style="color: #cc1000;">domy tanie w budowie</a> oraz
-<a href="/projekty-domow/z-plaskim-dachem/" style="color: #cc1000;">z płaskim dachem</a>. Wszystkie
+także <a href="/projekty-domow/tanie-w-budowie/" style="color: #ed1d24;">domy tanie w budowie</a> oraz
+<a href="/projekty-domow/z-plaskim-dachem/" style="color: #ed1d24;">z płaskim dachem</a>. Wszystkie
 dostosowane są do polskich warunków budowlanych. Udostępniamy także wzory małych obiektów, ponieważ
 wiemy jak ważna jest obecnie oszczędność i funkcjonalność. Posiadamy wieloletnie doświadczenie we
 współpracy z inwestorami budującymi tego typu obiekty, propozycje zostały więc opracowane na podstawie
@@ -6621,7 +6621,7 @@ wytycznych ekspertów. Projekty domów gotowych do realizacji to wygodne i prakt
 szczególnie dla osób, które nie zetknęły się wcześniej z tą branżą. Mogą w ten sposób nabyć wzór, który
 jest uniwersalny i sprawdzony w praktyce. Mamy świadomość tego, iż wybór odpowiedniej propozycji to
 poważna decyzja, dlatego chętnie służymy Państwu radą. Wszystkie nasze <a href="/projekty-domow/"
-style="color: #cc1000;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
+style="color: #ed1d24;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
 najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczekiwania.
 </p>
 <h3>Najpopularniejsze typy domów</h3>
@@ -6630,7 +6630,7 @@ najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczeki
 takiego rozwiązania jest umieszczenie stref mieszkalnych, dziennej i nocnej, na jednym poziomie -
 parterze, bez konieczności budowania schodów i stropu. Warto także podkreślić bezpośredni kontakt z
 otaczającą budynek zielenią, dostępną niemal "za ścianą". Małe <a href="/projekty-domow/parterowe/"
-style="color: #cc1000;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
+style="color: #ed1d24;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
 propozycji na rynku. Koszt budowy jak i ich użytkowania zaliczyć można do najniższych. Rozległe
 rezydencje parterowe natomiast, najbardziej przypominają nowoczesne siedliska. W naszej ofercie projekty
 domów parterowych traktowane są wyjątkowo - bez trudu znajdą tutaj Państwo coś dla siebie. Od
@@ -6644,9 +6644,9 @@ różnorodne kształty. Od typowych, prostych konstrukcji, przykrytych dwuspadow
 finezyjne bryły ozdobione licznymi detalami architektonicznymi i bazujące na nowoczesnych trendach.
 Przygotowane przez nas budynki to wspaniała propozycja dla typowych rodzin 2+2 i 2+3. Ich funkcjonalność
 została specjalnie zaprojektowana dla wygody kilku użytkowników, którzy spędzają czas w swoim domu. <a
-href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #cc1000;">Gotowe projekty domów z
+href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #ed1d24;">Gotowe projekty domów z
 poddaszem użytkowym</a> stanowią w naszej ofercie najliczniejszą grupę koncepcji, które wcielamy w
-życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #cc1000;">Zobacz dodatki</a>
+życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #ed1d24;">Zobacz dodatki</a>
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Projekty domów
 jednorodzinnych Studio Atrium</h2>
@@ -6669,7 +6669,7 @@ Atrium cieszy się bardzo dobrą opinią wśród klientów. Nasi klienci w recen
 wysoką jakość obsługi, solidność projektów, oraz indywidualne podejście do potrzeb inwestorów. Ponadto
 jako firma zdobyliśmy uznanie w branży, m.in. poprzez wyróżnienia takie jak Konsumencki Lider Jakości,
 co świadczy o dbałości o klienta. Jeżeli nadal masz wątpliwości, już dziś <a
-href="https://www.studioatrium.pl/kontakt/" style="color: #cc1000;">skontaktuj się z naszym
+href="https://www.studioatrium.pl/kontakt/" style="color: #ed1d24;">skontaktuj się z naszym
 konsultantem</a> lub odwiedź naszą siedzibę mieszczącą się w Bielsku-Białej przy ulicy J.
 Malczewskiego 1. Jesteśmy otwarci dla Ciebie od poniedziałku do piątku w godzinach od 8:00 do 17:00.
 Skontaktuj się z nami i poznaj przyjemność pracy ze specjalistami!</p>
@@ -6724,7 +6724,7 @@ możemy zaoferować! Twój wymarzony dom zaczyna się od pierwszego kliknięcia.
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Odwiedź nasze
 forum dyskusyjne</h2>
 <p>Nasza strona internetowa zawiera zakładkę <a href="https://www.studioatrium.pl/forum/"
-style="color: #cc1000;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
+style="color: #ed1d24;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
 architektonicznego wymieniają się swoimi poglądami oraz przemyśleniami w tej dziedzinie. To świetna
 okazja, by wymienić się doświadczeniami; co więcej, w dyskusjach poruszanych na forum biorą udział nasi
 eksperci, którzy otwarcie dzielą się swoim doświadczeniem. Forum na stronie internetowej Studio Atrium
@@ -6788,7 +6788,7 @@ konkretny, spełniający wszelkie oczekiwania Inwestora.</p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Nasz katalog
 projektów domów - co w nim znajdziesz?</h2>
 <p>Katalog projektów to narzędzie przydatne dla interesantów, chętnych pogłębić swoją wiedzę. <a
-href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #cc1000;">Nasz darmowy
+href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #ed1d24;">Nasz darmowy
 katalog</a> prezentuje liczne propozycje projektów. Znajdziesz w nim projekty domów parterowych i
 piętrowych, projekty z przystosowaniem do różnych typów działek, projekty garaży wolnostojących oraz
 inne wyselekcjonowane projekty domów. Jeżeli chcesz zobaczyć więcej projektów oferowanych przez Studio
@@ -6830,7 +6830,7 @@ antresolą)</p>
 <p>• W zależności od stylu (nowoczesne, w stylu stodoły, regionalne beskidzkie, nowoczesne beskidzkie, z
 płaskim dachem, rezydencje dla zamożnych)</p>
 <h3 style="font-size:2.4rem;">Projekty domów piętrowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #ed1d24;">Projekty domów
 piętrowych</a> wyróżniają się świetnym zagospodarowaniem wnętrza, które z łatwością można podzielić
 na strefę dzienną, składającą się z kuchni, salonu i innych pomieszczeń integralnych oraz strefę nocną
 dedykowaną sypialniom, łazienkom i różnego rodzaju gabinetom domowym. Domy składające się z więcej niż
@@ -6840,7 +6840,7 @@ stanowią podstawę do ciekawej aranżacji bryły. Takie rozwiązanie świetnie 
 rodzin z dziećmi, łącząc estetykę i komfort w jednej bryle. Warto podkreślić, że domy piętrowe idealnie
 nadają się w przypadku mniejszej działki - takie rozwiązanie pozwala zaoszczędzić przestrzeń.</p>
 <h3 style="font-size:2.4rem;">Projekty domów parterowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #ed1d24;">Projekty domów
 parterowych</a> stanowią idealne rozwiązanie dla klientów ceniących sobie wygodę, estetykę oraz
 funkcjonalność. Głównym atutem tego typu projektów jest brak schodów. Jedna kondygnacja, z której składa
 się cała bryła może okazać się idealnym rozwiązaniem dla rodzin z małymi dziećmi lub dla osób z
@@ -6861,7 +6861,7 @@ idealnie sprawdza się jako dodatkowy składzik lub pomieszczenie gospodarcze. W
 parterowy z poddaszem to świetna alternatywa dla Inwestorów, którzy chcą rozłożyć budowę domu na etapy,
 ponieważ poddasze nie musi być wykańczane od razu.</p>
 <h3 style="font-size:2.4rem;">Projekty domów bliźniaczych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #ed1d24;">Projekty domów
 bliźniaczych</a> to charakterystyczne budowle, które wyróżniają się podziałem bryły na dwa oddzielne
 i niezależne od siebie segmenty. Konstrukcja składa się z jednego wspólnego dachu oraz murów
 zewnętrznych, natomiast zawiera dwa oddzielne i niezależne wejścia do mieszkania. Ta alternatywa jest
@@ -6878,7 +6878,7 @@ nasi projektanci uwzględnili w projektach domów takie rozwiązania jak systemy
 energii odnawialnej, systemy zarządzania energią oraz wiele innych zastosowań, definiujących projekty
 Studio Atrium jako energooszczędne.</p>
 <h3 style="font-size:2.4rem;">Projekty domów nowoczesnych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #ed1d24;">Projekty domów
 nowoczesnych</a> wyróżniają się uwzględnieniem minimalizmu i prostoty. W tym celu ogranicza się
 ozdoby i dekoracje do minimum, co sprawia, że cena wybudowania takiego domu staje się atrakcyjniejsza.
 Zastosowanie dużych przeszklonych okien wpuszcza do domu naturalne światło, co pozwala zaoszczędzić
@@ -6886,7 +6886,7 @@ energię elektryczną. Inwestorzy często decydują się również na zastosowan
 cegły, aby dom był bardziej przytulny. Wyżej opisane elementy to przykładowe detale, którymi cechują się
 projekty domów nowoczesnych.</p>
 <h3 style="font-size:2.4rem;">Projekty w stylu stodoły</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #cc1000;">Projekty
+<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #ed1d24;">Projekty
 domów w stylu stodoły</a>, czyli tzw. Barn House, coraz częściej stają się obiektem zainteresowań
 Inwestorów. Charakteryzują się prostokątną bryłą budynku oraz wielkoformatowymi oknami. Są to typy domów
 z dachem dwuspadowym. Wnętrza cechują wysokie sufity i otwarte przestrzenie z uwzględnieniem antresoli
@@ -6895,7 +6895,7 @@ takich jak drewniane bele i stara cegła, w połączeniu z nowoczesnymi metalowy
 wykończeniami. </p>
 <h3 style="font-size:2.4rem;">Projekty domów z poddaszem użytkowym</h3>
 <p><a href="https://www.studioatrium.pl/projekty-domow/z-poddaszem-uzytkowym/"
-style="color: #cc1000;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
+style="color: #ed1d24;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
 wszystkim decyzję o zagospodarowaniu poddasza podejmuje Inwestor, co więcej poddasze użytkowe to
 możliwość podzielenia wykończenia domu na etapy. Poddasze to przestrzeń wypełniona licznymi skosami,
 które przy odpowiedniej aranżacji kreują przytulną przestrzeń dla mieszkańców. Zastosowanie tego rodzaju
@@ -6917,7 +6917,7 @@ na dłuższy okres czasu.</p>
 <p>Bardzo często zdarza się, że najistotniejszym dla inwestora jest mały metraż działki, który automatycznie
 uniemożliwia wybudowanie pewnych brył. Dla specjalistów Studio Atrium wąska działka nie stanowi
 ograniczenia a jedynie podstawę do tworzenia kreatywnych rozwiązań dla klienta. <a
-href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #cc1000;">Projekty
+href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #ed1d24;">Projekty
 domów na wąską działkę</a> najczęściej skupiają się na maksymalnym wykorzystaniu działki poprzez
 zastosowanie podłużnej, prostokątnej bryły, tak aby jak najbardziej wykorzystać ograniczoną
 powierzchnię. W przypadku wąskich działek idealnie sprawdzają się domy piętrowe lub takie z poddaszem
@@ -6925,7 +6925,7 @@ użytkowym.</p>
 <h3 style="font-size:2.4rem;">Projekty domów z kosztorysem</h3>
 <p>Decydując się na zakup projektu domu z kosztorysem, inwestor nabywa gotowe plany budowlane z
 uwzględnieniem szczegółowych informacji <a
-href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #cc1000;">kosztów
+href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #ed1d24;">kosztów
 budowy domów</a>. Takie rozwiązanie świetnie sprawdza się w przypadku Inwestorów, którym zależy na
 dokładnej kontroli budżetu. Jest to również możliwość do lepszego rozplanowania etapów budowy i płynnego
 zarządzania zapleczem finansowym. Jeżeli budujesz dom po raz pierwszy, masz ograniczony budżet lub
@@ -6934,7 +6934,7 @@ kosztorysem jest odpowiednia dla Ciebie. Aktualna cena to 750 zł za szczegóło
 <h3 style="font-size:2.4rem;">Projekty małych domów</h3>
 <p>Małe domy wyróżnia nieduży metraż; dlatego istotne jest uwzględnienie w projekcie praktycznych zastosowań
 przy maksymalnym zagospodarowaniu powierzchni użytkowej. <a
-href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #cc1000;">Projekty małych
+href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #ed1d24;">Projekty małych
 domów</a> to idealne rozwiązanie dla par lub osób w podeszłym wieku; co więcej takie projekty
 idealnie sprawdzają się w przypadku ograniczeń związanych z małym metrażem działki. Jeżeli cenisz sobie
 praktyczność połączoną z przytulnymi aranżacjami wnętrz, projekt małego domu jest właśnie dla Ciebie.
@@ -6947,7 +6947,7 @@ wielopoziomowych układów kondygnacji, aby w pełni wykorzystać dostępną prz
 umożliwia ulokowanie parteru lub piwnicy w częściowym zagłębieniu w skarpie, natomiast wyższe
 kondygnacje są wysuwane. Dom ulokowany na wzniesieniu oferuje panoramiczne widoki, co wpływa na jego
 atrakcyjność. <a href="https://www.studioatrium.pl/projekty-domow/na-skarpe/"
-style="color: #cc1000;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
+style="color: #ed1d24;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
 połączeniu z zastosowaniem dużych okien stanowi energooszczędne rozwiązanie doświetlające wnętrze domu.
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Co należy
@@ -7118,11 +7118,11 @@ href="/konkurs/fotograficzny.html">fotokonkursie</a> z nagrodami.</p>
 <div>
 <p>Z przyjemnością prezentujemy Państwu gotowe projekty domów. Przygotowali je doświadczeni specjaliści,
 którzy tworzą personel naszej firmy. W ofercie znajdą Państwo między innymi <a
-href="/projekty-domow/blizniaki/" style="color: #cc1000;">projekty domów bliźniaczych</a>, <a
-href="/projekty-domow/nowoczesne/" style="color: #cc1000;">projekty domów nowoczesnych</a>, <a
+href="/projekty-domow/blizniaki/" style="color: #ed1d24;">projekty domów bliźniaczych</a>, <a
+href="/projekty-domow/nowoczesne/" style="color: #ed1d24;">projekty domów nowoczesnych</a>, <a
 href="/projekty-domow/na-waska-dzialke/">na wąską działkę</a>, parterowych i piętrowych. Polecamy
-także <a href="/projekty-domow/tanie-w-budowie/" style="color: #cc1000;">domy tanie w budowie</a> oraz
-<a href="/projekty-domow/z-plaskim-dachem/" style="color: #cc1000;">z płaskim dachem</a>. Wszystkie
+także <a href="/projekty-domow/tanie-w-budowie/" style="color: #ed1d24;">domy tanie w budowie</a> oraz
+<a href="/projekty-domow/z-plaskim-dachem/" style="color: #ed1d24;">z płaskim dachem</a>. Wszystkie
 dostosowane są do polskich warunków budowlanych. Udostępniamy także wzory małych obiektów, ponieważ
 wiemy jak ważna jest obecnie oszczędność i funkcjonalność. Posiadamy wieloletnie doświadczenie we
 współpracy z inwestorami budującymi tego typu obiekty, propozycje zostały więc opracowane na podstawie
@@ -7130,7 +7130,7 @@ wytycznych ekspertów. Projekty domów gotowych do realizacji to wygodne i prakt
 szczególnie dla osób, które nie zetknęły się wcześniej z tą branżą. Mogą w ten sposób nabyć wzór, który
 jest uniwersalny i sprawdzony w praktyce. Mamy świadomość tego, iż wybór odpowiedniej propozycji to
 poważna decyzja, dlatego chętnie służymy Państwu radą. Wszystkie nasze <a href="/projekty-domow/"
-style="color: #cc1000;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
+style="color: #ed1d24;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
 najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczekiwania.
 </p>
 <h3>Najpopularniejsze typy domów</h3>
@@ -7139,7 +7139,7 @@ najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczeki
 takiego rozwiązania jest umieszczenie stref mieszkalnych, dziennej i nocnej, na jednym poziomie -
 parterze, bez konieczności budowania schodów i stropu. Warto także podkreślić bezpośredni kontakt z
 otaczającą budynek zielenią, dostępną niemal "za ścianą". Małe <a href="/projekty-domow/parterowe/"
-style="color: #cc1000;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
+style="color: #ed1d24;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
 propozycji na rynku. Koszt budowy jak i ich użytkowania zaliczyć można do najniższych. Rozległe
 rezydencje parterowe natomiast, najbardziej przypominają nowoczesne siedliska. W naszej ofercie projekty
 domów parterowych traktowane są wyjątkowo - bez trudu znajdą tutaj Państwo coś dla siebie. Od
@@ -7153,9 +7153,9 @@ różnorodne kształty. Od typowych, prostych konstrukcji, przykrytych dwuspadow
 finezyjne bryły ozdobione licznymi detalami architektonicznymi i bazujące na nowoczesnych trendach.
 Przygotowane przez nas budynki to wspaniała propozycja dla typowych rodzin 2+2 i 2+3. Ich funkcjonalność
 została specjalnie zaprojektowana dla wygody kilku użytkowników, którzy spędzają czas w swoim domu. <a
-href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #cc1000;">Gotowe projekty domów z
+href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #ed1d24;">Gotowe projekty domów z
 poddaszem użytkowym</a> stanowią w naszej ofercie najliczniejszą grupę koncepcji, które wcielamy w
-życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #cc1000;">Zobacz dodatki</a>
+życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #ed1d24;">Zobacz dodatki</a>
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Projekty domów
 jednorodzinnych Studio Atrium</h2>
@@ -7178,7 +7178,7 @@ Atrium cieszy się bardzo dobrą opinią wśród klientów. Nasi klienci w recen
 wysoką jakość obsługi, solidność projektów, oraz indywidualne podejście do potrzeb inwestorów. Ponadto
 jako firma zdobyliśmy uznanie w branży, m.in. poprzez wyróżnienia takie jak Konsumencki Lider Jakości,
 co świadczy o dbałości o klienta. Jeżeli nadal masz wątpliwości, już dziś <a
-href="https://www.studioatrium.pl/kontakt/" style="color: #cc1000;">skontaktuj się z naszym
+href="https://www.studioatrium.pl/kontakt/" style="color: #ed1d24;">skontaktuj się z naszym
 konsultantem</a> lub odwiedź naszą siedzibę mieszczącą się w Bielsku-Białej przy ulicy J.
 Malczewskiego 1. Jesteśmy otwarci dla Ciebie od poniedziałku do piątku w godzinach od 8:00 do 17:00.
 Skontaktuj się z nami i poznaj przyjemność pracy ze specjalistami!</p>
@@ -7233,7 +7233,7 @@ możemy zaoferować! Twój wymarzony dom zaczyna się od pierwszego kliknięcia.
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Odwiedź nasze
 forum dyskusyjne</h2>
 <p>Nasza strona internetowa zawiera zakładkę <a href="https://www.studioatrium.pl/forum/"
-style="color: #cc1000;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
+style="color: #ed1d24;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
 architektonicznego wymieniają się swoimi poglądami oraz przemyśleniami w tej dziedzinie. To świetna
 okazja, by wymienić się doświadczeniami; co więcej, w dyskusjach poruszanych na forum biorą udział nasi
 eksperci, którzy otwarcie dzielą się swoim doświadczeniem. Forum na stronie internetowej Studio Atrium
@@ -7297,7 +7297,7 @@ konkretny, spełniający wszelkie oczekiwania Inwestora.</p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Nasz katalog
 projektów domów - co w nim znajdziesz?</h2>
 <p>Katalog projektów to narzędzie przydatne dla interesantów, chętnych pogłębić swoją wiedzę. <a
-href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #cc1000;">Nasz darmowy
+href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #ed1d24;">Nasz darmowy
 katalog</a> prezentuje liczne propozycje projektów. Znajdziesz w nim projekty domów parterowych i
 piętrowych, projekty z przystosowaniem do różnych typów działek, projekty garaży wolnostojących oraz
 inne wyselekcjonowane projekty domów. Jeżeli chcesz zobaczyć więcej projektów oferowanych przez Studio
@@ -7339,7 +7339,7 @@ antresolą)</p>
 <p>• W zależności od stylu (nowoczesne, w stylu stodoły, regionalne beskidzkie, nowoczesne beskidzkie, z
 płaskim dachem, rezydencje dla zamożnych)</p>
 <h3 style="font-size:2.4rem;">Projekty domów piętrowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #ed1d24;">Projekty domów
 piętrowych</a> wyróżniają się świetnym zagospodarowaniem wnętrza, które z łatwością można podzielić
 na strefę dzienną, składającą się z kuchni, salonu i innych pomieszczeń integralnych oraz strefę nocną
 dedykowaną sypialniom, łazienkom i różnego rodzaju gabinetom domowym. Domy składające się z więcej niż
@@ -7349,7 +7349,7 @@ stanowią podstawę do ciekawej aranżacji bryły. Takie rozwiązanie świetnie 
 rodzin z dziećmi, łącząc estetykę i komfort w jednej bryle. Warto podkreślić, że domy piętrowe idealnie
 nadają się w przypadku mniejszej działki - takie rozwiązanie pozwala zaoszczędzić przestrzeń.</p>
 <h3 style="font-size:2.4rem;">Projekty domów parterowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #ed1d24;">Projekty domów
 parterowych</a> stanowią idealne rozwiązanie dla klientów ceniących sobie wygodę, estetykę oraz
 funkcjonalność. Głównym atutem tego typu projektów jest brak schodów. Jedna kondygnacja, z której składa
 się cała bryła może okazać się idealnym rozwiązaniem dla rodzin z małymi dziećmi lub dla osób z
@@ -7370,7 +7370,7 @@ idealnie sprawdza się jako dodatkowy składzik lub pomieszczenie gospodarcze. W
 parterowy z poddaszem to świetna alternatywa dla Inwestorów, którzy chcą rozłożyć budowę domu na etapy,
 ponieważ poddasze nie musi być wykańczane od razu.</p>
 <h3 style="font-size:2.4rem;">Projekty domów bliźniaczych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #ed1d24;">Projekty domów
 bliźniaczych</a> to charakterystyczne budowle, które wyróżniają się podziałem bryły na dwa oddzielne
 i niezależne od siebie segmenty. Konstrukcja składa się z jednego wspólnego dachu oraz murów
 zewnętrznych, natomiast zawiera dwa oddzielne i niezależne wejścia do mieszkania. Ta alternatywa jest
@@ -7387,7 +7387,7 @@ nasi projektanci uwzględnili w projektach domów takie rozwiązania jak systemy
 energii odnawialnej, systemy zarządzania energią oraz wiele innych zastosowań, definiujących projekty
 Studio Atrium jako energooszczędne.</p>
 <h3 style="font-size:2.4rem;">Projekty domów nowoczesnych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #ed1d24;">Projekty domów
 nowoczesnych</a> wyróżniają się uwzględnieniem minimalizmu i prostoty. W tym celu ogranicza się
 ozdoby i dekoracje do minimum, co sprawia, że cena wybudowania takiego domu staje się atrakcyjniejsza.
 Zastosowanie dużych przeszklonych okien wpuszcza do domu naturalne światło, co pozwala zaoszczędzić
@@ -7395,7 +7395,7 @@ energię elektryczną. Inwestorzy często decydują się również na zastosowan
 cegły, aby dom był bardziej przytulny. Wyżej opisane elementy to przykładowe detale, którymi cechują się
 projekty domów nowoczesnych.</p>
 <h3 style="font-size:2.4rem;">Projekty w stylu stodoły</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #cc1000;">Projekty
+<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #ed1d24;">Projekty
 domów w stylu stodoły</a>, czyli tzw. Barn House, coraz częściej stają się obiektem zainteresowań
 Inwestorów. Charakteryzują się prostokątną bryłą budynku oraz wielkoformatowymi oknami. Są to typy domów
 z dachem dwuspadowym. Wnętrza cechują wysokie sufity i otwarte przestrzenie z uwzględnieniem antresoli
@@ -7404,7 +7404,7 @@ takich jak drewniane bele i stara cegła, w połączeniu z nowoczesnymi metalowy
 wykończeniami. </p>
 <h3 style="font-size:2.4rem;">Projekty domów z poddaszem użytkowym</h3>
 <p><a href="https://www.studioatrium.pl/projekty-domow/z-poddaszem-uzytkowym/"
-style="color: #cc1000;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
+style="color: #ed1d24;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
 wszystkim decyzję o zagospodarowaniu poddasza podejmuje Inwestor, co więcej poddasze użytkowe to
 możliwość podzielenia wykończenia domu na etapy. Poddasze to przestrzeń wypełniona licznymi skosami,
 które przy odpowiedniej aranżacji kreują przytulną przestrzeń dla mieszkańców. Zastosowanie tego rodzaju
@@ -7426,7 +7426,7 @@ na dłuższy okres czasu.</p>
 <p>Bardzo często zdarza się, że najistotniejszym dla inwestora jest mały metraż działki, który automatycznie
 uniemożliwia wybudowanie pewnych brył. Dla specjalistów Studio Atrium wąska działka nie stanowi
 ograniczenia a jedynie podstawę do tworzenia kreatywnych rozwiązań dla klienta. <a
-href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #cc1000;">Projekty
+href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #ed1d24;">Projekty
 domów na wąską działkę</a> najczęściej skupiają się na maksymalnym wykorzystaniu działki poprzez
 zastosowanie podłużnej, prostokątnej bryły, tak aby jak najbardziej wykorzystać ograniczoną
 powierzchnię. W przypadku wąskich działek idealnie sprawdzają się domy piętrowe lub takie z poddaszem
@@ -7434,7 +7434,7 @@ użytkowym.</p>
 <h3 style="font-size:2.4rem;">Projekty domów z kosztorysem</h3>
 <p>Decydując się na zakup projektu domu z kosztorysem, inwestor nabywa gotowe plany budowlane z
 uwzględnieniem szczegółowych informacji <a
-href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #cc1000;">kosztów
+href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #ed1d24;">kosztów
 budowy domów</a>. Takie rozwiązanie świetnie sprawdza się w przypadku Inwestorów, którym zależy na
 dokładnej kontroli budżetu. Jest to również możliwość do lepszego rozplanowania etapów budowy i płynnego
 zarządzania zapleczem finansowym. Jeżeli budujesz dom po raz pierwszy, masz ograniczony budżet lub
@@ -7443,7 +7443,7 @@ kosztorysem jest odpowiednia dla Ciebie. Aktualna cena to 750 zł za szczegóło
 <h3 style="font-size:2.4rem;">Projekty małych domów</h3>
 <p>Małe domy wyróżnia nieduży metraż; dlatego istotne jest uwzględnienie w projekcie praktycznych zastosowań
 przy maksymalnym zagospodarowaniu powierzchni użytkowej. <a
-href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #cc1000;">Projekty małych
+href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #ed1d24;">Projekty małych
 domów</a> to idealne rozwiązanie dla par lub osób w podeszłym wieku; co więcej takie projekty
 idealnie sprawdzają się w przypadku ograniczeń związanych z małym metrażem działki. Jeżeli cenisz sobie
 praktyczność połączoną z przytulnymi aranżacjami wnętrz, projekt małego domu jest właśnie dla Ciebie.
@@ -7456,7 +7456,7 @@ wielopoziomowych układów kondygnacji, aby w pełni wykorzystać dostępną prz
 umożliwia ulokowanie parteru lub piwnicy w częściowym zagłębieniu w skarpie, natomiast wyższe
 kondygnacje są wysuwane. Dom ulokowany na wzniesieniu oferuje panoramiczne widoki, co wpływa na jego
 atrakcyjność. <a href="https://www.studioatrium.pl/projekty-domow/na-skarpe/"
-style="color: #cc1000;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
+style="color: #ed1d24;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
 połączeniu z zastosowaniem dużych okien stanowi energooszczędne rozwiązanie doświetlające wnętrze domu.
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Co należy
@@ -7621,11 +7621,11 @@ poddaszem{elseif $_item.object.params_general|isGroundFloor:true}parterowego
 <div>
 <p>Z przyjemnością prezentujemy Państwu gotowe projekty domów. Przygotowali je doświadczeni specjaliści,
 którzy tworzą personel naszej firmy. W ofercie znajdą Państwo między innymi <a
-href="/projekty-domow/blizniaki/" style="color: #cc1000;">projekty domów bliźniaczych</a>, <a
-href="/projekty-domow/nowoczesne/" style="color: #cc1000;">projekty domów nowoczesnych</a>, <a
+href="/projekty-domow/blizniaki/" style="color: #ed1d24;">projekty domów bliźniaczych</a>, <a
+href="/projekty-domow/nowoczesne/" style="color: #ed1d24;">projekty domów nowoczesnych</a>, <a
 href="/projekty-domow/na-waska-dzialke/">na wąską działkę</a>, parterowych i piętrowych. Polecamy
-także <a href="/projekty-domow/tanie-w-budowie/" style="color: #cc1000;">domy tanie w budowie</a> oraz
-<a href="/projekty-domow/z-plaskim-dachem/" style="color: #cc1000;">z płaskim dachem</a>. Wszystkie
+także <a href="/projekty-domow/tanie-w-budowie/" style="color: #ed1d24;">domy tanie w budowie</a> oraz
+<a href="/projekty-domow/z-plaskim-dachem/" style="color: #ed1d24;">z płaskim dachem</a>. Wszystkie
 dostosowane są do polskich warunków budowlanych. Udostępniamy także wzory małych obiektów, ponieważ
 wiemy jak ważna jest obecnie oszczędność i funkcjonalność. Posiadamy wieloletnie doświadczenie we
 współpracy z inwestorami budującymi tego typu obiekty, propozycje zostały więc opracowane na podstawie
@@ -7633,7 +7633,7 @@ wytycznych ekspertów. Projekty domów gotowych do realizacji to wygodne i prakt
 szczególnie dla osób, które nie zetknęły się wcześniej z tą branżą. Mogą w ten sposób nabyć wzór, który
 jest uniwersalny i sprawdzony w praktyce. Mamy świadomość tego, iż wybór odpowiedniej propozycji to
 poważna decyzja, dlatego chętnie służymy Państwu radą. Wszystkie nasze <a href="/projekty-domow/"
-style="color: #cc1000;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
+style="color: #ed1d24;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
 najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczekiwania.
 </p>
 <h3>Najpopularniejsze typy domów</h3>
@@ -7642,7 +7642,7 @@ najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczeki
 takiego rozwiązania jest umieszczenie stref mieszkalnych, dziennej i nocnej, na jednym poziomie -
 parterze, bez konieczności budowania schodów i stropu. Warto także podkreślić bezpośredni kontakt z
 otaczającą budynek zielenią, dostępną niemal "za ścianą". Małe <a href="/projekty-domow/parterowe/"
-style="color: #cc1000;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
+style="color: #ed1d24;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
 propozycji na rynku. Koszt budowy jak i ich użytkowania zaliczyć można do najniższych. Rozległe
 rezydencje parterowe natomiast, najbardziej przypominają nowoczesne siedliska. W naszej ofercie projekty
 domów parterowych traktowane są wyjątkowo - bez trudu znajdą tutaj Państwo coś dla siebie. Od
@@ -7656,9 +7656,9 @@ różnorodne kształty. Od typowych, prostych konstrukcji, przykrytych dwuspadow
 finezyjne bryły ozdobione licznymi detalami architektonicznymi i bazujące na nowoczesnych trendach.
 Przygotowane przez nas budynki to wspaniała propozycja dla typowych rodzin 2+2 i 2+3. Ich funkcjonalność
 została specjalnie zaprojektowana dla wygody kilku użytkowników, którzy spędzają czas w swoim domu. <a
-href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #cc1000;">Gotowe projekty domów z
+href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #ed1d24;">Gotowe projekty domów z
 poddaszem użytkowym</a> stanowią w naszej ofercie najliczniejszą grupę koncepcji, które wcielamy w
-życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #cc1000;">Zobacz dodatki</a>
+życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #ed1d24;">Zobacz dodatki</a>
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Projekty domów
 jednorodzinnych Studio Atrium</h2>
@@ -7681,7 +7681,7 @@ Atrium cieszy się bardzo dobrą opinią wśród klientów. Nasi klienci w recen
 wysoką jakość obsługi, solidność projektów, oraz indywidualne podejście do potrzeb inwestorów. Ponadto
 jako firma zdobyliśmy uznanie w branży, m.in. poprzez wyróżnienia takie jak Konsumencki Lider Jakości,
 co świadczy o dbałości o klienta. Jeżeli nadal masz wątpliwości, już dziś <a
-href="https://www.studioatrium.pl/kontakt/" style="color: #cc1000;">skontaktuj się z naszym
+href="https://www.studioatrium.pl/kontakt/" style="color: #ed1d24;">skontaktuj się z naszym
 konsultantem</a> lub odwiedź naszą siedzibę mieszczącą się w Bielsku-Białej przy ulicy J.
 Malczewskiego 1. Jesteśmy otwarci dla Ciebie od poniedziałku do piątku w godzinach od 8:00 do 17:00.
 Skontaktuj się z nami i poznaj przyjemność pracy ze specjalistami!</p>
@@ -7736,7 +7736,7 @@ możemy zaoferować! Twój wymarzony dom zaczyna się od pierwszego kliknięcia.
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Odwiedź nasze
 forum dyskusyjne</h2>
 <p>Nasza strona internetowa zawiera zakładkę <a href="https://www.studioatrium.pl/forum/"
-style="color: #cc1000;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
+style="color: #ed1d24;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
 architektonicznego wymieniają się swoimi poglądami oraz przemyśleniami w tej dziedzinie. To świetna
 okazja, by wymienić się doświadczeniami; co więcej, w dyskusjach poruszanych na forum biorą udział nasi
 eksperci, którzy otwarcie dzielą się swoim doświadczeniem. Forum na stronie internetowej Studio Atrium
@@ -7800,7 +7800,7 @@ konkretny, spełniający wszelkie oczekiwania Inwestora.</p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Nasz katalog
 projektów domów - co w nim znajdziesz?</h2>
 <p>Katalog projektów to narzędzie przydatne dla interesantów, chętnych pogłębić swoją wiedzę. <a
-href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #cc1000;">Nasz darmowy
+href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #ed1d24;">Nasz darmowy
 katalog</a> prezentuje liczne propozycje projektów. Znajdziesz w nim projekty domów parterowych i
 piętrowych, projekty z przystosowaniem do różnych typów działek, projekty garaży wolnostojących oraz
 inne wyselekcjonowane projekty domów. Jeżeli chcesz zobaczyć więcej projektów oferowanych przez Studio
@@ -7842,7 +7842,7 @@ antresolą)</p>
 <p>• W zależności od stylu (nowoczesne, w stylu stodoły, regionalne beskidzkie, nowoczesne beskidzkie, z
 płaskim dachem, rezydencje dla zamożnych)</p>
 <h3 style="font-size:2.4rem;">Projekty domów piętrowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #ed1d24;">Projekty domów
 piętrowych</a> wyróżniają się świetnym zagospodarowaniem wnętrza, które z łatwością można podzielić
 na strefę dzienną, składającą się z kuchni, salonu i innych pomieszczeń integralnych oraz strefę nocną
 dedykowaną sypialniom, łazienkom i różnego rodzaju gabinetom domowym. Domy składające się z więcej niż
@@ -7852,7 +7852,7 @@ stanowią podstawę do ciekawej aranżacji bryły. Takie rozwiązanie świetnie 
 rodzin z dziećmi, łącząc estetykę i komfort w jednej bryle. Warto podkreślić, że domy piętrowe idealnie
 nadają się w przypadku mniejszej działki - takie rozwiązanie pozwala zaoszczędzić przestrzeń.</p>
 <h3 style="font-size:2.4rem;">Projekty domów parterowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #ed1d24;">Projekty domów
 parterowych</a> stanowią idealne rozwiązanie dla klientów ceniących sobie wygodę, estetykę oraz
 funkcjonalność. Głównym atutem tego typu projektów jest brak schodów. Jedna kondygnacja, z której składa
 się cała bryła może okazać się idealnym rozwiązaniem dla rodzin z małymi dziećmi lub dla osób z
@@ -7873,7 +7873,7 @@ idealnie sprawdza się jako dodatkowy składzik lub pomieszczenie gospodarcze. W
 parterowy z poddaszem to świetna alternatywa dla Inwestorów, którzy chcą rozłożyć budowę domu na etapy,
 ponieważ poddasze nie musi być wykańczane od razu.</p>
 <h3 style="font-size:2.4rem;">Projekty domów bliźniaczych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #ed1d24;">Projekty domów
 bliźniaczych</a> to charakterystyczne budowle, które wyróżniają się podziałem bryły na dwa oddzielne
 i niezależne od siebie segmenty. Konstrukcja składa się z jednego wspólnego dachu oraz murów
 zewnętrznych, natomiast zawiera dwa oddzielne i niezależne wejścia do mieszkania. Ta alternatywa jest
@@ -7890,7 +7890,7 @@ nasi projektanci uwzględnili w projektach domów takie rozwiązania jak systemy
 energii odnawialnej, systemy zarządzania energią oraz wiele innych zastosowań, definiujących projekty
 Studio Atrium jako energooszczędne.</p>
 <h3 style="font-size:2.4rem;">Projekty domów nowoczesnych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #ed1d24;">Projekty domów
 nowoczesnych</a> wyróżniają się uwzględnieniem minimalizmu i prostoty. W tym celu ogranicza się
 ozdoby i dekoracje do minimum, co sprawia, że cena wybudowania takiego domu staje się atrakcyjniejsza.
 Zastosowanie dużych przeszklonych okien wpuszcza do domu naturalne światło, co pozwala zaoszczędzić
@@ -7898,7 +7898,7 @@ energię elektryczną. Inwestorzy często decydują się również na zastosowan
 cegły, aby dom był bardziej przytulny. Wyżej opisane elementy to przykładowe detale, którymi cechują się
 projekty domów nowoczesnych.</p>
 <h3 style="font-size:2.4rem;">Projekty w stylu stodoły</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #cc1000;">Projekty
+<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #ed1d24;">Projekty
 domów w stylu stodoły</a>, czyli tzw. Barn House, coraz częściej stają się obiektem zainteresowań
 Inwestorów. Charakteryzują się prostokątną bryłą budynku oraz wielkoformatowymi oknami. Są to typy domów
 z dachem dwuspadowym. Wnętrza cechują wysokie sufity i otwarte przestrzenie z uwzględnieniem antresoli
@@ -7907,7 +7907,7 @@ takich jak drewniane bele i stara cegła, w połączeniu z nowoczesnymi metalowy
 wykończeniami. </p>
 <h3 style="font-size:2.4rem;">Projekty domów z poddaszem użytkowym</h3>
 <p><a href="https://www.studioatrium.pl/projekty-domow/z-poddaszem-uzytkowym/"
-style="color: #cc1000;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
+style="color: #ed1d24;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
 wszystkim decyzję o zagospodarowaniu poddasza podejmuje Inwestor, co więcej poddasze użytkowe to
 możliwość podzielenia wykończenia domu na etapy. Poddasze to przestrzeń wypełniona licznymi skosami,
 które przy odpowiedniej aranżacji kreują przytulną przestrzeń dla mieszkańców. Zastosowanie tego rodzaju
@@ -7929,7 +7929,7 @@ na dłuższy okres czasu.</p>
 <p>Bardzo często zdarza się, że najistotniejszym dla inwestora jest mały metraż działki, który automatycznie
 uniemożliwia wybudowanie pewnych brył. Dla specjalistów Studio Atrium wąska działka nie stanowi
 ograniczenia a jedynie podstawę do tworzenia kreatywnych rozwiązań dla klienta. <a
-href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #cc1000;">Projekty
+href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #ed1d24;">Projekty
 domów na wąską działkę</a> najczęściej skupiają się na maksymalnym wykorzystaniu działki poprzez
 zastosowanie podłużnej, prostokątnej bryły, tak aby jak najbardziej wykorzystać ograniczoną
 powierzchnię. W przypadku wąskich działek idealnie sprawdzają się domy piętrowe lub takie z poddaszem
@@ -7937,7 +7937,7 @@ użytkowym.</p>
 <h3 style="font-size:2.4rem;">Projekty domów z kosztorysem</h3>
 <p>Decydując się na zakup projektu domu z kosztorysem, inwestor nabywa gotowe plany budowlane z
 uwzględnieniem szczegółowych informacji <a
-href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #cc1000;">kosztów
+href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #ed1d24;">kosztów
 budowy domów</a>. Takie rozwiązanie świetnie sprawdza się w przypadku Inwestorów, którym zależy na
 dokładnej kontroli budżetu. Jest to również możliwość do lepszego rozplanowania etapów budowy i płynnego
 zarządzania zapleczem finansowym. Jeżeli budujesz dom po raz pierwszy, masz ograniczony budżet lub
@@ -7946,7 +7946,7 @@ kosztorysem jest odpowiednia dla Ciebie. Aktualna cena to 750 zł za szczegóło
 <h3 style="font-size:2.4rem;">Projekty małych domów</h3>
 <p>Małe domy wyróżnia nieduży metraż; dlatego istotne jest uwzględnienie w projekcie praktycznych zastosowań
 przy maksymalnym zagospodarowaniu powierzchni użytkowej. <a
-href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #cc1000;">Projekty małych
+href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #ed1d24;">Projekty małych
 domów</a> to idealne rozwiązanie dla par lub osób w podeszłym wieku; co więcej takie projekty
 idealnie sprawdzają się w przypadku ograniczeń związanych z małym metrażem działki. Jeżeli cenisz sobie
 praktyczność połączoną z przytulnymi aranżacjami wnętrz, projekt małego domu jest właśnie dla Ciebie.
@@ -7959,7 +7959,7 @@ wielopoziomowych układów kondygnacji, aby w pełni wykorzystać dostępną prz
 umożliwia ulokowanie parteru lub piwnicy w częściowym zagłębieniu w skarpie, natomiast wyższe
 kondygnacje są wysuwane. Dom ulokowany na wzniesieniu oferuje panoramiczne widoki, co wpływa na jego
 atrakcyjność. <a href="https://www.studioatrium.pl/projekty-domow/na-skarpe/"
-style="color: #cc1000;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
+style="color: #ed1d24;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
 połączeniu z zastosowaniem dużych okien stanowi energooszczędne rozwiązanie doświetlające wnętrze domu.
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Co należy
@@ -8129,11 +8129,11 @@ href="
 <div>
 <p>Z przyjemnością prezentujemy Państwu gotowe projekty domów. Przygotowali je doświadczeni specjaliści,
 którzy tworzą personel naszej firmy. W ofercie znajdą Państwo między innymi <a
-href="/projekty-domow/blizniaki/" style="color: #cc1000;">projekty domów bliźniaczych</a>, <a
-href="/projekty-domow/nowoczesne/" style="color: #cc1000;">projekty domów nowoczesnych</a>, <a
+href="/projekty-domow/blizniaki/" style="color: #ed1d24;">projekty domów bliźniaczych</a>, <a
+href="/projekty-domow/nowoczesne/" style="color: #ed1d24;">projekty domów nowoczesnych</a>, <a
 href="/projekty-domow/na-waska-dzialke/">na wąską działkę</a>, parterowych i piętrowych. Polecamy
-także <a href="/projekty-domow/tanie-w-budowie/" style="color: #cc1000;">domy tanie w budowie</a> oraz
-<a href="/projekty-domow/z-plaskim-dachem/" style="color: #cc1000;">z płaskim dachem</a>. Wszystkie
+także <a href="/projekty-domow/tanie-w-budowie/" style="color: #ed1d24;">domy tanie w budowie</a> oraz
+<a href="/projekty-domow/z-plaskim-dachem/" style="color: #ed1d24;">z płaskim dachem</a>. Wszystkie
 dostosowane są do polskich warunków budowlanych. Udostępniamy także wzory małych obiektów, ponieważ
 wiemy jak ważna jest obecnie oszczędność i funkcjonalność. Posiadamy wieloletnie doświadczenie we
 współpracy z inwestorami budującymi tego typu obiekty, propozycje zostały więc opracowane na podstawie
@@ -8141,7 +8141,7 @@ wytycznych ekspertów. Projekty domów gotowych do realizacji to wygodne i prakt
 szczególnie dla osób, które nie zetknęły się wcześniej z tą branżą. Mogą w ten sposób nabyć wzór, który
 jest uniwersalny i sprawdzony w praktyce. Mamy świadomość tego, iż wybór odpowiedniej propozycji to
 poważna decyzja, dlatego chętnie służymy Państwu radą. Wszystkie nasze <a href="/projekty-domow/"
-style="color: #cc1000;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
+style="color: #ed1d24;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
 najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczekiwania.
 </p>
 <h3>Najpopularniejsze typy domów</h3>
@@ -8150,7 +8150,7 @@ najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczeki
 takiego rozwiązania jest umieszczenie stref mieszkalnych, dziennej i nocnej, na jednym poziomie -
 parterze, bez konieczności budowania schodów i stropu. Warto także podkreślić bezpośredni kontakt z
 otaczającą budynek zielenią, dostępną niemal "za ścianą". Małe <a href="/projekty-domow/parterowe/"
-style="color: #cc1000;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
+style="color: #ed1d24;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
 propozycji na rynku. Koszt budowy jak i ich użytkowania zaliczyć można do najniższych. Rozległe
 rezydencje parterowe natomiast, najbardziej przypominają nowoczesne siedliska. W naszej ofercie projekty
 domów parterowych traktowane są wyjątkowo - bez trudu znajdą tutaj Państwo coś dla siebie. Od
@@ -8164,9 +8164,9 @@ różnorodne kształty. Od typowych, prostych konstrukcji, przykrytych dwuspadow
 finezyjne bryły ozdobione licznymi detalami architektonicznymi i bazujące na nowoczesnych trendach.
 Przygotowane przez nas budynki to wspaniała propozycja dla typowych rodzin 2+2 i 2+3. Ich funkcjonalność
 została specjalnie zaprojektowana dla wygody kilku użytkowników, którzy spędzają czas w swoim domu. <a
-href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #cc1000;">Gotowe projekty domów z
+href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #ed1d24;">Gotowe projekty domów z
 poddaszem użytkowym</a> stanowią w naszej ofercie najliczniejszą grupę koncepcji, które wcielamy w
-życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #cc1000;">Zobacz dodatki</a>
+życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #ed1d24;">Zobacz dodatki</a>
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Projekty domów
 jednorodzinnych Studio Atrium</h2>
@@ -8189,7 +8189,7 @@ Atrium cieszy się bardzo dobrą opinią wśród klientów. Nasi klienci w recen
 wysoką jakość obsługi, solidność projektów, oraz indywidualne podejście do potrzeb inwestorów. Ponadto
 jako firma zdobyliśmy uznanie w branży, m.in. poprzez wyróżnienia takie jak Konsumencki Lider Jakości,
 co świadczy o dbałości o klienta. Jeżeli nadal masz wątpliwości, już dziś <a
-href="https://www.studioatrium.pl/kontakt/" style="color: #cc1000;">skontaktuj się z naszym
+href="https://www.studioatrium.pl/kontakt/" style="color: #ed1d24;">skontaktuj się z naszym
 konsultantem</a> lub odwiedź naszą siedzibę mieszczącą się w Bielsku-Białej przy ulicy J.
 Malczewskiego 1. Jesteśmy otwarci dla Ciebie od poniedziałku do piątku w godzinach od 8:00 do 17:00.
 Skontaktuj się z nami i poznaj przyjemność pracy ze specjalistami!</p>
@@ -8244,7 +8244,7 @@ możemy zaoferować! Twój wymarzony dom zaczyna się od pierwszego kliknięcia.
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Odwiedź nasze
 forum dyskusyjne</h2>
 <p>Nasza strona internetowa zawiera zakładkę <a href="https://www.studioatrium.pl/forum/"
-style="color: #cc1000;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
+style="color: #ed1d24;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
 architektonicznego wymieniają się swoimi poglądami oraz przemyśleniami w tej dziedzinie. To świetna
 okazja, by wymienić się doświadczeniami; co więcej, w dyskusjach poruszanych na forum biorą udział nasi
 eksperci, którzy otwarcie dzielą się swoim doświadczeniem. Forum na stronie internetowej Studio Atrium
@@ -8308,7 +8308,7 @@ konkretny, spełniający wszelkie oczekiwania Inwestora.</p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Nasz katalog
 projektów domów - co w nim znajdziesz?</h2>
 <p>Katalog projektów to narzędzie przydatne dla interesantów, chętnych pogłębić swoją wiedzę. <a
-href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #cc1000;">Nasz darmowy
+href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #ed1d24;">Nasz darmowy
 katalog</a> prezentuje liczne propozycje projektów. Znajdziesz w nim projekty domów parterowych i
 piętrowych, projekty z przystosowaniem do różnych typów działek, projekty garaży wolnostojących oraz
 inne wyselekcjonowane projekty domów. Jeżeli chcesz zobaczyć więcej projektów oferowanych przez Studio
@@ -8350,7 +8350,7 @@ antresolą)</p>
 <p>• W zależności od stylu (nowoczesne, w stylu stodoły, regionalne beskidzkie, nowoczesne beskidzkie, z
 płaskim dachem, rezydencje dla zamożnych)</p>
 <h3 style="font-size:2.4rem;">Projekty domów piętrowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #ed1d24;">Projekty domów
 piętrowych</a> wyróżniają się świetnym zagospodarowaniem wnętrza, które z łatwością można podzielić
 na strefę dzienną, składającą się z kuchni, salonu i innych pomieszczeń integralnych oraz strefę nocną
 dedykowaną sypialniom, łazienkom i różnego rodzaju gabinetom domowym. Domy składające się z więcej niż
@@ -8360,7 +8360,7 @@ stanowią podstawę do ciekawej aranżacji bryły. Takie rozwiązanie świetnie 
 rodzin z dziećmi, łącząc estetykę i komfort w jednej bryle. Warto podkreślić, że domy piętrowe idealnie
 nadają się w przypadku mniejszej działki - takie rozwiązanie pozwala zaoszczędzić przestrzeń.</p>
 <h3 style="font-size:2.4rem;">Projekty domów parterowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #ed1d24;">Projekty domów
 parterowych</a> stanowią idealne rozwiązanie dla klientów ceniących sobie wygodę, estetykę oraz
 funkcjonalność. Głównym atutem tego typu projektów jest brak schodów. Jedna kondygnacja, z której składa
 się cała bryła może okazać się idealnym rozwiązaniem dla rodzin z małymi dziećmi lub dla osób z
@@ -8381,7 +8381,7 @@ idealnie sprawdza się jako dodatkowy składzik lub pomieszczenie gospodarcze. W
 parterowy z poddaszem to świetna alternatywa dla Inwestorów, którzy chcą rozłożyć budowę domu na etapy,
 ponieważ poddasze nie musi być wykańczane od razu.</p>
 <h3 style="font-size:2.4rem;">Projekty domów bliźniaczych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #ed1d24;">Projekty domów
 bliźniaczych</a> to charakterystyczne budowle, które wyróżniają się podziałem bryły na dwa oddzielne
 i niezależne od siebie segmenty. Konstrukcja składa się z jednego wspólnego dachu oraz murów
 zewnętrznych, natomiast zawiera dwa oddzielne i niezależne wejścia do mieszkania. Ta alternatywa jest
@@ -8398,7 +8398,7 @@ nasi projektanci uwzględnili w projektach domów takie rozwiązania jak systemy
 energii odnawialnej, systemy zarządzania energią oraz wiele innych zastosowań, definiujących projekty
 Studio Atrium jako energooszczędne.</p>
 <h3 style="font-size:2.4rem;">Projekty domów nowoczesnych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #ed1d24;">Projekty domów
 nowoczesnych</a> wyróżniają się uwzględnieniem minimalizmu i prostoty. W tym celu ogranicza się
 ozdoby i dekoracje do minimum, co sprawia, że cena wybudowania takiego domu staje się atrakcyjniejsza.
 Zastosowanie dużych przeszklonych okien wpuszcza do domu naturalne światło, co pozwala zaoszczędzić
@@ -8406,7 +8406,7 @@ energię elektryczną. Inwestorzy często decydują się również na zastosowan
 cegły, aby dom był bardziej przytulny. Wyżej opisane elementy to przykładowe detale, którymi cechują się
 projekty domów nowoczesnych.</p>
 <h3 style="font-size:2.4rem;">Projekty w stylu stodoły</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #cc1000;">Projekty
+<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #ed1d24;">Projekty
 domów w stylu stodoły</a>, czyli tzw. Barn House, coraz częściej stają się obiektem zainteresowań
 Inwestorów. Charakteryzują się prostokątną bryłą budynku oraz wielkoformatowymi oknami. Są to typy domów
 z dachem dwuspadowym. Wnętrza cechują wysokie sufity i otwarte przestrzenie z uwzględnieniem antresoli
@@ -8415,7 +8415,7 @@ takich jak drewniane bele i stara cegła, w połączeniu z nowoczesnymi metalowy
 wykończeniami. </p>
 <h3 style="font-size:2.4rem;">Projekty domów z poddaszem użytkowym</h3>
 <p><a href="https://www.studioatrium.pl/projekty-domow/z-poddaszem-uzytkowym/"
-style="color: #cc1000;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
+style="color: #ed1d24;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
 wszystkim decyzję o zagospodarowaniu poddasza podejmuje Inwestor, co więcej poddasze użytkowe to
 możliwość podzielenia wykończenia domu na etapy. Poddasze to przestrzeń wypełniona licznymi skosami,
 które przy odpowiedniej aranżacji kreują przytulną przestrzeń dla mieszkańców. Zastosowanie tego rodzaju
@@ -8437,7 +8437,7 @@ na dłuższy okres czasu.</p>
 <p>Bardzo często zdarza się, że najistotniejszym dla inwestora jest mały metraż działki, który automatycznie
 uniemożliwia wybudowanie pewnych brył. Dla specjalistów Studio Atrium wąska działka nie stanowi
 ograniczenia a jedynie podstawę do tworzenia kreatywnych rozwiązań dla klienta. <a
-href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #cc1000;">Projekty
+href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #ed1d24;">Projekty
 domów na wąską działkę</a> najczęściej skupiają się na maksymalnym wykorzystaniu działki poprzez
 zastosowanie podłużnej, prostokątnej bryły, tak aby jak najbardziej wykorzystać ograniczoną
 powierzchnię. W przypadku wąskich działek idealnie sprawdzają się domy piętrowe lub takie z poddaszem
@@ -8445,7 +8445,7 @@ użytkowym.</p>
 <h3 style="font-size:2.4rem;">Projekty domów z kosztorysem</h3>
 <p>Decydując się na zakup projektu domu z kosztorysem, inwestor nabywa gotowe plany budowlane z
 uwzględnieniem szczegółowych informacji <a
-href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #cc1000;">kosztów
+href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #ed1d24;">kosztów
 budowy domów</a>. Takie rozwiązanie świetnie sprawdza się w przypadku Inwestorów, którym zależy na
 dokładnej kontroli budżetu. Jest to również możliwość do lepszego rozplanowania etapów budowy i płynnego
 zarządzania zapleczem finansowym. Jeżeli budujesz dom po raz pierwszy, masz ograniczony budżet lub
@@ -8454,7 +8454,7 @@ kosztorysem jest odpowiednia dla Ciebie. Aktualna cena to 750 zł za szczegóło
 <h3 style="font-size:2.4rem;">Projekty małych domów</h3>
 <p>Małe domy wyróżnia nieduży metraż; dlatego istotne jest uwzględnienie w projekcie praktycznych zastosowań
 przy maksymalnym zagospodarowaniu powierzchni użytkowej. <a
-href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #cc1000;">Projekty małych
+href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #ed1d24;">Projekty małych
 domów</a> to idealne rozwiązanie dla par lub osób w podeszłym wieku; co więcej takie projekty
 idealnie sprawdzają się w przypadku ograniczeń związanych z małym metrażem działki. Jeżeli cenisz sobie
 praktyczność połączoną z przytulnymi aranżacjami wnętrz, projekt małego domu jest właśnie dla Ciebie.
@@ -8467,7 +8467,7 @@ wielopoziomowych układów kondygnacji, aby w pełni wykorzystać dostępną prz
 umożliwia ulokowanie parteru lub piwnicy w częściowym zagłębieniu w skarpie, natomiast wyższe
 kondygnacje są wysuwane. Dom ulokowany na wzniesieniu oferuje panoramiczne widoki, co wpływa na jego
 atrakcyjność. <a href="https://www.studioatrium.pl/projekty-domow/na-skarpe/"
-style="color: #cc1000;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
+style="color: #ed1d24;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
 połączeniu z zastosowaniem dużych okien stanowi energooszczędne rozwiązanie doświetlające wnętrze domu.
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Co należy
@@ -8631,11 +8631,11 @@ poddaszem{elseif $_item.object.params_general|isGroundFloor:true}parterowego
 <div>
 <p>Z przyjemnością prezentujemy Państwu gotowe projekty domów. Przygotowali je doświadczeni specjaliści,
 którzy tworzą personel naszej firmy. W ofercie znajdą Państwo między innymi <a
-href="/projekty-domow/blizniaki/" style="color: #cc1000;">projekty domów bliźniaczych</a>, <a
-href="/projekty-domow/nowoczesne/" style="color: #cc1000;">projekty domów nowoczesnych</a>, <a
+href="/projekty-domow/blizniaki/" style="color: #ed1d24;">projekty domów bliźniaczych</a>, <a
+href="/projekty-domow/nowoczesne/" style="color: #ed1d24;">projekty domów nowoczesnych</a>, <a
 href="/projekty-domow/na-waska-dzialke/">na wąską działkę</a>, parterowych i piętrowych. Polecamy
-także <a href="/projekty-domow/tanie-w-budowie/" style="color: #cc1000;">domy tanie w budowie</a> oraz
-<a href="/projekty-domow/z-plaskim-dachem/" style="color: #cc1000;">z płaskim dachem</a>. Wszystkie
+także <a href="/projekty-domow/tanie-w-budowie/" style="color: #ed1d24;">domy tanie w budowie</a> oraz
+<a href="/projekty-domow/z-plaskim-dachem/" style="color: #ed1d24;">z płaskim dachem</a>. Wszystkie
 dostosowane są do polskich warunków budowlanych. Udostępniamy także wzory małych obiektów, ponieważ
 wiemy jak ważna jest obecnie oszczędność i funkcjonalność. Posiadamy wieloletnie doświadczenie we
 współpracy z inwestorami budującymi tego typu obiekty, propozycje zostały więc opracowane na podstawie
@@ -8643,7 +8643,7 @@ wytycznych ekspertów. Projekty domów gotowych do realizacji to wygodne i prakt
 szczególnie dla osób, które nie zetknęły się wcześniej z tą branżą. Mogą w ten sposób nabyć wzór, który
 jest uniwersalny i sprawdzony w praktyce. Mamy świadomość tego, iż wybór odpowiedniej propozycji to
 poważna decyzja, dlatego chętnie służymy Państwu radą. Wszystkie nasze <a href="/projekty-domow/"
-style="color: #cc1000;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
+style="color: #ed1d24;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
 najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczekiwania.
 </p>
 <h3>Najpopularniejsze typy domów</h3>
@@ -8652,7 +8652,7 @@ najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczeki
 takiego rozwiązania jest umieszczenie stref mieszkalnych, dziennej i nocnej, na jednym poziomie -
 parterze, bez konieczności budowania schodów i stropu. Warto także podkreślić bezpośredni kontakt z
 otaczającą budynek zielenią, dostępną niemal "za ścianą". Małe <a href="/projekty-domow/parterowe/"
-style="color: #cc1000;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
+style="color: #ed1d24;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
 propozycji na rynku. Koszt budowy jak i ich użytkowania zaliczyć można do najniższych. Rozległe
 rezydencje parterowe natomiast, najbardziej przypominają nowoczesne siedliska. W naszej ofercie projekty
 domów parterowych traktowane są wyjątkowo - bez trudu znajdą tutaj Państwo coś dla siebie. Od
@@ -8666,9 +8666,9 @@ różnorodne kształty. Od typowych, prostych konstrukcji, przykrytych dwuspadow
 finezyjne bryły ozdobione licznymi detalami architektonicznymi i bazujące na nowoczesnych trendach.
 Przygotowane przez nas budynki to wspaniała propozycja dla typowych rodzin 2+2 i 2+3. Ich funkcjonalność
 została specjalnie zaprojektowana dla wygody kilku użytkowników, którzy spędzają czas w swoim domu. <a
-href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #cc1000;">Gotowe projekty domów z
+href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #ed1d24;">Gotowe projekty domów z
 poddaszem użytkowym</a> stanowią w naszej ofercie najliczniejszą grupę koncepcji, które wcielamy w
-życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #cc1000;">Zobacz dodatki</a>
+życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #ed1d24;">Zobacz dodatki</a>
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Projekty domów
 jednorodzinnych Studio Atrium</h2>
@@ -8691,7 +8691,7 @@ Atrium cieszy się bardzo dobrą opinią wśród klientów. Nasi klienci w recen
 wysoką jakość obsługi, solidność projektów, oraz indywidualne podejście do potrzeb inwestorów. Ponadto
 jako firma zdobyliśmy uznanie w branży, m.in. poprzez wyróżnienia takie jak Konsumencki Lider Jakości,
 co świadczy o dbałości o klienta. Jeżeli nadal masz wątpliwości, już dziś <a
-href="https://www.studioatrium.pl/kontakt/" style="color: #cc1000;">skontaktuj się z naszym
+href="https://www.studioatrium.pl/kontakt/" style="color: #ed1d24;">skontaktuj się z naszym
 konsultantem</a> lub odwiedź naszą siedzibę mieszczącą się w Bielsku-Białej przy ulicy J.
 Malczewskiego 1. Jesteśmy otwarci dla Ciebie od poniedziałku do piątku w godzinach od 8:00 do 17:00.
 Skontaktuj się z nami i poznaj przyjemność pracy ze specjalistami!</p>
@@ -8746,7 +8746,7 @@ możemy zaoferować! Twój wymarzony dom zaczyna się od pierwszego kliknięcia.
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Odwiedź nasze
 forum dyskusyjne</h2>
 <p>Nasza strona internetowa zawiera zakładkę <a href="https://www.studioatrium.pl/forum/"
-style="color: #cc1000;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
+style="color: #ed1d24;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
 architektonicznego wymieniają się swoimi poglądami oraz przemyśleniami w tej dziedzinie. To świetna
 okazja, by wymienić się doświadczeniami; co więcej, w dyskusjach poruszanych na forum biorą udział nasi
 eksperci, którzy otwarcie dzielą się swoim doświadczeniem. Forum na stronie internetowej Studio Atrium
@@ -8810,7 +8810,7 @@ konkretny, spełniający wszelkie oczekiwania Inwestora.</p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Nasz katalog
 projektów domów - co w nim znajdziesz?</h2>
 <p>Katalog projektów to narzędzie przydatne dla interesantów, chętnych pogłębić swoją wiedzę. <a
-href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #cc1000;">Nasz darmowy
+href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #ed1d24;">Nasz darmowy
 katalog</a> prezentuje liczne propozycje projektów. Znajdziesz w nim projekty domów parterowych i
 piętrowych, projekty z przystosowaniem do różnych typów działek, projekty garaży wolnostojących oraz
 inne wyselekcjonowane projekty domów. Jeżeli chcesz zobaczyć więcej projektów oferowanych przez Studio
@@ -8852,7 +8852,7 @@ antresolą)</p>
 <p>• W zależności od stylu (nowoczesne, w stylu stodoły, regionalne beskidzkie, nowoczesne beskidzkie, z
 płaskim dachem, rezydencje dla zamożnych)</p>
 <h3 style="font-size:2.4rem;">Projekty domów piętrowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #ed1d24;">Projekty domów
 piętrowych</a> wyróżniają się świetnym zagospodarowaniem wnętrza, które z łatwością można podzielić
 na strefę dzienną, składającą się z kuchni, salonu i innych pomieszczeń integralnych oraz strefę nocną
 dedykowaną sypialniom, łazienkom i różnego rodzaju gabinetom domowym. Domy składające się z więcej niż
@@ -8862,7 +8862,7 @@ stanowią podstawę do ciekawej aranżacji bryły. Takie rozwiązanie świetnie 
 rodzin z dziećmi, łącząc estetykę i komfort w jednej bryle. Warto podkreślić, że domy piętrowe idealnie
 nadają się w przypadku mniejszej działki - takie rozwiązanie pozwala zaoszczędzić przestrzeń.</p>
 <h3 style="font-size:2.4rem;">Projekty domów parterowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #ed1d24;">Projekty domów
 parterowych</a> stanowią idealne rozwiązanie dla klientów ceniących sobie wygodę, estetykę oraz
 funkcjonalność. Głównym atutem tego typu projektów jest brak schodów. Jedna kondygnacja, z której składa
 się cała bryła może okazać się idealnym rozwiązaniem dla rodzin z małymi dziećmi lub dla osób z
@@ -8883,7 +8883,7 @@ idealnie sprawdza się jako dodatkowy składzik lub pomieszczenie gospodarcze. W
 parterowy z poddaszem to świetna alternatywa dla Inwestorów, którzy chcą rozłożyć budowę domu na etapy,
 ponieważ poddasze nie musi być wykańczane od razu.</p>
 <h3 style="font-size:2.4rem;">Projekty domów bliźniaczych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #ed1d24;">Projekty domów
 bliźniaczych</a> to charakterystyczne budowle, które wyróżniają się podziałem bryły na dwa oddzielne
 i niezależne od siebie segmenty. Konstrukcja składa się z jednego wspólnego dachu oraz murów
 zewnętrznych, natomiast zawiera dwa oddzielne i niezależne wejścia do mieszkania. Ta alternatywa jest
@@ -8900,7 +8900,7 @@ nasi projektanci uwzględnili w projektach domów takie rozwiązania jak systemy
 energii odnawialnej, systemy zarządzania energią oraz wiele innych zastosowań, definiujących projekty
 Studio Atrium jako energooszczędne.</p>
 <h3 style="font-size:2.4rem;">Projekty domów nowoczesnych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #ed1d24;">Projekty domów
 nowoczesnych</a> wyróżniają się uwzględnieniem minimalizmu i prostoty. W tym celu ogranicza się
 ozdoby i dekoracje do minimum, co sprawia, że cena wybudowania takiego domu staje się atrakcyjniejsza.
 Zastosowanie dużych przeszklonych okien wpuszcza do domu naturalne światło, co pozwala zaoszczędzić
@@ -8908,7 +8908,7 @@ energię elektryczną. Inwestorzy często decydują się również na zastosowan
 cegły, aby dom był bardziej przytulny. Wyżej opisane elementy to przykładowe detale, którymi cechują się
 projekty domów nowoczesnych.</p>
 <h3 style="font-size:2.4rem;">Projekty w stylu stodoły</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #cc1000;">Projekty
+<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #ed1d24;">Projekty
 domów w stylu stodoły</a>, czyli tzw. Barn House, coraz częściej stają się obiektem zainteresowań
 Inwestorów. Charakteryzują się prostokątną bryłą budynku oraz wielkoformatowymi oknami. Są to typy domów
 z dachem dwuspadowym. Wnętrza cechują wysokie sufity i otwarte przestrzenie z uwzględnieniem antresoli
@@ -8917,7 +8917,7 @@ takich jak drewniane bele i stara cegła, w połączeniu z nowoczesnymi metalowy
 wykończeniami. </p>
 <h3 style="font-size:2.4rem;">Projekty domów z poddaszem użytkowym</h3>
 <p><a href="https://www.studioatrium.pl/projekty-domow/z-poddaszem-uzytkowym/"
-style="color: #cc1000;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
+style="color: #ed1d24;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
 wszystkim decyzję o zagospodarowaniu poddasza podejmuje Inwestor, co więcej poddasze użytkowe to
 możliwość podzielenia wykończenia domu na etapy. Poddasze to przestrzeń wypełniona licznymi skosami,
 które przy odpowiedniej aranżacji kreują przytulną przestrzeń dla mieszkańców. Zastosowanie tego rodzaju
@@ -8939,7 +8939,7 @@ na dłuższy okres czasu.</p>
 <p>Bardzo często zdarza się, że najistotniejszym dla inwestora jest mały metraż działki, który automatycznie
 uniemożliwia wybudowanie pewnych brył. Dla specjalistów Studio Atrium wąska działka nie stanowi
 ograniczenia a jedynie podstawę do tworzenia kreatywnych rozwiązań dla klienta. <a
-href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #cc1000;">Projekty
+href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #ed1d24;">Projekty
 domów na wąską działkę</a> najczęściej skupiają się na maksymalnym wykorzystaniu działki poprzez
 zastosowanie podłużnej, prostokątnej bryły, tak aby jak najbardziej wykorzystać ograniczoną
 powierzchnię. W przypadku wąskich działek idealnie sprawdzają się domy piętrowe lub takie z poddaszem
@@ -8947,7 +8947,7 @@ użytkowym.</p>
 <h3 style="font-size:2.4rem;">Projekty domów z kosztorysem</h3>
 <p>Decydując się na zakup projektu domu z kosztorysem, inwestor nabywa gotowe plany budowlane z
 uwzględnieniem szczegółowych informacji <a
-href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #cc1000;">kosztów
+href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #ed1d24;">kosztów
 budowy domów</a>. Takie rozwiązanie świetnie sprawdza się w przypadku Inwestorów, którym zależy na
 dokładnej kontroli budżetu. Jest to również możliwość do lepszego rozplanowania etapów budowy i płynnego
 zarządzania zapleczem finansowym. Jeżeli budujesz dom po raz pierwszy, masz ograniczony budżet lub
@@ -8956,7 +8956,7 @@ kosztorysem jest odpowiednia dla Ciebie. Aktualna cena to 750 zł za szczegóło
 <h3 style="font-size:2.4rem;">Projekty małych domów</h3>
 <p>Małe domy wyróżnia nieduży metraż; dlatego istotne jest uwzględnienie w projekcie praktycznych zastosowań
 przy maksymalnym zagospodarowaniu powierzchni użytkowej. <a
-href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #cc1000;">Projekty małych
+href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #ed1d24;">Projekty małych
 domów</a> to idealne rozwiązanie dla par lub osób w podeszłym wieku; co więcej takie projekty
 idealnie sprawdzają się w przypadku ograniczeń związanych z małym metrażem działki. Jeżeli cenisz sobie
 praktyczność połączoną z przytulnymi aranżacjami wnętrz, projekt małego domu jest właśnie dla Ciebie.
@@ -8969,7 +8969,7 @@ wielopoziomowych układów kondygnacji, aby w pełni wykorzystać dostępną prz
 umożliwia ulokowanie parteru lub piwnicy w częściowym zagłębieniu w skarpie, natomiast wyższe
 kondygnacje są wysuwane. Dom ulokowany na wzniesieniu oferuje panoramiczne widoki, co wpływa na jego
 atrakcyjność. <a href="https://www.studioatrium.pl/projekty-domow/na-skarpe/"
-style="color: #cc1000;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
+style="color: #ed1d24;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
 połączeniu z zastosowaniem dużych okien stanowi energooszczędne rozwiązanie doświetlające wnętrze domu.
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Co należy
@@ -9132,11 +9132,11 @@ poddaszem{elseif $_item.object.params_general|isGroundFloor:true}parterowego
 <div>
 <p>Z przyjemnością prezentujemy Państwu gotowe projekty domów. Przygotowali je doświadczeni specjaliści,
 którzy tworzą personel naszej firmy. W ofercie znajdą Państwo między innymi <a
-href="/projekty-domow/blizniaki/" style="color: #cc1000;">projekty domów bliźniaczych</a>, <a
-href="/projekty-domow/nowoczesne/" style="color: #cc1000;">projekty domów nowoczesnych</a>, <a
+href="/projekty-domow/blizniaki/" style="color: #ed1d24;">projekty domów bliźniaczych</a>, <a
+href="/projekty-domow/nowoczesne/" style="color: #ed1d24;">projekty domów nowoczesnych</a>, <a
 href="/projekty-domow/na-waska-dzialke/">na wąską działkę</a>, parterowych i piętrowych. Polecamy
-także <a href="/projekty-domow/tanie-w-budowie/" style="color: #cc1000;">domy tanie w budowie</a> oraz
-<a href="/projekty-domow/z-plaskim-dachem/" style="color: #cc1000;">z płaskim dachem</a>. Wszystkie
+także <a href="/projekty-domow/tanie-w-budowie/" style="color: #ed1d24;">domy tanie w budowie</a> oraz
+<a href="/projekty-domow/z-plaskim-dachem/" style="color: #ed1d24;">z płaskim dachem</a>. Wszystkie
 dostosowane są do polskich warunków budowlanych. Udostępniamy także wzory małych obiektów, ponieważ
 wiemy jak ważna jest obecnie oszczędność i funkcjonalność. Posiadamy wieloletnie doświadczenie we
 współpracy z inwestorami budującymi tego typu obiekty, propozycje zostały więc opracowane na podstawie
@@ -9144,7 +9144,7 @@ wytycznych ekspertów. Projekty domów gotowych do realizacji to wygodne i prakt
 szczególnie dla osób, które nie zetknęły się wcześniej z tą branżą. Mogą w ten sposób nabyć wzór, który
 jest uniwersalny i sprawdzony w praktyce. Mamy świadomość tego, iż wybór odpowiedniej propozycji to
 poważna decyzja, dlatego chętnie służymy Państwu radą. Wszystkie nasze <a href="/projekty-domow/"
-style="color: #cc1000;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
+style="color: #ed1d24;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
 najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczekiwania.
 </p>
 <h3>Najpopularniejsze typy domów</h3>
@@ -9153,7 +9153,7 @@ najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczeki
 takiego rozwiązania jest umieszczenie stref mieszkalnych, dziennej i nocnej, na jednym poziomie -
 parterze, bez konieczności budowania schodów i stropu. Warto także podkreślić bezpośredni kontakt z
 otaczającą budynek zielenią, dostępną niemal "za ścianą". Małe <a href="/projekty-domow/parterowe/"
-style="color: #cc1000;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
+style="color: #ed1d24;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
 propozycji na rynku. Koszt budowy jak i ich użytkowania zaliczyć można do najniższych. Rozległe
 rezydencje parterowe natomiast, najbardziej przypominają nowoczesne siedliska. W naszej ofercie projekty
 domów parterowych traktowane są wyjątkowo - bez trudu znajdą tutaj Państwo coś dla siebie. Od
@@ -9167,9 +9167,9 @@ różnorodne kształty. Od typowych, prostych konstrukcji, przykrytych dwuspadow
 finezyjne bryły ozdobione licznymi detalami architektonicznymi i bazujące na nowoczesnych trendach.
 Przygotowane przez nas budynki to wspaniała propozycja dla typowych rodzin 2+2 i 2+3. Ich funkcjonalność
 została specjalnie zaprojektowana dla wygody kilku użytkowników, którzy spędzają czas w swoim domu. <a
-href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #cc1000;">Gotowe projekty domów z
+href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #ed1d24;">Gotowe projekty domów z
 poddaszem użytkowym</a> stanowią w naszej ofercie najliczniejszą grupę koncepcji, które wcielamy w
-życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #cc1000;">Zobacz dodatki</a>
+życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #ed1d24;">Zobacz dodatki</a>
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Projekty domów
 jednorodzinnych Studio Atrium</h2>
@@ -9192,7 +9192,7 @@ Atrium cieszy się bardzo dobrą opinią wśród klientów. Nasi klienci w recen
 wysoką jakość obsługi, solidność projektów, oraz indywidualne podejście do potrzeb inwestorów. Ponadto
 jako firma zdobyliśmy uznanie w branży, m.in. poprzez wyróżnienia takie jak Konsumencki Lider Jakości,
 co świadczy o dbałości o klienta. Jeżeli nadal masz wątpliwości, już dziś <a
-href="https://www.studioatrium.pl/kontakt/" style="color: #cc1000;">skontaktuj się z naszym
+href="https://www.studioatrium.pl/kontakt/" style="color: #ed1d24;">skontaktuj się z naszym
 konsultantem</a> lub odwiedź naszą siedzibę mieszczącą się w Bielsku-Białej przy ulicy J.
 Malczewskiego 1. Jesteśmy otwarci dla Ciebie od poniedziałku do piątku w godzinach od 8:00 do 17:00.
 Skontaktuj się z nami i poznaj przyjemność pracy ze specjalistami!</p>
@@ -9247,7 +9247,7 @@ możemy zaoferować! Twój wymarzony dom zaczyna się od pierwszego kliknięcia.
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Odwiedź nasze
 forum dyskusyjne</h2>
 <p>Nasza strona internetowa zawiera zakładkę <a href="https://www.studioatrium.pl/forum/"
-style="color: #cc1000;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
+style="color: #ed1d24;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
 architektonicznego wymieniają się swoimi poglądami oraz przemyśleniami w tej dziedzinie. To świetna
 okazja, by wymienić się doświadczeniami; co więcej, w dyskusjach poruszanych na forum biorą udział nasi
 eksperci, którzy otwarcie dzielą się swoim doświadczeniem. Forum na stronie internetowej Studio Atrium
@@ -9311,7 +9311,7 @@ konkretny, spełniający wszelkie oczekiwania Inwestora.</p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Nasz katalog
 projektów domów - co w nim znajdziesz?</h2>
 <p>Katalog projektów to narzędzie przydatne dla interesantów, chętnych pogłębić swoją wiedzę. <a
-href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #cc1000;">Nasz darmowy
+href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #ed1d24;">Nasz darmowy
 katalog</a> prezentuje liczne propozycje projektów. Znajdziesz w nim projekty domów parterowych i
 piętrowych, projekty z przystosowaniem do różnych typów działek, projekty garaży wolnostojących oraz
 inne wyselekcjonowane projekty domów. Jeżeli chcesz zobaczyć więcej projektów oferowanych przez Studio
@@ -9353,7 +9353,7 @@ antresolą)</p>
 <p>• W zależności od stylu (nowoczesne, w stylu stodoły, regionalne beskidzkie, nowoczesne beskidzkie, z
 płaskim dachem, rezydencje dla zamożnych)</p>
 <h3 style="font-size:2.4rem;">Projekty domów piętrowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #ed1d24;">Projekty domów
 piętrowych</a> wyróżniają się świetnym zagospodarowaniem wnętrza, które z łatwością można podzielić
 na strefę dzienną, składającą się z kuchni, salonu i innych pomieszczeń integralnych oraz strefę nocną
 dedykowaną sypialniom, łazienkom i różnego rodzaju gabinetom domowym. Domy składające się z więcej niż
@@ -9363,7 +9363,7 @@ stanowią podstawę do ciekawej aranżacji bryły. Takie rozwiązanie świetnie 
 rodzin z dziećmi, łącząc estetykę i komfort w jednej bryle. Warto podkreślić, że domy piętrowe idealnie
 nadają się w przypadku mniejszej działki - takie rozwiązanie pozwala zaoszczędzić przestrzeń.</p>
 <h3 style="font-size:2.4rem;">Projekty domów parterowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #ed1d24;">Projekty domów
 parterowych</a> stanowią idealne rozwiązanie dla klientów ceniących sobie wygodę, estetykę oraz
 funkcjonalność. Głównym atutem tego typu projektów jest brak schodów. Jedna kondygnacja, z której składa
 się cała bryła może okazać się idealnym rozwiązaniem dla rodzin z małymi dziećmi lub dla osób z
@@ -9384,7 +9384,7 @@ idealnie sprawdza się jako dodatkowy składzik lub pomieszczenie gospodarcze. W
 parterowy z poddaszem to świetna alternatywa dla Inwestorów, którzy chcą rozłożyć budowę domu na etapy,
 ponieważ poddasze nie musi być wykańczane od razu.</p>
 <h3 style="font-size:2.4rem;">Projekty domów bliźniaczych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #ed1d24;">Projekty domów
 bliźniaczych</a> to charakterystyczne budowle, które wyróżniają się podziałem bryły na dwa oddzielne
 i niezależne od siebie segmenty. Konstrukcja składa się z jednego wspólnego dachu oraz murów
 zewnętrznych, natomiast zawiera dwa oddzielne i niezależne wejścia do mieszkania. Ta alternatywa jest
@@ -9401,7 +9401,7 @@ nasi projektanci uwzględnili w projektach domów takie rozwiązania jak systemy
 energii odnawialnej, systemy zarządzania energią oraz wiele innych zastosowań, definiujących projekty
 Studio Atrium jako energooszczędne.</p>
 <h3 style="font-size:2.4rem;">Projekty domów nowoczesnych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #ed1d24;">Projekty domów
 nowoczesnych</a> wyróżniają się uwzględnieniem minimalizmu i prostoty. W tym celu ogranicza się
 ozdoby i dekoracje do minimum, co sprawia, że cena wybudowania takiego domu staje się atrakcyjniejsza.
 Zastosowanie dużych przeszklonych okien wpuszcza do domu naturalne światło, co pozwala zaoszczędzić
@@ -9409,7 +9409,7 @@ energię elektryczną. Inwestorzy często decydują się również na zastosowan
 cegły, aby dom był bardziej przytulny. Wyżej opisane elementy to przykładowe detale, którymi cechują się
 projekty domów nowoczesnych.</p>
 <h3 style="font-size:2.4rem;">Projekty w stylu stodoły</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #cc1000;">Projekty
+<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #ed1d24;">Projekty
 domów w stylu stodoły</a>, czyli tzw. Barn House, coraz częściej stają się obiektem zainteresowań
 Inwestorów. Charakteryzują się prostokątną bryłą budynku oraz wielkoformatowymi oknami. Są to typy domów
 z dachem dwuspadowym. Wnętrza cechują wysokie sufity i otwarte przestrzenie z uwzględnieniem antresoli
@@ -9418,7 +9418,7 @@ takich jak drewniane bele i stara cegła, w połączeniu z nowoczesnymi metalowy
 wykończeniami. </p>
 <h3 style="font-size:2.4rem;">Projekty domów z poddaszem użytkowym</h3>
 <p><a href="https://www.studioatrium.pl/projekty-domow/z-poddaszem-uzytkowym/"
-style="color: #cc1000;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
+style="color: #ed1d24;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
 wszystkim decyzję o zagospodarowaniu poddasza podejmuje Inwestor, co więcej poddasze użytkowe to
 możliwość podzielenia wykończenia domu na etapy. Poddasze to przestrzeń wypełniona licznymi skosami,
 które przy odpowiedniej aranżacji kreują przytulną przestrzeń dla mieszkańców. Zastosowanie tego rodzaju
@@ -9440,7 +9440,7 @@ na dłuższy okres czasu.</p>
 <p>Bardzo często zdarza się, że najistotniejszym dla inwestora jest mały metraż działki, który automatycznie
 uniemożliwia wybudowanie pewnych brył. Dla specjalistów Studio Atrium wąska działka nie stanowi
 ograniczenia a jedynie podstawę do tworzenia kreatywnych rozwiązań dla klienta. <a
-href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #cc1000;">Projekty
+href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #ed1d24;">Projekty
 domów na wąską działkę</a> najczęściej skupiają się na maksymalnym wykorzystaniu działki poprzez
 zastosowanie podłużnej, prostokątnej bryły, tak aby jak najbardziej wykorzystać ograniczoną
 powierzchnię. W przypadku wąskich działek idealnie sprawdzają się domy piętrowe lub takie z poddaszem
@@ -9448,7 +9448,7 @@ użytkowym.</p>
 <h3 style="font-size:2.4rem;">Projekty domów z kosztorysem</h3>
 <p>Decydując się na zakup projektu domu z kosztorysem, inwestor nabywa gotowe plany budowlane z
 uwzględnieniem szczegółowych informacji <a
-href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #cc1000;">kosztów
+href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #ed1d24;">kosztów
 budowy domów</a>. Takie rozwiązanie świetnie sprawdza się w przypadku Inwestorów, którym zależy na
 dokładnej kontroli budżetu. Jest to również możliwość do lepszego rozplanowania etapów budowy i płynnego
 zarządzania zapleczem finansowym. Jeżeli budujesz dom po raz pierwszy, masz ograniczony budżet lub
@@ -9457,7 +9457,7 @@ kosztorysem jest odpowiednia dla Ciebie. Aktualna cena to 750 zł za szczegóło
 <h3 style="font-size:2.4rem;">Projekty małych domów</h3>
 <p>Małe domy wyróżnia nieduży metraż; dlatego istotne jest uwzględnienie w projekcie praktycznych zastosowań
 przy maksymalnym zagospodarowaniu powierzchni użytkowej. <a
-href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #cc1000;">Projekty małych
+href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #ed1d24;">Projekty małych
 domów</a> to idealne rozwiązanie dla par lub osób w podeszłym wieku; co więcej takie projekty
 idealnie sprawdzają się w przypadku ograniczeń związanych z małym metrażem działki. Jeżeli cenisz sobie
 praktyczność połączoną z przytulnymi aranżacjami wnętrz, projekt małego domu jest właśnie dla Ciebie.
@@ -9470,7 +9470,7 @@ wielopoziomowych układów kondygnacji, aby w pełni wykorzystać dostępną prz
 umożliwia ulokowanie parteru lub piwnicy w częściowym zagłębieniu w skarpie, natomiast wyższe
 kondygnacje są wysuwane. Dom ulokowany na wzniesieniu oferuje panoramiczne widoki, co wpływa na jego
 atrakcyjność. <a href="https://www.studioatrium.pl/projekty-domow/na-skarpe/"
-style="color: #cc1000;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
+style="color: #ed1d24;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
 połączeniu z zastosowaniem dużych okien stanowi energooszczędne rozwiązanie doświetlające wnętrze domu.
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Co należy
@@ -9633,11 +9633,11 @@ poddaszem
 <div>
 <p>Z przyjemnością prezentujemy Państwu gotowe projekty domów. Przygotowali je doświadczeni specjaliści,
 którzy tworzą personel naszej firmy. W ofercie znajdą Państwo między innymi <a
-href="/projekty-domow/blizniaki/" style="color: #cc1000;">projekty domów bliźniaczych</a>, <a
-href="/projekty-domow/nowoczesne/" style="color: #cc1000;">projekty domów nowoczesnych</a>, <a
+href="/projekty-domow/blizniaki/" style="color: #ed1d24;">projekty domów bliźniaczych</a>, <a
+href="/projekty-domow/nowoczesne/" style="color: #ed1d24;">projekty domów nowoczesnych</a>, <a
 href="/projekty-domow/na-waska-dzialke/">na wąską działkę</a>, parterowych i piętrowych. Polecamy
-także <a href="/projekty-domow/tanie-w-budowie/" style="color: #cc1000;">domy tanie w budowie</a> oraz
-<a href="/projekty-domow/z-plaskim-dachem/" style="color: #cc1000;">z płaskim dachem</a>. Wszystkie
+także <a href="/projekty-domow/tanie-w-budowie/" style="color: #ed1d24;">domy tanie w budowie</a> oraz
+<a href="/projekty-domow/z-plaskim-dachem/" style="color: #ed1d24;">z płaskim dachem</a>. Wszystkie
 dostosowane są do polskich warunków budowlanych. Udostępniamy także wzory małych obiektów, ponieważ
 wiemy jak ważna jest obecnie oszczędność i funkcjonalność. Posiadamy wieloletnie doświadczenie we
 współpracy z inwestorami budującymi tego typu obiekty, propozycje zostały więc opracowane na podstawie
@@ -9645,7 +9645,7 @@ wytycznych ekspertów. Projekty domów gotowych do realizacji to wygodne i prakt
 szczególnie dla osób, które nie zetknęły się wcześniej z tą branżą. Mogą w ten sposób nabyć wzór, który
 jest uniwersalny i sprawdzony w praktyce. Mamy świadomość tego, iż wybór odpowiedniej propozycji to
 poważna decyzja, dlatego chętnie służymy Państwu radą. Wszystkie nasze <a href="/projekty-domow/"
-style="color: #cc1000;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
+style="color: #ed1d24;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
 najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczekiwania.
 </p>
 <h3>Najpopularniejsze typy domów</h3>
@@ -9654,7 +9654,7 @@ najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczeki
 takiego rozwiązania jest umieszczenie stref mieszkalnych, dziennej i nocnej, na jednym poziomie -
 parterze, bez konieczności budowania schodów i stropu. Warto także podkreślić bezpośredni kontakt z
 otaczającą budynek zielenią, dostępną niemal "za ścianą". Małe <a href="/projekty-domow/parterowe/"
-style="color: #cc1000;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
+style="color: #ed1d24;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
 propozycji na rynku. Koszt budowy jak i ich użytkowania zaliczyć można do najniższych. Rozległe
 rezydencje parterowe natomiast, najbardziej przypominają nowoczesne siedliska. W naszej ofercie projekty
 domów parterowych traktowane są wyjątkowo - bez trudu znajdą tutaj Państwo coś dla siebie. Od
@@ -9668,9 +9668,9 @@ różnorodne kształty. Od typowych, prostych konstrukcji, przykrytych dwuspadow
 finezyjne bryły ozdobione licznymi detalami architektonicznymi i bazujące na nowoczesnych trendach.
 Przygotowane przez nas budynki to wspaniała propozycja dla typowych rodzin 2+2 i 2+3. Ich funkcjonalność
 została specjalnie zaprojektowana dla wygody kilku użytkowników, którzy spędzają czas w swoim domu. <a
-href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #cc1000;">Gotowe projekty domów z
+href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #ed1d24;">Gotowe projekty domów z
 poddaszem użytkowym</a> stanowią w naszej ofercie najliczniejszą grupę koncepcji, które wcielamy w
-życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #cc1000;">Zobacz dodatki</a>
+życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #ed1d24;">Zobacz dodatki</a>
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Projekty domów
 jednorodzinnych Studio Atrium</h2>
@@ -9693,7 +9693,7 @@ Atrium cieszy się bardzo dobrą opinią wśród klientów. Nasi klienci w recen
 wysoką jakość obsługi, solidność projektów, oraz indywidualne podejście do potrzeb inwestorów. Ponadto
 jako firma zdobyliśmy uznanie w branży, m.in. poprzez wyróżnienia takie jak Konsumencki Lider Jakości,
 co świadczy o dbałości o klienta. Jeżeli nadal masz wątpliwości, już dziś <a
-href="https://www.studioatrium.pl/kontakt/" style="color: #cc1000;">skontaktuj się z naszym
+href="https://www.studioatrium.pl/kontakt/" style="color: #ed1d24;">skontaktuj się z naszym
 konsultantem</a> lub odwiedź naszą siedzibę mieszczącą się w Bielsku-Białej przy ulicy J.
 Malczewskiego 1. Jesteśmy otwarci dla Ciebie od poniedziałku do piątku w godzinach od 8:00 do 17:00.
 Skontaktuj się z nami i poznaj przyjemność pracy ze specjalistami!</p>
@@ -9748,7 +9748,7 @@ możemy zaoferować! Twój wymarzony dom zaczyna się od pierwszego kliknięcia.
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Odwiedź nasze
 forum dyskusyjne</h2>
 <p>Nasza strona internetowa zawiera zakładkę <a href="https://www.studioatrium.pl/forum/"
-style="color: #cc1000;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
+style="color: #ed1d24;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
 architektonicznego wymieniają się swoimi poglądami oraz przemyśleniami w tej dziedzinie. To świetna
 okazja, by wymienić się doświadczeniami; co więcej, w dyskusjach poruszanych na forum biorą udział nasi
 eksperci, którzy otwarcie dzielą się swoim doświadczeniem. Forum na stronie internetowej Studio Atrium
@@ -9812,7 +9812,7 @@ konkretny, spełniający wszelkie oczekiwania Inwestora.</p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Nasz katalog
 projektów domów - co w nim znajdziesz?</h2>
 <p>Katalog projektów to narzędzie przydatne dla interesantów, chętnych pogłębić swoją wiedzę. <a
-href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #cc1000;">Nasz darmowy
+href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #ed1d24;">Nasz darmowy
 katalog</a> prezentuje liczne propozycje projektów. Znajdziesz w nim projekty domów parterowych i
 piętrowych, projekty z przystosowaniem do różnych typów działek, projekty garaży wolnostojących oraz
 inne wyselekcjonowane projekty domów. Jeżeli chcesz zobaczyć więcej projektów oferowanych przez Studio
@@ -9854,7 +9854,7 @@ antresolą)</p>
 <p>• W zależności od stylu (nowoczesne, w stylu stodoły, regionalne beskidzkie, nowoczesne beskidzkie, z
 płaskim dachem, rezydencje dla zamożnych)</p>
 <h3 style="font-size:2.4rem;">Projekty domów piętrowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #ed1d24;">Projekty domów
 piętrowych</a> wyróżniają się świetnym zagospodarowaniem wnętrza, które z łatwością można podzielić
 na strefę dzienną, składającą się z kuchni, salonu i innych pomieszczeń integralnych oraz strefę nocną
 dedykowaną sypialniom, łazienkom i różnego rodzaju gabinetom domowym. Domy składające się z więcej niż
@@ -9864,7 +9864,7 @@ stanowią podstawę do ciekawej aranżacji bryły. Takie rozwiązanie świetnie 
 rodzin z dziećmi, łącząc estetykę i komfort w jednej bryle. Warto podkreślić, że domy piętrowe idealnie
 nadają się w przypadku mniejszej działki - takie rozwiązanie pozwala zaoszczędzić przestrzeń.</p>
 <h3 style="font-size:2.4rem;">Projekty domów parterowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #ed1d24;">Projekty domów
 parterowych</a> stanowią idealne rozwiązanie dla klientów ceniących sobie wygodę, estetykę oraz
 funkcjonalność. Głównym atutem tego typu projektów jest brak schodów. Jedna kondygnacja, z której składa
 się cała bryła może okazać się idealnym rozwiązaniem dla rodzin z małymi dziećmi lub dla osób z
@@ -9885,7 +9885,7 @@ idealnie sprawdza się jako dodatkowy składzik lub pomieszczenie gospodarcze. W
 parterowy z poddaszem to świetna alternatywa dla Inwestorów, którzy chcą rozłożyć budowę domu na etapy,
 ponieważ poddasze nie musi być wykańczane od razu.</p>
 <h3 style="font-size:2.4rem;">Projekty domów bliźniaczych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #ed1d24;">Projekty domów
 bliźniaczych</a> to charakterystyczne budowle, które wyróżniają się podziałem bryły na dwa oddzielne
 i niezależne od siebie segmenty. Konstrukcja składa się z jednego wspólnego dachu oraz murów
 zewnętrznych, natomiast zawiera dwa oddzielne i niezależne wejścia do mieszkania. Ta alternatywa jest
@@ -9902,7 +9902,7 @@ nasi projektanci uwzględnili w projektach domów takie rozwiązania jak systemy
 energii odnawialnej, systemy zarządzania energią oraz wiele innych zastosowań, definiujących projekty
 Studio Atrium jako energooszczędne.</p>
 <h3 style="font-size:2.4rem;">Projekty domów nowoczesnych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #ed1d24;">Projekty domów
 nowoczesnych</a> wyróżniają się uwzględnieniem minimalizmu i prostoty. W tym celu ogranicza się
 ozdoby i dekoracje do minimum, co sprawia, że cena wybudowania takiego domu staje się atrakcyjniejsza.
 Zastosowanie dużych przeszklonych okien wpuszcza do domu naturalne światło, co pozwala zaoszczędzić
@@ -9910,7 +9910,7 @@ energię elektryczną. Inwestorzy często decydują się również na zastosowan
 cegły, aby dom był bardziej przytulny. Wyżej opisane elementy to przykładowe detale, którymi cechują się
 projekty domów nowoczesnych.</p>
 <h3 style="font-size:2.4rem;">Projekty w stylu stodoły</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #cc1000;">Projekty
+<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #ed1d24;">Projekty
 domów w stylu stodoły</a>, czyli tzw. Barn House, coraz częściej stają się obiektem zainteresowań
 Inwestorów. Charakteryzują się prostokątną bryłą budynku oraz wielkoformatowymi oknami. Są to typy domów
 z dachem dwuspadowym. Wnętrza cechują wysokie sufity i otwarte przestrzenie z uwzględnieniem antresoli
@@ -9919,7 +9919,7 @@ takich jak drewniane bele i stara cegła, w połączeniu z nowoczesnymi metalowy
 wykończeniami. </p>
 <h3 style="font-size:2.4rem;">Projekty domów z poddaszem użytkowym</h3>
 <p><a href="https://www.studioatrium.pl/projekty-domow/z-poddaszem-uzytkowym/"
-style="color: #cc1000;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
+style="color: #ed1d24;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
 wszystkim decyzję o zagospodarowaniu poddasza podejmuje Inwestor, co więcej poddasze użytkowe to
 możliwość podzielenia wykończenia domu na etapy. Poddasze to przestrzeń wypełniona licznymi skosami,
 które przy odpowiedniej aranżacji kreują przytulną przestrzeń dla mieszkańców. Zastosowanie tego rodzaju
@@ -9941,7 +9941,7 @@ na dłuższy okres czasu.</p>
 <p>Bardzo często zdarza się, że najistotniejszym dla inwestora jest mały metraż działki, który automatycznie
 uniemożliwia wybudowanie pewnych brył. Dla specjalistów Studio Atrium wąska działka nie stanowi
 ograniczenia a jedynie podstawę do tworzenia kreatywnych rozwiązań dla klienta. <a
-href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #cc1000;">Projekty
+href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #ed1d24;">Projekty
 domów na wąską działkę</a> najczęściej skupiają się na maksymalnym wykorzystaniu działki poprzez
 zastosowanie podłużnej, prostokątnej bryły, tak aby jak najbardziej wykorzystać ograniczoną
 powierzchnię. W przypadku wąskich działek idealnie sprawdzają się domy piętrowe lub takie z poddaszem
@@ -9949,7 +9949,7 @@ użytkowym.</p>
 <h3 style="font-size:2.4rem;">Projekty domów z kosztorysem</h3>
 <p>Decydując się na zakup projektu domu z kosztorysem, inwestor nabywa gotowe plany budowlane z
 uwzględnieniem szczegółowych informacji <a
-href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #cc1000;">kosztów
+href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #ed1d24;">kosztów
 budowy domów</a>. Takie rozwiązanie świetnie sprawdza się w przypadku Inwestorów, którym zależy na
 dokładnej kontroli budżetu. Jest to również możliwość do lepszego rozplanowania etapów budowy i płynnego
 zarządzania zapleczem finansowym. Jeżeli budujesz dom po raz pierwszy, masz ograniczony budżet lub
@@ -9958,7 +9958,7 @@ kosztorysem jest odpowiednia dla Ciebie. Aktualna cena to 750 zł za szczegóło
 <h3 style="font-size:2.4rem;">Projekty małych domów</h3>
 <p>Małe domy wyróżnia nieduży metraż; dlatego istotne jest uwzględnienie w projekcie praktycznych zastosowań
 przy maksymalnym zagospodarowaniu powierzchni użytkowej. <a
-href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #cc1000;">Projekty małych
+href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #ed1d24;">Projekty małych
 domów</a> to idealne rozwiązanie dla par lub osób w podeszłym wieku; co więcej takie projekty
 idealnie sprawdzają się w przypadku ograniczeń związanych z małym metrażem działki. Jeżeli cenisz sobie
 praktyczność połączoną z przytulnymi aranżacjami wnętrz, projekt małego domu jest właśnie dla Ciebie.
@@ -9971,7 +9971,7 @@ wielopoziomowych układów kondygnacji, aby w pełni wykorzystać dostępną prz
 umożliwia ulokowanie parteru lub piwnicy w częściowym zagłębieniu w skarpie, natomiast wyższe
 kondygnacje są wysuwane. Dom ulokowany na wzniesieniu oferuje panoramiczne widoki, co wpływa na jego
 atrakcyjność. <a href="https://www.studioatrium.pl/projekty-domow/na-skarpe/"
-style="color: #cc1000;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
+style="color: #ed1d24;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
 połączeniu z zastosowaniem dużych okien stanowi energooszczędne rozwiązanie doświetlające wnętrze domu.
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Co należy
@@ -10134,11 +10134,11 @@ poddaszem{elseif $_item.object.params_general|isGroundFloor:true}parterowego
 <div>
 <p>Z przyjemnością prezentujemy Państwu gotowe projekty domów. Przygotowali je doświadczeni specjaliści,
 którzy tworzą personel naszej firmy. W ofercie znajdą Państwo między innymi <a
-href="/projekty-domow/blizniaki/" style="color: #cc1000;">projekty domów bliźniaczych</a>, <a
-href="/projekty-domow/nowoczesne/" style="color: #cc1000;">projekty domów nowoczesnych</a>, <a
+href="/projekty-domow/blizniaki/" style="color: #ed1d24;">projekty domów bliźniaczych</a>, <a
+href="/projekty-domow/nowoczesne/" style="color: #ed1d24;">projekty domów nowoczesnych</a>, <a
 href="/projekty-domow/na-waska-dzialke/">na wąską działkę</a>, parterowych i piętrowych. Polecamy
-także <a href="/projekty-domow/tanie-w-budowie/" style="color: #cc1000;">domy tanie w budowie</a> oraz
-<a href="/projekty-domow/z-plaskim-dachem/" style="color: #cc1000;">z płaskim dachem</a>. Wszystkie
+także <a href="/projekty-domow/tanie-w-budowie/" style="color: #ed1d24;">domy tanie w budowie</a> oraz
+<a href="/projekty-domow/z-plaskim-dachem/" style="color: #ed1d24;">z płaskim dachem</a>. Wszystkie
 dostosowane są do polskich warunków budowlanych. Udostępniamy także wzory małych obiektów, ponieważ
 wiemy jak ważna jest obecnie oszczędność i funkcjonalność. Posiadamy wieloletnie doświadczenie we
 współpracy z inwestorami budującymi tego typu obiekty, propozycje zostały więc opracowane na podstawie
@@ -10146,7 +10146,7 @@ wytycznych ekspertów. Projekty domów gotowych do realizacji to wygodne i prakt
 szczególnie dla osób, które nie zetknęły się wcześniej z tą branżą. Mogą w ten sposób nabyć wzór, który
 jest uniwersalny i sprawdzony w praktyce. Mamy świadomość tego, iż wybór odpowiedniej propozycji to
 poważna decyzja, dlatego chętnie służymy Państwu radą. Wszystkie nasze <a href="/projekty-domow/"
-style="color: #cc1000;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
+style="color: #ed1d24;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
 najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczekiwania.
 </p>
 <h3>Najpopularniejsze typy domów</h3>
@@ -10155,7 +10155,7 @@ najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczeki
 takiego rozwiązania jest umieszczenie stref mieszkalnych, dziennej i nocnej, na jednym poziomie -
 parterze, bez konieczności budowania schodów i stropu. Warto także podkreślić bezpośredni kontakt z
 otaczającą budynek zielenią, dostępną niemal "za ścianą". Małe <a href="/projekty-domow/parterowe/"
-style="color: #cc1000;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
+style="color: #ed1d24;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
 propozycji na rynku. Koszt budowy jak i ich użytkowania zaliczyć można do najniższych. Rozległe
 rezydencje parterowe natomiast, najbardziej przypominają nowoczesne siedliska. W naszej ofercie projekty
 domów parterowych traktowane są wyjątkowo - bez trudu znajdą tutaj Państwo coś dla siebie. Od
@@ -10169,9 +10169,9 @@ różnorodne kształty. Od typowych, prostych konstrukcji, przykrytych dwuspadow
 finezyjne bryły ozdobione licznymi detalami architektonicznymi i bazujące na nowoczesnych trendach.
 Przygotowane przez nas budynki to wspaniała propozycja dla typowych rodzin 2+2 i 2+3. Ich funkcjonalność
 została specjalnie zaprojektowana dla wygody kilku użytkowników, którzy spędzają czas w swoim domu. <a
-href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #cc1000;">Gotowe projekty domów z
+href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #ed1d24;">Gotowe projekty domów z
 poddaszem użytkowym</a> stanowią w naszej ofercie najliczniejszą grupę koncepcji, które wcielamy w
-życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #cc1000;">Zobacz dodatki</a>
+życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #ed1d24;">Zobacz dodatki</a>
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Projekty domów
 jednorodzinnych Studio Atrium</h2>
@@ -10194,7 +10194,7 @@ Atrium cieszy się bardzo dobrą opinią wśród klientów. Nasi klienci w recen
 wysoką jakość obsługi, solidność projektów, oraz indywidualne podejście do potrzeb inwestorów. Ponadto
 jako firma zdobyliśmy uznanie w branży, m.in. poprzez wyróżnienia takie jak Konsumencki Lider Jakości,
 co świadczy o dbałości o klienta. Jeżeli nadal masz wątpliwości, już dziś <a
-href="https://www.studioatrium.pl/kontakt/" style="color: #cc1000;">skontaktuj się z naszym
+href="https://www.studioatrium.pl/kontakt/" style="color: #ed1d24;">skontaktuj się z naszym
 konsultantem</a> lub odwiedź naszą siedzibę mieszczącą się w Bielsku-Białej przy ulicy J.
 Malczewskiego 1. Jesteśmy otwarci dla Ciebie od poniedziałku do piątku w godzinach od 8:00 do 17:00.
 Skontaktuj się z nami i poznaj przyjemność pracy ze specjalistami!</p>
@@ -10249,7 +10249,7 @@ możemy zaoferować! Twój wymarzony dom zaczyna się od pierwszego kliknięcia.
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Odwiedź nasze
 forum dyskusyjne</h2>
 <p>Nasza strona internetowa zawiera zakładkę <a href="https://www.studioatrium.pl/forum/"
-style="color: #cc1000;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
+style="color: #ed1d24;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
 architektonicznego wymieniają się swoimi poglądami oraz przemyśleniami w tej dziedzinie. To świetna
 okazja, by wymienić się doświadczeniami; co więcej, w dyskusjach poruszanych na forum biorą udział nasi
 eksperci, którzy otwarcie dzielą się swoim doświadczeniem. Forum na stronie internetowej Studio Atrium
@@ -10313,7 +10313,7 @@ konkretny, spełniający wszelkie oczekiwania Inwestora.</p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Nasz katalog
 projektów domów - co w nim znajdziesz?</h2>
 <p>Katalog projektów to narzędzie przydatne dla interesantów, chętnych pogłębić swoją wiedzę. <a
-href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #cc1000;">Nasz darmowy
+href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #ed1d24;">Nasz darmowy
 katalog</a> prezentuje liczne propozycje projektów. Znajdziesz w nim projekty domów parterowych i
 piętrowych, projekty z przystosowaniem do różnych typów działek, projekty garaży wolnostojących oraz
 inne wyselekcjonowane projekty domów. Jeżeli chcesz zobaczyć więcej projektów oferowanych przez Studio
@@ -10355,7 +10355,7 @@ antresolą)</p>
 <p>• W zależności od stylu (nowoczesne, w stylu stodoły, regionalne beskidzkie, nowoczesne beskidzkie, z
 płaskim dachem, rezydencje dla zamożnych)</p>
 <h3 style="font-size:2.4rem;">Projekty domów piętrowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #ed1d24;">Projekty domów
 piętrowych</a> wyróżniają się świetnym zagospodarowaniem wnętrza, które z łatwością można podzielić
 na strefę dzienną, składającą się z kuchni, salonu i innych pomieszczeń integralnych oraz strefę nocną
 dedykowaną sypialniom, łazienkom i różnego rodzaju gabinetom domowym. Domy składające się z więcej niż
@@ -10365,7 +10365,7 @@ stanowią podstawę do ciekawej aranżacji bryły. Takie rozwiązanie świetnie 
 rodzin z dziećmi, łącząc estetykę i komfort w jednej bryle. Warto podkreślić, że domy piętrowe idealnie
 nadają się w przypadku mniejszej działki - takie rozwiązanie pozwala zaoszczędzić przestrzeń.</p>
 <h3 style="font-size:2.4rem;">Projekty domów parterowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #ed1d24;">Projekty domów
 parterowych</a> stanowią idealne rozwiązanie dla klientów ceniących sobie wygodę, estetykę oraz
 funkcjonalność. Głównym atutem tego typu projektów jest brak schodów. Jedna kondygnacja, z której składa
 się cała bryła może okazać się idealnym rozwiązaniem dla rodzin z małymi dziećmi lub dla osób z
@@ -10386,7 +10386,7 @@ idealnie sprawdza się jako dodatkowy składzik lub pomieszczenie gospodarcze. W
 parterowy z poddaszem to świetna alternatywa dla Inwestorów, którzy chcą rozłożyć budowę domu na etapy,
 ponieważ poddasze nie musi być wykańczane od razu.</p>
 <h3 style="font-size:2.4rem;">Projekty domów bliźniaczych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #ed1d24;">Projekty domów
 bliźniaczych</a> to charakterystyczne budowle, które wyróżniają się podziałem bryły na dwa oddzielne
 i niezależne od siebie segmenty. Konstrukcja składa się z jednego wspólnego dachu oraz murów
 zewnętrznych, natomiast zawiera dwa oddzielne i niezależne wejścia do mieszkania. Ta alternatywa jest
@@ -10403,7 +10403,7 @@ nasi projektanci uwzględnili w projektach domów takie rozwiązania jak systemy
 energii odnawialnej, systemy zarządzania energią oraz wiele innych zastosowań, definiujących projekty
 Studio Atrium jako energooszczędne.</p>
 <h3 style="font-size:2.4rem;">Projekty domów nowoczesnych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #ed1d24;">Projekty domów
 nowoczesnych</a> wyróżniają się uwzględnieniem minimalizmu i prostoty. W tym celu ogranicza się
 ozdoby i dekoracje do minimum, co sprawia, że cena wybudowania takiego domu staje się atrakcyjniejsza.
 Zastosowanie dużych przeszklonych okien wpuszcza do domu naturalne światło, co pozwala zaoszczędzić
@@ -10411,7 +10411,7 @@ energię elektryczną. Inwestorzy często decydują się również na zastosowan
 cegły, aby dom był bardziej przytulny. Wyżej opisane elementy to przykładowe detale, którymi cechują się
 projekty domów nowoczesnych.</p>
 <h3 style="font-size:2.4rem;">Projekty w stylu stodoły</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #cc1000;">Projekty
+<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #ed1d24;">Projekty
 domów w stylu stodoły</a>, czyli tzw. Barn House, coraz częściej stają się obiektem zainteresowań
 Inwestorów. Charakteryzują się prostokątną bryłą budynku oraz wielkoformatowymi oknami. Są to typy domów
 z dachem dwuspadowym. Wnętrza cechują wysokie sufity i otwarte przestrzenie z uwzględnieniem antresoli
@@ -10420,7 +10420,7 @@ takich jak drewniane bele i stara cegła, w połączeniu z nowoczesnymi metalowy
 wykończeniami. </p>
 <h3 style="font-size:2.4rem;">Projekty domów z poddaszem użytkowym</h3>
 <p><a href="https://www.studioatrium.pl/projekty-domow/z-poddaszem-uzytkowym/"
-style="color: #cc1000;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
+style="color: #ed1d24;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
 wszystkim decyzję o zagospodarowaniu poddasza podejmuje Inwestor, co więcej poddasze użytkowe to
 możliwość podzielenia wykończenia domu na etapy. Poddasze to przestrzeń wypełniona licznymi skosami,
 które przy odpowiedniej aranżacji kreują przytulną przestrzeń dla mieszkańców. Zastosowanie tego rodzaju
@@ -10442,7 +10442,7 @@ na dłuższy okres czasu.</p>
 <p>Bardzo często zdarza się, że najistotniejszym dla inwestora jest mały metraż działki, który automatycznie
 uniemożliwia wybudowanie pewnych brył. Dla specjalistów Studio Atrium wąska działka nie stanowi
 ograniczenia a jedynie podstawę do tworzenia kreatywnych rozwiązań dla klienta. <a
-href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #cc1000;">Projekty
+href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #ed1d24;">Projekty
 domów na wąską działkę</a> najczęściej skupiają się na maksymalnym wykorzystaniu działki poprzez
 zastosowanie podłużnej, prostokątnej bryły, tak aby jak najbardziej wykorzystać ograniczoną
 powierzchnię. W przypadku wąskich działek idealnie sprawdzają się domy piętrowe lub takie z poddaszem
@@ -10450,7 +10450,7 @@ użytkowym.</p>
 <h3 style="font-size:2.4rem;">Projekty domów z kosztorysem</h3>
 <p>Decydując się na zakup projektu domu z kosztorysem, inwestor nabywa gotowe plany budowlane z
 uwzględnieniem szczegółowych informacji <a
-href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #cc1000;">kosztów
+href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #ed1d24;">kosztów
 budowy domów</a>. Takie rozwiązanie świetnie sprawdza się w przypadku Inwestorów, którym zależy na
 dokładnej kontroli budżetu. Jest to również możliwość do lepszego rozplanowania etapów budowy i płynnego
 zarządzania zapleczem finansowym. Jeżeli budujesz dom po raz pierwszy, masz ograniczony budżet lub
@@ -10459,7 +10459,7 @@ kosztorysem jest odpowiednia dla Ciebie. Aktualna cena to 750 zł za szczegóło
 <h3 style="font-size:2.4rem;">Projekty małych domów</h3>
 <p>Małe domy wyróżnia nieduży metraż; dlatego istotne jest uwzględnienie w projekcie praktycznych zastosowań
 przy maksymalnym zagospodarowaniu powierzchni użytkowej. <a
-href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #cc1000;">Projekty małych
+href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #ed1d24;">Projekty małych
 domów</a> to idealne rozwiązanie dla par lub osób w podeszłym wieku; co więcej takie projekty
 idealnie sprawdzają się w przypadku ograniczeń związanych z małym metrażem działki. Jeżeli cenisz sobie
 praktyczność połączoną z przytulnymi aranżacjami wnętrz, projekt małego domu jest właśnie dla Ciebie.
@@ -10472,7 +10472,7 @@ wielopoziomowych układów kondygnacji, aby w pełni wykorzystać dostępną prz
 umożliwia ulokowanie parteru lub piwnicy w częściowym zagłębieniu w skarpie, natomiast wyższe
 kondygnacje są wysuwane. Dom ulokowany na wzniesieniu oferuje panoramiczne widoki, co wpływa na jego
 atrakcyjność. <a href="https://www.studioatrium.pl/projekty-domow/na-skarpe/"
-style="color: #cc1000;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
+style="color: #ed1d24;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
 połączeniu z zastosowaniem dużych okien stanowi energooszczędne rozwiązanie doświetlające wnętrze domu.
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Co należy
@@ -10640,11 +10640,11 @@ poddaszem{elseif $_item.object.params_general|isGroundFloor:true}parterowego
 <div>
 <p>Z przyjemnością prezentujemy Państwu gotowe projekty domów. Przygotowali je doświadczeni specjaliści,
 którzy tworzą personel naszej firmy. W ofercie znajdą Państwo między innymi <a
-href="/projekty-domow/blizniaki/" style="color: #cc1000;">projekty domów bliźniaczych</a>, <a
-href="/projekty-domow/nowoczesne/" style="color: #cc1000;">projekty domów nowoczesnych</a>, <a
+href="/projekty-domow/blizniaki/" style="color: #ed1d24;">projekty domów bliźniaczych</a>, <a
+href="/projekty-domow/nowoczesne/" style="color: #ed1d24;">projekty domów nowoczesnych</a>, <a
 href="/projekty-domow/na-waska-dzialke/">na wąską działkę</a>, parterowych i piętrowych. Polecamy
-także <a href="/projekty-domow/tanie-w-budowie/" style="color: #cc1000;">domy tanie w budowie</a> oraz
-<a href="/projekty-domow/z-plaskim-dachem/" style="color: #cc1000;">z płaskim dachem</a>. Wszystkie
+także <a href="/projekty-domow/tanie-w-budowie/" style="color: #ed1d24;">domy tanie w budowie</a> oraz
+<a href="/projekty-domow/z-plaskim-dachem/" style="color: #ed1d24;">z płaskim dachem</a>. Wszystkie
 dostosowane są do polskich warunków budowlanych. Udostępniamy także wzory małych obiektów, ponieważ
 wiemy jak ważna jest obecnie oszczędność i funkcjonalność. Posiadamy wieloletnie doświadczenie we
 współpracy z inwestorami budującymi tego typu obiekty, propozycje zostały więc opracowane na podstawie
@@ -10652,7 +10652,7 @@ wytycznych ekspertów. Projekty domów gotowych do realizacji to wygodne i prakt
 szczególnie dla osób, które nie zetknęły się wcześniej z tą branżą. Mogą w ten sposób nabyć wzór, który
 jest uniwersalny i sprawdzony w praktyce. Mamy świadomość tego, iż wybór odpowiedniej propozycji to
 poważna decyzja, dlatego chętnie służymy Państwu radą. Wszystkie nasze <a href="/projekty-domow/"
-style="color: #cc1000;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
+style="color: #ed1d24;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
 najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczekiwania.
 </p>
 <h3>Najpopularniejsze typy domów</h3>
@@ -10661,7 +10661,7 @@ najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczeki
 takiego rozwiązania jest umieszczenie stref mieszkalnych, dziennej i nocnej, na jednym poziomie -
 parterze, bez konieczności budowania schodów i stropu. Warto także podkreślić bezpośredni kontakt z
 otaczającą budynek zielenią, dostępną niemal "za ścianą". Małe <a href="/projekty-domow/parterowe/"
-style="color: #cc1000;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
+style="color: #ed1d24;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
 propozycji na rynku. Koszt budowy jak i ich użytkowania zaliczyć można do najniższych. Rozległe
 rezydencje parterowe natomiast, najbardziej przypominają nowoczesne siedliska. W naszej ofercie projekty
 domów parterowych traktowane są wyjątkowo - bez trudu znajdą tutaj Państwo coś dla siebie. Od
@@ -10675,9 +10675,9 @@ różnorodne kształty. Od typowych, prostych konstrukcji, przykrytych dwuspadow
 finezyjne bryły ozdobione licznymi detalami architektonicznymi i bazujące na nowoczesnych trendach.
 Przygotowane przez nas budynki to wspaniała propozycja dla typowych rodzin 2+2 i 2+3. Ich funkcjonalność
 została specjalnie zaprojektowana dla wygody kilku użytkowników, którzy spędzają czas w swoim domu. <a
-href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #cc1000;">Gotowe projekty domów z
+href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #ed1d24;">Gotowe projekty domów z
 poddaszem użytkowym</a> stanowią w naszej ofercie najliczniejszą grupę koncepcji, które wcielamy w
-życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #cc1000;">Zobacz dodatki</a>
+życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #ed1d24;">Zobacz dodatki</a>
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Projekty domów
 jednorodzinnych Studio Atrium</h2>
@@ -10700,7 +10700,7 @@ Atrium cieszy się bardzo dobrą opinią wśród klientów. Nasi klienci w recen
 wysoką jakość obsługi, solidność projektów, oraz indywidualne podejście do potrzeb inwestorów. Ponadto
 jako firma zdobyliśmy uznanie w branży, m.in. poprzez wyróżnienia takie jak Konsumencki Lider Jakości,
 co świadczy o dbałości o klienta. Jeżeli nadal masz wątpliwości, już dziś <a
-href="https://www.studioatrium.pl/kontakt/" style="color: #cc1000;">skontaktuj się z naszym
+href="https://www.studioatrium.pl/kontakt/" style="color: #ed1d24;">skontaktuj się z naszym
 konsultantem</a> lub odwiedź naszą siedzibę mieszczącą się w Bielsku-Białej przy ulicy J.
 Malczewskiego 1. Jesteśmy otwarci dla Ciebie od poniedziałku do piątku w godzinach od 8:00 do 17:00.
 Skontaktuj się z nami i poznaj przyjemność pracy ze specjalistami!</p>
@@ -10755,7 +10755,7 @@ możemy zaoferować! Twój wymarzony dom zaczyna się od pierwszego kliknięcia.
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Odwiedź nasze
 forum dyskusyjne</h2>
 <p>Nasza strona internetowa zawiera zakładkę <a href="https://www.studioatrium.pl/forum/"
-style="color: #cc1000;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
+style="color: #ed1d24;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
 architektonicznego wymieniają się swoimi poglądami oraz przemyśleniami w tej dziedzinie. To świetna
 okazja, by wymienić się doświadczeniami; co więcej, w dyskusjach poruszanych na forum biorą udział nasi
 eksperci, którzy otwarcie dzielą się swoim doświadczeniem. Forum na stronie internetowej Studio Atrium
@@ -10819,7 +10819,7 @@ konkretny, spełniający wszelkie oczekiwania Inwestora.</p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Nasz katalog
 projektów domów - co w nim znajdziesz?</h2>
 <p>Katalog projektów to narzędzie przydatne dla interesantów, chętnych pogłębić swoją wiedzę. <a
-href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #cc1000;">Nasz darmowy
+href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #ed1d24;">Nasz darmowy
 katalog</a> prezentuje liczne propozycje projektów. Znajdziesz w nim projekty domów parterowych i
 piętrowych, projekty z przystosowaniem do różnych typów działek, projekty garaży wolnostojących oraz
 inne wyselekcjonowane projekty domów. Jeżeli chcesz zobaczyć więcej projektów oferowanych przez Studio
@@ -10861,7 +10861,7 @@ antresolą)</p>
 <p>• W zależności od stylu (nowoczesne, w stylu stodoły, regionalne beskidzkie, nowoczesne beskidzkie, z
 płaskim dachem, rezydencje dla zamożnych)</p>
 <h3 style="font-size:2.4rem;">Projekty domów piętrowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #ed1d24;">Projekty domów
 piętrowych</a> wyróżniają się świetnym zagospodarowaniem wnętrza, które z łatwością można podzielić
 na strefę dzienną, składającą się z kuchni, salonu i innych pomieszczeń integralnych oraz strefę nocną
 dedykowaną sypialniom, łazienkom i różnego rodzaju gabinetom domowym. Domy składające się z więcej niż
@@ -10871,7 +10871,7 @@ stanowią podstawę do ciekawej aranżacji bryły. Takie rozwiązanie świetnie 
 rodzin z dziećmi, łącząc estetykę i komfort w jednej bryle. Warto podkreślić, że domy piętrowe idealnie
 nadają się w przypadku mniejszej działki - takie rozwiązanie pozwala zaoszczędzić przestrzeń.</p>
 <h3 style="font-size:2.4rem;">Projekty domów parterowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #ed1d24;">Projekty domów
 parterowych</a> stanowią idealne rozwiązanie dla klientów ceniących sobie wygodę, estetykę oraz
 funkcjonalność. Głównym atutem tego typu projektów jest brak schodów. Jedna kondygnacja, z której składa
 się cała bryła może okazać się idealnym rozwiązaniem dla rodzin z małymi dziećmi lub dla osób z
@@ -10892,7 +10892,7 @@ idealnie sprawdza się jako dodatkowy składzik lub pomieszczenie gospodarcze. W
 parterowy z poddaszem to świetna alternatywa dla Inwestorów, którzy chcą rozłożyć budowę domu na etapy,
 ponieważ poddasze nie musi być wykańczane od razu.</p>
 <h3 style="font-size:2.4rem;">Projekty domów bliźniaczych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #ed1d24;">Projekty domów
 bliźniaczych</a> to charakterystyczne budowle, które wyróżniają się podziałem bryły na dwa oddzielne
 i niezależne od siebie segmenty. Konstrukcja składa się z jednego wspólnego dachu oraz murów
 zewnętrznych, natomiast zawiera dwa oddzielne i niezależne wejścia do mieszkania. Ta alternatywa jest
@@ -10909,7 +10909,7 @@ nasi projektanci uwzględnili w projektach domów takie rozwiązania jak systemy
 energii odnawialnej, systemy zarządzania energią oraz wiele innych zastosowań, definiujących projekty
 Studio Atrium jako energooszczędne.</p>
 <h3 style="font-size:2.4rem;">Projekty domów nowoczesnych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #ed1d24;">Projekty domów
 nowoczesnych</a> wyróżniają się uwzględnieniem minimalizmu i prostoty. W tym celu ogranicza się
 ozdoby i dekoracje do minimum, co sprawia, że cena wybudowania takiego domu staje się atrakcyjniejsza.
 Zastosowanie dużych przeszklonych okien wpuszcza do domu naturalne światło, co pozwala zaoszczędzić
@@ -10917,7 +10917,7 @@ energię elektryczną. Inwestorzy często decydują się również na zastosowan
 cegły, aby dom był bardziej przytulny. Wyżej opisane elementy to przykładowe detale, którymi cechują się
 projekty domów nowoczesnych.</p>
 <h3 style="font-size:2.4rem;">Projekty w stylu stodoły</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #cc1000;">Projekty
+<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #ed1d24;">Projekty
 domów w stylu stodoły</a>, czyli tzw. Barn House, coraz częściej stają się obiektem zainteresowań
 Inwestorów. Charakteryzują się prostokątną bryłą budynku oraz wielkoformatowymi oknami. Są to typy domów
 z dachem dwuspadowym. Wnętrza cechują wysokie sufity i otwarte przestrzenie z uwzględnieniem antresoli
@@ -10926,7 +10926,7 @@ takich jak drewniane bele i stara cegła, w połączeniu z nowoczesnymi metalowy
 wykończeniami. </p>
 <h3 style="font-size:2.4rem;">Projekty domów z poddaszem użytkowym</h3>
 <p><a href="https://www.studioatrium.pl/projekty-domow/z-poddaszem-uzytkowym/"
-style="color: #cc1000;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
+style="color: #ed1d24;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
 wszystkim decyzję o zagospodarowaniu poddasza podejmuje Inwestor, co więcej poddasze użytkowe to
 możliwość podzielenia wykończenia domu na etapy. Poddasze to przestrzeń wypełniona licznymi skosami,
 które przy odpowiedniej aranżacji kreują przytulną przestrzeń dla mieszkańców. Zastosowanie tego rodzaju
@@ -10948,7 +10948,7 @@ na dłuższy okres czasu.</p>
 <p>Bardzo często zdarza się, że najistotniejszym dla inwestora jest mały metraż działki, który automatycznie
 uniemożliwia wybudowanie pewnych brył. Dla specjalistów Studio Atrium wąska działka nie stanowi
 ograniczenia a jedynie podstawę do tworzenia kreatywnych rozwiązań dla klienta. <a
-href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #cc1000;">Projekty
+href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #ed1d24;">Projekty
 domów na wąską działkę</a> najczęściej skupiają się na maksymalnym wykorzystaniu działki poprzez
 zastosowanie podłużnej, prostokątnej bryły, tak aby jak najbardziej wykorzystać ograniczoną
 powierzchnię. W przypadku wąskich działek idealnie sprawdzają się domy piętrowe lub takie z poddaszem
@@ -10956,7 +10956,7 @@ użytkowym.</p>
 <h3 style="font-size:2.4rem;">Projekty domów z kosztorysem</h3>
 <p>Decydując się na zakup projektu domu z kosztorysem, inwestor nabywa gotowe plany budowlane z
 uwzględnieniem szczegółowych informacji <a
-href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #cc1000;">kosztów
+href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #ed1d24;">kosztów
 budowy domów</a>. Takie rozwiązanie świetnie sprawdza się w przypadku Inwestorów, którym zależy na
 dokładnej kontroli budżetu. Jest to również możliwość do lepszego rozplanowania etapów budowy i płynnego
 zarządzania zapleczem finansowym. Jeżeli budujesz dom po raz pierwszy, masz ograniczony budżet lub
@@ -10965,7 +10965,7 @@ kosztorysem jest odpowiednia dla Ciebie. Aktualna cena to 750 zł za szczegóło
 <h3 style="font-size:2.4rem;">Projekty małych domów</h3>
 <p>Małe domy wyróżnia nieduży metraż; dlatego istotne jest uwzględnienie w projekcie praktycznych zastosowań
 przy maksymalnym zagospodarowaniu powierzchni użytkowej. <a
-href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #cc1000;">Projekty małych
+href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #ed1d24;">Projekty małych
 domów</a> to idealne rozwiązanie dla par lub osób w podeszłym wieku; co więcej takie projekty
 idealnie sprawdzają się w przypadku ograniczeń związanych z małym metrażem działki. Jeżeli cenisz sobie
 praktyczność połączoną z przytulnymi aranżacjami wnętrz, projekt małego domu jest właśnie dla Ciebie.
@@ -10978,7 +10978,7 @@ wielopoziomowych układów kondygnacji, aby w pełni wykorzystać dostępną prz
 umożliwia ulokowanie parteru lub piwnicy w częściowym zagłębieniu w skarpie, natomiast wyższe
 kondygnacje są wysuwane. Dom ulokowany na wzniesieniu oferuje panoramiczne widoki, co wpływa na jego
 atrakcyjność. <a href="https://www.studioatrium.pl/projekty-domow/na-skarpe/"
-style="color: #cc1000;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
+style="color: #ed1d24;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
 połączeniu z zastosowaniem dużych okien stanowi energooszczędne rozwiązanie doświetlające wnętrze domu.
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Co należy
@@ -11142,11 +11142,11 @@ poddaszem{elseif $_item.object.params_general|isGroundFloor:true}parterowego
 <div>
 <p>Z przyjemnością prezentujemy Państwu gotowe projekty domów. Przygotowali je doświadczeni specjaliści,
 którzy tworzą personel naszej firmy. W ofercie znajdą Państwo między innymi <a
-href="/projekty-domow/blizniaki/" style="color: #cc1000;">projekty domów bliźniaczych</a>, <a
-href="/projekty-domow/nowoczesne/" style="color: #cc1000;">projekty domów nowoczesnych</a>, <a
+href="/projekty-domow/blizniaki/" style="color: #ed1d24;">projekty domów bliźniaczych</a>, <a
+href="/projekty-domow/nowoczesne/" style="color: #ed1d24;">projekty domów nowoczesnych</a>, <a
 href="/projekty-domow/na-waska-dzialke/">na wąską działkę</a>, parterowych i piętrowych. Polecamy
-także <a href="/projekty-domow/tanie-w-budowie/" style="color: #cc1000;">domy tanie w budowie</a> oraz
-<a href="/projekty-domow/z-plaskim-dachem/" style="color: #cc1000;">z płaskim dachem</a>. Wszystkie
+także <a href="/projekty-domow/tanie-w-budowie/" style="color: #ed1d24;">domy tanie w budowie</a> oraz
+<a href="/projekty-domow/z-plaskim-dachem/" style="color: #ed1d24;">z płaskim dachem</a>. Wszystkie
 dostosowane są do polskich warunków budowlanych. Udostępniamy także wzory małych obiektów, ponieważ
 wiemy jak ważna jest obecnie oszczędność i funkcjonalność. Posiadamy wieloletnie doświadczenie we
 współpracy z inwestorami budującymi tego typu obiekty, propozycje zostały więc opracowane na podstawie
@@ -11154,7 +11154,7 @@ wytycznych ekspertów. Projekty domów gotowych do realizacji to wygodne i prakt
 szczególnie dla osób, które nie zetknęły się wcześniej z tą branżą. Mogą w ten sposób nabyć wzór, który
 jest uniwersalny i sprawdzony w praktyce. Mamy świadomość tego, iż wybór odpowiedniej propozycji to
 poważna decyzja, dlatego chętnie służymy Państwu radą. Wszystkie nasze <a href="/projekty-domow/"
-style="color: #cc1000;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
+style="color: #ed1d24;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
 najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczekiwania.
 </p>
 <h3>Najpopularniejsze typy domów</h3>
@@ -11163,7 +11163,7 @@ najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczeki
 takiego rozwiązania jest umieszczenie stref mieszkalnych, dziennej i nocnej, na jednym poziomie -
 parterze, bez konieczności budowania schodów i stropu. Warto także podkreślić bezpośredni kontakt z
 otaczającą budynek zielenią, dostępną niemal "za ścianą". Małe <a href="/projekty-domow/parterowe/"
-style="color: #cc1000;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
+style="color: #ed1d24;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
 propozycji na rynku. Koszt budowy jak i ich użytkowania zaliczyć można do najniższych. Rozległe
 rezydencje parterowe natomiast, najbardziej przypominają nowoczesne siedliska. W naszej ofercie projekty
 domów parterowych traktowane są wyjątkowo - bez trudu znajdą tutaj Państwo coś dla siebie. Od
@@ -11177,9 +11177,9 @@ różnorodne kształty. Od typowych, prostych konstrukcji, przykrytych dwuspadow
 finezyjne bryły ozdobione licznymi detalami architektonicznymi i bazujące na nowoczesnych trendach.
 Przygotowane przez nas budynki to wspaniała propozycja dla typowych rodzin 2+2 i 2+3. Ich funkcjonalność
 została specjalnie zaprojektowana dla wygody kilku użytkowników, którzy spędzają czas w swoim domu. <a
-href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #cc1000;">Gotowe projekty domów z
+href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #ed1d24;">Gotowe projekty domów z
 poddaszem użytkowym</a> stanowią w naszej ofercie najliczniejszą grupę koncepcji, które wcielamy w
-życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #cc1000;">Zobacz dodatki</a>
+życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #ed1d24;">Zobacz dodatki</a>
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Projekty domów
 jednorodzinnych Studio Atrium</h2>
@@ -11202,7 +11202,7 @@ Atrium cieszy się bardzo dobrą opinią wśród klientów. Nasi klienci w recen
 wysoką jakość obsługi, solidność projektów, oraz indywidualne podejście do potrzeb inwestorów. Ponadto
 jako firma zdobyliśmy uznanie w branży, m.in. poprzez wyróżnienia takie jak Konsumencki Lider Jakości,
 co świadczy o dbałości o klienta. Jeżeli nadal masz wątpliwości, już dziś <a
-href="https://www.studioatrium.pl/kontakt/" style="color: #cc1000;">skontaktuj się z naszym
+href="https://www.studioatrium.pl/kontakt/" style="color: #ed1d24;">skontaktuj się z naszym
 konsultantem</a> lub odwiedź naszą siedzibę mieszczącą się w Bielsku-Białej przy ulicy J.
 Malczewskiego 1. Jesteśmy otwarci dla Ciebie od poniedziałku do piątku w godzinach od 8:00 do 17:00.
 Skontaktuj się z nami i poznaj przyjemność pracy ze specjalistami!</p>
@@ -11257,7 +11257,7 @@ możemy zaoferować! Twój wymarzony dom zaczyna się od pierwszego kliknięcia.
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Odwiedź nasze
 forum dyskusyjne</h2>
 <p>Nasza strona internetowa zawiera zakładkę <a href="https://www.studioatrium.pl/forum/"
-style="color: #cc1000;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
+style="color: #ed1d24;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
 architektonicznego wymieniają się swoimi poglądami oraz przemyśleniami w tej dziedzinie. To świetna
 okazja, by wymienić się doświadczeniami; co więcej, w dyskusjach poruszanych na forum biorą udział nasi
 eksperci, którzy otwarcie dzielą się swoim doświadczeniem. Forum na stronie internetowej Studio Atrium
@@ -11321,7 +11321,7 @@ konkretny, spełniający wszelkie oczekiwania Inwestora.</p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Nasz katalog
 projektów domów - co w nim znajdziesz?</h2>
 <p>Katalog projektów to narzędzie przydatne dla interesantów, chętnych pogłębić swoją wiedzę. <a
-href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #cc1000;">Nasz darmowy
+href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #ed1d24;">Nasz darmowy
 katalog</a> prezentuje liczne propozycje projektów. Znajdziesz w nim projekty domów parterowych i
 piętrowych, projekty z przystosowaniem do różnych typów działek, projekty garaży wolnostojących oraz
 inne wyselekcjonowane projekty domów. Jeżeli chcesz zobaczyć więcej projektów oferowanych przez Studio
@@ -11363,7 +11363,7 @@ antresolą)</p>
 <p>• W zależności od stylu (nowoczesne, w stylu stodoły, regionalne beskidzkie, nowoczesne beskidzkie, z
 płaskim dachem, rezydencje dla zamożnych)</p>
 <h3 style="font-size:2.4rem;">Projekty domów piętrowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #ed1d24;">Projekty domów
 piętrowych</a> wyróżniają się świetnym zagospodarowaniem wnętrza, które z łatwością można podzielić
 na strefę dzienną, składającą się z kuchni, salonu i innych pomieszczeń integralnych oraz strefę nocną
 dedykowaną sypialniom, łazienkom i różnego rodzaju gabinetom domowym. Domy składające się z więcej niż
@@ -11373,7 +11373,7 @@ stanowią podstawę do ciekawej aranżacji bryły. Takie rozwiązanie świetnie 
 rodzin z dziećmi, łącząc estetykę i komfort w jednej bryle. Warto podkreślić, że domy piętrowe idealnie
 nadają się w przypadku mniejszej działki - takie rozwiązanie pozwala zaoszczędzić przestrzeń.</p>
 <h3 style="font-size:2.4rem;">Projekty domów parterowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #ed1d24;">Projekty domów
 parterowych</a> stanowią idealne rozwiązanie dla klientów ceniących sobie wygodę, estetykę oraz
 funkcjonalność. Głównym atutem tego typu projektów jest brak schodów. Jedna kondygnacja, z której składa
 się cała bryła może okazać się idealnym rozwiązaniem dla rodzin z małymi dziećmi lub dla osób z
@@ -11394,7 +11394,7 @@ idealnie sprawdza się jako dodatkowy składzik lub pomieszczenie gospodarcze. W
 parterowy z poddaszem to świetna alternatywa dla Inwestorów, którzy chcą rozłożyć budowę domu na etapy,
 ponieważ poddasze nie musi być wykańczane od razu.</p>
 <h3 style="font-size:2.4rem;">Projekty domów bliźniaczych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #ed1d24;">Projekty domów
 bliźniaczych</a> to charakterystyczne budowle, które wyróżniają się podziałem bryły na dwa oddzielne
 i niezależne od siebie segmenty. Konstrukcja składa się z jednego wspólnego dachu oraz murów
 zewnętrznych, natomiast zawiera dwa oddzielne i niezależne wejścia do mieszkania. Ta alternatywa jest
@@ -11411,7 +11411,7 @@ nasi projektanci uwzględnili w projektach domów takie rozwiązania jak systemy
 energii odnawialnej, systemy zarządzania energią oraz wiele innych zastosowań, definiujących projekty
 Studio Atrium jako energooszczędne.</p>
 <h3 style="font-size:2.4rem;">Projekty domów nowoczesnych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #ed1d24;">Projekty domów
 nowoczesnych</a> wyróżniają się uwzględnieniem minimalizmu i prostoty. W tym celu ogranicza się
 ozdoby i dekoracje do minimum, co sprawia, że cena wybudowania takiego domu staje się atrakcyjniejsza.
 Zastosowanie dużych przeszklonych okien wpuszcza do domu naturalne światło, co pozwala zaoszczędzić
@@ -11419,7 +11419,7 @@ energię elektryczną. Inwestorzy często decydują się również na zastosowan
 cegły, aby dom był bardziej przytulny. Wyżej opisane elementy to przykładowe detale, którymi cechują się
 projekty domów nowoczesnych.</p>
 <h3 style="font-size:2.4rem;">Projekty w stylu stodoły</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #cc1000;">Projekty
+<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #ed1d24;">Projekty
 domów w stylu stodoły</a>, czyli tzw. Barn House, coraz częściej stają się obiektem zainteresowań
 Inwestorów. Charakteryzują się prostokątną bryłą budynku oraz wielkoformatowymi oknami. Są to typy domów
 z dachem dwuspadowym. Wnętrza cechują wysokie sufity i otwarte przestrzenie z uwzględnieniem antresoli
@@ -11428,7 +11428,7 @@ takich jak drewniane bele i stara cegła, w połączeniu z nowoczesnymi metalowy
 wykończeniami. </p>
 <h3 style="font-size:2.4rem;">Projekty domów z poddaszem użytkowym</h3>
 <p><a href="https://www.studioatrium.pl/projekty-domow/z-poddaszem-uzytkowym/"
-style="color: #cc1000;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
+style="color: #ed1d24;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
 wszystkim decyzję o zagospodarowaniu poddasza podejmuje Inwestor, co więcej poddasze użytkowe to
 możliwość podzielenia wykończenia domu na etapy. Poddasze to przestrzeń wypełniona licznymi skosami,
 które przy odpowiedniej aranżacji kreują przytulną przestrzeń dla mieszkańców. Zastosowanie tego rodzaju
@@ -11450,7 +11450,7 @@ na dłuższy okres czasu.</p>
 <p>Bardzo często zdarza się, że najistotniejszym dla inwestora jest mały metraż działki, który automatycznie
 uniemożliwia wybudowanie pewnych brył. Dla specjalistów Studio Atrium wąska działka nie stanowi
 ograniczenia a jedynie podstawę do tworzenia kreatywnych rozwiązań dla klienta. <a
-href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #cc1000;">Projekty
+href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #ed1d24;">Projekty
 domów na wąską działkę</a> najczęściej skupiają się na maksymalnym wykorzystaniu działki poprzez
 zastosowanie podłużnej, prostokątnej bryły, tak aby jak najbardziej wykorzystać ograniczoną
 powierzchnię. W przypadku wąskich działek idealnie sprawdzają się domy piętrowe lub takie z poddaszem
@@ -11458,7 +11458,7 @@ użytkowym.</p>
 <h3 style="font-size:2.4rem;">Projekty domów z kosztorysem</h3>
 <p>Decydując się na zakup projektu domu z kosztorysem, inwestor nabywa gotowe plany budowlane z
 uwzględnieniem szczegółowych informacji <a
-href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #cc1000;">kosztów
+href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #ed1d24;">kosztów
 budowy domów</a>. Takie rozwiązanie świetnie sprawdza się w przypadku Inwestorów, którym zależy na
 dokładnej kontroli budżetu. Jest to również możliwość do lepszego rozplanowania etapów budowy i płynnego
 zarządzania zapleczem finansowym. Jeżeli budujesz dom po raz pierwszy, masz ograniczony budżet lub
@@ -11467,7 +11467,7 @@ kosztorysem jest odpowiednia dla Ciebie. Aktualna cena to 750 zł za szczegóło
 <h3 style="font-size:2.4rem;">Projekty małych domów</h3>
 <p>Małe domy wyróżnia nieduży metraż; dlatego istotne jest uwzględnienie w projekcie praktycznych zastosowań
 przy maksymalnym zagospodarowaniu powierzchni użytkowej. <a
-href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #cc1000;">Projekty małych
+href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #ed1d24;">Projekty małych
 domów</a> to idealne rozwiązanie dla par lub osób w podeszłym wieku; co więcej takie projekty
 idealnie sprawdzają się w przypadku ograniczeń związanych z małym metrażem działki. Jeżeli cenisz sobie
 praktyczność połączoną z przytulnymi aranżacjami wnętrz, projekt małego domu jest właśnie dla Ciebie.
@@ -11480,7 +11480,7 @@ wielopoziomowych układów kondygnacji, aby w pełni wykorzystać dostępną prz
 umożliwia ulokowanie parteru lub piwnicy w częściowym zagłębieniu w skarpie, natomiast wyższe
 kondygnacje są wysuwane. Dom ulokowany na wzniesieniu oferuje panoramiczne widoki, co wpływa na jego
 atrakcyjność. <a href="https://www.studioatrium.pl/projekty-domow/na-skarpe/"
-style="color: #cc1000;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
+style="color: #ed1d24;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
 połączeniu z zastosowaniem dużych okien stanowi energooszczędne rozwiązanie doświetlające wnętrze domu.
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Co należy
@@ -11643,11 +11643,11 @@ poddaszem{elseif $_item.object.params_general|isGroundFloor:true}parterowego
 <div>
 <p>Z przyjemnością prezentujemy Państwu gotowe projekty domów. Przygotowali je doświadczeni specjaliści,
 którzy tworzą personel naszej firmy. W ofercie znajdą Państwo między innymi <a
-href="/projekty-domow/blizniaki/" style="color: #cc1000;">projekty domów bliźniaczych</a>, <a
-href="/projekty-domow/nowoczesne/" style="color: #cc1000;">projekty domów nowoczesnych</a>, <a
+href="/projekty-domow/blizniaki/" style="color: #ed1d24;">projekty domów bliźniaczych</a>, <a
+href="/projekty-domow/nowoczesne/" style="color: #ed1d24;">projekty domów nowoczesnych</a>, <a
 href="/projekty-domow/na-waska-dzialke/">na wąską działkę</a>, parterowych i piętrowych. Polecamy
-także <a href="/projekty-domow/tanie-w-budowie/" style="color: #cc1000;">domy tanie w budowie</a> oraz
-<a href="/projekty-domow/z-plaskim-dachem/" style="color: #cc1000;">z płaskim dachem</a>. Wszystkie
+także <a href="/projekty-domow/tanie-w-budowie/" style="color: #ed1d24;">domy tanie w budowie</a> oraz
+<a href="/projekty-domow/z-plaskim-dachem/" style="color: #ed1d24;">z płaskim dachem</a>. Wszystkie
 dostosowane są do polskich warunków budowlanych. Udostępniamy także wzory małych obiektów, ponieważ
 wiemy jak ważna jest obecnie oszczędność i funkcjonalność. Posiadamy wieloletnie doświadczenie we
 współpracy z inwestorami budującymi tego typu obiekty, propozycje zostały więc opracowane na podstawie
@@ -11655,7 +11655,7 @@ wytycznych ekspertów. Projekty domów gotowych do realizacji to wygodne i prakt
 szczególnie dla osób, które nie zetknęły się wcześniej z tą branżą. Mogą w ten sposób nabyć wzór, który
 jest uniwersalny i sprawdzony w praktyce. Mamy świadomość tego, iż wybór odpowiedniej propozycji to
 poważna decyzja, dlatego chętnie służymy Państwu radą. Wszystkie nasze <a href="/projekty-domow/"
-style="color: #cc1000;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
+style="color: #ed1d24;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
 najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczekiwania.
 </p>
 <h3>Najpopularniejsze typy domów</h3>
@@ -11664,7 +11664,7 @@ najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczeki
 takiego rozwiązania jest umieszczenie stref mieszkalnych, dziennej i nocnej, na jednym poziomie -
 parterze, bez konieczności budowania schodów i stropu. Warto także podkreślić bezpośredni kontakt z
 otaczającą budynek zielenią, dostępną niemal "za ścianą". Małe <a href="/projekty-domow/parterowe/"
-style="color: #cc1000;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
+style="color: #ed1d24;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
 propozycji na rynku. Koszt budowy jak i ich użytkowania zaliczyć można do najniższych. Rozległe
 rezydencje parterowe natomiast, najbardziej przypominają nowoczesne siedliska. W naszej ofercie projekty
 domów parterowych traktowane są wyjątkowo - bez trudu znajdą tutaj Państwo coś dla siebie. Od
@@ -11678,9 +11678,9 @@ różnorodne kształty. Od typowych, prostych konstrukcji, przykrytych dwuspadow
 finezyjne bryły ozdobione licznymi detalami architektonicznymi i bazujące na nowoczesnych trendach.
 Przygotowane przez nas budynki to wspaniała propozycja dla typowych rodzin 2+2 i 2+3. Ich funkcjonalność
 została specjalnie zaprojektowana dla wygody kilku użytkowników, którzy spędzają czas w swoim domu. <a
-href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #cc1000;">Gotowe projekty domów z
+href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #ed1d24;">Gotowe projekty domów z
 poddaszem użytkowym</a> stanowią w naszej ofercie najliczniejszą grupę koncepcji, które wcielamy w
-życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #cc1000;">Zobacz dodatki</a>
+życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #ed1d24;">Zobacz dodatki</a>
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Projekty domów
 jednorodzinnych Studio Atrium</h2>
@@ -11703,7 +11703,7 @@ Atrium cieszy się bardzo dobrą opinią wśród klientów. Nasi klienci w recen
 wysoką jakość obsługi, solidność projektów, oraz indywidualne podejście do potrzeb inwestorów. Ponadto
 jako firma zdobyliśmy uznanie w branży, m.in. poprzez wyróżnienia takie jak Konsumencki Lider Jakości,
 co świadczy o dbałości o klienta. Jeżeli nadal masz wątpliwości, już dziś <a
-href="https://www.studioatrium.pl/kontakt/" style="color: #cc1000;">skontaktuj się z naszym
+href="https://www.studioatrium.pl/kontakt/" style="color: #ed1d24;">skontaktuj się z naszym
 konsultantem</a> lub odwiedź naszą siedzibę mieszczącą się w Bielsku-Białej przy ulicy J.
 Malczewskiego 1. Jesteśmy otwarci dla Ciebie od poniedziałku do piątku w godzinach od 8:00 do 17:00.
 Skontaktuj się z nami i poznaj przyjemność pracy ze specjalistami!</p>
@@ -11758,7 +11758,7 @@ możemy zaoferować! Twój wymarzony dom zaczyna się od pierwszego kliknięcia.
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Odwiedź nasze
 forum dyskusyjne</h2>
 <p>Nasza strona internetowa zawiera zakładkę <a href="https://www.studioatrium.pl/forum/"
-style="color: #cc1000;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
+style="color: #ed1d24;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
 architektonicznego wymieniają się swoimi poglądami oraz przemyśleniami w tej dziedzinie. To świetna
 okazja, by wymienić się doświadczeniami; co więcej, w dyskusjach poruszanych na forum biorą udział nasi
 eksperci, którzy otwarcie dzielą się swoim doświadczeniem. Forum na stronie internetowej Studio Atrium
@@ -11822,7 +11822,7 @@ konkretny, spełniający wszelkie oczekiwania Inwestora.</p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Nasz katalog
 projektów domów - co w nim znajdziesz?</h2>
 <p>Katalog projektów to narzędzie przydatne dla interesantów, chętnych pogłębić swoją wiedzę. <a
-href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #cc1000;">Nasz darmowy
+href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #ed1d24;">Nasz darmowy
 katalog</a> prezentuje liczne propozycje projektów. Znajdziesz w nim projekty domów parterowych i
 piętrowych, projekty z przystosowaniem do różnych typów działek, projekty garaży wolnostojących oraz
 inne wyselekcjonowane projekty domów. Jeżeli chcesz zobaczyć więcej projektów oferowanych przez Studio
@@ -11864,7 +11864,7 @@ antresolą)</p>
 <p>• W zależności od stylu (nowoczesne, w stylu stodoły, regionalne beskidzkie, nowoczesne beskidzkie, z
 płaskim dachem, rezydencje dla zamożnych)</p>
 <h3 style="font-size:2.4rem;">Projekty domów piętrowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #ed1d24;">Projekty domów
 piętrowych</a> wyróżniają się świetnym zagospodarowaniem wnętrza, które z łatwością można podzielić
 na strefę dzienną, składającą się z kuchni, salonu i innych pomieszczeń integralnych oraz strefę nocną
 dedykowaną sypialniom, łazienkom i różnego rodzaju gabinetom domowym. Domy składające się z więcej niż
@@ -11874,7 +11874,7 @@ stanowią podstawę do ciekawej aranżacji bryły. Takie rozwiązanie świetnie 
 rodzin z dziećmi, łącząc estetykę i komfort w jednej bryle. Warto podkreślić, że domy piętrowe idealnie
 nadają się w przypadku mniejszej działki - takie rozwiązanie pozwala zaoszczędzić przestrzeń.</p>
 <h3 style="font-size:2.4rem;">Projekty domów parterowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #ed1d24;">Projekty domów
 parterowych</a> stanowią idealne rozwiązanie dla klientów ceniących sobie wygodę, estetykę oraz
 funkcjonalność. Głównym atutem tego typu projektów jest brak schodów. Jedna kondygnacja, z której składa
 się cała bryła może okazać się idealnym rozwiązaniem dla rodzin z małymi dziećmi lub dla osób z
@@ -11895,7 +11895,7 @@ idealnie sprawdza się jako dodatkowy składzik lub pomieszczenie gospodarcze. W
 parterowy z poddaszem to świetna alternatywa dla Inwestorów, którzy chcą rozłożyć budowę domu na etapy,
 ponieważ poddasze nie musi być wykańczane od razu.</p>
 <h3 style="font-size:2.4rem;">Projekty domów bliźniaczych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #ed1d24;">Projekty domów
 bliźniaczych</a> to charakterystyczne budowle, które wyróżniają się podziałem bryły na dwa oddzielne
 i niezależne od siebie segmenty. Konstrukcja składa się z jednego wspólnego dachu oraz murów
 zewnętrznych, natomiast zawiera dwa oddzielne i niezależne wejścia do mieszkania. Ta alternatywa jest
@@ -11912,7 +11912,7 @@ nasi projektanci uwzględnili w projektach domów takie rozwiązania jak systemy
 energii odnawialnej, systemy zarządzania energią oraz wiele innych zastosowań, definiujących projekty
 Studio Atrium jako energooszczędne.</p>
 <h3 style="font-size:2.4rem;">Projekty domów nowoczesnych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #ed1d24;">Projekty domów
 nowoczesnych</a> wyróżniają się uwzględnieniem minimalizmu i prostoty. W tym celu ogranicza się
 ozdoby i dekoracje do minimum, co sprawia, że cena wybudowania takiego domu staje się atrakcyjniejsza.
 Zastosowanie dużych przeszklonych okien wpuszcza do domu naturalne światło, co pozwala zaoszczędzić
@@ -11920,7 +11920,7 @@ energię elektryczną. Inwestorzy często decydują się również na zastosowan
 cegły, aby dom był bardziej przytulny. Wyżej opisane elementy to przykładowe detale, którymi cechują się
 projekty domów nowoczesnych.</p>
 <h3 style="font-size:2.4rem;">Projekty w stylu stodoły</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #cc1000;">Projekty
+<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #ed1d24;">Projekty
 domów w stylu stodoły</a>, czyli tzw. Barn House, coraz częściej stają się obiektem zainteresowań
 Inwestorów. Charakteryzują się prostokątną bryłą budynku oraz wielkoformatowymi oknami. Są to typy domów
 z dachem dwuspadowym. Wnętrza cechują wysokie sufity i otwarte przestrzenie z uwzględnieniem antresoli
@@ -11929,7 +11929,7 @@ takich jak drewniane bele i stara cegła, w połączeniu z nowoczesnymi metalowy
 wykończeniami. </p>
 <h3 style="font-size:2.4rem;">Projekty domów z poddaszem użytkowym</h3>
 <p><a href="https://www.studioatrium.pl/projekty-domow/z-poddaszem-uzytkowym/"
-style="color: #cc1000;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
+style="color: #ed1d24;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
 wszystkim decyzję o zagospodarowaniu poddasza podejmuje Inwestor, co więcej poddasze użytkowe to
 możliwość podzielenia wykończenia domu na etapy. Poddasze to przestrzeń wypełniona licznymi skosami,
 które przy odpowiedniej aranżacji kreują przytulną przestrzeń dla mieszkańców. Zastosowanie tego rodzaju
@@ -11951,7 +11951,7 @@ na dłuższy okres czasu.</p>
 <p>Bardzo często zdarza się, że najistotniejszym dla inwestora jest mały metraż działki, który automatycznie
 uniemożliwia wybudowanie pewnych brył. Dla specjalistów Studio Atrium wąska działka nie stanowi
 ograniczenia a jedynie podstawę do tworzenia kreatywnych rozwiązań dla klienta. <a
-href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #cc1000;">Projekty
+href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #ed1d24;">Projekty
 domów na wąską działkę</a> najczęściej skupiają się na maksymalnym wykorzystaniu działki poprzez
 zastosowanie podłużnej, prostokątnej bryły, tak aby jak najbardziej wykorzystać ograniczoną
 powierzchnię. W przypadku wąskich działek idealnie sprawdzają się domy piętrowe lub takie z poddaszem
@@ -11959,7 +11959,7 @@ użytkowym.</p>
 <h3 style="font-size:2.4rem;">Projekty domów z kosztorysem</h3>
 <p>Decydując się na zakup projektu domu z kosztorysem, inwestor nabywa gotowe plany budowlane z
 uwzględnieniem szczegółowych informacji <a
-href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #cc1000;">kosztów
+href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #ed1d24;">kosztów
 budowy domów</a>. Takie rozwiązanie świetnie sprawdza się w przypadku Inwestorów, którym zależy na
 dokładnej kontroli budżetu. Jest to również możliwość do lepszego rozplanowania etapów budowy i płynnego
 zarządzania zapleczem finansowym. Jeżeli budujesz dom po raz pierwszy, masz ograniczony budżet lub
@@ -11968,7 +11968,7 @@ kosztorysem jest odpowiednia dla Ciebie. Aktualna cena to 750 zł za szczegóło
 <h3 style="font-size:2.4rem;">Projekty małych domów</h3>
 <p>Małe domy wyróżnia nieduży metraż; dlatego istotne jest uwzględnienie w projekcie praktycznych zastosowań
 przy maksymalnym zagospodarowaniu powierzchni użytkowej. <a
-href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #cc1000;">Projekty małych
+href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #ed1d24;">Projekty małych
 domów</a> to idealne rozwiązanie dla par lub osób w podeszłym wieku; co więcej takie projekty
 idealnie sprawdzają się w przypadku ograniczeń związanych z małym metrażem działki. Jeżeli cenisz sobie
 praktyczność połączoną z przytulnymi aranżacjami wnętrz, projekt małego domu jest właśnie dla Ciebie.
@@ -11981,7 +11981,7 @@ wielopoziomowych układów kondygnacji, aby w pełni wykorzystać dostępną prz
 umożliwia ulokowanie parteru lub piwnicy w częściowym zagłębieniu w skarpie, natomiast wyższe
 kondygnacje są wysuwane. Dom ulokowany na wzniesieniu oferuje panoramiczne widoki, co wpływa na jego
 atrakcyjność. <a href="https://www.studioatrium.pl/projekty-domow/na-skarpe/"
-style="color: #cc1000;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
+style="color: #ed1d24;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
 połączeniu z zastosowaniem dużych okien stanowi energooszczędne rozwiązanie doświetlające wnętrze domu.
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Co należy
@@ -12153,11 +12153,11 @@ wybudowanym według naszego projektu.</p>
 <div>
 <p>Z przyjemnością prezentujemy Państwu gotowe projekty domów. Przygotowali je doświadczeni specjaliści,
 którzy tworzą personel naszej firmy. W ofercie znajdą Państwo między innymi <a
-href="/projekty-domow/blizniaki/" style="color: #cc1000;">projekty domów bliźniaczych</a>, <a
-href="/projekty-domow/nowoczesne/" style="color: #cc1000;">projekty domów nowoczesnych</a>, <a
+href="/projekty-domow/blizniaki/" style="color: #ed1d24;">projekty domów bliźniaczych</a>, <a
+href="/projekty-domow/nowoczesne/" style="color: #ed1d24;">projekty domów nowoczesnych</a>, <a
 href="/projekty-domow/na-waska-dzialke/">na wąską działkę</a>, parterowych i piętrowych. Polecamy
-także <a href="/projekty-domow/tanie-w-budowie/" style="color: #cc1000;">domy tanie w budowie</a> oraz
-<a href="/projekty-domow/z-plaskim-dachem/" style="color: #cc1000;">z płaskim dachem</a>. Wszystkie
+także <a href="/projekty-domow/tanie-w-budowie/" style="color: #ed1d24;">domy tanie w budowie</a> oraz
+<a href="/projekty-domow/z-plaskim-dachem/" style="color: #ed1d24;">z płaskim dachem</a>. Wszystkie
 dostosowane są do polskich warunków budowlanych. Udostępniamy także wzory małych obiektów, ponieważ
 wiemy jak ważna jest obecnie oszczędność i funkcjonalność. Posiadamy wieloletnie doświadczenie we
 współpracy z inwestorami budującymi tego typu obiekty, propozycje zostały więc opracowane na podstawie
@@ -12165,7 +12165,7 @@ wytycznych ekspertów. Projekty domów gotowych do realizacji to wygodne i prakt
 szczególnie dla osób, które nie zetknęły się wcześniej z tą branżą. Mogą w ten sposób nabyć wzór, który
 jest uniwersalny i sprawdzony w praktyce. Mamy świadomość tego, iż wybór odpowiedniej propozycji to
 poważna decyzja, dlatego chętnie służymy Państwu radą. Wszystkie nasze <a href="/projekty-domow/"
-style="color: #cc1000;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
+style="color: #ed1d24;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
 najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczekiwania.
 </p>
 <h3>Najpopularniejsze typy domów</h3>
@@ -12174,7 +12174,7 @@ najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczeki
 takiego rozwiązania jest umieszczenie stref mieszkalnych, dziennej i nocnej, na jednym poziomie -
 parterze, bez konieczności budowania schodów i stropu. Warto także podkreślić bezpośredni kontakt z
 otaczającą budynek zielenią, dostępną niemal "za ścianą". Małe <a href="/projekty-domow/parterowe/"
-style="color: #cc1000;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
+style="color: #ed1d24;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
 propozycji na rynku. Koszt budowy jak i ich użytkowania zaliczyć można do najniższych. Rozległe
 rezydencje parterowe natomiast, najbardziej przypominają nowoczesne siedliska. W naszej ofercie projekty
 domów parterowych traktowane są wyjątkowo - bez trudu znajdą tutaj Państwo coś dla siebie. Od
@@ -12188,9 +12188,9 @@ różnorodne kształty. Od typowych, prostych konstrukcji, przykrytych dwuspadow
 finezyjne bryły ozdobione licznymi detalami architektonicznymi i bazujące na nowoczesnych trendach.
 Przygotowane przez nas budynki to wspaniała propozycja dla typowych rodzin 2+2 i 2+3. Ich funkcjonalność
 została specjalnie zaprojektowana dla wygody kilku użytkowników, którzy spędzają czas w swoim domu. <a
-href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #cc1000;">Gotowe projekty domów z
+href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #ed1d24;">Gotowe projekty domów z
 poddaszem użytkowym</a> stanowią w naszej ofercie najliczniejszą grupę koncepcji, które wcielamy w
-życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #cc1000;">Zobacz dodatki</a>
+życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #ed1d24;">Zobacz dodatki</a>
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Projekty domów
 jednorodzinnych Studio Atrium</h2>
@@ -12213,7 +12213,7 @@ Atrium cieszy się bardzo dobrą opinią wśród klientów. Nasi klienci w recen
 wysoką jakość obsługi, solidność projektów, oraz indywidualne podejście do potrzeb inwestorów. Ponadto
 jako firma zdobyliśmy uznanie w branży, m.in. poprzez wyróżnienia takie jak Konsumencki Lider Jakości,
 co świadczy o dbałości o klienta. Jeżeli nadal masz wątpliwości, już dziś <a
-href="https://www.studioatrium.pl/kontakt/" style="color: #cc1000;">skontaktuj się z naszym
+href="https://www.studioatrium.pl/kontakt/" style="color: #ed1d24;">skontaktuj się z naszym
 konsultantem</a> lub odwiedź naszą siedzibę mieszczącą się w Bielsku-Białej przy ulicy J.
 Malczewskiego 1. Jesteśmy otwarci dla Ciebie od poniedziałku do piątku w godzinach od 8:00 do 17:00.
 Skontaktuj się z nami i poznaj przyjemność pracy ze specjalistami!</p>
@@ -12268,7 +12268,7 @@ możemy zaoferować! Twój wymarzony dom zaczyna się od pierwszego kliknięcia.
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Odwiedź nasze
 forum dyskusyjne</h2>
 <p>Nasza strona internetowa zawiera zakładkę <a href="https://www.studioatrium.pl/forum/"
-style="color: #cc1000;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
+style="color: #ed1d24;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
 architektonicznego wymieniają się swoimi poglądami oraz przemyśleniami w tej dziedzinie. To świetna
 okazja, by wymienić się doświadczeniami; co więcej, w dyskusjach poruszanych na forum biorą udział nasi
 eksperci, którzy otwarcie dzielą się swoim doświadczeniem. Forum na stronie internetowej Studio Atrium
@@ -12332,7 +12332,7 @@ konkretny, spełniający wszelkie oczekiwania Inwestora.</p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Nasz katalog
 projektów domów - co w nim znajdziesz?</h2>
 <p>Katalog projektów to narzędzie przydatne dla interesantów, chętnych pogłębić swoją wiedzę. <a
-href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #cc1000;">Nasz darmowy
+href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #ed1d24;">Nasz darmowy
 katalog</a> prezentuje liczne propozycje projektów. Znajdziesz w nim projekty domów parterowych i
 piętrowych, projekty z przystosowaniem do różnych typów działek, projekty garaży wolnostojących oraz
 inne wyselekcjonowane projekty domów. Jeżeli chcesz zobaczyć więcej projektów oferowanych przez Studio
@@ -12374,7 +12374,7 @@ antresolą)</p>
 <p>• W zależności od stylu (nowoczesne, w stylu stodoły, regionalne beskidzkie, nowoczesne beskidzkie, z
 płaskim dachem, rezydencje dla zamożnych)</p>
 <h3 style="font-size:2.4rem;">Projekty domów piętrowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #ed1d24;">Projekty domów
 piętrowych</a> wyróżniają się świetnym zagospodarowaniem wnętrza, które z łatwością można podzielić
 na strefę dzienną, składającą się z kuchni, salonu i innych pomieszczeń integralnych oraz strefę nocną
 dedykowaną sypialniom, łazienkom i różnego rodzaju gabinetom domowym. Domy składające się z więcej niż
@@ -12384,7 +12384,7 @@ stanowią podstawę do ciekawej aranżacji bryły. Takie rozwiązanie świetnie 
 rodzin z dziećmi, łącząc estetykę i komfort w jednej bryle. Warto podkreślić, że domy piętrowe idealnie
 nadają się w przypadku mniejszej działki - takie rozwiązanie pozwala zaoszczędzić przestrzeń.</p>
 <h3 style="font-size:2.4rem;">Projekty domów parterowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #ed1d24;">Projekty domów
 parterowych</a> stanowią idealne rozwiązanie dla klientów ceniących sobie wygodę, estetykę oraz
 funkcjonalność. Głównym atutem tego typu projektów jest brak schodów. Jedna kondygnacja, z której składa
 się cała bryła może okazać się idealnym rozwiązaniem dla rodzin z małymi dziećmi lub dla osób z
@@ -12405,7 +12405,7 @@ idealnie sprawdza się jako dodatkowy składzik lub pomieszczenie gospodarcze. W
 parterowy z poddaszem to świetna alternatywa dla Inwestorów, którzy chcą rozłożyć budowę domu na etapy,
 ponieważ poddasze nie musi być wykańczane od razu.</p>
 <h3 style="font-size:2.4rem;">Projekty domów bliźniaczych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #ed1d24;">Projekty domów
 bliźniaczych</a> to charakterystyczne budowle, które wyróżniają się podziałem bryły na dwa oddzielne
 i niezależne od siebie segmenty. Konstrukcja składa się z jednego wspólnego dachu oraz murów
 zewnętrznych, natomiast zawiera dwa oddzielne i niezależne wejścia do mieszkania. Ta alternatywa jest
@@ -12422,7 +12422,7 @@ nasi projektanci uwzględnili w projektach domów takie rozwiązania jak systemy
 energii odnawialnej, systemy zarządzania energią oraz wiele innych zastosowań, definiujących projekty
 Studio Atrium jako energooszczędne.</p>
 <h3 style="font-size:2.4rem;">Projekty domów nowoczesnych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #ed1d24;">Projekty domów
 nowoczesnych</a> wyróżniają się uwzględnieniem minimalizmu i prostoty. W tym celu ogranicza się
 ozdoby i dekoracje do minimum, co sprawia, że cena wybudowania takiego domu staje się atrakcyjniejsza.
 Zastosowanie dużych przeszklonych okien wpuszcza do domu naturalne światło, co pozwala zaoszczędzić
@@ -12430,7 +12430,7 @@ energię elektryczną. Inwestorzy często decydują się również na zastosowan
 cegły, aby dom był bardziej przytulny. Wyżej opisane elementy to przykładowe detale, którymi cechują się
 projekty domów nowoczesnych.</p>
 <h3 style="font-size:2.4rem;">Projekty w stylu stodoły</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #cc1000;">Projekty
+<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #ed1d24;">Projekty
 domów w stylu stodoły</a>, czyli tzw. Barn House, coraz częściej stają się obiektem zainteresowań
 Inwestorów. Charakteryzują się prostokątną bryłą budynku oraz wielkoformatowymi oknami. Są to typy domów
 z dachem dwuspadowym. Wnętrza cechują wysokie sufity i otwarte przestrzenie z uwzględnieniem antresoli
@@ -12439,7 +12439,7 @@ takich jak drewniane bele i stara cegła, w połączeniu z nowoczesnymi metalowy
 wykończeniami. </p>
 <h3 style="font-size:2.4rem;">Projekty domów z poddaszem użytkowym</h3>
 <p><a href="https://www.studioatrium.pl/projekty-domow/z-poddaszem-uzytkowym/"
-style="color: #cc1000;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
+style="color: #ed1d24;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
 wszystkim decyzję o zagospodarowaniu poddasza podejmuje Inwestor, co więcej poddasze użytkowe to
 możliwość podzielenia wykończenia domu na etapy. Poddasze to przestrzeń wypełniona licznymi skosami,
 które przy odpowiedniej aranżacji kreują przytulną przestrzeń dla mieszkańców. Zastosowanie tego rodzaju
@@ -12461,7 +12461,7 @@ na dłuższy okres czasu.</p>
 <p>Bardzo często zdarza się, że najistotniejszym dla inwestora jest mały metraż działki, który automatycznie
 uniemożliwia wybudowanie pewnych brył. Dla specjalistów Studio Atrium wąska działka nie stanowi
 ograniczenia a jedynie podstawę do tworzenia kreatywnych rozwiązań dla klienta. <a
-href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #cc1000;">Projekty
+href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #ed1d24;">Projekty
 domów na wąską działkę</a> najczęściej skupiają się na maksymalnym wykorzystaniu działki poprzez
 zastosowanie podłużnej, prostokątnej bryły, tak aby jak najbardziej wykorzystać ograniczoną
 powierzchnię. W przypadku wąskich działek idealnie sprawdzają się domy piętrowe lub takie z poddaszem
@@ -12469,7 +12469,7 @@ użytkowym.</p>
 <h3 style="font-size:2.4rem;">Projekty domów z kosztorysem</h3>
 <p>Decydując się na zakup projektu domu z kosztorysem, inwestor nabywa gotowe plany budowlane z
 uwzględnieniem szczegółowych informacji <a
-href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #cc1000;">kosztów
+href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #ed1d24;">kosztów
 budowy domów</a>. Takie rozwiązanie świetnie sprawdza się w przypadku Inwestorów, którym zależy na
 dokładnej kontroli budżetu. Jest to również możliwość do lepszego rozplanowania etapów budowy i płynnego
 zarządzania zapleczem finansowym. Jeżeli budujesz dom po raz pierwszy, masz ograniczony budżet lub
@@ -12478,7 +12478,7 @@ kosztorysem jest odpowiednia dla Ciebie. Aktualna cena to 750 zł za szczegóło
 <h3 style="font-size:2.4rem;">Projekty małych domów</h3>
 <p>Małe domy wyróżnia nieduży metraż; dlatego istotne jest uwzględnienie w projekcie praktycznych zastosowań
 przy maksymalnym zagospodarowaniu powierzchni użytkowej. <a
-href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #cc1000;">Projekty małych
+href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #ed1d24;">Projekty małych
 domów</a> to idealne rozwiązanie dla par lub osób w podeszłym wieku; co więcej takie projekty
 idealnie sprawdzają się w przypadku ograniczeń związanych z małym metrażem działki. Jeżeli cenisz sobie
 praktyczność połączoną z przytulnymi aranżacjami wnętrz, projekt małego domu jest właśnie dla Ciebie.
@@ -12491,7 +12491,7 @@ wielopoziomowych układów kondygnacji, aby w pełni wykorzystać dostępną prz
 umożliwia ulokowanie parteru lub piwnicy w częściowym zagłębieniu w skarpie, natomiast wyższe
 kondygnacje są wysuwane. Dom ulokowany na wzniesieniu oferuje panoramiczne widoki, co wpływa na jego
 atrakcyjność. <a href="https://www.studioatrium.pl/projekty-domow/na-skarpe/"
-style="color: #cc1000;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
+style="color: #ed1d24;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
 połączeniu z zastosowaniem dużych okien stanowi energooszczędne rozwiązanie doświetlające wnętrze domu.
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Co należy
@@ -12656,11 +12656,11 @@ poddaszem{elseif $_item.object.params_general|isGroundFloor:true}parterowego
 <div>
 <p>Z przyjemnością prezentujemy Państwu gotowe projekty domów. Przygotowali je doświadczeni specjaliści,
 którzy tworzą personel naszej firmy. W ofercie znajdą Państwo między innymi <a
-href="/projekty-domow/blizniaki/" style="color: #cc1000;">projekty domów bliźniaczych</a>, <a
-href="/projekty-domow/nowoczesne/" style="color: #cc1000;">projekty domów nowoczesnych</a>, <a
+href="/projekty-domow/blizniaki/" style="color: #ed1d24;">projekty domów bliźniaczych</a>, <a
+href="/projekty-domow/nowoczesne/" style="color: #ed1d24;">projekty domów nowoczesnych</a>, <a
 href="/projekty-domow/na-waska-dzialke/">na wąską działkę</a>, parterowych i piętrowych. Polecamy
-także <a href="/projekty-domow/tanie-w-budowie/" style="color: #cc1000;">domy tanie w budowie</a> oraz
-<a href="/projekty-domow/z-plaskim-dachem/" style="color: #cc1000;">z płaskim dachem</a>. Wszystkie
+także <a href="/projekty-domow/tanie-w-budowie/" style="color: #ed1d24;">domy tanie w budowie</a> oraz
+<a href="/projekty-domow/z-plaskim-dachem/" style="color: #ed1d24;">z płaskim dachem</a>. Wszystkie
 dostosowane są do polskich warunków budowlanych. Udostępniamy także wzory małych obiektów, ponieważ
 wiemy jak ważna jest obecnie oszczędność i funkcjonalność. Posiadamy wieloletnie doświadczenie we
 współpracy z inwestorami budującymi tego typu obiekty, propozycje zostały więc opracowane na podstawie
@@ -12668,7 +12668,7 @@ wytycznych ekspertów. Projekty domów gotowych do realizacji to wygodne i prakt
 szczególnie dla osób, które nie zetknęły się wcześniej z tą branżą. Mogą w ten sposób nabyć wzór, który
 jest uniwersalny i sprawdzony w praktyce. Mamy świadomość tego, iż wybór odpowiedniej propozycji to
 poważna decyzja, dlatego chętnie służymy Państwu radą. Wszystkie nasze <a href="/projekty-domow/"
-style="color: #cc1000;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
+style="color: #ed1d24;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
 najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczekiwania.
 </p>
 <h3>Najpopularniejsze typy domów</h3>
@@ -12677,7 +12677,7 @@ najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczeki
 takiego rozwiązania jest umieszczenie stref mieszkalnych, dziennej i nocnej, na jednym poziomie -
 parterze, bez konieczności budowania schodów i stropu. Warto także podkreślić bezpośredni kontakt z
 otaczającą budynek zielenią, dostępną niemal "za ścianą". Małe <a href="/projekty-domow/parterowe/"
-style="color: #cc1000;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
+style="color: #ed1d24;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
 propozycji na rynku. Koszt budowy jak i ich użytkowania zaliczyć można do najniższych. Rozległe
 rezydencje parterowe natomiast, najbardziej przypominają nowoczesne siedliska. W naszej ofercie projekty
 domów parterowych traktowane są wyjątkowo - bez trudu znajdą tutaj Państwo coś dla siebie. Od
@@ -12691,9 +12691,9 @@ różnorodne kształty. Od typowych, prostych konstrukcji, przykrytych dwuspadow
 finezyjne bryły ozdobione licznymi detalami architektonicznymi i bazujące na nowoczesnych trendach.
 Przygotowane przez nas budynki to wspaniała propozycja dla typowych rodzin 2+2 i 2+3. Ich funkcjonalność
 została specjalnie zaprojektowana dla wygody kilku użytkowników, którzy spędzają czas w swoim domu. <a
-href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #cc1000;">Gotowe projekty domów z
+href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #ed1d24;">Gotowe projekty domów z
 poddaszem użytkowym</a> stanowią w naszej ofercie najliczniejszą grupę koncepcji, które wcielamy w
-życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #cc1000;">Zobacz dodatki</a>
+życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #ed1d24;">Zobacz dodatki</a>
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Projekty domów
 jednorodzinnych Studio Atrium</h2>
@@ -12716,7 +12716,7 @@ Atrium cieszy się bardzo dobrą opinią wśród klientów. Nasi klienci w recen
 wysoką jakość obsługi, solidność projektów, oraz indywidualne podejście do potrzeb inwestorów. Ponadto
 jako firma zdobyliśmy uznanie w branży, m.in. poprzez wyróżnienia takie jak Konsumencki Lider Jakości,
 co świadczy o dbałości o klienta. Jeżeli nadal masz wątpliwości, już dziś <a
-href="https://www.studioatrium.pl/kontakt/" style="color: #cc1000;">skontaktuj się z naszym
+href="https://www.studioatrium.pl/kontakt/" style="color: #ed1d24;">skontaktuj się z naszym
 konsultantem</a> lub odwiedź naszą siedzibę mieszczącą się w Bielsku-Białej przy ulicy J.
 Malczewskiego 1. Jesteśmy otwarci dla Ciebie od poniedziałku do piątku w godzinach od 8:00 do 17:00.
 Skontaktuj się z nami i poznaj przyjemność pracy ze specjalistami!</p>
@@ -12771,7 +12771,7 @@ możemy zaoferować! Twój wymarzony dom zaczyna się od pierwszego kliknięcia.
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Odwiedź nasze
 forum dyskusyjne</h2>
 <p>Nasza strona internetowa zawiera zakładkę <a href="https://www.studioatrium.pl/forum/"
-style="color: #cc1000;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
+style="color: #ed1d24;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
 architektonicznego wymieniają się swoimi poglądami oraz przemyśleniami w tej dziedzinie. To świetna
 okazja, by wymienić się doświadczeniami; co więcej, w dyskusjach poruszanych na forum biorą udział nasi
 eksperci, którzy otwarcie dzielą się swoim doświadczeniem. Forum na stronie internetowej Studio Atrium
@@ -12835,7 +12835,7 @@ konkretny, spełniający wszelkie oczekiwania Inwestora.</p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Nasz katalog
 projektów domów - co w nim znajdziesz?</h2>
 <p>Katalog projektów to narzędzie przydatne dla interesantów, chętnych pogłębić swoją wiedzę. <a
-href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #cc1000;">Nasz darmowy
+href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #ed1d24;">Nasz darmowy
 katalog</a> prezentuje liczne propozycje projektów. Znajdziesz w nim projekty domów parterowych i
 piętrowych, projekty z przystosowaniem do różnych typów działek, projekty garaży wolnostojących oraz
 inne wyselekcjonowane projekty domów. Jeżeli chcesz zobaczyć więcej projektów oferowanych przez Studio
@@ -12877,7 +12877,7 @@ antresolą)</p>
 <p>• W zależności od stylu (nowoczesne, w stylu stodoły, regionalne beskidzkie, nowoczesne beskidzkie, z
 płaskim dachem, rezydencje dla zamożnych)</p>
 <h3 style="font-size:2.4rem;">Projekty domów piętrowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #ed1d24;">Projekty domów
 piętrowych</a> wyróżniają się świetnym zagospodarowaniem wnętrza, które z łatwością można podzielić
 na strefę dzienną, składającą się z kuchni, salonu i innych pomieszczeń integralnych oraz strefę nocną
 dedykowaną sypialniom, łazienkom i różnego rodzaju gabinetom domowym. Domy składające się z więcej niż
@@ -12887,7 +12887,7 @@ stanowią podstawę do ciekawej aranżacji bryły. Takie rozwiązanie świetnie 
 rodzin z dziećmi, łącząc estetykę i komfort w jednej bryle. Warto podkreślić, że domy piętrowe idealnie
 nadają się w przypadku mniejszej działki - takie rozwiązanie pozwala zaoszczędzić przestrzeń.</p>
 <h3 style="font-size:2.4rem;">Projekty domów parterowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #ed1d24;">Projekty domów
 parterowych</a> stanowią idealne rozwiązanie dla klientów ceniących sobie wygodę, estetykę oraz
 funkcjonalność. Głównym atutem tego typu projektów jest brak schodów. Jedna kondygnacja, z której składa
 się cała bryła może okazać się idealnym rozwiązaniem dla rodzin z małymi dziećmi lub dla osób z
@@ -12908,7 +12908,7 @@ idealnie sprawdza się jako dodatkowy składzik lub pomieszczenie gospodarcze. W
 parterowy z poddaszem to świetna alternatywa dla Inwestorów, którzy chcą rozłożyć budowę domu na etapy,
 ponieważ poddasze nie musi być wykańczane od razu.</p>
 <h3 style="font-size:2.4rem;">Projekty domów bliźniaczych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #ed1d24;">Projekty domów
 bliźniaczych</a> to charakterystyczne budowle, które wyróżniają się podziałem bryły na dwa oddzielne
 i niezależne od siebie segmenty. Konstrukcja składa się z jednego wspólnego dachu oraz murów
 zewnętrznych, natomiast zawiera dwa oddzielne i niezależne wejścia do mieszkania. Ta alternatywa jest
@@ -12925,7 +12925,7 @@ nasi projektanci uwzględnili w projektach domów takie rozwiązania jak systemy
 energii odnawialnej, systemy zarządzania energią oraz wiele innych zastosowań, definiujących projekty
 Studio Atrium jako energooszczędne.</p>
 <h3 style="font-size:2.4rem;">Projekty domów nowoczesnych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #ed1d24;">Projekty domów
 nowoczesnych</a> wyróżniają się uwzględnieniem minimalizmu i prostoty. W tym celu ogranicza się
 ozdoby i dekoracje do minimum, co sprawia, że cena wybudowania takiego domu staje się atrakcyjniejsza.
 Zastosowanie dużych przeszklonych okien wpuszcza do domu naturalne światło, co pozwala zaoszczędzić
@@ -12933,7 +12933,7 @@ energię elektryczną. Inwestorzy często decydują się również na zastosowan
 cegły, aby dom był bardziej przytulny. Wyżej opisane elementy to przykładowe detale, którymi cechują się
 projekty domów nowoczesnych.</p>
 <h3 style="font-size:2.4rem;">Projekty w stylu stodoły</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #cc1000;">Projekty
+<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #ed1d24;">Projekty
 domów w stylu stodoły</a>, czyli tzw. Barn House, coraz częściej stają się obiektem zainteresowań
 Inwestorów. Charakteryzują się prostokątną bryłą budynku oraz wielkoformatowymi oknami. Są to typy domów
 z dachem dwuspadowym. Wnętrza cechują wysokie sufity i otwarte przestrzenie z uwzględnieniem antresoli
@@ -12942,7 +12942,7 @@ takich jak drewniane bele i stara cegła, w połączeniu z nowoczesnymi metalowy
 wykończeniami. </p>
 <h3 style="font-size:2.4rem;">Projekty domów z poddaszem użytkowym</h3>
 <p><a href="https://www.studioatrium.pl/projekty-domow/z-poddaszem-uzytkowym/"
-style="color: #cc1000;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
+style="color: #ed1d24;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
 wszystkim decyzję o zagospodarowaniu poddasza podejmuje Inwestor, co więcej poddasze użytkowe to
 możliwość podzielenia wykończenia domu na etapy. Poddasze to przestrzeń wypełniona licznymi skosami,
 które przy odpowiedniej aranżacji kreują przytulną przestrzeń dla mieszkańców. Zastosowanie tego rodzaju
@@ -12964,7 +12964,7 @@ na dłuższy okres czasu.</p>
 <p>Bardzo często zdarza się, że najistotniejszym dla inwestora jest mały metraż działki, który automatycznie
 uniemożliwia wybudowanie pewnych brył. Dla specjalistów Studio Atrium wąska działka nie stanowi
 ograniczenia a jedynie podstawę do tworzenia kreatywnych rozwiązań dla klienta. <a
-href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #cc1000;">Projekty
+href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #ed1d24;">Projekty
 domów na wąską działkę</a> najczęściej skupiają się na maksymalnym wykorzystaniu działki poprzez
 zastosowanie podłużnej, prostokątnej bryły, tak aby jak najbardziej wykorzystać ograniczoną
 powierzchnię. W przypadku wąskich działek idealnie sprawdzają się domy piętrowe lub takie z poddaszem
@@ -12972,7 +12972,7 @@ użytkowym.</p>
 <h3 style="font-size:2.4rem;">Projekty domów z kosztorysem</h3>
 <p>Decydując się na zakup projektu domu z kosztorysem, inwestor nabywa gotowe plany budowlane z
 uwzględnieniem szczegółowych informacji <a
-href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #cc1000;">kosztów
+href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #ed1d24;">kosztów
 budowy domów</a>. Takie rozwiązanie świetnie sprawdza się w przypadku Inwestorów, którym zależy na
 dokładnej kontroli budżetu. Jest to również możliwość do lepszego rozplanowania etapów budowy i płynnego
 zarządzania zapleczem finansowym. Jeżeli budujesz dom po raz pierwszy, masz ograniczony budżet lub
@@ -12981,7 +12981,7 @@ kosztorysem jest odpowiednia dla Ciebie. Aktualna cena to 750 zł za szczegóło
 <h3 style="font-size:2.4rem;">Projekty małych domów</h3>
 <p>Małe domy wyróżnia nieduży metraż; dlatego istotne jest uwzględnienie w projekcie praktycznych zastosowań
 przy maksymalnym zagospodarowaniu powierzchni użytkowej. <a
-href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #cc1000;">Projekty małych
+href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #ed1d24;">Projekty małych
 domów</a> to idealne rozwiązanie dla par lub osób w podeszłym wieku; co więcej takie projekty
 idealnie sprawdzają się w przypadku ograniczeń związanych z małym metrażem działki. Jeżeli cenisz sobie
 praktyczność połączoną z przytulnymi aranżacjami wnętrz, projekt małego domu jest właśnie dla Ciebie.
@@ -12994,7 +12994,7 @@ wielopoziomowych układów kondygnacji, aby w pełni wykorzystać dostępną prz
 umożliwia ulokowanie parteru lub piwnicy w częściowym zagłębieniu w skarpie, natomiast wyższe
 kondygnacje są wysuwane. Dom ulokowany na wzniesieniu oferuje panoramiczne widoki, co wpływa na jego
 atrakcyjność. <a href="https://www.studioatrium.pl/projekty-domow/na-skarpe/"
-style="color: #cc1000;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
+style="color: #ed1d24;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
 połączeniu z zastosowaniem dużych okien stanowi energooszczędne rozwiązanie doświetlające wnętrze domu.
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Co należy
@@ -13164,11 +13164,11 @@ href="
 <div>
 <p>Z przyjemnością prezentujemy Państwu gotowe projekty domów. Przygotowali je doświadczeni specjaliści,
 którzy tworzą personel naszej firmy. W ofercie znajdą Państwo między innymi <a
-href="/projekty-domow/blizniaki/" style="color: #cc1000;">projekty domów bliźniaczych</a>, <a
-href="/projekty-domow/nowoczesne/" style="color: #cc1000;">projekty domów nowoczesnych</a>, <a
+href="/projekty-domow/blizniaki/" style="color: #ed1d24;">projekty domów bliźniaczych</a>, <a
+href="/projekty-domow/nowoczesne/" style="color: #ed1d24;">projekty domów nowoczesnych</a>, <a
 href="/projekty-domow/na-waska-dzialke/">na wąską działkę</a>, parterowych i piętrowych. Polecamy
-także <a href="/projekty-domow/tanie-w-budowie/" style="color: #cc1000;">domy tanie w budowie</a> oraz
-<a href="/projekty-domow/z-plaskim-dachem/" style="color: #cc1000;">z płaskim dachem</a>. Wszystkie
+także <a href="/projekty-domow/tanie-w-budowie/" style="color: #ed1d24;">domy tanie w budowie</a> oraz
+<a href="/projekty-domow/z-plaskim-dachem/" style="color: #ed1d24;">z płaskim dachem</a>. Wszystkie
 dostosowane są do polskich warunków budowlanych. Udostępniamy także wzory małych obiektów, ponieważ
 wiemy jak ważna jest obecnie oszczędność i funkcjonalność. Posiadamy wieloletnie doświadczenie we
 współpracy z inwestorami budującymi tego typu obiekty, propozycje zostały więc opracowane na podstawie
@@ -13176,7 +13176,7 @@ wytycznych ekspertów. Projekty domów gotowych do realizacji to wygodne i prakt
 szczególnie dla osób, które nie zetknęły się wcześniej z tą branżą. Mogą w ten sposób nabyć wzór, który
 jest uniwersalny i sprawdzony w praktyce. Mamy świadomość tego, iż wybór odpowiedniej propozycji to
 poważna decyzja, dlatego chętnie służymy Państwu radą. Wszystkie nasze <a href="/projekty-domow/"
-style="color: #cc1000;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
+style="color: #ed1d24;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
 najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczekiwania.
 </p>
 <h3>Najpopularniejsze typy domów</h3>
@@ -13185,7 +13185,7 @@ najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczeki
 takiego rozwiązania jest umieszczenie stref mieszkalnych, dziennej i nocnej, na jednym poziomie -
 parterze, bez konieczności budowania schodów i stropu. Warto także podkreślić bezpośredni kontakt z
 otaczającą budynek zielenią, dostępną niemal "za ścianą". Małe <a href="/projekty-domow/parterowe/"
-style="color: #cc1000;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
+style="color: #ed1d24;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
 propozycji na rynku. Koszt budowy jak i ich użytkowania zaliczyć można do najniższych. Rozległe
 rezydencje parterowe natomiast, najbardziej przypominają nowoczesne siedliska. W naszej ofercie projekty
 domów parterowych traktowane są wyjątkowo - bez trudu znajdą tutaj Państwo coś dla siebie. Od
@@ -13199,9 +13199,9 @@ różnorodne kształty. Od typowych, prostych konstrukcji, przykrytych dwuspadow
 finezyjne bryły ozdobione licznymi detalami architektonicznymi i bazujące na nowoczesnych trendach.
 Przygotowane przez nas budynki to wspaniała propozycja dla typowych rodzin 2+2 i 2+3. Ich funkcjonalność
 została specjalnie zaprojektowana dla wygody kilku użytkowników, którzy spędzają czas w swoim domu. <a
-href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #cc1000;">Gotowe projekty domów z
+href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #ed1d24;">Gotowe projekty domów z
 poddaszem użytkowym</a> stanowią w naszej ofercie najliczniejszą grupę koncepcji, które wcielamy w
-życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #cc1000;">Zobacz dodatki</a>
+życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #ed1d24;">Zobacz dodatki</a>
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Projekty domów
 jednorodzinnych Studio Atrium</h2>
@@ -13224,7 +13224,7 @@ Atrium cieszy się bardzo dobrą opinią wśród klientów. Nasi klienci w recen
 wysoką jakość obsługi, solidność projektów, oraz indywidualne podejście do potrzeb inwestorów. Ponadto
 jako firma zdobyliśmy uznanie w branży, m.in. poprzez wyróżnienia takie jak Konsumencki Lider Jakości,
 co świadczy o dbałości o klienta. Jeżeli nadal masz wątpliwości, już dziś <a
-href="https://www.studioatrium.pl/kontakt/" style="color: #cc1000;">skontaktuj się z naszym
+href="https://www.studioatrium.pl/kontakt/" style="color: #ed1d24;">skontaktuj się z naszym
 konsultantem</a> lub odwiedź naszą siedzibę mieszczącą się w Bielsku-Białej przy ulicy J.
 Malczewskiego 1. Jesteśmy otwarci dla Ciebie od poniedziałku do piątku w godzinach od 8:00 do 17:00.
 Skontaktuj się z nami i poznaj przyjemność pracy ze specjalistami!</p>
@@ -13279,7 +13279,7 @@ możemy zaoferować! Twój wymarzony dom zaczyna się od pierwszego kliknięcia.
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Odwiedź nasze
 forum dyskusyjne</h2>
 <p>Nasza strona internetowa zawiera zakładkę <a href="https://www.studioatrium.pl/forum/"
-style="color: #cc1000;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
+style="color: #ed1d24;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
 architektonicznego wymieniają się swoimi poglądami oraz przemyśleniami w tej dziedzinie. To świetna
 okazja, by wymienić się doświadczeniami; co więcej, w dyskusjach poruszanych na forum biorą udział nasi
 eksperci, którzy otwarcie dzielą się swoim doświadczeniem. Forum na stronie internetowej Studio Atrium
@@ -13343,7 +13343,7 @@ konkretny, spełniający wszelkie oczekiwania Inwestora.</p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Nasz katalog
 projektów domów - co w nim znajdziesz?</h2>
 <p>Katalog projektów to narzędzie przydatne dla interesantów, chętnych pogłębić swoją wiedzę. <a
-href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #cc1000;">Nasz darmowy
+href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #ed1d24;">Nasz darmowy
 katalog</a> prezentuje liczne propozycje projektów. Znajdziesz w nim projekty domów parterowych i
 piętrowych, projekty z przystosowaniem do różnych typów działek, projekty garaży wolnostojących oraz
 inne wyselekcjonowane projekty domów. Jeżeli chcesz zobaczyć więcej projektów oferowanych przez Studio
@@ -13385,7 +13385,7 @@ antresolą)</p>
 <p>• W zależności od stylu (nowoczesne, w stylu stodoły, regionalne beskidzkie, nowoczesne beskidzkie, z
 płaskim dachem, rezydencje dla zamożnych)</p>
 <h3 style="font-size:2.4rem;">Projekty domów piętrowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #ed1d24;">Projekty domów
 piętrowych</a> wyróżniają się świetnym zagospodarowaniem wnętrza, które z łatwością można podzielić
 na strefę dzienną, składającą się z kuchni, salonu i innych pomieszczeń integralnych oraz strefę nocną
 dedykowaną sypialniom, łazienkom i różnego rodzaju gabinetom domowym. Domy składające się z więcej niż
@@ -13395,7 +13395,7 @@ stanowią podstawę do ciekawej aranżacji bryły. Takie rozwiązanie świetnie 
 rodzin z dziećmi, łącząc estetykę i komfort w jednej bryle. Warto podkreślić, że domy piętrowe idealnie
 nadają się w przypadku mniejszej działki - takie rozwiązanie pozwala zaoszczędzić przestrzeń.</p>
 <h3 style="font-size:2.4rem;">Projekty domów parterowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #ed1d24;">Projekty domów
 parterowych</a> stanowią idealne rozwiązanie dla klientów ceniących sobie wygodę, estetykę oraz
 funkcjonalność. Głównym atutem tego typu projektów jest brak schodów. Jedna kondygnacja, z której składa
 się cała bryła może okazać się idealnym rozwiązaniem dla rodzin z małymi dziećmi lub dla osób z
@@ -13416,7 +13416,7 @@ idealnie sprawdza się jako dodatkowy składzik lub pomieszczenie gospodarcze. W
 parterowy z poddaszem to świetna alternatywa dla Inwestorów, którzy chcą rozłożyć budowę domu na etapy,
 ponieważ poddasze nie musi być wykańczane od razu.</p>
 <h3 style="font-size:2.4rem;">Projekty domów bliźniaczych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #ed1d24;">Projekty domów
 bliźniaczych</a> to charakterystyczne budowle, które wyróżniają się podziałem bryły na dwa oddzielne
 i niezależne od siebie segmenty. Konstrukcja składa się z jednego wspólnego dachu oraz murów
 zewnętrznych, natomiast zawiera dwa oddzielne i niezależne wejścia do mieszkania. Ta alternatywa jest
@@ -13433,7 +13433,7 @@ nasi projektanci uwzględnili w projektach domów takie rozwiązania jak systemy
 energii odnawialnej, systemy zarządzania energią oraz wiele innych zastosowań, definiujących projekty
 Studio Atrium jako energooszczędne.</p>
 <h3 style="font-size:2.4rem;">Projekty domów nowoczesnych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #ed1d24;">Projekty domów
 nowoczesnych</a> wyróżniają się uwzględnieniem minimalizmu i prostoty. W tym celu ogranicza się
 ozdoby i dekoracje do minimum, co sprawia, że cena wybudowania takiego domu staje się atrakcyjniejsza.
 Zastosowanie dużych przeszklonych okien wpuszcza do domu naturalne światło, co pozwala zaoszczędzić
@@ -13441,7 +13441,7 @@ energię elektryczną. Inwestorzy często decydują się również na zastosowan
 cegły, aby dom był bardziej przytulny. Wyżej opisane elementy to przykładowe detale, którymi cechują się
 projekty domów nowoczesnych.</p>
 <h3 style="font-size:2.4rem;">Projekty w stylu stodoły</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #cc1000;">Projekty
+<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #ed1d24;">Projekty
 domów w stylu stodoły</a>, czyli tzw. Barn House, coraz częściej stają się obiektem zainteresowań
 Inwestorów. Charakteryzują się prostokątną bryłą budynku oraz wielkoformatowymi oknami. Są to typy domów
 z dachem dwuspadowym. Wnętrza cechują wysokie sufity i otwarte przestrzenie z uwzględnieniem antresoli
@@ -13450,7 +13450,7 @@ takich jak drewniane bele i stara cegła, w połączeniu z nowoczesnymi metalowy
 wykończeniami. </p>
 <h3 style="font-size:2.4rem;">Projekty domów z poddaszem użytkowym</h3>
 <p><a href="https://www.studioatrium.pl/projekty-domow/z-poddaszem-uzytkowym/"
-style="color: #cc1000;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
+style="color: #ed1d24;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
 wszystkim decyzję o zagospodarowaniu poddasza podejmuje Inwestor, co więcej poddasze użytkowe to
 możliwość podzielenia wykończenia domu na etapy. Poddasze to przestrzeń wypełniona licznymi skosami,
 które przy odpowiedniej aranżacji kreują przytulną przestrzeń dla mieszkańców. Zastosowanie tego rodzaju
@@ -13472,7 +13472,7 @@ na dłuższy okres czasu.</p>
 <p>Bardzo często zdarza się, że najistotniejszym dla inwestora jest mały metraż działki, który automatycznie
 uniemożliwia wybudowanie pewnych brył. Dla specjalistów Studio Atrium wąska działka nie stanowi
 ograniczenia a jedynie podstawę do tworzenia kreatywnych rozwiązań dla klienta. <a
-href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #cc1000;">Projekty
+href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #ed1d24;">Projekty
 domów na wąską działkę</a> najczęściej skupiają się na maksymalnym wykorzystaniu działki poprzez
 zastosowanie podłużnej, prostokątnej bryły, tak aby jak najbardziej wykorzystać ograniczoną
 powierzchnię. W przypadku wąskich działek idealnie sprawdzają się domy piętrowe lub takie z poddaszem
@@ -13480,7 +13480,7 @@ użytkowym.</p>
 <h3 style="font-size:2.4rem;">Projekty domów z kosztorysem</h3>
 <p>Decydując się na zakup projektu domu z kosztorysem, inwestor nabywa gotowe plany budowlane z
 uwzględnieniem szczegółowych informacji <a
-href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #cc1000;">kosztów
+href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #ed1d24;">kosztów
 budowy domów</a>. Takie rozwiązanie świetnie sprawdza się w przypadku Inwestorów, którym zależy na
 dokładnej kontroli budżetu. Jest to również możliwość do lepszego rozplanowania etapów budowy i płynnego
 zarządzania zapleczem finansowym. Jeżeli budujesz dom po raz pierwszy, masz ograniczony budżet lub
@@ -13489,7 +13489,7 @@ kosztorysem jest odpowiednia dla Ciebie. Aktualna cena to 750 zł za szczegóło
 <h3 style="font-size:2.4rem;">Projekty małych domów</h3>
 <p>Małe domy wyróżnia nieduży metraż; dlatego istotne jest uwzględnienie w projekcie praktycznych zastosowań
 przy maksymalnym zagospodarowaniu powierzchni użytkowej. <a
-href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #cc1000;">Projekty małych
+href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #ed1d24;">Projekty małych
 domów</a> to idealne rozwiązanie dla par lub osób w podeszłym wieku; co więcej takie projekty
 idealnie sprawdzają się w przypadku ograniczeń związanych z małym metrażem działki. Jeżeli cenisz sobie
 praktyczność połączoną z przytulnymi aranżacjami wnętrz, projekt małego domu jest właśnie dla Ciebie.
@@ -13502,7 +13502,7 @@ wielopoziomowych układów kondygnacji, aby w pełni wykorzystać dostępną prz
 umożliwia ulokowanie parteru lub piwnicy w częściowym zagłębieniu w skarpie, natomiast wyższe
 kondygnacje są wysuwane. Dom ulokowany na wzniesieniu oferuje panoramiczne widoki, co wpływa na jego
 atrakcyjność. <a href="https://www.studioatrium.pl/projekty-domow/na-skarpe/"
-style="color: #cc1000;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
+style="color: #ed1d24;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
 połączeniu z zastosowaniem dużych okien stanowi energooszczędne rozwiązanie doświetlające wnętrze domu.
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Co należy
@@ -13666,11 +13666,11 @@ poddaszem{elseif $_item.object.params_general|isGroundFloor:true}parterowego
 <div>
 <p>Z przyjemnością prezentujemy Państwu gotowe projekty domów. Przygotowali je doświadczeni specjaliści,
 którzy tworzą personel naszej firmy. W ofercie znajdą Państwo między innymi <a
-href="/projekty-domow/blizniaki/" style="color: #cc1000;">projekty domów bliźniaczych</a>, <a
-href="/projekty-domow/nowoczesne/" style="color: #cc1000;">projekty domów nowoczesnych</a>, <a
+href="/projekty-domow/blizniaki/" style="color: #ed1d24;">projekty domów bliźniaczych</a>, <a
+href="/projekty-domow/nowoczesne/" style="color: #ed1d24;">projekty domów nowoczesnych</a>, <a
 href="/projekty-domow/na-waska-dzialke/">na wąską działkę</a>, parterowych i piętrowych. Polecamy
-także <a href="/projekty-domow/tanie-w-budowie/" style="color: #cc1000;">domy tanie w budowie</a> oraz
-<a href="/projekty-domow/z-plaskim-dachem/" style="color: #cc1000;">z płaskim dachem</a>. Wszystkie
+także <a href="/projekty-domow/tanie-w-budowie/" style="color: #ed1d24;">domy tanie w budowie</a> oraz
+<a href="/projekty-domow/z-plaskim-dachem/" style="color: #ed1d24;">z płaskim dachem</a>. Wszystkie
 dostosowane są do polskich warunków budowlanych. Udostępniamy także wzory małych obiektów, ponieważ
 wiemy jak ważna jest obecnie oszczędność i funkcjonalność. Posiadamy wieloletnie doświadczenie we
 współpracy z inwestorami budującymi tego typu obiekty, propozycje zostały więc opracowane na podstawie
@@ -13678,7 +13678,7 @@ wytycznych ekspertów. Projekty domów gotowych do realizacji to wygodne i prakt
 szczególnie dla osób, które nie zetknęły się wcześniej z tą branżą. Mogą w ten sposób nabyć wzór, który
 jest uniwersalny i sprawdzony w praktyce. Mamy świadomość tego, iż wybór odpowiedniej propozycji to
 poważna decyzja, dlatego chętnie służymy Państwu radą. Wszystkie nasze <a href="/projekty-domow/"
-style="color: #cc1000;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
+style="color: #ed1d24;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
 najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczekiwania.
 </p>
 <h3>Najpopularniejsze typy domów</h3>
@@ -13687,7 +13687,7 @@ najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczeki
 takiego rozwiązania jest umieszczenie stref mieszkalnych, dziennej i nocnej, na jednym poziomie -
 parterze, bez konieczności budowania schodów i stropu. Warto także podkreślić bezpośredni kontakt z
 otaczającą budynek zielenią, dostępną niemal "za ścianą". Małe <a href="/projekty-domow/parterowe/"
-style="color: #cc1000;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
+style="color: #ed1d24;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
 propozycji na rynku. Koszt budowy jak i ich użytkowania zaliczyć można do najniższych. Rozległe
 rezydencje parterowe natomiast, najbardziej przypominają nowoczesne siedliska. W naszej ofercie projekty
 domów parterowych traktowane są wyjątkowo - bez trudu znajdą tutaj Państwo coś dla siebie. Od
@@ -13701,9 +13701,9 @@ różnorodne kształty. Od typowych, prostych konstrukcji, przykrytych dwuspadow
 finezyjne bryły ozdobione licznymi detalami architektonicznymi i bazujące na nowoczesnych trendach.
 Przygotowane przez nas budynki to wspaniała propozycja dla typowych rodzin 2+2 i 2+3. Ich funkcjonalność
 została specjalnie zaprojektowana dla wygody kilku użytkowników, którzy spędzają czas w swoim domu. <a
-href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #cc1000;">Gotowe projekty domów z
+href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #ed1d24;">Gotowe projekty domów z
 poddaszem użytkowym</a> stanowią w naszej ofercie najliczniejszą grupę koncepcji, które wcielamy w
-życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #cc1000;">Zobacz dodatki</a>
+życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #ed1d24;">Zobacz dodatki</a>
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Projekty domów
 jednorodzinnych Studio Atrium</h2>
@@ -13726,7 +13726,7 @@ Atrium cieszy się bardzo dobrą opinią wśród klientów. Nasi klienci w recen
 wysoką jakość obsługi, solidność projektów, oraz indywidualne podejście do potrzeb inwestorów. Ponadto
 jako firma zdobyliśmy uznanie w branży, m.in. poprzez wyróżnienia takie jak Konsumencki Lider Jakości,
 co świadczy o dbałości o klienta. Jeżeli nadal masz wątpliwości, już dziś <a
-href="https://www.studioatrium.pl/kontakt/" style="color: #cc1000;">skontaktuj się z naszym
+href="https://www.studioatrium.pl/kontakt/" style="color: #ed1d24;">skontaktuj się z naszym
 konsultantem</a> lub odwiedź naszą siedzibę mieszczącą się w Bielsku-Białej przy ulicy J.
 Malczewskiego 1. Jesteśmy otwarci dla Ciebie od poniedziałku do piątku w godzinach od 8:00 do 17:00.
 Skontaktuj się z nami i poznaj przyjemność pracy ze specjalistami!</p>
@@ -13781,7 +13781,7 @@ możemy zaoferować! Twój wymarzony dom zaczyna się od pierwszego kliknięcia.
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Odwiedź nasze
 forum dyskusyjne</h2>
 <p>Nasza strona internetowa zawiera zakładkę <a href="https://www.studioatrium.pl/forum/"
-style="color: #cc1000;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
+style="color: #ed1d24;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
 architektonicznego wymieniają się swoimi poglądami oraz przemyśleniami w tej dziedzinie. To świetna
 okazja, by wymienić się doświadczeniami; co więcej, w dyskusjach poruszanych na forum biorą udział nasi
 eksperci, którzy otwarcie dzielą się swoim doświadczeniem. Forum na stronie internetowej Studio Atrium
@@ -13845,7 +13845,7 @@ konkretny, spełniający wszelkie oczekiwania Inwestora.</p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Nasz katalog
 projektów domów - co w nim znajdziesz?</h2>
 <p>Katalog projektów to narzędzie przydatne dla interesantów, chętnych pogłębić swoją wiedzę. <a
-href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #cc1000;">Nasz darmowy
+href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #ed1d24;">Nasz darmowy
 katalog</a> prezentuje liczne propozycje projektów. Znajdziesz w nim projekty domów parterowych i
 piętrowych, projekty z przystosowaniem do różnych typów działek, projekty garaży wolnostojących oraz
 inne wyselekcjonowane projekty domów. Jeżeli chcesz zobaczyć więcej projektów oferowanych przez Studio
@@ -13887,7 +13887,7 @@ antresolą)</p>
 <p>• W zależności od stylu (nowoczesne, w stylu stodoły, regionalne beskidzkie, nowoczesne beskidzkie, z
 płaskim dachem, rezydencje dla zamożnych)</p>
 <h3 style="font-size:2.4rem;">Projekty domów piętrowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #ed1d24;">Projekty domów
 piętrowych</a> wyróżniają się świetnym zagospodarowaniem wnętrza, które z łatwością można podzielić
 na strefę dzienną, składającą się z kuchni, salonu i innych pomieszczeń integralnych oraz strefę nocną
 dedykowaną sypialniom, łazienkom i różnego rodzaju gabinetom domowym. Domy składające się z więcej niż
@@ -13897,7 +13897,7 @@ stanowią podstawę do ciekawej aranżacji bryły. Takie rozwiązanie świetnie 
 rodzin z dziećmi, łącząc estetykę i komfort w jednej bryle. Warto podkreślić, że domy piętrowe idealnie
 nadają się w przypadku mniejszej działki - takie rozwiązanie pozwala zaoszczędzić przestrzeń.</p>
 <h3 style="font-size:2.4rem;">Projekty domów parterowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #ed1d24;">Projekty domów
 parterowych</a> stanowią idealne rozwiązanie dla klientów ceniących sobie wygodę, estetykę oraz
 funkcjonalność. Głównym atutem tego typu projektów jest brak schodów. Jedna kondygnacja, z której składa
 się cała bryła może okazać się idealnym rozwiązaniem dla rodzin z małymi dziećmi lub dla osób z
@@ -13918,7 +13918,7 @@ idealnie sprawdza się jako dodatkowy składzik lub pomieszczenie gospodarcze. W
 parterowy z poddaszem to świetna alternatywa dla Inwestorów, którzy chcą rozłożyć budowę domu na etapy,
 ponieważ poddasze nie musi być wykańczane od razu.</p>
 <h3 style="font-size:2.4rem;">Projekty domów bliźniaczych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #ed1d24;">Projekty domów
 bliźniaczych</a> to charakterystyczne budowle, które wyróżniają się podziałem bryły na dwa oddzielne
 i niezależne od siebie segmenty. Konstrukcja składa się z jednego wspólnego dachu oraz murów
 zewnętrznych, natomiast zawiera dwa oddzielne i niezależne wejścia do mieszkania. Ta alternatywa jest
@@ -13935,7 +13935,7 @@ nasi projektanci uwzględnili w projektach domów takie rozwiązania jak systemy
 energii odnawialnej, systemy zarządzania energią oraz wiele innych zastosowań, definiujących projekty
 Studio Atrium jako energooszczędne.</p>
 <h3 style="font-size:2.4rem;">Projekty domów nowoczesnych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #ed1d24;">Projekty domów
 nowoczesnych</a> wyróżniają się uwzględnieniem minimalizmu i prostoty. W tym celu ogranicza się
 ozdoby i dekoracje do minimum, co sprawia, że cena wybudowania takiego domu staje się atrakcyjniejsza.
 Zastosowanie dużych przeszklonych okien wpuszcza do domu naturalne światło, co pozwala zaoszczędzić
@@ -13943,7 +13943,7 @@ energię elektryczną. Inwestorzy często decydują się również na zastosowan
 cegły, aby dom był bardziej przytulny. Wyżej opisane elementy to przykładowe detale, którymi cechują się
 projekty domów nowoczesnych.</p>
 <h3 style="font-size:2.4rem;">Projekty w stylu stodoły</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #cc1000;">Projekty
+<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #ed1d24;">Projekty
 domów w stylu stodoły</a>, czyli tzw. Barn House, coraz częściej stają się obiektem zainteresowań
 Inwestorów. Charakteryzują się prostokątną bryłą budynku oraz wielkoformatowymi oknami. Są to typy domów
 z dachem dwuspadowym. Wnętrza cechują wysokie sufity i otwarte przestrzenie z uwzględnieniem antresoli
@@ -13952,7 +13952,7 @@ takich jak drewniane bele i stara cegła, w połączeniu z nowoczesnymi metalowy
 wykończeniami. </p>
 <h3 style="font-size:2.4rem;">Projekty domów z poddaszem użytkowym</h3>
 <p><a href="https://www.studioatrium.pl/projekty-domow/z-poddaszem-uzytkowym/"
-style="color: #cc1000;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
+style="color: #ed1d24;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
 wszystkim decyzję o zagospodarowaniu poddasza podejmuje Inwestor, co więcej poddasze użytkowe to
 możliwość podzielenia wykończenia domu na etapy. Poddasze to przestrzeń wypełniona licznymi skosami,
 które przy odpowiedniej aranżacji kreują przytulną przestrzeń dla mieszkańców. Zastosowanie tego rodzaju
@@ -13974,7 +13974,7 @@ na dłuższy okres czasu.</p>
 <p>Bardzo często zdarza się, że najistotniejszym dla inwestora jest mały metraż działki, który automatycznie
 uniemożliwia wybudowanie pewnych brył. Dla specjalistów Studio Atrium wąska działka nie stanowi
 ograniczenia a jedynie podstawę do tworzenia kreatywnych rozwiązań dla klienta. <a
-href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #cc1000;">Projekty
+href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #ed1d24;">Projekty
 domów na wąską działkę</a> najczęściej skupiają się na maksymalnym wykorzystaniu działki poprzez
 zastosowanie podłużnej, prostokątnej bryły, tak aby jak najbardziej wykorzystać ograniczoną
 powierzchnię. W przypadku wąskich działek idealnie sprawdzają się domy piętrowe lub takie z poddaszem
@@ -13982,7 +13982,7 @@ użytkowym.</p>
 <h3 style="font-size:2.4rem;">Projekty domów z kosztorysem</h3>
 <p>Decydując się na zakup projektu domu z kosztorysem, inwestor nabywa gotowe plany budowlane z
 uwzględnieniem szczegółowych informacji <a
-href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #cc1000;">kosztów
+href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #ed1d24;">kosztów
 budowy domów</a>. Takie rozwiązanie świetnie sprawdza się w przypadku Inwestorów, którym zależy na
 dokładnej kontroli budżetu. Jest to również możliwość do lepszego rozplanowania etapów budowy i płynnego
 zarządzania zapleczem finansowym. Jeżeli budujesz dom po raz pierwszy, masz ograniczony budżet lub
@@ -13991,7 +13991,7 @@ kosztorysem jest odpowiednia dla Ciebie. Aktualna cena to 750 zł za szczegóło
 <h3 style="font-size:2.4rem;">Projekty małych domów</h3>
 <p>Małe domy wyróżnia nieduży metraż; dlatego istotne jest uwzględnienie w projekcie praktycznych zastosowań
 przy maksymalnym zagospodarowaniu powierzchni użytkowej. <a
-href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #cc1000;">Projekty małych
+href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #ed1d24;">Projekty małych
 domów</a> to idealne rozwiązanie dla par lub osób w podeszłym wieku; co więcej takie projekty
 idealnie sprawdzają się w przypadku ograniczeń związanych z małym metrażem działki. Jeżeli cenisz sobie
 praktyczność połączoną z przytulnymi aranżacjami wnętrz, projekt małego domu jest właśnie dla Ciebie.
@@ -14004,7 +14004,7 @@ wielopoziomowych układów kondygnacji, aby w pełni wykorzystać dostępną prz
 umożliwia ulokowanie parteru lub piwnicy w częściowym zagłębieniu w skarpie, natomiast wyższe
 kondygnacje są wysuwane. Dom ulokowany na wzniesieniu oferuje panoramiczne widoki, co wpływa na jego
 atrakcyjność. <a href="https://www.studioatrium.pl/projekty-domow/na-skarpe/"
-style="color: #cc1000;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
+style="color: #ed1d24;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
 połączeniu z zastosowaniem dużych okien stanowi energooszczędne rozwiązanie doświetlające wnętrze domu.
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Co należy
@@ -14167,11 +14167,11 @@ poddaszem{elseif $_item.object.params_general|isGroundFloor:true}parterowego
 <div>
 <p>Z przyjemnością prezentujemy Państwu gotowe projekty domów. Przygotowali je doświadczeni specjaliści,
 którzy tworzą personel naszej firmy. W ofercie znajdą Państwo między innymi <a
-href="/projekty-domow/blizniaki/" style="color: #cc1000;">projekty domów bliźniaczych</a>, <a
-href="/projekty-domow/nowoczesne/" style="color: #cc1000;">projekty domów nowoczesnych</a>, <a
+href="/projekty-domow/blizniaki/" style="color: #ed1d24;">projekty domów bliźniaczych</a>, <a
+href="/projekty-domow/nowoczesne/" style="color: #ed1d24;">projekty domów nowoczesnych</a>, <a
 href="/projekty-domow/na-waska-dzialke/">na wąską działkę</a>, parterowych i piętrowych. Polecamy
-także <a href="/projekty-domow/tanie-w-budowie/" style="color: #cc1000;">domy tanie w budowie</a> oraz
-<a href="/projekty-domow/z-plaskim-dachem/" style="color: #cc1000;">z płaskim dachem</a>. Wszystkie
+także <a href="/projekty-domow/tanie-w-budowie/" style="color: #ed1d24;">domy tanie w budowie</a> oraz
+<a href="/projekty-domow/z-plaskim-dachem/" style="color: #ed1d24;">z płaskim dachem</a>. Wszystkie
 dostosowane są do polskich warunków budowlanych. Udostępniamy także wzory małych obiektów, ponieważ
 wiemy jak ważna jest obecnie oszczędność i funkcjonalność. Posiadamy wieloletnie doświadczenie we
 współpracy z inwestorami budującymi tego typu obiekty, propozycje zostały więc opracowane na podstawie
@@ -14179,7 +14179,7 @@ wytycznych ekspertów. Projekty domów gotowych do realizacji to wygodne i prakt
 szczególnie dla osób, które nie zetknęły się wcześniej z tą branżą. Mogą w ten sposób nabyć wzór, który
 jest uniwersalny i sprawdzony w praktyce. Mamy świadomość tego, iż wybór odpowiedniej propozycji to
 poważna decyzja, dlatego chętnie służymy Państwu radą. Wszystkie nasze <a href="/projekty-domow/"
-style="color: #cc1000;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
+style="color: #ed1d24;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
 najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczekiwania.
 </p>
 <h3>Najpopularniejsze typy domów</h3>
@@ -14188,7 +14188,7 @@ najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczeki
 takiego rozwiązania jest umieszczenie stref mieszkalnych, dziennej i nocnej, na jednym poziomie -
 parterze, bez konieczności budowania schodów i stropu. Warto także podkreślić bezpośredni kontakt z
 otaczającą budynek zielenią, dostępną niemal "za ścianą". Małe <a href="/projekty-domow/parterowe/"
-style="color: #cc1000;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
+style="color: #ed1d24;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
 propozycji na rynku. Koszt budowy jak i ich użytkowania zaliczyć można do najniższych. Rozległe
 rezydencje parterowe natomiast, najbardziej przypominają nowoczesne siedliska. W naszej ofercie projekty
 domów parterowych traktowane są wyjątkowo - bez trudu znajdą tutaj Państwo coś dla siebie. Od
@@ -14202,9 +14202,9 @@ różnorodne kształty. Od typowych, prostych konstrukcji, przykrytych dwuspadow
 finezyjne bryły ozdobione licznymi detalami architektonicznymi i bazujące na nowoczesnych trendach.
 Przygotowane przez nas budynki to wspaniała propozycja dla typowych rodzin 2+2 i 2+3. Ich funkcjonalność
 została specjalnie zaprojektowana dla wygody kilku użytkowników, którzy spędzają czas w swoim domu. <a
-href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #cc1000;">Gotowe projekty domów z
+href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #ed1d24;">Gotowe projekty domów z
 poddaszem użytkowym</a> stanowią w naszej ofercie najliczniejszą grupę koncepcji, które wcielamy w
-życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #cc1000;">Zobacz dodatki</a>
+życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #ed1d24;">Zobacz dodatki</a>
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Projekty domów
 jednorodzinnych Studio Atrium</h2>
@@ -14227,7 +14227,7 @@ Atrium cieszy się bardzo dobrą opinią wśród klientów. Nasi klienci w recen
 wysoką jakość obsługi, solidność projektów, oraz indywidualne podejście do potrzeb inwestorów. Ponadto
 jako firma zdobyliśmy uznanie w branży, m.in. poprzez wyróżnienia takie jak Konsumencki Lider Jakości,
 co świadczy o dbałości o klienta. Jeżeli nadal masz wątpliwości, już dziś <a
-href="https://www.studioatrium.pl/kontakt/" style="color: #cc1000;">skontaktuj się z naszym
+href="https://www.studioatrium.pl/kontakt/" style="color: #ed1d24;">skontaktuj się z naszym
 konsultantem</a> lub odwiedź naszą siedzibę mieszczącą się w Bielsku-Białej przy ulicy J.
 Malczewskiego 1. Jesteśmy otwarci dla Ciebie od poniedziałku do piątku w godzinach od 8:00 do 17:00.
 Skontaktuj się z nami i poznaj przyjemność pracy ze specjalistami!</p>
@@ -14282,7 +14282,7 @@ możemy zaoferować! Twój wymarzony dom zaczyna się od pierwszego kliknięcia.
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Odwiedź nasze
 forum dyskusyjne</h2>
 <p>Nasza strona internetowa zawiera zakładkę <a href="https://www.studioatrium.pl/forum/"
-style="color: #cc1000;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
+style="color: #ed1d24;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
 architektonicznego wymieniają się swoimi poglądami oraz przemyśleniami w tej dziedzinie. To świetna
 okazja, by wymienić się doświadczeniami; co więcej, w dyskusjach poruszanych na forum biorą udział nasi
 eksperci, którzy otwarcie dzielą się swoim doświadczeniem. Forum na stronie internetowej Studio Atrium
@@ -14346,7 +14346,7 @@ konkretny, spełniający wszelkie oczekiwania Inwestora.</p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Nasz katalog
 projektów domów - co w nim znajdziesz?</h2>
 <p>Katalog projektów to narzędzie przydatne dla interesantów, chętnych pogłębić swoją wiedzę. <a
-href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #cc1000;">Nasz darmowy
+href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #ed1d24;">Nasz darmowy
 katalog</a> prezentuje liczne propozycje projektów. Znajdziesz w nim projekty domów parterowych i
 piętrowych, projekty z przystosowaniem do różnych typów działek, projekty garaży wolnostojących oraz
 inne wyselekcjonowane projekty domów. Jeżeli chcesz zobaczyć więcej projektów oferowanych przez Studio
@@ -14388,7 +14388,7 @@ antresolą)</p>
 <p>• W zależności od stylu (nowoczesne, w stylu stodoły, regionalne beskidzkie, nowoczesne beskidzkie, z
 płaskim dachem, rezydencje dla zamożnych)</p>
 <h3 style="font-size:2.4rem;">Projekty domów piętrowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #ed1d24;">Projekty domów
 piętrowych</a> wyróżniają się świetnym zagospodarowaniem wnętrza, które z łatwością można podzielić
 na strefę dzienną, składającą się z kuchni, salonu i innych pomieszczeń integralnych oraz strefę nocną
 dedykowaną sypialniom, łazienkom i różnego rodzaju gabinetom domowym. Domy składające się z więcej niż
@@ -14398,7 +14398,7 @@ stanowią podstawę do ciekawej aranżacji bryły. Takie rozwiązanie świetnie 
 rodzin z dziećmi, łącząc estetykę i komfort w jednej bryle. Warto podkreślić, że domy piętrowe idealnie
 nadają się w przypadku mniejszej działki - takie rozwiązanie pozwala zaoszczędzić przestrzeń.</p>
 <h3 style="font-size:2.4rem;">Projekty domów parterowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #ed1d24;">Projekty domów
 parterowych</a> stanowią idealne rozwiązanie dla klientów ceniących sobie wygodę, estetykę oraz
 funkcjonalność. Głównym atutem tego typu projektów jest brak schodów. Jedna kondygnacja, z której składa
 się cała bryła może okazać się idealnym rozwiązaniem dla rodzin z małymi dziećmi lub dla osób z
@@ -14419,7 +14419,7 @@ idealnie sprawdza się jako dodatkowy składzik lub pomieszczenie gospodarcze. W
 parterowy z poddaszem to świetna alternatywa dla Inwestorów, którzy chcą rozłożyć budowę domu na etapy,
 ponieważ poddasze nie musi być wykańczane od razu.</p>
 <h3 style="font-size:2.4rem;">Projekty domów bliźniaczych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #ed1d24;">Projekty domów
 bliźniaczych</a> to charakterystyczne budowle, które wyróżniają się podziałem bryły na dwa oddzielne
 i niezależne od siebie segmenty. Konstrukcja składa się z jednego wspólnego dachu oraz murów
 zewnętrznych, natomiast zawiera dwa oddzielne i niezależne wejścia do mieszkania. Ta alternatywa jest
@@ -14436,7 +14436,7 @@ nasi projektanci uwzględnili w projektach domów takie rozwiązania jak systemy
 energii odnawialnej, systemy zarządzania energią oraz wiele innych zastosowań, definiujących projekty
 Studio Atrium jako energooszczędne.</p>
 <h3 style="font-size:2.4rem;">Projekty domów nowoczesnych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #ed1d24;">Projekty domów
 nowoczesnych</a> wyróżniają się uwzględnieniem minimalizmu i prostoty. W tym celu ogranicza się
 ozdoby i dekoracje do minimum, co sprawia, że cena wybudowania takiego domu staje się atrakcyjniejsza.
 Zastosowanie dużych przeszklonych okien wpuszcza do domu naturalne światło, co pozwala zaoszczędzić
@@ -14444,7 +14444,7 @@ energię elektryczną. Inwestorzy często decydują się również na zastosowan
 cegły, aby dom był bardziej przytulny. Wyżej opisane elementy to przykładowe detale, którymi cechują się
 projekty domów nowoczesnych.</p>
 <h3 style="font-size:2.4rem;">Projekty w stylu stodoły</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #cc1000;">Projekty
+<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #ed1d24;">Projekty
 domów w stylu stodoły</a>, czyli tzw. Barn House, coraz częściej stają się obiektem zainteresowań
 Inwestorów. Charakteryzują się prostokątną bryłą budynku oraz wielkoformatowymi oknami. Są to typy domów
 z dachem dwuspadowym. Wnętrza cechują wysokie sufity i otwarte przestrzenie z uwzględnieniem antresoli
@@ -14453,7 +14453,7 @@ takich jak drewniane bele i stara cegła, w połączeniu z nowoczesnymi metalowy
 wykończeniami. </p>
 <h3 style="font-size:2.4rem;">Projekty domów z poddaszem użytkowym</h3>
 <p><a href="https://www.studioatrium.pl/projekty-domow/z-poddaszem-uzytkowym/"
-style="color: #cc1000;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
+style="color: #ed1d24;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
 wszystkim decyzję o zagospodarowaniu poddasza podejmuje Inwestor, co więcej poddasze użytkowe to
 możliwość podzielenia wykończenia domu na etapy. Poddasze to przestrzeń wypełniona licznymi skosami,
 które przy odpowiedniej aranżacji kreują przytulną przestrzeń dla mieszkańców. Zastosowanie tego rodzaju
@@ -14475,7 +14475,7 @@ na dłuższy okres czasu.</p>
 <p>Bardzo często zdarza się, że najistotniejszym dla inwestora jest mały metraż działki, który automatycznie
 uniemożliwia wybudowanie pewnych brył. Dla specjalistów Studio Atrium wąska działka nie stanowi
 ograniczenia a jedynie podstawę do tworzenia kreatywnych rozwiązań dla klienta. <a
-href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #cc1000;">Projekty
+href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #ed1d24;">Projekty
 domów na wąską działkę</a> najczęściej skupiają się na maksymalnym wykorzystaniu działki poprzez
 zastosowanie podłużnej, prostokątnej bryły, tak aby jak najbardziej wykorzystać ograniczoną
 powierzchnię. W przypadku wąskich działek idealnie sprawdzają się domy piętrowe lub takie z poddaszem
@@ -14483,7 +14483,7 @@ użytkowym.</p>
 <h3 style="font-size:2.4rem;">Projekty domów z kosztorysem</h3>
 <p>Decydując się na zakup projektu domu z kosztorysem, inwestor nabywa gotowe plany budowlane z
 uwzględnieniem szczegółowych informacji <a
-href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #cc1000;">kosztów
+href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #ed1d24;">kosztów
 budowy domów</a>. Takie rozwiązanie świetnie sprawdza się w przypadku Inwestorów, którym zależy na
 dokładnej kontroli budżetu. Jest to również możliwość do lepszego rozplanowania etapów budowy i płynnego
 zarządzania zapleczem finansowym. Jeżeli budujesz dom po raz pierwszy, masz ograniczony budżet lub
@@ -14492,7 +14492,7 @@ kosztorysem jest odpowiednia dla Ciebie. Aktualna cena to 750 zł za szczegóło
 <h3 style="font-size:2.4rem;">Projekty małych domów</h3>
 <p>Małe domy wyróżnia nieduży metraż; dlatego istotne jest uwzględnienie w projekcie praktycznych zastosowań
 przy maksymalnym zagospodarowaniu powierzchni użytkowej. <a
-href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #cc1000;">Projekty małych
+href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #ed1d24;">Projekty małych
 domów</a> to idealne rozwiązanie dla par lub osób w podeszłym wieku; co więcej takie projekty
 idealnie sprawdzają się w przypadku ograniczeń związanych z małym metrażem działki. Jeżeli cenisz sobie
 praktyczność połączoną z przytulnymi aranżacjami wnętrz, projekt małego domu jest właśnie dla Ciebie.
@@ -14505,7 +14505,7 @@ wielopoziomowych układów kondygnacji, aby w pełni wykorzystać dostępną prz
 umożliwia ulokowanie parteru lub piwnicy w częściowym zagłębieniu w skarpie, natomiast wyższe
 kondygnacje są wysuwane. Dom ulokowany na wzniesieniu oferuje panoramiczne widoki, co wpływa na jego
 atrakcyjność. <a href="https://www.studioatrium.pl/projekty-domow/na-skarpe/"
-style="color: #cc1000;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
+style="color: #ed1d24;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
 połączeniu z zastosowaniem dużych okien stanowi energooszczędne rozwiązanie doświetlające wnętrze domu.
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Co należy
@@ -14668,11 +14668,11 @@ poddaszem
 <div>
 <p>Z przyjemnością prezentujemy Państwu gotowe projekty domów. Przygotowali je doświadczeni specjaliści,
 którzy tworzą personel naszej firmy. W ofercie znajdą Państwo między innymi <a
-href="/projekty-domow/blizniaki/" style="color: #cc1000;">projekty domów bliźniaczych</a>, <a
-href="/projekty-domow/nowoczesne/" style="color: #cc1000;">projekty domów nowoczesnych</a>, <a
+href="/projekty-domow/blizniaki/" style="color: #ed1d24;">projekty domów bliźniaczych</a>, <a
+href="/projekty-domow/nowoczesne/" style="color: #ed1d24;">projekty domów nowoczesnych</a>, <a
 href="/projekty-domow/na-waska-dzialke/">na wąską działkę</a>, parterowych i piętrowych. Polecamy
-także <a href="/projekty-domow/tanie-w-budowie/" style="color: #cc1000;">domy tanie w budowie</a> oraz
-<a href="/projekty-domow/z-plaskim-dachem/" style="color: #cc1000;">z płaskim dachem</a>. Wszystkie
+także <a href="/projekty-domow/tanie-w-budowie/" style="color: #ed1d24;">domy tanie w budowie</a> oraz
+<a href="/projekty-domow/z-plaskim-dachem/" style="color: #ed1d24;">z płaskim dachem</a>. Wszystkie
 dostosowane są do polskich warunków budowlanych. Udostępniamy także wzory małych obiektów, ponieważ
 wiemy jak ważna jest obecnie oszczędność i funkcjonalność. Posiadamy wieloletnie doświadczenie we
 współpracy z inwestorami budującymi tego typu obiekty, propozycje zostały więc opracowane na podstawie
@@ -14680,7 +14680,7 @@ wytycznych ekspertów. Projekty domów gotowych do realizacji to wygodne i prakt
 szczególnie dla osób, które nie zetknęły się wcześniej z tą branżą. Mogą w ten sposób nabyć wzór, który
 jest uniwersalny i sprawdzony w praktyce. Mamy świadomość tego, iż wybór odpowiedniej propozycji to
 poważna decyzja, dlatego chętnie służymy Państwu radą. Wszystkie nasze <a href="/projekty-domow/"
-style="color: #cc1000;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
+style="color: #ed1d24;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
 najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczekiwania.
 </p>
 <h3>Najpopularniejsze typy domów</h3>
@@ -14689,7 +14689,7 @@ najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczeki
 takiego rozwiązania jest umieszczenie stref mieszkalnych, dziennej i nocnej, na jednym poziomie -
 parterze, bez konieczności budowania schodów i stropu. Warto także podkreślić bezpośredni kontakt z
 otaczającą budynek zielenią, dostępną niemal "za ścianą". Małe <a href="/projekty-domow/parterowe/"
-style="color: #cc1000;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
+style="color: #ed1d24;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
 propozycji na rynku. Koszt budowy jak i ich użytkowania zaliczyć można do najniższych. Rozległe
 rezydencje parterowe natomiast, najbardziej przypominają nowoczesne siedliska. W naszej ofercie projekty
 domów parterowych traktowane są wyjątkowo - bez trudu znajdą tutaj Państwo coś dla siebie. Od
@@ -14703,9 +14703,9 @@ różnorodne kształty. Od typowych, prostych konstrukcji, przykrytych dwuspadow
 finezyjne bryły ozdobione licznymi detalami architektonicznymi i bazujące na nowoczesnych trendach.
 Przygotowane przez nas budynki to wspaniała propozycja dla typowych rodzin 2+2 i 2+3. Ich funkcjonalność
 została specjalnie zaprojektowana dla wygody kilku użytkowników, którzy spędzają czas w swoim domu. <a
-href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #cc1000;">Gotowe projekty domów z
+href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #ed1d24;">Gotowe projekty domów z
 poddaszem użytkowym</a> stanowią w naszej ofercie najliczniejszą grupę koncepcji, które wcielamy w
-życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #cc1000;">Zobacz dodatki</a>
+życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #ed1d24;">Zobacz dodatki</a>
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Projekty domów
 jednorodzinnych Studio Atrium</h2>
@@ -14728,7 +14728,7 @@ Atrium cieszy się bardzo dobrą opinią wśród klientów. Nasi klienci w recen
 wysoką jakość obsługi, solidność projektów, oraz indywidualne podejście do potrzeb inwestorów. Ponadto
 jako firma zdobyliśmy uznanie w branży, m.in. poprzez wyróżnienia takie jak Konsumencki Lider Jakości,
 co świadczy o dbałości o klienta. Jeżeli nadal masz wątpliwości, już dziś <a
-href="https://www.studioatrium.pl/kontakt/" style="color: #cc1000;">skontaktuj się z naszym
+href="https://www.studioatrium.pl/kontakt/" style="color: #ed1d24;">skontaktuj się z naszym
 konsultantem</a> lub odwiedź naszą siedzibę mieszczącą się w Bielsku-Białej przy ulicy J.
 Malczewskiego 1. Jesteśmy otwarci dla Ciebie od poniedziałku do piątku w godzinach od 8:00 do 17:00.
 Skontaktuj się z nami i poznaj przyjemność pracy ze specjalistami!</p>
@@ -14783,7 +14783,7 @@ możemy zaoferować! Twój wymarzony dom zaczyna się od pierwszego kliknięcia.
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Odwiedź nasze
 forum dyskusyjne</h2>
 <p>Nasza strona internetowa zawiera zakładkę <a href="https://www.studioatrium.pl/forum/"
-style="color: #cc1000;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
+style="color: #ed1d24;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
 architektonicznego wymieniają się swoimi poglądami oraz przemyśleniami w tej dziedzinie. To świetna
 okazja, by wymienić się doświadczeniami; co więcej, w dyskusjach poruszanych na forum biorą udział nasi
 eksperci, którzy otwarcie dzielą się swoim doświadczeniem. Forum na stronie internetowej Studio Atrium
@@ -14847,7 +14847,7 @@ konkretny, spełniający wszelkie oczekiwania Inwestora.</p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Nasz katalog
 projektów domów - co w nim znajdziesz?</h2>
 <p>Katalog projektów to narzędzie przydatne dla interesantów, chętnych pogłębić swoją wiedzę. <a
-href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #cc1000;">Nasz darmowy
+href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #ed1d24;">Nasz darmowy
 katalog</a> prezentuje liczne propozycje projektów. Znajdziesz w nim projekty domów parterowych i
 piętrowych, projekty z przystosowaniem do różnych typów działek, projekty garaży wolnostojących oraz
 inne wyselekcjonowane projekty domów. Jeżeli chcesz zobaczyć więcej projektów oferowanych przez Studio
@@ -14889,7 +14889,7 @@ antresolą)</p>
 <p>• W zależności od stylu (nowoczesne, w stylu stodoły, regionalne beskidzkie, nowoczesne beskidzkie, z
 płaskim dachem, rezydencje dla zamożnych)</p>
 <h3 style="font-size:2.4rem;">Projekty domów piętrowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #ed1d24;">Projekty domów
 piętrowych</a> wyróżniają się świetnym zagospodarowaniem wnętrza, które z łatwością można podzielić
 na strefę dzienną, składającą się z kuchni, salonu i innych pomieszczeń integralnych oraz strefę nocną
 dedykowaną sypialniom, łazienkom i różnego rodzaju gabinetom domowym. Domy składające się z więcej niż
@@ -14899,7 +14899,7 @@ stanowią podstawę do ciekawej aranżacji bryły. Takie rozwiązanie świetnie 
 rodzin z dziećmi, łącząc estetykę i komfort w jednej bryle. Warto podkreślić, że domy piętrowe idealnie
 nadają się w przypadku mniejszej działki - takie rozwiązanie pozwala zaoszczędzić przestrzeń.</p>
 <h3 style="font-size:2.4rem;">Projekty domów parterowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #ed1d24;">Projekty domów
 parterowych</a> stanowią idealne rozwiązanie dla klientów ceniących sobie wygodę, estetykę oraz
 funkcjonalność. Głównym atutem tego typu projektów jest brak schodów. Jedna kondygnacja, z której składa
 się cała bryła może okazać się idealnym rozwiązaniem dla rodzin z małymi dziećmi lub dla osób z
@@ -14920,7 +14920,7 @@ idealnie sprawdza się jako dodatkowy składzik lub pomieszczenie gospodarcze. W
 parterowy z poddaszem to świetna alternatywa dla Inwestorów, którzy chcą rozłożyć budowę domu na etapy,
 ponieważ poddasze nie musi być wykańczane od razu.</p>
 <h3 style="font-size:2.4rem;">Projekty domów bliźniaczych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #ed1d24;">Projekty domów
 bliźniaczych</a> to charakterystyczne budowle, które wyróżniają się podziałem bryły na dwa oddzielne
 i niezależne od siebie segmenty. Konstrukcja składa się z jednego wspólnego dachu oraz murów
 zewnętrznych, natomiast zawiera dwa oddzielne i niezależne wejścia do mieszkania. Ta alternatywa jest
@@ -14937,7 +14937,7 @@ nasi projektanci uwzględnili w projektach domów takie rozwiązania jak systemy
 energii odnawialnej, systemy zarządzania energią oraz wiele innych zastosowań, definiujących projekty
 Studio Atrium jako energooszczędne.</p>
 <h3 style="font-size:2.4rem;">Projekty domów nowoczesnych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #ed1d24;">Projekty domów
 nowoczesnych</a> wyróżniają się uwzględnieniem minimalizmu i prostoty. W tym celu ogranicza się
 ozdoby i dekoracje do minimum, co sprawia, że cena wybudowania takiego domu staje się atrakcyjniejsza.
 Zastosowanie dużych przeszklonych okien wpuszcza do domu naturalne światło, co pozwala zaoszczędzić
@@ -14945,7 +14945,7 @@ energię elektryczną. Inwestorzy często decydują się również na zastosowan
 cegły, aby dom był bardziej przytulny. Wyżej opisane elementy to przykładowe detale, którymi cechują się
 projekty domów nowoczesnych.</p>
 <h3 style="font-size:2.4rem;">Projekty w stylu stodoły</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #cc1000;">Projekty
+<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #ed1d24;">Projekty
 domów w stylu stodoły</a>, czyli tzw. Barn House, coraz częściej stają się obiektem zainteresowań
 Inwestorów. Charakteryzują się prostokątną bryłą budynku oraz wielkoformatowymi oknami. Są to typy domów
 z dachem dwuspadowym. Wnętrza cechują wysokie sufity i otwarte przestrzenie z uwzględnieniem antresoli
@@ -14954,7 +14954,7 @@ takich jak drewniane bele i stara cegła, w połączeniu z nowoczesnymi metalowy
 wykończeniami. </p>
 <h3 style="font-size:2.4rem;">Projekty domów z poddaszem użytkowym</h3>
 <p><a href="https://www.studioatrium.pl/projekty-domow/z-poddaszem-uzytkowym/"
-style="color: #cc1000;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
+style="color: #ed1d24;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
 wszystkim decyzję o zagospodarowaniu poddasza podejmuje Inwestor, co więcej poddasze użytkowe to
 możliwość podzielenia wykończenia domu na etapy. Poddasze to przestrzeń wypełniona licznymi skosami,
 które przy odpowiedniej aranżacji kreują przytulną przestrzeń dla mieszkańców. Zastosowanie tego rodzaju
@@ -14976,7 +14976,7 @@ na dłuższy okres czasu.</p>
 <p>Bardzo często zdarza się, że najistotniejszym dla inwestora jest mały metraż działki, który automatycznie
 uniemożliwia wybudowanie pewnych brył. Dla specjalistów Studio Atrium wąska działka nie stanowi
 ograniczenia a jedynie podstawę do tworzenia kreatywnych rozwiązań dla klienta. <a
-href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #cc1000;">Projekty
+href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #ed1d24;">Projekty
 domów na wąską działkę</a> najczęściej skupiają się na maksymalnym wykorzystaniu działki poprzez
 zastosowanie podłużnej, prostokątnej bryły, tak aby jak najbardziej wykorzystać ograniczoną
 powierzchnię. W przypadku wąskich działek idealnie sprawdzają się domy piętrowe lub takie z poddaszem
@@ -14984,7 +14984,7 @@ użytkowym.</p>
 <h3 style="font-size:2.4rem;">Projekty domów z kosztorysem</h3>
 <p>Decydując się na zakup projektu domu z kosztorysem, inwestor nabywa gotowe plany budowlane z
 uwzględnieniem szczegółowych informacji <a
-href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #cc1000;">kosztów
+href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #ed1d24;">kosztów
 budowy domów</a>. Takie rozwiązanie świetnie sprawdza się w przypadku Inwestorów, którym zależy na
 dokładnej kontroli budżetu. Jest to również możliwość do lepszego rozplanowania etapów budowy i płynnego
 zarządzania zapleczem finansowym. Jeżeli budujesz dom po raz pierwszy, masz ograniczony budżet lub
@@ -14993,7 +14993,7 @@ kosztorysem jest odpowiednia dla Ciebie. Aktualna cena to 750 zł za szczegóło
 <h3 style="font-size:2.4rem;">Projekty małych domów</h3>
 <p>Małe domy wyróżnia nieduży metraż; dlatego istotne jest uwzględnienie w projekcie praktycznych zastosowań
 przy maksymalnym zagospodarowaniu powierzchni użytkowej. <a
-href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #cc1000;">Projekty małych
+href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #ed1d24;">Projekty małych
 domów</a> to idealne rozwiązanie dla par lub osób w podeszłym wieku; co więcej takie projekty
 idealnie sprawdzają się w przypadku ograniczeń związanych z małym metrażem działki. Jeżeli cenisz sobie
 praktyczność połączoną z przytulnymi aranżacjami wnętrz, projekt małego domu jest właśnie dla Ciebie.
@@ -15006,7 +15006,7 @@ wielopoziomowych układów kondygnacji, aby w pełni wykorzystać dostępną prz
 umożliwia ulokowanie parteru lub piwnicy w częściowym zagłębieniu w skarpie, natomiast wyższe
 kondygnacje są wysuwane. Dom ulokowany na wzniesieniu oferuje panoramiczne widoki, co wpływa na jego
 atrakcyjność. <a href="https://www.studioatrium.pl/projekty-domow/na-skarpe/"
-style="color: #cc1000;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
+style="color: #ed1d24;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
 połączeniu z zastosowaniem dużych okien stanowi energooszczędne rozwiązanie doświetlające wnętrze domu.
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Co należy
@@ -15169,11 +15169,11 @@ poddaszem{elseif $_item.object.params_general|isGroundFloor:true}parterowego
 <div>
 <p>Z przyjemnością prezentujemy Państwu gotowe projekty domów. Przygotowali je doświadczeni specjaliści,
 którzy tworzą personel naszej firmy. W ofercie znajdą Państwo między innymi <a
-href="/projekty-domow/blizniaki/" style="color: #cc1000;">projekty domów bliźniaczych</a>, <a
-href="/projekty-domow/nowoczesne/" style="color: #cc1000;">projekty domów nowoczesnych</a>, <a
+href="/projekty-domow/blizniaki/" style="color: #ed1d24;">projekty domów bliźniaczych</a>, <a
+href="/projekty-domow/nowoczesne/" style="color: #ed1d24;">projekty domów nowoczesnych</a>, <a
 href="/projekty-domow/na-waska-dzialke/">na wąską działkę</a>, parterowych i piętrowych. Polecamy
-także <a href="/projekty-domow/tanie-w-budowie/" style="color: #cc1000;">domy tanie w budowie</a> oraz
-<a href="/projekty-domow/z-plaskim-dachem/" style="color: #cc1000;">z płaskim dachem</a>. Wszystkie
+także <a href="/projekty-domow/tanie-w-budowie/" style="color: #ed1d24;">domy tanie w budowie</a> oraz
+<a href="/projekty-domow/z-plaskim-dachem/" style="color: #ed1d24;">z płaskim dachem</a>. Wszystkie
 dostosowane są do polskich warunków budowlanych. Udostępniamy także wzory małych obiektów, ponieważ
 wiemy jak ważna jest obecnie oszczędność i funkcjonalność. Posiadamy wieloletnie doświadczenie we
 współpracy z inwestorami budującymi tego typu obiekty, propozycje zostały więc opracowane na podstawie
@@ -15181,7 +15181,7 @@ wytycznych ekspertów. Projekty domów gotowych do realizacji to wygodne i prakt
 szczególnie dla osób, które nie zetknęły się wcześniej z tą branżą. Mogą w ten sposób nabyć wzór, który
 jest uniwersalny i sprawdzony w praktyce. Mamy świadomość tego, iż wybór odpowiedniej propozycji to
 poważna decyzja, dlatego chętnie służymy Państwu radą. Wszystkie nasze <a href="/projekty-domow/"
-style="color: #cc1000;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
+style="color: #ed1d24;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
 najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczekiwania.
 </p>
 <h3>Najpopularniejsze typy domów</h3>
@@ -15190,7 +15190,7 @@ najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczeki
 takiego rozwiązania jest umieszczenie stref mieszkalnych, dziennej i nocnej, na jednym poziomie -
 parterze, bez konieczności budowania schodów i stropu. Warto także podkreślić bezpośredni kontakt z
 otaczającą budynek zielenią, dostępną niemal "za ścianą". Małe <a href="/projekty-domow/parterowe/"
-style="color: #cc1000;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
+style="color: #ed1d24;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
 propozycji na rynku. Koszt budowy jak i ich użytkowania zaliczyć można do najniższych. Rozległe
 rezydencje parterowe natomiast, najbardziej przypominają nowoczesne siedliska. W naszej ofercie projekty
 domów parterowych traktowane są wyjątkowo - bez trudu znajdą tutaj Państwo coś dla siebie. Od
@@ -15204,9 +15204,9 @@ różnorodne kształty. Od typowych, prostych konstrukcji, przykrytych dwuspadow
 finezyjne bryły ozdobione licznymi detalami architektonicznymi i bazujące na nowoczesnych trendach.
 Przygotowane przez nas budynki to wspaniała propozycja dla typowych rodzin 2+2 i 2+3. Ich funkcjonalność
 została specjalnie zaprojektowana dla wygody kilku użytkowników, którzy spędzają czas w swoim domu. <a
-href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #cc1000;">Gotowe projekty domów z
+href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #ed1d24;">Gotowe projekty domów z
 poddaszem użytkowym</a> stanowią w naszej ofercie najliczniejszą grupę koncepcji, które wcielamy w
-życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #cc1000;">Zobacz dodatki</a>
+życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #ed1d24;">Zobacz dodatki</a>
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Projekty domów
 jednorodzinnych Studio Atrium</h2>
@@ -15229,7 +15229,7 @@ Atrium cieszy się bardzo dobrą opinią wśród klientów. Nasi klienci w recen
 wysoką jakość obsługi, solidność projektów, oraz indywidualne podejście do potrzeb inwestorów. Ponadto
 jako firma zdobyliśmy uznanie w branży, m.in. poprzez wyróżnienia takie jak Konsumencki Lider Jakości,
 co świadczy o dbałości o klienta. Jeżeli nadal masz wątpliwości, już dziś <a
-href="https://www.studioatrium.pl/kontakt/" style="color: #cc1000;">skontaktuj się z naszym
+href="https://www.studioatrium.pl/kontakt/" style="color: #ed1d24;">skontaktuj się z naszym
 konsultantem</a> lub odwiedź naszą siedzibę mieszczącą się w Bielsku-Białej przy ulicy J.
 Malczewskiego 1. Jesteśmy otwarci dla Ciebie od poniedziałku do piątku w godzinach od 8:00 do 17:00.
 Skontaktuj się z nami i poznaj przyjemność pracy ze specjalistami!</p>
@@ -15284,7 +15284,7 @@ możemy zaoferować! Twój wymarzony dom zaczyna się od pierwszego kliknięcia.
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Odwiedź nasze
 forum dyskusyjne</h2>
 <p>Nasza strona internetowa zawiera zakładkę <a href="https://www.studioatrium.pl/forum/"
-style="color: #cc1000;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
+style="color: #ed1d24;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
 architektonicznego wymieniają się swoimi poglądami oraz przemyśleniami w tej dziedzinie. To świetna
 okazja, by wymienić się doświadczeniami; co więcej, w dyskusjach poruszanych na forum biorą udział nasi
 eksperci, którzy otwarcie dzielą się swoim doświadczeniem. Forum na stronie internetowej Studio Atrium
@@ -15348,7 +15348,7 @@ konkretny, spełniający wszelkie oczekiwania Inwestora.</p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Nasz katalog
 projektów domów - co w nim znajdziesz?</h2>
 <p>Katalog projektów to narzędzie przydatne dla interesantów, chętnych pogłębić swoją wiedzę. <a
-href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #cc1000;">Nasz darmowy
+href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #ed1d24;">Nasz darmowy
 katalog</a> prezentuje liczne propozycje projektów. Znajdziesz w nim projekty domów parterowych i
 piętrowych, projekty z przystosowaniem do różnych typów działek, projekty garaży wolnostojących oraz
 inne wyselekcjonowane projekty domów. Jeżeli chcesz zobaczyć więcej projektów oferowanych przez Studio
@@ -15390,7 +15390,7 @@ antresolą)</p>
 <p>• W zależności od stylu (nowoczesne, w stylu stodoły, regionalne beskidzkie, nowoczesne beskidzkie, z
 płaskim dachem, rezydencje dla zamożnych)</p>
 <h3 style="font-size:2.4rem;">Projekty domów piętrowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #ed1d24;">Projekty domów
 piętrowych</a> wyróżniają się świetnym zagospodarowaniem wnętrza, które z łatwością można podzielić
 na strefę dzienną, składającą się z kuchni, salonu i innych pomieszczeń integralnych oraz strefę nocną
 dedykowaną sypialniom, łazienkom i różnego rodzaju gabinetom domowym. Domy składające się z więcej niż
@@ -15400,7 +15400,7 @@ stanowią podstawę do ciekawej aranżacji bryły. Takie rozwiązanie świetnie 
 rodzin z dziećmi, łącząc estetykę i komfort w jednej bryle. Warto podkreślić, że domy piętrowe idealnie
 nadają się w przypadku mniejszej działki - takie rozwiązanie pozwala zaoszczędzić przestrzeń.</p>
 <h3 style="font-size:2.4rem;">Projekty domów parterowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #ed1d24;">Projekty domów
 parterowych</a> stanowią idealne rozwiązanie dla klientów ceniących sobie wygodę, estetykę oraz
 funkcjonalność. Głównym atutem tego typu projektów jest brak schodów. Jedna kondygnacja, z której składa
 się cała bryła może okazać się idealnym rozwiązaniem dla rodzin z małymi dziećmi lub dla osób z
@@ -15421,7 +15421,7 @@ idealnie sprawdza się jako dodatkowy składzik lub pomieszczenie gospodarcze. W
 parterowy z poddaszem to świetna alternatywa dla Inwestorów, którzy chcą rozłożyć budowę domu na etapy,
 ponieważ poddasze nie musi być wykańczane od razu.</p>
 <h3 style="font-size:2.4rem;">Projekty domów bliźniaczych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #ed1d24;">Projekty domów
 bliźniaczych</a> to charakterystyczne budowle, które wyróżniają się podziałem bryły na dwa oddzielne
 i niezależne od siebie segmenty. Konstrukcja składa się z jednego wspólnego dachu oraz murów
 zewnętrznych, natomiast zawiera dwa oddzielne i niezależne wejścia do mieszkania. Ta alternatywa jest
@@ -15438,7 +15438,7 @@ nasi projektanci uwzględnili w projektach domów takie rozwiązania jak systemy
 energii odnawialnej, systemy zarządzania energią oraz wiele innych zastosowań, definiujących projekty
 Studio Atrium jako energooszczędne.</p>
 <h3 style="font-size:2.4rem;">Projekty domów nowoczesnych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #ed1d24;">Projekty domów
 nowoczesnych</a> wyróżniają się uwzględnieniem minimalizmu i prostoty. W tym celu ogranicza się
 ozdoby i dekoracje do minimum, co sprawia, że cena wybudowania takiego domu staje się atrakcyjniejsza.
 Zastosowanie dużych przeszklonych okien wpuszcza do domu naturalne światło, co pozwala zaoszczędzić
@@ -15446,7 +15446,7 @@ energię elektryczną. Inwestorzy często decydują się również na zastosowan
 cegły, aby dom był bardziej przytulny. Wyżej opisane elementy to przykładowe detale, którymi cechują się
 projekty domów nowoczesnych.</p>
 <h3 style="font-size:2.4rem;">Projekty w stylu stodoły</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #cc1000;">Projekty
+<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #ed1d24;">Projekty
 domów w stylu stodoły</a>, czyli tzw. Barn House, coraz częściej stają się obiektem zainteresowań
 Inwestorów. Charakteryzują się prostokątną bryłą budynku oraz wielkoformatowymi oknami. Są to typy domów
 z dachem dwuspadowym. Wnętrza cechują wysokie sufity i otwarte przestrzenie z uwzględnieniem antresoli
@@ -15455,7 +15455,7 @@ takich jak drewniane bele i stara cegła, w połączeniu z nowoczesnymi metalowy
 wykończeniami. </p>
 <h3 style="font-size:2.4rem;">Projekty domów z poddaszem użytkowym</h3>
 <p><a href="https://www.studioatrium.pl/projekty-domow/z-poddaszem-uzytkowym/"
-style="color: #cc1000;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
+style="color: #ed1d24;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
 wszystkim decyzję o zagospodarowaniu poddasza podejmuje Inwestor, co więcej poddasze użytkowe to
 możliwość podzielenia wykończenia domu na etapy. Poddasze to przestrzeń wypełniona licznymi skosami,
 które przy odpowiedniej aranżacji kreują przytulną przestrzeń dla mieszkańców. Zastosowanie tego rodzaju
@@ -15477,7 +15477,7 @@ na dłuższy okres czasu.</p>
 <p>Bardzo często zdarza się, że najistotniejszym dla inwestora jest mały metraż działki, który automatycznie
 uniemożliwia wybudowanie pewnych brył. Dla specjalistów Studio Atrium wąska działka nie stanowi
 ograniczenia a jedynie podstawę do tworzenia kreatywnych rozwiązań dla klienta. <a
-href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #cc1000;">Projekty
+href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #ed1d24;">Projekty
 domów na wąską działkę</a> najczęściej skupiają się na maksymalnym wykorzystaniu działki poprzez
 zastosowanie podłużnej, prostokątnej bryły, tak aby jak najbardziej wykorzystać ograniczoną
 powierzchnię. W przypadku wąskich działek idealnie sprawdzają się domy piętrowe lub takie z poddaszem
@@ -15485,7 +15485,7 @@ użytkowym.</p>
 <h3 style="font-size:2.4rem;">Projekty domów z kosztorysem</h3>
 <p>Decydując się na zakup projektu domu z kosztorysem, inwestor nabywa gotowe plany budowlane z
 uwzględnieniem szczegółowych informacji <a
-href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #cc1000;">kosztów
+href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #ed1d24;">kosztów
 budowy domów</a>. Takie rozwiązanie świetnie sprawdza się w przypadku Inwestorów, którym zależy na
 dokładnej kontroli budżetu. Jest to również możliwość do lepszego rozplanowania etapów budowy i płynnego
 zarządzania zapleczem finansowym. Jeżeli budujesz dom po raz pierwszy, masz ograniczony budżet lub
@@ -15494,7 +15494,7 @@ kosztorysem jest odpowiednia dla Ciebie. Aktualna cena to 750 zł za szczegóło
 <h3 style="font-size:2.4rem;">Projekty małych domów</h3>
 <p>Małe domy wyróżnia nieduży metraż; dlatego istotne jest uwzględnienie w projekcie praktycznych zastosowań
 przy maksymalnym zagospodarowaniu powierzchni użytkowej. <a
-href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #cc1000;">Projekty małych
+href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #ed1d24;">Projekty małych
 domów</a> to idealne rozwiązanie dla par lub osób w podeszłym wieku; co więcej takie projekty
 idealnie sprawdzają się w przypadku ograniczeń związanych z małym metrażem działki. Jeżeli cenisz sobie
 praktyczność połączoną z przytulnymi aranżacjami wnętrz, projekt małego domu jest właśnie dla Ciebie.
@@ -15507,7 +15507,7 @@ wielopoziomowych układów kondygnacji, aby w pełni wykorzystać dostępną prz
 umożliwia ulokowanie parteru lub piwnicy w częściowym zagłębieniu w skarpie, natomiast wyższe
 kondygnacje są wysuwane. Dom ulokowany na wzniesieniu oferuje panoramiczne widoki, co wpływa na jego
 atrakcyjność. <a href="https://www.studioatrium.pl/projekty-domow/na-skarpe/"
-style="color: #cc1000;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
+style="color: #ed1d24;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
 połączeniu z zastosowaniem dużych okien stanowi energooszczędne rozwiązanie doświetlające wnętrze domu.
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Co należy
@@ -15676,11 +15676,11 @@ poddaszem{elseif $_item.object.params_general|isGroundFloor:true}parterowego
 <div>
 <p>Z przyjemnością prezentujemy Państwu gotowe projekty domów. Przygotowali je doświadczeni specjaliści,
 którzy tworzą personel naszej firmy. W ofercie znajdą Państwo między innymi <a
-href="/projekty-domow/blizniaki/" style="color: #cc1000;">projekty domów bliźniaczych</a>, <a
-href="/projekty-domow/nowoczesne/" style="color: #cc1000;">projekty domów nowoczesnych</a>, <a
+href="/projekty-domow/blizniaki/" style="color: #ed1d24;">projekty domów bliźniaczych</a>, <a
+href="/projekty-domow/nowoczesne/" style="color: #ed1d24;">projekty domów nowoczesnych</a>, <a
 href="/projekty-domow/na-waska-dzialke/">na wąską działkę</a>, parterowych i piętrowych. Polecamy
-także <a href="/projekty-domow/tanie-w-budowie/" style="color: #cc1000;">domy tanie w budowie</a> oraz
-<a href="/projekty-domow/z-plaskim-dachem/" style="color: #cc1000;">z płaskim dachem</a>. Wszystkie
+także <a href="/projekty-domow/tanie-w-budowie/" style="color: #ed1d24;">domy tanie w budowie</a> oraz
+<a href="/projekty-domow/z-plaskim-dachem/" style="color: #ed1d24;">z płaskim dachem</a>. Wszystkie
 dostosowane są do polskich warunków budowlanych. Udostępniamy także wzory małych obiektów, ponieważ
 wiemy jak ważna jest obecnie oszczędność i funkcjonalność. Posiadamy wieloletnie doświadczenie we
 współpracy z inwestorami budującymi tego typu obiekty, propozycje zostały więc opracowane na podstawie
@@ -15688,7 +15688,7 @@ wytycznych ekspertów. Projekty domów gotowych do realizacji to wygodne i prakt
 szczególnie dla osób, które nie zetknęły się wcześniej z tą branżą. Mogą w ten sposób nabyć wzór, który
 jest uniwersalny i sprawdzony w praktyce. Mamy świadomość tego, iż wybór odpowiedniej propozycji to
 poważna decyzja, dlatego chętnie służymy Państwu radą. Wszystkie nasze <a href="/projekty-domow/"
-style="color: #cc1000;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
+style="color: #ed1d24;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
 najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczekiwania.
 </p>
 <h3>Najpopularniejsze typy domów</h3>
@@ -15697,7 +15697,7 @@ najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczeki
 takiego rozwiązania jest umieszczenie stref mieszkalnych, dziennej i nocnej, na jednym poziomie -
 parterze, bez konieczności budowania schodów i stropu. Warto także podkreślić bezpośredni kontakt z
 otaczającą budynek zielenią, dostępną niemal "za ścianą". Małe <a href="/projekty-domow/parterowe/"
-style="color: #cc1000;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
+style="color: #ed1d24;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
 propozycji na rynku. Koszt budowy jak i ich użytkowania zaliczyć można do najniższych. Rozległe
 rezydencje parterowe natomiast, najbardziej przypominają nowoczesne siedliska. W naszej ofercie projekty
 domów parterowych traktowane są wyjątkowo - bez trudu znajdą tutaj Państwo coś dla siebie. Od
@@ -15711,9 +15711,9 @@ różnorodne kształty. Od typowych, prostych konstrukcji, przykrytych dwuspadow
 finezyjne bryły ozdobione licznymi detalami architektonicznymi i bazujące na nowoczesnych trendach.
 Przygotowane przez nas budynki to wspaniała propozycja dla typowych rodzin 2+2 i 2+3. Ich funkcjonalność
 została specjalnie zaprojektowana dla wygody kilku użytkowników, którzy spędzają czas w swoim domu. <a
-href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #cc1000;">Gotowe projekty domów z
+href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #ed1d24;">Gotowe projekty domów z
 poddaszem użytkowym</a> stanowią w naszej ofercie najliczniejszą grupę koncepcji, które wcielamy w
-życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #cc1000;">Zobacz dodatki</a>
+życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #ed1d24;">Zobacz dodatki</a>
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Projekty domów
 jednorodzinnych Studio Atrium</h2>
@@ -15736,7 +15736,7 @@ Atrium cieszy się bardzo dobrą opinią wśród klientów. Nasi klienci w recen
 wysoką jakość obsługi, solidność projektów, oraz indywidualne podejście do potrzeb inwestorów. Ponadto
 jako firma zdobyliśmy uznanie w branży, m.in. poprzez wyróżnienia takie jak Konsumencki Lider Jakości,
 co świadczy o dbałości o klienta. Jeżeli nadal masz wątpliwości, już dziś <a
-href="https://www.studioatrium.pl/kontakt/" style="color: #cc1000;">skontaktuj się z naszym
+href="https://www.studioatrium.pl/kontakt/" style="color: #ed1d24;">skontaktuj się z naszym
 konsultantem</a> lub odwiedź naszą siedzibę mieszczącą się w Bielsku-Białej przy ulicy J.
 Malczewskiego 1. Jesteśmy otwarci dla Ciebie od poniedziałku do piątku w godzinach od 8:00 do 17:00.
 Skontaktuj się z nami i poznaj przyjemność pracy ze specjalistami!</p>
@@ -15791,7 +15791,7 @@ możemy zaoferować! Twój wymarzony dom zaczyna się od pierwszego kliknięcia.
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Odwiedź nasze
 forum dyskusyjne</h2>
 <p>Nasza strona internetowa zawiera zakładkę <a href="https://www.studioatrium.pl/forum/"
-style="color: #cc1000;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
+style="color: #ed1d24;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
 architektonicznego wymieniają się swoimi poglądami oraz przemyśleniami w tej dziedzinie. To świetna
 okazja, by wymienić się doświadczeniami; co więcej, w dyskusjach poruszanych na forum biorą udział nasi
 eksperci, którzy otwarcie dzielą się swoim doświadczeniem. Forum na stronie internetowej Studio Atrium
@@ -15855,7 +15855,7 @@ konkretny, spełniający wszelkie oczekiwania Inwestora.</p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Nasz katalog
 projektów domów - co w nim znajdziesz?</h2>
 <p>Katalog projektów to narzędzie przydatne dla interesantów, chętnych pogłębić swoją wiedzę. <a
-href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #cc1000;">Nasz darmowy
+href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #ed1d24;">Nasz darmowy
 katalog</a> prezentuje liczne propozycje projektów. Znajdziesz w nim projekty domów parterowych i
 piętrowych, projekty z przystosowaniem do różnych typów działek, projekty garaży wolnostojących oraz
 inne wyselekcjonowane projekty domów. Jeżeli chcesz zobaczyć więcej projektów oferowanych przez Studio
@@ -15897,7 +15897,7 @@ antresolą)</p>
 <p>• W zależności od stylu (nowoczesne, w stylu stodoły, regionalne beskidzkie, nowoczesne beskidzkie, z
 płaskim dachem, rezydencje dla zamożnych)</p>
 <h3 style="font-size:2.4rem;">Projekty domów piętrowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #ed1d24;">Projekty domów
 piętrowych</a> wyróżniają się świetnym zagospodarowaniem wnętrza, które z łatwością można podzielić
 na strefę dzienną, składającą się z kuchni, salonu i innych pomieszczeń integralnych oraz strefę nocną
 dedykowaną sypialniom, łazienkom i różnego rodzaju gabinetom domowym. Domy składające się z więcej niż
@@ -15907,7 +15907,7 @@ stanowią podstawę do ciekawej aranżacji bryły. Takie rozwiązanie świetnie 
 rodzin z dziećmi, łącząc estetykę i komfort w jednej bryle. Warto podkreślić, że domy piętrowe idealnie
 nadają się w przypadku mniejszej działki - takie rozwiązanie pozwala zaoszczędzić przestrzeń.</p>
 <h3 style="font-size:2.4rem;">Projekty domów parterowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #ed1d24;">Projekty domów
 parterowych</a> stanowią idealne rozwiązanie dla klientów ceniących sobie wygodę, estetykę oraz
 funkcjonalność. Głównym atutem tego typu projektów jest brak schodów. Jedna kondygnacja, z której składa
 się cała bryła może okazać się idealnym rozwiązaniem dla rodzin z małymi dziećmi lub dla osób z
@@ -15928,7 +15928,7 @@ idealnie sprawdza się jako dodatkowy składzik lub pomieszczenie gospodarcze. W
 parterowy z poddaszem to świetna alternatywa dla Inwestorów, którzy chcą rozłożyć budowę domu na etapy,
 ponieważ poddasze nie musi być wykańczane od razu.</p>
 <h3 style="font-size:2.4rem;">Projekty domów bliźniaczych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #ed1d24;">Projekty domów
 bliźniaczych</a> to charakterystyczne budowle, które wyróżniają się podziałem bryły na dwa oddzielne
 i niezależne od siebie segmenty. Konstrukcja składa się z jednego wspólnego dachu oraz murów
 zewnętrznych, natomiast zawiera dwa oddzielne i niezależne wejścia do mieszkania. Ta alternatywa jest
@@ -15945,7 +15945,7 @@ nasi projektanci uwzględnili w projektach domów takie rozwiązania jak systemy
 energii odnawialnej, systemy zarządzania energią oraz wiele innych zastosowań, definiujących projekty
 Studio Atrium jako energooszczędne.</p>
 <h3 style="font-size:2.4rem;">Projekty domów nowoczesnych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #ed1d24;">Projekty domów
 nowoczesnych</a> wyróżniają się uwzględnieniem minimalizmu i prostoty. W tym celu ogranicza się
 ozdoby i dekoracje do minimum, co sprawia, że cena wybudowania takiego domu staje się atrakcyjniejsza.
 Zastosowanie dużych przeszklonych okien wpuszcza do domu naturalne światło, co pozwala zaoszczędzić
@@ -15953,7 +15953,7 @@ energię elektryczną. Inwestorzy często decydują się również na zastosowan
 cegły, aby dom był bardziej przytulny. Wyżej opisane elementy to przykładowe detale, którymi cechują się
 projekty domów nowoczesnych.</p>
 <h3 style="font-size:2.4rem;">Projekty w stylu stodoły</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #cc1000;">Projekty
+<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #ed1d24;">Projekty
 domów w stylu stodoły</a>, czyli tzw. Barn House, coraz częściej stają się obiektem zainteresowań
 Inwestorów. Charakteryzują się prostokątną bryłą budynku oraz wielkoformatowymi oknami. Są to typy domów
 z dachem dwuspadowym. Wnętrza cechują wysokie sufity i otwarte przestrzenie z uwzględnieniem antresoli
@@ -15962,7 +15962,7 @@ takich jak drewniane bele i stara cegła, w połączeniu z nowoczesnymi metalowy
 wykończeniami. </p>
 <h3 style="font-size:2.4rem;">Projekty domów z poddaszem użytkowym</h3>
 <p><a href="https://www.studioatrium.pl/projekty-domow/z-poddaszem-uzytkowym/"
-style="color: #cc1000;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
+style="color: #ed1d24;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
 wszystkim decyzję o zagospodarowaniu poddasza podejmuje Inwestor, co więcej poddasze użytkowe to
 możliwość podzielenia wykończenia domu na etapy. Poddasze to przestrzeń wypełniona licznymi skosami,
 które przy odpowiedniej aranżacji kreują przytulną przestrzeń dla mieszkańców. Zastosowanie tego rodzaju
@@ -15984,7 +15984,7 @@ na dłuższy okres czasu.</p>
 <p>Bardzo często zdarza się, że najistotniejszym dla inwestora jest mały metraż działki, który automatycznie
 uniemożliwia wybudowanie pewnych brył. Dla specjalistów Studio Atrium wąska działka nie stanowi
 ograniczenia a jedynie podstawę do tworzenia kreatywnych rozwiązań dla klienta. <a
-href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #cc1000;">Projekty
+href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #ed1d24;">Projekty
 domów na wąską działkę</a> najczęściej skupiają się na maksymalnym wykorzystaniu działki poprzez
 zastosowanie podłużnej, prostokątnej bryły, tak aby jak najbardziej wykorzystać ograniczoną
 powierzchnię. W przypadku wąskich działek idealnie sprawdzają się domy piętrowe lub takie z poddaszem
@@ -15992,7 +15992,7 @@ użytkowym.</p>
 <h3 style="font-size:2.4rem;">Projekty domów z kosztorysem</h3>
 <p>Decydując się na zakup projektu domu z kosztorysem, inwestor nabywa gotowe plany budowlane z
 uwzględnieniem szczegółowych informacji <a
-href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #cc1000;">kosztów
+href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #ed1d24;">kosztów
 budowy domów</a>. Takie rozwiązanie świetnie sprawdza się w przypadku Inwestorów, którym zależy na
 dokładnej kontroli budżetu. Jest to również możliwość do lepszego rozplanowania etapów budowy i płynnego
 zarządzania zapleczem finansowym. Jeżeli budujesz dom po raz pierwszy, masz ograniczony budżet lub
@@ -16001,7 +16001,7 @@ kosztorysem jest odpowiednia dla Ciebie. Aktualna cena to 750 zł za szczegóło
 <h3 style="font-size:2.4rem;">Projekty małych domów</h3>
 <p>Małe domy wyróżnia nieduży metraż; dlatego istotne jest uwzględnienie w projekcie praktycznych zastosowań
 przy maksymalnym zagospodarowaniu powierzchni użytkowej. <a
-href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #cc1000;">Projekty małych
+href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #ed1d24;">Projekty małych
 domów</a> to idealne rozwiązanie dla par lub osób w podeszłym wieku; co więcej takie projekty
 idealnie sprawdzają się w przypadku ograniczeń związanych z małym metrażem działki. Jeżeli cenisz sobie
 praktyczność połączoną z przytulnymi aranżacjami wnętrz, projekt małego domu jest właśnie dla Ciebie.
@@ -16014,7 +16014,7 @@ wielopoziomowych układów kondygnacji, aby w pełni wykorzystać dostępną prz
 umożliwia ulokowanie parteru lub piwnicy w częściowym zagłębieniu w skarpie, natomiast wyższe
 kondygnacje są wysuwane. Dom ulokowany na wzniesieniu oferuje panoramiczne widoki, co wpływa na jego
 atrakcyjność. <a href="https://www.studioatrium.pl/projekty-domow/na-skarpe/"
-style="color: #cc1000;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
+style="color: #ed1d24;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
 połączeniu z zastosowaniem dużych okien stanowi energooszczędne rozwiązanie doświetlające wnętrze domu.
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Co należy
@@ -16178,11 +16178,11 @@ poddaszem{elseif $_item.object.params_general|isGroundFloor:true}parterowego
 <div>
 <p>Z przyjemnością prezentujemy Państwu gotowe projekty domów. Przygotowali je doświadczeni specjaliści,
 którzy tworzą personel naszej firmy. W ofercie znajdą Państwo między innymi <a
-href="/projekty-domow/blizniaki/" style="color: #cc1000;">projekty domów bliźniaczych</a>, <a
-href="/projekty-domow/nowoczesne/" style="color: #cc1000;">projekty domów nowoczesnych</a>, <a
+href="/projekty-domow/blizniaki/" style="color: #ed1d24;">projekty domów bliźniaczych</a>, <a
+href="/projekty-domow/nowoczesne/" style="color: #ed1d24;">projekty domów nowoczesnych</a>, <a
 href="/projekty-domow/na-waska-dzialke/">na wąską działkę</a>, parterowych i piętrowych. Polecamy
-także <a href="/projekty-domow/tanie-w-budowie/" style="color: #cc1000;">domy tanie w budowie</a> oraz
-<a href="/projekty-domow/z-plaskim-dachem/" style="color: #cc1000;">z płaskim dachem</a>. Wszystkie
+także <a href="/projekty-domow/tanie-w-budowie/" style="color: #ed1d24;">domy tanie w budowie</a> oraz
+<a href="/projekty-domow/z-plaskim-dachem/" style="color: #ed1d24;">z płaskim dachem</a>. Wszystkie
 dostosowane są do polskich warunków budowlanych. Udostępniamy także wzory małych obiektów, ponieważ
 wiemy jak ważna jest obecnie oszczędność i funkcjonalność. Posiadamy wieloletnie doświadczenie we
 współpracy z inwestorami budującymi tego typu obiekty, propozycje zostały więc opracowane na podstawie
@@ -16190,7 +16190,7 @@ wytycznych ekspertów. Projekty domów gotowych do realizacji to wygodne i prakt
 szczególnie dla osób, które nie zetknęły się wcześniej z tą branżą. Mogą w ten sposób nabyć wzór, który
 jest uniwersalny i sprawdzony w praktyce. Mamy świadomość tego, iż wybór odpowiedniej propozycji to
 poważna decyzja, dlatego chętnie służymy Państwu radą. Wszystkie nasze <a href="/projekty-domow/"
-style="color: #cc1000;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
+style="color: #ed1d24;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
 najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczekiwania.
 </p>
 <h3>Najpopularniejsze typy domów</h3>
@@ -16199,7 +16199,7 @@ najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczeki
 takiego rozwiązania jest umieszczenie stref mieszkalnych, dziennej i nocnej, na jednym poziomie -
 parterze, bez konieczności budowania schodów i stropu. Warto także podkreślić bezpośredni kontakt z
 otaczającą budynek zielenią, dostępną niemal "za ścianą". Małe <a href="/projekty-domow/parterowe/"
-style="color: #cc1000;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
+style="color: #ed1d24;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
 propozycji na rynku. Koszt budowy jak i ich użytkowania zaliczyć można do najniższych. Rozległe
 rezydencje parterowe natomiast, najbardziej przypominają nowoczesne siedliska. W naszej ofercie projekty
 domów parterowych traktowane są wyjątkowo - bez trudu znajdą tutaj Państwo coś dla siebie. Od
@@ -16213,9 +16213,9 @@ różnorodne kształty. Od typowych, prostych konstrukcji, przykrytych dwuspadow
 finezyjne bryły ozdobione licznymi detalami architektonicznymi i bazujące na nowoczesnych trendach.
 Przygotowane przez nas budynki to wspaniała propozycja dla typowych rodzin 2+2 i 2+3. Ich funkcjonalność
 została specjalnie zaprojektowana dla wygody kilku użytkowników, którzy spędzają czas w swoim domu. <a
-href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #cc1000;">Gotowe projekty domów z
+href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #ed1d24;">Gotowe projekty domów z
 poddaszem użytkowym</a> stanowią w naszej ofercie najliczniejszą grupę koncepcji, które wcielamy w
-życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #cc1000;">Zobacz dodatki</a>
+życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #ed1d24;">Zobacz dodatki</a>
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Projekty domów
 jednorodzinnych Studio Atrium</h2>
@@ -16238,7 +16238,7 @@ Atrium cieszy się bardzo dobrą opinią wśród klientów. Nasi klienci w recen
 wysoką jakość obsługi, solidność projektów, oraz indywidualne podejście do potrzeb inwestorów. Ponadto
 jako firma zdobyliśmy uznanie w branży, m.in. poprzez wyróżnienia takie jak Konsumencki Lider Jakości,
 co świadczy o dbałości o klienta. Jeżeli nadal masz wątpliwości, już dziś <a
-href="https://www.studioatrium.pl/kontakt/" style="color: #cc1000;">skontaktuj się z naszym
+href="https://www.studioatrium.pl/kontakt/" style="color: #ed1d24;">skontaktuj się z naszym
 konsultantem</a> lub odwiedź naszą siedzibę mieszczącą się w Bielsku-Białej przy ulicy J.
 Malczewskiego 1. Jesteśmy otwarci dla Ciebie od poniedziałku do piątku w godzinach od 8:00 do 17:00.
 Skontaktuj się z nami i poznaj przyjemność pracy ze specjalistami!</p>
@@ -16293,7 +16293,7 @@ możemy zaoferować! Twój wymarzony dom zaczyna się od pierwszego kliknięcia.
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Odwiedź nasze
 forum dyskusyjne</h2>
 <p>Nasza strona internetowa zawiera zakładkę <a href="https://www.studioatrium.pl/forum/"
-style="color: #cc1000;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
+style="color: #ed1d24;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
 architektonicznego wymieniają się swoimi poglądami oraz przemyśleniami w tej dziedzinie. To świetna
 okazja, by wymienić się doświadczeniami; co więcej, w dyskusjach poruszanych na forum biorą udział nasi
 eksperci, którzy otwarcie dzielą się swoim doświadczeniem. Forum na stronie internetowej Studio Atrium
@@ -16357,7 +16357,7 @@ konkretny, spełniający wszelkie oczekiwania Inwestora.</p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Nasz katalog
 projektów domów - co w nim znajdziesz?</h2>
 <p>Katalog projektów to narzędzie przydatne dla interesantów, chętnych pogłębić swoją wiedzę. <a
-href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #cc1000;">Nasz darmowy
+href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #ed1d24;">Nasz darmowy
 katalog</a> prezentuje liczne propozycje projektów. Znajdziesz w nim projekty domów parterowych i
 piętrowych, projekty z przystosowaniem do różnych typów działek, projekty garaży wolnostojących oraz
 inne wyselekcjonowane projekty domów. Jeżeli chcesz zobaczyć więcej projektów oferowanych przez Studio
@@ -16399,7 +16399,7 @@ antresolą)</p>
 <p>• W zależności od stylu (nowoczesne, w stylu stodoły, regionalne beskidzkie, nowoczesne beskidzkie, z
 płaskim dachem, rezydencje dla zamożnych)</p>
 <h3 style="font-size:2.4rem;">Projekty domów piętrowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #ed1d24;">Projekty domów
 piętrowych</a> wyróżniają się świetnym zagospodarowaniem wnętrza, które z łatwością można podzielić
 na strefę dzienną, składającą się z kuchni, salonu i innych pomieszczeń integralnych oraz strefę nocną
 dedykowaną sypialniom, łazienkom i różnego rodzaju gabinetom domowym. Domy składające się z więcej niż
@@ -16409,7 +16409,7 @@ stanowią podstawę do ciekawej aranżacji bryły. Takie rozwiązanie świetnie 
 rodzin z dziećmi, łącząc estetykę i komfort w jednej bryle. Warto podkreślić, że domy piętrowe idealnie
 nadają się w przypadku mniejszej działki - takie rozwiązanie pozwala zaoszczędzić przestrzeń.</p>
 <h3 style="font-size:2.4rem;">Projekty domów parterowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #ed1d24;">Projekty domów
 parterowych</a> stanowią idealne rozwiązanie dla klientów ceniących sobie wygodę, estetykę oraz
 funkcjonalność. Głównym atutem tego typu projektów jest brak schodów. Jedna kondygnacja, z której składa
 się cała bryła może okazać się idealnym rozwiązaniem dla rodzin z małymi dziećmi lub dla osób z
@@ -16430,7 +16430,7 @@ idealnie sprawdza się jako dodatkowy składzik lub pomieszczenie gospodarcze. W
 parterowy z poddaszem to świetna alternatywa dla Inwestorów, którzy chcą rozłożyć budowę domu na etapy,
 ponieważ poddasze nie musi być wykańczane od razu.</p>
 <h3 style="font-size:2.4rem;">Projekty domów bliźniaczych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #ed1d24;">Projekty domów
 bliźniaczych</a> to charakterystyczne budowle, które wyróżniają się podziałem bryły na dwa oddzielne
 i niezależne od siebie segmenty. Konstrukcja składa się z jednego wspólnego dachu oraz murów
 zewnętrznych, natomiast zawiera dwa oddzielne i niezależne wejścia do mieszkania. Ta alternatywa jest
@@ -16447,7 +16447,7 @@ nasi projektanci uwzględnili w projektach domów takie rozwiązania jak systemy
 energii odnawialnej, systemy zarządzania energią oraz wiele innych zastosowań, definiujących projekty
 Studio Atrium jako energooszczędne.</p>
 <h3 style="font-size:2.4rem;">Projekty domów nowoczesnych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #ed1d24;">Projekty domów
 nowoczesnych</a> wyróżniają się uwzględnieniem minimalizmu i prostoty. W tym celu ogranicza się
 ozdoby i dekoracje do minimum, co sprawia, że cena wybudowania takiego domu staje się atrakcyjniejsza.
 Zastosowanie dużych przeszklonych okien wpuszcza do domu naturalne światło, co pozwala zaoszczędzić
@@ -16455,7 +16455,7 @@ energię elektryczną. Inwestorzy często decydują się również na zastosowan
 cegły, aby dom był bardziej przytulny. Wyżej opisane elementy to przykładowe detale, którymi cechują się
 projekty domów nowoczesnych.</p>
 <h3 style="font-size:2.4rem;">Projekty w stylu stodoły</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #cc1000;">Projekty
+<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #ed1d24;">Projekty
 domów w stylu stodoły</a>, czyli tzw. Barn House, coraz częściej stają się obiektem zainteresowań
 Inwestorów. Charakteryzują się prostokątną bryłą budynku oraz wielkoformatowymi oknami. Są to typy domów
 z dachem dwuspadowym. Wnętrza cechują wysokie sufity i otwarte przestrzenie z uwzględnieniem antresoli
@@ -16464,7 +16464,7 @@ takich jak drewniane bele i stara cegła, w połączeniu z nowoczesnymi metalowy
 wykończeniami. </p>
 <h3 style="font-size:2.4rem;">Projekty domów z poddaszem użytkowym</h3>
 <p><a href="https://www.studioatrium.pl/projekty-domow/z-poddaszem-uzytkowym/"
-style="color: #cc1000;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
+style="color: #ed1d24;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
 wszystkim decyzję o zagospodarowaniu poddasza podejmuje Inwestor, co więcej poddasze użytkowe to
 możliwość podzielenia wykończenia domu na etapy. Poddasze to przestrzeń wypełniona licznymi skosami,
 które przy odpowiedniej aranżacji kreują przytulną przestrzeń dla mieszkańców. Zastosowanie tego rodzaju
@@ -16486,7 +16486,7 @@ na dłuższy okres czasu.</p>
 <p>Bardzo często zdarza się, że najistotniejszym dla inwestora jest mały metraż działki, który automatycznie
 uniemożliwia wybudowanie pewnych brył. Dla specjalistów Studio Atrium wąska działka nie stanowi
 ograniczenia a jedynie podstawę do tworzenia kreatywnych rozwiązań dla klienta. <a
-href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #cc1000;">Projekty
+href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #ed1d24;">Projekty
 domów na wąską działkę</a> najczęściej skupiają się na maksymalnym wykorzystaniu działki poprzez
 zastosowanie podłużnej, prostokątnej bryły, tak aby jak najbardziej wykorzystać ograniczoną
 powierzchnię. W przypadku wąskich działek idealnie sprawdzają się domy piętrowe lub takie z poddaszem
@@ -16494,7 +16494,7 @@ użytkowym.</p>
 <h3 style="font-size:2.4rem;">Projekty domów z kosztorysem</h3>
 <p>Decydując się na zakup projektu domu z kosztorysem, inwestor nabywa gotowe plany budowlane z
 uwzględnieniem szczegółowych informacji <a
-href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #cc1000;">kosztów
+href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #ed1d24;">kosztów
 budowy domów</a>. Takie rozwiązanie świetnie sprawdza się w przypadku Inwestorów, którym zależy na
 dokładnej kontroli budżetu. Jest to również możliwość do lepszego rozplanowania etapów budowy i płynnego
 zarządzania zapleczem finansowym. Jeżeli budujesz dom po raz pierwszy, masz ograniczony budżet lub
@@ -16503,7 +16503,7 @@ kosztorysem jest odpowiednia dla Ciebie. Aktualna cena to 750 zł za szczegóło
 <h3 style="font-size:2.4rem;">Projekty małych domów</h3>
 <p>Małe domy wyróżnia nieduży metraż; dlatego istotne jest uwzględnienie w projekcie praktycznych zastosowań
 przy maksymalnym zagospodarowaniu powierzchni użytkowej. <a
-href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #cc1000;">Projekty małych
+href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #ed1d24;">Projekty małych
 domów</a> to idealne rozwiązanie dla par lub osób w podeszłym wieku; co więcej takie projekty
 idealnie sprawdzają się w przypadku ograniczeń związanych z małym metrażem działki. Jeżeli cenisz sobie
 praktyczność połączoną z przytulnymi aranżacjami wnętrz, projekt małego domu jest właśnie dla Ciebie.
@@ -16516,7 +16516,7 @@ wielopoziomowych układów kondygnacji, aby w pełni wykorzystać dostępną prz
 umożliwia ulokowanie parteru lub piwnicy w częściowym zagłębieniu w skarpie, natomiast wyższe
 kondygnacje są wysuwane. Dom ulokowany na wzniesieniu oferuje panoramiczne widoki, co wpływa na jego
 atrakcyjność. <a href="https://www.studioatrium.pl/projekty-domow/na-skarpe/"
-style="color: #cc1000;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
+style="color: #ed1d24;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
 połączeniu z zastosowaniem dużych okien stanowi energooszczędne rozwiązanie doświetlające wnętrze domu.
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Co należy
@@ -16679,11 +16679,11 @@ poddaszem{elseif $_item.object.params_general|isGroundFloor:true}parterowego
 <div>
 <p>Z przyjemnością prezentujemy Państwu gotowe projekty domów. Przygotowali je doświadczeni specjaliści,
 którzy tworzą personel naszej firmy. W ofercie znajdą Państwo między innymi <a
-href="/projekty-domow/blizniaki/" style="color: #cc1000;">projekty domów bliźniaczych</a>, <a
-href="/projekty-domow/nowoczesne/" style="color: #cc1000;">projekty domów nowoczesnych</a>, <a
+href="/projekty-domow/blizniaki/" style="color: #ed1d24;">projekty domów bliźniaczych</a>, <a
+href="/projekty-domow/nowoczesne/" style="color: #ed1d24;">projekty domów nowoczesnych</a>, <a
 href="/projekty-domow/na-waska-dzialke/">na wąską działkę</a>, parterowych i piętrowych. Polecamy
-także <a href="/projekty-domow/tanie-w-budowie/" style="color: #cc1000;">domy tanie w budowie</a> oraz
-<a href="/projekty-domow/z-plaskim-dachem/" style="color: #cc1000;">z płaskim dachem</a>. Wszystkie
+także <a href="/projekty-domow/tanie-w-budowie/" style="color: #ed1d24;">domy tanie w budowie</a> oraz
+<a href="/projekty-domow/z-plaskim-dachem/" style="color: #ed1d24;">z płaskim dachem</a>. Wszystkie
 dostosowane są do polskich warunków budowlanych. Udostępniamy także wzory małych obiektów, ponieważ
 wiemy jak ważna jest obecnie oszczędność i funkcjonalność. Posiadamy wieloletnie doświadczenie we
 współpracy z inwestorami budującymi tego typu obiekty, propozycje zostały więc opracowane na podstawie
@@ -16691,7 +16691,7 @@ wytycznych ekspertów. Projekty domów gotowych do realizacji to wygodne i prakt
 szczególnie dla osób, które nie zetknęły się wcześniej z tą branżą. Mogą w ten sposób nabyć wzór, który
 jest uniwersalny i sprawdzony w praktyce. Mamy świadomość tego, iż wybór odpowiedniej propozycji to
 poważna decyzja, dlatego chętnie służymy Państwu radą. Wszystkie nasze <a href="/projekty-domow/"
-style="color: #cc1000;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
+style="color: #ed1d24;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
 najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczekiwania.
 </p>
 <h3>Najpopularniejsze typy domów</h3>
@@ -16700,7 +16700,7 @@ najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczeki
 takiego rozwiązania jest umieszczenie stref mieszkalnych, dziennej i nocnej, na jednym poziomie -
 parterze, bez konieczności budowania schodów i stropu. Warto także podkreślić bezpośredni kontakt z
 otaczającą budynek zielenią, dostępną niemal "za ścianą". Małe <a href="/projekty-domow/parterowe/"
-style="color: #cc1000;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
+style="color: #ed1d24;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
 propozycji na rynku. Koszt budowy jak i ich użytkowania zaliczyć można do najniższych. Rozległe
 rezydencje parterowe natomiast, najbardziej przypominają nowoczesne siedliska. W naszej ofercie projekty
 domów parterowych traktowane są wyjątkowo - bez trudu znajdą tutaj Państwo coś dla siebie. Od
@@ -16714,9 +16714,9 @@ różnorodne kształty. Od typowych, prostych konstrukcji, przykrytych dwuspadow
 finezyjne bryły ozdobione licznymi detalami architektonicznymi i bazujące na nowoczesnych trendach.
 Przygotowane przez nas budynki to wspaniała propozycja dla typowych rodzin 2+2 i 2+3. Ich funkcjonalność
 została specjalnie zaprojektowana dla wygody kilku użytkowników, którzy spędzają czas w swoim domu. <a
-href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #cc1000;">Gotowe projekty domów z
+href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #ed1d24;">Gotowe projekty domów z
 poddaszem użytkowym</a> stanowią w naszej ofercie najliczniejszą grupę koncepcji, które wcielamy w
-życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #cc1000;">Zobacz dodatki</a>
+życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #ed1d24;">Zobacz dodatki</a>
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Projekty domów
 jednorodzinnych Studio Atrium</h2>
@@ -16739,7 +16739,7 @@ Atrium cieszy się bardzo dobrą opinią wśród klientów. Nasi klienci w recen
 wysoką jakość obsługi, solidność projektów, oraz indywidualne podejście do potrzeb inwestorów. Ponadto
 jako firma zdobyliśmy uznanie w branży, m.in. poprzez wyróżnienia takie jak Konsumencki Lider Jakości,
 co świadczy o dbałości o klienta. Jeżeli nadal masz wątpliwości, już dziś <a
-href="https://www.studioatrium.pl/kontakt/" style="color: #cc1000;">skontaktuj się z naszym
+href="https://www.studioatrium.pl/kontakt/" style="color: #ed1d24;">skontaktuj się z naszym
 konsultantem</a> lub odwiedź naszą siedzibę mieszczącą się w Bielsku-Białej przy ulicy J.
 Malczewskiego 1. Jesteśmy otwarci dla Ciebie od poniedziałku do piątku w godzinach od 8:00 do 17:00.
 Skontaktuj się z nami i poznaj przyjemność pracy ze specjalistami!</p>
@@ -16794,7 +16794,7 @@ możemy zaoferować! Twój wymarzony dom zaczyna się od pierwszego kliknięcia.
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Odwiedź nasze
 forum dyskusyjne</h2>
 <p>Nasza strona internetowa zawiera zakładkę <a href="https://www.studioatrium.pl/forum/"
-style="color: #cc1000;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
+style="color: #ed1d24;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
 architektonicznego wymieniają się swoimi poglądami oraz przemyśleniami w tej dziedzinie. To świetna
 okazja, by wymienić się doświadczeniami; co więcej, w dyskusjach poruszanych na forum biorą udział nasi
 eksperci, którzy otwarcie dzielą się swoim doświadczeniem. Forum na stronie internetowej Studio Atrium
@@ -16858,7 +16858,7 @@ konkretny, spełniający wszelkie oczekiwania Inwestora.</p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Nasz katalog
 projektów domów - co w nim znajdziesz?</h2>
 <p>Katalog projektów to narzędzie przydatne dla interesantów, chętnych pogłębić swoją wiedzę. <a
-href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #cc1000;">Nasz darmowy
+href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #ed1d24;">Nasz darmowy
 katalog</a> prezentuje liczne propozycje projektów. Znajdziesz w nim projekty domów parterowych i
 piętrowych, projekty z przystosowaniem do różnych typów działek, projekty garaży wolnostojących oraz
 inne wyselekcjonowane projekty domów. Jeżeli chcesz zobaczyć więcej projektów oferowanych przez Studio
@@ -16900,7 +16900,7 @@ antresolą)</p>
 <p>• W zależności od stylu (nowoczesne, w stylu stodoły, regionalne beskidzkie, nowoczesne beskidzkie, z
 płaskim dachem, rezydencje dla zamożnych)</p>
 <h3 style="font-size:2.4rem;">Projekty domów piętrowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #ed1d24;">Projekty domów
 piętrowych</a> wyróżniają się świetnym zagospodarowaniem wnętrza, które z łatwością można podzielić
 na strefę dzienną, składającą się z kuchni, salonu i innych pomieszczeń integralnych oraz strefę nocną
 dedykowaną sypialniom, łazienkom i różnego rodzaju gabinetom domowym. Domy składające się z więcej niż
@@ -16910,7 +16910,7 @@ stanowią podstawę do ciekawej aranżacji bryły. Takie rozwiązanie świetnie 
 rodzin z dziećmi, łącząc estetykę i komfort w jednej bryle. Warto podkreślić, że domy piętrowe idealnie
 nadają się w przypadku mniejszej działki - takie rozwiązanie pozwala zaoszczędzić przestrzeń.</p>
 <h3 style="font-size:2.4rem;">Projekty domów parterowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #ed1d24;">Projekty domów
 parterowych</a> stanowią idealne rozwiązanie dla klientów ceniących sobie wygodę, estetykę oraz
 funkcjonalność. Głównym atutem tego typu projektów jest brak schodów. Jedna kondygnacja, z której składa
 się cała bryła może okazać się idealnym rozwiązaniem dla rodzin z małymi dziećmi lub dla osób z
@@ -16931,7 +16931,7 @@ idealnie sprawdza się jako dodatkowy składzik lub pomieszczenie gospodarcze. W
 parterowy z poddaszem to świetna alternatywa dla Inwestorów, którzy chcą rozłożyć budowę domu na etapy,
 ponieważ poddasze nie musi być wykańczane od razu.</p>
 <h3 style="font-size:2.4rem;">Projekty domów bliźniaczych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #ed1d24;">Projekty domów
 bliźniaczych</a> to charakterystyczne budowle, które wyróżniają się podziałem bryły na dwa oddzielne
 i niezależne od siebie segmenty. Konstrukcja składa się z jednego wspólnego dachu oraz murów
 zewnętrznych, natomiast zawiera dwa oddzielne i niezależne wejścia do mieszkania. Ta alternatywa jest
@@ -16948,7 +16948,7 @@ nasi projektanci uwzględnili w projektach domów takie rozwiązania jak systemy
 energii odnawialnej, systemy zarządzania energią oraz wiele innych zastosowań, definiujących projekty
 Studio Atrium jako energooszczędne.</p>
 <h3 style="font-size:2.4rem;">Projekty domów nowoczesnych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #ed1d24;">Projekty domów
 nowoczesnych</a> wyróżniają się uwzględnieniem minimalizmu i prostoty. W tym celu ogranicza się
 ozdoby i dekoracje do minimum, co sprawia, że cena wybudowania takiego domu staje się atrakcyjniejsza.
 Zastosowanie dużych przeszklonych okien wpuszcza do domu naturalne światło, co pozwala zaoszczędzić
@@ -16956,7 +16956,7 @@ energię elektryczną. Inwestorzy często decydują się również na zastosowan
 cegły, aby dom był bardziej przytulny. Wyżej opisane elementy to przykładowe detale, którymi cechują się
 projekty domów nowoczesnych.</p>
 <h3 style="font-size:2.4rem;">Projekty w stylu stodoły</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #cc1000;">Projekty
+<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #ed1d24;">Projekty
 domów w stylu stodoły</a>, czyli tzw. Barn House, coraz częściej stają się obiektem zainteresowań
 Inwestorów. Charakteryzują się prostokątną bryłą budynku oraz wielkoformatowymi oknami. Są to typy domów
 z dachem dwuspadowym. Wnętrza cechują wysokie sufity i otwarte przestrzenie z uwzględnieniem antresoli
@@ -16965,7 +16965,7 @@ takich jak drewniane bele i stara cegła, w połączeniu z nowoczesnymi metalowy
 wykończeniami. </p>
 <h3 style="font-size:2.4rem;">Projekty domów z poddaszem użytkowym</h3>
 <p><a href="https://www.studioatrium.pl/projekty-domow/z-poddaszem-uzytkowym/"
-style="color: #cc1000;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
+style="color: #ed1d24;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
 wszystkim decyzję o zagospodarowaniu poddasza podejmuje Inwestor, co więcej poddasze użytkowe to
 możliwość podzielenia wykończenia domu na etapy. Poddasze to przestrzeń wypełniona licznymi skosami,
 które przy odpowiedniej aranżacji kreują przytulną przestrzeń dla mieszkańców. Zastosowanie tego rodzaju
@@ -16987,7 +16987,7 @@ na dłuższy okres czasu.</p>
 <p>Bardzo często zdarza się, że najistotniejszym dla inwestora jest mały metraż działki, który automatycznie
 uniemożliwia wybudowanie pewnych brył. Dla specjalistów Studio Atrium wąska działka nie stanowi
 ograniczenia a jedynie podstawę do tworzenia kreatywnych rozwiązań dla klienta. <a
-href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #cc1000;">Projekty
+href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #ed1d24;">Projekty
 domów na wąską działkę</a> najczęściej skupiają się na maksymalnym wykorzystaniu działki poprzez
 zastosowanie podłużnej, prostokątnej bryły, tak aby jak najbardziej wykorzystać ograniczoną
 powierzchnię. W przypadku wąskich działek idealnie sprawdzają się domy piętrowe lub takie z poddaszem
@@ -16995,7 +16995,7 @@ użytkowym.</p>
 <h3 style="font-size:2.4rem;">Projekty domów z kosztorysem</h3>
 <p>Decydując się na zakup projektu domu z kosztorysem, inwestor nabywa gotowe plany budowlane z
 uwzględnieniem szczegółowych informacji <a
-href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #cc1000;">kosztów
+href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #ed1d24;">kosztów
 budowy domów</a>. Takie rozwiązanie świetnie sprawdza się w przypadku Inwestorów, którym zależy na
 dokładnej kontroli budżetu. Jest to również możliwość do lepszego rozplanowania etapów budowy i płynnego
 zarządzania zapleczem finansowym. Jeżeli budujesz dom po raz pierwszy, masz ograniczony budżet lub
@@ -17004,7 +17004,7 @@ kosztorysem jest odpowiednia dla Ciebie. Aktualna cena to 750 zł za szczegóło
 <h3 style="font-size:2.4rem;">Projekty małych domów</h3>
 <p>Małe domy wyróżnia nieduży metraż; dlatego istotne jest uwzględnienie w projekcie praktycznych zastosowań
 przy maksymalnym zagospodarowaniu powierzchni użytkowej. <a
-href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #cc1000;">Projekty małych
+href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #ed1d24;">Projekty małych
 domów</a> to idealne rozwiązanie dla par lub osób w podeszłym wieku; co więcej takie projekty
 idealnie sprawdzają się w przypadku ograniczeń związanych z małym metrażem działki. Jeżeli cenisz sobie
 praktyczność połączoną z przytulnymi aranżacjami wnętrz, projekt małego domu jest właśnie dla Ciebie.
@@ -17017,7 +17017,7 @@ wielopoziomowych układów kondygnacji, aby w pełni wykorzystać dostępną prz
 umożliwia ulokowanie parteru lub piwnicy w częściowym zagłębieniu w skarpie, natomiast wyższe
 kondygnacje są wysuwane. Dom ulokowany na wzniesieniu oferuje panoramiczne widoki, co wpływa na jego
 atrakcyjność. <a href="https://www.studioatrium.pl/projekty-domow/na-skarpe/"
-style="color: #cc1000;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
+style="color: #ed1d24;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
 połączeniu z zastosowaniem dużych okien stanowi energooszczędne rozwiązanie doświetlające wnętrze domu.
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Co należy
@@ -17188,11 +17188,11 @@ href="/konkurs/fotograficzny.html">fotokonkursie</a> z nagrodami.</p>
 <div>
 <p>Z przyjemnością prezentujemy Państwu gotowe projekty domów. Przygotowali je doświadczeni specjaliści,
 którzy tworzą personel naszej firmy. W ofercie znajdą Państwo między innymi <a
-href="/projekty-domow/blizniaki/" style="color: #cc1000;">projekty domów bliźniaczych</a>, <a
-href="/projekty-domow/nowoczesne/" style="color: #cc1000;">projekty domów nowoczesnych</a>, <a
+href="/projekty-domow/blizniaki/" style="color: #ed1d24;">projekty domów bliźniaczych</a>, <a
+href="/projekty-domow/nowoczesne/" style="color: #ed1d24;">projekty domów nowoczesnych</a>, <a
 href="/projekty-domow/na-waska-dzialke/">na wąską działkę</a>, parterowych i piętrowych. Polecamy
-także <a href="/projekty-domow/tanie-w-budowie/" style="color: #cc1000;">domy tanie w budowie</a> oraz
-<a href="/projekty-domow/z-plaskim-dachem/" style="color: #cc1000;">z płaskim dachem</a>. Wszystkie
+także <a href="/projekty-domow/tanie-w-budowie/" style="color: #ed1d24;">domy tanie w budowie</a> oraz
+<a href="/projekty-domow/z-plaskim-dachem/" style="color: #ed1d24;">z płaskim dachem</a>. Wszystkie
 dostosowane są do polskich warunków budowlanych. Udostępniamy także wzory małych obiektów, ponieważ
 wiemy jak ważna jest obecnie oszczędność i funkcjonalność. Posiadamy wieloletnie doświadczenie we
 współpracy z inwestorami budującymi tego typu obiekty, propozycje zostały więc opracowane na podstawie
@@ -17200,7 +17200,7 @@ wytycznych ekspertów. Projekty domów gotowych do realizacji to wygodne i prakt
 szczególnie dla osób, które nie zetknęły się wcześniej z tą branżą. Mogą w ten sposób nabyć wzór, który
 jest uniwersalny i sprawdzony w praktyce. Mamy świadomość tego, iż wybór odpowiedniej propozycji to
 poważna decyzja, dlatego chętnie służymy Państwu radą. Wszystkie nasze <a href="/projekty-domow/"
-style="color: #cc1000;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
+style="color: #ed1d24;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
 najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczekiwania.
 </p>
 <h3>Najpopularniejsze typy domów</h3>
@@ -17209,7 +17209,7 @@ najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczeki
 takiego rozwiązania jest umieszczenie stref mieszkalnych, dziennej i nocnej, na jednym poziomie -
 parterze, bez konieczności budowania schodów i stropu. Warto także podkreślić bezpośredni kontakt z
 otaczającą budynek zielenią, dostępną niemal "za ścianą". Małe <a href="/projekty-domow/parterowe/"
-style="color: #cc1000;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
+style="color: #ed1d24;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
 propozycji na rynku. Koszt budowy jak i ich użytkowania zaliczyć można do najniższych. Rozległe
 rezydencje parterowe natomiast, najbardziej przypominają nowoczesne siedliska. W naszej ofercie projekty
 domów parterowych traktowane są wyjątkowo - bez trudu znajdą tutaj Państwo coś dla siebie. Od
@@ -17223,9 +17223,9 @@ różnorodne kształty. Od typowych, prostych konstrukcji, przykrytych dwuspadow
 finezyjne bryły ozdobione licznymi detalami architektonicznymi i bazujące na nowoczesnych trendach.
 Przygotowane przez nas budynki to wspaniała propozycja dla typowych rodzin 2+2 i 2+3. Ich funkcjonalność
 została specjalnie zaprojektowana dla wygody kilku użytkowników, którzy spędzają czas w swoim domu. <a
-href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #cc1000;">Gotowe projekty domów z
+href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #ed1d24;">Gotowe projekty domów z
 poddaszem użytkowym</a> stanowią w naszej ofercie najliczniejszą grupę koncepcji, które wcielamy w
-życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #cc1000;">Zobacz dodatki</a>
+życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #ed1d24;">Zobacz dodatki</a>
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Projekty domów
 jednorodzinnych Studio Atrium</h2>
@@ -17248,7 +17248,7 @@ Atrium cieszy się bardzo dobrą opinią wśród klientów. Nasi klienci w recen
 wysoką jakość obsługi, solidność projektów, oraz indywidualne podejście do potrzeb inwestorów. Ponadto
 jako firma zdobyliśmy uznanie w branży, m.in. poprzez wyróżnienia takie jak Konsumencki Lider Jakości,
 co świadczy o dbałości o klienta. Jeżeli nadal masz wątpliwości, już dziś <a
-href="https://www.studioatrium.pl/kontakt/" style="color: #cc1000;">skontaktuj się z naszym
+href="https://www.studioatrium.pl/kontakt/" style="color: #ed1d24;">skontaktuj się z naszym
 konsultantem</a> lub odwiedź naszą siedzibę mieszczącą się w Bielsku-Białej przy ulicy J.
 Malczewskiego 1. Jesteśmy otwarci dla Ciebie od poniedziałku do piątku w godzinach od 8:00 do 17:00.
 Skontaktuj się z nami i poznaj przyjemność pracy ze specjalistami!</p>
@@ -17303,7 +17303,7 @@ możemy zaoferować! Twój wymarzony dom zaczyna się od pierwszego kliknięcia.
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Odwiedź nasze
 forum dyskusyjne</h2>
 <p>Nasza strona internetowa zawiera zakładkę <a href="https://www.studioatrium.pl/forum/"
-style="color: #cc1000;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
+style="color: #ed1d24;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
 architektonicznego wymieniają się swoimi poglądami oraz przemyśleniami w tej dziedzinie. To świetna
 okazja, by wymienić się doświadczeniami; co więcej, w dyskusjach poruszanych na forum biorą udział nasi
 eksperci, którzy otwarcie dzielą się swoim doświadczeniem. Forum na stronie internetowej Studio Atrium
@@ -17367,7 +17367,7 @@ konkretny, spełniający wszelkie oczekiwania Inwestora.</p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Nasz katalog
 projektów domów - co w nim znajdziesz?</h2>
 <p>Katalog projektów to narzędzie przydatne dla interesantów, chętnych pogłębić swoją wiedzę. <a
-href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #cc1000;">Nasz darmowy
+href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #ed1d24;">Nasz darmowy
 katalog</a> prezentuje liczne propozycje projektów. Znajdziesz w nim projekty domów parterowych i
 piętrowych, projekty z przystosowaniem do różnych typów działek, projekty garaży wolnostojących oraz
 inne wyselekcjonowane projekty domów. Jeżeli chcesz zobaczyć więcej projektów oferowanych przez Studio
@@ -17409,7 +17409,7 @@ antresolą)</p>
 <p>• W zależności od stylu (nowoczesne, w stylu stodoły, regionalne beskidzkie, nowoczesne beskidzkie, z
 płaskim dachem, rezydencje dla zamożnych)</p>
 <h3 style="font-size:2.4rem;">Projekty domów piętrowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #ed1d24;">Projekty domów
 piętrowych</a> wyróżniają się świetnym zagospodarowaniem wnętrza, które z łatwością można podzielić
 na strefę dzienną, składającą się z kuchni, salonu i innych pomieszczeń integralnych oraz strefę nocną
 dedykowaną sypialniom, łazienkom i różnego rodzaju gabinetom domowym. Domy składające się z więcej niż
@@ -17419,7 +17419,7 @@ stanowią podstawę do ciekawej aranżacji bryły. Takie rozwiązanie świetnie 
 rodzin z dziećmi, łącząc estetykę i komfort w jednej bryle. Warto podkreślić, że domy piętrowe idealnie
 nadają się w przypadku mniejszej działki - takie rozwiązanie pozwala zaoszczędzić przestrzeń.</p>
 <h3 style="font-size:2.4rem;">Projekty domów parterowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #ed1d24;">Projekty domów
 parterowych</a> stanowią idealne rozwiązanie dla klientów ceniących sobie wygodę, estetykę oraz
 funkcjonalność. Głównym atutem tego typu projektów jest brak schodów. Jedna kondygnacja, z której składa
 się cała bryła może okazać się idealnym rozwiązaniem dla rodzin z małymi dziećmi lub dla osób z
@@ -17440,7 +17440,7 @@ idealnie sprawdza się jako dodatkowy składzik lub pomieszczenie gospodarcze. W
 parterowy z poddaszem to świetna alternatywa dla Inwestorów, którzy chcą rozłożyć budowę domu na etapy,
 ponieważ poddasze nie musi być wykańczane od razu.</p>
 <h3 style="font-size:2.4rem;">Projekty domów bliźniaczych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #ed1d24;">Projekty domów
 bliźniaczych</a> to charakterystyczne budowle, które wyróżniają się podziałem bryły na dwa oddzielne
 i niezależne od siebie segmenty. Konstrukcja składa się z jednego wspólnego dachu oraz murów
 zewnętrznych, natomiast zawiera dwa oddzielne i niezależne wejścia do mieszkania. Ta alternatywa jest
@@ -17457,7 +17457,7 @@ nasi projektanci uwzględnili w projektach domów takie rozwiązania jak systemy
 energii odnawialnej, systemy zarządzania energią oraz wiele innych zastosowań, definiujących projekty
 Studio Atrium jako energooszczędne.</p>
 <h3 style="font-size:2.4rem;">Projekty domów nowoczesnych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #ed1d24;">Projekty domów
 nowoczesnych</a> wyróżniają się uwzględnieniem minimalizmu i prostoty. W tym celu ogranicza się
 ozdoby i dekoracje do minimum, co sprawia, że cena wybudowania takiego domu staje się atrakcyjniejsza.
 Zastosowanie dużych przeszklonych okien wpuszcza do domu naturalne światło, co pozwala zaoszczędzić
@@ -17465,7 +17465,7 @@ energię elektryczną. Inwestorzy często decydują się również na zastosowan
 cegły, aby dom był bardziej przytulny. Wyżej opisane elementy to przykładowe detale, którymi cechują się
 projekty domów nowoczesnych.</p>
 <h3 style="font-size:2.4rem;">Projekty w stylu stodoły</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #cc1000;">Projekty
+<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #ed1d24;">Projekty
 domów w stylu stodoły</a>, czyli tzw. Barn House, coraz częściej stają się obiektem zainteresowań
 Inwestorów. Charakteryzują się prostokątną bryłą budynku oraz wielkoformatowymi oknami. Są to typy domów
 z dachem dwuspadowym. Wnętrza cechują wysokie sufity i otwarte przestrzenie z uwzględnieniem antresoli
@@ -17474,7 +17474,7 @@ takich jak drewniane bele i stara cegła, w połączeniu z nowoczesnymi metalowy
 wykończeniami. </p>
 <h3 style="font-size:2.4rem;">Projekty domów z poddaszem użytkowym</h3>
 <p><a href="https://www.studioatrium.pl/projekty-domow/z-poddaszem-uzytkowym/"
-style="color: #cc1000;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
+style="color: #ed1d24;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
 wszystkim decyzję o zagospodarowaniu poddasza podejmuje Inwestor, co więcej poddasze użytkowe to
 możliwość podzielenia wykończenia domu na etapy. Poddasze to przestrzeń wypełniona licznymi skosami,
 które przy odpowiedniej aranżacji kreują przytulną przestrzeń dla mieszkańców. Zastosowanie tego rodzaju
@@ -17496,7 +17496,7 @@ na dłuższy okres czasu.</p>
 <p>Bardzo często zdarza się, że najistotniejszym dla inwestora jest mały metraż działki, który automatycznie
 uniemożliwia wybudowanie pewnych brył. Dla specjalistów Studio Atrium wąska działka nie stanowi
 ograniczenia a jedynie podstawę do tworzenia kreatywnych rozwiązań dla klienta. <a
-href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #cc1000;">Projekty
+href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #ed1d24;">Projekty
 domów na wąską działkę</a> najczęściej skupiają się na maksymalnym wykorzystaniu działki poprzez
 zastosowanie podłużnej, prostokątnej bryły, tak aby jak najbardziej wykorzystać ograniczoną
 powierzchnię. W przypadku wąskich działek idealnie sprawdzają się domy piętrowe lub takie z poddaszem
@@ -17504,7 +17504,7 @@ użytkowym.</p>
 <h3 style="font-size:2.4rem;">Projekty domów z kosztorysem</h3>
 <p>Decydując się na zakup projektu domu z kosztorysem, inwestor nabywa gotowe plany budowlane z
 uwzględnieniem szczegółowych informacji <a
-href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #cc1000;">kosztów
+href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #ed1d24;">kosztów
 budowy domów</a>. Takie rozwiązanie świetnie sprawdza się w przypadku Inwestorów, którym zależy na
 dokładnej kontroli budżetu. Jest to również możliwość do lepszego rozplanowania etapów budowy i płynnego
 zarządzania zapleczem finansowym. Jeżeli budujesz dom po raz pierwszy, masz ograniczony budżet lub
@@ -17513,7 +17513,7 @@ kosztorysem jest odpowiednia dla Ciebie. Aktualna cena to 750 zł za szczegóło
 <h3 style="font-size:2.4rem;">Projekty małych domów</h3>
 <p>Małe domy wyróżnia nieduży metraż; dlatego istotne jest uwzględnienie w projekcie praktycznych zastosowań
 przy maksymalnym zagospodarowaniu powierzchni użytkowej. <a
-href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #cc1000;">Projekty małych
+href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #ed1d24;">Projekty małych
 domów</a> to idealne rozwiązanie dla par lub osób w podeszłym wieku; co więcej takie projekty
 idealnie sprawdzają się w przypadku ograniczeń związanych z małym metrażem działki. Jeżeli cenisz sobie
 praktyczność połączoną z przytulnymi aranżacjami wnętrz, projekt małego domu jest właśnie dla Ciebie.
@@ -17526,7 +17526,7 @@ wielopoziomowych układów kondygnacji, aby w pełni wykorzystać dostępną prz
 umożliwia ulokowanie parteru lub piwnicy w częściowym zagłębieniu w skarpie, natomiast wyższe
 kondygnacje są wysuwane. Dom ulokowany na wzniesieniu oferuje panoramiczne widoki, co wpływa na jego
 atrakcyjność. <a href="https://www.studioatrium.pl/projekty-domow/na-skarpe/"
-style="color: #cc1000;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
+style="color: #ed1d24;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
 połączeniu z zastosowaniem dużych okien stanowi energooszczędne rozwiązanie doświetlające wnętrze domu.
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Co należy
@@ -17691,11 +17691,11 @@ poddaszem{elseif $_item.object.params_general|isGroundFloor:true}parterowego
 <div>
 <p>Z przyjemnością prezentujemy Państwu gotowe projekty domów. Przygotowali je doświadczeni specjaliści,
 którzy tworzą personel naszej firmy. W ofercie znajdą Państwo między innymi <a
-href="/projekty-domow/blizniaki/" style="color: #cc1000;">projekty domów bliźniaczych</a>, <a
-href="/projekty-domow/nowoczesne/" style="color: #cc1000;">projekty domów nowoczesnych</a>, <a
+href="/projekty-domow/blizniaki/" style="color: #ed1d24;">projekty domów bliźniaczych</a>, <a
+href="/projekty-domow/nowoczesne/" style="color: #ed1d24;">projekty domów nowoczesnych</a>, <a
 href="/projekty-domow/na-waska-dzialke/">na wąską działkę</a>, parterowych i piętrowych. Polecamy
-także <a href="/projekty-domow/tanie-w-budowie/" style="color: #cc1000;">domy tanie w budowie</a> oraz
-<a href="/projekty-domow/z-plaskim-dachem/" style="color: #cc1000;">z płaskim dachem</a>. Wszystkie
+także <a href="/projekty-domow/tanie-w-budowie/" style="color: #ed1d24;">domy tanie w budowie</a> oraz
+<a href="/projekty-domow/z-plaskim-dachem/" style="color: #ed1d24;">z płaskim dachem</a>. Wszystkie
 dostosowane są do polskich warunków budowlanych. Udostępniamy także wzory małych obiektów, ponieważ
 wiemy jak ważna jest obecnie oszczędność i funkcjonalność. Posiadamy wieloletnie doświadczenie we
 współpracy z inwestorami budującymi tego typu obiekty, propozycje zostały więc opracowane na podstawie
@@ -17703,7 +17703,7 @@ wytycznych ekspertów. Projekty domów gotowych do realizacji to wygodne i prakt
 szczególnie dla osób, które nie zetknęły się wcześniej z tą branżą. Mogą w ten sposób nabyć wzór, który
 jest uniwersalny i sprawdzony w praktyce. Mamy świadomość tego, iż wybór odpowiedniej propozycji to
 poważna decyzja, dlatego chętnie służymy Państwu radą. Wszystkie nasze <a href="/projekty-domow/"
-style="color: #cc1000;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
+style="color: #ed1d24;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
 najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczekiwania.
 </p>
 <h3>Najpopularniejsze typy domów</h3>
@@ -17712,7 +17712,7 @@ najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczeki
 takiego rozwiązania jest umieszczenie stref mieszkalnych, dziennej i nocnej, na jednym poziomie -
 parterze, bez konieczności budowania schodów i stropu. Warto także podkreślić bezpośredni kontakt z
 otaczającą budynek zielenią, dostępną niemal "za ścianą". Małe <a href="/projekty-domow/parterowe/"
-style="color: #cc1000;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
+style="color: #ed1d24;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
 propozycji na rynku. Koszt budowy jak i ich użytkowania zaliczyć można do najniższych. Rozległe
 rezydencje parterowe natomiast, najbardziej przypominają nowoczesne siedliska. W naszej ofercie projekty
 domów parterowych traktowane są wyjątkowo - bez trudu znajdą tutaj Państwo coś dla siebie. Od
@@ -17726,9 +17726,9 @@ różnorodne kształty. Od typowych, prostych konstrukcji, przykrytych dwuspadow
 finezyjne bryły ozdobione licznymi detalami architektonicznymi i bazujące na nowoczesnych trendach.
 Przygotowane przez nas budynki to wspaniała propozycja dla typowych rodzin 2+2 i 2+3. Ich funkcjonalność
 została specjalnie zaprojektowana dla wygody kilku użytkowników, którzy spędzają czas w swoim domu. <a
-href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #cc1000;">Gotowe projekty domów z
+href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #ed1d24;">Gotowe projekty domów z
 poddaszem użytkowym</a> stanowią w naszej ofercie najliczniejszą grupę koncepcji, które wcielamy w
-życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #cc1000;">Zobacz dodatki</a>
+życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #ed1d24;">Zobacz dodatki</a>
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Projekty domów
 jednorodzinnych Studio Atrium</h2>
@@ -17751,7 +17751,7 @@ Atrium cieszy się bardzo dobrą opinią wśród klientów. Nasi klienci w recen
 wysoką jakość obsługi, solidność projektów, oraz indywidualne podejście do potrzeb inwestorów. Ponadto
 jako firma zdobyliśmy uznanie w branży, m.in. poprzez wyróżnienia takie jak Konsumencki Lider Jakości,
 co świadczy o dbałości o klienta. Jeżeli nadal masz wątpliwości, już dziś <a
-href="https://www.studioatrium.pl/kontakt/" style="color: #cc1000;">skontaktuj się z naszym
+href="https://www.studioatrium.pl/kontakt/" style="color: #ed1d24;">skontaktuj się z naszym
 konsultantem</a> lub odwiedź naszą siedzibę mieszczącą się w Bielsku-Białej przy ulicy J.
 Malczewskiego 1. Jesteśmy otwarci dla Ciebie od poniedziałku do piątku w godzinach od 8:00 do 17:00.
 Skontaktuj się z nami i poznaj przyjemność pracy ze specjalistami!</p>
@@ -17806,7 +17806,7 @@ możemy zaoferować! Twój wymarzony dom zaczyna się od pierwszego kliknięcia.
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Odwiedź nasze
 forum dyskusyjne</h2>
 <p>Nasza strona internetowa zawiera zakładkę <a href="https://www.studioatrium.pl/forum/"
-style="color: #cc1000;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
+style="color: #ed1d24;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
 architektonicznego wymieniają się swoimi poglądami oraz przemyśleniami w tej dziedzinie. To świetna
 okazja, by wymienić się doświadczeniami; co więcej, w dyskusjach poruszanych na forum biorą udział nasi
 eksperci, którzy otwarcie dzielą się swoim doświadczeniem. Forum na stronie internetowej Studio Atrium
@@ -17870,7 +17870,7 @@ konkretny, spełniający wszelkie oczekiwania Inwestora.</p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Nasz katalog
 projektów domów - co w nim znajdziesz?</h2>
 <p>Katalog projektów to narzędzie przydatne dla interesantów, chętnych pogłębić swoją wiedzę. <a
-href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #cc1000;">Nasz darmowy
+href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #ed1d24;">Nasz darmowy
 katalog</a> prezentuje liczne propozycje projektów. Znajdziesz w nim projekty domów parterowych i
 piętrowych, projekty z przystosowaniem do różnych typów działek, projekty garaży wolnostojących oraz
 inne wyselekcjonowane projekty domów. Jeżeli chcesz zobaczyć więcej projektów oferowanych przez Studio
@@ -17912,7 +17912,7 @@ antresolą)</p>
 <p>• W zależności od stylu (nowoczesne, w stylu stodoły, regionalne beskidzkie, nowoczesne beskidzkie, z
 płaskim dachem, rezydencje dla zamożnych)</p>
 <h3 style="font-size:2.4rem;">Projekty domów piętrowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #ed1d24;">Projekty domów
 piętrowych</a> wyróżniają się świetnym zagospodarowaniem wnętrza, które z łatwością można podzielić
 na strefę dzienną, składającą się z kuchni, salonu i innych pomieszczeń integralnych oraz strefę nocną
 dedykowaną sypialniom, łazienkom i różnego rodzaju gabinetom domowym. Domy składające się z więcej niż
@@ -17922,7 +17922,7 @@ stanowią podstawę do ciekawej aranżacji bryły. Takie rozwiązanie świetnie 
 rodzin z dziećmi, łącząc estetykę i komfort w jednej bryle. Warto podkreślić, że domy piętrowe idealnie
 nadają się w przypadku mniejszej działki - takie rozwiązanie pozwala zaoszczędzić przestrzeń.</p>
 <h3 style="font-size:2.4rem;">Projekty domów parterowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #ed1d24;">Projekty domów
 parterowych</a> stanowią idealne rozwiązanie dla klientów ceniących sobie wygodę, estetykę oraz
 funkcjonalność. Głównym atutem tego typu projektów jest brak schodów. Jedna kondygnacja, z której składa
 się cała bryła może okazać się idealnym rozwiązaniem dla rodzin z małymi dziećmi lub dla osób z
@@ -17943,7 +17943,7 @@ idealnie sprawdza się jako dodatkowy składzik lub pomieszczenie gospodarcze. W
 parterowy z poddaszem to świetna alternatywa dla Inwestorów, którzy chcą rozłożyć budowę domu na etapy,
 ponieważ poddasze nie musi być wykańczane od razu.</p>
 <h3 style="font-size:2.4rem;">Projekty domów bliźniaczych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #ed1d24;">Projekty domów
 bliźniaczych</a> to charakterystyczne budowle, które wyróżniają się podziałem bryły na dwa oddzielne
 i niezależne od siebie segmenty. Konstrukcja składa się z jednego wspólnego dachu oraz murów
 zewnętrznych, natomiast zawiera dwa oddzielne i niezależne wejścia do mieszkania. Ta alternatywa jest
@@ -17960,7 +17960,7 @@ nasi projektanci uwzględnili w projektach domów takie rozwiązania jak systemy
 energii odnawialnej, systemy zarządzania energią oraz wiele innych zastosowań, definiujących projekty
 Studio Atrium jako energooszczędne.</p>
 <h3 style="font-size:2.4rem;">Projekty domów nowoczesnych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #ed1d24;">Projekty domów
 nowoczesnych</a> wyróżniają się uwzględnieniem minimalizmu i prostoty. W tym celu ogranicza się
 ozdoby i dekoracje do minimum, co sprawia, że cena wybudowania takiego domu staje się atrakcyjniejsza.
 Zastosowanie dużych przeszklonych okien wpuszcza do domu naturalne światło, co pozwala zaoszczędzić
@@ -17968,7 +17968,7 @@ energię elektryczną. Inwestorzy często decydują się również na zastosowan
 cegły, aby dom był bardziej przytulny. Wyżej opisane elementy to przykładowe detale, którymi cechują się
 projekty domów nowoczesnych.</p>
 <h3 style="font-size:2.4rem;">Projekty w stylu stodoły</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #cc1000;">Projekty
+<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #ed1d24;">Projekty
 domów w stylu stodoły</a>, czyli tzw. Barn House, coraz częściej stają się obiektem zainteresowań
 Inwestorów. Charakteryzują się prostokątną bryłą budynku oraz wielkoformatowymi oknami. Są to typy domów
 z dachem dwuspadowym. Wnętrza cechują wysokie sufity i otwarte przestrzenie z uwzględnieniem antresoli
@@ -17977,7 +17977,7 @@ takich jak drewniane bele i stara cegła, w połączeniu z nowoczesnymi metalowy
 wykończeniami. </p>
 <h3 style="font-size:2.4rem;">Projekty domów z poddaszem użytkowym</h3>
 <p><a href="https://www.studioatrium.pl/projekty-domow/z-poddaszem-uzytkowym/"
-style="color: #cc1000;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
+style="color: #ed1d24;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
 wszystkim decyzję o zagospodarowaniu poddasza podejmuje Inwestor, co więcej poddasze użytkowe to
 możliwość podzielenia wykończenia domu na etapy. Poddasze to przestrzeń wypełniona licznymi skosami,
 które przy odpowiedniej aranżacji kreują przytulną przestrzeń dla mieszkańców. Zastosowanie tego rodzaju
@@ -17999,7 +17999,7 @@ na dłuższy okres czasu.</p>
 <p>Bardzo często zdarza się, że najistotniejszym dla inwestora jest mały metraż działki, który automatycznie
 uniemożliwia wybudowanie pewnych brył. Dla specjalistów Studio Atrium wąska działka nie stanowi
 ograniczenia a jedynie podstawę do tworzenia kreatywnych rozwiązań dla klienta. <a
-href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #cc1000;">Projekty
+href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #ed1d24;">Projekty
 domów na wąską działkę</a> najczęściej skupiają się na maksymalnym wykorzystaniu działki poprzez
 zastosowanie podłużnej, prostokątnej bryły, tak aby jak najbardziej wykorzystać ograniczoną
 powierzchnię. W przypadku wąskich działek idealnie sprawdzają się domy piętrowe lub takie z poddaszem
@@ -18007,7 +18007,7 @@ użytkowym.</p>
 <h3 style="font-size:2.4rem;">Projekty domów z kosztorysem</h3>
 <p>Decydując się na zakup projektu domu z kosztorysem, inwestor nabywa gotowe plany budowlane z
 uwzględnieniem szczegółowych informacji <a
-href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #cc1000;">kosztów
+href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #ed1d24;">kosztów
 budowy domów</a>. Takie rozwiązanie świetnie sprawdza się w przypadku Inwestorów, którym zależy na
 dokładnej kontroli budżetu. Jest to również możliwość do lepszego rozplanowania etapów budowy i płynnego
 zarządzania zapleczem finansowym. Jeżeli budujesz dom po raz pierwszy, masz ograniczony budżet lub
@@ -18016,7 +18016,7 @@ kosztorysem jest odpowiednia dla Ciebie. Aktualna cena to 750 zł za szczegóło
 <h3 style="font-size:2.4rem;">Projekty małych domów</h3>
 <p>Małe domy wyróżnia nieduży metraż; dlatego istotne jest uwzględnienie w projekcie praktycznych zastosowań
 przy maksymalnym zagospodarowaniu powierzchni użytkowej. <a
-href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #cc1000;">Projekty małych
+href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #ed1d24;">Projekty małych
 domów</a> to idealne rozwiązanie dla par lub osób w podeszłym wieku; co więcej takie projekty
 idealnie sprawdzają się w przypadku ograniczeń związanych z małym metrażem działki. Jeżeli cenisz sobie
 praktyczność połączoną z przytulnymi aranżacjami wnętrz, projekt małego domu jest właśnie dla Ciebie.
@@ -18029,7 +18029,7 @@ wielopoziomowych układów kondygnacji, aby w pełni wykorzystać dostępną prz
 umożliwia ulokowanie parteru lub piwnicy w częściowym zagłębieniu w skarpie, natomiast wyższe
 kondygnacje są wysuwane. Dom ulokowany na wzniesieniu oferuje panoramiczne widoki, co wpływa na jego
 atrakcyjność. <a href="https://www.studioatrium.pl/projekty-domow/na-skarpe/"
-style="color: #cc1000;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
+style="color: #ed1d24;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
 połączeniu z zastosowaniem dużych okien stanowi energooszczędne rozwiązanie doświetlające wnętrze domu.
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Co należy
@@ -18199,11 +18199,11 @@ href="
 <div>
 <p>Z przyjemnością prezentujemy Państwu gotowe projekty domów. Przygotowali je doświadczeni specjaliści,
 którzy tworzą personel naszej firmy. W ofercie znajdą Państwo między innymi <a
-href="/projekty-domow/blizniaki/" style="color: #cc1000;">projekty domów bliźniaczych</a>, <a
-href="/projekty-domow/nowoczesne/" style="color: #cc1000;">projekty domów nowoczesnych</a>, <a
+href="/projekty-domow/blizniaki/" style="color: #ed1d24;">projekty domów bliźniaczych</a>, <a
+href="/projekty-domow/nowoczesne/" style="color: #ed1d24;">projekty domów nowoczesnych</a>, <a
 href="/projekty-domow/na-waska-dzialke/">na wąską działkę</a>, parterowych i piętrowych. Polecamy
-także <a href="/projekty-domow/tanie-w-budowie/" style="color: #cc1000;">domy tanie w budowie</a> oraz
-<a href="/projekty-domow/z-plaskim-dachem/" style="color: #cc1000;">z płaskim dachem</a>. Wszystkie
+także <a href="/projekty-domow/tanie-w-budowie/" style="color: #ed1d24;">domy tanie w budowie</a> oraz
+<a href="/projekty-domow/z-plaskim-dachem/" style="color: #ed1d24;">z płaskim dachem</a>. Wszystkie
 dostosowane są do polskich warunków budowlanych. Udostępniamy także wzory małych obiektów, ponieważ
 wiemy jak ważna jest obecnie oszczędność i funkcjonalność. Posiadamy wieloletnie doświadczenie we
 współpracy z inwestorami budującymi tego typu obiekty, propozycje zostały więc opracowane na podstawie
@@ -18211,7 +18211,7 @@ wytycznych ekspertów. Projekty domów gotowych do realizacji to wygodne i prakt
 szczególnie dla osób, które nie zetknęły się wcześniej z tą branżą. Mogą w ten sposób nabyć wzór, który
 jest uniwersalny i sprawdzony w praktyce. Mamy świadomość tego, iż wybór odpowiedniej propozycji to
 poważna decyzja, dlatego chętnie służymy Państwu radą. Wszystkie nasze <a href="/projekty-domow/"
-style="color: #cc1000;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
+style="color: #ed1d24;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
 najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczekiwania.
 </p>
 <h3>Najpopularniejsze typy domów</h3>
@@ -18220,7 +18220,7 @@ najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczeki
 takiego rozwiązania jest umieszczenie stref mieszkalnych, dziennej i nocnej, na jednym poziomie -
 parterze, bez konieczności budowania schodów i stropu. Warto także podkreślić bezpośredni kontakt z
 otaczającą budynek zielenią, dostępną niemal "za ścianą". Małe <a href="/projekty-domow/parterowe/"
-style="color: #cc1000;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
+style="color: #ed1d24;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
 propozycji na rynku. Koszt budowy jak i ich użytkowania zaliczyć można do najniższych. Rozległe
 rezydencje parterowe natomiast, najbardziej przypominają nowoczesne siedliska. W naszej ofercie projekty
 domów parterowych traktowane są wyjątkowo - bez trudu znajdą tutaj Państwo coś dla siebie. Od
@@ -18234,9 +18234,9 @@ różnorodne kształty. Od typowych, prostych konstrukcji, przykrytych dwuspadow
 finezyjne bryły ozdobione licznymi detalami architektonicznymi i bazujące na nowoczesnych trendach.
 Przygotowane przez nas budynki to wspaniała propozycja dla typowych rodzin 2+2 i 2+3. Ich funkcjonalność
 została specjalnie zaprojektowana dla wygody kilku użytkowników, którzy spędzają czas w swoim domu. <a
-href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #cc1000;">Gotowe projekty domów z
+href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #ed1d24;">Gotowe projekty domów z
 poddaszem użytkowym</a> stanowią w naszej ofercie najliczniejszą grupę koncepcji, które wcielamy w
-życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #cc1000;">Zobacz dodatki</a>
+życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #ed1d24;">Zobacz dodatki</a>
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Projekty domów
 jednorodzinnych Studio Atrium</h2>
@@ -18259,7 +18259,7 @@ Atrium cieszy się bardzo dobrą opinią wśród klientów. Nasi klienci w recen
 wysoką jakość obsługi, solidność projektów, oraz indywidualne podejście do potrzeb inwestorów. Ponadto
 jako firma zdobyliśmy uznanie w branży, m.in. poprzez wyróżnienia takie jak Konsumencki Lider Jakości,
 co świadczy o dbałości o klienta. Jeżeli nadal masz wątpliwości, już dziś <a
-href="https://www.studioatrium.pl/kontakt/" style="color: #cc1000;">skontaktuj się z naszym
+href="https://www.studioatrium.pl/kontakt/" style="color: #ed1d24;">skontaktuj się z naszym
 konsultantem</a> lub odwiedź naszą siedzibę mieszczącą się w Bielsku-Białej przy ulicy J.
 Malczewskiego 1. Jesteśmy otwarci dla Ciebie od poniedziałku do piątku w godzinach od 8:00 do 17:00.
 Skontaktuj się z nami i poznaj przyjemność pracy ze specjalistami!</p>
@@ -18314,7 +18314,7 @@ możemy zaoferować! Twój wymarzony dom zaczyna się od pierwszego kliknięcia.
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Odwiedź nasze
 forum dyskusyjne</h2>
 <p>Nasza strona internetowa zawiera zakładkę <a href="https://www.studioatrium.pl/forum/"
-style="color: #cc1000;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
+style="color: #ed1d24;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
 architektonicznego wymieniają się swoimi poglądami oraz przemyśleniami w tej dziedzinie. To świetna
 okazja, by wymienić się doświadczeniami; co więcej, w dyskusjach poruszanych na forum biorą udział nasi
 eksperci, którzy otwarcie dzielą się swoim doświadczeniem. Forum na stronie internetowej Studio Atrium
@@ -18378,7 +18378,7 @@ konkretny, spełniający wszelkie oczekiwania Inwestora.</p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Nasz katalog
 projektów domów - co w nim znajdziesz?</h2>
 <p>Katalog projektów to narzędzie przydatne dla interesantów, chętnych pogłębić swoją wiedzę. <a
-href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #cc1000;">Nasz darmowy
+href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #ed1d24;">Nasz darmowy
 katalog</a> prezentuje liczne propozycje projektów. Znajdziesz w nim projekty domów parterowych i
 piętrowych, projekty z przystosowaniem do różnych typów działek, projekty garaży wolnostojących oraz
 inne wyselekcjonowane projekty domów. Jeżeli chcesz zobaczyć więcej projektów oferowanych przez Studio
@@ -18420,7 +18420,7 @@ antresolą)</p>
 <p>• W zależności od stylu (nowoczesne, w stylu stodoły, regionalne beskidzkie, nowoczesne beskidzkie, z
 płaskim dachem, rezydencje dla zamożnych)</p>
 <h3 style="font-size:2.4rem;">Projekty domów piętrowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #ed1d24;">Projekty domów
 piętrowych</a> wyróżniają się świetnym zagospodarowaniem wnętrza, które z łatwością można podzielić
 na strefę dzienną, składającą się z kuchni, salonu i innych pomieszczeń integralnych oraz strefę nocną
 dedykowaną sypialniom, łazienkom i różnego rodzaju gabinetom domowym. Domy składające się z więcej niż
@@ -18430,7 +18430,7 @@ stanowią podstawę do ciekawej aranżacji bryły. Takie rozwiązanie świetnie 
 rodzin z dziećmi, łącząc estetykę i komfort w jednej bryle. Warto podkreślić, że domy piętrowe idealnie
 nadają się w przypadku mniejszej działki - takie rozwiązanie pozwala zaoszczędzić przestrzeń.</p>
 <h3 style="font-size:2.4rem;">Projekty domów parterowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #ed1d24;">Projekty domów
 parterowych</a> stanowią idealne rozwiązanie dla klientów ceniących sobie wygodę, estetykę oraz
 funkcjonalność. Głównym atutem tego typu projektów jest brak schodów. Jedna kondygnacja, z której składa
 się cała bryła może okazać się idealnym rozwiązaniem dla rodzin z małymi dziećmi lub dla osób z
@@ -18451,7 +18451,7 @@ idealnie sprawdza się jako dodatkowy składzik lub pomieszczenie gospodarcze. W
 parterowy z poddaszem to świetna alternatywa dla Inwestorów, którzy chcą rozłożyć budowę domu na etapy,
 ponieważ poddasze nie musi być wykańczane od razu.</p>
 <h3 style="font-size:2.4rem;">Projekty domów bliźniaczych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #ed1d24;">Projekty domów
 bliźniaczych</a> to charakterystyczne budowle, które wyróżniają się podziałem bryły na dwa oddzielne
 i niezależne od siebie segmenty. Konstrukcja składa się z jednego wspólnego dachu oraz murów
 zewnętrznych, natomiast zawiera dwa oddzielne i niezależne wejścia do mieszkania. Ta alternatywa jest
@@ -18468,7 +18468,7 @@ nasi projektanci uwzględnili w projektach domów takie rozwiązania jak systemy
 energii odnawialnej, systemy zarządzania energią oraz wiele innych zastosowań, definiujących projekty
 Studio Atrium jako energooszczędne.</p>
 <h3 style="font-size:2.4rem;">Projekty domów nowoczesnych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #ed1d24;">Projekty domów
 nowoczesnych</a> wyróżniają się uwzględnieniem minimalizmu i prostoty. W tym celu ogranicza się
 ozdoby i dekoracje do minimum, co sprawia, że cena wybudowania takiego domu staje się atrakcyjniejsza.
 Zastosowanie dużych przeszklonych okien wpuszcza do domu naturalne światło, co pozwala zaoszczędzić
@@ -18476,7 +18476,7 @@ energię elektryczną. Inwestorzy często decydują się również na zastosowan
 cegły, aby dom był bardziej przytulny. Wyżej opisane elementy to przykładowe detale, którymi cechują się
 projekty domów nowoczesnych.</p>
 <h3 style="font-size:2.4rem;">Projekty w stylu stodoły</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #cc1000;">Projekty
+<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #ed1d24;">Projekty
 domów w stylu stodoły</a>, czyli tzw. Barn House, coraz częściej stają się obiektem zainteresowań
 Inwestorów. Charakteryzują się prostokątną bryłą budynku oraz wielkoformatowymi oknami. Są to typy domów
 z dachem dwuspadowym. Wnętrza cechują wysokie sufity i otwarte przestrzenie z uwzględnieniem antresoli
@@ -18485,7 +18485,7 @@ takich jak drewniane bele i stara cegła, w połączeniu z nowoczesnymi metalowy
 wykończeniami. </p>
 <h3 style="font-size:2.4rem;">Projekty domów z poddaszem użytkowym</h3>
 <p><a href="https://www.studioatrium.pl/projekty-domow/z-poddaszem-uzytkowym/"
-style="color: #cc1000;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
+style="color: #ed1d24;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
 wszystkim decyzję o zagospodarowaniu poddasza podejmuje Inwestor, co więcej poddasze użytkowe to
 możliwość podzielenia wykończenia domu na etapy. Poddasze to przestrzeń wypełniona licznymi skosami,
 które przy odpowiedniej aranżacji kreują przytulną przestrzeń dla mieszkańców. Zastosowanie tego rodzaju
@@ -18507,7 +18507,7 @@ na dłuższy okres czasu.</p>
 <p>Bardzo często zdarza się, że najistotniejszym dla inwestora jest mały metraż działki, który automatycznie
 uniemożliwia wybudowanie pewnych brył. Dla specjalistów Studio Atrium wąska działka nie stanowi
 ograniczenia a jedynie podstawę do tworzenia kreatywnych rozwiązań dla klienta. <a
-href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #cc1000;">Projekty
+href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #ed1d24;">Projekty
 domów na wąską działkę</a> najczęściej skupiają się na maksymalnym wykorzystaniu działki poprzez
 zastosowanie podłużnej, prostokątnej bryły, tak aby jak najbardziej wykorzystać ograniczoną
 powierzchnię. W przypadku wąskich działek idealnie sprawdzają się domy piętrowe lub takie z poddaszem
@@ -18515,7 +18515,7 @@ użytkowym.</p>
 <h3 style="font-size:2.4rem;">Projekty domów z kosztorysem</h3>
 <p>Decydując się na zakup projektu domu z kosztorysem, inwestor nabywa gotowe plany budowlane z
 uwzględnieniem szczegółowych informacji <a
-href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #cc1000;">kosztów
+href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #ed1d24;">kosztów
 budowy domów</a>. Takie rozwiązanie świetnie sprawdza się w przypadku Inwestorów, którym zależy na
 dokładnej kontroli budżetu. Jest to również możliwość do lepszego rozplanowania etapów budowy i płynnego
 zarządzania zapleczem finansowym. Jeżeli budujesz dom po raz pierwszy, masz ograniczony budżet lub
@@ -18524,7 +18524,7 @@ kosztorysem jest odpowiednia dla Ciebie. Aktualna cena to 750 zł za szczegóło
 <h3 style="font-size:2.4rem;">Projekty małych domów</h3>
 <p>Małe domy wyróżnia nieduży metraż; dlatego istotne jest uwzględnienie w projekcie praktycznych zastosowań
 przy maksymalnym zagospodarowaniu powierzchni użytkowej. <a
-href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #cc1000;">Projekty małych
+href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #ed1d24;">Projekty małych
 domów</a> to idealne rozwiązanie dla par lub osób w podeszłym wieku; co więcej takie projekty
 idealnie sprawdzają się w przypadku ograniczeń związanych z małym metrażem działki. Jeżeli cenisz sobie
 praktyczność połączoną z przytulnymi aranżacjami wnętrz, projekt małego domu jest właśnie dla Ciebie.
@@ -18537,7 +18537,7 @@ wielopoziomowych układów kondygnacji, aby w pełni wykorzystać dostępną prz
 umożliwia ulokowanie parteru lub piwnicy w częściowym zagłębieniu w skarpie, natomiast wyższe
 kondygnacje są wysuwane. Dom ulokowany na wzniesieniu oferuje panoramiczne widoki, co wpływa na jego
 atrakcyjność. <a href="https://www.studioatrium.pl/projekty-domow/na-skarpe/"
-style="color: #cc1000;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
+style="color: #ed1d24;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
 połączeniu z zastosowaniem dużych okien stanowi energooszczędne rozwiązanie doświetlające wnętrze domu.
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Co należy
@@ -18701,11 +18701,11 @@ poddaszem{elseif $_item.object.params_general|isGroundFloor:true}parterowego
 <div>
 <p>Z przyjemnością prezentujemy Państwu gotowe projekty domów. Przygotowali je doświadczeni specjaliści,
 którzy tworzą personel naszej firmy. W ofercie znajdą Państwo między innymi <a
-href="/projekty-domow/blizniaki/" style="color: #cc1000;">projekty domów bliźniaczych</a>, <a
-href="/projekty-domow/nowoczesne/" style="color: #cc1000;">projekty domów nowoczesnych</a>, <a
+href="/projekty-domow/blizniaki/" style="color: #ed1d24;">projekty domów bliźniaczych</a>, <a
+href="/projekty-domow/nowoczesne/" style="color: #ed1d24;">projekty domów nowoczesnych</a>, <a
 href="/projekty-domow/na-waska-dzialke/">na wąską działkę</a>, parterowych i piętrowych. Polecamy
-także <a href="/projekty-domow/tanie-w-budowie/" style="color: #cc1000;">domy tanie w budowie</a> oraz
-<a href="/projekty-domow/z-plaskim-dachem/" style="color: #cc1000;">z płaskim dachem</a>. Wszystkie
+także <a href="/projekty-domow/tanie-w-budowie/" style="color: #ed1d24;">domy tanie w budowie</a> oraz
+<a href="/projekty-domow/z-plaskim-dachem/" style="color: #ed1d24;">z płaskim dachem</a>. Wszystkie
 dostosowane są do polskich warunków budowlanych. Udostępniamy także wzory małych obiektów, ponieważ
 wiemy jak ważna jest obecnie oszczędność i funkcjonalność. Posiadamy wieloletnie doświadczenie we
 współpracy z inwestorami budującymi tego typu obiekty, propozycje zostały więc opracowane na podstawie
@@ -18713,7 +18713,7 @@ wytycznych ekspertów. Projekty domów gotowych do realizacji to wygodne i prakt
 szczególnie dla osób, które nie zetknęły się wcześniej z tą branżą. Mogą w ten sposób nabyć wzór, który
 jest uniwersalny i sprawdzony w praktyce. Mamy świadomość tego, iż wybór odpowiedniej propozycji to
 poważna decyzja, dlatego chętnie służymy Państwu radą. Wszystkie nasze <a href="/projekty-domow/"
-style="color: #cc1000;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
+style="color: #ed1d24;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
 najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczekiwania.
 </p>
 <h3>Najpopularniejsze typy domów</h3>
@@ -18722,7 +18722,7 @@ najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczeki
 takiego rozwiązania jest umieszczenie stref mieszkalnych, dziennej i nocnej, na jednym poziomie -
 parterze, bez konieczności budowania schodów i stropu. Warto także podkreślić bezpośredni kontakt z
 otaczającą budynek zielenią, dostępną niemal "za ścianą". Małe <a href="/projekty-domow/parterowe/"
-style="color: #cc1000;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
+style="color: #ed1d24;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
 propozycji na rynku. Koszt budowy jak i ich użytkowania zaliczyć można do najniższych. Rozległe
 rezydencje parterowe natomiast, najbardziej przypominają nowoczesne siedliska. W naszej ofercie projekty
 domów parterowych traktowane są wyjątkowo - bez trudu znajdą tutaj Państwo coś dla siebie. Od
@@ -18736,9 +18736,9 @@ różnorodne kształty. Od typowych, prostych konstrukcji, przykrytych dwuspadow
 finezyjne bryły ozdobione licznymi detalami architektonicznymi i bazujące na nowoczesnych trendach.
 Przygotowane przez nas budynki to wspaniała propozycja dla typowych rodzin 2+2 i 2+3. Ich funkcjonalność
 została specjalnie zaprojektowana dla wygody kilku użytkowników, którzy spędzają czas w swoim domu. <a
-href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #cc1000;">Gotowe projekty domów z
+href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #ed1d24;">Gotowe projekty domów z
 poddaszem użytkowym</a> stanowią w naszej ofercie najliczniejszą grupę koncepcji, które wcielamy w
-życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #cc1000;">Zobacz dodatki</a>
+życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #ed1d24;">Zobacz dodatki</a>
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Projekty domów
 jednorodzinnych Studio Atrium</h2>
@@ -18761,7 +18761,7 @@ Atrium cieszy się bardzo dobrą opinią wśród klientów. Nasi klienci w recen
 wysoką jakość obsługi, solidność projektów, oraz indywidualne podejście do potrzeb inwestorów. Ponadto
 jako firma zdobyliśmy uznanie w branży, m.in. poprzez wyróżnienia takie jak Konsumencki Lider Jakości,
 co świadczy o dbałości o klienta. Jeżeli nadal masz wątpliwości, już dziś <a
-href="https://www.studioatrium.pl/kontakt/" style="color: #cc1000;">skontaktuj się z naszym
+href="https://www.studioatrium.pl/kontakt/" style="color: #ed1d24;">skontaktuj się z naszym
 konsultantem</a> lub odwiedź naszą siedzibę mieszczącą się w Bielsku-Białej przy ulicy J.
 Malczewskiego 1. Jesteśmy otwarci dla Ciebie od poniedziałku do piątku w godzinach od 8:00 do 17:00.
 Skontaktuj się z nami i poznaj przyjemność pracy ze specjalistami!</p>
@@ -18816,7 +18816,7 @@ możemy zaoferować! Twój wymarzony dom zaczyna się od pierwszego kliknięcia.
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Odwiedź nasze
 forum dyskusyjne</h2>
 <p>Nasza strona internetowa zawiera zakładkę <a href="https://www.studioatrium.pl/forum/"
-style="color: #cc1000;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
+style="color: #ed1d24;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
 architektonicznego wymieniają się swoimi poglądami oraz przemyśleniami w tej dziedzinie. To świetna
 okazja, by wymienić się doświadczeniami; co więcej, w dyskusjach poruszanych na forum biorą udział nasi
 eksperci, którzy otwarcie dzielą się swoim doświadczeniem. Forum na stronie internetowej Studio Atrium
@@ -18880,7 +18880,7 @@ konkretny, spełniający wszelkie oczekiwania Inwestora.</p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Nasz katalog
 projektów domów - co w nim znajdziesz?</h2>
 <p>Katalog projektów to narzędzie przydatne dla interesantów, chętnych pogłębić swoją wiedzę. <a
-href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #cc1000;">Nasz darmowy
+href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #ed1d24;">Nasz darmowy
 katalog</a> prezentuje liczne propozycje projektów. Znajdziesz w nim projekty domów parterowych i
 piętrowych, projekty z przystosowaniem do różnych typów działek, projekty garaży wolnostojących oraz
 inne wyselekcjonowane projekty domów. Jeżeli chcesz zobaczyć więcej projektów oferowanych przez Studio
@@ -18922,7 +18922,7 @@ antresolą)</p>
 <p>• W zależności od stylu (nowoczesne, w stylu stodoły, regionalne beskidzkie, nowoczesne beskidzkie, z
 płaskim dachem, rezydencje dla zamożnych)</p>
 <h3 style="font-size:2.4rem;">Projekty domów piętrowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #ed1d24;">Projekty domów
 piętrowych</a> wyróżniają się świetnym zagospodarowaniem wnętrza, które z łatwością można podzielić
 na strefę dzienną, składającą się z kuchni, salonu i innych pomieszczeń integralnych oraz strefę nocną
 dedykowaną sypialniom, łazienkom i różnego rodzaju gabinetom domowym. Domy składające się z więcej niż
@@ -18932,7 +18932,7 @@ stanowią podstawę do ciekawej aranżacji bryły. Takie rozwiązanie świetnie 
 rodzin z dziećmi, łącząc estetykę i komfort w jednej bryle. Warto podkreślić, że domy piętrowe idealnie
 nadają się w przypadku mniejszej działki - takie rozwiązanie pozwala zaoszczędzić przestrzeń.</p>
 <h3 style="font-size:2.4rem;">Projekty domów parterowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #ed1d24;">Projekty domów
 parterowych</a> stanowią idealne rozwiązanie dla klientów ceniących sobie wygodę, estetykę oraz
 funkcjonalność. Głównym atutem tego typu projektów jest brak schodów. Jedna kondygnacja, z której składa
 się cała bryła może okazać się idealnym rozwiązaniem dla rodzin z małymi dziećmi lub dla osób z
@@ -18953,7 +18953,7 @@ idealnie sprawdza się jako dodatkowy składzik lub pomieszczenie gospodarcze. W
 parterowy z poddaszem to świetna alternatywa dla Inwestorów, którzy chcą rozłożyć budowę domu na etapy,
 ponieważ poddasze nie musi być wykańczane od razu.</p>
 <h3 style="font-size:2.4rem;">Projekty domów bliźniaczych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #ed1d24;">Projekty domów
 bliźniaczych</a> to charakterystyczne budowle, które wyróżniają się podziałem bryły na dwa oddzielne
 i niezależne od siebie segmenty. Konstrukcja składa się z jednego wspólnego dachu oraz murów
 zewnętrznych, natomiast zawiera dwa oddzielne i niezależne wejścia do mieszkania. Ta alternatywa jest
@@ -18970,7 +18970,7 @@ nasi projektanci uwzględnili w projektach domów takie rozwiązania jak systemy
 energii odnawialnej, systemy zarządzania energią oraz wiele innych zastosowań, definiujących projekty
 Studio Atrium jako energooszczędne.</p>
 <h3 style="font-size:2.4rem;">Projekty domów nowoczesnych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #ed1d24;">Projekty domów
 nowoczesnych</a> wyróżniają się uwzględnieniem minimalizmu i prostoty. W tym celu ogranicza się
 ozdoby i dekoracje do minimum, co sprawia, że cena wybudowania takiego domu staje się atrakcyjniejsza.
 Zastosowanie dużych przeszklonych okien wpuszcza do domu naturalne światło, co pozwala zaoszczędzić
@@ -18978,7 +18978,7 @@ energię elektryczną. Inwestorzy często decydują się również na zastosowan
 cegły, aby dom był bardziej przytulny. Wyżej opisane elementy to przykładowe detale, którymi cechują się
 projekty domów nowoczesnych.</p>
 <h3 style="font-size:2.4rem;">Projekty w stylu stodoły</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #cc1000;">Projekty
+<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #ed1d24;">Projekty
 domów w stylu stodoły</a>, czyli tzw. Barn House, coraz częściej stają się obiektem zainteresowań
 Inwestorów. Charakteryzują się prostokątną bryłą budynku oraz wielkoformatowymi oknami. Są to typy domów
 z dachem dwuspadowym. Wnętrza cechują wysokie sufity i otwarte przestrzenie z uwzględnieniem antresoli
@@ -18987,7 +18987,7 @@ takich jak drewniane bele i stara cegła, w połączeniu z nowoczesnymi metalowy
 wykończeniami. </p>
 <h3 style="font-size:2.4rem;">Projekty domów z poddaszem użytkowym</h3>
 <p><a href="https://www.studioatrium.pl/projekty-domow/z-poddaszem-uzytkowym/"
-style="color: #cc1000;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
+style="color: #ed1d24;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
 wszystkim decyzję o zagospodarowaniu poddasza podejmuje Inwestor, co więcej poddasze użytkowe to
 możliwość podzielenia wykończenia domu na etapy. Poddasze to przestrzeń wypełniona licznymi skosami,
 które przy odpowiedniej aranżacji kreują przytulną przestrzeń dla mieszkańców. Zastosowanie tego rodzaju
@@ -19009,7 +19009,7 @@ na dłuższy okres czasu.</p>
 <p>Bardzo często zdarza się, że najistotniejszym dla inwestora jest mały metraż działki, który automatycznie
 uniemożliwia wybudowanie pewnych brył. Dla specjalistów Studio Atrium wąska działka nie stanowi
 ograniczenia a jedynie podstawę do tworzenia kreatywnych rozwiązań dla klienta. <a
-href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #cc1000;">Projekty
+href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #ed1d24;">Projekty
 domów na wąską działkę</a> najczęściej skupiają się na maksymalnym wykorzystaniu działki poprzez
 zastosowanie podłużnej, prostokątnej bryły, tak aby jak najbardziej wykorzystać ograniczoną
 powierzchnię. W przypadku wąskich działek idealnie sprawdzają się domy piętrowe lub takie z poddaszem
@@ -19017,7 +19017,7 @@ użytkowym.</p>
 <h3 style="font-size:2.4rem;">Projekty domów z kosztorysem</h3>
 <p>Decydując się na zakup projektu domu z kosztorysem, inwestor nabywa gotowe plany budowlane z
 uwzględnieniem szczegółowych informacji <a
-href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #cc1000;">kosztów
+href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #ed1d24;">kosztów
 budowy domów</a>. Takie rozwiązanie świetnie sprawdza się w przypadku Inwestorów, którym zależy na
 dokładnej kontroli budżetu. Jest to również możliwość do lepszego rozplanowania etapów budowy i płynnego
 zarządzania zapleczem finansowym. Jeżeli budujesz dom po raz pierwszy, masz ograniczony budżet lub
@@ -19026,7 +19026,7 @@ kosztorysem jest odpowiednia dla Ciebie. Aktualna cena to 750 zł za szczegóło
 <h3 style="font-size:2.4rem;">Projekty małych domów</h3>
 <p>Małe domy wyróżnia nieduży metraż; dlatego istotne jest uwzględnienie w projekcie praktycznych zastosowań
 przy maksymalnym zagospodarowaniu powierzchni użytkowej. <a
-href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #cc1000;">Projekty małych
+href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #ed1d24;">Projekty małych
 domów</a> to idealne rozwiązanie dla par lub osób w podeszłym wieku; co więcej takie projekty
 idealnie sprawdzają się w przypadku ograniczeń związanych z małym metrażem działki. Jeżeli cenisz sobie
 praktyczność połączoną z przytulnymi aranżacjami wnętrz, projekt małego domu jest właśnie dla Ciebie.
@@ -19039,7 +19039,7 @@ wielopoziomowych układów kondygnacji, aby w pełni wykorzystać dostępną prz
 umożliwia ulokowanie parteru lub piwnicy w częściowym zagłębieniu w skarpie, natomiast wyższe
 kondygnacje są wysuwane. Dom ulokowany na wzniesieniu oferuje panoramiczne widoki, co wpływa na jego
 atrakcyjność. <a href="https://www.studioatrium.pl/projekty-domow/na-skarpe/"
-style="color: #cc1000;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
+style="color: #ed1d24;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
 połączeniu z zastosowaniem dużych okien stanowi energooszczędne rozwiązanie doświetlające wnętrze domu.
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Co należy
@@ -19202,11 +19202,11 @@ poddaszem{elseif $_item.object.params_general|isGroundFloor:true}parterowego
 <div>
 <p>Z przyjemnością prezentujemy Państwu gotowe projekty domów. Przygotowali je doświadczeni specjaliści,
 którzy tworzą personel naszej firmy. W ofercie znajdą Państwo między innymi <a
-href="/projekty-domow/blizniaki/" style="color: #cc1000;">projekty domów bliźniaczych</a>, <a
-href="/projekty-domow/nowoczesne/" style="color: #cc1000;">projekty domów nowoczesnych</a>, <a
+href="/projekty-domow/blizniaki/" style="color: #ed1d24;">projekty domów bliźniaczych</a>, <a
+href="/projekty-domow/nowoczesne/" style="color: #ed1d24;">projekty domów nowoczesnych</a>, <a
 href="/projekty-domow/na-waska-dzialke/">na wąską działkę</a>, parterowych i piętrowych. Polecamy
-także <a href="/projekty-domow/tanie-w-budowie/" style="color: #cc1000;">domy tanie w budowie</a> oraz
-<a href="/projekty-domow/z-plaskim-dachem/" style="color: #cc1000;">z płaskim dachem</a>. Wszystkie
+także <a href="/projekty-domow/tanie-w-budowie/" style="color: #ed1d24;">domy tanie w budowie</a> oraz
+<a href="/projekty-domow/z-plaskim-dachem/" style="color: #ed1d24;">z płaskim dachem</a>. Wszystkie
 dostosowane są do polskich warunków budowlanych. Udostępniamy także wzory małych obiektów, ponieważ
 wiemy jak ważna jest obecnie oszczędność i funkcjonalność. Posiadamy wieloletnie doświadczenie we
 współpracy z inwestorami budującymi tego typu obiekty, propozycje zostały więc opracowane na podstawie
@@ -19214,7 +19214,7 @@ wytycznych ekspertów. Projekty domów gotowych do realizacji to wygodne i prakt
 szczególnie dla osób, które nie zetknęły się wcześniej z tą branżą. Mogą w ten sposób nabyć wzór, który
 jest uniwersalny i sprawdzony w praktyce. Mamy świadomość tego, iż wybór odpowiedniej propozycji to
 poważna decyzja, dlatego chętnie służymy Państwu radą. Wszystkie nasze <a href="/projekty-domow/"
-style="color: #cc1000;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
+style="color: #ed1d24;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
 najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczekiwania.
 </p>
 <h3>Najpopularniejsze typy domów</h3>
@@ -19223,7 +19223,7 @@ najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczeki
 takiego rozwiązania jest umieszczenie stref mieszkalnych, dziennej i nocnej, na jednym poziomie -
 parterze, bez konieczności budowania schodów i stropu. Warto także podkreślić bezpośredni kontakt z
 otaczającą budynek zielenią, dostępną niemal "za ścianą". Małe <a href="/projekty-domow/parterowe/"
-style="color: #cc1000;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
+style="color: #ed1d24;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
 propozycji na rynku. Koszt budowy jak i ich użytkowania zaliczyć można do najniższych. Rozległe
 rezydencje parterowe natomiast, najbardziej przypominają nowoczesne siedliska. W naszej ofercie projekty
 domów parterowych traktowane są wyjątkowo - bez trudu znajdą tutaj Państwo coś dla siebie. Od
@@ -19237,9 +19237,9 @@ różnorodne kształty. Od typowych, prostych konstrukcji, przykrytych dwuspadow
 finezyjne bryły ozdobione licznymi detalami architektonicznymi i bazujące na nowoczesnych trendach.
 Przygotowane przez nas budynki to wspaniała propozycja dla typowych rodzin 2+2 i 2+3. Ich funkcjonalność
 została specjalnie zaprojektowana dla wygody kilku użytkowników, którzy spędzają czas w swoim domu. <a
-href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #cc1000;">Gotowe projekty domów z
+href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #ed1d24;">Gotowe projekty domów z
 poddaszem użytkowym</a> stanowią w naszej ofercie najliczniejszą grupę koncepcji, które wcielamy w
-życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #cc1000;">Zobacz dodatki</a>
+życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #ed1d24;">Zobacz dodatki</a>
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Projekty domów
 jednorodzinnych Studio Atrium</h2>
@@ -19262,7 +19262,7 @@ Atrium cieszy się bardzo dobrą opinią wśród klientów. Nasi klienci w recen
 wysoką jakość obsługi, solidność projektów, oraz indywidualne podejście do potrzeb inwestorów. Ponadto
 jako firma zdobyliśmy uznanie w branży, m.in. poprzez wyróżnienia takie jak Konsumencki Lider Jakości,
 co świadczy o dbałości o klienta. Jeżeli nadal masz wątpliwości, już dziś <a
-href="https://www.studioatrium.pl/kontakt/" style="color: #cc1000;">skontaktuj się z naszym
+href="https://www.studioatrium.pl/kontakt/" style="color: #ed1d24;">skontaktuj się z naszym
 konsultantem</a> lub odwiedź naszą siedzibę mieszczącą się w Bielsku-Białej przy ulicy J.
 Malczewskiego 1. Jesteśmy otwarci dla Ciebie od poniedziałku do piątku w godzinach od 8:00 do 17:00.
 Skontaktuj się z nami i poznaj przyjemność pracy ze specjalistami!</p>
@@ -19317,7 +19317,7 @@ możemy zaoferować! Twój wymarzony dom zaczyna się od pierwszego kliknięcia.
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Odwiedź nasze
 forum dyskusyjne</h2>
 <p>Nasza strona internetowa zawiera zakładkę <a href="https://www.studioatrium.pl/forum/"
-style="color: #cc1000;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
+style="color: #ed1d24;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
 architektonicznego wymieniają się swoimi poglądami oraz przemyśleniami w tej dziedzinie. To świetna
 okazja, by wymienić się doświadczeniami; co więcej, w dyskusjach poruszanych na forum biorą udział nasi
 eksperci, którzy otwarcie dzielą się swoim doświadczeniem. Forum na stronie internetowej Studio Atrium
@@ -19381,7 +19381,7 @@ konkretny, spełniający wszelkie oczekiwania Inwestora.</p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Nasz katalog
 projektów domów - co w nim znajdziesz?</h2>
 <p>Katalog projektów to narzędzie przydatne dla interesantów, chętnych pogłębić swoją wiedzę. <a
-href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #cc1000;">Nasz darmowy
+href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #ed1d24;">Nasz darmowy
 katalog</a> prezentuje liczne propozycje projektów. Znajdziesz w nim projekty domów parterowych i
 piętrowych, projekty z przystosowaniem do różnych typów działek, projekty garaży wolnostojących oraz
 inne wyselekcjonowane projekty domów. Jeżeli chcesz zobaczyć więcej projektów oferowanych przez Studio
@@ -19423,7 +19423,7 @@ antresolą)</p>
 <p>• W zależności od stylu (nowoczesne, w stylu stodoły, regionalne beskidzkie, nowoczesne beskidzkie, z
 płaskim dachem, rezydencje dla zamożnych)</p>
 <h3 style="font-size:2.4rem;">Projekty domów piętrowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #ed1d24;">Projekty domów
 piętrowych</a> wyróżniają się świetnym zagospodarowaniem wnętrza, które z łatwością można podzielić
 na strefę dzienną, składającą się z kuchni, salonu i innych pomieszczeń integralnych oraz strefę nocną
 dedykowaną sypialniom, łazienkom i różnego rodzaju gabinetom domowym. Domy składające się z więcej niż
@@ -19433,7 +19433,7 @@ stanowią podstawę do ciekawej aranżacji bryły. Takie rozwiązanie świetnie 
 rodzin z dziećmi, łącząc estetykę i komfort w jednej bryle. Warto podkreślić, że domy piętrowe idealnie
 nadają się w przypadku mniejszej działki - takie rozwiązanie pozwala zaoszczędzić przestrzeń.</p>
 <h3 style="font-size:2.4rem;">Projekty domów parterowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #ed1d24;">Projekty domów
 parterowych</a> stanowią idealne rozwiązanie dla klientów ceniących sobie wygodę, estetykę oraz
 funkcjonalność. Głównym atutem tego typu projektów jest brak schodów. Jedna kondygnacja, z której składa
 się cała bryła może okazać się idealnym rozwiązaniem dla rodzin z małymi dziećmi lub dla osób z
@@ -19454,7 +19454,7 @@ idealnie sprawdza się jako dodatkowy składzik lub pomieszczenie gospodarcze. W
 parterowy z poddaszem to świetna alternatywa dla Inwestorów, którzy chcą rozłożyć budowę domu na etapy,
 ponieważ poddasze nie musi być wykańczane od razu.</p>
 <h3 style="font-size:2.4rem;">Projekty domów bliźniaczych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #ed1d24;">Projekty domów
 bliźniaczych</a> to charakterystyczne budowle, które wyróżniają się podziałem bryły na dwa oddzielne
 i niezależne od siebie segmenty. Konstrukcja składa się z jednego wspólnego dachu oraz murów
 zewnętrznych, natomiast zawiera dwa oddzielne i niezależne wejścia do mieszkania. Ta alternatywa jest
@@ -19471,7 +19471,7 @@ nasi projektanci uwzględnili w projektach domów takie rozwiązania jak systemy
 energii odnawialnej, systemy zarządzania energią oraz wiele innych zastosowań, definiujących projekty
 Studio Atrium jako energooszczędne.</p>
 <h3 style="font-size:2.4rem;">Projekty domów nowoczesnych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #ed1d24;">Projekty domów
 nowoczesnych</a> wyróżniają się uwzględnieniem minimalizmu i prostoty. W tym celu ogranicza się
 ozdoby i dekoracje do minimum, co sprawia, że cena wybudowania takiego domu staje się atrakcyjniejsza.
 Zastosowanie dużych przeszklonych okien wpuszcza do domu naturalne światło, co pozwala zaoszczędzić
@@ -19479,7 +19479,7 @@ energię elektryczną. Inwestorzy często decydują się również na zastosowan
 cegły, aby dom był bardziej przytulny. Wyżej opisane elementy to przykładowe detale, którymi cechują się
 projekty domów nowoczesnych.</p>
 <h3 style="font-size:2.4rem;">Projekty w stylu stodoły</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #cc1000;">Projekty
+<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #ed1d24;">Projekty
 domów w stylu stodoły</a>, czyli tzw. Barn House, coraz częściej stają się obiektem zainteresowań
 Inwestorów. Charakteryzują się prostokątną bryłą budynku oraz wielkoformatowymi oknami. Są to typy domów
 z dachem dwuspadowym. Wnętrza cechują wysokie sufity i otwarte przestrzenie z uwzględnieniem antresoli
@@ -19488,7 +19488,7 @@ takich jak drewniane bele i stara cegła, w połączeniu z nowoczesnymi metalowy
 wykończeniami. </p>
 <h3 style="font-size:2.4rem;">Projekty domów z poddaszem użytkowym</h3>
 <p><a href="https://www.studioatrium.pl/projekty-domow/z-poddaszem-uzytkowym/"
-style="color: #cc1000;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
+style="color: #ed1d24;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
 wszystkim decyzję o zagospodarowaniu poddasza podejmuje Inwestor, co więcej poddasze użytkowe to
 możliwość podzielenia wykończenia domu na etapy. Poddasze to przestrzeń wypełniona licznymi skosami,
 które przy odpowiedniej aranżacji kreują przytulną przestrzeń dla mieszkańców. Zastosowanie tego rodzaju
@@ -19510,7 +19510,7 @@ na dłuższy okres czasu.</p>
 <p>Bardzo często zdarza się, że najistotniejszym dla inwestora jest mały metraż działki, który automatycznie
 uniemożliwia wybudowanie pewnych brył. Dla specjalistów Studio Atrium wąska działka nie stanowi
 ograniczenia a jedynie podstawę do tworzenia kreatywnych rozwiązań dla klienta. <a
-href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #cc1000;">Projekty
+href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #ed1d24;">Projekty
 domów na wąską działkę</a> najczęściej skupiają się na maksymalnym wykorzystaniu działki poprzez
 zastosowanie podłużnej, prostokątnej bryły, tak aby jak najbardziej wykorzystać ograniczoną
 powierzchnię. W przypadku wąskich działek idealnie sprawdzają się domy piętrowe lub takie z poddaszem
@@ -19518,7 +19518,7 @@ użytkowym.</p>
 <h3 style="font-size:2.4rem;">Projekty domów z kosztorysem</h3>
 <p>Decydując się na zakup projektu domu z kosztorysem, inwestor nabywa gotowe plany budowlane z
 uwzględnieniem szczegółowych informacji <a
-href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #cc1000;">kosztów
+href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #ed1d24;">kosztów
 budowy domów</a>. Takie rozwiązanie świetnie sprawdza się w przypadku Inwestorów, którym zależy na
 dokładnej kontroli budżetu. Jest to również możliwość do lepszego rozplanowania etapów budowy i płynnego
 zarządzania zapleczem finansowym. Jeżeli budujesz dom po raz pierwszy, masz ograniczony budżet lub
@@ -19527,7 +19527,7 @@ kosztorysem jest odpowiednia dla Ciebie. Aktualna cena to 750 zł za szczegóło
 <h3 style="font-size:2.4rem;">Projekty małych domów</h3>
 <p>Małe domy wyróżnia nieduży metraż; dlatego istotne jest uwzględnienie w projekcie praktycznych zastosowań
 przy maksymalnym zagospodarowaniu powierzchni użytkowej. <a
-href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #cc1000;">Projekty małych
+href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #ed1d24;">Projekty małych
 domów</a> to idealne rozwiązanie dla par lub osób w podeszłym wieku; co więcej takie projekty
 idealnie sprawdzają się w przypadku ograniczeń związanych z małym metrażem działki. Jeżeli cenisz sobie
 praktyczność połączoną z przytulnymi aranżacjami wnętrz, projekt małego domu jest właśnie dla Ciebie.
@@ -19540,7 +19540,7 @@ wielopoziomowych układów kondygnacji, aby w pełni wykorzystać dostępną prz
 umożliwia ulokowanie parteru lub piwnicy w częściowym zagłębieniu w skarpie, natomiast wyższe
 kondygnacje są wysuwane. Dom ulokowany na wzniesieniu oferuje panoramiczne widoki, co wpływa na jego
 atrakcyjność. <a href="https://www.studioatrium.pl/projekty-domow/na-skarpe/"
-style="color: #cc1000;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
+style="color: #ed1d24;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
 połączeniu z zastosowaniem dużych okien stanowi energooszczędne rozwiązanie doświetlające wnętrze domu.
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Co należy
@@ -19703,11 +19703,11 @@ poddaszem
 <div>
 <p>Z przyjemnością prezentujemy Państwu gotowe projekty domów. Przygotowali je doświadczeni specjaliści,
 którzy tworzą personel naszej firmy. W ofercie znajdą Państwo między innymi <a
-href="/projekty-domow/blizniaki/" style="color: #cc1000;">projekty domów bliźniaczych</a>, <a
-href="/projekty-domow/nowoczesne/" style="color: #cc1000;">projekty domów nowoczesnych</a>, <a
+href="/projekty-domow/blizniaki/" style="color: #ed1d24;">projekty domów bliźniaczych</a>, <a
+href="/projekty-domow/nowoczesne/" style="color: #ed1d24;">projekty domów nowoczesnych</a>, <a
 href="/projekty-domow/na-waska-dzialke/">na wąską działkę</a>, parterowych i piętrowych. Polecamy
-także <a href="/projekty-domow/tanie-w-budowie/" style="color: #cc1000;">domy tanie w budowie</a> oraz
-<a href="/projekty-domow/z-plaskim-dachem/" style="color: #cc1000;">z płaskim dachem</a>. Wszystkie
+także <a href="/projekty-domow/tanie-w-budowie/" style="color: #ed1d24;">domy tanie w budowie</a> oraz
+<a href="/projekty-domow/z-plaskim-dachem/" style="color: #ed1d24;">z płaskim dachem</a>. Wszystkie
 dostosowane są do polskich warunków budowlanych. Udostępniamy także wzory małych obiektów, ponieważ
 wiemy jak ważna jest obecnie oszczędność i funkcjonalność. Posiadamy wieloletnie doświadczenie we
 współpracy z inwestorami budującymi tego typu obiekty, propozycje zostały więc opracowane na podstawie
@@ -19715,7 +19715,7 @@ wytycznych ekspertów. Projekty domów gotowych do realizacji to wygodne i prakt
 szczególnie dla osób, które nie zetknęły się wcześniej z tą branżą. Mogą w ten sposób nabyć wzór, który
 jest uniwersalny i sprawdzony w praktyce. Mamy świadomość tego, iż wybór odpowiedniej propozycji to
 poważna decyzja, dlatego chętnie służymy Państwu radą. Wszystkie nasze <a href="/projekty-domow/"
-style="color: #cc1000;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
+style="color: #ed1d24;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
 najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczekiwania.
 </p>
 <h3>Najpopularniejsze typy domów</h3>
@@ -19724,7 +19724,7 @@ najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczeki
 takiego rozwiązania jest umieszczenie stref mieszkalnych, dziennej i nocnej, na jednym poziomie -
 parterze, bez konieczności budowania schodów i stropu. Warto także podkreślić bezpośredni kontakt z
 otaczającą budynek zielenią, dostępną niemal "za ścianą". Małe <a href="/projekty-domow/parterowe/"
-style="color: #cc1000;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
+style="color: #ed1d24;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
 propozycji na rynku. Koszt budowy jak i ich użytkowania zaliczyć można do najniższych. Rozległe
 rezydencje parterowe natomiast, najbardziej przypominają nowoczesne siedliska. W naszej ofercie projekty
 domów parterowych traktowane są wyjątkowo - bez trudu znajdą tutaj Państwo coś dla siebie. Od
@@ -19738,9 +19738,9 @@ różnorodne kształty. Od typowych, prostych konstrukcji, przykrytych dwuspadow
 finezyjne bryły ozdobione licznymi detalami architektonicznymi i bazujące na nowoczesnych trendach.
 Przygotowane przez nas budynki to wspaniała propozycja dla typowych rodzin 2+2 i 2+3. Ich funkcjonalność
 została specjalnie zaprojektowana dla wygody kilku użytkowników, którzy spędzają czas w swoim domu. <a
-href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #cc1000;">Gotowe projekty domów z
+href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #ed1d24;">Gotowe projekty domów z
 poddaszem użytkowym</a> stanowią w naszej ofercie najliczniejszą grupę koncepcji, które wcielamy w
-życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #cc1000;">Zobacz dodatki</a>
+życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #ed1d24;">Zobacz dodatki</a>
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Projekty domów
 jednorodzinnych Studio Atrium</h2>
@@ -19763,7 +19763,7 @@ Atrium cieszy się bardzo dobrą opinią wśród klientów. Nasi klienci w recen
 wysoką jakość obsługi, solidność projektów, oraz indywidualne podejście do potrzeb inwestorów. Ponadto
 jako firma zdobyliśmy uznanie w branży, m.in. poprzez wyróżnienia takie jak Konsumencki Lider Jakości,
 co świadczy o dbałości o klienta. Jeżeli nadal masz wątpliwości, już dziś <a
-href="https://www.studioatrium.pl/kontakt/" style="color: #cc1000;">skontaktuj się z naszym
+href="https://www.studioatrium.pl/kontakt/" style="color: #ed1d24;">skontaktuj się z naszym
 konsultantem</a> lub odwiedź naszą siedzibę mieszczącą się w Bielsku-Białej przy ulicy J.
 Malczewskiego 1. Jesteśmy otwarci dla Ciebie od poniedziałku do piątku w godzinach od 8:00 do 17:00.
 Skontaktuj się z nami i poznaj przyjemność pracy ze specjalistami!</p>
@@ -19818,7 +19818,7 @@ możemy zaoferować! Twój wymarzony dom zaczyna się od pierwszego kliknięcia.
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Odwiedź nasze
 forum dyskusyjne</h2>
 <p>Nasza strona internetowa zawiera zakładkę <a href="https://www.studioatrium.pl/forum/"
-style="color: #cc1000;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
+style="color: #ed1d24;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
 architektonicznego wymieniają się swoimi poglądami oraz przemyśleniami w tej dziedzinie. To świetna
 okazja, by wymienić się doświadczeniami; co więcej, w dyskusjach poruszanych na forum biorą udział nasi
 eksperci, którzy otwarcie dzielą się swoim doświadczeniem. Forum na stronie internetowej Studio Atrium
@@ -19882,7 +19882,7 @@ konkretny, spełniający wszelkie oczekiwania Inwestora.</p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Nasz katalog
 projektów domów - co w nim znajdziesz?</h2>
 <p>Katalog projektów to narzędzie przydatne dla interesantów, chętnych pogłębić swoją wiedzę. <a
-href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #cc1000;">Nasz darmowy
+href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #ed1d24;">Nasz darmowy
 katalog</a> prezentuje liczne propozycje projektów. Znajdziesz w nim projekty domów parterowych i
 piętrowych, projekty z przystosowaniem do różnych typów działek, projekty garaży wolnostojących oraz
 inne wyselekcjonowane projekty domów. Jeżeli chcesz zobaczyć więcej projektów oferowanych przez Studio
@@ -19924,7 +19924,7 @@ antresolą)</p>
 <p>• W zależności od stylu (nowoczesne, w stylu stodoły, regionalne beskidzkie, nowoczesne beskidzkie, z
 płaskim dachem, rezydencje dla zamożnych)</p>
 <h3 style="font-size:2.4rem;">Projekty domów piętrowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #ed1d24;">Projekty domów
 piętrowych</a> wyróżniają się świetnym zagospodarowaniem wnętrza, które z łatwością można podzielić
 na strefę dzienną, składającą się z kuchni, salonu i innych pomieszczeń integralnych oraz strefę nocną
 dedykowaną sypialniom, łazienkom i różnego rodzaju gabinetom domowym. Domy składające się z więcej niż
@@ -19934,7 +19934,7 @@ stanowią podstawę do ciekawej aranżacji bryły. Takie rozwiązanie świetnie 
 rodzin z dziećmi, łącząc estetykę i komfort w jednej bryle. Warto podkreślić, że domy piętrowe idealnie
 nadają się w przypadku mniejszej działki - takie rozwiązanie pozwala zaoszczędzić przestrzeń.</p>
 <h3 style="font-size:2.4rem;">Projekty domów parterowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #ed1d24;">Projekty domów
 parterowych</a> stanowią idealne rozwiązanie dla klientów ceniących sobie wygodę, estetykę oraz
 funkcjonalność. Głównym atutem tego typu projektów jest brak schodów. Jedna kondygnacja, z której składa
 się cała bryła może okazać się idealnym rozwiązaniem dla rodzin z małymi dziećmi lub dla osób z
@@ -19955,7 +19955,7 @@ idealnie sprawdza się jako dodatkowy składzik lub pomieszczenie gospodarcze. W
 parterowy z poddaszem to świetna alternatywa dla Inwestorów, którzy chcą rozłożyć budowę domu na etapy,
 ponieważ poddasze nie musi być wykańczane od razu.</p>
 <h3 style="font-size:2.4rem;">Projekty domów bliźniaczych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #ed1d24;">Projekty domów
 bliźniaczych</a> to charakterystyczne budowle, które wyróżniają się podziałem bryły na dwa oddzielne
 i niezależne od siebie segmenty. Konstrukcja składa się z jednego wspólnego dachu oraz murów
 zewnętrznych, natomiast zawiera dwa oddzielne i niezależne wejścia do mieszkania. Ta alternatywa jest
@@ -19972,7 +19972,7 @@ nasi projektanci uwzględnili w projektach domów takie rozwiązania jak systemy
 energii odnawialnej, systemy zarządzania energią oraz wiele innych zastosowań, definiujących projekty
 Studio Atrium jako energooszczędne.</p>
 <h3 style="font-size:2.4rem;">Projekty domów nowoczesnych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #ed1d24;">Projekty domów
 nowoczesnych</a> wyróżniają się uwzględnieniem minimalizmu i prostoty. W tym celu ogranicza się
 ozdoby i dekoracje do minimum, co sprawia, że cena wybudowania takiego domu staje się atrakcyjniejsza.
 Zastosowanie dużych przeszklonych okien wpuszcza do domu naturalne światło, co pozwala zaoszczędzić
@@ -19980,7 +19980,7 @@ energię elektryczną. Inwestorzy często decydują się również na zastosowan
 cegły, aby dom był bardziej przytulny. Wyżej opisane elementy to przykładowe detale, którymi cechują się
 projekty domów nowoczesnych.</p>
 <h3 style="font-size:2.4rem;">Projekty w stylu stodoły</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #cc1000;">Projekty
+<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #ed1d24;">Projekty
 domów w stylu stodoły</a>, czyli tzw. Barn House, coraz częściej stają się obiektem zainteresowań
 Inwestorów. Charakteryzują się prostokątną bryłą budynku oraz wielkoformatowymi oknami. Są to typy domów
 z dachem dwuspadowym. Wnętrza cechują wysokie sufity i otwarte przestrzenie z uwzględnieniem antresoli
@@ -19989,7 +19989,7 @@ takich jak drewniane bele i stara cegła, w połączeniu z nowoczesnymi metalowy
 wykończeniami. </p>
 <h3 style="font-size:2.4rem;">Projekty domów z poddaszem użytkowym</h3>
 <p><a href="https://www.studioatrium.pl/projekty-domow/z-poddaszem-uzytkowym/"
-style="color: #cc1000;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
+style="color: #ed1d24;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
 wszystkim decyzję o zagospodarowaniu poddasza podejmuje Inwestor, co więcej poddasze użytkowe to
 możliwość podzielenia wykończenia domu na etapy. Poddasze to przestrzeń wypełniona licznymi skosami,
 które przy odpowiedniej aranżacji kreują przytulną przestrzeń dla mieszkańców. Zastosowanie tego rodzaju
@@ -20011,7 +20011,7 @@ na dłuższy okres czasu.</p>
 <p>Bardzo często zdarza się, że najistotniejszym dla inwestora jest mały metraż działki, który automatycznie
 uniemożliwia wybudowanie pewnych brył. Dla specjalistów Studio Atrium wąska działka nie stanowi
 ograniczenia a jedynie podstawę do tworzenia kreatywnych rozwiązań dla klienta. <a
-href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #cc1000;">Projekty
+href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #ed1d24;">Projekty
 domów na wąską działkę</a> najczęściej skupiają się na maksymalnym wykorzystaniu działki poprzez
 zastosowanie podłużnej, prostokątnej bryły, tak aby jak najbardziej wykorzystać ograniczoną
 powierzchnię. W przypadku wąskich działek idealnie sprawdzają się domy piętrowe lub takie z poddaszem
@@ -20019,7 +20019,7 @@ użytkowym.</p>
 <h3 style="font-size:2.4rem;">Projekty domów z kosztorysem</h3>
 <p>Decydując się na zakup projektu domu z kosztorysem, inwestor nabywa gotowe plany budowlane z
 uwzględnieniem szczegółowych informacji <a
-href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #cc1000;">kosztów
+href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #ed1d24;">kosztów
 budowy domów</a>. Takie rozwiązanie świetnie sprawdza się w przypadku Inwestorów, którym zależy na
 dokładnej kontroli budżetu. Jest to również możliwość do lepszego rozplanowania etapów budowy i płynnego
 zarządzania zapleczem finansowym. Jeżeli budujesz dom po raz pierwszy, masz ograniczony budżet lub
@@ -20028,7 +20028,7 @@ kosztorysem jest odpowiednia dla Ciebie. Aktualna cena to 750 zł za szczegóło
 <h3 style="font-size:2.4rem;">Projekty małych domów</h3>
 <p>Małe domy wyróżnia nieduży metraż; dlatego istotne jest uwzględnienie w projekcie praktycznych zastosowań
 przy maksymalnym zagospodarowaniu powierzchni użytkowej. <a
-href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #cc1000;">Projekty małych
+href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #ed1d24;">Projekty małych
 domów</a> to idealne rozwiązanie dla par lub osób w podeszłym wieku; co więcej takie projekty
 idealnie sprawdzają się w przypadku ograniczeń związanych z małym metrażem działki. Jeżeli cenisz sobie
 praktyczność połączoną z przytulnymi aranżacjami wnętrz, projekt małego domu jest właśnie dla Ciebie.
@@ -20041,7 +20041,7 @@ wielopoziomowych układów kondygnacji, aby w pełni wykorzystać dostępną prz
 umożliwia ulokowanie parteru lub piwnicy w częściowym zagłębieniu w skarpie, natomiast wyższe
 kondygnacje są wysuwane. Dom ulokowany na wzniesieniu oferuje panoramiczne widoki, co wpływa na jego
 atrakcyjność. <a href="https://www.studioatrium.pl/projekty-domow/na-skarpe/"
-style="color: #cc1000;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
+style="color: #ed1d24;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
 połączeniu z zastosowaniem dużych okien stanowi energooszczędne rozwiązanie doświetlające wnętrze domu.
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Co należy
@@ -20204,11 +20204,11 @@ poddaszem{elseif $_item.object.params_general|isGroundFloor:true}parterowego
 <div>
 <p>Z przyjemnością prezentujemy Państwu gotowe projekty domów. Przygotowali je doświadczeni specjaliści,
 którzy tworzą personel naszej firmy. W ofercie znajdą Państwo między innymi <a
-href="/projekty-domow/blizniaki/" style="color: #cc1000;">projekty domów bliźniaczych</a>, <a
-href="/projekty-domow/nowoczesne/" style="color: #cc1000;">projekty domów nowoczesnych</a>, <a
+href="/projekty-domow/blizniaki/" style="color: #ed1d24;">projekty domów bliźniaczych</a>, <a
+href="/projekty-domow/nowoczesne/" style="color: #ed1d24;">projekty domów nowoczesnych</a>, <a
 href="/projekty-domow/na-waska-dzialke/">na wąską działkę</a>, parterowych i piętrowych. Polecamy
-także <a href="/projekty-domow/tanie-w-budowie/" style="color: #cc1000;">domy tanie w budowie</a> oraz
-<a href="/projekty-domow/z-plaskim-dachem/" style="color: #cc1000;">z płaskim dachem</a>. Wszystkie
+także <a href="/projekty-domow/tanie-w-budowie/" style="color: #ed1d24;">domy tanie w budowie</a> oraz
+<a href="/projekty-domow/z-plaskim-dachem/" style="color: #ed1d24;">z płaskim dachem</a>. Wszystkie
 dostosowane są do polskich warunków budowlanych. Udostępniamy także wzory małych obiektów, ponieważ
 wiemy jak ważna jest obecnie oszczędność i funkcjonalność. Posiadamy wieloletnie doświadczenie we
 współpracy z inwestorami budującymi tego typu obiekty, propozycje zostały więc opracowane na podstawie
@@ -20216,7 +20216,7 @@ wytycznych ekspertów. Projekty domów gotowych do realizacji to wygodne i prakt
 szczególnie dla osób, które nie zetknęły się wcześniej z tą branżą. Mogą w ten sposób nabyć wzór, który
 jest uniwersalny i sprawdzony w praktyce. Mamy świadomość tego, iż wybór odpowiedniej propozycji to
 poważna decyzja, dlatego chętnie służymy Państwu radą. Wszystkie nasze <a href="/projekty-domow/"
-style="color: #cc1000;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
+style="color: #ed1d24;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
 najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczekiwania.
 </p>
 <h3>Najpopularniejsze typy domów</h3>
@@ -20225,7 +20225,7 @@ najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczeki
 takiego rozwiązania jest umieszczenie stref mieszkalnych, dziennej i nocnej, na jednym poziomie -
 parterze, bez konieczności budowania schodów i stropu. Warto także podkreślić bezpośredni kontakt z
 otaczającą budynek zielenią, dostępną niemal "za ścianą". Małe <a href="/projekty-domow/parterowe/"
-style="color: #cc1000;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
+style="color: #ed1d24;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
 propozycji na rynku. Koszt budowy jak i ich użytkowania zaliczyć można do najniższych. Rozległe
 rezydencje parterowe natomiast, najbardziej przypominają nowoczesne siedliska. W naszej ofercie projekty
 domów parterowych traktowane są wyjątkowo - bez trudu znajdą tutaj Państwo coś dla siebie. Od
@@ -20239,9 +20239,9 @@ różnorodne kształty. Od typowych, prostych konstrukcji, przykrytych dwuspadow
 finezyjne bryły ozdobione licznymi detalami architektonicznymi i bazujące na nowoczesnych trendach.
 Przygotowane przez nas budynki to wspaniała propozycja dla typowych rodzin 2+2 i 2+3. Ich funkcjonalność
 została specjalnie zaprojektowana dla wygody kilku użytkowników, którzy spędzają czas w swoim domu. <a
-href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #cc1000;">Gotowe projekty domów z
+href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #ed1d24;">Gotowe projekty domów z
 poddaszem użytkowym</a> stanowią w naszej ofercie najliczniejszą grupę koncepcji, które wcielamy w
-życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #cc1000;">Zobacz dodatki</a>
+życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #ed1d24;">Zobacz dodatki</a>
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Projekty domów
 jednorodzinnych Studio Atrium</h2>
@@ -20264,7 +20264,7 @@ Atrium cieszy się bardzo dobrą opinią wśród klientów. Nasi klienci w recen
 wysoką jakość obsługi, solidność projektów, oraz indywidualne podejście do potrzeb inwestorów. Ponadto
 jako firma zdobyliśmy uznanie w branży, m.in. poprzez wyróżnienia takie jak Konsumencki Lider Jakości,
 co świadczy o dbałości o klienta. Jeżeli nadal masz wątpliwości, już dziś <a
-href="https://www.studioatrium.pl/kontakt/" style="color: #cc1000;">skontaktuj się z naszym
+href="https://www.studioatrium.pl/kontakt/" style="color: #ed1d24;">skontaktuj się z naszym
 konsultantem</a> lub odwiedź naszą siedzibę mieszczącą się w Bielsku-Białej przy ulicy J.
 Malczewskiego 1. Jesteśmy otwarci dla Ciebie od poniedziałku do piątku w godzinach od 8:00 do 17:00.
 Skontaktuj się z nami i poznaj przyjemność pracy ze specjalistami!</p>
@@ -20319,7 +20319,7 @@ możemy zaoferować! Twój wymarzony dom zaczyna się od pierwszego kliknięcia.
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Odwiedź nasze
 forum dyskusyjne</h2>
 <p>Nasza strona internetowa zawiera zakładkę <a href="https://www.studioatrium.pl/forum/"
-style="color: #cc1000;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
+style="color: #ed1d24;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
 architektonicznego wymieniają się swoimi poglądami oraz przemyśleniami w tej dziedzinie. To świetna
 okazja, by wymienić się doświadczeniami; co więcej, w dyskusjach poruszanych na forum biorą udział nasi
 eksperci, którzy otwarcie dzielą się swoim doświadczeniem. Forum na stronie internetowej Studio Atrium
@@ -20383,7 +20383,7 @@ konkretny, spełniający wszelkie oczekiwania Inwestora.</p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Nasz katalog
 projektów domów - co w nim znajdziesz?</h2>
 <p>Katalog projektów to narzędzie przydatne dla interesantów, chętnych pogłębić swoją wiedzę. <a
-href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #cc1000;">Nasz darmowy
+href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #ed1d24;">Nasz darmowy
 katalog</a> prezentuje liczne propozycje projektów. Znajdziesz w nim projekty domów parterowych i
 piętrowych, projekty z przystosowaniem do różnych typów działek, projekty garaży wolnostojących oraz
 inne wyselekcjonowane projekty domów. Jeżeli chcesz zobaczyć więcej projektów oferowanych przez Studio
@@ -20425,7 +20425,7 @@ antresolą)</p>
 <p>• W zależności od stylu (nowoczesne, w stylu stodoły, regionalne beskidzkie, nowoczesne beskidzkie, z
 płaskim dachem, rezydencje dla zamożnych)</p>
 <h3 style="font-size:2.4rem;">Projekty domów piętrowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #ed1d24;">Projekty domów
 piętrowych</a> wyróżniają się świetnym zagospodarowaniem wnętrza, które z łatwością można podzielić
 na strefę dzienną, składającą się z kuchni, salonu i innych pomieszczeń integralnych oraz strefę nocną
 dedykowaną sypialniom, łazienkom i różnego rodzaju gabinetom domowym. Domy składające się z więcej niż
@@ -20435,7 +20435,7 @@ stanowią podstawę do ciekawej aranżacji bryły. Takie rozwiązanie świetnie 
 rodzin z dziećmi, łącząc estetykę i komfort w jednej bryle. Warto podkreślić, że domy piętrowe idealnie
 nadają się w przypadku mniejszej działki - takie rozwiązanie pozwala zaoszczędzić przestrzeń.</p>
 <h3 style="font-size:2.4rem;">Projekty domów parterowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #ed1d24;">Projekty domów
 parterowych</a> stanowią idealne rozwiązanie dla klientów ceniących sobie wygodę, estetykę oraz
 funkcjonalność. Głównym atutem tego typu projektów jest brak schodów. Jedna kondygnacja, z której składa
 się cała bryła może okazać się idealnym rozwiązaniem dla rodzin z małymi dziećmi lub dla osób z
@@ -20456,7 +20456,7 @@ idealnie sprawdza się jako dodatkowy składzik lub pomieszczenie gospodarcze. W
 parterowy z poddaszem to świetna alternatywa dla Inwestorów, którzy chcą rozłożyć budowę domu na etapy,
 ponieważ poddasze nie musi być wykańczane od razu.</p>
 <h3 style="font-size:2.4rem;">Projekty domów bliźniaczych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #ed1d24;">Projekty domów
 bliźniaczych</a> to charakterystyczne budowle, które wyróżniają się podziałem bryły na dwa oddzielne
 i niezależne od siebie segmenty. Konstrukcja składa się z jednego wspólnego dachu oraz murów
 zewnętrznych, natomiast zawiera dwa oddzielne i niezależne wejścia do mieszkania. Ta alternatywa jest
@@ -20473,7 +20473,7 @@ nasi projektanci uwzględnili w projektach domów takie rozwiązania jak systemy
 energii odnawialnej, systemy zarządzania energią oraz wiele innych zastosowań, definiujących projekty
 Studio Atrium jako energooszczędne.</p>
 <h3 style="font-size:2.4rem;">Projekty domów nowoczesnych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #ed1d24;">Projekty domów
 nowoczesnych</a> wyróżniają się uwzględnieniem minimalizmu i prostoty. W tym celu ogranicza się
 ozdoby i dekoracje do minimum, co sprawia, że cena wybudowania takiego domu staje się atrakcyjniejsza.
 Zastosowanie dużych przeszklonych okien wpuszcza do domu naturalne światło, co pozwala zaoszczędzić
@@ -20481,7 +20481,7 @@ energię elektryczną. Inwestorzy często decydują się również na zastosowan
 cegły, aby dom był bardziej przytulny. Wyżej opisane elementy to przykładowe detale, którymi cechują się
 projekty domów nowoczesnych.</p>
 <h3 style="font-size:2.4rem;">Projekty w stylu stodoły</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #cc1000;">Projekty
+<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #ed1d24;">Projekty
 domów w stylu stodoły</a>, czyli tzw. Barn House, coraz częściej stają się obiektem zainteresowań
 Inwestorów. Charakteryzują się prostokątną bryłą budynku oraz wielkoformatowymi oknami. Są to typy domów
 z dachem dwuspadowym. Wnętrza cechują wysokie sufity i otwarte przestrzenie z uwzględnieniem antresoli
@@ -20490,7 +20490,7 @@ takich jak drewniane bele i stara cegła, w połączeniu z nowoczesnymi metalowy
 wykończeniami. </p>
 <h3 style="font-size:2.4rem;">Projekty domów z poddaszem użytkowym</h3>
 <p><a href="https://www.studioatrium.pl/projekty-domow/z-poddaszem-uzytkowym/"
-style="color: #cc1000;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
+style="color: #ed1d24;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
 wszystkim decyzję o zagospodarowaniu poddasza podejmuje Inwestor, co więcej poddasze użytkowe to
 możliwość podzielenia wykończenia domu na etapy. Poddasze to przestrzeń wypełniona licznymi skosami,
 które przy odpowiedniej aranżacji kreują przytulną przestrzeń dla mieszkańców. Zastosowanie tego rodzaju
@@ -20512,7 +20512,7 @@ na dłuższy okres czasu.</p>
 <p>Bardzo często zdarza się, że najistotniejszym dla inwestora jest mały metraż działki, który automatycznie
 uniemożliwia wybudowanie pewnych brył. Dla specjalistów Studio Atrium wąska działka nie stanowi
 ograniczenia a jedynie podstawę do tworzenia kreatywnych rozwiązań dla klienta. <a
-href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #cc1000;">Projekty
+href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #ed1d24;">Projekty
 domów na wąską działkę</a> najczęściej skupiają się na maksymalnym wykorzystaniu działki poprzez
 zastosowanie podłużnej, prostokątnej bryły, tak aby jak najbardziej wykorzystać ograniczoną
 powierzchnię. W przypadku wąskich działek idealnie sprawdzają się domy piętrowe lub takie z poddaszem
@@ -20520,7 +20520,7 @@ użytkowym.</p>
 <h3 style="font-size:2.4rem;">Projekty domów z kosztorysem</h3>
 <p>Decydując się na zakup projektu domu z kosztorysem, inwestor nabywa gotowe plany budowlane z
 uwzględnieniem szczegółowych informacji <a
-href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #cc1000;">kosztów
+href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #ed1d24;">kosztów
 budowy domów</a>. Takie rozwiązanie świetnie sprawdza się w przypadku Inwestorów, którym zależy na
 dokładnej kontroli budżetu. Jest to również możliwość do lepszego rozplanowania etapów budowy i płynnego
 zarządzania zapleczem finansowym. Jeżeli budujesz dom po raz pierwszy, masz ograniczony budżet lub
@@ -20529,7 +20529,7 @@ kosztorysem jest odpowiednia dla Ciebie. Aktualna cena to 750 zł za szczegóło
 <h3 style="font-size:2.4rem;">Projekty małych domów</h3>
 <p>Małe domy wyróżnia nieduży metraż; dlatego istotne jest uwzględnienie w projekcie praktycznych zastosowań
 przy maksymalnym zagospodarowaniu powierzchni użytkowej. <a
-href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #cc1000;">Projekty małych
+href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #ed1d24;">Projekty małych
 domów</a> to idealne rozwiązanie dla par lub osób w podeszłym wieku; co więcej takie projekty
 idealnie sprawdzają się w przypadku ograniczeń związanych z małym metrażem działki. Jeżeli cenisz sobie
 praktyczność połączoną z przytulnymi aranżacjami wnętrz, projekt małego domu jest właśnie dla Ciebie.
@@ -20542,7 +20542,7 @@ wielopoziomowych układów kondygnacji, aby w pełni wykorzystać dostępną prz
 umożliwia ulokowanie parteru lub piwnicy w częściowym zagłębieniu w skarpie, natomiast wyższe
 kondygnacje są wysuwane. Dom ulokowany na wzniesieniu oferuje panoramiczne widoki, co wpływa na jego
 atrakcyjność. <a href="https://www.studioatrium.pl/projekty-domow/na-skarpe/"
-style="color: #cc1000;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
+style="color: #ed1d24;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
 połączeniu z zastosowaniem dużych okien stanowi energooszczędne rozwiązanie doświetlające wnętrze domu.
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Co należy
@@ -20710,11 +20710,11 @@ poddaszem{elseif $_item.object.params_general|isGroundFloor:true}parterowego
 <div>
 <p>Z przyjemnością prezentujemy Państwu gotowe projekty domów. Przygotowali je doświadczeni specjaliści,
 którzy tworzą personel naszej firmy. W ofercie znajdą Państwo między innymi <a
-href="/projekty-domow/blizniaki/" style="color: #cc1000;">projekty domów bliźniaczych</a>, <a
-href="/projekty-domow/nowoczesne/" style="color: #cc1000;">projekty domów nowoczesnych</a>, <a
+href="/projekty-domow/blizniaki/" style="color: #ed1d24;">projekty domów bliźniaczych</a>, <a
+href="/projekty-domow/nowoczesne/" style="color: #ed1d24;">projekty domów nowoczesnych</a>, <a
 href="/projekty-domow/na-waska-dzialke/">na wąską działkę</a>, parterowych i piętrowych. Polecamy
-także <a href="/projekty-domow/tanie-w-budowie/" style="color: #cc1000;">domy tanie w budowie</a> oraz
-<a href="/projekty-domow/z-plaskim-dachem/" style="color: #cc1000;">z płaskim dachem</a>. Wszystkie
+także <a href="/projekty-domow/tanie-w-budowie/" style="color: #ed1d24;">domy tanie w budowie</a> oraz
+<a href="/projekty-domow/z-plaskim-dachem/" style="color: #ed1d24;">z płaskim dachem</a>. Wszystkie
 dostosowane są do polskich warunków budowlanych. Udostępniamy także wzory małych obiektów, ponieważ
 wiemy jak ważna jest obecnie oszczędność i funkcjonalność. Posiadamy wieloletnie doświadczenie we
 współpracy z inwestorami budującymi tego typu obiekty, propozycje zostały więc opracowane na podstawie
@@ -20722,7 +20722,7 @@ wytycznych ekspertów. Projekty domów gotowych do realizacji to wygodne i prakt
 szczególnie dla osób, które nie zetknęły się wcześniej z tą branżą. Mogą w ten sposób nabyć wzór, który
 jest uniwersalny i sprawdzony w praktyce. Mamy świadomość tego, iż wybór odpowiedniej propozycji to
 poważna decyzja, dlatego chętnie służymy Państwu radą. Wszystkie nasze <a href="/projekty-domow/"
-style="color: #cc1000;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
+style="color: #ed1d24;">projekty domów jednorodzinnych</a> zostały zaprojektowane z uwzględnieniem
 najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczekiwania.
 </p>
 <h3>Najpopularniejsze typy domów</h3>
@@ -20731,7 +20731,7 @@ najnowszych norm i trendów. Jesteśmy przekonani, że spełnimy Państwa oczeki
 takiego rozwiązania jest umieszczenie stref mieszkalnych, dziennej i nocnej, na jednym poziomie -
 parterze, bez konieczności budowania schodów i stropu. Warto także podkreślić bezpośredni kontakt z
 otaczającą budynek zielenią, dostępną niemal "za ścianą". Małe <a href="/projekty-domow/parterowe/"
-style="color: #cc1000;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
+style="color: #ed1d24;">projekty domów parterowych</a> należą do najbardziej ekonomicznych
 propozycji na rynku. Koszt budowy jak i ich użytkowania zaliczyć można do najniższych. Rozległe
 rezydencje parterowe natomiast, najbardziej przypominają nowoczesne siedliska. W naszej ofercie projekty
 domów parterowych traktowane są wyjątkowo - bez trudu znajdą tutaj Państwo coś dla siebie. Od
@@ -20745,9 +20745,9 @@ różnorodne kształty. Od typowych, prostych konstrukcji, przykrytych dwuspadow
 finezyjne bryły ozdobione licznymi detalami architektonicznymi i bazujące na nowoczesnych trendach.
 Przygotowane przez nas budynki to wspaniała propozycja dla typowych rodzin 2+2 i 2+3. Ich funkcjonalność
 została specjalnie zaprojektowana dla wygody kilku użytkowników, którzy spędzają czas w swoim domu. <a
-href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #cc1000;">Gotowe projekty domów z
+href="/projekty-domow/z-poddaszem-uzytkowym/" style="color: #ed1d24;">Gotowe projekty domów z
 poddaszem użytkowym</a> stanowią w naszej ofercie najliczniejszą grupę koncepcji, które wcielamy w
-życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #cc1000;">Zobacz dodatki</a>
+życie. <a href="/artykuly/Dodatki-do-projektu-domu,1364.html" style="color: #ed1d24;">Zobacz dodatki</a>
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Projekty domów
 jednorodzinnych Studio Atrium</h2>
@@ -20770,7 +20770,7 @@ Atrium cieszy się bardzo dobrą opinią wśród klientów. Nasi klienci w recen
 wysoką jakość obsługi, solidność projektów, oraz indywidualne podejście do potrzeb inwestorów. Ponadto
 jako firma zdobyliśmy uznanie w branży, m.in. poprzez wyróżnienia takie jak Konsumencki Lider Jakości,
 co świadczy o dbałości o klienta. Jeżeli nadal masz wątpliwości, już dziś <a
-href="https://www.studioatrium.pl/kontakt/" style="color: #cc1000;">skontaktuj się z naszym
+href="https://www.studioatrium.pl/kontakt/" style="color: #ed1d24;">skontaktuj się z naszym
 konsultantem</a> lub odwiedź naszą siedzibę mieszczącą się w Bielsku-Białej przy ulicy J.
 Malczewskiego 1. Jesteśmy otwarci dla Ciebie od poniedziałku do piątku w godzinach od 8:00 do 17:00.
 Skontaktuj się z nami i poznaj przyjemność pracy ze specjalistami!</p>
@@ -20825,7 +20825,7 @@ możemy zaoferować! Twój wymarzony dom zaczyna się od pierwszego kliknięcia.
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Odwiedź nasze
 forum dyskusyjne</h2>
 <p>Nasza strona internetowa zawiera zakładkę <a href="https://www.studioatrium.pl/forum/"
-style="color: #cc1000;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
+style="color: #ed1d24;">forum</a> dyskusyjnego, gdzie osoby zainteresowane nabyciem projektu
 architektonicznego wymieniają się swoimi poglądami oraz przemyśleniami w tej dziedzinie. To świetna
 okazja, by wymienić się doświadczeniami; co więcej, w dyskusjach poruszanych na forum biorą udział nasi
 eksperci, którzy otwarcie dzielą się swoim doświadczeniem. Forum na stronie internetowej Studio Atrium
@@ -20889,7 +20889,7 @@ konkretny, spełniający wszelkie oczekiwania Inwestora.</p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Nasz katalog
 projektów domów - co w nim znajdziesz?</h2>
 <p>Katalog projektów to narzędzie przydatne dla interesantów, chętnych pogłębić swoją wiedzę. <a
-href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #cc1000;">Nasz darmowy
+href="https://www.studioatrium.pl/katalog-projektow.html" style="color: #ed1d24;">Nasz darmowy
 katalog</a> prezentuje liczne propozycje projektów. Znajdziesz w nim projekty domów parterowych i
 piętrowych, projekty z przystosowaniem do różnych typów działek, projekty garaży wolnostojących oraz
 inne wyselekcjonowane projekty domów. Jeżeli chcesz zobaczyć więcej projektów oferowanych przez Studio
@@ -20931,7 +20931,7 @@ antresolą)</p>
 <p>• W zależności od stylu (nowoczesne, w stylu stodoły, regionalne beskidzkie, nowoczesne beskidzkie, z
 płaskim dachem, rezydencje dla zamożnych)</p>
 <h3 style="font-size:2.4rem;">Projekty domów piętrowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/pietrowe/" style="color: #ed1d24;">Projekty domów
 piętrowych</a> wyróżniają się świetnym zagospodarowaniem wnętrza, które z łatwością można podzielić
 na strefę dzienną, składającą się z kuchni, salonu i innych pomieszczeń integralnych oraz strefę nocną
 dedykowaną sypialniom, łazienkom i różnego rodzaju gabinetom domowym. Domy składające się z więcej niż
@@ -20941,7 +20941,7 @@ stanowią podstawę do ciekawej aranżacji bryły. Takie rozwiązanie świetnie 
 rodzin z dziećmi, łącząc estetykę i komfort w jednej bryle. Warto podkreślić, że domy piętrowe idealnie
 nadają się w przypadku mniejszej działki - takie rozwiązanie pozwala zaoszczędzić przestrzeń.</p>
 <h3 style="font-size:2.4rem;">Projekty domów parterowych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/parterowe/" style="color: #ed1d24;">Projekty domów
 parterowych</a> stanowią idealne rozwiązanie dla klientów ceniących sobie wygodę, estetykę oraz
 funkcjonalność. Głównym atutem tego typu projektów jest brak schodów. Jedna kondygnacja, z której składa
 się cała bryła może okazać się idealnym rozwiązaniem dla rodzin z małymi dziećmi lub dla osób z
@@ -20962,7 +20962,7 @@ idealnie sprawdza się jako dodatkowy składzik lub pomieszczenie gospodarcze. W
 parterowy z poddaszem to świetna alternatywa dla Inwestorów, którzy chcą rozłożyć budowę domu na etapy,
 ponieważ poddasze nie musi być wykańczane od razu.</p>
 <h3 style="font-size:2.4rem;">Projekty domów bliźniaczych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/blizniaki/" style="color: #ed1d24;">Projekty domów
 bliźniaczych</a> to charakterystyczne budowle, które wyróżniają się podziałem bryły na dwa oddzielne
 i niezależne od siebie segmenty. Konstrukcja składa się z jednego wspólnego dachu oraz murów
 zewnętrznych, natomiast zawiera dwa oddzielne i niezależne wejścia do mieszkania. Ta alternatywa jest
@@ -20979,7 +20979,7 @@ nasi projektanci uwzględnili w projektach domów takie rozwiązania jak systemy
 energii odnawialnej, systemy zarządzania energią oraz wiele innych zastosowań, definiujących projekty
 Studio Atrium jako energooszczędne.</p>
 <h3 style="font-size:2.4rem;">Projekty domów nowoczesnych</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #cc1000;">Projekty domów
+<p><a href="https://www.studioatrium.pl/projekty-domow/nowoczesne/" style="color: #ed1d24;">Projekty domów
 nowoczesnych</a> wyróżniają się uwzględnieniem minimalizmu i prostoty. W tym celu ogranicza się
 ozdoby i dekoracje do minimum, co sprawia, że cena wybudowania takiego domu staje się atrakcyjniejsza.
 Zastosowanie dużych przeszklonych okien wpuszcza do domu naturalne światło, co pozwala zaoszczędzić
@@ -20987,7 +20987,7 @@ energię elektryczną. Inwestorzy często decydują się również na zastosowan
 cegły, aby dom był bardziej przytulny. Wyżej opisane elementy to przykładowe detale, którymi cechują się
 projekty domów nowoczesnych.</p>
 <h3 style="font-size:2.4rem;">Projekty w stylu stodoły</h3>
-<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #cc1000;">Projekty
+<p><a href="https://www.studioatrium.pl/projekty-domow/w-stylu-stodoly/" style="color: #ed1d24;">Projekty
 domów w stylu stodoły</a>, czyli tzw. Barn House, coraz częściej stają się obiektem zainteresowań
 Inwestorów. Charakteryzują się prostokątną bryłą budynku oraz wielkoformatowymi oknami. Są to typy domów
 z dachem dwuspadowym. Wnętrza cechują wysokie sufity i otwarte przestrzenie z uwzględnieniem antresoli
@@ -20996,7 +20996,7 @@ takich jak drewniane bele i stara cegła, w połączeniu z nowoczesnymi metalowy
 wykończeniami. </p>
 <h3 style="font-size:2.4rem;">Projekty domów z poddaszem użytkowym</h3>
 <p><a href="https://www.studioatrium.pl/projekty-domow/z-poddaszem-uzytkowym/"
-style="color: #cc1000;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
+style="color: #ed1d24;">Projekty domów z poddaszem użytkowym</a> dają wiele możliwości. Przede
 wszystkim decyzję o zagospodarowaniu poddasza podejmuje Inwestor, co więcej poddasze użytkowe to
 możliwość podzielenia wykończenia domu na etapy. Poddasze to przestrzeń wypełniona licznymi skosami,
 które przy odpowiedniej aranżacji kreują przytulną przestrzeń dla mieszkańców. Zastosowanie tego rodzaju
@@ -21018,7 +21018,7 @@ na dłuższy okres czasu.</p>
 <p>Bardzo często zdarza się, że najistotniejszym dla inwestora jest mały metraż działki, który automatycznie
 uniemożliwia wybudowanie pewnych brył. Dla specjalistów Studio Atrium wąska działka nie stanowi
 ograniczenia a jedynie podstawę do tworzenia kreatywnych rozwiązań dla klienta. <a
-href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #cc1000;">Projekty
+href="https://www.studioatrium.pl/projekty-domow/na-waska-dzialke/" style="color: #ed1d24;">Projekty
 domów na wąską działkę</a> najczęściej skupiają się na maksymalnym wykorzystaniu działki poprzez
 zastosowanie podłużnej, prostokątnej bryły, tak aby jak najbardziej wykorzystać ograniczoną
 powierzchnię. W przypadku wąskich działek idealnie sprawdzają się domy piętrowe lub takie z poddaszem
@@ -21026,7 +21026,7 @@ użytkowym.</p>
 <h3 style="font-size:2.4rem;">Projekty domów z kosztorysem</h3>
 <p>Decydując się na zakup projektu domu z kosztorysem, inwestor nabywa gotowe plany budowlane z
 uwzględnieniem szczegółowych informacji <a
-href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #cc1000;">kosztów
+href="https://www.studioatrium.pl/artykuly/Koszty-budowy,388.html" style="color: #ed1d24;">kosztów
 budowy domów</a>. Takie rozwiązanie świetnie sprawdza się w przypadku Inwestorów, którym zależy na
 dokładnej kontroli budżetu. Jest to również możliwość do lepszego rozplanowania etapów budowy i płynnego
 zarządzania zapleczem finansowym. Jeżeli budujesz dom po raz pierwszy, masz ograniczony budżet lub
@@ -21035,7 +21035,7 @@ kosztorysem jest odpowiednia dla Ciebie. Aktualna cena to 750 zł za szczegóło
 <h3 style="font-size:2.4rem;">Projekty małych domów</h3>
 <p>Małe domy wyróżnia nieduży metraż; dlatego istotne jest uwzględnienie w projekcie praktycznych zastosowań
 przy maksymalnym zagospodarowaniu powierzchni użytkowej. <a
-href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #cc1000;">Projekty małych
+href="https://www.studioatrium.pl/projekty-domow/do-70m2/" style="color: #ed1d24;">Projekty małych
 domów</a> to idealne rozwiązanie dla par lub osób w podeszłym wieku; co więcej takie projekty
 idealnie sprawdzają się w przypadku ograniczeń związanych z małym metrażem działki. Jeżeli cenisz sobie
 praktyczność połączoną z przytulnymi aranżacjami wnętrz, projekt małego domu jest właśnie dla Ciebie.
@@ -21048,7 +21048,7 @@ wielopoziomowych układów kondygnacji, aby w pełni wykorzystać dostępną prz
 umożliwia ulokowanie parteru lub piwnicy w częściowym zagłębieniu w skarpie, natomiast wyższe
 kondygnacje są wysuwane. Dom ulokowany na wzniesieniu oferuje panoramiczne widoki, co wpływa na jego
 atrakcyjność. <a href="https://www.studioatrium.pl/projekty-domow/na-skarpe/"
-style="color: #cc1000;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
+style="color: #ed1d24;">Domy na skarpie</a> często są mocno wyeksponowane na światło, co w
 połączeniu z zastosowaniem dużych okien stanowi energooszczędne rozwiązanie doświetlające wnętrze domu.
 </p>
 <h2 style="font-size:3rem; line-height: 1.2em; text-transform: uppercase; margin: 30px 0;">Co należy

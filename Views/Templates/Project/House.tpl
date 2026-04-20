@@ -273,7 +273,7 @@
 						<p class="price">{($project.price/2)|number_format:2:",":""} <span>zł</span></p>
 						<p class="vatInfo">informacyjna cena za 1 {if $projectParams|isDual}lokal{else}segment{/if}</p>
 					{/if}
-					<p class="price{if $project.discount} promo{/if}">{if $project.discount}<span class="old-price discount"{if $projectParams|isBlackWeek} style="color:#fff;"{/if}>{$project.price} zł</span><span class="current-price" style="color: #cc1000; font-size:3.6rem; text-align: right; margin: 18px 0 12px; font-family: 'LatoLatinWeb',sans-serif;">{$project.price - $project.discount}</span>{else}{$project.price}{/if} <span class="currency"{if $projectParams|isBlackWeek} style="color:#fff;"{/if}>zł</span></p>
+					<p class="price{if $project.discount} promo{/if}">{if $project.discount}<span class="old-price discount"{if $projectParams|isBlackWeek} style="color:#fff;"{/if}>{$project.price} zł</span><span class="current-price" style="color: #ed1d24; font-size:3.6rem; text-align: right; margin: 18px 0 12px; font-family: 'LatoLatinWeb',sans-serif;">{$project.price - $project.discount}</span>{else}{$project.price}{/if} <span class="currency"{if $projectParams|isBlackWeek} style="color:#fff;"{/if}>zł</span></p>
 					{*if $projectParams|vatValue}<p class="vatInfo">(w tym {$projectParams|vatValue}% VAT)</p>{/if*}
 					{if $projectParams|isHalfPrice}<p class="vatInfo">cena za cały budynek</p>
 					<p class="vatInfo">(w tym 23% VAT)</p>
@@ -303,11 +303,11 @@
 						</p>
 						<div id="pompInfo" style="display: none;"></div>
 						{else}
-							<div id="pompInfo" style="display: none; text-align: center; color: #cc1000;">UWAGA!<br>Przed złożeniem zamówienia zapytaj konsultanta o termin realizacji wariantu z pompą ciepła!</div>	
+							<div id="pompInfo" style="display: none; text-align: center; color: #ed1d24;">UWAGA!<br>Przed złożeniem zamówienia zapytaj konsultanta o termin realizacji wariantu z pompą ciepła!</div>	
 						{/if}
 					{/if}
 					{*if $project.discount && !$projectParams|isBlackWeek && !$projectParams|isChristmas}
-						<p class="vatInfo" style="text-align: center; margin: 0 auto; font-size: 1.5rem;"><strong style="color: #cc1000;">W ramach promocji istnieje możliwość dostosowania kotła na biomasę w cenie</strong> - termin realizacji do 14 dni roboczych.</p>
+						<p class="vatInfo" style="text-align: center; margin: 0 auto; font-size: 1.5rem;"><strong style="color: #ed1d24;">W ramach promocji istnieje możliwość dostosowania kotła na biomasę w cenie</strong> - termin realizacji do 14 dni roboczych.</p>
 					{/if*}
 				{else}
 					<p class="price">projekt pokazowy<br><span>cena do uzgodnienia</span></p>
@@ -391,7 +391,7 @@
 						<td>{$skeletonW} x {$skeletonH} m</td>
 					</tr>
 				{/if}
-				<tr{if $project.type == 'skeleton'} style="color: #CC1000;"{/if}>
+				<tr{if $project.type == 'skeleton'} style="color: #ed1d24;"{/if}>
 					<td>minimalne wym. działki<span class="param-info" data-id="{if $project.type == 'skeleton'}75{else}76{/if}"></span></td>
 					<td>{$project.params_general|parcelWidth} x {$project.params_general|parcelHeight} m</td>
 				</tr>

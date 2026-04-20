@@ -233,6 +233,7 @@
 </div>
 *}
 <!-- Wyszukiwarka projektów -->
+<div class="project-search-overlay">
 <div class="blue-overlay cs">
 	<div id="cs-wrapper">
 		<div class="search-header">
@@ -981,6 +982,7 @@
 </div>
 
 <div class="dark-overlay"></div>
+</div>
 
 {*<script src="/js/app.js"></script>*}
 <!-- Swiper JS -->

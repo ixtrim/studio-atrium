@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-08-24 09:45:42
+/* Smarty version 3.1.48, created on 2026-08-24 11:10:18
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6a8bf6a648ef49_58267133',
+  'unifunc' => 'content_6a8c0a7a7606e9_89757543',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f68c881bff07f68173342c8f06edc155ee674935' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Footer.tpl',
-      1 => 1787557530,
+      1 => 1787562442,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6a8bf6a648ef49_58267133 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6a8c0a7a7606e9_89757543 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/aronmaiden/studioatrium/studio-atrium/Vendors/smarty/smarty/libs/plugins/modifier.truncate.php','function'=>'smarty_modifier_truncate',),));
 ?>
 <div class="blue-overlay" id="ajax-info-overlay">
@@ -197,6 +197,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </footer>
 
 <!-- Wyszukiwarka projektów -->
+<div class="project-search-overlay">
 <div class="blue-overlay cs">
 	<div id="cs-wrapper">
 		<div class="search-header">
@@ -977,6 +978,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </div>
 
 <div class="dark-overlay"></div>
+</div>
 
 <!-- Swiper JS -->
 <?php echo '<script'; ?>

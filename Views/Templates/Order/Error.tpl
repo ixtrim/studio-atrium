@@ -12,7 +12,7 @@
 <div class="wrapper">
 	<div class="box" style="margin: 64px auto;">
 		<div class="center">
-			<p class="section" style="color: #cc1000;">Błąd płatności online</p>
+			<p class="section" style="color: #ed1d24;">Błąd płatności online</p>
 
 		</div>
 		<div class="center morespaced">
