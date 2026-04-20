@@ -182,6 +182,150 @@ class SmartyFunctionsRegistry
         ];
     }
 
+    private function fetchInitiative()
+    {
+        $defaults = $this->getInitiativeDefaults();
+        try {
+            $pdo = \Point7_WebApp::getPDO();
+            $this->ensureInitiativeTable($pdo);
+            $stmt = $pdo->query(
+                'SELECT title, body, image_url, image_alt, button_label, button_url
+                 FROM homepage_initiative
+                 ORDER BY id ASC
+                 LIMIT 1'
+            );
+            if (!$stmt) {
+                return $defaults;
+            }
+            $row = $stmt->fetch(\PDO::FETCH_ASSOC);
+            return $row ? $row : $defaults;
+        } catch (\Throwable $e) {
+            return $defaults;
+        }
+    }
+
+    private function ensureInitiativeTable(\PDO $pdo)
+    {
+        $exists = $pdo->query("SHOW TABLES LIKE 'homepage_initiative'");
+        if ($exists && $exists->fetchColumn()) {
+            return;
+        }
+
+        $created = $pdo->exec(
+            'CREATE TABLE homepage_initiative (
+                id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+                title VARCHAR(255) NOT NULL DEFAULT \'\',
+                body TEXT NOT NULL,
+                image_url VARCHAR(512) NOT NULL DEFAULT \'\',
+                image_alt VARCHAR(255) NOT NULL DEFAULT \'\',
+                button_label VARCHAR(128) NOT NULL DEFAULT \'\',
+                button_url VARCHAR(512) NOT NULL DEFAULT \'\',
+                PRIMARY KEY (id)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4'
+        );
+        if ($created === false) {
+            throw new \RuntimeException('Could not create homepage_initiative');
+        }
+
+        $defaults = $this->getInitiativeDefaults();
+        $stmt = $pdo->prepare(
+            'INSERT INTO homepage_initiative (title, body, image_url, image_alt, button_label, button_url)
+             VALUES (:title, :body, :image_url, :image_alt, :button_label, :button_url)'
+        );
+        $stmt->execute(array(
+            ':title'        => $defaults['title'],
+            ':body'         => $defaults['body'],
+            ':image_url'    => $defaults['image_url'],
+            ':image_alt'    => $defaults['image_alt'],
+            ':button_label' => $defaults['button_label'],
+            ':button_url'   => $defaults['button_url'],
+        ));
+    }
+
+    private function getInitiativeDefaults()
+    {
+        return array(
+            'title'        => 'Nasze inicjatywy dla architektury',
+            'body'         => 'Firma architektoniczna i wydawnicza Studio Atrium istnieje na polskim rynku od 1994 roku. W naszym dorobku znajduje się ponad 1400 projektów powtarzalnych, ale zajmujemy się także inną działalnością w obszarze budownictwa oraz działalnością wydawniczą. Nasz dorobek projektowy prezentujemy na łamach katalogu Domy w Tradycji. Byliśmy także wydawcą magazynu Romantyczny Styl. Oprócz działalności na polu projektów powtarzalnych jesteśmy autorami projektów budynków usługowych, projektów wnętrz i mamy na koncie dwie ogólnopolskie akcje Dom Modelowy. Serdecznie zapraszamy do zapoznania się z naszymi osiągnięciami.',
+            'image_url'    => 'https://www.studioatrium.pl/img/about.webp',
+            'image_alt'    => 'Katalogi Studio Atrium',
+            'button_label' => 'Zobacz co jeszcze robimy',
+            'button_url'   => '#',
+        );
+    }
+
+    private function fetchCharity()
+    {
+        $defaults = $this->getCharityDefaults();
+        try {
+            $pdo = \Point7_WebApp::getPDO();
+            $this->ensureCharityTable($pdo);
+            $stmt = $pdo->query(
+                'SELECT title, body, logo1_url, logo1_alt, logo2_url, logo2_alt
+                 FROM homepage_charity
+                 ORDER BY id ASC
+                 LIMIT 1'
+            );
+            if (!$stmt) {
+                return $defaults;
+            }
+            $row = $stmt->fetch(\PDO::FETCH_ASSOC);
+            return $row ? $row : $defaults;
+        } catch (\Throwable $e) {
+            return $defaults;
+        }
+    }
+
+    private function ensureCharityTable(\PDO $pdo)
+    {
+        $exists = $pdo->query("SHOW TABLES LIKE 'homepage_charity'");
+        if ($exists && $exists->fetchColumn()) {
+            return;
+        }
+
+        $created = $pdo->exec(
+            'CREATE TABLE homepage_charity (
+                id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+                title VARCHAR(255) NOT NULL DEFAULT \'\',
+                body TEXT NOT NULL,
+                logo1_url VARCHAR(512) NOT NULL DEFAULT \'\',
+                logo1_alt VARCHAR(255) NOT NULL DEFAULT \'\',
+                logo2_url VARCHAR(512) NOT NULL DEFAULT \'\',
+                logo2_alt VARCHAR(255) NOT NULL DEFAULT \'\',
+                PRIMARY KEY (id)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4'
+        );
+        if ($created === false) {
+            throw new \RuntimeException('Could not create homepage_charity');
+        }
+
+        $defaults = $this->getCharityDefaults();
+        $stmt = $pdo->prepare(
+            'INSERT INTO homepage_charity (title, body, logo1_url, logo1_alt, logo2_url, logo2_alt)
+             VALUES (:title, :body, :logo1_url, :logo1_alt, :logo2_url, :logo2_alt)'
+        );
+        $stmt->execute(array(
+            ':title'     => $defaults['title'],
+            ':body'      => $defaults['body'],
+            ':logo1_url' => $defaults['logo1_url'],
+            ':logo1_alt' => $defaults['logo1_alt'],
+            ':logo2_url' => $defaults['logo2_url'],
+            ':logo2_alt' => $defaults['logo2_alt'],
+        ));
+    }
+
+    private function getCharityDefaults()
+    {
+        return array(
+            'title'     => 'Wspieramy potrzebujących',
+            'body'      => 'Biuro projektowe Studio Atrium działa na rynku od ponad 25 lat. Domy wybudowane według naszych projektów można spotkać w całym kraju. Jesteśmy przekonani, że mieszkają w nich szczęśliwe rodziny. Jednak zawsze staramy się pamiętać także o tych, których los nie zawsze traktuje z łagodnością.',
+            'logo1_url' => '/img/maitri.png',
+            'logo1_alt' => 'Maitri',
+            'logo2_url' => 'https://www.studioatrium.pl/img/drachma.png',
+            'logo2_alt' => 'Drachma',
+        );
+    }
+
     private function fetchContactData(): array
     {
         try {
@@ -251,6 +395,10 @@ class SmartyFunctionsRegistry
 
         // Assign homepage article ticks (zajawki artykułów)
         $smarty->assign('articles_ticks', $this->fetchArticlesTicks());
+
+        // Assign homepage initiative / charity unique sections
+        $smarty->assign('initiative', $this->fetchInitiative());
+        $smarty->assign('charity', $this->fetchCharity());
 
         // Assign footer menu columns (a/b/c) from footer_menus table
         $smarty->assign('footer_menus', $this->fetchMenuColumns());
