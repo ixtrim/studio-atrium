@@ -326,6 +326,361 @@ class SmartyFunctionsRegistry
         );
     }
 
+    private function fetchFeaturedVideo()
+    {
+        $defaults = $this->getFeaturedVideoDefaults();
+        try {
+            $pdo = \Point7_WebApp::getPDO();
+            $this->ensureFeaturedVideoTable($pdo);
+            $stmt = $pdo->query(
+                'SELECT title, youtube_id, thumbnail_url, image_alt, badge_name, badge_area, badge_site, video_url
+                 FROM homepage_featured_video
+                 ORDER BY id ASC
+                 LIMIT 1'
+            );
+            if (!$stmt) {
+                return $defaults;
+            }
+            $row = $stmt->fetch(\PDO::FETCH_ASSOC);
+            return $row ? $row : $defaults;
+        } catch (\Throwable $e) {
+            return $defaults;
+        }
+    }
+
+    private function ensureFeaturedVideoTable(\PDO $pdo)
+    {
+        $exists = $pdo->query("SHOW TABLES LIKE 'homepage_featured_video'");
+        if ($exists && $exists->fetchColumn()) {
+            return;
+        }
+
+        $created = $pdo->exec(
+            'CREATE TABLE homepage_featured_video (
+                id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+                title TEXT NOT NULL,
+                youtube_id VARCHAR(64) NOT NULL DEFAULT \'\',
+                thumbnail_url VARCHAR(512) NOT NULL DEFAULT \'\',
+                image_alt VARCHAR(255) NOT NULL DEFAULT \'\',
+                badge_name VARCHAR(128) NOT NULL DEFAULT \'\',
+                badge_area VARCHAR(128) NOT NULL DEFAULT \'\',
+                badge_site VARCHAR(255) NOT NULL DEFAULT \'\',
+                video_url VARCHAR(512) NOT NULL DEFAULT \'\',
+                PRIMARY KEY (id)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4'
+        );
+        if ($created === false) {
+            throw new \RuntimeException('Could not create homepage_featured_video');
+        }
+
+        $defaults = $this->getFeaturedVideoDefaults();
+        $stmt = $pdo->prepare(
+            'INSERT INTO homepage_featured_video
+             (title, youtube_id, thumbnail_url, image_alt, badge_name, badge_area, badge_site, video_url)
+             VALUES
+             (:title, :youtube_id, :thumbnail_url, :image_alt, :badge_name, :badge_area, :badge_site, :video_url)'
+        );
+        $stmt->execute(array(
+            ':title'         => $defaults['title'],
+            ':youtube_id'    => $defaults['youtube_id'],
+            ':thumbnail_url' => $defaults['thumbnail_url'],
+            ':image_alt'     => $defaults['image_alt'],
+            ':badge_name'    => $defaults['badge_name'],
+            ':badge_area'    => $defaults['badge_area'],
+            ':badge_site'    => $defaults['badge_site'],
+            ':video_url'     => $defaults['video_url'],
+        ));
+    }
+
+    private function getFeaturedVideoDefaults()
+    {
+        return array(
+            'title'          => "Zobacz piękną realizację\nnaszego projektu\nLOPEZ 101,90 m2\nZainspiruj się.",
+            'youtube_id'     => 'KGbL49tcxiE',
+            'thumbnail_url'  => 'https://img.youtube.com/vi/KGbL49tcxiE/maxresdefault.jpg',
+            'image_alt'      => 'LOPEZ 101,90 m²',
+            'badge_name'     => 'LOPEZ',
+            'badge_area'     => '(101,90 m²)',
+            'badge_site'     => 'www.studioatrium.pl',
+            'video_url'      => 'https://www.youtube.com/watch?v=KGbL49tcxiE',
+        );
+    }
+
+    private function fetchPorady()
+    {
+        $defaults = $this->getPoradyDefaults();
+        try {
+            $pdo = \Point7_WebApp::getPDO();
+            $this->ensurePoradyTables($pdo);
+            $stmt = $pdo->query(
+                'SELECT section_title, button_label, button_url
+                 FROM homepage_porady
+                 ORDER BY id ASC
+                 LIMIT 1'
+            );
+            if (!$stmt) {
+                return $defaults;
+            }
+            $row = $stmt->fetch(\PDO::FETCH_ASSOC);
+            return $row ? $row : $defaults;
+        } catch (\Throwable $e) {
+            return $defaults;
+        }
+    }
+
+    private function fetchTips()
+    {
+        $defaults = $this->getTipsDefaults();
+        try {
+            $pdo = \Point7_WebApp::getPDO();
+            $this->ensurePoradyTables($pdo);
+            $stmt = $pdo->query(
+                'SELECT title, image_url, image_alt, tag1_label, tag1_url, tag2_label, tag2_url
+                 FROM homepage_tips
+                 ORDER BY sorting ASC, id ASC'
+            );
+            if (!$stmt) {
+                return $defaults;
+            }
+            $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+            return !empty($rows) ? $rows : $defaults;
+        } catch (\Throwable $e) {
+            return $defaults;
+        }
+    }
+
+    private function ensurePoradyTables(\PDO $pdo)
+    {
+        $existsMeta = $pdo->query("SHOW TABLES LIKE 'homepage_porady'");
+        if (!($existsMeta && $existsMeta->fetchColumn())) {
+            $created = $pdo->exec(
+                'CREATE TABLE homepage_porady (
+                    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+                    section_title VARCHAR(255) NOT NULL DEFAULT \'\',
+                    button_label VARCHAR(128) NOT NULL DEFAULT \'\',
+                    button_url VARCHAR(512) NOT NULL DEFAULT \'\',
+                    PRIMARY KEY (id)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4'
+            );
+            if ($created === false) {
+                throw new \RuntimeException('Could not create homepage_porady');
+            }
+            $defaults = $this->getPoradyDefaults();
+            $stmt = $pdo->prepare(
+                'INSERT INTO homepage_porady (section_title, button_label, button_url)
+                 VALUES (:section_title, :button_label, :button_url)'
+            );
+            $stmt->execute(array(
+                ':section_title' => $defaults['section_title'],
+                ':button_label'  => $defaults['button_label'],
+                ':button_url'    => $defaults['button_url'],
+            ));
+        }
+
+        $existsTips = $pdo->query("SHOW TABLES LIKE 'homepage_tips'");
+        if ($existsTips && $existsTips->fetchColumn()) {
+            return;
+        }
+
+        $createdTips = $pdo->exec(
+            'CREATE TABLE homepage_tips (
+                id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+                title VARCHAR(512) NOT NULL DEFAULT \'\',
+                image_url VARCHAR(512) NOT NULL DEFAULT \'\',
+                image_alt VARCHAR(255) NOT NULL DEFAULT \'\',
+                tag1_label VARCHAR(128) NOT NULL DEFAULT \'\',
+                tag1_url VARCHAR(512) NOT NULL DEFAULT \'\',
+                tag2_label VARCHAR(128) NOT NULL DEFAULT \'\',
+                tag2_url VARCHAR(512) NOT NULL DEFAULT \'\',
+                sorting INT UNSIGNED NOT NULL DEFAULT 0,
+                PRIMARY KEY (id)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4'
+        );
+        if ($createdTips === false) {
+            throw new \RuntimeException('Could not create homepage_tips');
+        }
+
+        $stmt = $pdo->prepare(
+            'INSERT INTO homepage_tips
+             (title, image_url, image_alt, tag1_label, tag1_url, tag2_label, tag2_url, sorting)
+             VALUES
+             (:title, :image_url, :image_alt, :tag1_label, :tag1_url, :tag2_label, :tag2_url, :sorting)'
+        );
+        foreach ($this->getTipsDefaults() as $i => $row) {
+            $stmt->execute(array(
+                ':title'      => $row['title'],
+                ':image_url'  => $row['image_url'],
+                ':image_alt'  => $row['image_alt'],
+                ':tag1_label' => $row['tag1_label'],
+                ':tag1_url'   => $row['tag1_url'],
+                ':tag2_label' => $row['tag2_label'],
+                ':tag2_url'   => $row['tag2_url'],
+                ':sorting'    => $i,
+            ));
+        }
+    }
+
+    private function getPoradyDefaults()
+    {
+        return array(
+            'section_title' => 'Porady',
+            'button_label'  => 'Czytaj więcej',
+            'button_url'    => '#',
+        );
+    }
+
+    private function getTipsDefaults()
+    {
+        return array(
+            array(
+                'title'      => 'Jakie dachówki wybrać do nowoczesnego projektu domu w stylu nowoczesnej stodoły?',
+                'image_url'  => 'https://media.studioatrium.pl/stock/28/2332/67360499e8fdb-projekt-domu-torino-slim-multi.webp',
+                'image_alt'  => 'Jakie dachówki wybrać do nowoczesnego projektu domu w stylu nowoczesnej stodoły?',
+                'tag1_label' => 'Technologie',
+                'tag1_url'   => '#',
+                'tag2_label' => 'Dachy',
+                'tag2_url'   => '#',
+            ),
+            array(
+                'title'      => 'Dach na lata - na co zwrócić uwagę wybierając pokrycie dachowe',
+                'image_url'  => 'https://media.studioatrium.pl/stock/28/7964/68baea0b1474f-najlepsze-projekty-domow-parterowych.jpg',
+                'image_alt'  => 'Dach na lata - na co zwrócić uwagę wybierając pokrycie dachowe',
+                'tag1_label' => 'Technologie',
+                'tag1_url'   => '#',
+                'tag2_label' => 'Dachy',
+                'tag2_url'   => '#',
+            ),
+            array(
+                'title'      => 'Dach na lata - na co zwrócić uwagę wybierając pokrycie dachowe',
+                'image_url'  => 'https://media.studioatrium.pl/stock/28/7964/68baea0b1474f-najlepsze-projekty-domow-parterowych.jpg',
+                'image_alt'  => 'Dach na lata - na co zwrócić uwagę wybierając pokrycie dachowe',
+                'tag1_label' => 'Technologie',
+                'tag1_url'   => '#',
+                'tag2_label' => 'Dachy',
+                'tag2_url'   => '#',
+            ),
+            array(
+                'title'      => 'Jakie dachówki wybrać do nowoczesnego projektu domu w stylu nowoczesnej stodoły?',
+                'image_url'  => 'https://media.studioatrium.pl/stock/28/2332/67360499e8fdb-projekt-domu-torino-slim-multi.webp',
+                'image_alt'  => 'Jakie dachówki wybrać do nowoczesnego projektu domu w stylu nowoczesnej stodoły?',
+                'tag1_label' => 'Technologie',
+                'tag1_url'   => '#',
+                'tag2_label' => 'Dachy',
+                'tag2_url'   => '#',
+            ),
+        );
+    }
+
+    private function fetchOffer()
+    {
+        $defaults = $this->getOfferDefaults();
+        try {
+            $pdo = \Point7_WebApp::getPDO();
+            $this->ensureOfferTable($pdo);
+            $stmt = $pdo->query(
+                'SELECT title, lead_text, button_label, button_url, quote_text, quote_badge, quote_author,
+                        logo1_url, logo1_alt, logo2_url, logo2_alt, logo3_url, logo3_alt,
+                        image_url, image_alt, image_caption
+                 FROM homepage_oferta
+                 ORDER BY id ASC
+                 LIMIT 1'
+            );
+            if (!$stmt) {
+                return $defaults;
+            }
+            $row = $stmt->fetch(\PDO::FETCH_ASSOC);
+            return $row ? $row : $defaults;
+        } catch (\Throwable $e) {
+            return $defaults;
+        }
+    }
+
+    private function ensureOfferTable(\PDO $pdo)
+    {
+        $exists = $pdo->query("SHOW TABLES LIKE 'homepage_oferta'");
+        if ($exists && $exists->fetchColumn()) {
+            return;
+        }
+
+        $created = $pdo->exec(
+            'CREATE TABLE homepage_oferta (
+                id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+                title VARCHAR(255) NOT NULL DEFAULT \'\',
+                lead_text TEXT NOT NULL,
+                button_label VARCHAR(128) NOT NULL DEFAULT \'\',
+                button_url VARCHAR(512) NOT NULL DEFAULT \'\',
+                quote_text TEXT NOT NULL,
+                quote_badge VARCHAR(64) NOT NULL DEFAULT \'\',
+                quote_author VARCHAR(255) NOT NULL DEFAULT \'\',
+                logo1_url VARCHAR(512) NOT NULL DEFAULT \'\',
+                logo1_alt VARCHAR(255) NOT NULL DEFAULT \'\',
+                logo2_url VARCHAR(512) NOT NULL DEFAULT \'\',
+                logo2_alt VARCHAR(255) NOT NULL DEFAULT \'\',
+                logo3_url VARCHAR(512) NOT NULL DEFAULT \'\',
+                logo3_alt VARCHAR(255) NOT NULL DEFAULT \'\',
+                image_url VARCHAR(512) NOT NULL DEFAULT \'\',
+                image_alt VARCHAR(255) NOT NULL DEFAULT \'\',
+                image_caption VARCHAR(255) NOT NULL DEFAULT \'\',
+                PRIMARY KEY (id)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4'
+        );
+        if ($created === false) {
+            throw new \RuntimeException('Could not create homepage_oferta');
+        }
+
+        $defaults = $this->getOfferDefaults();
+        $stmt = $pdo->prepare(
+            'INSERT INTO homepage_oferta
+             (title, lead_text, button_label, button_url, quote_text, quote_badge, quote_author,
+              logo1_url, logo1_alt, logo2_url, logo2_alt, logo3_url, logo3_alt,
+              image_url, image_alt, image_caption)
+             VALUES
+             (:title, :lead_text, :button_label, :button_url, :quote_text, :quote_badge, :quote_author,
+              :logo1_url, :logo1_alt, :logo2_url, :logo2_alt, :logo3_url, :logo3_alt,
+              :image_url, :image_alt, :image_caption)'
+        );
+        $stmt->execute(array(
+            ':title'         => $defaults['title'],
+            ':lead_text'     => $defaults['lead_text'],
+            ':button_label'  => $defaults['button_label'],
+            ':button_url'    => $defaults['button_url'],
+            ':quote_text'    => $defaults['quote_text'],
+            ':quote_badge'   => $defaults['quote_badge'],
+            ':quote_author'  => $defaults['quote_author'],
+            ':logo1_url'     => $defaults['logo1_url'],
+            ':logo1_alt'     => $defaults['logo1_alt'],
+            ':logo2_url'     => $defaults['logo2_url'],
+            ':logo2_alt'     => $defaults['logo2_alt'],
+            ':logo3_url'     => $defaults['logo3_url'],
+            ':logo3_alt'     => $defaults['logo3_alt'],
+            ':image_url'     => $defaults['image_url'],
+            ':image_alt'     => $defaults['image_alt'],
+            ':image_caption' => $defaults['image_caption'],
+        ));
+    }
+
+    private function getOfferDefaults()
+    {
+        return array(
+            'title'         => 'Oferta dla deweloperów',
+            'lead_text'     => 'Planujesz budowę inwestycyjną? Szukasz sprawdzonego partnera i bezpiecznych oszczędnościowych projektów domów jednorodzinnych i wielorodzinnych?',
+            'button_label'  => 'Sprawdź ofertę',
+            'button_url'    => '#',
+            'quote_text'    => 'Firma Studio Atrium jest godna zaufania i dalszego polecenia. Zaproponowane rozwiązania architektoniczne i konstrukcyjne sprawdziły się w 100%.',
+            'quote_badge'   => 'PRZEWIJANKA',
+            'quote_author'  => 'Bogdan Białka',
+            'logo1_url'     => '/images/logo-autobialka.png',
+            'logo1_alt'     => 'Auto Białka',
+            'logo2_url'     => '/images/logo-kl.png',
+            'logo2_alt'     => 'KL',
+            'logo3_url'     => '/images/logo-drachma.png',
+            'logo3_alt'     => 'Drachma',
+            'image_url'     => 'https://media.studioatrium.pl/stock/33/3361/6a33d9a2d629c-projekty-domow-na-osiedla.webp',
+            'image_alt'     => 'Projekty dla deweloperów',
+            'image_caption' => 'Projekty dla deweloperów',
+        );
+    }
+
     private function fetchContactData(): array
     {
         try {
@@ -399,6 +754,12 @@ class SmartyFunctionsRegistry
         // Assign homepage initiative / charity unique sections
         $smarty->assign('initiative', $this->fetchInitiative());
         $smarty->assign('charity', $this->fetchCharity());
+
+        // Assign featured video / tips / offer sections
+        $smarty->assign('featured_video', $this->fetchFeaturedVideo());
+        $smarty->assign('porady', $this->fetchPorady());
+        $smarty->assign('tips', $this->fetchTips());
+        $smarty->assign('offer', $this->fetchOffer());
 
         // Assign footer menu columns (a/b/c) from footer_menus table
         $smarty->assign('footer_menus', $this->fetchMenuColumns());

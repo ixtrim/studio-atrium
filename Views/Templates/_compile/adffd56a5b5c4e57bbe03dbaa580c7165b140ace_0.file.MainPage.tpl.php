@@ -1,29 +1,35 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-08-24 13:26:13
+/* Smarty version 3.1.48, created on 2026-08-24 13:49:35
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/MainPage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6a8c2a559c04a8_83706197',
+  'unifunc' => 'content_6a8c2fcf5ff2a3_58549686',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'adffd56a5b5c4e57bbe03dbaa580c7165b140ace' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/MainPage.tpl',
-      1 => 1787570771,
+      1 => 1787571887,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:Include/FeaturedVideo.tpl' => 1,
+    'file:Include/Tips.tpl' => 1,
+    'file:Include/Offer.tpl' => 1,
     'file:Include/Initiative.tpl' => 1,
     'file:Include/Charity.tpl' => 1,
     'file:Include/ArticlesTicks.tpl' => 1,
   ),
 ),false)) {
-function content_6a8c2a559c04a8_83706197 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6a8c2fcf5ff2a3_58549686 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:Include/FeaturedVideo.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+$_smarty_tpl->_subTemplateRender("file:Include/Tips.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+$_smarty_tpl->_subTemplateRender("file:Include/Offer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:Include/Initiative.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:Include/Charity.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:Include/ArticlesTicks.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);

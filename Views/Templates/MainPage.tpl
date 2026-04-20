@@ -9,10 +9,10 @@
 {include file="Include/Contact.tpl"}
 {include file="Include/Products.tpl"}
 {include file="Include/Partners.tpl"}
-{include file="Include/Newsletter.tpl"}
+{include file="Include/Newsletter.tpl"} *}
 {include file="Include/FeaturedVideo.tpl"}
 {include file="Include/Tips.tpl"}
-{include file="Include/Offer.tpl"} *}
+{include file="Include/Offer.tpl"}
 {include file="Include/Initiative.tpl"}
 {include file="Include/Charity.tpl"}
 {include file="Include/ArticlesTicks.tpl"}

@@ -254,6 +254,10 @@
 	    <search_tolerance>5</search_tolerance>
 	    <catalog_prompt>0</catalog_prompt>
 	    <pay_catalog_available>0</pay_catalog_available>
+	    <!-- Server-to-server endpoint (site-backend's new ProjectSearch module)
+	         that runs the actual click-search DB query. Set this to your real
+	         admin.studioatrium.pl URL on the production/staging server. -->
+	    <clicksearch_api>http://admin.studioatrium.local/index.php?module=projectsearch&amp;action=clicksearch</clicksearch_api>
 	</helpers>
 
 	<secret>cj5kD7^ncLO92nsah^nds8a^mxKL8</secret>
