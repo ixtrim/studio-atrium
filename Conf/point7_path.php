@@ -33,4 +33,5 @@
 
 //return 'phar:///home/lukasz/dev/2016.studioatrium.packages/Point7.phar';
 //return 'phar://' . APP_PATH . '/Packages/Point7.phar';
-return '/7point.pl/lib/php:/7point.pl/lib/php/Packages:/7point.pl/lib/php/Classes;';
+//return '/7point.pl/lib/php:/7point.pl/lib/php/Packages:/7point.pl/lib/php/Classes;';
+return APP_PATH . '/Packages';

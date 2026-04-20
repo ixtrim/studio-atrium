@@ -32,4 +32,5 @@
 #########################################################################
 
 //return 'phar://home/lukasz/dev/2016.studioatrium.packages/StudioAtrium.phar';
-return '/7point.pl/app/2016.studioatrium.packages/';
+//return '/7point.pl/app/2016.studioatrium.packages/';
+return APP_PATH . '/AppPackages';

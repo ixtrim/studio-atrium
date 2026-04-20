@@ -31,4 +31,5 @@
 # 					You are such a ... PIG!								#
 #########################################################################
 
-return '/7point.pl/app/2016.studioatrium.packages/Vendors';
+//return '/7point.pl/app/2016.studioatrium.packages/Vendors';
+return APP_PATH . '/Vendors';
