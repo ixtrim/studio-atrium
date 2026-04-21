@@ -79,7 +79,7 @@
             </div>
             <p class="mt-8 italic font-semibold text-[15px] text-[#222]">arch. arch. Krzysztof Lelek i Piotr Godlewski
             </p><button type="button"
-                class="mt-8 bg-[#e63329] hover:bg-[#c92a21] text-white text-[13px] font-bold tracking-wider uppercase px-12 py-4 rounded-full">Umów
+                class="mt-8 inline-flex items-center justify-center bg-[#e63329] hover:bg-[#c92a21] text-white text-[13px] font-bold tracking-wider uppercase px-12 py-4 lg:h-[54px] lg:max-h-[54px] lg:py-0 leading-none rounded-full">Umów
                 konsultację z architektem</button>
         </div>
         <div class="flex items-end justify-center"><img src="/src/assets/architects.png"

@@ -31,7 +31,7 @@
                         osobowych w celu otrzymania odpowiedzi zgodnie z oświadczeniem.
                         <!-- --> <a href="#" class="underline">Szczegóły</a>
                     </span></label><button type="submit"
-                    class="w-full bg-[#e63329] hover:bg-[#cc2a21] text-white font-bold tracking-wider py-3 rounded-full text-[14px] transition-colors">WYŚLIJ</button>
+                    class="w-full inline-flex items-center justify-center bg-[#e63329] hover:bg-[#cc2a21] text-white font-bold tracking-wider py-3 lg:h-[54px] lg:max-h-[54px] lg:py-0 leading-none rounded-full text-[14px] uppercase transition-colors">WYŚLIJ</button>
             </form>
         </div>
     </div>

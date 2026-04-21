@@ -165,7 +165,7 @@
                 </svg></button>
         </div>
         <a href="/projekty"
-            class="absolute left-1/2 bottom-0 translate-x-[-50%] translate-y-1/2 bg-[var(--brand-red)] hover:bg-[var(--brand-red-hover)] text-white font-black px-12 py-4 text-[14px] uppercase tracking-[0.1em] z-10">Znajdź
+            class="absolute left-1/2 bottom-0 translate-x-[-50%] translate-y-1/2 inline-flex items-center justify-center bg-[var(--brand-red)] hover:bg-[var(--brand-red-hover)] text-white font-black px-12 py-4 lg:h-[54px] lg:max-h-[54px] lg:py-0 leading-none text-[14px] uppercase tracking-[0.1em] z-10">Znajdź
             dom dla siebie</a>
     </div>
 </section>
