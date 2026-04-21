@@ -435,7 +435,7 @@ class SmartyFunctionsRegistry
             $pdo = \Point7_WebApp::getPDO();
             $this->ensurePoradyTables($pdo);
             $stmt = $pdo->query(
-                'SELECT title, image_url, image_alt, tag1_label, tag1_url, tag2_label, tag2_url
+                'SELECT title, image_url, image_alt, article_url, tag1_label, tag1_url, tag2_label, tag2_url
                  FROM homepage_tips
                  ORDER BY sorting ASC, id ASC'
             );
@@ -478,46 +478,57 @@ class SmartyFunctionsRegistry
         }
 
         $existsTips = $pdo->query("SHOW TABLES LIKE 'homepage_tips'");
-        if ($existsTips && $existsTips->fetchColumn()) {
+        if (!($existsTips && $existsTips->fetchColumn())) {
+            $createdTips = $pdo->exec(
+                'CREATE TABLE homepage_tips (
+                    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+                    title VARCHAR(512) NOT NULL DEFAULT \'\',
+                    image_url VARCHAR(512) NOT NULL DEFAULT \'\',
+                    image_alt VARCHAR(255) NOT NULL DEFAULT \'\',
+                    article_url VARCHAR(512) NOT NULL DEFAULT \'\',
+                    tag1_label VARCHAR(128) NOT NULL DEFAULT \'\',
+                    tag1_url VARCHAR(512) NOT NULL DEFAULT \'\',
+                    tag2_label VARCHAR(128) NOT NULL DEFAULT \'\',
+                    tag2_url VARCHAR(512) NOT NULL DEFAULT \'\',
+                    sorting INT UNSIGNED NOT NULL DEFAULT 0,
+                    PRIMARY KEY (id)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4'
+            );
+            if ($createdTips === false) {
+                throw new \RuntimeException('Could not create homepage_tips');
+            }
+
+            $stmt = $pdo->prepare(
+                'INSERT INTO homepage_tips
+                 (title, image_url, image_alt, article_url, tag1_label, tag1_url, tag2_label, tag2_url, sorting)
+                 VALUES
+                 (:title, :image_url, :image_alt, :article_url, :tag1_label, :tag1_url, :tag2_label, :tag2_url, :sorting)'
+            );
+            foreach ($this->getTipsDefaults() as $i => $row) {
+                $stmt->execute(array(
+                    ':title'       => $row['title'],
+                    ':image_url'   => $row['image_url'],
+                    ':image_alt'   => $row['image_alt'],
+                    ':article_url' => $row['article_url'],
+                    ':tag1_label'  => $row['tag1_label'],
+                    ':tag1_url'    => $row['tag1_url'],
+                    ':tag2_label'  => $row['tag2_label'],
+                    ':tag2_url'    => $row['tag2_url'],
+                    ':sorting'     => $i,
+                ));
+            }
+        }
+
+        $this->ensureTipsArticleUrlColumn($pdo);
+    }
+
+    private function ensureTipsArticleUrlColumn(\PDO $pdo)
+    {
+        $col = $pdo->query("SHOW COLUMNS FROM homepage_tips LIKE 'article_url'");
+        if ($col && $col->fetchColumn()) {
             return;
         }
-
-        $createdTips = $pdo->exec(
-            'CREATE TABLE homepage_tips (
-                id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-                title VARCHAR(512) NOT NULL DEFAULT \'\',
-                image_url VARCHAR(512) NOT NULL DEFAULT \'\',
-                image_alt VARCHAR(255) NOT NULL DEFAULT \'\',
-                tag1_label VARCHAR(128) NOT NULL DEFAULT \'\',
-                tag1_url VARCHAR(512) NOT NULL DEFAULT \'\',
-                tag2_label VARCHAR(128) NOT NULL DEFAULT \'\',
-                tag2_url VARCHAR(512) NOT NULL DEFAULT \'\',
-                sorting INT UNSIGNED NOT NULL DEFAULT 0,
-                PRIMARY KEY (id)
-            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4'
-        );
-        if ($createdTips === false) {
-            throw new \RuntimeException('Could not create homepage_tips');
-        }
-
-        $stmt = $pdo->prepare(
-            'INSERT INTO homepage_tips
-             (title, image_url, image_alt, tag1_label, tag1_url, tag2_label, tag2_url, sorting)
-             VALUES
-             (:title, :image_url, :image_alt, :tag1_label, :tag1_url, :tag2_label, :tag2_url, :sorting)'
-        );
-        foreach ($this->getTipsDefaults() as $i => $row) {
-            $stmt->execute(array(
-                ':title'      => $row['title'],
-                ':image_url'  => $row['image_url'],
-                ':image_alt'  => $row['image_alt'],
-                ':tag1_label' => $row['tag1_label'],
-                ':tag1_url'   => $row['tag1_url'],
-                ':tag2_label' => $row['tag2_label'],
-                ':tag2_url'   => $row['tag2_url'],
-                ':sorting'    => $i,
-            ));
-        }
+        $pdo->exec("ALTER TABLE homepage_tips ADD article_url VARCHAR(512) NOT NULL DEFAULT '' AFTER image_alt");
     }
 
     private function getPoradyDefaults()
@@ -533,40 +544,44 @@ class SmartyFunctionsRegistry
     {
         return array(
             array(
-                'title'      => 'Jakie dachówki wybrać do nowoczesnego projektu domu w stylu nowoczesnej stodoły?',
-                'image_url'  => 'https://media.studioatrium.pl/stock/28/2332/67360499e8fdb-projekt-domu-torino-slim-multi.webp',
-                'image_alt'  => 'Jakie dachówki wybrać do nowoczesnego projektu domu w stylu nowoczesnej stodoły?',
-                'tag1_label' => 'Technologie',
-                'tag1_url'   => '#',
-                'tag2_label' => 'Dachy',
-                'tag2_url'   => '#',
+                'title'       => 'Jakie dachówki wybrać do nowoczesnego projektu domu w stylu nowoczesnej stodoły?',
+                'image_url'   => 'https://media.studioatrium.pl/stock/28/2332/67360499e8fdb-projekt-domu-torino-slim-multi.webp',
+                'image_alt'   => 'Jakie dachówki wybrać do nowoczesnego projektu domu w stylu nowoczesnej stodoły?',
+                'article_url' => '#',
+                'tag1_label'  => 'Technologie',
+                'tag1_url'    => '#',
+                'tag2_label'  => 'Dachy',
+                'tag2_url'    => '#',
             ),
             array(
-                'title'      => 'Dach na lata - na co zwrócić uwagę wybierając pokrycie dachowe',
-                'image_url'  => 'https://media.studioatrium.pl/stock/28/7964/68baea0b1474f-najlepsze-projekty-domow-parterowych.jpg',
-                'image_alt'  => 'Dach na lata - na co zwrócić uwagę wybierając pokrycie dachowe',
-                'tag1_label' => 'Technologie',
-                'tag1_url'   => '#',
-                'tag2_label' => 'Dachy',
-                'tag2_url'   => '#',
+                'title'       => 'Dach na lata - na co zwrócić uwagę wybierając pokrycie dachowe',
+                'image_url'   => 'https://media.studioatrium.pl/stock/28/7964/68baea0b1474f-najlepsze-projekty-domow-parterowych.jpg',
+                'image_alt'   => 'Dach na lata - na co zwrócić uwagę wybierając pokrycie dachowe',
+                'article_url' => '#',
+                'tag1_label'  => 'Technologie',
+                'tag1_url'    => '#',
+                'tag2_label'  => 'Dachy',
+                'tag2_url'    => '#',
             ),
             array(
-                'title'      => 'Dach na lata - na co zwrócić uwagę wybierając pokrycie dachowe',
-                'image_url'  => 'https://media.studioatrium.pl/stock/28/7964/68baea0b1474f-najlepsze-projekty-domow-parterowych.jpg',
-                'image_alt'  => 'Dach na lata - na co zwrócić uwagę wybierając pokrycie dachowe',
-                'tag1_label' => 'Technologie',
-                'tag1_url'   => '#',
-                'tag2_label' => 'Dachy',
-                'tag2_url'   => '#',
+                'title'       => 'Dach na lata - na co zwrócić uwagę wybierając pokrycie dachowe',
+                'image_url'   => 'https://media.studioatrium.pl/stock/28/7964/68baea0b1474f-najlepsze-projekty-domow-parterowych.jpg',
+                'image_alt'   => 'Dach na lata - na co zwrócić uwagę wybierając pokrycie dachowe',
+                'article_url' => '#',
+                'tag1_label'  => 'Technologie',
+                'tag1_url'    => '#',
+                'tag2_label'  => 'Dachy',
+                'tag2_url'    => '#',
             ),
             array(
-                'title'      => 'Jakie dachówki wybrać do nowoczesnego projektu domu w stylu nowoczesnej stodoły?',
-                'image_url'  => 'https://media.studioatrium.pl/stock/28/2332/67360499e8fdb-projekt-domu-torino-slim-multi.webp',
-                'image_alt'  => 'Jakie dachówki wybrać do nowoczesnego projektu domu w stylu nowoczesnej stodoły?',
-                'tag1_label' => 'Technologie',
-                'tag1_url'   => '#',
-                'tag2_label' => 'Dachy',
-                'tag2_url'   => '#',
+                'title'       => 'Jakie dachówki wybrać do nowoczesnego projektu domu w stylu nowoczesnej stodoły?',
+                'image_url'   => 'https://media.studioatrium.pl/stock/28/2332/67360499e8fdb-projekt-domu-torino-slim-multi.webp',
+                'image_alt'   => 'Jakie dachówki wybrać do nowoczesnego projektu domu w stylu nowoczesnej stodoły?',
+                'article_url' => '#',
+                'tag1_label'  => 'Technologie',
+                'tag1_url'    => '#',
+                'tag2_label'  => 'Dachy',
+                'tag2_url'    => '#',
             ),
         );
     }

@@ -6,7 +6,7 @@
 		</div>
 		<div class="flex flex-col items-center">
 			<img src="{$initiative.image_url|escape}" alt="{$initiative.image_alt|escape}" class="w-full max-w-lg object-contain">
-			<a href="{$initiative.button_url|escape}" class="mt-6 bg-[var(--brand-blue-strong)] hover:bg-[var(--brand-blue)] text-white font-bold px-8 py-3 text-[13px] uppercase tracking-wider">{$initiative.button_label|escape}</a>
+			<a href="{$initiative.button_url|escape}" class="mt-6 inline-flex items-center justify-center bg-[var(--brand-blue-strong)] hover:bg-[var(--brand-blue)] text-white font-bold px-8 py-3 lg:h-[54px] lg:max-h-[54px] lg:py-0 leading-none text-[13px] uppercase tracking-wider">{$initiative.button_label|escape}</a>
 		</div>
 	</div>
 </section>

@@ -3,7 +3,7 @@
         <div>
             <h2 class="text-[26px] font-bold tracking-wide uppercase mb-10">{$offer.title|escape}</h2>
             <p class="text-[15px] font-bold uppercase leading-relaxed mb-8 max-w-md">{$offer.lead_text|escape|nl2br}</p>
-            <a href="{$offer.button_url|escape}" class="inline-block bg-[var(--brand-red)] hover:bg-[var(--brand-red-hover)] text-white font-bold px-8 py-3 text-[13px] uppercase tracking-wider mb-12">{$offer.button_label|escape}</a>
+            <a href="{$offer.button_url|escape}" class="inline-flex items-center justify-center bg-[var(--brand-red)] hover:bg-[var(--brand-red-hover)] text-white font-bold px-8 py-3 lg:h-[54px] lg:max-h-[54px] lg:py-0 leading-none text-[13px] uppercase tracking-wider mb-12">{$offer.button_label|escape}</a>
             <blockquote class="text-center text-[22px] leading-snug max-w-xl mx-auto px-4"
                 style="font-style:normal;font-weight:500"><span>“{$offer.quote_text|escape}”</span>{if $offer.quote_badge}<span class="ml-2 text-[#ff66cc] text-[13px] font-bold align-middle">{$offer.quote_badge|escape}</span>{/if}
             </blockquote>

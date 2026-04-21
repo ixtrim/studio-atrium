@@ -1,5 +1,5 @@
-{* {include file="Include/HeroSlider.tpl"}
-{include file="Include/Categories.tpl"}
+{include file="Include/HeroSlider.tpl"}
+{* {include file="Include/Categories.tpl"}
 {include file="Include/OurBestsellers.tpl"}
 {include file="Include/PopularCategories.tpl"}
 {include file="Include/PopularFamilyHomes.tpl"}
