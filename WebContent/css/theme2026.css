@@ -240,3 +240,29 @@ strong, b {
 }
 
 /* Header legacy isolation lives in header2026.css (loaded after Tailwind) */
+
+#hp-hero-prev,
+#hp-hero-next {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  padding: 0 !important;
+}
+
+@media (min-width: 1024px) {
+  a.uppercase[class*="tracking-"],
+  button.uppercase[class*="tracking-"],
+  #search-trigger,
+  #site-header-filters > button {
+    max-height: 54px;
+    height: 54px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    box-sizing: border-box;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}

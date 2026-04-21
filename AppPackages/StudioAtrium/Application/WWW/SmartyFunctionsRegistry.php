@@ -696,6 +696,240 @@ class SmartyFunctionsRegistry
         );
     }
 
+    private function fetchHeroSlides()
+    {
+        $defaults = $this->getHeroSlidesDefaults();
+        try {
+            $pdo = \Point7_WebApp::getPDO();
+            $this->ensureHeroSliderTable($pdo);
+            $stmt = $pdo->query(
+                'SELECT title, subtitle, badge, body, image_url, link_url
+                 FROM homepage_hero_slides
+                 ORDER BY sorting ASC, id ASC'
+            );
+            if (!$stmt) {
+                return $defaults;
+            }
+            $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+            return !empty($rows) ? $rows : $defaults;
+        } catch (\Throwable $e) {
+            return $defaults;
+        }
+    }
+
+    private function ensureHeroSliderTable(\PDO $pdo)
+    {
+        $exists = $pdo->query("SHOW TABLES LIKE 'homepage_hero_slides'");
+        if ($exists && $exists->fetchColumn()) {
+            return;
+        }
+
+        $created = $pdo->exec(
+            'CREATE TABLE homepage_hero_slides (
+                id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+                title VARCHAR(255) NOT NULL DEFAULT \'\',
+                subtitle VARCHAR(255) NOT NULL DEFAULT \'\',
+                badge VARCHAR(128) NOT NULL DEFAULT \'\',
+                body TEXT NOT NULL,
+                image_url VARCHAR(512) NOT NULL DEFAULT \'\',
+                link_url VARCHAR(512) NOT NULL DEFAULT \'\',
+                sorting INT UNSIGNED NOT NULL DEFAULT 0,
+                PRIMARY KEY (id)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4'
+        );
+        if ($created === false) {
+            throw new \RuntimeException('Could not create homepage_hero_slides');
+        }
+
+        $stmt = $pdo->prepare(
+            'INSERT INTO homepage_hero_slides
+             (title, subtitle, badge, body, image_url, link_url, sorting)
+             VALUES
+             (:title, :subtitle, :badge, :body, :image_url, :link_url, :sorting)'
+        );
+        foreach ($this->getHeroSlidesDefaults() as $i => $row) {
+            $stmt->execute(array(
+                ':title'     => $row['title'],
+                ':subtitle'  => $row['subtitle'],
+                ':badge'     => $row['badge'],
+                ':body'      => $row['body'],
+                ':image_url' => $row['image_url'],
+                ':link_url'  => $row['link_url'],
+                ':sorting'   => $i,
+            ));
+        }
+    }
+
+    private function getHeroSlidesDefaults()
+    {
+        return array(
+            array(
+                'title'     => 'Projekty domów w promocji',
+                'subtitle'  => 'w stylu nowoczesnej stodoły',
+                'badge'     => 'PROMOCJE',
+                'body'      => "Nowoczesne projekty w stylu stodoły\nw atrakcyjnej cenie",
+                'image_url' => 'https://media.studioatrium.pl/stock/28/8476/6a6b351149745-projekty-domow-w-stylu-nowoczesnej-stodoly-w-promocji.webp',
+                'link_url'  => 'https://www.studioatrium.pl/projekty-domow/promocje/',
+            ),
+            array(
+                'title'     => 'Dla deweloperów',
+                'subtitle'  => 'bliźniaki i budynki wielorodzinne',
+                'badge'     => 'DLA DEWELOPERÓW',
+                'body'      => "Projekty domów dla deweloperów\ndo realizacji osiedli",
+                'image_url' => 'https://media.studioatrium.pl/stock/28/2332/6a4378038869a-projekty-domow-dla-deweloperow.webp',
+                'link_url'  => 'https://www.studioatrium.pl/projekty-domow/dla-deweloperow/',
+            ),
+            array(
+                'title'     => 'Szkielety',
+                'subtitle'  => 'projekty domów szkieletowych',
+                'badge'     => 'SZKIELETOWE',
+                'body'      => "Domy w technologii szkieletowej\n– szybka budowa i niskie koszty",
+                'image_url' => 'https://media.studioatrium.pl/stock/28/1820/6a350cf5572dc-projekty-domow-szkieletowych.webp',
+                'link_url'  => 'https://www.studioatrium.pl/projekty-domow/szkieletowe/',
+            ),
+            array(
+                'title'     => 'Indywidualne projekty domów',
+                'subtitle'  => 'szyte na miarę Twojej działki',
+                'badge'     => 'PROJEKT INDYWIDUALNY',
+                'body'      => "Autorskie projekty na indywidualne\nzapotrzebowanie inwestora",
+                'image_url' => 'https://media.studioatrium.pl/stock/28/9500/6a352789a42a1-indywidualne-projekty-domow.webp',
+                'link_url'  => 'https://www.studioatrium.pl/projekt-indywidualny.html',
+            ),
+            array(
+                'title'     => 'Najlepsze projekty domów parterowych',
+                'subtitle'  => 'sprawdzone i najczęściej wybierane',
+                'badge'     => 'PARTEROWE',
+                'body'      => "Najlepsze projekty parterowe\ndla całej rodziny",
+                'image_url' => 'https://media.studioatrium.pl/stock/28/7964/68baea0b1474f-najlepsze-projekty-domow-parterowych.jpg',
+                'link_url'  => 'https://www.studioatrium.pl/projekty-domow/najlepsze-domy-parterowe/',
+            ),
+        );
+    }
+
+    private function fetchSafety()
+    {
+        $defaults = $this->getSafetyDefaults();
+        try {
+            $pdo = \Point7_WebApp::getPDO();
+            $this->ensureSafetyTables($pdo);
+            $stmt = $pdo->query(
+                'SELECT title_left, title_bold, title_right, subtitle
+                 FROM homepage_bezpieczenstwo
+                 ORDER BY id ASC
+                 LIMIT 1'
+            );
+            if (!$stmt) {
+                return $defaults;
+            }
+            $row = $stmt->fetch(\PDO::FETCH_ASSOC);
+            return $row ? $row : $defaults;
+        } catch (\Throwable $e) {
+            return $defaults;
+        }
+    }
+
+    private function fetchSafetyItems()
+    {
+        $defaults = $this->getSafetyItemsDefaults();
+        try {
+            $pdo = \Point7_WebApp::getPDO();
+            $this->ensureSafetyTables($pdo);
+            $stmt = $pdo->query(
+                'SELECT item_number, item_text
+                 FROM homepage_bezpieczenstwo_items
+                 ORDER BY sorting ASC, id ASC'
+            );
+            if (!$stmt) {
+                return $defaults;
+            }
+            $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+            return !empty($rows) ? $rows : $defaults;
+        } catch (\Throwable $e) {
+            return $defaults;
+        }
+    }
+
+    private function ensureSafetyTables(\PDO $pdo)
+    {
+        $existsMeta = $pdo->query("SHOW TABLES LIKE 'homepage_bezpieczenstwo'");
+        if (!($existsMeta && $existsMeta->fetchColumn())) {
+            $created = $pdo->exec(
+                'CREATE TABLE homepage_bezpieczenstwo (
+                    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+                    title_left VARCHAR(255) NOT NULL DEFAULT \'\',
+                    title_bold VARCHAR(255) NOT NULL DEFAULT \'\',
+                    title_right VARCHAR(255) NOT NULL DEFAULT \'\',
+                    subtitle VARCHAR(512) NOT NULL DEFAULT \'\',
+                    PRIMARY KEY (id)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4'
+            );
+            if ($created === false) {
+                throw new \RuntimeException('Could not create homepage_bezpieczenstwo');
+            }
+            $defaults = $this->getSafetyDefaults();
+            $stmt = $pdo->prepare(
+                'INSERT INTO homepage_bezpieczenstwo (title_left, title_bold, title_right, subtitle)
+                 VALUES (:title_left, :title_bold, :title_right, :subtitle)'
+            );
+            $stmt->execute(array(
+                ':title_left'  => $defaults['title_left'],
+                ':title_bold'  => $defaults['title_bold'],
+                ':title_right' => $defaults['title_right'],
+                ':subtitle'    => $defaults['subtitle'],
+            ));
+        }
+
+        $existsItems = $pdo->query("SHOW TABLES LIKE 'homepage_bezpieczenstwo_items'");
+        if ($existsItems && $existsItems->fetchColumn()) {
+            return;
+        }
+
+        $createdItems = $pdo->exec(
+            'CREATE TABLE homepage_bezpieczenstwo_items (
+                id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+                item_number VARCHAR(8) NOT NULL DEFAULT \'\',
+                item_text VARCHAR(512) NOT NULL DEFAULT \'\',
+                sorting INT UNSIGNED NOT NULL DEFAULT 0,
+                PRIMARY KEY (id)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4'
+        );
+        if ($createdItems === false) {
+            throw new \RuntimeException('Could not create homepage_bezpieczenstwo_items');
+        }
+
+        $stmt = $pdo->prepare(
+            'INSERT INTO homepage_bezpieczenstwo_items (item_number, item_text, sorting)
+             VALUES (:item_number, :item_text, :sorting)'
+        );
+        foreach ($this->getSafetyItemsDefaults() as $i => $row) {
+            $stmt->execute(array(
+                ':item_number' => $row['item_number'],
+                ':item_text'   => $row['item_text'],
+                ':sorting'     => $i,
+            ));
+        }
+    }
+
+    private function getSafetyDefaults()
+    {
+        return array(
+            'title_left'  => 'BEZPIECZEŃSTWO I',
+            'title_bold'  => '30 LAT',
+            'title_right' => 'DOŚWIADCZENIA',
+            'subtitle'    => '4 POWODY DLACZEGO WARTO WYBRAĆ NASZ PROJEKT',
+        );
+    }
+
+    private function getSafetyItemsDefaults()
+    {
+        return array(
+            array('item_number' => '1', 'item_text' => "Bezpłatna pomoc\ni doradztwo przy wyborze"),
+            array('item_number' => '2', 'item_text' => "Adaptacja działki\nprzez specjalistów"),
+            array('item_number' => '3', 'item_text' => "Zmiany i personalizacja\nprojektu"),
+            array('item_number' => '4', 'item_text' => "Wysoka jakość\ndokumentacji"),
+        );
+    }
+
     private function fetchContactData(): array
     {
         try {
@@ -775,6 +1009,11 @@ class SmartyFunctionsRegistry
         $smarty->assign('porady', $this->fetchPorady());
         $smarty->assign('tips', $this->fetchTips());
         $smarty->assign('offer', $this->fetchOffer());
+
+        // Assign hero slider + safety strip
+        $smarty->assign('hero_slides', $this->fetchHeroSlides());
+        $smarty->assign('safety', $this->fetchSafety());
+        $smarty->assign('safety_items', $this->fetchSafetyItems());
 
         // Assign footer menu columns (a/b/c) from footer_menus table
         $smarty->assign('footer_menus', $this->fetchMenuColumns());

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-08-24 16:06:26
+/* Smarty version 3.1.48, created on 2026-08-24 16:27:31
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/Tips.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6a8c4fe26a7f77_41925113',
+  'unifunc' => 'content_6a8c54d38ddd62_86493833',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2e9a2174d48e945c261a5d29068ba123a2dfb5e2' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/Tips.tpl',
-      1 => 1787580242,
+      1 => 1787580917,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6a8c4fe26a7f77_41925113 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6a8c54d38ddd62_86493833 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="py-20 bg-white" id="tips">
     <div class="max-w-[1280px] mx-auto px-12">
         <h2 class="text-[28px] font-bold text-[var(--brand-darker)] mb-12"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['porady']->value['section_title'], ENT_QUOTES, 'UTF-8', true);?>
@@ -84,7 +84,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </div>
         <div class="flex justify-center mt-12">
             <a href="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['porady']->value['button_url'], ENT_QUOTES, 'UTF-8', true);?>
-" class="bg-[var(--brand-blue-strong)] hover:bg-[var(--brand-blue)] text-white font-bold px-12 py-4 text-[13px] uppercase tracking-wider"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['porady']->value['button_label'], ENT_QUOTES, 'UTF-8', true);?>
+" class="inline-flex items-center justify-center bg-[var(--brand-blue-strong)] hover:bg-[var(--brand-blue)] text-white font-bold px-12 py-4 lg:h-[54px] lg:max-h-[54px] lg:py-0 leading-none text-[13px] uppercase tracking-wider"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['porady']->value['button_label'], ENT_QUOTES, 'UTF-8', true);?>
 </a>
         </div>
     </div>
