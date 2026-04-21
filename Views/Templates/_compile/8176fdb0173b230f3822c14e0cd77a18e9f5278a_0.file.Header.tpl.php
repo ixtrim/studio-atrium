@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.5.6, created on 2026-05-03 21:28:24
+/* Smarty version 4.5.6, created on 2026-05-26 12:45:16
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.6',
-  'unifunc' => 'content_69f7a1d83b2214_06156838',
+  'unifunc' => 'content_6a1579bc0eb999_42427270',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8176fdb0173b230f3822c14e0cd77a18e9f5278a' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Header.tpl',
-      1 => 1776175186,
+      1 => 1779792313,
       2 => 'file',
     ),
   ),
@@ -20,13 +20,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_69f7a1d83b2214_06156838 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6a1579bc0eb999_42427270 (Smarty_Internal_Template $_smarty_tpl) {
 ?><header>
 	<nav id="nav">
 		<ul>
 			<li class="logo">
 				<p id="mobile-trigger" class="trigger"><span>Menu</span></p>
-				<a href="/">
+				<a href="/">DDD
 					<img src="/img/logo.png" alt="Studio Atrium" class="visible" id="logo" style="display: none;">
 				</a>
 			</li>
@@ -126,7 +126,7 @@ $_smarty_tpl->tpl_vars['_item']->do_else = false;
 								<?php if ($_smarty_tpl->tpl_vars['_item']->value['menu_position'] == 1 && $_smarty_tpl->tpl_vars['_item']->value['is_highlight']) {?>
 									<li>
 										<a href="/<?php echo $_smarty_tpl->tpl_vars['_item']->value['link'];
-if (strpos($_smarty_tpl->tpl_vars['_item']->value['link'],'.html') === false) {?>/<?php }?>"><?php echo $_smarty_tpl->tpl_vars['_item']->value['name'];?>
+if (call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'strpos' ][ 0 ], array( $_smarty_tpl->tpl_vars['_item']->value['link'],'.html' )) === false) {?>/<?php }?>"><?php echo $_smarty_tpl->tpl_vars['_item']->value['name'];?>
 </a>
 									</li>
 								<?php }?>
@@ -170,7 +170,7 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['_subitem']->valu
 $_smarty_tpl->tpl_vars['_subitem']->do_else = false;
 ?>
 												<li><a href="/<?php echo $_smarty_tpl->tpl_vars['_subitem']->value['link'];
-if (strpos($_smarty_tpl->tpl_vars['_subitem']->value['link'],'.html') === false) {?>/<?php }?>"><?php echo $_smarty_tpl->tpl_vars['_subitem']->value['name'];?>
+if (call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'strpos' ][ 0 ], array( $_smarty_tpl->tpl_vars['_subitem']->value['link'],'.html' )) === false) {?>/<?php }?>"><?php echo $_smarty_tpl->tpl_vars['_subitem']->value['name'];?>
 </a></li>
 											<?php
 }
@@ -178,7 +178,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 											</ul>
 										<?php } elseif ($_smarty_tpl->tpl_vars['_item']->value['link']) {?>
 											<a href="/<?php echo $_smarty_tpl->tpl_vars['_item']->value['link'];
-if (strpos($_smarty_tpl->tpl_vars['_item']->value['link'],'.html') === false) {?>/<?php }?>"><?php echo $_smarty_tpl->tpl_vars['_item']->value['name'];?>
+if (call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'strpos' ][ 0 ], array( $_smarty_tpl->tpl_vars['_item']->value['link'],'.html' )) === false) {?>/<?php }?>"><?php echo $_smarty_tpl->tpl_vars['_item']->value['name'];?>
 </a>
 										<?php }?>
 									</li>
@@ -232,7 +232,7 @@ $_smarty_tpl->tpl_vars['_subitem']->do_else = false;
 												<li>
 												<?php }?>	
 													<a href="/<?php echo $_smarty_tpl->tpl_vars['_subitem']->value['link'];
-if (strpos($_smarty_tpl->tpl_vars['_subitem']->value['link'],'.html') === false) {?>/<?php }?>"><?php echo $_smarty_tpl->tpl_vars['_subitem']->value['name'];?>
+if (call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'strpos' ][ 0 ], array( $_smarty_tpl->tpl_vars['_subitem']->value['link'],'.html' )) === false) {?>/<?php }?>"><?php echo $_smarty_tpl->tpl_vars['_subitem']->value['name'];?>
 </a>
 													
 												<?php if (!$_smarty_tpl->tpl_vars['_subitem']->value['is_parallel'] && (isset($_smarty_tpl->tpl_vars['__smarty_section_menu']->value['last']) ? $_smarty_tpl->tpl_vars['__smarty_section_menu']->value['last'] : null)) {?>
@@ -244,7 +244,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 											</ul>
 										<?php } elseif ($_smarty_tpl->tpl_vars['_item']->value['link']) {?>
 											<a href="/<?php echo $_smarty_tpl->tpl_vars['_item']->value['link'];
-if (strpos($_smarty_tpl->tpl_vars['_item']->value['link'],'.html') === false) {?>/<?php }?>"><?php echo $_smarty_tpl->tpl_vars['_item']->value['name'];?>
+if (call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'strpos' ][ 0 ], array( $_smarty_tpl->tpl_vars['_item']->value['link'],'.html' )) === false) {?>/<?php }?>"><?php echo $_smarty_tpl->tpl_vars['_item']->value['name'];?>
 </a>
 										<?php }?>
 									</li>
@@ -292,7 +292,7 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['_subitem']->valu
 $_smarty_tpl->tpl_vars['_subitem']->do_else = false;
 ?>
 												<li><a href="/<?php echo $_smarty_tpl->tpl_vars['_subitem']->value['link'];
-if (strpos($_smarty_tpl->tpl_vars['_subitem']->value['link'],'.html') === false) {?>/<?php }?>"><?php echo $_smarty_tpl->tpl_vars['_subitem']->value['name'];?>
+if (call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'strpos' ][ 0 ], array( $_smarty_tpl->tpl_vars['_subitem']->value['link'],'.html' )) === false) {?>/<?php }?>"><?php echo $_smarty_tpl->tpl_vars['_subitem']->value['name'];?>
 </a></li>
 											<?php
 }
@@ -300,7 +300,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 											</ul>
 										<?php } elseif ($_smarty_tpl->tpl_vars['_item']->value['link']) {?>
 											<a href="/<?php echo $_smarty_tpl->tpl_vars['_item']->value['link'];
-if (strpos($_smarty_tpl->tpl_vars['_item']->value['link'],'.html') === false) {?>/<?php }?>"><?php echo $_smarty_tpl->tpl_vars['_item']->value['name'];?>
+if (call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'strpos' ][ 0 ], array( $_smarty_tpl->tpl_vars['_item']->value['link'],'.html' )) === false) {?>/<?php }?>"><?php echo $_smarty_tpl->tpl_vars['_item']->value['name'];?>
 </a>
 										<?php }?>
 									</li>
@@ -344,7 +344,7 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['_subitem']->valu
 $_smarty_tpl->tpl_vars['_subitem']->do_else = false;
 ?>
 												<li><a href="/<?php echo $_smarty_tpl->tpl_vars['_subitem']->value['link'];
-if (strpos($_smarty_tpl->tpl_vars['_subitem']->value['link'],'.html') === false) {?>/<?php }?>"><?php echo $_smarty_tpl->tpl_vars['_subitem']->value['name'];?>
+if (call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'strpos' ][ 0 ], array( $_smarty_tpl->tpl_vars['_subitem']->value['link'],'.html' )) === false) {?>/<?php }?>"><?php echo $_smarty_tpl->tpl_vars['_subitem']->value['name'];?>
 </a></li>
 											<?php
 }
@@ -352,7 +352,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 											</ul>
 										<?php } elseif ($_smarty_tpl->tpl_vars['_item']->value['link']) {?>
 											<a href="/<?php echo $_smarty_tpl->tpl_vars['_item']->value['link'];
-if (strpos($_smarty_tpl->tpl_vars['_item']->value['link'],'.html') === false) {?>/<?php }?>"><?php echo $_smarty_tpl->tpl_vars['_item']->value['name'];?>
+if (call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'strpos' ][ 0 ], array( $_smarty_tpl->tpl_vars['_item']->value['link'],'.html' )) === false) {?>/<?php }?>"><?php echo $_smarty_tpl->tpl_vars['_item']->value['name'];?>
 </a>
 										<?php }?>
 									</li>

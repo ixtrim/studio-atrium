@@ -2,6 +2,7 @@
 namespace StudioAtrium\Entity\Carousel;
 
 use StudioAtrium\Entity\EntityCollection;
+use StudioAtrium\Entity\Carousel;
 
 class Finder
 {
@@ -49,6 +50,6 @@ class Finder
             }
         }
 
-        return new EntityCollection(array_values($carousels));
+        return new EntityCollection(array_map(fn($d) => new Carousel($d), array_values($carousels)));
     }
 }

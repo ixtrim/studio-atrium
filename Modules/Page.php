@@ -26,8 +26,8 @@ class Page extends AbstractModule {
 	public function _initAction(
 		$action,
 		\Point7_WebApp_Request $request,
-		AppContext $appContext,
-		ResponseContext $responseContext
+		$appContext,
+		$responseContext
 	) {
 		parent::_initAction($action, $request, $appContext, $responseContext);
 		$this->_documentFinder = $this->_daoRepository->getDocumentFinder();

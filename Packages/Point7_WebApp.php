@@ -315,6 +315,7 @@ class Point7_WebApp
             'documentUrl' => self::getConfigParam('static.documents') ?? '',
             'stockPath'   => self::getConfigParam('static.stock') ?? '',
             'messageBox'  => ['errors' => [], 'messages' => []],
+            'version'     => '',
         ];
         foreach ($defaults as $k => $v) {
             if (!array_key_exists($k, $responseCtx->getAll())) {
@@ -322,10 +323,15 @@ class Point7_WebApp
             }
         }
 
-        // Assign smarty.* params from result_map
+        // Assign smarty.* params from result_map; JSON-decode arrays
         foreach ($result['params'] ?? [] as $k => $v) {
             if (str_starts_with($k, 'smarty.')) {
-                $smarty->assign(substr($k, 7), $v);
+                $varName = substr($k, 7);
+                if (is_string($v) && str_starts_with(ltrim($v), '[')) {
+                    $decoded = json_decode($v, true);
+                    if (is_array($decoded)) $v = $decoded;
+                }
+                $smarty->assign($varName, $v);
             }
         }
 
