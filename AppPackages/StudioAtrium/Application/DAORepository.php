@@ -922,10 +922,7 @@ class DAORepository extends \Point7_WebApp_DAORepository
 	public function getUserFinder()
 	{
  		if (is_null($this->_userFinder)) {
-			$this->_userFinder = new Entities\User\Finder();
-			$this->_userFinder->configure(array(
-				'dao_user' => $this->getUserDAO()
-			));
+			$this->_userFinder = new Entities\User\Finder($this->getPDO());
 		}
 		return $this->_userFinder;
 	}
@@ -970,12 +967,7 @@ class DAORepository extends \Point7_WebApp_DAORepository
 	public function getProjectParamFinder()
 	{
  		if (is_null($this->_projectParamFinder)) {
-			$this->_projectParamFinder = new Entities\Project\Param\Finder();
-			$this->_projectParamFinder->configure(array(
-				'dao_project_param' => $this->getProjectParamDAO(),
-				'dao_project_param_option' => $this->getProjectParamOptionDAO(),
-				'dao_project_param_listing' => $this->getProjectParamListingDAO()
-			));
+			$this->_projectParamFinder = new Entities\Project\Param\Finder($this->getPDO());
 		}
 		return $this->_projectParamFinder;
 	}
@@ -1076,10 +1068,7 @@ class DAORepository extends \Point7_WebApp_DAORepository
 	public function getProjectToParamFinder()
 	{
 		if (is_null($this->_projectToParamFinder)) {
-			$this->_projectToParamFinder = new Entities\Project\ToParam\Finder();
-			$this->_projectToParamFinder->configure(array(
-					'dao_project_to_param' => $this->getProjectToParamDAO()
-			));
+			$this->_projectToParamFinder = new Entities\Project\ToParam\Finder($this->getPDO());
 		}
 		return $this->_projectToParamFinder;
 	}
@@ -1093,11 +1082,7 @@ class DAORepository extends \Point7_WebApp_DAORepository
 	public function getSketchParamFinder()
 	{
 		if (is_null($this->_sketchParamFinder)) {
-			$this->_sketchParamFinder = new Entities\SketchParam\Finder();
-			$this->_sketchParamFinder->configure(array(
-				'dao_sketch_param' => $this->getSketchParamDAO(),
-				'dao_project_to_sketch_param' => $this->getProjectToSketchParamDAO()
-			));
+			$this->_sketchParamFinder = new Entities\SketchParam\Finder($this->getPDO());
 		}
 		return $this->_sketchParamFinder;
 	}
@@ -1111,13 +1096,7 @@ class DAORepository extends \Point7_WebApp_DAORepository
 	public function getProjectCommentFinder()
 	{
 		if (is_null($this->_projectCommentFinder)) {
-			$this->_projectCommentFinder = new Entities\Project\Comment\Finder();
-			$this->_projectCommentFinder->configure(array(
-					'dao_project_comment' => $this->getProjectCommentDAO(),
-					'dao_project' => $this->getProjectDAO(),
-					'dao_user' => $this->getUserDAO(),
-					'dao_attachments' => $this->getAttachmentDAO()
-			));
+			$this->_projectCommentFinder = new Entities\Project\Comment\Finder($this->getPDO());
 		}
 		return $this->_projectCommentFinder;
 	}
@@ -1183,11 +1162,7 @@ class DAORepository extends \Point7_WebApp_DAORepository
 	public function getHouseSituationFinder()
 	{
 		if (is_null($this->_houseSituationFinder)) {
-			$this->_houseSituationFinder = new Entities\HouseSituation\Finder();
-			$this->_houseSituationFinder->configure(array(
-					'dao_house_situation' => $this->getHouseSituationDAO(),
-					'dao_house_situation_rooms' => $this->getHouseSituationRoomsDAO()
-			));
+			$this->_houseSituationFinder = new Entities\HouseSituation\Finder($this->getPDO());
 		}
 		return $this->_houseSituationFinder;
 	}
@@ -1387,10 +1362,7 @@ class DAORepository extends \Point7_WebApp_DAORepository
 	public function getBannerFinder()
 	{
 		if (is_null($this->_bannerFinder)) {
-			$this->_bannerFinder = new Entities\Banner\Finder();
-			$this->_bannerFinder->configure(array(
-					'dao_banner' => $this->getBannerDAO()
-			));
+			$this->_bannerFinder = new Entities\Banner\Finder($this->getPDO());
 		}
 		return $this->_bannerFinder;
 	}
@@ -1486,11 +1458,7 @@ class DAORepository extends \Point7_WebApp_DAORepository
 	public function getSketchAuthorizeFinder()
 	{
 		if (is_null($this->_sketchAuthorizeFinder)) {
-			$this->_sketchAuthorizeFinder = new Entities\SketchAuthorize\Finder();
-			$this->_sketchAuthorizeFinder->configure(array(
-				'dao_sketch_authorize' => $this->getSketchAuthorizeDAO(),
-				'dao_sketch_authorize_rooms' => $this->getSketchAuthorizeRoomsDAO(),
-			));
+			$this->_sketchAuthorizeFinder = new Entities\SketchAuthorize\Finder($this->getPDO());
 		}
 		return $this->_sketchAuthorizeFinder;
 	}
@@ -1539,10 +1507,7 @@ class DAORepository extends \Point7_WebApp_DAORepository
 	public function getRenderAuthorizeFinder()
 	{
 	    if (is_null($this->_renderAuthorizeFinder)) {
-	        $this->_renderAuthorizeFinder = new Entities\RenderAuthorize\Finder();
-	        $this->_renderAuthorizeFinder->configure(array(
-	            'dao_render_authorize' => $this->getRenderAuthorizeDAO()
-	        ));
+	        $this->_renderAuthorizeFinder = new Entities\RenderAuthorize\Finder($this->getPDO());
 	    }
 	    return $this->_renderAuthorizeFinder;
 	}

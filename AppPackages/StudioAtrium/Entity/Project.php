@@ -6,6 +6,7 @@ class Project implements \ArrayAccess
     const STATUS_PUBLISHED = 'published';
     const STATUS_DRAFT     = 'draft';
     const STATUS_HIDDEN    = 'hidden';
+    const ATTACHMENT_SLOT  = 2;
 
     private $id = 0;
     private $idOld = null;
@@ -30,6 +31,8 @@ class Project implements \ArrayAccess
     private $technology = null;
     private $extraData = null;
     private $attachmentsByType = [];
+    /** @var \StudioAtrium\Entity\Attachment\Collection|null */
+    private $attachments = null;
     public function getId(): int { return $this->id; }
     public function setId(int $v) { $this->id = $v; }
     public function getIdOld() { return $this->idOld; }
@@ -73,25 +76,30 @@ class Project implements \ArrayAccess
     public function getExtraData() { return $this->extraData; }
     public function setExtraData($v) { $this->extraData = $v; }
 
+    public function getUid()
+    {
+        return $this->id * 256 + self::ATTACHMENT_SLOT;
+    }
+
+    public function setAttachments(\StudioAtrium\Entity\Attachment\Collection $attachments)
+    {
+        $this->attachments = $attachments;
+    }
+
+    public function getAttachments()
+    {
+        if ($this->attachments === null) {
+            $dao = \Point7_WebApp::getDAORepository()->getAttachmentDAO();
+            $this->attachments = $dao->getForObject((string)$this->getUid());
+        }
+        return $this->attachments;
+    }
+
     public function setAttachmentsByType(array $byType) { $this->attachmentsByType = $byType; }
 
     public function getAttachmentsByType(string $type): \StudioAtrium\Entity\EntityCollection
     {
-        $atts = $this->attachmentsByType[$type] ?? [];
-        $objects = [];
-        foreach ($atts as $row) {
-            $a = new \Point7_CMS_Attachment();
-            $a->setId((int)($row['id'] ?? 0));
-            $a->setOwnerUid((string)($row['owner_uid'] ?? ''));
-            $a->setFilename($row['filename'] ?? '');
-            $a->setPath($row['path'] ?? '');
-            $a->setProfileName($row['profile_name'] ?? $type);
-            $a->setTitle($row['title'] ?? null);
-            $a->setProps($row['props'] ?? null);
-            $a->setSortOrder((int)($row['sorting'] ?? 0));
-            $objects[] = $a;
-        }
-        return new \StudioAtrium\Entity\EntityCollection($objects);
+        return $this->getAttachments()->getAttachmentsByType($type);
     }
 
     public function toArray(): array

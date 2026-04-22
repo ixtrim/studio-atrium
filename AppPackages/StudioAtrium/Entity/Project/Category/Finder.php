@@ -40,6 +40,32 @@ class Finder
     }
 
     /**
+     * Returns published categories whose project_list contains the given project id.
+     */
+    public function getForProject($projectId)
+    {
+        $projectId = (int) $projectId;
+        $stmt = $this->pdo->query(
+            "SELECT * FROM project_category
+             WHERE status = 'published'
+             AND project_list IS NOT NULL
+             AND project_list != ''
+             ORDER BY sorting ASC"
+        );
+        $rows = $stmt->fetchAll();
+
+        $items = array();
+        foreach ($rows as $row) {
+            $list = array_map('trim', explode(',', $row['project_list']));
+            if (in_array((string) $projectId, $list, true)) {
+                $items[] = $this->hydrate($row);
+            }
+        }
+
+        return new EntityCollection($items);
+    }
+
+    /**
      * Returns all published categories as a flat EntityCollection.
      * Used by LoadMenuCommand to build the siteMenu tree.
      */

@@ -239,7 +239,7 @@ class Discuss extends WWW\AbstractModule
 		
 			//get Attachment if uploaded earlier
 			$attachments = $this->_daoRepository->getAttachmentDAO()->getForObject($_COOKIE['tmpDiscussStamp']);
-			$responseContext->set('uploadedTmp', $attachments);
+			$responseContext->set('uploadedTmp', $attachments->toArray());
 		
 		} else {
 			$tmpStamp = time();
@@ -416,7 +416,7 @@ class Discuss extends WWW\AbstractModule
 				
 					//get Attachment if uploaded earlier
 					$attachments = $this->_daoRepository->getAttachmentDAO()->getForObject($_COOKIE['tmpDiscussStamp']);
-					$responseContext->set('uploadedTmp', $attachments);
+					$responseContext->set('uploadedTmp', $attachments->toArray());
 				
 				} else {
 					$tmpStamp = time();

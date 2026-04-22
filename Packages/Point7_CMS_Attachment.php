@@ -65,14 +65,44 @@ class Point7_CMS_Attachment
     public function toArray(): array
     {
         return [
-            'id'          => $this->id,
-            'owner_uid'   => $this->ownerUid,
-            'filename'    => $this->filename,
-            'path'        => $this->path,
-            'profile'     => $this->profileName,
-            'title'       => $this->title,
-            'description' => $this->description,
-            'props'       => $this->props,
+            'id'               => $this->id,
+            'owner_uid'        => $this->ownerUid,
+            'filename'         => $this->filename,
+            'path'             => $this->path,
+            'profile_name'     => $this->profileName,
+            'profile'          => $this->profileName,
+            'title'            => $this->title,
+            'description'      => $this->description,
+            'props'            => $this->props,
+            'sorting'          => $this->sortOrder,
+            'childAttachments' => $this->childAttachmentsToArray(),
         ];
+    }
+
+    private function childAttachmentsToArray(): array
+    {
+        $result = [];
+        foreach ($this->childAttachments as $relationship => $children) {
+            if (!is_array($children)) {
+                continue;
+            }
+            $result[$relationship] = [];
+            foreach ($children as $child) {
+                if ($child instanceof self) {
+                    $result[$relationship][] = [
+                        'id'           => $child->getId(),
+                        'owner_uid'    => $child->getOwnerUid(),
+                        'filename'     => $child->getFilename(),
+                        'path'         => $child->getPath(),
+                        'profile_name' => $child->getProfileName(),
+                        'title'        => $child->getTitle(),
+                        'description'  => $child->getDescription(),
+                        'props'        => $child->getProps(),
+                        'sorting'      => $child->getSortOrder(),
+                    ];
+                }
+            }
+        }
+        return $result;
     }
 }

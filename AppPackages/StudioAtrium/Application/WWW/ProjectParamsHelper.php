@@ -92,6 +92,154 @@ class ProjectParamsHelper
         return !$this->mHasFloor($params, $strict) && !$this->mHasLoft($params, $strict);
     }
 
+    public function mHasSkeletonOption($params): bool
+    {
+        return $this->isCheckboxParamSet($params, 88);
+    }
+
+    public function mIsWithdrawn($params): bool
+    {
+        return $this->isCheckboxParamSet($params, 146);
+    }
+
+    public function mHasMirror($params): bool
+    {
+        if (!is_array($params)) {
+            return true;
+        }
+        if (!isset($params[80]) && !isset($params['80'])) {
+            return true;
+        }
+        $value = isset($params[80]) ? $params[80] : $params['80'];
+        if (!is_array($value)) {
+            return empty($value);
+        }
+        if (array_key_exists('num_value', $value)) {
+            return $value['num_value'] === null || $value['num_value'] === '' || (float) $value['num_value'] == 0.0;
+        }
+        return empty($value['string_value']);
+    }
+
+    public function mHasRegeneration($params): bool
+    {
+        return $this->isCheckboxParamSet($params, 92);
+    }
+
+    public function mStairsChange($params): bool
+    {
+        return $this->isCheckboxParamSet($params, 141);
+    }
+
+    public function mIsMultiApartment($params): bool
+    {
+        return $this->isCheckboxParamSet($params, 150);
+    }
+
+    public function mIsAvailable($params): bool
+    {
+        if ($this->isCheckboxParamSet($params, 82)) {
+            return false;
+        }
+        if ($this->isCheckboxParamSet($params, 100)) {
+            return false;
+        }
+        if ($this->isCheckboxParamSet($params, 146)) {
+            return false;
+        }
+        return true;
+    }
+
+    public function mIsReady7days($params): bool
+    {
+        return $this->isCheckboxParamSet($params, 101);
+    }
+
+    public function mIsReady14days($params): bool
+    {
+        return $this->isCheckboxParamSet($params, 138);
+    }
+
+    public function mIsWT2021needful($params): bool
+    {
+        return $this->isCheckboxParamSet($params, 137);
+    }
+
+    public function mIsWT2021needfulHeat($params): bool
+    {
+        return $this->isCheckboxParamSet($params, 139);
+    }
+
+    public function mIsWT2021ready($params): bool
+    {
+        return $this->isCheckboxParamSet($params, 140);
+    }
+
+    public function mIsBlackWeek($params): bool
+    {
+        return $this->isCheckboxParamSet($params, 144);
+    }
+
+    public function mIsChristmas($params): bool
+    {
+        return $this->isCheckboxParamSet($params, 155);
+    }
+
+    public function mOneFlatArea($params)
+    {
+        return $this->getProjectParamDisplayValue($params, 120);
+    }
+
+    public function mOneFlatGarageArea($params)
+    {
+        return $this->getProjectParamDisplayValue($params, 121);
+    }
+
+    public function mMapStorey($storey)
+    {
+        return \StudioAtrium\Application\Helper\SketchParamsNameMapper::mapStorey($storey);
+    }
+
+    public function mMapStoreyCatalog($storey)
+    {
+        return \StudioAtrium\Application\Helper\SketchParamsNameMapper::mapStoreyCatalog($storey);
+    }
+
+    private function getProjectParamDisplayValue($params, $paramId)
+    {
+        if (!is_array($params)) {
+            return '';
+        }
+        if (!isset($params[$paramId]) && !isset($params[(string) $paramId])) {
+            return '';
+        }
+        $value = isset($params[$paramId]) ? $params[$paramId] : $params[(string) $paramId];
+        if (!is_array($value)) {
+            return (string) $value;
+        }
+        if (isset($value['num_value']) && $value['num_value'] !== null && $value['num_value'] !== '') {
+            return rtrim(rtrim(number_format((float) $value['num_value'], 2, '.', ''), '0'), '.');
+        }
+        return isset($value['string_value']) ? (string) $value['string_value'] : '';
+    }
+
+    private function isCheckboxParamSet($params, $paramId): bool
+    {
+        if (!is_array($params)) {
+            return false;
+        }
+        if (!isset($params[$paramId]) && !isset($params[(string) $paramId])) {
+            return false;
+        }
+        $value = isset($params[$paramId]) ? $params[$paramId] : $params[(string) $paramId];
+        if (!is_array($value)) {
+            return !empty($value);
+        }
+        if (array_key_exists('num_value', $value) && $value['num_value'] !== null && $value['num_value'] !== '') {
+            return (float) $value['num_value'] == 1.0;
+        }
+        return !empty($value['string_value']);
+    }
+
     public function mUsableArea($params): string
     {
         $value = $this->getParamValue($params, self::$paramIds['usable_area'], 'usable_area');
@@ -217,5 +365,132 @@ class ProjectParamsHelper
             return false;
         }
         return strtotime($modifyDate) > strtotime('-90 days');
+    }
+
+    public function mPanoramaLink($params)
+    {
+        return $this->getStringParamValue($params, 93);
+    }
+
+    public function mMovieLink($params)
+    {
+        return $this->getStringParamValue($params, 52);
+    }
+
+    public function mIsNarrowGarage($params): bool
+    {
+        return $this->isCheckboxParamSet($params, 100);
+    }
+
+    public function mIsHalfPrice($params): bool
+    {
+        return $this->isCheckboxParamSet($params, 149);
+    }
+
+    public function mIsDual($params): bool
+    {
+        return $this->isCheckboxParamSet($params, 150);
+    }
+
+    public function mLowestPrice($params)
+    {
+        return $this->formatPriceParamValue($params, 156);
+    }
+
+    public function mPCForFree($params): bool
+    {
+        return $this->isCheckboxParamSet($params, 154);
+    }
+
+    public function mCostInfo($params)
+    {
+        return $this->getStringParamValue($params, 136);
+    }
+
+    public function mHasEnergyFactor($params): bool
+    {
+        $ep = $this->getNumParamValue($params, 49);
+        $ek = $this->getNumParamValue($params, 50);
+        if ($ep !== null && $ep !== '' && (float) $ep > 0) {
+            return true;
+        }
+        if ($ek !== null && $ek !== '' && (float) $ek > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    public function mEpEnergyFactor($params)
+    {
+        return $this->formatEnergyFactor($this->getNumParamValue($params, 49));
+    }
+
+    public function mEkEnergyFactor($params)
+    {
+        return $this->formatEnergyFactor($this->getNumParamValue($params, 50));
+    }
+
+    public function mVatValue($params)
+    {
+        return $this->getStringParamValue($params, 118);
+    }
+
+    private function getStringParamValue($params, $paramId)
+    {
+        if (!is_array($params)) {
+            return '';
+        }
+        if (!isset($params[$paramId]) && !isset($params[(string) $paramId])) {
+            return '';
+        }
+        $value = isset($params[$paramId]) ? $params[$paramId] : $params[(string) $paramId];
+        if (!is_array($value)) {
+            return trim((string) $value);
+        }
+        if (isset($value['string_value']) && $value['string_value'] !== null && $value['string_value'] !== '') {
+            return trim((string) $value['string_value']);
+        }
+        if (isset($value['num_value']) && $value['num_value'] !== null && $value['num_value'] !== '') {
+            return trim((string) $value['num_value']);
+        }
+        return '';
+    }
+
+    private function getNumParamValue($params, $paramId)
+    {
+        if (!is_array($params)) {
+            return null;
+        }
+        if (!isset($params[$paramId]) && !isset($params[(string) $paramId])) {
+            return null;
+        }
+        $value = isset($params[$paramId]) ? $params[$paramId] : $params[(string) $paramId];
+        if (!is_array($value)) {
+            return $value;
+        }
+        if (isset($value['num_value']) && $value['num_value'] !== null && $value['num_value'] !== '') {
+            return $value['num_value'];
+        }
+        if (isset($value['string_value']) && $value['string_value'] !== null && $value['string_value'] !== '') {
+            return $value['string_value'];
+        }
+        return null;
+    }
+
+    private function formatPriceParamValue($params, $paramId)
+    {
+        $value = $this->getNumParamValue($params, $paramId);
+        if ($value === null || $value === '') {
+            return '';
+        }
+        return rtrim(rtrim(number_format((float) $value, 2, '.', ''), '0'), '.');
+    }
+
+    private function formatEnergyFactor($value)
+    {
+        if ($value === null || $value === '') {
+            return '';
+        }
+        return rtrim(rtrim(number_format((float) $value, 2, '.', ''), '0'), '.');
     }
 }

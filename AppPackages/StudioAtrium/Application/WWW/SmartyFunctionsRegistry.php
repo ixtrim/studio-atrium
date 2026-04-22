@@ -3,6 +3,66 @@ namespace StudioAtrium\Application\WWW;
 
 class SmartyFunctionsRegistry
 {
+    private static $paramsHelperInstance = null;
+
+    private static function paramsHelper()
+    {
+        if (self::$paramsHelperInstance === null) {
+            self::$paramsHelperInstance = new ProjectParamsHelper();
+        }
+        return self::$paramsHelperInstance;
+    }
+
+    public static function mHasFloor($params, $strict = false)
+    {
+        return self::paramsHelper()->mHasFloor($params, (bool) $strict);
+    }
+
+    public static function mHasLoft($params, $strict = false)
+    {
+        return self::paramsHelper()->mHasLoft($params, (bool) $strict);
+    }
+
+    public static function mIsGroundFloor($params, $strict = false)
+    {
+        return self::paramsHelper()->mIsGroundFloor($params, (bool) $strict);
+    }
+
+    public static function mHasSkeletonOption($params)
+    {
+        return self::paramsHelper()->mHasSkeletonOption($params);
+    }
+
+    public static function mIsWithdrawn($params)
+    {
+        return self::paramsHelper()->mIsWithdrawn($params);
+    }
+
+    public static function mHasMirror($params)
+    {
+        return self::paramsHelper()->mHasMirror($params);
+    }
+
+    public static function mHasRegeneration($params)
+    {
+        return self::paramsHelper()->mHasRegeneration($params);
+    }
+
+    public static function mIsAvailable($params)
+    {
+        return self::paramsHelper()->mIsAvailable($params);
+    }
+
+    public static function mMapStorey($storey)
+    {
+        return self::paramsHelper()->mMapStorey($storey);
+    }
+
+    public static function mMapStoreyCatalog($storey)
+    {
+        return self::paramsHelper()->mMapStoreyCatalog($storey);
+    }
+
     private $resUrl = '';
     private $urlGenerator = null;
     public function configure(string $key, string $value)
@@ -73,6 +133,53 @@ class SmartyFunctionsRegistry
             return trim(($project['symbol_alpha'] ?? '') . ' ' . ($project['symbol_num'] ?? ''));
         }
         return '';
+    }
+
+    public function mHideEmails($text)
+    {
+        if (!is_string($text) || $text === '') {
+            return $text;
+        }
+        return preg_replace(
+            '/([a-zA-Z0-9._%+\-]+)@([a-zA-Z0-9.\-]+\.[a-zA-Z]{2,})/',
+            '$1 [at] $2',
+            $text
+        );
+    }
+
+    public function mAvatar($userId)
+    {
+        $userId = (int) $userId;
+        if ($userId <= 0) {
+            return '';
+        }
+
+        static $cache = array();
+        if (isset($cache[$userId])) {
+            return $cache[$userId];
+        }
+
+        try {
+            $pdo = \Point7_WebApp::getPDO();
+            $stmt = $pdo->prepare(
+                "SELECT path, filename FROM attachment
+                 WHERE owner_uid = :uid AND profile_name = 'UserAvatar'
+                 ORDER BY sorting ASC LIMIT 1"
+            );
+            $stmt->execute(array(':uid' => $userId));
+            $row = $stmt->fetch();
+            if (!$row) {
+                $cache[$userId] = '';
+                return '';
+            }
+
+            $baseUrl = rtrim(\Point7_WebApp::getConfigParam('static.uploads') ?: 'https://media.studioatrium.pl/stock/28', '/');
+            $cache[$userId] = $baseUrl . '/' . $row['path'] . '/' . $row['filename'];
+            return $cache[$userId];
+        } catch (\Exception $e) {
+            $cache[$userId] = '';
+            return '';
+        }
     }
 
     public function mInBasket($project, $version = 'normal'): bool
@@ -1633,6 +1740,35 @@ class SmartyFunctionsRegistry
         $smarty->registerPlugin('modifier', 'hasFloor',       [$paramsHelper, 'mHasFloor']);
         $smarty->registerPlugin('modifier', 'hasLoft',        [$paramsHelper, 'mHasLoft']);
         $smarty->registerPlugin('modifier', 'isGroundFloor',  [$paramsHelper, 'mIsGroundFloor']);
+        $smarty->registerPlugin('modifier', 'hasSkeletonOption', [$paramsHelper, 'mHasSkeletonOption']);
+        $smarty->registerPlugin('modifier', 'isWithdrawn',    [$paramsHelper, 'mIsWithdrawn']);
+        $smarty->registerPlugin('modifier', 'hasMirror',      [$paramsHelper, 'mHasMirror']);
+        $smarty->registerPlugin('modifier', 'stairsChange',   [$paramsHelper, 'mStairsChange']);
+        $smarty->registerPlugin('modifier', 'isAvailable',    [$paramsHelper, 'mIsAvailable']);
+        $smarty->registerPlugin('modifier', 'isMultiApartment', [$paramsHelper, 'mIsMultiApartment']);
+        $smarty->registerPlugin('modifier', 'oneFlatArea',    [$paramsHelper, 'mOneFlatArea']);
+        $smarty->registerPlugin('modifier', 'oneFlatGarageArea', [$paramsHelper, 'mOneFlatGarageArea']);
+        $smarty->registerPlugin('modifier', 'isReady7days',   [$paramsHelper, 'mIsReady7days']);
+        $smarty->registerPlugin('modifier', 'isReady14days',  [$paramsHelper, 'mIsReady14days']);
+        $smarty->registerPlugin('modifier', 'isWT2021needful', [$paramsHelper, 'mIsWT2021needful']);
+        $smarty->registerPlugin('modifier', 'isWT2021needfulHeat', [$paramsHelper, 'mIsWT2021needfulHeat']);
+        $smarty->registerPlugin('modifier', 'isWT2021ready',  [$paramsHelper, 'mIsWT2021ready']);
+        $smarty->registerPlugin('modifier', 'isBlackWeek',    [$paramsHelper, 'mIsBlackWeek']);
+        $smarty->registerPlugin('modifier', 'isChristmas',    [$paramsHelper, 'mIsChristmas']);
+        $smarty->registerPlugin('modifier', 'panoramaLink',   [$paramsHelper, 'mPanoramaLink']);
+        $smarty->registerPlugin('modifier', 'movieLink',      [$paramsHelper, 'mMovieLink']);
+        $smarty->registerPlugin('modifier', 'isNarrowGarage', [$paramsHelper, 'mIsNarrowGarage']);
+        $smarty->registerPlugin('modifier', 'isHalfPrice',    [$paramsHelper, 'mIsHalfPrice']);
+        $smarty->registerPlugin('modifier', 'isDual',         [$paramsHelper, 'mIsDual']);
+        $smarty->registerPlugin('modifier', 'lowestPrice',    [$paramsHelper, 'mLowestPrice']);
+        $smarty->registerPlugin('modifier', 'pcforfree',      [$paramsHelper, 'mPCForFree']);
+        $smarty->registerPlugin('modifier', 'costInfo',       [$paramsHelper, 'mCostInfo']);
+        $smarty->registerPlugin('modifier', 'hasEnergyFactor', [$paramsHelper, 'mHasEnergyFactor']);
+        $smarty->registerPlugin('modifier', 'epEnergyFactor', [$paramsHelper, 'mEpEnergyFactor']);
+        $smarty->registerPlugin('modifier', 'ekEnergyFactor', [$paramsHelper, 'mEkEnergyFactor']);
+        $smarty->registerPlugin('modifier', 'vatValue',       [$paramsHelper, 'mVatValue']);
+        $smarty->registerPlugin('modifier', 'mapStorey',      [$paramsHelper, 'mMapStorey']);
+        $smarty->registerPlugin('modifier', 'mapStoreyCatalog', [$paramsHelper, 'mMapStoreyCatalog']);
         $smarty->registerPlugin('modifier', 'usableArea',     [$paramsHelper, 'mUsableArea']);
         $smarty->registerPlugin('modifier', 'parcelWidth',    [$paramsHelper, 'mParcelWidth']);
         $smarty->registerPlugin('modifier', 'parcelHeight',   [$paramsHelper, 'mParcelHeight']);
@@ -1652,7 +1788,18 @@ class SmartyFunctionsRegistry
         $smarty->registerPlugin('modifier', 'projectType',    [$this, 'mProjectType']);
         $smarty->registerPlugin('modifier', 'linkTitle',      [$this, 'mLinkTitle']);
         $smarty->registerPlugin('modifier', 'inBasket',       [$this, 'mInBasket']);
+        $smarty->registerPlugin('modifier', 'hideEmails',     [$this, 'mHideEmails']);
+        $smarty->registerPlugin('modifier', 'avatar',         [$this, 'mAvatar']);
         $smarty->registerPlugin('modifier', 'replace',        function($str, $find, $replace) { return str_replace($find, $replace, $str); });
+        $smarty->registerPlugin('modifier', 'unescape',       function($str) { return htmlspecialchars_decode((string) $str, ENT_QUOTES); });
+        $smarty->registerPlugin('modifier', 'truncate',       function($str, $len = 80, $etc = '...') {
+            $str = (string) $str;
+            if (mb_strlen($str) <= $len) {
+                return $str;
+            }
+            return mb_substr($str, 0, $len) . $etc;
+        });
+        $smarty->registerPlugin('modifier', 'floatval',       function($val) { return (float) $val; });
         $smarty->registerPlugin('modifier', 'unicode',        function($str) {
             if (!is_string($str)) return $str;
             return preg_replace_callback('/\\\\u([0-9a-fA-F]{4})/', function($m) { return mb_convert_encoding(pack('H*', $m[1]), 'UTF-8', 'UCS-2BE'); }, $str);

@@ -26,6 +26,11 @@ class EntityCollection implements \Iterator, \Countable, \ArrayAccess
     public function valid(): bool { return isset($this->items[$this->pos]); }
     public function count(): int { return count($this->items); }
 
+    public function isEmpty(): bool
+    {
+        return count($this->items) === 0;
+    }
+
     public function offsetExists($offset): bool  { return isset($this->items[$offset]); }
     public function offsetGet($offset)    { return $this->items[$offset] ?? null; }
     public function offsetSet($offset, $v) { if ($offset === null) $this->items[] = $v; else $this->items[$offset] = $v; }

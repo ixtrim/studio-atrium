@@ -11,9 +11,17 @@ class Point7_CMS_Attachment_DeleteHelper
 
     public function deleteAttachment(Point7_CMS_Attachment $attachment)
     {
-        // Delete children first
-        foreach ($attachment->getChildAttachments() as $child) {
-            $this->deleteAttachment($child);
+        // Delete children first (grouped by parent_relationship or flat list)
+        foreach ($attachment->getChildAttachments() as $childOrGroup) {
+            if ($childOrGroup instanceof Point7_CMS_Attachment) {
+                $this->deleteAttachment($childOrGroup);
+            } elseif (is_array($childOrGroup)) {
+                foreach ($childOrGroup as $child) {
+                    if ($child instanceof Point7_CMS_Attachment) {
+                        $this->deleteAttachment($child);
+                    }
+                }
+            }
         }
 
         // Remove physical file

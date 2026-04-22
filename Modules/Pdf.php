@@ -102,7 +102,11 @@ class Pdf extends WWW\AbstractModule
 		$smartyWrapper->assign('sketchParams', $sketchParams);
 		$smartyWrapper->assign('projectSketchParams', $projectSketchParams);
 		if ($project->getType() != 'skeleton') {
-			$smartyWrapper->assign('costs', $this->_getCost($projectParams, $extras));
+			$smartyWrapper->assign('costs', Helper\Project::getDisplayCosts(
+				$projectParams,
+				is_array($extras) ? $extras : array(),
+				$this->_daoRepository->getSettingsFinder()
+			));
 		}
 		
 		if($request->getParam('version') == 'mirror') {

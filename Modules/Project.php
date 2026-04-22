@@ -247,7 +247,7 @@ class Project extends WWW\AbstractModule
 		
 			//get Attachment if uploaded earlier
 			$attachments = $this->_daoRepository->getAttachmentDAO()->getForObject($_COOKIE['tmpCommentStamp']);
-			$responseContext->set('uploadedTmp', $attachments);
+			$responseContext->set('uploadedTmp', $attachments->toArray());
 		
 		} else {
 			$tmpStamp = time();
@@ -417,7 +417,7 @@ class Project extends WWW\AbstractModule
 		}
 		
 		
-		if($showroom = $this->_daoRepository->getRenderAuthorizeFinder()->getByProjectId($request->getParam('id'), \StudioAtrium_Entity_EntityBase_RenderAuthorize::STATUS_PUBLISHED)) {
+		if($showroom = $this->_daoRepository->getRenderAuthorizeFinder()->getByProjectId($request->getParam('id'), \StudioAtrium\Entity\RenderAuthorize::STATUS_PUBLISHED)) {
 	        $authorizations = array();
 	        $productIds = array();
 	        
@@ -2919,5 +2919,24 @@ class Project extends WWW\AbstractModule
 			return Helper\Url::buildSearchListUrl();
 		}
 		return '/projekty-domow/szukaj/';
+	}
+
+
+	/**
+	 * @param array $projectParams
+	 * @param array $extras
+	 * @return array
+	 */
+	private function _getCost($projectParams, $extras)
+	{
+		if (!is_array($extras)) {
+			$extras = array();
+		}
+
+		return Helper\Project::getDisplayCosts(
+			$projectParams,
+			$extras,
+			$this->_daoRepository->getSettingsFinder()
+		);
 	}
 }

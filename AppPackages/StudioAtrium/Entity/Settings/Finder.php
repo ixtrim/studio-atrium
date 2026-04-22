@@ -62,6 +62,15 @@ class Finder
         return new EntityCollection($items);
     }
 
+    /**
+     * @param string $family
+     * @return EntityCollection
+     */
+    public function getFamilyList($family)
+    {
+        return $this->getList($family);
+    }
+
     private function hydrate(array $row)
     {
         $s = new Settings();

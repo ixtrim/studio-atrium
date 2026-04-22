@@ -5,6 +5,10 @@ abstract class AbstractModule extends \Point7_WebApp_Module_Abstract
 {
     /** @var \StudioAtrium\Application\DAORepository|null */
     protected $_daoRepository = null;
+
+    /** Module name passed to Meta helpers (e.g. "Project", "ProjectExtend"). */
+    protected $_name = '';
+
     public function _initAction(
         $action,
         \Point7_WebApp_Request $request,
@@ -12,6 +16,8 @@ abstract class AbstractModule extends \Point7_WebApp_Module_Abstract
         $responseContext
     ) {
         parent::_initAction($action, $request, $appContext, $responseContext);
-        // _daoRepository is already set by parent via Point7_WebApp::getDAORepository()
+        if ($this->_name === '') {
+            $this->_name = (new \ReflectionClass($this))->getShortName();
+        }
     }
 }

@@ -543,7 +543,7 @@ class Panel extends AbstractModule {
 		
 			//get Attachment if uploaded earlier
 			$attachments = $this->_daoRepository->getAttachmentDAO()->getForObject($_COOKIE['tmpStamp']);
-			$responseContext->set('uploadedTmp', $attachments);
+			$responseContext->set('uploadedTmp', $attachments->toArray());
 		
 		} else {
 			$tmpStamp = time();

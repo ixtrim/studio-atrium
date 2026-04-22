@@ -21,6 +21,7 @@ class User
     private $status       = self::STATUS_ENABLED;
     private $hash         = null;
     private $impersonated = false;
+    private $props        = array();
     public function getId(): int               { return $this->id; }
     public function setId(int $v)        { $this->id = $v; }
 
@@ -53,6 +54,9 @@ class User
 
     public function isImpersonated(): bool     { return $this->impersonated; }
 
+    public function getProps() { return $this->props; }
+    public function setProps(array $v) { $this->props = $v; }
+
     public function impersonate(int $originalId)
     {
         $this->impersonated = true;
@@ -69,6 +73,7 @@ class User
             'phone'   => $this->phone,
             'type'    => $this->type,
             'status'  => $this->status,
+            'props'   => $this->props,
         ];
     }
 }

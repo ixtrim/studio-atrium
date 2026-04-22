@@ -27,7 +27,7 @@ class Point7_CMS_Attachment_DAO_PDOMySQL
         return $this->pdo;
     }
 
-    public function getForObject(string $uid, $profile = null): array
+    public function getForObject(string $uid, $profile = null)
     {
         $sql    = "SELECT * FROM `{$this->table}` WHERE owner_uid = :uid";
         $params = [':uid' => $uid];
@@ -35,10 +35,10 @@ class Point7_CMS_Attachment_DAO_PDOMySQL
             $sql      .= ' AND profile_name = :profile';
             $params[':profile'] = $profile;
         }
-        $sql .= ' ORDER BY sort_order ASC';
+        $sql .= ' ORDER BY sorting ASC';
         $stmt = $this->pdo()->prepare($sql);
         $stmt->execute($params);
-        return array_map([$this, 'hydrate'], $stmt->fetchAll());
+        return $this->buildCollection($stmt->fetchAll());
     }
 
     public function getWithChildren(int $id)
@@ -51,9 +51,19 @@ class Point7_CMS_Attachment_DAO_PDOMySQL
         $attachment = $this->hydrate($row);
 
         // Fetch children
-        $stmt2 = $this->pdo()->prepare("SELECT * FROM `{$this->table}` WHERE parent_id = :pid ORDER BY sort_order ASC");
+        $stmt2 = $this->pdo()->prepare("SELECT * FROM `{$this->table}` WHERE parent_attachment_id = :pid ORDER BY sorting ASC");
         $stmt2->execute([':pid' => $id]);
-        $children = array_map([$this, 'hydrate'], $stmt2->fetchAll());
+        $children = [];
+        foreach ($stmt2->fetchAll() as $childRow) {
+            $relationship = $childRow['parent_relationship'] ?? '';
+            if ($relationship === '') {
+                $relationship = 'default';
+            }
+            if (!isset($children[$relationship])) {
+                $children[$relationship] = [];
+            }
+            $children[$relationship][] = $this->hydrate($childRow);
+        }
         $attachment->setChildAttachments($children);
 
         return $attachment;
@@ -65,7 +75,7 @@ class Point7_CMS_Attachment_DAO_PDOMySQL
             $stmt = $this->pdo()->prepare(
                 "UPDATE `{$this->table}` SET owner_uid=:uid, filename=:fn, path=:path,
                  profile_name=:profile, title=:title, description=:desc, props=:props,
-                 sort_order=:sort WHERE id=:id"
+                 sorting=:sort WHERE id=:id"
             );
             $stmt->execute([
                 ':uid'     => $a->getOwnerUid(),
@@ -80,7 +90,7 @@ class Point7_CMS_Attachment_DAO_PDOMySQL
             ]);
         } else {
             $stmt = $this->pdo()->prepare(
-                "INSERT INTO `{$this->table}` (owner_uid, filename, path, profile_name, title, description, props, sort_order)
+                "INSERT INTO `{$this->table}` (owner_uid, filename, path, profile_name, title, description, props, sorting)
                  VALUES (:uid, :fn, :path, :profile, :title, :desc, :props, :sort)"
             );
             $stmt->execute([
@@ -108,8 +118,49 @@ class Point7_CMS_Attachment_DAO_PDOMySQL
         $a->setTitle($row['title'] ?? null);
         $a->setDescription($row['description'] ?? null);
         $a->setProps($row['props'] ?? null);
-        $a->setSortOrder((int)($row['sort_order'] ?? 0));
+        $a->setSortOrder((int)($row['sorting'] ?? 0));
+        if (!empty($row['parent_relationship'])) {
+            $a->setParentRelationship($row['parent_relationship']);
+        }
         return $a;
+    }
+
+    private function buildCollection(array $rows)
+    {
+        if (!$rows) {
+            return new \StudioAtrium\Entity\Attachment\Collection();
+        }
+
+        $byId = [];
+        foreach ($rows as $row) {
+            $attachment = $this->hydrate($row);
+            $byId[$attachment->getId()] = $attachment;
+        }
+
+        $topLevel = [];
+        foreach ($rows as $row) {
+            $id = (int)($row['id'] ?? 0);
+            $parentId = (int)($row['parent_attachment_id'] ?? 0);
+
+            if ($parentId > 0 && isset($byId[$parentId])) {
+                $relationship = $row['parent_relationship'] ?? '';
+                if ($relationship === '') {
+                    $relationship = 'default';
+                }
+
+                $parent = $byId[$parentId];
+                $children = $parent->getChildAttachments();
+                if (!isset($children[$relationship])) {
+                    $children[$relationship] = [];
+                }
+                $children[$relationship][] = $byId[$id];
+                $parent->setChildAttachments($children);
+            } else {
+                $topLevel[] = $byId[$id];
+            }
+        }
+
+        return new \StudioAtrium\Entity\Attachment\Collection($topLevel);
     }
 
     /**
