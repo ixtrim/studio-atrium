@@ -39,6 +39,72 @@ class SmartyFunctionsRegistry
         return $url;
     }
 
+    public function mProjectCatalog($type): string
+    {
+        return \StudioAtrium\Application\Helper\Project::getCatalogForType((string) $type);
+    }
+
+    public function mProjectType($type, $catalogSlug = false, $fullLabel = false): string
+    {
+        $type = (string) $type;
+        if ($catalogSlug) {
+            if ($fullLabel) {
+                return \StudioAtrium\Application\Helper\Project::getCategorySlugForType($type);
+            }
+            return \StudioAtrium\Application\Helper\Project::getTypesPlural($type);
+        }
+        return \StudioAtrium\Application\Helper\Project::getTypes($type);
+    }
+
+    public function mLinkTitle($project): string
+    {
+        if (is_object($project)) {
+            if (method_exists($project, 'getName') && $project->getName()) {
+                return (string) $project->getName();
+            }
+            $alpha = method_exists($project, 'getSymbolAlpha') ? $project->getSymbolAlpha() : '';
+            $num = method_exists($project, 'getSymbolNum') ? $project->getSymbolNum() : '';
+            return trim($alpha . ' ' . $num);
+        }
+        if (is_array($project)) {
+            if (!empty($project['name'])) {
+                return (string) $project['name'];
+            }
+            return trim(($project['symbol_alpha'] ?? '') . ' ' . ($project['symbol_num'] ?? ''));
+        }
+        return '';
+    }
+
+    public function mInBasket($project, $version = 'normal'): bool
+    {
+        $projectId = 0;
+        if (is_object($project) && method_exists($project, 'getId')) {
+            $projectId = (int) $project->getId();
+        } elseif (is_array($project)) {
+            $projectId = (int) ($project['id'] ?? 0);
+        }
+        if ($projectId <= 0) {
+            return false;
+        }
+
+        $version = $version ?: 'normal';
+        $session = \Point7_WebApp::getSession();
+        $basket = $session->get('basket');
+        if (!is_array($basket)) {
+            return false;
+        }
+
+        foreach ($basket as $item) {
+            if (!is_array($item)) {
+                continue;
+            }
+            if ((int) ($item['pid'] ?? 0) === $projectId && ($item['version'] ?? 'normal') === $version) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     private function fetchSocialUrls(): array
     {
         try {
@@ -1574,6 +1640,18 @@ class SmartyFunctionsRegistry
         $smarty->registerPlugin('modifier', 'roofAngle',      [$paramsHelper, 'mRoofAngle']);
         $smarty->registerPlugin('modifier', 'roomCount',      [$paramsHelper, 'mRoomCount']);
         $smarty->registerPlugin('modifier', 'isNew',          [$paramsHelper, 'mIsNew']);
+        $smarty->registerPlugin('modifier', 'totalArea',      [$paramsHelper, 'mTotalArea']);
+        $smarty->registerPlugin('modifier', 'buildArea',      [$paramsHelper, 'mBuildArea']);
+        $smarty->registerPlugin('modifier', 'cubature',       [$paramsHelper, 'mCubature']);
+        $smarty->registerPlugin('modifier', 'garageHeight',   [$paramsHelper, 'mGarageHeight']);
+        $smarty->registerPlugin('modifier', 'arborHeight',    [$paramsHelper, 'mArborHeight']);
+        $smarty->registerPlugin('modifier', 'carportHeight',  [$paramsHelper, 'mCarportHeight']);
+        $smarty->registerPlugin('modifier', 'fenceSpanHeight',  [$paramsHelper, 'mFenceSpanHeight']);
+        $smarty->registerPlugin('modifier', 'fenceRoofHeight',  [$paramsHelper, 'mFenceRoofHeight']);
+        $smarty->registerPlugin('modifier', 'projectCatalog', [$this, 'mProjectCatalog']);
+        $smarty->registerPlugin('modifier', 'projectType',    [$this, 'mProjectType']);
+        $smarty->registerPlugin('modifier', 'linkTitle',      [$this, 'mLinkTitle']);
+        $smarty->registerPlugin('modifier', 'inBasket',       [$this, 'mInBasket']);
         $smarty->registerPlugin('modifier', 'replace',        function($str, $find, $replace) { return str_replace($find, $replace, $str); });
         $smarty->registerPlugin('modifier', 'unicode',        function($str) {
             if (!is_string($str)) return $str;

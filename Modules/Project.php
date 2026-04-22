@@ -796,11 +796,14 @@ class Project extends WWW\AbstractModule
 	public function doList(
 		\Point7_WebApp_Request_Filtered $request, WWW\AppContext $appContext, WWW\ResponseContext $responseContext
 	) {
-		//check double slash at the end of the string - Sempai 08.04.2026
-	    $link = $_SERVER['REQUEST_URI'];
-	    if (strpos($link, '//') !== false) {
+		//check double slash in path - Sempai 08.04.2026 (path only; ignore // in query values)
+	    $link = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '';
+	    $linkPath = parse_url($link, PHP_URL_PATH);
+	    if ($linkPath && strpos($linkPath, '//') !== false) {
+	        $cleanPath = preg_replace('#/+#', '/', $linkPath);
+	        $query = parse_url($link, PHP_URL_QUERY);
 	        header('HTTP/1.1 301 Moved Permanently');
-	        header("Location: " . \Point7_WebApp::getConfigParam('domain.www') . str_replace("//", "/", $link));
+	        header("Location: " . \Point7_WebApp::getConfigParam('domain.www') . $cleanPath . ($query ? ('?' . $query) : ''));
 	        header('Connection: close');
 	        die();
 	    }
@@ -876,7 +879,8 @@ class Project extends WWW\AbstractModule
 		}
 		
 		//jeżeli pierwsza strona jest podana w adresie, redirect na tę bez cyfertki - Sempai 07.04.2026
-		if (isset($rawParams['page']) && $rawParams['page'] == 1) {
+		// rawParams must be client-supplied only (not XML default page=1), or this 301 loops
+		if (isset($rawParams['page']) && $rawParams['page'] !== '' && (int)$rawParams['page'] === 1) {
 		    header('HTTP/1.1 301 Moved Permanently');
 		    header("Location: " . \Point7_WebApp::getConfigParam('domain.www') . '/' . $request->getParam('category') . '/');
 		    header('Connection: close');
@@ -900,7 +904,7 @@ class Project extends WWW\AbstractModule
 		
 		//Meta tagi i modyfikacja treści dla kolejnych stron
 		
-		if (isset($rawParams['page'])) {
+		if (isset($rawParams['page']) && $rawParams['page'] !== '') {
 			$responseContext->setMeta(str_replace('Studio Atrium', 'strona: ' . $request->getParam('page') . ' z ' . $pages . ' - Studio Atrium', $category->getMetaTitle()), $category->getMetaDescription());
 		} else {
 			$responseContext->setMeta($category->getMetaTitle(), $category->getMetaDescription());
@@ -913,7 +917,7 @@ class Project extends WWW\AbstractModule
 				$isCanonicalSet = true;
 			} else {
 			    if(isset($rawParams['pid']) && !in_array($category->getId(), array(5, 6))) { //patrz niżej
-    			    $responseContext->set('canonicalUrl', \Point7_WebApp::getConfigParam('domain.www') . Helper\Url::buildHouseListUrl($request->getParam('category')));
+    			    $responseContext->set('canonicalUrl', \Point7_WebApp::getConfigParam('domain.www') . self::_houseListUrl($request->getParam('category')));
 					$isCanonicalSet = true;
     			}
 			}
@@ -940,7 +944,7 @@ class Project extends WWW\AbstractModule
 		if($pages > 1) {
 			if ($request->getParam('page') == 1) {
 				
-				$responseContext->set('nextUrl', \Point7_WebApp::getConfigParam('domain.www') . Helper\Url::buildHouseListPagerUrl(
+				$responseContext->set('nextUrl', \Point7_WebApp::getConfigParam('domain.www') . self::_houseListPagerUrl(
 						$request->getParam('category'),
 						$mappedDisplayType,
 						$mappedSortBy,
@@ -954,9 +958,9 @@ class Project extends WWW\AbstractModule
 
 			} else if ($request->getParam('page') == $pages) {
 				if($request->getParam('page') == 2) {
-					$responseContext->set('prevUrl', \Point7_WebApp::getConfigParam('domain.www') . Helper\Url::buildHouseListUrl($request->getParam('category')));
+					$responseContext->set('prevUrl', \Point7_WebApp::getConfigParam('domain.www') . self::_houseListUrl($request->getParam('category')));
 				} else {
-					$responseContext->set('prevUrl', \Point7_WebApp::getConfigParam('domain.www') . Helper\Url::buildHouseListPagerUrl(
+					$responseContext->set('prevUrl', \Point7_WebApp::getConfigParam('domain.www') . self::_houseListPagerUrl(
 							$request->getParam('category'),
 							$mappedDisplayType,
 							$mappedSortBy,
@@ -966,7 +970,7 @@ class Project extends WWW\AbstractModule
 					);
 				}
 			} else {
-				$responseContext->set('nextUrl', \Point7_WebApp::getConfigParam('domain.www') . Helper\Url::buildHouseListPagerUrl(
+				$responseContext->set('nextUrl', \Point7_WebApp::getConfigParam('domain.www') . self::_houseListPagerUrl(
 						$request->getParam('category'),
 						$mappedDisplayType,
 						$mappedSortBy,
@@ -976,9 +980,9 @@ class Project extends WWW\AbstractModule
 				);
 				
 				if($request->getParam('page') == 2) {
-					$responseContext->set('prevUrl', \Point7_WebApp::getConfigParam('domain.www') . Helper\Url::buildHouseListUrl($request->getParam('category')));
+					$responseContext->set('prevUrl', \Point7_WebApp::getConfigParam('domain.www') . self::_houseListUrl($request->getParam('category')));
 				} else {
-					$responseContext->set('prevUrl', \Point7_WebApp::getConfigParam('domain.www') . Helper\Url::buildHouseListPagerUrl(
+					$responseContext->set('prevUrl', \Point7_WebApp::getConfigParam('domain.www') . self::_houseListPagerUrl(
 							$request->getParam('category'),
 							$mappedDisplayType,
 							$mappedSortBy,
@@ -1011,7 +1015,7 @@ class Project extends WWW\AbstractModule
 			}
 		}
 		
-		$url = Helper\Url::buildHouseListUrl($request->getParam('category'));
+		$url = self::_houseListUrl($request->getParam('category'));
 		$responseContext->set('url', $url);
 		$responseContext->set('type', $type);
 		$responseContext->set('listType', Helper\Project::getDisplayListTypes($type));
@@ -1064,7 +1068,7 @@ class Project extends WWW\AbstractModule
 		    $mappedSortBy = Helper\UrlParamMap::getMapping('sort_by', $defaultSortBy);
 		    $mappedSortOrder = Helper\UrlParamMap::getMapping('sort_order', $defaultSortOrder);
 		    
-		    $canonUrl = \Point7_WebApp::getConfigParam('domain.www') . Helper\Url::buildHouseListPagerUrl(
+		    $canonUrl = \Point7_WebApp::getConfigParam('domain.www') . self::_houseListPagerUrl(
 		        $request->getParam('category'),
 		        $mappedDisplayType,
 		        $mappedSortBy,
@@ -1157,11 +1161,14 @@ class Project extends WWW\AbstractModule
 	public function doRealizations(
 		\Point7_WebApp_Request_Filtered $request, WWW\AppContext $appContext, WWW\ResponseContext $responseContext
 	) {
-		//check double slash at the end of the string - Sempai 08.04.2026
-	    $link = $_SERVER['REQUEST_URI'];
-	    if (strpos($link, '//') !== false) {
+		//check double slash in path - Sempai 08.04.2026 (path only; ignore // in query values)
+	    $link = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '';
+	    $linkPath = parse_url($link, PHP_URL_PATH);
+	    if ($linkPath && strpos($linkPath, '//') !== false) {
+	        $cleanPath = preg_replace('#/+#', '/', $linkPath);
+	        $query = parse_url($link, PHP_URL_QUERY);
 	        header('HTTP/1.1 301 Moved Permanently');
-	        header("Location: " . \Point7_WebApp::getConfigParam('domain.www') . str_replace("//", "/", $link));
+	        header("Location: " . \Point7_WebApp::getConfigParam('domain.www') . $cleanPath . ($query ? ('?' . $query) : ''));
 	        header('Connection: close');
 	        die();
 	    }
@@ -1178,21 +1185,21 @@ class Project extends WWW\AbstractModule
 		switch($this->_action) {
 			case 'Realizations': default: 
 					$type = 'ProjectRealisation';
-					$responseContext->set('url', Helper\Url::buildRealizationsListUrl());
+					$responseContext->set('url', self::_realizationsListUrl());
 					
 					$breadcrumbs[2]['id'] = "https://www.studioatrium.pl/projekty-domow/realizacje/";
 					$breadcrumbs[2]['name'] = "Realizacje projektów";
 				break;
 			case 'RealizationsBuilding': 
 					$type = 'ProjectBuildingInProgress';
-					$responseContext->set('url', Helper\Url::buildRealizationsBuildingListUrl());
+					$responseContext->set('url', self::_realizationsBuildingListUrl());
 					
 					$breadcrumbs[2]['id'] = "https://www.studioatrium.pl/projekty-domow/realizacje-w-budowie/";
 					$breadcrumbs[2]['name'] = "Domy w budowie";
 				break;
 			case 'RealizationsInterior': 
 					$type = 'ProjectRealisationInterior';
-					$responseContext->set('url', Helper\Url::buildRealizationsInteriorListUrl());
+					$responseContext->set('url', self::_realizationsInteriorListUrl());
 					
 					$breadcrumbs[2]['id'] = "https://www.studioatrium.pl/projekty-domow/realizacje-wnetrz/";
 					$breadcrumbs[2]['name'] = "Realizacje wnętrz";
@@ -1252,30 +1259,30 @@ class Project extends WWW\AbstractModule
 		
 		if ($pages > 1) {
 			if ($page == 1) {
-				$responseContext->set('nextUrl', \Point7_WebApp::getConfigParam('domain.www') . Helper\Url::buildRealizationsListUrl(
+				$responseContext->set('nextUrl', \Point7_WebApp::getConfigParam('domain.www') . self::_realizationsListUrl(
 						2
 					)
 				);
 			} else if ($page == $pages) {
 					
 				if ($request->getParam('page') == 2) {
-					$responseContext->set('prevUrl', \Point7_WebApp::getConfigParam('domain.www') . Helper\Url::buildRealizationsListUrl());
+					$responseContext->set('prevUrl', \Point7_WebApp::getConfigParam('domain.www') . self::_realizationsListUrl());
 				} else {
-					$responseContext->set('prevUrl', \Point7_WebApp::getConfigParam('domain.www') . Helper\Url::buildRealizationsListUrl(
+					$responseContext->set('prevUrl', \Point7_WebApp::getConfigParam('domain.www') . self::_realizationsListUrl(
 							$page - 1
 						)
 					);
 				}
 			} else {
-				$responseContext->set('nextUrl', \Point7_WebApp::getConfigParam('domain.www') . Helper\Url::buildRealizationsListUrl(
+				$responseContext->set('nextUrl', \Point7_WebApp::getConfigParam('domain.www') . self::_realizationsListUrl(
 						$page + 1
 					)
 				);
 					
 				if ($request->getParam('page') == 2) {
-					$responseContext->set('prevUrl', \Point7_WebApp::getConfigParam('domain.www') . Helper\Url::buildRealizationsListUrl());
+					$responseContext->set('prevUrl', \Point7_WebApp::getConfigParam('domain.www') . self::_realizationsListUrl());
 				} else {
-					$responseContext->set('prevUrl', \Point7_WebApp::getConfigParam('domain.www') . Helper\Url::buildRealizationsListUrl(
+					$responseContext->set('prevUrl', \Point7_WebApp::getConfigParam('domain.www') . self::_realizationsListUrl(
 							$page - 1
 						)
 					);
@@ -1353,7 +1360,7 @@ class Project extends WWW\AbstractModule
 				$responseContext->set('sortingDisabled', $sortingDisabled);
 				$responseContext->set('list', $list);
 				
-				$url = Helper\Url::buildSearchListUrl();
+				$url = self::_searchListUrl();
 				$responseContext->set('url', $url);
 				
 				if(strpos($_SERVER['REQUEST_URI'], '?') !== false) {
@@ -2615,7 +2622,7 @@ class Project extends WWW\AbstractModule
         }
         
         $responseContext->set('noindexNofollow', true);
-        $responseContext->set('url', Helper\Url::buildOpinionsListUrl());
+        $responseContext->set('url', self::_opinionsListUrl());
 	}
 	
 	
@@ -2841,5 +2848,76 @@ class Project extends WWW\AbstractModule
 	    }
 	    
 	    return true;
+	}
+
+	/**
+	 * Fallback URL builders when AppPackages/Helper/Url.php on server is outdated.
+	 */
+	private static function _houseListUrl($category)
+	{
+		if (method_exists('\\StudioAtrium\\Application\\Helper\\Url', 'buildHouseListUrl')) {
+			return Helper\Url::buildHouseListUrl($category);
+		}
+		return '/' . trim($category, '/') . '/';
+	}
+
+	private static function _houseListPagerUrl($category, $displayType, $sortBy, $sortOrder, $page)
+	{
+		if (method_exists('\\StudioAtrium\\Application\\Helper\\Url', 'buildHouseListPagerUrl')) {
+			return Helper\Url::buildHouseListPagerUrl($category, $displayType, $sortBy, $sortOrder, $page);
+		}
+		$base = '/' . trim($category, '/') . '/' . $displayType . ',' . $sortBy . ',' . $sortOrder;
+		if ($page && (int)$page > 1) {
+			$base .= ',' . (int)$page;
+		}
+		return $base;
+	}
+
+	private static function _simplePagerUrl($base, $page = null)
+	{
+		if ($page !== null && $page !== '' && (int)$page > 1) {
+			return rtrim($base, '/') . '/,' . (int)$page;
+		}
+		return $base;
+	}
+
+	private static function _realizationsListUrl($page = null)
+	{
+		if (method_exists('\\StudioAtrium\\Application\\Helper\\Url', 'buildRealizationsListUrl')) {
+			return Helper\Url::buildRealizationsListUrl($page);
+		}
+		return self::_simplePagerUrl('/projekty-domow/realizacje/', $page);
+	}
+
+	private static function _realizationsBuildingListUrl($page = null)
+	{
+		if (method_exists('\\StudioAtrium\\Application\\Helper\\Url', 'buildRealizationsBuildingListUrl')) {
+			return Helper\Url::buildRealizationsBuildingListUrl($page);
+		}
+		return self::_simplePagerUrl('/projekty-domow/realizacje-w-budowie/', $page);
+	}
+
+	private static function _realizationsInteriorListUrl($page = null)
+	{
+		if (method_exists('\\StudioAtrium\\Application\\Helper\\Url', 'buildRealizationsInteriorListUrl')) {
+			return Helper\Url::buildRealizationsInteriorListUrl($page);
+		}
+		return self::_simplePagerUrl('/projekty-domow/realizacje-wnetrz/', $page);
+	}
+
+	private static function _opinionsListUrl($page = null)
+	{
+		if (method_exists('\\StudioAtrium\\Application\\Helper\\Url', 'buildOpinionsListUrl')) {
+			return Helper\Url::buildOpinionsListUrl($page);
+		}
+		return self::_simplePagerUrl('/projekty-domow/opinie/', $page);
+	}
+
+	private static function _searchListUrl()
+	{
+		if (method_exists('\\StudioAtrium\\Application\\Helper\\Url', 'buildSearchListUrl')) {
+			return Helper\Url::buildSearchListUrl();
+		}
+		return '/projekty-domow/szukaj/';
 	}
 }

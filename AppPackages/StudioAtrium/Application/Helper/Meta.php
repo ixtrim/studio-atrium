@@ -2,6 +2,7 @@
 namespace StudioAtrium\Application\Helper;
 
 use StudioAtrium\Application\WWW\ResponseContext;
+use StudioAtrium\Application\Helper\Project as ProjectHelper;
 
 /**
  * `StudioAtrium\Application\Helper\Meta` didn't exist at all - every content
@@ -26,7 +27,7 @@ use StudioAtrium\Application\WWW\ResponseContext;
  */
 class Meta
 {
-    private const SUFFIX = ' - Studio Atrium';
+    const SUFFIX = ' - Studio Atrium';
 
     /**
      * @param string $module      module name ($this->_name), or the literal "404"
@@ -44,9 +45,9 @@ class Meta
         $page = null,
         $extra1 = null,
         $extra2 = null
-    ): void {
-        [$title, $description] = self::buildMeta($module, $action, $entity, $page, $extra1, $extra2);
-        self::apply($responseContext, $title, $description);
+    ) {
+        $meta = self::buildMeta($module, $action, $entity, $page, $extra1, $extra2);
+        self::apply($responseContext, $meta[0], $meta[1]);
     }
 
     /**
@@ -63,7 +64,7 @@ class Meta
         $page = null,
         $pages = null,
         $titleOverride = null
-    ): void {
+    ) {
         if ($titleOverride) {
             $title = $titleOverride . self::SUFFIX;
             self::apply($responseContext, $title, (string)$tagOrTitle);
@@ -94,7 +95,7 @@ class Meta
         $page = null,
         $pages = null,
         $topic = null
-    ): void {
+    ) {
         if ($action === 'Thread' && $topic) {
             $title = $topic . self::pageSuffix($page, $pages) . self::SUFFIX;
             $description = 'Wątek "' . $topic . '" na forum Studio Atrium.';
@@ -114,14 +115,14 @@ class Meta
         string $module,
         string $action,
         array $params = []
-    ): void {
+    ) {
         $template = self::templateFor($module, $action);
         $title = strtr($template['title'], $params) . self::SUFFIX;
         $description = strtr($template['description'], $params);
         self::apply($responseContext, $title, $description);
     }
 
-    private static function apply(ResponseContext $responseContext, string $title, string $description): void
+    private static function apply(ResponseContext $responseContext, string $title, string $description)
     {
         $responseContext->set('pageTitle', trim($title));
         $responseContext->set('pageMetaDescription', trim($description));
@@ -213,7 +214,7 @@ class Meta
             return ['Projekt' . self::SUFFIX, ''];
         }
 
-        $typeLabel = Project::getTypes($project->getType());
+        $typeLabel = ProjectHelper::getTypes($project->getType());
         $name = self::projectName($project);
         $mirrorSuffix = $mirror ? ' - odbicie lustrzane' : '';
 

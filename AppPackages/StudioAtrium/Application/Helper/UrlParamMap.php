@@ -23,14 +23,16 @@ class UrlParamMap
         'sort_order'    => ['asc' => 'a', 'desc' => 'd'],
     ];
 
-    public static function getMapping(string $type, $value): string
+    public static function getMapping($type, $value)
     {
-        return self::$maps[$type][$value] ?? '';
+        // sort_order comes through as ASC/DESC; map keys are lowercase
+        $key = is_string($value) ? strtolower($value) : $value;
+        return isset(self::$maps[$type][$key]) ? self::$maps[$type][$key] : '';
     }
 
-    public static function getReverseMapping(string $type, string $code)
+    public static function getReverseMapping($type, $code)
     {
-        $flipped = array_flip(self::$maps[$type] ?? []);
-        return $flipped[$code] ?? null;
+        $flipped = array_flip(isset(self::$maps[$type]) ? self::$maps[$type] : array());
+        return isset($flipped[$code]) ? $flipped[$code] : null;
     }
 }

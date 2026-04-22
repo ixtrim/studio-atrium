@@ -74,6 +74,54 @@ class Project
         return self::$typeNames[$type] ?? 'Projekt';
     }
 
+    /**
+     * Admin panel plural labels ({$type|projectType:true}).
+     */
+    public static function getTypesPlural(string $type): string
+    {
+        $map = [
+            'house'       => 'Projekty domów',
+            'skeleton'    => 'Projekty domów szkieletowych',
+            'garage'      => 'Projekty garaży',
+            'carport'     => 'Wiaty',
+            'arbor'       => 'Altany',
+            'tank'        => 'Osadniki',
+            'fence'       => 'Ogrodzenia',
+            'outbuilding' => 'Budynki gospodarcze',
+            'small'       => 'Mała architektura',
+            'export'      => 'Projekty eksportowe',
+        ];
+        return $map[$type] ?? 'Projekty';
+    }
+
+    /**
+     * Catalog path segment for {url ... catalog=$type|projectCatalog}.
+     */
+    public static function getCatalogForType(string $type): string
+    {
+        if ($type === 'house' || $type === 'skeleton') {
+            return ProjectCategory::getDefaultHouseCategory();
+        }
+        if ($type === 'garage') {
+            return ProjectCategory::getDefaultGarageCategory();
+        }
+        return 'projekty/' . ProjectCategory::getDefaultOtherCategory($type);
+    }
+
+    /**
+     * Bare category slug for other-project URLs ({projectType:true:true} in Other.tpl).
+     */
+    public static function getCategorySlugForType(string $type): string
+    {
+        if ($type === 'house' || $type === 'skeleton') {
+            return 'domow';
+        }
+        if ($type === 'garage') {
+            return 'garazy';
+        }
+        return ProjectCategory::getDefaultOtherCategory($type);
+    }
+
     public static function getDisplayListTypes(string $type): string
     {
         if ($type === 'house' || $type === 'skeleton') {

@@ -1,10 +1,11 @@
 <?php
 namespace StudioAtrium\Entity\Project;
 
-class Category
+class Category implements \ArrayAccess
 {
-    const TREE_HOUSE  = 'house';
-    const TREE_OTHER  = 'other';
+    const TREE_HOUSE = 'house';
+    const TREE_OTHER = 'other';
+    const ATTACHMENT_SLOT = 8;
 
     private $id = 0;
     private $tree = 'house';
@@ -24,6 +25,8 @@ class Category
     private $metaDescription = null;
     private $isParallel = 0;
     private $children = [];
+    private $attachments = [];
+
     public function getId(): int { return $this->id; }
     public function setId(int $v) { $this->id = $v; }
     public function getTree(): string { return $this->tree; }
@@ -61,6 +64,21 @@ class Category
     public function getChildren(): array { return $this->children; }
     public function setChildren(array $v) { $this->children = $v; }
 
+    public function getUid(): int
+    {
+        return $this->id * 256 + self::ATTACHMENT_SLOT;
+    }
+
+    public function setAttachments(array $attachments)
+    {
+        $this->attachments = $attachments;
+    }
+
+    public function getAttachments(): array
+    {
+        return $this->attachments;
+    }
+
     public function toArray(): array
     {
         return [
@@ -82,6 +100,42 @@ class Category
             'meta_description'     => $this->metaDescription,
             'is_parallel'          => $this->isParallel,
             'children'             => $this->children,
+            '_uid'                 => $this->getUid(),
+            'attachments'          => $this->attachments,
         ];
+    }
+
+    // ArrayAccess — Smarty list templates use $category.id / $category.attachments
+    public function offsetExists($offset)
+    {
+        return array_key_exists($offset, $this->toArray());
+    }
+
+    public function offsetGet($offset)
+    {
+        $data = $this->toArray();
+        return array_key_exists($offset, $data) ? $data[$offset] : null;
+    }
+
+    public function offsetSet($offset, $value)
+    {
+        if ($offset === 'attachments') {
+            $this->attachments = $value;
+            return;
+        }
+        if ($offset === null) {
+            return;
+        }
+        $setter = 'set' . str_replace(' ', '', ucwords(str_replace('_', ' ', $offset)));
+        if (method_exists($this, $setter)) {
+            $this->$setter($value);
+        }
+    }
+
+    public function offsetUnset($offset)
+    {
+        if ($offset === 'attachments') {
+            $this->attachments = [];
+        }
     }
 }

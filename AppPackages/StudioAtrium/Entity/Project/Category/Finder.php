@@ -18,7 +18,12 @@ class Finder
         $stmt = $this->pdo->prepare('SELECT * FROM project_category WHERE id = :id');
         $stmt->execute([':id' => $id]);
         $row = $stmt->fetch();
-        return $row ? $this->hydrate($row) : null;
+        if (!$row) {
+            return null;
+        }
+        $category = $this->hydrate($row);
+        $this->loadAttachments($category);
+        return $category;
     }
 
     public function getByLink(string $link)
@@ -26,7 +31,12 @@ class Finder
         $stmt = $this->pdo->prepare("SELECT * FROM project_category WHERE link = :link AND status = 'published' LIMIT 1");
         $stmt->execute([':link' => $link]);
         $row = $stmt->fetch();
-        return $row ? $this->hydrate($row) : null;
+        if (!$row) {
+            return null;
+        }
+        $category = $this->hydrate($row);
+        $this->loadAttachments($category);
+        return $category;
     }
 
     /**
@@ -105,6 +115,30 @@ class Finder
             'status'               => $row['status'],
             'children'             => $children,
         ];
+    }
+
+    private function loadAttachments(Category $category)
+    {
+        $stmt = $this->pdo->prepare(
+            'SELECT * FROM attachment WHERE owner_uid = :uid ORDER BY sorting ASC'
+        );
+        $stmt->execute([':uid' => $category->getUid()]);
+        $rows = $stmt->fetchAll();
+
+        $grouped = [];
+        foreach ($rows as $row) {
+            $profile = $row['profile_name'] ?? '';
+            $grouped[$profile][] = [
+                'id'       => (int)($row['id'] ?? 0),
+                'path'     => $row['path'] ?? '',
+                'filename' => $row['filename'] ?? '',
+                'title'    => $row['title'] ?? null,
+                'props'    => $row['props'] ?? null,
+                'sorting'  => (int)($row['sorting'] ?? 0),
+            ];
+        }
+
+        $category->setAttachments($grouped);
     }
 
     private function hydrate(array $row): Category

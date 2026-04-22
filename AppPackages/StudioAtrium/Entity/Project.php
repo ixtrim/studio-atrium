@@ -1,7 +1,7 @@
 <?php
 namespace StudioAtrium\Entity;
 
-class Project
+class Project implements \ArrayAccess
 {
     const STATUS_PUBLISHED = 'published';
     const STATUS_DRAFT     = 'draft';
@@ -120,5 +120,32 @@ class Project
             'technology'            => $this->technology,
             'extra_data'            => $this->extraData,
         ];
+    }
+
+    // ArrayAccess — list templates use $_project.name / $_project.params_general
+    public function offsetExists($offset)
+    {
+        return array_key_exists($offset, $this->toArray());
+    }
+
+    public function offsetGet($offset)
+    {
+        $data = $this->toArray();
+        return array_key_exists($offset, $data) ? $data[$offset] : null;
+    }
+
+    public function offsetSet($offset, $value)
+    {
+        if ($offset === null) {
+            return;
+        }
+        $setter = 'set' . str_replace(' ', '', ucwords(str_replace('_', ' ', $offset)));
+        if (method_exists($this, $setter)) {
+            $this->$setter($value);
+        }
+    }
+
+    public function offsetUnset($offset)
+    {
     }
 }

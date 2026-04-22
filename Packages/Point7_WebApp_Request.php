@@ -46,6 +46,16 @@ class Point7_WebApp_Request
         return $this->raw;
     }
 
+    /**
+     * Replace raw HTTP params without changing filtered getParam() values.
+     * Used after injecting XML defaults into $_GET so getRawParams() still
+     * reflects only what the client actually sent.
+     */
+    public function replaceRawParams(array $raw)
+    {
+        $this->raw = $raw;
+    }
+
     public function getType(): string
     {
         return $this->method;

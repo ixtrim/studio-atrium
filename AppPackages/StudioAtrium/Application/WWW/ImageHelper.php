@@ -15,7 +15,16 @@ class ImageHelper
         $size    = $params['size']    ?? 'box';
         $storey  = $params['storey']  ?? null;
 
-        $id = is_array($project) ? (int)($project['id'] ?? 0) : 0;
+        $id = 0;
+        if (is_array($project)) {
+            $id = (int)($project['id'] ?? 0);
+        } elseif (is_object($project)) {
+            if ($project instanceof \ArrayAccess && isset($project['id'])) {
+                $id = (int)$project['id'];
+            } elseif (method_exists($project, 'getId')) {
+                $id = (int)$project->getId();
+            }
+        }
         if (!$id) return '';
 
         if ($type === 'render') {

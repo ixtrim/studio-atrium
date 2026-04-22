@@ -363,9 +363,15 @@ class Point7_WebApp
 
     private static function buildRequest(array $moduleConfig, string $actionName): Point7_WebApp_Request_Filtered
     {
+        // Snapshot of client-supplied params before XML defaults are injected into $_GET.
+        // getRawParams() must stay free of those defaults (e.g. page=1), or code like
+        // Project::doList's "strip page=1" 301 will redirect forever.
+        $clientGet  = $_GET ?? [];
+        $clientPost = $_POST ?? [];
+
         $request = new Point7_WebApp_Request_Filtered(
-            $_GET    ?? [],
-            $_POST   ?? [],
+            $clientGet,
+            $clientPost,
             $_FILES  ?? [],
             $_COOKIE ?? [],
             $_SERVER['REQUEST_METHOD'] ?? 'GET'
@@ -403,16 +409,18 @@ class Point7_WebApp
             }
         }
 
-        $request->setAllowedParams($allowedNames);
-
-        // Re-populate the request with possibly-updated globals
-        return new Point7_WebApp_Request_Filtered(
+        // Re-populate with defaults applied for getParam(), but keep raw = client-only
+        $request = new Point7_WebApp_Request_Filtered(
             $_GET    ?? [],
             $_POST   ?? [],
             $_FILES  ?? [],
             $_COOKIE ?? [],
             $_SERVER['REQUEST_METHOD'] ?? 'GET'
         );
+        $request->setAllowedParams($allowedNames);
+        $request->replaceRawParams(array_merge($clientGet, $clientPost));
+
+        return $request;
     }
 
     private static function applyValidator(

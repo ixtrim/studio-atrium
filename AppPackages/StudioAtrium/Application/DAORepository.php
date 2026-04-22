@@ -1420,10 +1420,7 @@ class DAORepository extends \Point7_WebApp_DAORepository
 	public function getSettingsFinder()
 	{
 		if (is_null($this->_settingsFinder)) {
-			$this->_settingsFinder = new Entities\Settings\Finder();
-			$this->_settingsFinder->configure(array(
-				'dao_settings' => $this->getSettingsDAO()
-			));
+			$this->_settingsFinder = new Entities\Settings\Finder($this->getPDO());
 		}
 		return $this->_settingsFinder;
 	}
