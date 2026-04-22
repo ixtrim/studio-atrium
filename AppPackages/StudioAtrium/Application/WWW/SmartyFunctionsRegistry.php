@@ -930,6 +930,522 @@ class SmartyFunctionsRegistry
         );
     }
 
+    private function fetchCategoriesMeta()
+    {
+        $defaults = $this->getCategoriesMetaDefaults();
+        try {
+            $pdo = \Point7_WebApp::getPDO();
+            $this->ensureCategoriesTables($pdo);
+            $stmt = $pdo->query(
+                'SELECT section_title, see_all_label, see_all_url, cta_label, cta_url
+                 FROM homepage_categories_meta
+                 ORDER BY id ASC
+                 LIMIT 1'
+            );
+            if (!$stmt) {
+                return $defaults;
+            }
+            $row = $stmt->fetch(\PDO::FETCH_ASSOC);
+            return $row ? $row : $defaults;
+        } catch (\Throwable $e) {
+            return $defaults;
+        }
+    }
+
+    private function fetchCategories()
+    {
+        $defaults = $this->getCategoriesDefaults();
+        try {
+            $pdo = \Point7_WebApp::getPDO();
+            $this->ensureCategoriesTables($pdo);
+            $stmt = $pdo->query(
+                'SELECT title_line1, title_line2, image_url, link_url
+                 FROM homepage_categories
+                 ORDER BY sorting ASC, id ASC'
+            );
+            if (!$stmt) {
+                return $defaults;
+            }
+            $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+            return !empty($rows) ? $rows : $defaults;
+        } catch (\Throwable $e) {
+            return $defaults;
+        }
+    }
+
+    private function ensureCategoriesTables(\PDO $pdo)
+    {
+        $existsMeta = $pdo->query("SHOW TABLES LIKE 'homepage_categories_meta'");
+        if (!($existsMeta && $existsMeta->fetchColumn())) {
+            $created = $pdo->exec(
+                'CREATE TABLE homepage_categories_meta (
+                    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+                    section_title VARCHAR(255) NOT NULL DEFAULT \'\',
+                    see_all_label VARCHAR(255) NOT NULL DEFAULT \'\',
+                    see_all_url VARCHAR(512) NOT NULL DEFAULT \'\',
+                    cta_label VARCHAR(255) NOT NULL DEFAULT \'\',
+                    cta_url VARCHAR(512) NOT NULL DEFAULT \'\',
+                    PRIMARY KEY (id)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4'
+            );
+            if ($created === false) {
+                throw new \RuntimeException('Could not create homepage_categories_meta');
+            }
+            $defaults = $this->getCategoriesMetaDefaults();
+            $stmt = $pdo->prepare(
+                'INSERT INTO homepage_categories_meta
+                 (section_title, see_all_label, see_all_url, cta_label, cta_url)
+                 VALUES
+                 (:section_title, :see_all_label, :see_all_url, :cta_label, :cta_url)'
+            );
+            $stmt->execute(array(
+                ':section_title' => $defaults['section_title'],
+                ':see_all_label' => $defaults['see_all_label'],
+                ':see_all_url'   => $defaults['see_all_url'],
+                ':cta_label'     => $defaults['cta_label'],
+                ':cta_url'       => $defaults['cta_url'],
+            ));
+        }
+
+        $existsItems = $pdo->query("SHOW TABLES LIKE 'homepage_categories'");
+        if ($existsItems && $existsItems->fetchColumn()) {
+            return;
+        }
+
+        $created = $pdo->exec(
+            'CREATE TABLE homepage_categories (
+                id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+                title_line1 VARCHAR(255) NOT NULL DEFAULT \'\',
+                title_line2 VARCHAR(255) NOT NULL DEFAULT \'\',
+                image_url VARCHAR(512) NOT NULL DEFAULT \'\',
+                link_url VARCHAR(512) NOT NULL DEFAULT \'\',
+                sorting INT UNSIGNED NOT NULL DEFAULT 0,
+                PRIMARY KEY (id)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4'
+        );
+        if ($created === false) {
+            throw new \RuntimeException('Could not create homepage_categories');
+        }
+
+        $stmt = $pdo->prepare(
+            'INSERT INTO homepage_categories
+             (title_line1, title_line2, image_url, link_url, sorting)
+             VALUES
+             (:title_line1, :title_line2, :image_url, :link_url, :sorting)'
+        );
+        foreach ($this->getCategoriesDefaults() as $i => $row) {
+            $stmt->execute(array(
+                ':title_line1' => $row['title_line1'],
+                ':title_line2' => $row['title_line2'],
+                ':image_url'   => $row['image_url'],
+                ':link_url'    => $row['link_url'],
+                ':sorting'     => $i,
+            ));
+        }
+    }
+
+    private function getCategoriesMetaDefaults()
+    {
+        return array(
+            'section_title' => 'Nasze kategorie',
+            'see_all_label' => 'Zobacz wszystkie kategorie',
+            'see_all_url'   => '/projekty',
+            'cta_label'     => 'Znajdź dom dla siebie',
+            'cta_url'       => '/projekty',
+        );
+    }
+
+    private function getCategoriesDefaults()
+    {
+        return array(
+            array(
+                'title_line1' => 'Projekty domów',
+                'title_line2' => 'parterowe',
+                'image_url'   => 'https://media.studioatrium.pl/stock/33/545/69bbedfaec9a3-projekty-domow-parterowych.webp',
+                'link_url'    => '/projekty',
+            ),
+            array(
+                'title_line1' => 'Projekty domów',
+                'title_line2' => 'z poddaszem',
+                'image_url'   => 'https://media.studioatrium.pl/stock/33/2081/6735f65e70002-projekty-domow-z-poddaszem.webp',
+                'link_url'    => '/projekty',
+            ),
+            array(
+                'title_line1' => 'Projekty domów',
+                'title_line2' => 'piętrowe',
+                'image_url'   => 'https://media.studioatrium.pl/stock/33/2593/6735fa63a53c6-projekty-domow-pietrowych.webp',
+                'link_url'    => '/projekty',
+            ),
+            array(
+                'title_line1' => 'Projekty domów',
+                'title_line2' => 'nowoczesne',
+                'image_url'   => 'https://media.studioatrium.pl/stock/33/4385/673cad3ec1a17-projekty-domow-nowoczesnych.webp',
+                'link_url'    => '/projekty',
+            ),
+            array(
+                'title_line1' => 'Projekty domów',
+                'title_line2' => 'na wąską działkę',
+                'image_url'   => 'https://media.studioatrium.pl/stock/33/2849/6735f85ae5778-projekty-domow-na-waska-dzialke.webp',
+                'link_url'    => '/projekty',
+            ),
+            array(
+                'title_line1' => 'Projekty domów',
+                'title_line2' => 'szkieletowe',
+                'image_url'   => 'https://media.studioatrium.pl/stock/33/5409/69bbc6ce5167a-projekty-szkieletowe.webp',
+                'link_url'    => '/projekty',
+            ),
+            array(
+                'title_line1' => 'Projekty domów',
+                'title_line2' => 'tanie w budowie',
+                'image_url'   => 'https://media.studioatrium.pl/stock/33/3105/69bbd61f93bdc-projekty-domow-tanich-w-budowie.webp',
+                'link_url'    => '/projekty',
+            ),
+            array(
+                'title_line1' => 'Projekty domów',
+                'title_line2' => 'nowości',
+                'image_url'   => 'https://media.studioatrium.pl/stock/33/289/69bbd8ee83418-nowosci-projektowe.webp',
+                'link_url'    => '/projekty',
+            ),
+            array(
+                'title_line1' => 'Projekty domów',
+                'title_line2' => 'bliźniaki',
+                'image_url'   => 'https://media.studioatrium.pl/stock/33/8993/67d42fae1a2b4-projekty-domow-blizniaczych.webp',
+                'link_url'    => '/projekty',
+            ),
+            array(
+                'title_line1' => 'Projekty domów',
+                'title_line2' => 'w stylu stodoły',
+                'image_url'   => 'https://media.studioatrium.pl/stock/33/5921/6735fa0f0a3b8-projekty-domow-w-stylu-stodoly.webp',
+                'link_url'    => '/projekty',
+            ),
+            array(
+                'title_line1' => 'Projekty domów',
+                'title_line2' => 'na skarpę',
+                'image_url'   => 'https://media.studioatrium.pl/stock/33/9761/69bbd0ad18917-projekty-domow-na-skarpe.webp',
+                'link_url'    => '/projekty',
+            ),
+            array(
+                'title_line1' => 'Projekty domów',
+                'title_line2' => 'z wnętrzami',
+                'image_url'   => 'https://media.studioatrium.pl/stock/33/3873/6735fc416679b-projekty-domow-wizualizacja-wnetrz.webp',
+                'link_url'    => '/projekty',
+            ),
+        );
+    }
+
+    private function fetchBestsellersMeta()
+    {
+        $defaults = $this->getBestsellersMetaDefaults();
+        try {
+            $pdo = \Point7_WebApp::getPDO();
+            $this->ensureBestsellersTables($pdo);
+            $stmt = $pdo->query(
+                'SELECT section_title
+                 FROM homepage_bestsellers_meta
+                 ORDER BY id ASC
+                 LIMIT 1'
+            );
+            if (!$stmt) {
+                return $defaults;
+            }
+            $row = $stmt->fetch(\PDO::FETCH_ASSOC);
+            return $row ? $row : $defaults;
+        } catch (\Throwable $e) {
+            return $defaults;
+        }
+    }
+
+    private function fetchBestsellers()
+    {
+        try {
+            $pdo = \Point7_WebApp::getPDO();
+            $this->ensureBestsellersTables($pdo);
+            $stmt = $pdo->query(
+                'SELECT project_id, tag
+                 FROM homepage_bestsellers
+                 ORDER BY sorting ASC, id ASC
+                 LIMIT 8'
+            );
+            $rows = ($stmt) ? $stmt->fetchAll(\PDO::FETCH_ASSOC) : array();
+            if (empty($rows)) {
+                $rows = $this->getBestsellersDefaults();
+            }
+            return $this->buildBestsellerCards($pdo, $rows);
+        } catch (\Throwable $e) {
+            return array();
+        }
+    }
+
+    private function ensureBestsellersTables(\PDO $pdo)
+    {
+        $existsMeta = $pdo->query("SHOW TABLES LIKE 'homepage_bestsellers_meta'");
+        if (!($existsMeta && $existsMeta->fetchColumn())) {
+            $created = $pdo->exec(
+                'CREATE TABLE homepage_bestsellers_meta (
+                    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+                    section_title VARCHAR(255) NOT NULL DEFAULT \'\',
+                    PRIMARY KEY (id)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4'
+            );
+            if ($created === false) {
+                throw new \RuntimeException('Could not create homepage_bestsellers_meta');
+            }
+            $defaults = $this->getBestsellersMetaDefaults();
+            $stmt = $pdo->prepare(
+                'INSERT INTO homepage_bestsellers_meta (section_title) VALUES (:section_title)'
+            );
+            $stmt->execute(array(':section_title' => $defaults['section_title']));
+        }
+
+        $existsItems = $pdo->query("SHOW TABLES LIKE 'homepage_bestsellers'");
+        if ($existsItems && $existsItems->fetchColumn()) {
+            $count = (int) $pdo->query('SELECT COUNT(*) FROM homepage_bestsellers')->fetchColumn();
+            if ($count > 0) {
+                return;
+            }
+            $this->seedBestsellersDefaults($pdo);
+            return;
+        }
+
+        $created = $pdo->exec(
+            'CREATE TABLE homepage_bestsellers (
+                id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+                project_id INT UNSIGNED NOT NULL DEFAULT 0,
+                tag VARCHAR(64) NOT NULL DEFAULT \'\',
+                sorting INT UNSIGNED NOT NULL DEFAULT 0,
+                PRIMARY KEY (id),
+                KEY idx_project_id (project_id)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4'
+        );
+        if ($created === false) {
+            throw new \RuntimeException('Could not create homepage_bestsellers');
+        }
+        $this->seedBestsellersDefaults($pdo);
+    }
+
+    private function seedBestsellersDefaults(\PDO $pdo)
+    {
+        $defaults = $this->getBestsellersDefaults();
+        $ids = array();
+        foreach ($defaults as $row) {
+            $ids[] = (int) $row['project_id'];
+        }
+        $existing = array();
+        if (!empty($ids)) {
+            $placeholders = implode(',', array_fill(0, count($ids), '?'));
+            $stmt = $pdo->prepare("SELECT id FROM project WHERE id IN ($placeholders) AND status = 'published'");
+            $stmt->execute($ids);
+            foreach ($stmt->fetchAll(\PDO::FETCH_COLUMN) as $id) {
+                $existing[(int) $id] = true;
+            }
+        }
+
+        $toInsert = array();
+        foreach ($defaults as $row) {
+            $pid = (int) $row['project_id'];
+            if (isset($existing[$pid])) {
+                $toInsert[] = $row;
+            }
+        }
+
+        if (empty($toInsert)) {
+            $fallback = $pdo->query(
+                "SELECT id FROM project WHERE status = 'published' ORDER BY id DESC LIMIT 8"
+            );
+            if ($fallback) {
+                $sort = 0;
+                foreach ($fallback->fetchAll(\PDO::FETCH_COLUMN) as $id) {
+                    $toInsert[] = array(
+                        'project_id' => (int) $id,
+                        'tag'        => '',
+                        'sorting'    => $sort++,
+                    );
+                }
+            }
+        }
+
+        if (empty($toInsert)) {
+            return;
+        }
+
+        $stmt = $pdo->prepare(
+            'INSERT INTO homepage_bestsellers (project_id, tag, sorting)
+             VALUES (:project_id, :tag, :sorting)'
+        );
+        foreach ($toInsert as $i => $row) {
+            $stmt->execute(array(
+                ':project_id' => (int) $row['project_id'],
+                ':tag'        => isset($row['tag']) ? $row['tag'] : '',
+                ':sorting'    => isset($row['sorting']) ? (int) $row['sorting'] : $i,
+            ));
+        }
+    }
+
+    private function buildBestsellerCards(\PDO $pdo, array $rows)
+    {
+        $ids = array();
+        foreach ($rows as $row) {
+            $pid = (int) $row['project_id'];
+            if ($pid > 0) {
+                $ids[] = $pid;
+            }
+        }
+        if (empty($ids)) {
+            return array();
+        }
+
+        $placeholders = implode(',', array_fill(0, count($ids), '?'));
+        $stmt = $pdo->prepare(
+            "SELECT id, name, type, price, discount, params_general, extra_data
+             FROM project
+             WHERE id IN ($placeholders) AND status = 'published'"
+        );
+        $stmt->execute($ids);
+        $byId = array();
+        foreach ($stmt->fetchAll(\PDO::FETCH_ASSOC) as $project) {
+            $byId[(int) $project['id']] = $project;
+        }
+
+        $extras = array();
+        $paramStmt = $pdo->prepare(
+            "SELECT project_id, project_param_id, num_value
+             FROM project_to_param
+             WHERE project_id IN ($placeholders) AND project_param_id IN (45, 46, 78)"
+        );
+        $paramStmt->execute($ids);
+        foreach ($paramStmt->fetchAll(\PDO::FETCH_ASSOC) as $param) {
+            $pid = (int) $param['project_id'];
+            $paramId = (int) $param['project_param_id'];
+            if (!isset($extras[$pid])) {
+                $extras[$pid] = array('baths' => 0, 'garage' => 0);
+            }
+            if ($paramId === 45 || $paramId === 46) {
+                $extras[$pid]['baths'] += (int) round((float) $param['num_value']);
+            } elseif ($paramId === 78) {
+                $extras[$pid]['garage'] = (int) round((float) $param['num_value']);
+            }
+        }
+
+        $urlGen = $this->urlGenerator ?? new UrlGenerator();
+        $cards = array();
+        foreach ($rows as $row) {
+            $pid = (int) $row['project_id'];
+            if (!isset($byId[$pid])) {
+                continue;
+            }
+            $project = $byId[$pid];
+            $params = array();
+            if (!empty($project['params_general'])) {
+                $decoded = json_decode($project['params_general'], true);
+                if (is_array($decoded)) {
+                    $params = $decoded;
+                }
+            }
+            $extraData = array();
+            if (!empty($project['extra_data'])) {
+                $decodedExtra = json_decode($project['extra_data'], true);
+                if (is_array($decodedExtra)) {
+                    $extraData = $decodedExtra;
+                }
+            }
+
+            $areaRaw = isset($params['1']['value']) ? $params['1']['value'] : '';
+            $rooms   = isset($params['68']['value']) ? $params['68']['value'] : '';
+            $area    = $areaRaw !== '' ? str_replace('.', ',', (string) $areaRaw) . ' m2' : '';
+
+            $price = (float) $project['price'];
+            $discount = (float) $project['discount'];
+            $priceCurrent = $discount > 0 ? ($price - $discount) : $price;
+            $priceOld = $discount > 0 ? $price : null;
+
+            $tag = isset($row['tag']) ? trim((string) $row['tag']) : '';
+            $type = $project['type'];
+            $action = 'item';
+            if ($type === 'garage') {
+                $action = 'garage';
+            } elseif (!in_array($type, array('house', 'skeleton'), true)) {
+                $action = 'other';
+            }
+
+            $urlParams = array(
+                'module'     => 'project',
+                'action'     => $action,
+                'id'         => $pid,
+                'link_title' => $project['name'],
+            );
+            if ($action === 'other') {
+                $urlParams['category'] = $type;
+            }
+
+            $imageUrl = '';
+            if (!empty($extraData['thumbnail'])) {
+                $imageUrl = 'https://media.studioatrium.pl/project/' . str_replace('-200-', '-640-', $extraData['thumbnail']);
+            } else {
+                $imageUrl = 'https://media.studioatrium.pl/project/' . $pid . '/render-box.jpg';
+            }
+
+            $cards[] = array(
+                'id'         => $pid,
+                'name'       => $project['name'],
+                'url'        => $urlGen->generateUrl($urlParams),
+                'image_url'  => $imageUrl,
+                'tag'        => $tag,
+                'type_label' => $this->projectTypeLabel($params, $type),
+                'area'       => $area,
+                'rooms'      => $rooms,
+                'baths'      => isset($extras[$pid]) ? $extras[$pid]['baths'] : 0,
+                'garage'     => isset($extras[$pid]) ? $extras[$pid]['garage'] : 0,
+                'price'      => (int) round($priceCurrent),
+                'price_old'  => $priceOld !== null ? (int) round($priceOld) : null,
+            );
+        }
+
+        return $cards;
+    }
+
+    private function projectTypeLabel(array $params, $type)
+    {
+        if ($type === 'garage') {
+            return 'GARAŻ';
+        }
+        if ($type === 'skeleton') {
+            $prefix = 'DOM SZKIELETOWY';
+        } else {
+            $prefix = 'DOM';
+        }
+
+        $hasFloor = !empty($params['18']['value']);
+        $hasLoft  = !empty($params['17']['value']);
+        if ($hasFloor) {
+            return $prefix . ' PIĘTROWY';
+        }
+        if ($hasLoft) {
+            return $prefix . ' Z PODDASZEM';
+        }
+        return $prefix . ' PARTEROWY';
+    }
+
+    private function getBestsellersMetaDefaults()
+    {
+        return array(
+            'section_title' => 'Nasze bestsellery',
+        );
+    }
+
+    private function getBestsellersDefaults()
+    {
+        return array(
+            array('project_id' => 1759, 'tag' => 'NOWOŚĆ', 'sorting' => 0),
+            array('project_id' => 1766, 'tag' => 'NOWOŚĆ', 'sorting' => 1),
+            array('project_id' => 1799, 'tag' => 'NOWOŚĆ', 'sorting' => 2),
+            array('project_id' => 1776, 'tag' => '-355 RABATU', 'sorting' => 3),
+            array('project_id' => 1789, 'tag' => '-355 RABATU', 'sorting' => 4),
+            array('project_id' => 1796, 'tag' => 'NOWOŚĆ', 'sorting' => 5),
+            array('project_id' => 1793, 'tag' => 'NOWOŚĆ', 'sorting' => 6),
+            array('project_id' => 1794, 'tag' => 'NOWOŚĆ', 'sorting' => 7),
+        );
+    }
+
     private function fetchContactData(): array
     {
         try {
@@ -1015,6 +1531,12 @@ class SmartyFunctionsRegistry
         $smarty->assign('safety', $this->fetchSafety());
         $smarty->assign('safety_items', $this->fetchSafetyItems());
 
+        // Assign categories slider + bestsellers
+        $smarty->assign('categories_meta', $this->fetchCategoriesMeta());
+        $smarty->assign('categories', $this->fetchCategories());
+        $smarty->assign('bestsellers_meta', $this->fetchBestsellersMeta());
+        $smarty->assign('bestsellers', $this->fetchBestsellers());
+
         // Assign footer menu columns (a/b/c) from footer_menus table
         $smarty->assign('footer_menus', $this->fetchMenuColumns());
 
@@ -1049,5 +1571,6 @@ class SmartyFunctionsRegistry
         $smarty->registerPlugin('modifier', 'trim',           function($str) { return trim((string)$str); });
         $smarty->registerPlugin('modifier', 'strpos',         function($str, $find, $offset = 0) { return strpos((string)$str, (string)$find, $offset); });
         $smarty->registerPlugin('modifier', 'count',          function($arr) { return (is_array($arr) || $arr instanceof \Countable) ? count($arr) : 0; });
+        $smarty->registerPlugin('modifier', 'mapUrlParam',    function($value, $type) { return \StudioAtrium\Application\Helper\UrlParamMap::getMapping($type, $value); });
     }
 }

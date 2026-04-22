@@ -194,9 +194,31 @@ class ClickSearchMap
         return null;
     }
 
+    private static $typeNames = [
+        'bez_garazu'                => 'Bez garażu',
+        'beskidzkie'                => 'Beskidzkie',
+        'blizniacze'                => 'Bliźniacze',
+        'dla_rodziny_2+2'           => 'Dla rodziny 2+2',
+        'dla_rodziny_2+3'           => 'Dla rodziny 2+3',
+        'dwulokalowe'               => 'Dwulokalowe',
+        'male_do_70m2'              => 'Małe do 70m2',
+        'na_skarpe'                 => 'Na skarpę',
+        'na_waska_dzialke'          => 'Na wąską działkę',
+        'nowoczesna_stodola'        => 'Nowoczesna stodoła',
+        'nowoczesne'                => 'Nowoczesne',
+        'parterowe'                 => 'Parterowe',
+        'pietrowe'                  => 'Piętrowe',
+        'rezydencje'                => 'Rezydencje',
+        'szkieletowe'               => 'Szkieletowe',
+        'z_garazem'                 => 'Z garażem',
+        'z_plaskim_dachem'          => 'Z płaskim dachem',
+        'z_poddaszem'               => 'Z poddaszem',
+        'z_poddaszem_do_adaptacji'  => 'Z poddaszem do adaptacji',
+    ];
+
     public static function getTypeName(string $typeId)
     {
-        return null;
+        return self::$typeNames[$typeId] ?? null;
     }
 
     public static function getTypeParamId(string $type)
