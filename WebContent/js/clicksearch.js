@@ -66,7 +66,7 @@ var ClickSearch = (function()
 				}
 			});
 	
-			window.location.href = window.location.protocol + '//' + window.location.hostname + '/wynik-wyszukiwania/' + params;
+			window.location.href = window.location.protocol + '//' + window.location.hostname + '/projekty-domow/szukaj/' + params;
 		});
 	});
 	

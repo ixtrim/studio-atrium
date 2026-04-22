@@ -5,9 +5,18 @@ class EntityCollection implements \Iterator, \Countable, \ArrayAccess
 {
     private $items;
     private $pos = 0;
-    public function __construct(array $items = [])
+    private $total;
+    public function __construct(array $items = [], $total = null)
     {
         $this->items = array_values($items);
+        // $total lets a Finder report the full matching-row count for pagination
+        // even when $items only holds one LIMITed page of results.
+        $this->total = ($total !== null) ? (int) $total : count($this->items);
+    }
+
+    public function total(): int
+    {
+        return $this->total;
     }
 
     public function current() { return $this->items[$this->pos] ?? null; }

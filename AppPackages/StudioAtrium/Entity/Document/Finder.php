@@ -6,7 +6,7 @@ use StudioAtrium\Entity\EntityCollection;
 
 class Finder
 {
-        private $pdo;
+    private $pdo;
 
     public function __construct(\PDO $pdo)
     {
@@ -17,10 +17,12 @@ class Finder
      * @param string|false|null $doctype  false = article+news, null = all, string = specific type
      * @param string|null $charId
      * @param string|null $status
-     * @param int|null $limit
-     * @param int $offset
-     * @param $catId  (ignored)
-     * @param int $notListing  if 1, include not_listing docs
+     * @param int|null $limit           null = no LIMIT (Index.php/Project.php's partner lookups)
+     * @param int $page                 1-based page number (Article::doHashTag passes the
+     *                                  request's raw ?page=, Index.php passes 0 for its
+     *                                  fixed 3-item box - both normalize to offset 0 here)
+     * @param string|null $search       matched against title/content
+     * @param int|null $tagId           filters to documents tagged with this hash_tag id
      * @param bool $latestFirst
      */
     public function getList(
@@ -28,46 +30,56 @@ class Finder
         $charId = null,
         $status = null,
         $limit = null,
-        int $offset = 0,
-        $catId = null,
-        int $notListing = 0,
+        $page = 1,
+        $search = null,
+        $tagId = null,
         bool $latestFirst = false
     ): EntityCollection {
         $where = [];
         $params = [];
+        $joins = '';
 
         if ($doctype === false) {
-            $where[] = "doctype IN ('article','news')";
+            $where[] = "d.doctype IN ('article','news')";
         } elseif ($doctype !== null && $doctype !== '') {
-            $where[] = 'doctype = :doctype';
+            $where[] = 'd.doctype = :doctype';
             $params[':doctype'] = $doctype;
         }
 
         if ($charId !== null) {
-            $where[] = 'char_id = :char_id';
+            $where[] = 'd.char_id = :char_id';
             $params[':char_id'] = $charId;
         }
 
-        if ($status !== null) {
-            $where[] = 'status = :status';
+        if ($status !== null && $status !== '') {
+            $where[] = 'd.status = :status';
             $params[':status'] = $status;
         }
 
-        if (!$notListing) {
-            $where[] = 'not_listing = 0';
+        if ($search !== null && $search !== '') {
+            $where[] = '(d.title LIKE :search OR d.content LIKE :search)';
+            $params[':search'] = '%' . $search . '%';
         }
 
-        $sql = 'SELECT * FROM document';
-        if ($where) {
-            $sql .= ' WHERE ' . implode(' AND ', $where);
+        if (!empty($tagId)) {
+            $joins .= ' INNER JOIN document_to_hash_tag dht ON dht.object_id = d.id AND dht.hash_tag_id = :tag_id';
+            $params[':tag_id'] = $tagId;
         }
-        $sql .= $latestFirst ? ' ORDER BY publish_date DESC, id DESC' : ' ORDER BY id ASC';
 
+        $where[] = 'd.not_listing = 0';
+
+        $whereSql = $where ? ' WHERE ' . implode(' AND ', $where) : '';
+        $orderSql = $latestFirst ? ' ORDER BY d.publish_date DESC, d.id DESC' : ' ORDER BY d.id ASC';
+
+        $countStmt = $this->pdo->prepare("SELECT COUNT(*) FROM document d{$joins}{$whereSql}");
+        $countStmt->execute($params);
+        $total = (int)$countStmt->fetchColumn();
+
+        $sql = "SELECT d.* FROM document d{$joins}{$whereSql}{$orderSql}";
         if ($limit !== null) {
-            $sql .= ' LIMIT ' . (int)$limit;
-            if ($offset) {
-                $sql .= ' OFFSET ' . (int)$offset;
-            }
+            $page = max(1, (int)$page);
+            $offset = ($page - 1) * (int)$limit;
+            $sql .= ' LIMIT ' . (int)$limit . ' OFFSET ' . $offset;
         }
 
         $stmt = $this->pdo->prepare($sql);
@@ -75,6 +87,55 @@ class Finder
         $rows = $stmt->fetchAll();
 
         $docs = array_map([$this, 'hydrate'], $rows);
+        return new EntityCollection($docs, $total);
+    }
+
+    /**
+     * @param int $id
+     * @param mixed $_unused  kept for call-site compatibility (Article.php passes a
+     *                        second positional arg here whose intent wasn't recoverable)
+     * @param string|null $status  when given, only matches if the document has this status
+     * @param mixed $_unused2  kept for call-site compatibility
+     */
+    public function getById($id, $_unused = false, $status = null, $_unused2 = true)
+    {
+        $where = ['id = :id'];
+        $params = [':id' => (int)$id];
+        if ($status) {
+            $where[] = 'status = :status';
+            $params[':status'] = $status;
+        }
+
+        $stmt = $this->pdo->prepare('SELECT * FROM document WHERE ' . implode(' AND ', $where) . ' LIMIT 1');
+        $stmt->execute($params);
+        $row = $stmt->fetch();
+
+        return $row ? $this->hydrate($row) : null;
+    }
+
+    /**
+     * Returns a collection (usually 0 or 1 rows - char_id isn't guaranteed unique
+     * in the schema) so callers can use ->current() the same way they would on
+     * getList()'s result.
+     */
+    public function getByCharId($charId, $doctype = null, $status = null): EntityCollection
+    {
+        $where = ['char_id = :char_id'];
+        $params = [':char_id' => $charId];
+
+        if ($doctype !== null && $doctype !== '') {
+            $where[] = 'doctype = :doctype';
+            $params[':doctype'] = $doctype;
+        }
+        if ($status !== null && $status !== '') {
+            $where[] = 'status = :status';
+            $params[':status'] = $status;
+        }
+
+        $stmt = $this->pdo->prepare('SELECT * FROM document WHERE ' . implode(' AND ', $where));
+        $stmt->execute($params);
+        $docs = array_map([$this, 'hydrate'], $stmt->fetchAll());
+
         return new EntityCollection($docs);
     }
 

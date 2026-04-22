@@ -125,9 +125,14 @@ class Project extends WWW\AbstractModule
 			if ($project->getMetaDescription()) {
 				$responseContext->setMeta($title, $project->getMetaDescription());
 			} else {
-				$paramsGeneral = $project->getParamsGeneral(true);
-				$area = !empty($paramsGeneral[Helper\ParamsGeneral::USABLE_AREA_ID]['value']) ? $paramsGeneral[Helper\ParamsGeneral::USABLE_AREA_ID]['value'] : '';
-					
+				// params_general is a JSON blob keyed by name (see
+				// ProjectParamsHelper::decode(), the working implementation
+				// used everywhere else) - not by a numeric param id, so this
+				// reads it the same way rather than via a nonexistent
+				// Helper\ParamsGeneral::USABLE_AREA_ID constant.
+				$paramsGeneral = json_decode((string)$project->getParamsGeneral(), true);
+				$area = is_array($paramsGeneral) && !empty($paramsGeneral['usable_area']) ? $paramsGeneral['usable_area'] : '';
+
 				$responseContext->setMeta($title, 'Projekt domu '.$project->getName().' o powierzchni użytkowej '.$area.' m2. '.$project->getShortDescription());
 			}
 		} else {

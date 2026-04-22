@@ -1229,11 +1229,13 @@ class DAORepository extends \Point7_WebApp_DAORepository
 	public function getHashTagFinder()
 	{
 		if (is_null($this->_hashTagFinder)) {
-			$this->_hashTagFinder = new Entities\HashTag\Finder();
-			$this->_hashTagFinder->configure(array(
-					'dao_hash_tag' => $this->getHashTagDAO(),
-					'dao_document_to_hash_tag' => $this->getDocumentToHashTagDAO()
-			));
+			// getHashTagDAO()/getDocumentToHashTagDAO() route through the old
+			// _getDAO('dao::...') + DaoRegistry.include.xml + PDOMySQL-class
+			// machinery, but StudioAtrium\Entity\HashTag\DAO\PDOMySQL and
+			// StudioAtrium\Entity\Document\ToHashTag\DAO\PDOMySQL were never
+			// written - same gap as getExtrasFinder() below. Built directly on
+			// PDO instead, matching getDocumentFinder()'s pattern.
+			$this->_hashTagFinder = new Entities\HashTag\Finder($this->getPDO());
 		}
 		return $this->_hashTagFinder;
 	}
@@ -1278,13 +1280,11 @@ class DAORepository extends \Point7_WebApp_DAORepository
 	public function getExtrasFinder()
 	{
 		if (is_null($this->_extrasFinder)) {
-			$this->_extrasFinder = new Entities\Extras\Finder();
-			$this->_extrasFinder->configure(array(
-					'dao_extras' => $this->getExtrasDAO(),
-					'dao_extras_listing' => $this->getExtrasListingDAO(),
-					'dao_project' => $this->getProjectDAO(),
-					'dao_attachments' => $this->getAttachmentDAO()
-			));
+			// getExtrasDAO()/getExtrasListingDAO() go through _getDAO('dao::extras')
+			// et al, which need StudioAtrium\Entity\Extras\DAO\PDOMySQL classes that
+			// were never written during the rewrite. Built directly on PDO instead,
+			// matching getDocumentFinder()'s pattern.
+			$this->_extrasFinder = new Entities\Extras\Finder($this->getPDO());
 		}
 		return $this->_extrasFinder;
 	}

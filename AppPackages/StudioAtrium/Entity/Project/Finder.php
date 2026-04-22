@@ -100,14 +100,21 @@ class Finder
             CURLOPT_POSTFIELDS     => $payload,
             CURLOPT_HTTPHEADER     => ['Content-Type: application/json'],
             CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_MAXREDIRS      => 3,
             CURLOPT_CONNECTTIMEOUT => 3,
             CURLOPT_TIMEOUT        => 8,
         ]);
-        $body = curl_exec($ch);
-        $ok   = $body !== false && curl_getinfo($ch, CURLINFO_HTTP_CODE) === 200;
+        $body    = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $curlErr  = curl_error($ch);
+        $ok       = $body !== false && $httpCode === 200;
         curl_close($ch);
 
         if (!$ok) {
+            \Point7_WebApp::getLogger('error')->error(
+                "clickSearch API call failed: url={$url} http_code={$httpCode} curl_error={$curlErr}"
+            );
             return ['projectIds' => [], 'stats' => ['total' => 0, 'types' => [], 'sets' => []]];
         }
 

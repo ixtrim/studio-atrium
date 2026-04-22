@@ -121,9 +121,19 @@ class Point7_WebApp_Context_Response
         return $this->headers;
     }
 
+    // Every caller of setMeta() (Modules/Project.php, Selfie.php, Developer.php,
+    // Contest.php) passes a page title as $name and a meta description as $value,
+    // expecting them to become the <title> and <meta name="description"> tags.
+    // The old $meta array was never read anywhere in the render pipeline (only
+    // $data is assigned to Smarty - see Point7_WebApp::run()), so this was a
+    // silent no-op: pages with a project-level meta title fell through to the
+    // generic default title instead. Route it through set() so it actually
+    // reaches the template.
     public function setMeta(string $name, string $value)
     {
         $this->meta[$name] = $value;
+        $this->set('pageTitle', $name);
+        $this->set('pageMetaDescription', $value);
     }
 
     public function getMeta(): array

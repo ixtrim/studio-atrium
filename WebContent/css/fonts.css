@@ -2,7 +2,27 @@
 
 @media all {
 
-	/* Webfont: LatoLatin-Regular */
+	/* Webfont: Nexa ExtraLight (regular / light) */
+	@font-face {
+	    font-family: 'Nexa';
+	    src: url('/fonts/Nexa-ExtraLight.ttf') format('truetype');
+	    font-style: normal;
+	    font-weight: 200 400;
+	    font-display: swap;
+	    text-rendering: optimizeLegibility;
+	}
+
+	/* Webfont: Nexa Heavy (medium / bold) */
+	@font-face {
+	    font-family: 'Nexa';
+	    src: url('/fonts/Nexa-Heavy.ttf') format('truetype');
+	    font-style: normal;
+	    font-weight: 500 900;
+	    font-display: swap;
+	    text-rendering: optimizeLegibility;
+	}
+
+	/* Webfont: LatoLatin-Regular (legacy) */
 	@font-face {
 	    font-family: 'LatoLatinWeb';
 	    src: url('/fonts/LatoLatin-Regular.eot'); /* IE9 Compat Modes */
@@ -15,7 +35,7 @@
 	    text-rendering: optimizeLegibility;
 	}
 	
-	/* Webfont: LatoLatin-Light */
+	/* Webfont: LatoLatin-Light (legacy) */
 	@font-face {
 	    font-family: 'Lato';
 	    src: url('/fonts/LatoLatin-Light.eot'); /* IE9 Compat Modes */

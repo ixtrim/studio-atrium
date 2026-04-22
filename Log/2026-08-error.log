@@ -1,0 +1,3 @@
+[2026-08-24 19:31:32] clickSearch API call failed: url=http://admin.studioatrium.local/index.php?module=projectsearch&action=clicksearch http_code=0 curl_error=Could not resolve host: admin.studioatrium.local
+[2026-08-24 20:01:23] clickSearch API call failed: url=http://admin.studioatrium.local/index.php?module=projectsearch&action=clicksearch http_code=0 curl_error=Could not resolve host: admin.studioatrium.local
+[2026-08-24 20:01:23] clickSearch API call failed: url=http://admin.studioatrium.local/index.php?module=projectsearch&action=clicksearch http_code=0 curl_error=Could not resolve host: admin.studioatrium.local

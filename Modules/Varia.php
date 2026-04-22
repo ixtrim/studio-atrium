@@ -232,16 +232,21 @@ class Varia extends WWW\AbstractModule
 	        \StudioAtrium_Entity_EntityBase_Project::STATUS_PUBLISHED,
 	        true
 	        );
-	    $responseContext->set('apiList', $apiList);
-	    
+	    // BuildOffer.tpl accesses nested keys like $_project.extra_data.newHouse1 -
+	    // Smarty's dot syntax only falls back to object property access at the
+	    // top level, so a chain like this fatals ("Cannot use object ... as array")
+	    // when $_project is still a Project entity. Convert to plain arrays first,
+	    // same as Article.php does for its listing templates.
+	    $responseContext->set('apiList', $apiList->toArray());
+
 	    $NewHouseListId = array(896,1380,1477,1438,1549,1538);
-	    
+
 	    $newHouseList = $this->_projectFinder->getListById(
 	        $NewHouseListId,
 	        \StudioAtrium_Entity_EntityBase_Project::STATUS_PUBLISHED,
 	        true
 	        );
-	    $responseContext->set('newHouseList', $newHouseList);
+	    $responseContext->set('newHouseList', $newHouseList->toArray());
 	    
 /*
 	    $woodDomListId = array(1484,1284,1513,1282,1493,880);

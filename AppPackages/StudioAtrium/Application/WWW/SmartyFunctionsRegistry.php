@@ -1008,39 +1008,61 @@ class SmartyFunctionsRegistry
         }
 
         $existsItems = $pdo->query("SHOW TABLES LIKE 'homepage_categories'");
-        if ($existsItems && $existsItems->fetchColumn()) {
-            return;
+        if (!($existsItems && $existsItems->fetchColumn())) {
+            $created = $pdo->exec(
+                'CREATE TABLE homepage_categories (
+                    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+                    title_line1 VARCHAR(255) NOT NULL DEFAULT \'\',
+                    title_line2 VARCHAR(255) NOT NULL DEFAULT \'\',
+                    image_url VARCHAR(512) NOT NULL DEFAULT \'\',
+                    image_path VARCHAR(512) NOT NULL DEFAULT \'\',
+                    image_filename VARCHAR(255) NOT NULL DEFAULT \'\',
+                    image_original_name VARCHAR(255) NOT NULL DEFAULT \'\',
+                    link_url VARCHAR(512) NOT NULL DEFAULT \'\',
+                    sorting INT UNSIGNED NOT NULL DEFAULT 0,
+                    PRIMARY KEY (id)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4'
+            );
+            if ($created === false) {
+                throw new \RuntimeException('Could not create homepage_categories');
+            }
+
+            $stmt = $pdo->prepare(
+                'INSERT INTO homepage_categories
+                 (title_line1, title_line2, image_url, image_path, image_filename, image_original_name, link_url, sorting)
+                 VALUES
+                 (:title_line1, :title_line2, :image_url, :image_path, :image_filename, :image_original_name, :link_url, :sorting)'
+            );
+            foreach ($this->getCategoriesDefaults() as $i => $row) {
+                $stmt->execute(array(
+                    ':title_line1'         => $row['title_line1'],
+                    ':title_line2'         => $row['title_line2'],
+                    ':image_url'           => $row['image_url'],
+                    ':image_path'          => '',
+                    ':image_filename'      => '',
+                    ':image_original_name' => '',
+                    ':link_url'            => $row['link_url'],
+                    ':sorting'             => $i,
+                ));
+            }
         }
 
-        $created = $pdo->exec(
-            'CREATE TABLE homepage_categories (
-                id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-                title_line1 VARCHAR(255) NOT NULL DEFAULT \'\',
-                title_line2 VARCHAR(255) NOT NULL DEFAULT \'\',
-                image_url VARCHAR(512) NOT NULL DEFAULT \'\',
-                link_url VARCHAR(512) NOT NULL DEFAULT \'\',
-                sorting INT UNSIGNED NOT NULL DEFAULT 0,
-                PRIMARY KEY (id)
-            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4'
-        );
-        if ($created === false) {
-            throw new \RuntimeException('Could not create homepage_categories');
-        }
+        $this->ensureCategoriesImageColumns($pdo);
+    }
 
-        $stmt = $pdo->prepare(
-            'INSERT INTO homepage_categories
-             (title_line1, title_line2, image_url, link_url, sorting)
-             VALUES
-             (:title_line1, :title_line2, :image_url, :link_url, :sorting)'
+    private function ensureCategoriesImageColumns(\PDO $pdo)
+    {
+        $cols = array(
+            'image_path'          => "ALTER TABLE homepage_categories ADD image_path VARCHAR(512) NOT NULL DEFAULT '' AFTER image_url",
+            'image_filename'      => "ALTER TABLE homepage_categories ADD image_filename VARCHAR(255) NOT NULL DEFAULT '' AFTER image_path",
+            'image_original_name' => "ALTER TABLE homepage_categories ADD image_original_name VARCHAR(255) NOT NULL DEFAULT '' AFTER image_filename",
         );
-        foreach ($this->getCategoriesDefaults() as $i => $row) {
-            $stmt->execute(array(
-                ':title_line1' => $row['title_line1'],
-                ':title_line2' => $row['title_line2'],
-                ':image_url'   => $row['image_url'],
-                ':link_url'    => $row['link_url'],
-                ':sorting'     => $i,
-            ));
+        foreach ($cols as $name => $sql) {
+            $exists = $pdo->query("SHOW COLUMNS FROM homepage_categories LIKE " . $pdo->quote($name));
+            if ($exists && $exists->fetchColumn()) {
+                continue;
+            }
+            $pdo->exec($sql);
         }
     }
 

@@ -77,6 +77,7 @@
         var el = document.getElementById('hp-bs-swiper');
         if (!el || el.swiper) return;
         new Swiper(el, {
+            loop: true,
             slidesPerView: 1.15,
             spaceBetween: 16,
             navigation: {

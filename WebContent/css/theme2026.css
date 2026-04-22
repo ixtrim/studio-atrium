@@ -242,7 +242,11 @@ strong, b {
 /* Header legacy isolation lives in header2026.css (loaded after Tailwind) */
 
 #hp-hero-prev,
-#hp-hero-next {
+#hp-hero-next,
+#hp-cat-prev,
+#hp-cat-next,
+#hp-bs-prev,
+#hp-bs-next {
   background: transparent !important;
   border: 0 !important;
   box-shadow: none !important;

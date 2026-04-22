@@ -27,7 +27,7 @@ class Point7_Log_PEARWrapper
         }
 
         $this->monolog = new \Monolog\Logger('app');
-        $handler = new \Monolog\Handler\StreamHandler($path, \Monolog\Level::Debug);
+        $handler = new \Monolog\Handler\StreamHandler($path, \Monolog\Logger::DEBUG);
         $handler->setFormatter(new \Monolog\Formatter\LineFormatter("[%datetime%] %message%\n", 'Y-m-d H:i:s'));
         $this->monolog->pushHandler($handler);
 
@@ -45,7 +45,7 @@ class Point7_Log_PEARWrapper
 
     public function log(string $message, int $level = 200)
     {
-        $this->getLogger()->log(\Monolog\Level::from($level), $message);
+        $this->getLogger()->log($level, $message);
     }
 
     public function error(string $message)

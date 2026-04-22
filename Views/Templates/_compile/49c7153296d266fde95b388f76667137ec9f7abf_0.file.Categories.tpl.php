@@ -1,9 +1,35 @@
-<section class="relative bg-[#ececec] py-12" id="categories">
+<?php
+/* Smarty version 3.1.48, created on 2026-08-24 20:01:23
+  from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/Categories.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.48',
+  'unifunc' => 'content_6a8c86f346aef8_65407182',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '49c7153296d266fde95b388f76667137ec9f7abf' => 
+    array (
+      0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/Categories.tpl',
+      1 => 1787592394,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_6a8c86f346aef8_65407182 (Smarty_Internal_Template $_smarty_tpl) {
+?><section class="relative bg-[#ececec] py-12" id="categories">
     <div class="max-w-[1480px] mx-auto px-8">
         <div class="flex items-center justify-between mb-8">
-            <h2 class="text-[32px] font-black text-[var(--brand-darker)] tracking-tight">{$categories_meta.section_title|escape}</h2>
-            <a href="{$categories_meta.see_all_url|escape}"
-                class="flex items-center gap-2 text-[15px] text-[#7a7a7a] hover:text-[var(--brand-darker)]">{$categories_meta.see_all_label|escape}<span
+            <h2 class="text-[32px] font-black text-[var(--brand-darker)] tracking-tight"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['categories_meta']->value['section_title'], ENT_QUOTES, 'UTF-8', true);?>
+</h2>
+            <a href="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['categories_meta']->value['see_all_url'], ENT_QUOTES, 'UTF-8', true);?>
+"
+                class="flex items-center gap-2 text-[15px] text-[#7a7a7a] hover:text-[var(--brand-darker)]"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['categories_meta']->value['see_all_label'], ENT_QUOTES, 'UTF-8', true);?>
+<span
                     class="w-7 h-7 rounded-full border border-black/15 flex items-center justify-center"><svg
                         xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -14,19 +40,31 @@
         <div class="relative">
             <div class="swiper" id="hp-cat-swiper">
                 <div class="swiper-wrapper">
-                    {foreach $categories as $item}
-                    <div class="swiper-slide"><a href="{$item.link_url|escape}" class="group block">
+                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['categories']->value, 'item');
+$_smarty_tpl->tpl_vars['item']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
+$_smarty_tpl->tpl_vars['item']->do_else = false;
+?>
+                    <div class="swiper-slide"><a href="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['link_url'], ENT_QUOTES, 'UTF-8', true);?>
+" class="group block">
                             <div class="aspect-square overflow-hidden"><img
-                                    src="{$item.image_url|escape}"
-                                    alt="{$item.title_line2|escape}"
+                                    src="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['image_url'], ENT_QUOTES, 'UTF-8', true);?>
+"
+                                    alt="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['title_line2'], ENT_QUOTES, 'UTF-8', true);?>
+"
                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             </div>
                             <div class="text-center mt-4">
-                                <div class="text-[13px] text-[#7a7a7a] leading-tight">{$item.title_line1|escape}</div>
-                                <div class="text-[17px] font-black text-[var(--brand-darker)] leading-tight mt-0.5">{$item.title_line2|escape}</div>
+                                <div class="text-[13px] text-[#7a7a7a] leading-tight"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['title_line1'], ENT_QUOTES, 'UTF-8', true);?>
+</div>
+                                <div class="text-[17px] font-black text-[var(--brand-darker)] leading-tight mt-0.5"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['title_line2'], ENT_QUOTES, 'UTF-8', true);?>
+</div>
                             </div>
                         </a></div>
-                    {/foreach}
+                    <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </div>
             </div>
             <button type="button" aria-label="Poprzednie" id="hp-cat-prev"
@@ -44,11 +82,14 @@
                     <path d="m9 18 6-6-6-6"></path>
                 </svg></button>
         </div>
-        <a href="{$categories_meta.cta_url|escape}"
-            class="absolute left-1/2 bottom-0 translate-x-[-50%] translate-y-1/2 inline-flex items-center justify-center bg-[var(--brand-red)] hover:bg-[var(--brand-red-hover)] text-white font-black px-12 py-4 lg:h-[54px] lg:max-h-[54px] lg:py-0 leading-none text-[14px] uppercase tracking-[0.1em] z-10">{$categories_meta.cta_label|escape}</a>
+        <a href="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['categories_meta']->value['cta_url'], ENT_QUOTES, 'UTF-8', true);?>
+"
+            class="absolute left-1/2 bottom-0 translate-x-[-50%] translate-y-1/2 inline-flex items-center justify-center bg-[var(--brand-red)] hover:bg-[var(--brand-red-hover)] text-white font-black px-12 py-4 lg:h-[54px] lg:max-h-[54px] lg:py-0 leading-none text-[14px] uppercase tracking-[0.1em] z-10"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['categories_meta']->value['cta_label'], ENT_QUOTES, 'UTF-8', true);?>
+</a>
     </div>
 </section>
-<script>
+<?php echo '<script'; ?>
+>
 (function () {
     function initCatSwiper() {
         if (typeof Swiper === 'undefined') {
@@ -78,4 +119,7 @@
         initCatSwiper();
     }
 })();
-</script>
+<?php echo '</script'; ?>
+>
+<?php }
+}

@@ -31,29 +31,62 @@ RewriteCond %{HTTP_HOST} ^www.static.studioatrium.pl [or]
 RewriteCond %{HTTP_HOST} ^static.studioatrium.pl
 RewriteRule (.*) https://www.studioatrium.pl/$1 [R=410,L]
 
-# LOCALHOST: www-redirect disabled
-#RewriteCond %{HTTP_HOST} !^www.
-#RewriteCond %{REQUEST_URI} !\.well-known/acme-challenge
-#RewriteRule (.*) https://www.%{HTTP_HOST}/$1 [R=301,L]
-#RewriteCond %{HTTP_HOST} !^www.
-#RewriteCond %{REQUEST_URI} !\.well-known/acme-challenge
-#RewriteRule ^$ https://www.%{HTTP_HOST}%{SCRIPT_URI} [R=301,L]
+RewriteCond %{HTTP_HOST} !^www.
+RewriteCond %{HTTP_HOST} !^tristan\.
+RewriteCond %{HTTP_HOST} !^studioatrium\.local
+RewriteCond %{REQUEST_URI} !\.well-known/acme-challenge
+RewriteRule (.*) https://www.%{HTTP_HOST}/$1 [R=301,L]
+RewriteCond %{HTTP_HOST} !^www.
+RewriteCond %{HTTP_HOST} !^tristan\.
+RewriteCond %{HTTP_HOST} !^studioatrium\.local
+RewriteCond %{REQUEST_URI} !\.well-known/acme-challenge
+RewriteRule ^$ https://www.%{HTTP_HOST}%{SCRIPT_URI} [R=301,L]
 
 ## wyłączenie mobilnej wersji na subdomenie 2016-01-19
 RewriteCond %{HTTP_HOST} ^www.m.studioatrium.pl [or]
 RewriteCond %{HTTP_HOST} ^m.studioatrium.pl
 RewriteRule (.*) https://www.studioatrium.pl/$1 [R=301,L]
 
-#2016-04-04 - https (LOCALHOST: disabled)
-#RewriteCond %{HTTPS} !=on
-#RewriteCond %{HTTP_HOST} ^www.studioatrium.pl
-#RewriteCond %{REQUEST_URI} !\.well-known/acme-challenge
-#RewriteRule ^(.*)$ https://%{SERVER_NAME}%{REQUEST_URI} [L,R=301]
+#2016-04-04 - https
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP_HOST} ^www.studioatrium.pl
+RewriteCond %{REQUEST_URI} !\.well-known/acme-challenge
+RewriteRule ^(.*)$ https://%{SERVER_NAME}%{REQUEST_URI} [L,R=301]
 
 ##### 301 - double slash - sempai 08.04.2026 ################################################
 
 #RewriteCond %{REQUEST_URI} ^(.*)//(.*)$
 #RewriteRule . %1/%2 [R=301,L]
+
+
+############################################################# 301 - z domywtradycji.pl 06.2026 ##############
+RewriteRule ^/?jakKupowac.html$ /artykuly/Jak-kupowac,1104.html [L,R=301]
+RewriteRule ^/?kontakt.html$ /kontakt/ [L,R=301]
+RewriteRule ^/?gwarancjaZwrotu.html$ /artykuly/Zasady-sprzedazy,1105.html [L,R=301]
+RewriteRule ^/?wysylka.html$ /artykuly/Zasady-sprzedazy,1105.html [L,R=301]
+RewriteRule ^/?zasadySprzedazy.html$ /artykuly/Zasady-sprzedazy,1105.html [L,R=301]
+RewriteRule ^/?garaze.html$ /projekty-garazy/ [L,R=301]
+RewriteRule ^/?wartoKupowac.html$ /artykuly/Zasady-sprzedazy,1105.html [L,R=301]
+RewriteRule ^/?konsultant.html$ /kontakt/ [L,R=301]
+RewriteRule ^/?projekty,12.html$ /projekty-domow/dla-rodziny-2-2/ [L,R=301]
+RewriteRule ^/?projekty,27.html$ /projekty-domow/na-waska-dzialke/ [L,R=301]
+RewriteRule ^/?projekty,24.html$ /projekty-domow/regionalne/ [L,R=301]
+RewriteRule ^/?projekty,16.html$ /projekty-domow/ [L,R=301]
+RewriteRule ^/?projekty,0.html$ /projekty-domow/ [L,R=301]
+RewriteRule ^/?projekty,26.html$ /projekty-domow/z-wjazdem-od-poludnia/ [L,R=301]
+RewriteRule ^/?projekty,20.html$ /projekty-domow/nowoczesne/ [L,R=301]
+RewriteRule ^/?projekty,17.html$ /projekty-domow/tanie-w-budowie/ [L,R=301]
+RewriteRule ^/?projekty,3.html$ /projekty-domow/pietrowe/ [L,R=301]
+RewriteRule ^/?projekty,2.html$ /projekty-domow/z-poddaszem-uzytkowym/ [L,R=301]
+RewriteRule ^/?projekty,4.html$ /projekty-domow/dwulokalowe/ [L,R=301]
+RewriteRule ^/?projekty,15.html$ /projekty-domow/dla-rodziny-2-3/ [L,R=301]
+RewriteRule ^/?projekty/szukaj/OzsxMDA7Ozs7Ow==,0,0,9,0$ /projekty-domow/od-70-do-100m2/ [L,R=301]
+RewriteRule ^/?reklama.html$ /artykuly/Reklama-na-stronach-studio-atrium,1482.html [L,R=301]
+RewriteRule ^/?salonSprzedazy.html$ /kontakt/ [L,R=301]
+RewriteRule ^/?zawartosc.html$ /alfabetyczna-lista-projektow/ [L,R=301]
+RewriteRule ^/?projekty,1.html$ /projekty-domow/parterowe/ [L,R=301]
+RewriteRule ^/?projekty,9.html$ /projekty-domow/blizniaki/ [L,R=301]
+RewriteRule ^/?mars-ii,1204,0.html$ /projekty-domow/Mars-ii,1204.html [L,R=301]
 
 ############################################################# 301 - 21.04.2023 ##############
 RewriteRule ^/?projekty-domow/z-pompa-ciepla/?$ /projekty-domow/ [L,R=301]
@@ -438,11 +471,11 @@ RewriteRule ^/?archiwum/Forum/Projekt,([^,]*),([0-9]+).html$ index.php?module=fo
 RewriteRule ^/?pdf/projekt/(?:[^,\/]*),([0-9]+).html$ index.php?module=pdf&action=project&id=$1 [L,NS,QSA]
 RewriteRule  ^/?pdf/projekt/(?:[^,\/]*),([0-9]+),lustro.html$ index.php?module=pdf&action=project&id=$1&version=mirror [L,NS,QSA]
 
-#search
-RewriteRule ^/?projekty-domow/szukaj/?$ index.php?module=project&action=search [L,NS,QSA]
-RewriteRule ^/?projekty-domow/szukaj/(b|l|e{1}),(i|n|u{1}),(a|d{1})(,([0-9]*))?$ index.php?module=project&action=search&display_type=$1&sort_by=$2&sort_order=$3&page=$5 [L,NS,QSA]
+#clicksearch (moved here from /wynik-wyszukiwania/ — matches the old site's URL)
+RewriteRule ^/?projekty-domow/szukaj/?$ index.php?module=project&action=click_search [L,NS,QSA]
+RewriteRule ^/?projekty-domow/szukaj/(b|l|e{1}),(i|n|u{1}),(a|d{1})(,([0-9]*))?$ index.php?module=project&action=click_search&display_type=$1&sort_by=$2&sort_order=$3&page=$5 [L,NS,QSA]
 
-#clicksearch
+#legacy clicksearch URL, kept working as an alternate path
 RewriteRule ^/?wynik-wyszukiwania/$ index.php?module=project&action=click_search [L,NS,QSA]
 RewriteRule ^/?wynik-wyszukiwania/(b|l|e{1}),(i|n|u{1}),(a|d{1})(,([0-9]*))?$ index.php?module=project&action=click_search&display_type=$1&sort_by=$2&sort_order=$3&page=$5 [L,NS,QSA]
 
@@ -557,6 +590,16 @@ AddType font/woff2 .woff2
     <filesMatch ".(flv|gif|ico|jpg|jpeg|mp4|mpeg|png|svg|swf|webp)$">
         Header set Cache-Control "max-age=31536000, public"
     </filesMatch>
+	
+	Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
+	
+	Header always set X-Frame-Options "SAMEORIGIN"
+	
+	Header always set X-Content-Type-Options "nosniff"
+	
+	Header always set Referrer-Policy "strict-origin-when-cross-origin"
+	
+	Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
 </ifModule>
 
 <Files ~ "\.pdf$">
