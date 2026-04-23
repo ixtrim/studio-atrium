@@ -1641,6 +1641,267 @@ class SmartyFunctionsRegistry
         );
     }
 
+    private function fetchProductsSections()
+    {
+        $sectionDefaults = array(
+            'bestsellers'  => array('section_key' => 'bestsellers', 'section_title' => 'Nasze bestsellery', 'section_subtitle' => 'Jeśli wybudowałeś dom według naszego projektu weź udział w FOTOKONKURSIE z nagrodami'),
+            'promotions'   => array('section_key' => 'promotions', 'section_title' => 'Promocje na projekty', 'section_subtitle' => 'Jeśli wybudowałeś dom według naszego projektu weź udział w FOTOKONKURSIE z nagrodami'),
+            'most_popular' => array('section_key' => 'most_popular', 'section_title' => 'Najczęściej kupowane', 'section_subtitle' => 'Jeśli wybudowałeś dom według naszego projektu weź udział w FOTOKONKURSIE z nagrodami'),
+        );
+        $productDefaults = array(
+            'bestsellers'  => array(array('project_id' => 1759), array('project_id' => 585), array('project_id' => 1514)),
+            'promotions'   => array(array('project_id' => 1759), array('project_id' => 585), array('project_id' => 1514)),
+            'most_popular' => array(array('project_id' => 1759), array('project_id' => 585), array('project_id' => 1514)),
+        );
+
+        try {
+            $pdo = \Point7_WebApp::getPDO();
+            $existsSections = $pdo->query("SHOW TABLES LIKE 'homepage_products_sections'");
+            $existsItems = $pdo->query("SHOW TABLES LIKE 'homepage_products'");
+            if (!($existsSections && $existsSections->fetchColumn() && $existsItems && $existsItems->fetchColumn())) {
+                throw new \RuntimeException('products tables missing');
+            }
+
+            $metaStmt = $pdo->query(
+                'SELECT section_key, section_title, section_subtitle
+                 FROM homepage_products_sections
+                 ORDER BY FIELD(section_key, \'bestsellers\', \'promotions\', \'most_popular\'), id ASC'
+            );
+            $metaRows = ($metaStmt) ? $metaStmt->fetchAll(\PDO::FETCH_ASSOC) : array();
+            $metaByKey = array();
+            foreach ($metaRows as $row) {
+                $metaByKey[$row['section_key']] = $row;
+            }
+
+            $itemStmt = $pdo->query(
+                'SELECT section_key, project_id, sorting
+                 FROM homepage_products
+                 ORDER BY section_key ASC, sorting ASC, id ASC'
+            );
+            $itemRows = ($itemStmt) ? $itemStmt->fetchAll(\PDO::FETCH_ASSOC) : array();
+            $itemsByKey = array();
+            foreach ($itemRows as $row) {
+                $key = $row['section_key'];
+                if (!isset($itemsByKey[$key])) {
+                    $itemsByKey[$key] = array();
+                }
+                $itemsByKey[$key][] = array(
+                    'project_id' => (int) $row['project_id'],
+                    'sorting'    => (int) $row['sorting'],
+                );
+            }
+
+            $sections = array();
+            foreach (array('bestsellers', 'promotions', 'most_popular') as $key) {
+                $meta = isset($metaByKey[$key]) ? $metaByKey[$key] : $sectionDefaults[$key];
+                $items = !empty($itemsByKey[$key]) ? $itemsByKey[$key] : $productDefaults[$key];
+                $cards = $this->buildProductCards($pdo, $items);
+                $sections[] = array(
+                    'section_key'      => $key,
+                    'section_title'    => $meta['section_title'],
+                    'section_subtitle' => $meta['section_subtitle'],
+                    'items'            => $cards,
+                );
+            }
+            return $sections;
+        } catch (\Throwable $e) {
+            try {
+                $pdo = \Point7_WebApp::getPDO();
+                $sections = array();
+                foreach (array('bestsellers', 'promotions', 'most_popular') as $key) {
+                    $sections[] = array(
+                        'section_key'      => $key,
+                        'section_title'    => $sectionDefaults[$key]['section_title'],
+                        'section_subtitle' => $sectionDefaults[$key]['section_subtitle'],
+                        'items'            => $this->buildProductCards($pdo, $productDefaults[$key]),
+                    );
+                }
+                return $sections;
+            } catch (\Throwable $inner) {
+                $sections = array();
+                foreach (array('bestsellers', 'promotions', 'most_popular') as $key) {
+                    $sections[] = array(
+                        'section_key'      => $key,
+                        'section_title'    => $sectionDefaults[$key]['section_title'],
+                        'section_subtitle' => $sectionDefaults[$key]['section_subtitle'],
+                        'items'            => array(),
+                    );
+                }
+                return $sections;
+            }
+        }
+    }
+
+    private function buildProductCards(\PDO $pdo, array $rows)
+    {
+        $cardRows = array();
+        foreach ($rows as $row) {
+            $cardRows[] = array(
+                'project_id' => (int) $row['project_id'],
+                'tag'        => '',
+            );
+        }
+        $cards = $this->buildBestsellerCards($pdo, $cardRows);
+        foreach ($cards as $i => $card) {
+            $areaRaw = isset($cards[$i]['area']) ? str_replace(' m2', '', $cards[$i]['area']) : '';
+            $cards[$i]['area_display'] = $areaRaw !== '' ? $areaRaw . ' m²' : '';
+            $cards[$i]['type_display'] = $this->productTypeDisplayLabelFromCard($card);
+            $cards[$i]['link_title'] = isset($card['name']) ? $card['name'] : '';
+            $cards[$i]['name_upper'] = isset($card['name']) ? mb_strtoupper((string) $card['name'], 'UTF-8') : '';
+        }
+        return $cards;
+    }
+
+    private function productTypeDisplayLabelFromCard(array $card)
+    {
+        $typeLabel = isset($card['type_label']) ? strtoupper((string) $card['type_label']) : '';
+        if ($typeLabel === 'GARAŻ') {
+            return 'Projekt garażu';
+        }
+        if (strpos($typeLabel, 'PIĘTROW') !== false) {
+            return 'Projekt domu piętrowego';
+        }
+        if (strpos($typeLabel, 'PODDASZ') !== false) {
+            return 'Projekt domu z poddaszem';
+        }
+        if (strpos($typeLabel, 'PARTER') !== false) {
+            return 'Projekt domu parterowego';
+        }
+        if (strpos($typeLabel, 'SZKIELET') !== false) {
+            return 'Projekt domu szkieletowego';
+        }
+        return 'Projekt domu';
+    }
+
+    private function fetchPartners()
+    {
+        $metaDefaults = array('section_title' => 'Partnerzy których polecamy');
+        $itemDefaults = array(
+            array('name' => 'Aluprof', 'logo_url' => 'https://media.studioatrium.pl/document/1309/samll-logo.png', 'link_url' => 'https://aluprof.eu', 'link_title' => 'Aluprof — systemy aluminiowe', 'link_rel' => 'noopener noreferrer'),
+            array('name' => 'Termo Organika', 'logo_url' => 'https://media.studioatrium.pl/document/1215/small-logo.png', 'link_url' => 'https://www.termoorganika.pl', 'link_title' => 'Termo Organika — ocieplenia', 'link_rel' => 'noopener noreferrer'),
+            array('name' => 'Fakro', 'logo_url' => 'https://media.studioatrium.pl/document/1179/fakro.jpg', 'link_url' => 'https://www.fakro.pl', 'link_title' => 'Fakro — okna dachowe', 'link_rel' => 'noopener noreferrer'),
+        );
+        try {
+            $pdo = \Point7_WebApp::getPDO();
+            $meta = $metaDefaults;
+            $existsMeta = $pdo->query("SHOW TABLES LIKE 'homepage_partners_meta'");
+            if ($existsMeta && $existsMeta->fetchColumn()) {
+                $stmt = $pdo->query('SELECT section_title FROM homepage_partners_meta ORDER BY id ASC LIMIT 1');
+                if ($stmt) {
+                    $row = $stmt->fetch(\PDO::FETCH_ASSOC);
+                    if ($row) {
+                        $meta = $row;
+                    }
+                }
+            }
+
+            $partners = $itemDefaults;
+            $existsItems = $pdo->query("SHOW TABLES LIKE 'homepage_partners'");
+            if ($existsItems && $existsItems->fetchColumn()) {
+                $stmt = $pdo->query(
+                    'SELECT name, logo_url, link_url, link_title, link_rel
+                     FROM homepage_partners
+                     ORDER BY sorting ASC, id ASC'
+                );
+                if ($stmt) {
+                    $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+                    if (!empty($rows)) {
+                        $partners = $rows;
+                    }
+                }
+            }
+
+            $marquee = array();
+            for ($i = 0; $i < 4; $i++) {
+                foreach ($partners as $partner) {
+                    $marquee[] = $partner;
+                }
+            }
+
+            return array(
+                'meta'    => $meta,
+                'items'   => $partners,
+                'marquee' => $marquee,
+            );
+        } catch (\Throwable $e) {
+            $marquee = array();
+            for ($i = 0; $i < 4; $i++) {
+                foreach ($itemDefaults as $partner) {
+                    $marquee[] = $partner;
+                }
+            }
+            return array(
+                'meta'    => $metaDefaults,
+                'items'   => $itemDefaults,
+                'marquee' => $marquee,
+            );
+        }
+    }
+
+    private function fetchNewsletter()
+    {
+        $metaDefaults = array(
+            'contest_title'       => 'Konkurs fotograficzny',
+            'contest_body'        => "Wybudowałeś dom z naszego projektu?\nWyślij zdjęcie domu jaki zbudowałeś i wygraj cenne nagrody!",
+            'signup_title'        => "Zarejestruj się w naszym serwisie.\nNie przegap informacji o nowościach\ni promocjach.",
+            'signup_body1'        => 'Zarejestruj się i korzystaj z dogodnych narzędzi wszędzie gdzie jesteś. Będziemy także zawiadamiać Cię o rabatach i promocjach.',
+            'signup_body2'        => 'Twoje konto to swoboda korzystania z narzędzi gdziekolwiek jesteś.',
+            'signup_button_label' => 'Zarejestruj się',
+            'reward_line1'        => 'Odbierz',
+            'reward_amount'       => '100 zł',
+            'reward_line2'        => "na zakup\nprojektu domu",
+        );
+        $photoDefaults = array(
+            array('image_url' => 'https://media.studioatrium.pl/stock/33/3105/69bbd5e2ca26a-projekty-domow-tanich-w-budowie.webp', 'image_alt' => 'Projekty domów tanich w budowie', 'pos_left_pct' => '0', 'pos_top_px' => -30, 'rotate_deg' => -8),
+            array('image_url' => 'https://media.studioatrium.pl/stock/33/5409/69bbc6ce5167a-projekty-szkieletowe.webp', 'image_alt' => 'Projekty szkieletowe', 'pos_left_pct' => '30', 'pos_top_px' => -50, 'rotate_deg' => 4),
+            array('image_url' => 'https://media.studioatrium.pl/stock/28/7964/68baea0b1474f-najlepsze-projekty-domow-parterowych.jpg', 'image_alt' => 'Najlepsze projekty domów parterowych', 'pos_left_pct' => '60', 'pos_top_px' => -20, 'rotate_deg' => 10),
+        );
+        try {
+            $pdo = \Point7_WebApp::getPDO();
+            $meta = $metaDefaults;
+            $existsMeta = $pdo->query("SHOW TABLES LIKE 'homepage_newsletter_meta'");
+            if ($existsMeta && $existsMeta->fetchColumn()) {
+                $stmt = $pdo->query(
+                    'SELECT contest_title, contest_body, signup_title, signup_body1, signup_body2,
+                            signup_button_label, reward_line1, reward_amount, reward_line2
+                     FROM homepage_newsletter_meta ORDER BY id ASC LIMIT 1'
+                );
+                if ($stmt) {
+                    $row = $stmt->fetch(\PDO::FETCH_ASSOC);
+                    if ($row) {
+                        $meta = $row;
+                    }
+                }
+            }
+
+            $photos = $photoDefaults;
+            $existsPhotos = $pdo->query("SHOW TABLES LIKE 'homepage_newsletter_photos'");
+            if ($existsPhotos && $existsPhotos->fetchColumn()) {
+                $stmt = $pdo->query(
+                    'SELECT image_url, image_alt, pos_left_pct, pos_top_px, rotate_deg
+                     FROM homepage_newsletter_photos
+                     ORDER BY sorting ASC, id ASC'
+                );
+                if ($stmt) {
+                    $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+                    if (!empty($rows)) {
+                        $photos = $rows;
+                    }
+                }
+            }
+
+            return array(
+                'meta'   => $meta,
+                'photos' => $photos,
+            );
+        } catch (\Throwable $e) {
+            return array(
+                'meta'   => $metaDefaults,
+                'photos' => $photoDefaults,
+            );
+        }
+    }
+
     private function fetchContactData(): array
     {
         try {
@@ -1731,6 +1992,11 @@ class SmartyFunctionsRegistry
         $smarty->assign('categories', $this->fetchCategories());
         $smarty->assign('bestsellers_meta', $this->fetchBestsellersMeta());
         $smarty->assign('bestsellers', $this->fetchBestsellers());
+
+        // Assign products / partners / newsletter homepage sections
+        $smarty->assign('products_sections', $this->fetchProductsSections());
+        $smarty->assign('partners', $this->fetchPartners());
+        $smarty->assign('newsletter', $this->fetchNewsletter());
 
         // Assign footer menu columns (a/b/c) from footer_menus table
         $smarty->assign('footer_menus', $this->fetchMenuColumns());
