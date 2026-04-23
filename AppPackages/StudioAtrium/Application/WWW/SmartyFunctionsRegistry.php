@@ -1902,6 +1902,231 @@ class SmartyFunctionsRegistry
         }
     }
 
+    private function resolveHomepageImageUrl($imageUrl, $imagePath = '')
+    {
+        $imagePath = trim((string) $imagePath);
+        if ($imagePath !== '') {
+            $stockUrl = \Point7_WebApp::getConfigParam('static.stock');
+            if (!$stockUrl) {
+                $stockUrl = 'https://media.studioatrium.pl/stock';
+            }
+            return rtrim($stockUrl, '/') . '/' . ltrim($imagePath, '/');
+        }
+
+        $imageUrl = trim((string) $imageUrl);
+        if ($imageUrl === '') {
+            return '';
+        }
+        if (preg_match('#^https?://#i', $imageUrl)) {
+            return $imageUrl;
+        }
+        if (strpos($imageUrl, '/src/assets/') === 0) {
+            return '';
+        }
+
+        return $imageUrl;
+    }
+
+    private function fetchBuildSteps()
+    {
+        $metaDefaults = array('section_title' => '4 kroki do budowy domu');
+        $stepDefaults = array(
+            array('step_number' => '1', 'step_title' => 'Wybór wymarzonego projektu', 'step_body' => 'Aliquam faucibus nibh nec felis pharetra interdum. Nam id nulla turpis. Etiam molestie elit turpis, placerat rhoncus sapien elementum vel. Duis vel sollicitudin neque. Aenean consequat nunc ipsum, in interdum orci aliquet vel. Proin nisi ante, porttitor at eleifend nec, consequat et risus. Ut et maximus metus. Nunc dapibus quam sit amet augue blandit, id congue turpis dapibus.'),
+            array('step_number' => '2', 'step_title' => 'Dopasowanie go do działki', 'step_body' => 'Aliquam faucibus nibh nec felis pharetra interdum. Nam id nulla turpis. Etiam molestie elit turpis, placerat rhoncus sapien elementum vel. Duis vel sollicitudin neque. Aenean consequat nunc ipsum, in interdum orci aliquet vel. Proin nisi ante, porttitor at eleifend nec, consequat et risus. Ut et maximus metus. Nunc dapibus quam sit amet augue blandit, id congue turpis dapibus.'),
+            array('step_number' => '3', 'step_title' => 'Wprowadzenie zmian i personalizacja jeśli sa konieczne', 'step_body' => 'Aliquam faucibus nibh nec felis pharetra interdum. Nam id nulla turpis. Etiam molestie elit turpis, placerat rhoncus sapien elementum vel. Duis vel sollicitudin neque. Aenean consequat nunc ipsum, in interdum orci aliquet vel. Proin nisi ante, porttitor at eleifend nec, consequat et risus. Ut et maximus metus. Nunc dapibus quam sit amet augue blandit, id congue turpis dapibus.'),
+            array('step_number' => '4', 'step_title' => 'Przygotowanie formalności budowlanych', 'step_body' => 'Aliquam faucibus nibh nec felis pharetra interdum. Nam id nulla turpis. Etiam molestie elit turpis, placerat rhoncus sapien elementum vel. Duis vel sollicitudin neque. Aenean consequat nunc ipsum, in interdum orci aliquet vel. Proin nisi ante, porttitor at eleifend nec, consequat et risus. Ut et maximus metus. Nunc dapibus quam sit amet augue blandit, id congue turpis dapibus.'),
+        );
+        $expDefaults = array(
+            'title'         => "Doświadczenie, które\ngwarantuje bezpieczeństwo",
+            'body'          => "Od ponad 30 lat tworzymy projekty domów.\nJesteśmy właścicielami wszystkich projektów, więc najlepiej\nodpowiemy na Twoje pytania, doradzimy w wyborze\ni pomożemy wybrać najbardziej optymalne kosztowo\nrozwiązania.\n\nPamiętaj, że autor projektu najlepiej zna możliwości\nwprowadzenia zmian i oszczędności nie tylko podczas\nbudowy, ale w późniejszej eksploatacji domu.",
+            'signature'     => 'arch. arch. Krzysztof Lelek i Piotr Godlewski',
+            'button_label'  => 'Umów konsultację z architektem',
+            'button_url'    => '/kontakt',
+            'button_title'  => 'Umów konsultację z architektem Studio Atrium',
+            'button_rel'    => 'noopener noreferrer',
+            'image_url'     => '',
+            'image_alt'     => 'arch. Krzysztof Lelek i Piotr Godlewski',
+        );
+        try {
+            $pdo = \Point7_WebApp::getPDO();
+            $meta = $metaDefaults;
+            $steps = $stepDefaults;
+            $experience = $expDefaults;
+
+            $existsMeta = $pdo->query("SHOW TABLES LIKE 'homepage_build_steps_meta'");
+            if ($existsMeta && $existsMeta->fetchColumn()) {
+                $stmt = $pdo->query('SELECT section_title FROM homepage_build_steps_meta ORDER BY id ASC LIMIT 1');
+                if ($stmt) {
+                    $row = $stmt->fetch(\PDO::FETCH_ASSOC);
+                    if ($row) {
+                        $meta = $row;
+                    }
+                }
+            }
+
+            $existsSteps = $pdo->query("SHOW TABLES LIKE 'homepage_build_steps'");
+            if ($existsSteps && $existsSteps->fetchColumn()) {
+                $stmt = $pdo->query(
+                    'SELECT step_number, step_title, step_body
+                     FROM homepage_build_steps ORDER BY sorting ASC, id ASC'
+                );
+                if ($stmt) {
+                    $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+                    if (!empty($rows)) {
+                        $steps = $rows;
+                    }
+                }
+            }
+
+            $existsExp = $pdo->query("SHOW TABLES LIKE 'homepage_build_experience'");
+            if ($existsExp && $existsExp->fetchColumn()) {
+                $stmt = $pdo->query(
+                    'SELECT title, body, signature, button_label, button_url, button_title, button_rel,
+                            image_url, image_path, image_alt
+                     FROM homepage_build_experience ORDER BY id ASC LIMIT 1'
+                );
+                if ($stmt) {
+                    $row = $stmt->fetch(\PDO::FETCH_ASSOC);
+                    if ($row) {
+                        $row['image_url'] = $this->resolveHomepageImageUrl(
+                            $row['image_url'],
+                            isset($row['image_path']) ? $row['image_path'] : ''
+                        );
+                        unset($row['image_path']);
+                        $experience = $row;
+                    }
+                }
+            }
+
+            return array(
+                'meta'       => $meta,
+                'steps'      => $steps,
+                'experience' => $experience,
+            );
+        } catch (\Throwable $e) {
+            return array(
+                'meta'       => $metaDefaults,
+                'steps'      => $stepDefaults,
+                'experience' => $expDefaults,
+            );
+        }
+    }
+
+    private function fetchTestimonials()
+    {
+        $metaDefaults = array(
+            'quote_text'   => "Mieszkamy w swoim wymarzonym domu,\nw którym mamy wszystko, co było nam do szczęścia potrzebne.\nTo naprawdę dobrze zaprojektowany dom, polecam!",
+            'attribution'  => 'Pan Gracjan o projekcie SAMBA XI',
+            'medals_title' => 'Jesteśmy dumni, że od lat nas cenicie',
+        );
+        $medalDefaults = array();
+        for ($i = 0; $i < 11; $i++) {
+            $medalDefaults[] = array(
+                'image_url' => '',
+                'image_alt' => 'Konsumencki Lider Jakości 2024',
+            );
+        }
+        try {
+            $pdo = \Point7_WebApp::getPDO();
+            $meta = $metaDefaults;
+            $medals = $medalDefaults;
+
+            $existsMeta = $pdo->query("SHOW TABLES LIKE 'homepage_testimonials_meta'");
+            if ($existsMeta && $existsMeta->fetchColumn()) {
+                $stmt = $pdo->query(
+                    'SELECT quote_text, attribution, medals_title
+                     FROM homepage_testimonials_meta ORDER BY id ASC LIMIT 1'
+                );
+                if ($stmt) {
+                    $row = $stmt->fetch(\PDO::FETCH_ASSOC);
+                    if ($row) {
+                        $meta = $row;
+                    }
+                }
+            }
+
+            $existsMedals = $pdo->query("SHOW TABLES LIKE 'homepage_testimonials_medals'");
+            if ($existsMedals && $existsMedals->fetchColumn()) {
+                $stmt = $pdo->query(
+                    'SELECT image_url, image_path, image_alt FROM homepage_testimonials_medals ORDER BY sorting ASC, id ASC'
+                );
+                if ($stmt) {
+                    $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+                    if (!empty($rows)) {
+                        foreach ($rows as $i => $row) {
+                            $rows[$i]['image_url'] = $this->resolveHomepageImageUrl(
+                                $row['image_url'],
+                                isset($row['image_path']) ? $row['image_path'] : ''
+                            );
+                            unset($rows[$i]['image_path']);
+                        }
+                        $medals = $rows;
+                    }
+                }
+            }
+
+            return array(
+                'meta'   => $meta,
+                'medals' => $medals,
+            );
+        } catch (\Throwable $e) {
+            return array(
+                'meta'   => $metaDefaults,
+                'medals' => $medalDefaults,
+            );
+        }
+    }
+
+    private function fetchHomepageContactSection()
+    {
+        $defaults = array(
+            'call_title'           => 'ZADZWOŃ',
+            'hostess_image_url'    => 'https://www.studioatrium.pl/img/hostess.webp',
+            'hostess_image_alt'    => 'Obsługa klienta Studio Atrium',
+            'phone1'               => '33 822 94 96',
+            'phone2'               => '602 303 160',
+            'hours_label'          => 'Jesteśmy do Twojej dyspozycji:',
+            'hours_text'           => 'pon. – pt.:  8:00 – 17:00',
+            'question_title'       => 'Masz pytanie?',
+            'question_body'        => 'Sprawdź nasze projekty domów. Projektujemy domy nowoczesne i tradycyjne, które spełnią wszystkie Twoje oczekiwania. Jeśli potrzebujesz fachowej porady lub pomocy przy wyborze projektu - ZADZWOŃ LUB NAPISZ.',
+            'email_placeholder'    => 'e-mail',
+            'message_placeholder'  => 'Wiadomość',
+            'consent_text'         => 'Wyrażam zgodę na przetwarzanie moich danych osobowych w celu otrzymania odpowiedzi zgodnie z oświadczeniem.',
+            'privacy_url'          => '/polityka-prywatnosci',
+            'privacy_title'        => 'Szczegóły polityki prywatności',
+            'privacy_rel'          => 'noopener noreferrer',
+            'submit_label'         => 'WYŚLIJ',
+        );
+        try {
+            $pdo = \Point7_WebApp::getPDO();
+            $exists = $pdo->query("SHOW TABLES LIKE 'homepage_contact'");
+            if (!($exists && $exists->fetchColumn())) {
+                return $defaults;
+            }
+            $stmt = $pdo->query(
+                'SELECT call_title, hostess_image_url, hostess_image_path, hostess_image_alt, phone1, phone2, hours_label, hours_text,
+                        question_title, question_body, email_placeholder, message_placeholder, consent_text,
+                        privacy_url, privacy_title, privacy_rel, submit_label
+                 FROM homepage_contact ORDER BY id ASC LIMIT 1'
+            );
+            if (!$stmt) {
+                return $defaults;
+            }
+            $row = $stmt->fetch(\PDO::FETCH_ASSOC);
+            if (!$row) {
+                return $defaults;
+            }
+            $row['hostess_image_url'] = $this->resolveHomepageImageUrl(
+                $row['hostess_image_url'],
+                isset($row['hostess_image_path']) ? $row['hostess_image_path'] : ''
+            );
+            unset($row['hostess_image_path']);
+            return $row;
+        } catch (\Throwable $e) {
+            return $defaults;
+        }
+    }
+
     private function fetchContactData(): array
     {
         try {
@@ -1997,6 +2222,9 @@ class SmartyFunctionsRegistry
         $smarty->assign('products_sections', $this->fetchProductsSections());
         $smarty->assign('partners', $this->fetchPartners());
         $smarty->assign('newsletter', $this->fetchNewsletter());
+        $smarty->assign('build_steps', $this->fetchBuildSteps());
+        $smarty->assign('testimonials', $this->fetchTestimonials());
+        $smarty->assign('homepage_contact', $this->fetchHomepageContactSection());
 
         // Assign footer menu columns (a/b/c) from footer_menus table
         $smarty->assign('footer_menus', $this->fetchMenuColumns());

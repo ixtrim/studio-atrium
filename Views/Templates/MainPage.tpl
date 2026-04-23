@@ -1,3 +1,4 @@
+<div id="hp-2026">
 {include file="Include/HeroSlider.tpl"}
 {include file="Include/Categories.tpl"}
 {include file="Include/OurBestsellers.tpl"}
@@ -16,6 +17,7 @@
 {include file="Include/Initiative.tpl"}
 {include file="Include/Charity.tpl"}
 {include file="Include/ArticlesTicks.tpl"}
+</div>
 
 <div class="overlay">
 	<div class="overlay-project-box" id="over-pop">

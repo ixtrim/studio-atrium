@@ -27,7 +27,7 @@
             <div class="col-span-12 md:col-span-5"><input type="email" placeholder="e-mail"
                     class="w-full bg-white px-6 py-4 text-[14px] text-[var(--brand-darker)] focus:outline-none placeholder:text-black/40">
                 <div class="flex justify-center mt-8"><button
-                        class="inline-flex items-center justify-center bg-[var(--brand-blue)] hover:bg-[var(--brand-blue-strong)] text-white font-bold px-16 py-4 lg:h-[54px] lg:max-h-[54px] lg:py-0 leading-none rounded-full text-[13px] uppercase tracking-wider">{$newsletter.meta.signup_button_label|escape}</button></div>
+                        class="inline-flex items-center justify-center bg-[var(--brand-blue)] hover:bg-[var(--brand-blue-strong)] text-white font-bold px-16 py-4 lg:h-[54px] lg:max-h-[54px] lg:py-0 leading-none text-[13px] uppercase tracking-wider">{$newsletter.meta.signup_button_label|escape}</button></div>
             </div>
             <div class="col-span-12 md:col-span-3 text-white">
                 <div class="text-[28px] font-black uppercase leading-none">{$newsletter.meta.reward_line1|escape}</div>

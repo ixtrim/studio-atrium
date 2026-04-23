@@ -68,16 +68,16 @@
                                     PODDASZEM</div>
                                 <div class="flex items-center gap-4 py-2 text-[13px] text-[#222]">
                                     <div class="flex items-center gap-2"><span
-                                            class="w-7 h-7 rounded-full border border-black/20 inline-flex items-center justify-center text-[10px]">◇</span><span>101,90
+                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[10px]">◇</span><span>101,90
                                             m2</span></div>
                                     <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 rounded-full border border-black/20 inline-flex items-center justify-center text-[12px]">🛏</span><span>4</span>
+                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🛏</span><span>4</span>
                                     </div>
                                     <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 rounded-full border border-black/20 inline-flex items-center justify-center text-[12px]">🛁</span><span>2</span>
+                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🛁</span><span>2</span>
                                     </div>
                                     <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 rounded-full border border-black/20 inline-flex items-center justify-center text-[12px]">🚗</span><span>2</span>
+                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🚗</span><span>2</span>
                                     </div>
                                 </div>
                                 <div class="pt-1 mt-auto">
@@ -137,16 +137,16 @@
                                 </div>
                                 <div class="flex items-center gap-4 py-2 text-[13px] text-[#222]">
                                     <div class="flex items-center gap-2"><span
-                                            class="w-7 h-7 rounded-full border border-black/20 inline-flex items-center justify-center text-[10px]">◇</span><span>117,30
+                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[10px]">◇</span><span>117,30
                                             m2</span></div>
                                     <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 rounded-full border border-black/20 inline-flex items-center justify-center text-[12px]">🛏</span><span>4</span>
+                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🛏</span><span>4</span>
                                     </div>
                                     <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 rounded-full border border-black/20 inline-flex items-center justify-center text-[12px]">🛁</span><span>2</span>
+                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🛁</span><span>2</span>
                                     </div>
                                     <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 rounded-full border border-black/20 inline-flex items-center justify-center text-[12px]">🚗</span><span>2</span>
+                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🚗</span><span>2</span>
                                     </div>
                                 </div>
                                 <div class="pt-1 mt-auto">
@@ -203,16 +203,16 @@
                                 </div>
                                 <div class="flex items-center gap-4 py-2 text-[13px] text-[#222]">
                                     <div class="flex items-center gap-2"><span
-                                            class="w-7 h-7 rounded-full border border-black/20 inline-flex items-center justify-center text-[10px]">◇</span><span>139,50
+                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[10px]">◇</span><span>139,50
                                             m2</span></div>
                                     <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 rounded-full border border-black/20 inline-flex items-center justify-center text-[12px]">🛏</span><span>4</span>
+                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🛏</span><span>4</span>
                                     </div>
                                     <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 rounded-full border border-black/20 inline-flex items-center justify-center text-[12px]">🛁</span><span>2</span>
+                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🛁</span><span>2</span>
                                     </div>
                                     <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 rounded-full border border-black/20 inline-flex items-center justify-center text-[12px]">🚗</span><span>2</span>
+                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🚗</span><span>2</span>
                                     </div>
                                 </div>
                                 <div class="pt-1 mt-auto">
@@ -270,16 +270,16 @@
                                 </div>
                                 <div class="flex items-center gap-4 py-2 text-[13px] text-[#222]">
                                     <div class="flex items-center gap-2"><span
-                                            class="w-7 h-7 rounded-full border border-black/20 inline-flex items-center justify-center text-[10px]">◇</span><span>117,30
+                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[10px]">◇</span><span>117,30
                                             m2</span></div>
                                     <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 rounded-full border border-black/20 inline-flex items-center justify-center text-[12px]">🛏</span><span>4</span>
+                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🛏</span><span>4</span>
                                     </div>
                                     <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 rounded-full border border-black/20 inline-flex items-center justify-center text-[12px]">🛁</span><span>2</span>
+                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🛁</span><span>2</span>
                                     </div>
                                     <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 rounded-full border border-black/20 inline-flex items-center justify-center text-[12px]">🚗</span><span>2</span>
+                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🚗</span><span>2</span>
                                     </div>
                                 </div>
                                 <div class="pt-1 mt-auto">
@@ -338,16 +338,16 @@
                                     PODDASZEM</div>
                                 <div class="flex items-center gap-4 py-2 text-[13px] text-[#222]">
                                     <div class="flex items-center gap-2"><span
-                                            class="w-7 h-7 rounded-full border border-black/20 inline-flex items-center justify-center text-[10px]">◇</span><span>148,20
+                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[10px]">◇</span><span>148,20
                                             m2</span></div>
                                     <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 rounded-full border border-black/20 inline-flex items-center justify-center text-[12px]">🛏</span><span>4</span>
+                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🛏</span><span>4</span>
                                     </div>
                                     <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 rounded-full border border-black/20 inline-flex items-center justify-center text-[12px]">🛁</span><span>2</span>
+                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🛁</span><span>2</span>
                                     </div>
                                     <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 rounded-full border border-black/20 inline-flex items-center justify-center text-[12px]">🚗</span><span>2</span>
+                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🚗</span><span>2</span>
                                     </div>
                                 </div>
                                 <div class="pt-1 mt-auto">
@@ -406,16 +406,16 @@
                                 </div>
                                 <div class="flex items-center gap-4 py-2 text-[13px] text-[#222]">
                                     <div class="flex items-center gap-2"><span
-                                            class="w-7 h-7 rounded-full border border-black/20 inline-flex items-center justify-center text-[10px]">◇</span><span>131,80
+                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[10px]">◇</span><span>131,80
                                             m2</span></div>
                                     <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 rounded-full border border-black/20 inline-flex items-center justify-center text-[12px]">🛏</span><span>3</span>
+                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🛏</span><span>3</span>
                                     </div>
                                     <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 rounded-full border border-black/20 inline-flex items-center justify-center text-[12px]">🛁</span><span>2</span>
+                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🛁</span><span>2</span>
                                     </div>
                                     <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 rounded-full border border-black/20 inline-flex items-center justify-center text-[12px]">🚗</span><span>2</span>
+                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🚗</span><span>2</span>
                                     </div>
                                 </div>
                                 <div class="pt-1 mt-auto">
@@ -473,16 +473,16 @@
                                     PODDASZEM</div>
                                 <div class="flex items-center gap-4 py-2 text-[13px] text-[#222]">
                                     <div class="flex items-center gap-2"><span
-                                            class="w-7 h-7 rounded-full border border-black/20 inline-flex items-center justify-center text-[10px]">◇</span><span>148,20
+                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[10px]">◇</span><span>148,20
                                             m2</span></div>
                                     <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 rounded-full border border-black/20 inline-flex items-center justify-center text-[12px]">🛏</span><span>4</span>
+                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🛏</span><span>4</span>
                                     </div>
                                     <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 rounded-full border border-black/20 inline-flex items-center justify-center text-[12px]">🛁</span><span>2</span>
+                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🛁</span><span>2</span>
                                     </div>
                                     <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 rounded-full border border-black/20 inline-flex items-center justify-center text-[12px]">🚗</span><span>2</span>
+                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🚗</span><span>2</span>
                                     </div>
                                 </div>
                                 <div class="pt-1 mt-auto">
@@ -541,16 +541,16 @@
                                     PODDASZEM</div>
                                 <div class="flex items-center gap-4 py-2 text-[13px] text-[#222]">
                                     <div class="flex items-center gap-2"><span
-                                            class="w-7 h-7 rounded-full border border-black/20 inline-flex items-center justify-center text-[10px]">◇</span><span>101,90
+                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[10px]">◇</span><span>101,90
                                             m2</span></div>
                                     <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 rounded-full border border-black/20 inline-flex items-center justify-center text-[12px]">🛏</span><span>4</span>
+                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🛏</span><span>4</span>
                                     </div>
                                     <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 rounded-full border border-black/20 inline-flex items-center justify-center text-[12px]">🛁</span><span>2</span>
+                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🛁</span><span>2</span>
                                     </div>
                                     <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 rounded-full border border-black/20 inline-flex items-center justify-center text-[12px]">🚗</span><span>2</span>
+                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🚗</span><span>2</span>
                                     </div>
                                 </div>
                                 <div class="pt-1 mt-auto">

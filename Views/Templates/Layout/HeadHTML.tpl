@@ -233,6 +233,7 @@ tailwind.config = {
 }
 </script>
 <link rel="stylesheet" href="/css/header2026.css?v={$version}">
+<link rel="stylesheet" href="/css/homepage2026.css?v={$version}">
 <link rel="stylesheet" href="/css/search-engine.css?v={$version}">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
