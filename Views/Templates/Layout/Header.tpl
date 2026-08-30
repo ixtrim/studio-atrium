@@ -83,13 +83,13 @@
 							GARAŻE I INNE
 							<i data-lucide="chevron-down" class="site-mega-chevron w-[14px] h-[14px] shrink-0 transition-transform duration-300 ease-out" stroke-width="2.5"></i>
 						</a>
-						<a href="/baza-wiedzy/" data-mega="wiedza" aria-expanded="false" aria-haspopup="true"
+						<a href="javascript:" data-mega="wiedza" aria-expanded="false" aria-haspopup="true"
 							class="site-mega-trigger inline-flex items-center gap-1.5 text-[14px] font-black tracking-wider transition-colors duration-200 text-[var(--brand-darker)] hover:text-[var(--brand-red)]">
 							BAZA WIEDZY
 							<i data-lucide="chevron-down" class="site-mega-chevron w-[14px] h-[14px] shrink-0 transition-transform duration-300 ease-out" stroke-width="2.5"></i>
 						</a>
 						<a href="/kontakt/"
-							class="site-mega-trigger inline-flex items-center gap-1.5 text-[14px] font-black tracking-wider transition-colors duration-200 text-[var(--brand-red)] hover:text-[var(--brand-red)]">
+							class="inline-flex items-center gap-1.5 text-[14px] font-black tracking-wider transition-colors duration-200 text-[var(--brand-red)] hover:text-[var(--brand-red)]">
 							KONTAKT
 						</a>
 					</nav>
@@ -118,11 +118,11 @@
 										{/if}
 									{/foreach}
 								</ul>
-								<a href="{url module=catalog action=form}" class="mt-6 block group/cat">
+								<a href="/katalog-projektow.html" class="mt-6 block group/cat">
 									<img src="/img/catalogue.webp" alt="Katalog projektów domów"
 										class="w-full max-w-[200px] transition-transform duration-500 group-hover/cat:scale-[1.03]">
 								</a>
-								<a href="{url module=catalog action=form}"
+								<a href="/katalog-projektow.html"
 									class="mt-3 block text-[14px] font-bold text-[var(--brand-red)] hover:underline">
 									Zamów bezpłatny katalog
 								</a>
@@ -273,7 +273,7 @@
 									</a>
 								</li>
 							</ul>
-							<a href="{url module=article action=hash_tag id=1}" class="group/card block">
+							<a href="/baza-wiedzy,1" class="group/card block">
 								<div class="relative overflow-hidden aspect-[3/2] bg-[#e8e8e8] bg-cover bg-no-repeat"
 									style="background-image:url('/img/menu.jpg'); background-position:0 -150px;">
 									<div class="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-white/10"></div>
@@ -282,7 +282,7 @@
 									</span>
 								</div>
 							</a>
-							<a href="{url module=article action=hash_tag id=3}" class="group/card block">
+							<a href="/baza-wiedzy,3" class="group/card block">
 								<div class="relative overflow-hidden aspect-[3/2] bg-[#e8e8e8] bg-cover bg-no-repeat"
 									style="background-image:url('/img/menu.jpg'); background-position:0 -300px;">
 									<div class="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-white/10"></div>
@@ -291,7 +291,7 @@
 									</span>
 								</div>
 							</a>
-							<a href="{url module=discuss action=forum}" class="group/card block">
+							<a href="/forum/" class="group/card block">
 								<div class="relative overflow-hidden aspect-[3/2] bg-[#e8e8e8] bg-cover bg-no-repeat"
 									style="background-image:url('/img/menu.jpg'); background-position:0 0;">
 									<div class="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-white/10"></div>
@@ -417,6 +417,14 @@
 		trigger.addEventListener('mouseleave', hideMega);
 		trigger.addEventListener('focus', function () { showMega(key); });
 		trigger.addEventListener('blur', hideMega);
+		// Match production: Baza wiedzy uses href="javascript:" (no destination URL).
+		trigger.addEventListener('click', function (event) {
+			var href = trigger.getAttribute('href') || '';
+			if (href === 'javascript:' || href === '#' || href.indexOf('javascript:') === 0) {
+				event.preventDefault();
+				showMega(key);
+			}
+		});
 	});
 
 	if (megaRoot && dropdown) {
