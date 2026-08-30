@@ -1200,7 +1200,7 @@ class SmartyFunctionsRegistry
             $pdo = \Point7_WebApp::getPDO();
             $this->ensureCategoriesTables($pdo);
             $stmt = $pdo->query(
-                'SELECT title_line1, title_line2, image_url, link_url
+                'SELECT title_line1, title_line2, image_url, image_path, link_url
                  FROM homepage_categories
                  ORDER BY sorting ASC, id ASC'
             );
@@ -1208,7 +1208,17 @@ class SmartyFunctionsRegistry
                 return $defaults;
             }
             $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-            return !empty($rows) ? $rows : $defaults;
+            if (empty($rows)) {
+                return $defaults;
+            }
+            foreach ($rows as $i => $row) {
+                $rows[$i]['image_url'] = $this->resolveHomepageImageUrl(
+                    isset($row['image_url']) ? $row['image_url'] : '',
+                    isset($row['image_path']) ? $row['image_path'] : ''
+                );
+                unset($rows[$i]['image_path']);
+            }
+            return $rows;
         } catch (\Throwable $e) {
             return $defaults;
         }
@@ -2232,13 +2242,20 @@ class SmartyFunctionsRegistry
             $existsPhotos = $pdo->query("SHOW TABLES LIKE 'homepage_newsletter_photos'");
             if ($existsPhotos && $existsPhotos->fetchColumn()) {
                 $stmt = $pdo->query(
-                    'SELECT image_url, image_alt, pos_left_pct, pos_top_px, rotate_deg
+                    'SELECT image_url, image_path, image_alt, pos_left_pct, pos_top_px, rotate_deg
                      FROM homepage_newsletter_photos
                      ORDER BY sorting ASC, id ASC'
                 );
                 if ($stmt) {
                     $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
                     if (!empty($rows)) {
+                        foreach ($rows as $i => $row) {
+                            $rows[$i]['image_url'] = $this->resolveHomepageImageUrl(
+                                isset($row['image_url']) ? $row['image_url'] : '',
+                                isset($row['image_path']) ? $row['image_path'] : ''
+                            );
+                            unset($rows[$i]['image_path']);
+                        }
                         $photos = $rows;
                     }
                 }

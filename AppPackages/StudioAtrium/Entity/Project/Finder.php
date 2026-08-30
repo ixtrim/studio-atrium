@@ -77,6 +77,80 @@ class Finder
         return $this->lastClickSearchStats ?? ['total' => 0, 'types' => [], 'sets' => []];
     }
 
+    /**
+     * Load rows from project_feature.
+     * Call sites pass a truthy first arg (true / 'sorting') to sort by sorting DESC,
+     * and optionally a list of feature ids from project.extra_data.
+     *
+     * @param mixed $orderBySorting
+     * @param array|null $idList
+     * @return EntityCollection array rows with id/name/description/sorting
+     */
+    public function getFeatures($orderBySorting = false, $idList = null): EntityCollection
+    {
+        if ($idList !== null && !is_array($idList)) {
+            $idList = array($idList);
+        }
+
+        $sql = 'SELECT id, name, description, sorting FROM project_feature';
+        $params = array();
+
+        if (!empty($idList)) {
+            $ids = array();
+            foreach ($idList as $id) {
+                $id = (int) $id;
+                if ($id > 0) {
+                    $ids[$id] = $id;
+                }
+            }
+            if (empty($ids)) {
+                return new EntityCollection();
+            }
+            $placeholders = implode(',', array_fill(0, count($ids), '?'));
+            $sql .= " WHERE id IN ($placeholders)";
+            $params = array_values($ids);
+        }
+
+        if ($orderBySorting) {
+            $sql .= ' ORDER BY sorting DESC, id ASC';
+        } else {
+            $sql .= ' ORDER BY name ASC, id ASC';
+        }
+
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute($params);
+        $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        if (!$rows) {
+            return new EntityCollection();
+        }
+
+        foreach ($rows as $i => $row) {
+            $rows[$i]['id'] = (int) $row['id'];
+            $rows[$i]['sorting'] = (int) $row['sorting'];
+        }
+
+        return new EntityCollection($rows);
+    }
+
+    /**
+     * @param int $id
+     * @return array|null
+     */
+    public function getFeatureById($id)
+    {
+        $stmt = $this->pdo->prepare(
+            'SELECT id, name, description, sorting FROM project_feature WHERE id = :id LIMIT 1'
+        );
+        $stmt->execute(array(':id' => (int) $id));
+        $row = $stmt->fetch(\PDO::FETCH_ASSOC);
+        if (!$row) {
+            return null;
+        }
+        $row['id'] = (int) $row['id'];
+        $row['sorting'] = (int) $row['sorting'];
+        return $row;
+    }
+
     private function _callClickSearchApi(array $searchParams, array $csParams, $categoryId): array
     {
         $url = \Point7_WebApp::getConfigParam('helpers.clicksearch_api');

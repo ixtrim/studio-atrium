@@ -59,11 +59,32 @@ class Project implements \ArrayAccess
     public function setType(string $v) { $this->type = $v; }
     public function getStatus(): string { return $this->status; }
     public function setStatus(string $v) { $this->status = $v; }
-    public function getParamsGeneral() { return $this->paramsGeneral; }
+    public function getParamsGeneral($asArray = false)
+    {
+        if ($asArray) {
+            $decoded = json_decode((string) $this->paramsGeneral, true);
+            return is_array($decoded) ? $decoded : array();
+        }
+        return $this->paramsGeneral;
+    }
     public function setParamsGeneral($v) { $this->paramsGeneral = $v; }
-    public function getParamsList() { return $this->paramsList; }
+    public function getParamsList($asArray = false)
+    {
+        if ($asArray) {
+            $decoded = json_decode((string) $this->paramsList, true);
+            return is_array($decoded) ? $decoded : array();
+        }
+        return $this->paramsList;
+    }
     public function setParamsList($v) { $this->paramsList = $v; }
-    public function getBuildCost() { return $this->buildCost; }
+    public function getBuildCost($asArray = false)
+    {
+        if ($asArray) {
+            $decoded = json_decode((string) $this->buildCost, true);
+            return is_array($decoded) ? $decoded : array();
+        }
+        return $this->buildCost;
+    }
     public function setBuildCost($v) { $this->buildCost = $v; }
     public function getMetaTitle() { return $this->metaTitle; }
     public function setMetaTitle($v) { $this->metaTitle = $v; }
@@ -73,7 +94,14 @@ class Project implements \ArrayAccess
     public function setModifyDate($v) { $this->modifyDate = $v; }
     public function getTechnology() { return $this->technology; }
     public function setTechnology($v) { $this->technology = $v; }
-    public function getExtraData() { return $this->extraData; }
+    public function getExtraData($asArray = false)
+    {
+        if ($asArray) {
+            $decoded = json_decode((string) $this->extraData, true);
+            return is_array($decoded) ? $decoded : array();
+        }
+        return $this->extraData;
+    }
     public function setExtraData($v) { $this->extraData = $v; }
 
     public function getUid()
@@ -119,14 +147,14 @@ class Project implements \ArrayAccess
             'discount'              => $this->discount,
             'type'                  => $this->type,
             'status'                => $this->status,
-            'params_general'        => $this->paramsGeneral,
-            'params_list'           => $this->paramsList,
-            'build_cost'            => $this->buildCost,
+            'params_general'        => $this->getParamsGeneral(true),
+            'params_list'           => $this->getParamsList(true),
+            'build_cost'            => $this->getBuildCost(true),
             'meta_title'            => $this->metaTitle,
             'meta_description'      => $this->metaDescription,
             'modify_date'           => $this->modifyDate,
             'technology'            => $this->technology,
-            'extra_data'            => $this->extraData,
+            'extra_data'            => $this->getExtraData(true),
         ];
     }
 

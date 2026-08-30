@@ -288,6 +288,9 @@ class Point7_WebApp
     private static function renderSmarty(array $result, Point7_WebApp_Context_Response $responseCtx)
     {
         $smarty = new Smarty();
+        // Match production Point7 Smarty3 Wrapper: templates use optional vars
+        // ($pageTitle, $request.typ_projektu, …) and must not flood php_log with E_NOTICE.
+        $smarty->error_reporting = error_reporting() ^ E_NOTICE;
         $tplDir     = self::getConfigParam('views.smarty.template_dir') ?? '';
         $compileDir = self::getConfigParam('views.smarty.compile_dir') ?? '';
         if ($tplDir)     $smarty->setTemplateDir($tplDir);
@@ -310,11 +313,15 @@ class Point7_WebApp
 
         // Always provide common template variables with safe defaults
         $defaults = [
-            'request'     => $_GET ?? [],
-            'documentUrl' => self::getConfigParam('static.documents') ?? '',
-            'stockPath'   => self::getConfigParam('static.stock') ?? '',
-            'messageBox'  => ['errors' => [], 'messages' => []],
-            'version'     => '',
+            'request'      => $_GET ?? [],
+            'documentUrl'  => self::getConfigParam('static.documents') ?? '',
+            'stockPath'    => self::getConfigParam('static.stock') ?? '',
+            'messageBox'   => ['errors' => [], 'messages' => []],
+            'version'      => '',
+            'favouriteIds' => [],
+            'compareIds'   => [],
+            'basket'       => null,
+            'user'         => null,
         ];
         foreach ($defaults as $k => $v) {
             if (!array_key_exists($k, $responseCtx->getAll())) {

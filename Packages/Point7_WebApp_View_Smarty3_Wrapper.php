@@ -13,6 +13,7 @@ class Point7_WebApp_View_Smarty3_Wrapper
     {
         if ($this->smarty === null) {
             $this->smarty = new Smarty();
+            $this->smarty->error_reporting = error_reporting() ^ E_NOTICE;
             if ($this->template_dir) $this->smarty->setTemplateDir($this->template_dir);
             if ($this->compile_dir) {
                 if (!is_dir($this->compile_dir)) @mkdir($this->compile_dir, 0775, true);
