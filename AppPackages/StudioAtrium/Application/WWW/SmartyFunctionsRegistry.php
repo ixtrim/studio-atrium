@@ -147,6 +147,84 @@ class SmartyFunctionsRegistry
         );
     }
 
+    /**
+     * Rewrite relative asset / project links inside article HTML.
+     * Smarty: {$article.content|fixArticleContent:$article.id}
+     */
+    public function mFixArticleContent($string, $articleId)
+    {
+        $string = (string) $string;
+        $articleId = (int) $articleId;
+        if ($string === '') {
+            return $string;
+        }
+
+        $resUrl = $this->resUrl;
+        if ($resUrl === '') {
+            $resUrl = \Point7_WebApp::getConfigParam('static.documents');
+        }
+        if (!$resUrl) {
+            $resUrl = 'https://media.studioatrium.pl/document';
+        }
+        $resUrl = rtrim($resUrl, '/');
+
+        $matches = array();
+        if (preg_match_all('/href="([0-9]+)"/', $string, $matches)) {
+            foreach (array_unique($matches[1]) as $id) {
+                $url = null;
+                try {
+                    $cache = \Point7_WebApp::getCache();
+                    if ($cache) {
+                        $url = $cache->get('url_' . $id);
+                    }
+                } catch (\Throwable $e) {
+                    $url = null;
+                }
+
+                if (!$url) {
+                    try {
+                        $project = \Point7_WebApp::getDAORepository()
+                            ->getProjectFinder(null)
+                            ->getById((int) $id);
+                        if ($project) {
+                            $url = \StudioAtrium\Application\Helper\Url::buildProjectUrl($project);
+                            try {
+                                $cache = \Point7_WebApp::getCache();
+                                if ($cache) {
+                                    $cache->set('url_' . $id, $url);
+                                }
+                            } catch (\Throwable $e) {
+                            }
+                        }
+                    } catch (\Throwable $e) {
+                        $url = null;
+                    }
+                }
+
+                if ($url) {
+                    $string = str_replace('href="' . $id . '"', 'href="' . $url . '"', $string);
+                }
+            }
+        }
+
+        if (strpos($string, 'href="atrium.php') !== false) {
+            $string = str_replace('href="atrium.php', 'href="/atrium.php', $string);
+        }
+
+        $string = preg_replace(
+            '/href=(?:.*\/)?"?(.*(\.doc|\.pdf|\.zip|\.mp3))"?/',
+            'href="' . $resUrl . '/' . $articleId . '/' . '$1"',
+            $string
+        );
+        $string = preg_replace(
+            '/(src=")(?!http)/',
+            'src="' . $resUrl . '/' . $articleId . '/',
+            $string
+        );
+        $string = str_replace(array('<h1>', '</h1>'), array('<h5>', '</h5>'), $string);
+        return $string;
+    }
+
     public function mAvatar($userId)
     {
         $userId = (int) $userId;
@@ -2659,6 +2737,7 @@ class SmartyFunctionsRegistry
         $smarty->registerPlugin('modifier', 'linkTitle',      [$this, 'mLinkTitle']);
         $smarty->registerPlugin('modifier', 'inBasket',       [$this, 'mInBasket']);
         $smarty->registerPlugin('modifier', 'hideEmails',     [$this, 'mHideEmails']);
+        $smarty->registerPlugin('modifier', 'fixArticleContent', [$this, 'mFixArticleContent']);
         $smarty->registerPlugin('modifier', 'avatar',         [$this, 'mAvatar']);
         $smarty->registerPlugin('modifier', 'replace',        function($str, $find, $replace) { return str_replace($find, $replace, $str); });
         $smarty->registerPlugin('modifier', 'unescape',       function($str) { return htmlspecialchars_decode((string) $str, ENT_QUOTES); });

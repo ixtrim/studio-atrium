@@ -35,21 +35,40 @@ class Finder
 
     /**
      * Tags attached to a single document (Article::doItem() -> $documentTags).
+     * Keyed by hash_tag_id so templates can use {$documentTags as $tid => $tag}
+     * with $allTags.main[$tid] / $allTags.normal[$tid].
      */
     public function getTagsForDocument($document): array
     {
         if (!$document) {
             return [];
         }
+        $id = is_object($document) && method_exists($document, 'getId')
+            ? (int) $document->getId()
+            : (int) (is_array($document) ? ($document['id'] ?? 0) : $document);
+        if ($id <= 0) {
+            return [];
+        }
+
         $stmt = $this->pdo->prepare(
-            'SELECT ht.id, ht.tag, ht.type
+            'SELECT ht.id AS hash_tag_id, ht.tag, ht.type, dht.object_id
              FROM document_to_hash_tag dht
              INNER JOIN hash_tag ht ON ht.id = dht.hash_tag_id
              WHERE dht.object_id = :id
              ORDER BY ht.tag ASC'
         );
-        $stmt->execute([':id' => $document->getId()]);
-        return $stmt->fetchAll();
+        $stmt->execute([':id' => $id]);
+        $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        if (!$rows) {
+            return [];
+        }
+
+        $out = [];
+        foreach ($rows as $row) {
+            $tid = (int) $row['hash_tag_id'];
+            $out[$tid] = $row;
+        }
+        return $out;
     }
 
     /**
@@ -60,7 +79,7 @@ class Finder
      *
      * @param array[] $documents array of document arrays (each with an 'id' key)
      */
-    public function getTagsForDocuments(array &$documents): void
+    public function getTagsForDocuments(array &$documents)
     {
         if (!$documents) {
             return;

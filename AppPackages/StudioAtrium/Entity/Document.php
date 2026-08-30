@@ -1,7 +1,7 @@
 <?php
 namespace StudioAtrium\Entity;
 
-class Document
+class Document implements \ArrayAccess
 {
     const STATUS_PUBLISHED = 'published';
     const STATUS_DRAFT     = 'draft';
@@ -72,5 +72,36 @@ class Document
             'not_listing'      => $this->notListing,
             'attachments'      => $this->attachments,
         ];
+    }
+
+    public function offsetExists($offset)
+    {
+        $data = $this->toArray();
+        // Templates use both char_id and camelCase-ish keys via Smarty.
+        return array_key_exists($offset, $data) || $offset === 'charId';
+    }
+
+    public function offsetGet($offset)
+    {
+        if ($offset === 'charId') {
+            return $this->charId;
+        }
+        $data = $this->toArray();
+        return array_key_exists($offset, $data) ? $data[$offset] : null;
+    }
+
+    public function offsetSet($offset, $value)
+    {
+        if ($offset === null) {
+            return;
+        }
+        $setter = 'set' . str_replace(' ', '', ucwords(str_replace('_', ' ', $offset)));
+        if (method_exists($this, $setter)) {
+            $this->$setter($value);
+        }
+    }
+
+    public function offsetUnset($offset)
+    {
     }
 }
