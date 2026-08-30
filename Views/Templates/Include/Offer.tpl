@@ -9,13 +9,15 @@
             </blockquote>
             <div class="text-center text-sm mt-4">{$offer.quote_author|escape}</div>
             <div class="flex justify-center items-center gap-3 mt-4">
-                {if $offer.logo1_url}<img src="{$offer.logo1_url|escape}" alt="{$offer.logo1_alt|escape}" class="w-12 h-10 object-contain bg-white rounded-none p-1">{/if}
-                {if $offer.logo2_url}<img src="{$offer.logo2_url|escape}" alt="{$offer.logo2_alt|escape}" class="w-12 h-10 object-contain bg-white rounded-none p-1">{/if}
-                {if $offer.logo3_url}<img src="{$offer.logo3_url|escape}" alt="{$offer.logo3_alt|escape}" class="w-12 h-10 object-contain bg-white rounded-none p-1">{/if}
+                {if $offer.logo1_url}<img src="{$offer.logo1_url|escape}" alt="{$offer.logo1_alt|escape}" class="w-12 h-10 object-contain bg-white p-1">{/if}
+                {if $offer.logo2_url}<img src="{$offer.logo2_url|escape}" alt="{$offer.logo2_alt|escape}" class="w-12 h-10 object-contain bg-white p-1">{/if}
+                {if $offer.logo3_url}<img src="{$offer.logo3_url|escape}" alt="{$offer.logo3_alt|escape}" class="w-12 h-10 object-contain bg-white p-1">{/if}
             </div>
         </div>
         <div class="flex flex-col items-center">
+            {if $offer.image_url}
             <img src="{$offer.image_url|escape}" alt="{$offer.image_alt|escape}" class="w-full max-w-md aspect-square object-cover">
+            {/if}
             <div class="mt-4 text-[15px] font-bold uppercase tracking-wide">{$offer.image_caption|escape}</div>
         </div>
     </div>

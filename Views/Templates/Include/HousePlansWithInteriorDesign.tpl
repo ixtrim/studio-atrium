@@ -1,570 +1,100 @@
-<section class="w-full bg-[#f3f3f3] py-16">
+<section class="w-full bg-[#f3f3f3] py-16" id="interior-plans">
     <div class="max-w-[1480px] mx-auto px-8">
-        <h2 class="ip-title text-[34px] font-bold text-[#222] mb-10 pl-2"
-            style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">Projekty
-            domów z aranżacją wnętrz</h2>
-        <div class="relative">          <button
-            aria-label="Poprzedni"
-            id="hp-ip-prev"
-            class="hidden lg:flex absolute -left-10 top-[40%] -translate-y-1/2 z-10 w-8 h-8 items-center justify-center text-[#7a7a7a] hover:text-[var(--brand-darker)]"><svg
-                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        <h2 class="ip-title text-[34px] font-bold text-[#222] mb-10 pl-2">{$interior_plans.meta.section_title|escape}</h2>
+        <div class="relative">
+            <button type="button" aria-label="Poprzedni" id="hp-ip-prev"
+                class="hidden lg:flex absolute -left-10 top-[40%] -translate-y-1/2 z-10 w-8 h-8 items-center justify-center bg-transparent border-0 outline-none appearance-none p-0 shadow-none text-[#7a7a7a] hover:text-[var(--brand-darker)] cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-chevron-left w-10 h-10" aria-hidden="true">
+                    class="lucide lucide-chevron-left w-7 h-7" aria-hidden="true">
                     <path d="m15 18-6-6 6-6"></path>
-                </svg></button>          <button
-            aria-label="Następny"
-            id="hp-ip-next"
-            class="hidden lg:flex absolute -right-10 top-[40%] -translate-y-1/2 z-10 w-8 h-8 items-center justify-center text-[#7a7a7a] hover:text-[var(--brand-darker)]"><svg
-                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                </svg>
+            </button>
+            <button type="button" aria-label="Następny" id="hp-ip-next"
+                class="hidden lg:flex absolute -right-10 top-[40%] -translate-y-1/2 z-10 w-8 h-8 items-center justify-center bg-transparent border-0 outline-none appearance-none p-0 shadow-none text-[#7a7a7a] hover:text-[var(--brand-darker)] cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-chevron-right w-10 h-10" aria-hidden="true">
+                    class="lucide lucide-chevron-right w-7 h-7" aria-hidden="true">
                     <path d="m9 18 6-6-6-6"></path>
-                </svg></button>
-            <div class="swiper swiper-initialized swiper-horizontal !px-2 [&amp;_.swiper-wrapper]:items-stretch">
-                <div class="swiper-wrapper"
-                    style="transition-duration: 0ms; transform: translate3d(-2373.33px, 0px, 0px); transition-delay: 0ms;">
-                    <div class="swiper-slide !h-auto" data-swiper-slide-index="5"
-                        style="width: 450.667px; margin-right: 24px; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
-                        <a href="/projekt/Lopez" class="bg-white overflow-hidden h-full flex flex-col group ">
-                            <div class="relative"><img
-                                    src="https://media.studioatrium.pl/project/1477/realisation/budowa-62bbfdd0beec3.jpg"
-                                    alt="Lopez"
-                                    class="w-full h-[280px] object-cover transition-transform duration-500 group-hover:scale-105"
-                                    loading="lazy">
-                                <div class="absolute top-3 right-3 flex items-center gap-2"><svg
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="lucide lucide-scale w-5 h-5 text-[#222]"
-                                        aria-hidden="true">
-                                        <path d="M12 3v18"></path>
-                                        <path d="m19 8 3 8a5 5 0 0 1-6 0zV7"></path>
-                                        <path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"></path>
-                                        <path d="m5 8 3 8a5 5 0 0 1-6 0zV7"></path>
-                                        <path d="M7 21h10"></path>
-                                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round"
-                                        class="lucide lucide-heart w-5 h-5 text-[var(--brand-red)]" aria-hidden="true">
-                                        <path
-                                            d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5">
-                                        </path>
-                                    </svg></div>
+                </svg>
+            </button>
+            <div class="swiper [&_.swiper-wrapper]:items-stretch" id="hp-ip-swiper">
+                <div class="swiper-wrapper">
+                    {foreach $interior_plans.items as $item}
+                    <div class="swiper-slide !h-auto">
+                        <a href="{$item.url|escape}" title="{$item.name|escape}" class="bg-white overflow-hidden h-full flex flex-col group">
+                            <div class="relative overflow-hidden">
+                                <img src="{$item.image_url|escape}" alt="{$item.name|escape}" class="w-full h-[280px] object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+                                {if $item.tag}
+                                <span class="absolute top-3 left-3 text-[11px] font-bold tracking-wider bg-white/90 text-[var(--brand-red)] px-2.5 py-1">{$item.tag|escape}</span>
+                                {/if}
                             </div>
                             <div class="px-5 pt-4 pb-5 flex flex-col gap-3 flex-1">
-                                <div class="flex items-start justify-between">
-                                    <h3 class="text-[22px] font-bold text-[#222] leading-tight">Lopez</h3><svg
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="lucide lucide-scale w-5 h-5 text-[#222] mt-1"
-                                        aria-hidden="true">
-                                        <path d="M12 3v18"></path>
-                                        <path d="m19 8 3 8a5 5 0 0 1-6 0zV7"></path>
-                                        <path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"></path>
-                                        <path d="m5 8 3 8a5 5 0 0 1-6 0zV7"></path>
-                                        <path d="M7 21h10"></path>
-                                    </svg>
+                                <div class="flex items-start justify-between gap-3">
+                                    <h3 class="text-[22px] font-bold text-[#222] leading-tight">{$item.name|escape}</h3>
+                                    <div class="flex items-center gap-2 shrink-0 mt-0.5 text-[#555]">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5" aria-hidden="true"><path d="M12 3v18"></path><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"></path><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"></path><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"></path><path d="M7 21h10"></path></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5" aria-hidden="true"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"></path></svg>
+                                    </div>
                                 </div>
-                                <div class="text-[13px] font-bold tracking-wider text-[var(--brand-red)]">DOM Z
-                                    PODDASZEM</div>
+                                <div class="text-[13px] font-bold tracking-wider text-[var(--brand-red)]">{$item.type_label|escape}</div>
                                 <div class="flex items-center gap-4 py-2 text-[13px] text-[#222]">
-                                    <div class="flex items-center gap-2"><span
-                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[10px]">◇</span><span>101,90
-                                            m2</span></div>
-                                    <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🛏</span><span>4</span>
-                                    </div>
-                                    <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🛁</span><span>2</span>
-                                    </div>
-                                    <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🚗</span><span>2</span>
-                                    </div>
+                                    {if $item.area}
+                                    <div class="flex items-center gap-2"><span class="w-7 h-7 border border-black/20 inline-flex items-center justify-center shrink-0 text-[#555]"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2.7 10.3a2.41 2.41 0 0 0 0 3.41l7.59 7.59a2.41 2.41 0 0 0 3.41 0l7.59-7.59a2.41 2.41 0 0 0 0-3.41L13.7 2.71a2.41 2.41 0 0 0-3.41 0z"></path></svg></span><span>{$item.area|escape}</span></div>
+                                    {/if}
+                                    {if $item.rooms != ''}
+                                    <div class="flex items-center gap-1.5"><span class="w-7 h-7 border border-black/20 inline-flex items-center justify-center shrink-0 text-[#555]"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4v16"></path><path d="M2 8h18a2 2 0 0 1 2 2v10"></path><path d="M2 17h20"></path><path d="M6 8v9"></path></svg></span><span>{$item.rooms|escape}</span></div>
+                                    {/if}
+                                    {if $item.baths > 0}
+                                    <div class="flex items-center gap-1.5"><span class="w-7 h-7 border border-black/20 inline-flex items-center justify-center shrink-0 text-[#555]"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 4 8 6"></path><path d="M17 19v2"></path><path d="M2 12h20"></path><path d="M7 19v2"></path><path d="M9 5 7.621 3.621A2.121 2.121 0 0 0 4 5v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"></path></svg></span><span>{$item.baths|escape}</span></div>
+                                    {/if}
+                                    {if $item.garage > 0}
+                                    <div class="flex items-center gap-1.5"><span class="w-7 h-7 border border-black/20 inline-flex items-center justify-center shrink-0 text-[#555]"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path><circle cx="7" cy="17" r="2"></circle><path d="M9 17h6"></path><circle cx="17" cy="17" r="2"></circle></svg></span><span>{$item.garage|escape}</span></div>
+                                    {/if}
                                 </div>
                                 <div class="pt-1 mt-auto">
-                                    <div class="text-[14px] text-[var(--brand-red)] line-through">3345 PLN</div>
-                                    <div class="flex items-baseline gap-2"><span
-                                            class="text-[34px] font-bold text-[var(--brand-blue-strong)] leading-none">2990</span><span
-                                            class="text-[14px] text-[var(--brand-blue-strong)] font-semibold">PLN</span><span
-                                            class="text-[13px] text-[var(--brand-blue-strong)]">netto</span></div>
+                                    {if $item.price_old}
+                                    <div class="text-[14px] text-[var(--brand-red)] line-through">{$item.price_old|escape} PLN</div>
+                                    {/if}
+                                    <div class="flex items-baseline gap-2"><span class="text-[34px] font-bold text-[var(--brand-blue-strong)] leading-none">{$item.price|escape}</span><span class="text-[14px] text-[var(--brand-blue-strong)] font-semibold">PLN</span></div>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <div class="swiper-slide !h-auto" data-swiper-slide-index="6"
-                        style="width: 450.667px; margin-right: 24px; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
-                        <a href="/projekt/Samba%20VI" class="bg-white overflow-hidden h-full flex flex-col group ">
-                            <div class="relative"><img
-                                    src="https://media.studioatrium.pl/project/920/realisation/budowa-65e03fd2c3740.jpg"
-                                    alt="Samba VI"
-                                    class="w-full h-[280px] object-cover transition-transform duration-500 group-hover:scale-105"
-                                    loading="lazy"><span
-                                    class="absolute top-3 left-3 text-[12px] font-bold tracking-wider bg-[var(--brand-red)] text-white px-3 py-1">-15%
-                                    RABATU</span>
-                                <div class="absolute top-3 right-3 flex items-center gap-2"><svg
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="lucide lucide-scale w-5 h-5 text-[#222]"
-                                        aria-hidden="true">
-                                        <path d="M12 3v18"></path>
-                                        <path d="m19 8 3 8a5 5 0 0 1-6 0zV7"></path>
-                                        <path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"></path>
-                                        <path d="m5 8 3 8a5 5 0 0 1-6 0zV7"></path>
-                                        <path d="M7 21h10"></path>
-                                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round"
-                                        class="lucide lucide-heart w-5 h-5 text-[var(--brand-red)]" aria-hidden="true">
-                                        <path
-                                            d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5">
-                                        </path>
-                                    </svg></div>
-                            </div>
-                            <div class="px-5 pt-4 pb-5 flex flex-col gap-3 flex-1">
-                                <div class="flex items-start justify-between">
-                                    <h3 class="text-[22px] font-bold text-[#222] leading-tight">Samba VI</h3><svg
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="lucide lucide-scale w-5 h-5 text-[#222] mt-1"
-                                        aria-hidden="true">
-                                        <path d="M12 3v18"></path>
-                                        <path d="m19 8 3 8a5 5 0 0 1-6 0zV7"></path>
-                                        <path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"></path>
-                                        <path d="m5 8 3 8a5 5 0 0 1-6 0zV7"></path>
-                                        <path d="M7 21h10"></path>
-                                    </svg>
-                                </div>
-                                <div class="text-[13px] font-bold tracking-wider text-[var(--brand-red)]">DOM PARTEROWY
-                                </div>
-                                <div class="flex items-center gap-4 py-2 text-[13px] text-[#222]">
-                                    <div class="flex items-center gap-2"><span
-                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[10px]">◇</span><span>117,30
-                                            m2</span></div>
-                                    <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🛏</span><span>4</span>
-                                    </div>
-                                    <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🛁</span><span>2</span>
-                                    </div>
-                                    <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🚗</span><span>2</span>
-                                    </div>
-                                </div>
-                                <div class="pt-1 mt-auto">
-                                    <div class="flex items-baseline gap-2"><span
-                                            class="text-[34px] font-bold text-[var(--brand-blue-strong)] leading-none">3700</span><span
-                                            class="text-[14px] text-[var(--brand-blue-strong)] font-semibold">PLN</span><span
-                                            class="text-[13px] text-[var(--brand-blue-strong)]">netto</span></div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="swiper-slide !h-auto" data-swiper-slide-index="7"
-                        style="width: 450.667px; margin-right: 24px; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
-                        <a href="/projekt/Rumba%20II" class="bg-white overflow-hidden h-full flex flex-col group ">
-                            <div class="relative"><img
-                                    src="https://media.studioatrium.pl/project/1258/realisation/budowa-5bfce6a922dac.jpg"
-                                    alt="Rumba II"
-                                    class="w-full h-[280px] object-cover transition-transform duration-500 group-hover:scale-105"
-                                    loading="lazy">
-                                <div class="absolute top-3 right-3 flex items-center gap-2"><svg
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="lucide lucide-scale w-5 h-5 text-[#222]"
-                                        aria-hidden="true">
-                                        <path d="M12 3v18"></path>
-                                        <path d="m19 8 3 8a5 5 0 0 1-6 0zV7"></path>
-                                        <path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"></path>
-                                        <path d="m5 8 3 8a5 5 0 0 1-6 0zV7"></path>
-                                        <path d="M7 21h10"></path>
-                                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round"
-                                        class="lucide lucide-heart w-5 h-5 text-[var(--brand-red)]" aria-hidden="true">
-                                        <path
-                                            d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5">
-                                        </path>
-                                    </svg></div>
-                            </div>
-                            <div class="px-5 pt-4 pb-5 flex flex-col gap-3 flex-1">
-                                <div class="flex items-start justify-between">
-                                    <h3 class="text-[22px] font-bold text-[#222] leading-tight">Rumba II</h3><svg
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="lucide lucide-scale w-5 h-5 text-[#222] mt-1"
-                                        aria-hidden="true">
-                                        <path d="M12 3v18"></path>
-                                        <path d="m19 8 3 8a5 5 0 0 1-6 0zV7"></path>
-                                        <path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"></path>
-                                        <path d="m5 8 3 8a5 5 0 0 1-6 0zV7"></path>
-                                        <path d="M7 21h10"></path>
-                                    </svg>
-                                </div>
-                                <div class="text-[13px] font-bold tracking-wider text-[var(--brand-red)]">DOM PARTEROWY
-                                </div>
-                                <div class="flex items-center gap-4 py-2 text-[13px] text-[#222]">
-                                    <div class="flex items-center gap-2"><span
-                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[10px]">◇</span><span>139,50
-                                            m2</span></div>
-                                    <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🛏</span><span>4</span>
-                                    </div>
-                                    <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🛁</span><span>2</span>
-                                    </div>
-                                    <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🚗</span><span>2</span>
-                                    </div>
-                                </div>
-                                <div class="pt-1 mt-auto">
-                                    <div class="text-[14px] text-[var(--brand-red)] line-through">3780 PLN</div>
-                                    <div class="flex items-baseline gap-2"><span
-                                            class="text-[34px] font-bold text-[var(--brand-blue-strong)] leading-none">3420</span><span
-                                            class="text-[14px] text-[var(--brand-blue-strong)] font-semibold">PLN</span><span
-                                            class="text-[13px] text-[var(--brand-blue-strong)]">netto</span></div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="swiper-slide !h-auto" data-swiper-slide-index="0"
-                        style="width: 450.667px; margin-right: 24px; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
-                        <a href="/projekt/Samba%20VI" class="bg-white overflow-hidden h-full flex flex-col group ">
-                            <div class="relative"><img
-                                    src="https://media.studioatrium.pl/project/920/realisation/budowa-65e03fcb50155.jpg"
-                                    alt="Samba VI"
-                                    class="w-full h-[280px] object-cover transition-transform duration-500 group-hover:scale-105"
-                                    loading="lazy">
-                                <div class="absolute top-3 right-3 flex items-center gap-2"><svg
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="lucide lucide-scale w-5 h-5 text-[#222]"
-                                        aria-hidden="true">
-                                        <path d="M12 3v18"></path>
-                                        <path d="m19 8 3 8a5 5 0 0 1-6 0zV7"></path>
-                                        <path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"></path>
-                                        <path d="m5 8 3 8a5 5 0 0 1-6 0zV7"></path>
-                                        <path d="M7 21h10"></path>
-                                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round"
-                                        class="lucide lucide-heart w-5 h-5 text-[var(--brand-red)]" aria-hidden="true">
-                                        <path
-                                            d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5">
-                                        </path>
-                                    </svg></div>
-                            </div>
-                            <div class="px-5 pt-4 pb-5 flex flex-col gap-3 flex-1">
-                                <div class="flex items-start justify-between">
-                                    <h3 class="text-[22px] font-bold text-[#222] leading-tight">Samba VI</h3><svg
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="lucide lucide-scale w-5 h-5 text-[#222] mt-1"
-                                        aria-hidden="true">
-                                        <path d="M12 3v18"></path>
-                                        <path d="m19 8 3 8a5 5 0 0 1-6 0zV7"></path>
-                                        <path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"></path>
-                                        <path d="m5 8 3 8a5 5 0 0 1-6 0zV7"></path>
-                                        <path d="M7 21h10"></path>
-                                    </svg>
-                                </div>
-                                <div class="text-[13px] font-bold tracking-wider text-[var(--brand-red)]">DOM PARTEROWY
-                                </div>
-                                <div class="flex items-center gap-4 py-2 text-[13px] text-[#222]">
-                                    <div class="flex items-center gap-2"><span
-                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[10px]">◇</span><span>117,30
-                                            m2</span></div>
-                                    <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🛏</span><span>4</span>
-                                    </div>
-                                    <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🛁</span><span>2</span>
-                                    </div>
-                                    <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🚗</span><span>2</span>
-                                    </div>
-                                </div>
-                                <div class="pt-1 mt-auto">
-                                    <div class="text-[14px] text-[var(--brand-red)] line-through">4300 PLN</div>
-                                    <div class="flex items-baseline gap-2"><span
-                                            class="text-[34px] font-bold text-[var(--brand-blue-strong)] leading-none">3500</span><span
-                                            class="text-[14px] text-[var(--brand-blue-strong)] font-semibold">PLN</span><span
-                                            class="text-[13px] text-[var(--brand-blue-strong)]">netto</span></div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="swiper-slide swiper-slide-prev !h-auto" data-swiper-slide-index="1"
-                        style="width: 450.667px; margin-right: 24px; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
-                        <a href="/projekt/Pelikan%20XI" class="bg-white overflow-hidden h-full flex flex-col group ">
-                            <div class="relative"><img
-                                    src="https://media.studioatrium.pl/project/948/realisation/budowa-5d69012a46fbe.jpg"
-                                    alt="Pelikan XI"
-                                    class="w-full h-[280px] object-cover transition-transform duration-500 group-hover:scale-105"
-                                    loading="lazy"><span
-                                    class="absolute top-3 left-3 text-[12px] font-bold tracking-wider text-[var(--brand-red)]">NOWOŚĆ</span>
-                                <div class="absolute top-3 right-3 flex items-center gap-2"><svg
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="lucide lucide-scale w-5 h-5 text-[#222]"
-                                        aria-hidden="true">
-                                        <path d="M12 3v18"></path>
-                                        <path d="m19 8 3 8a5 5 0 0 1-6 0zV7"></path>
-                                        <path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"></path>
-                                        <path d="m5 8 3 8a5 5 0 0 1-6 0zV7"></path>
-                                        <path d="M7 21h10"></path>
-                                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round"
-                                        class="lucide lucide-heart w-5 h-5 text-[var(--brand-red)]" aria-hidden="true">
-                                        <path
-                                            d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5">
-                                        </path>
-                                    </svg></div>
-                            </div>
-                            <div class="px-5 pt-4 pb-5 flex flex-col gap-3 flex-1">
-                                <div class="flex items-start justify-between">
-                                    <h3 class="text-[22px] font-bold text-[#222] leading-tight">Pelikan XI</h3><svg
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="lucide lucide-scale w-5 h-5 text-[#222] mt-1"
-                                        aria-hidden="true">
-                                        <path d="M12 3v18"></path>
-                                        <path d="m19 8 3 8a5 5 0 0 1-6 0zV7"></path>
-                                        <path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"></path>
-                                        <path d="m5 8 3 8a5 5 0 0 1-6 0zV7"></path>
-                                        <path d="M7 21h10"></path>
-                                    </svg>
-                                </div>
-                                <div class="text-[13px] font-bold tracking-wider text-[var(--brand-red)]">DOM Z
-                                    PODDASZEM</div>
-                                <div class="flex items-center gap-4 py-2 text-[13px] text-[#222]">
-                                    <div class="flex items-center gap-2"><span
-                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[10px]">◇</span><span>148,20
-                                            m2</span></div>
-                                    <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🛏</span><span>4</span>
-                                    </div>
-                                    <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🛁</span><span>2</span>
-                                    </div>
-                                    <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🚗</span><span>2</span>
-                                    </div>
-                                </div>
-                                <div class="pt-1 mt-auto">
-                                    <div class="flex items-baseline gap-2"><span
-                                            class="text-[34px] font-bold text-[var(--brand-blue-strong)] leading-none">3500</span><span
-                                            class="text-[14px] text-[var(--brand-blue-strong)] font-semibold">PLN</span><span
-                                            class="text-[13px] text-[var(--brand-blue-strong)]">netto</span></div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="swiper-slide swiper-slide-active !h-auto" data-swiper-slide-index="2"
-                        style="width: 450.667px; margin-right: 24px; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
-                        <a href="/projekt/Neo%20II" class="bg-white overflow-hidden h-full flex flex-col group ">
-                            <div class="relative"><img
-                                    src="https://media.studioatrium.pl/project/824/realisation/budowa-5e184f28bc334.jpg"
-                                    alt="Neo II"
-                                    class="w-full h-[280px] object-cover transition-transform duration-500 group-hover:scale-105"
-                                    loading="lazy"><span
-                                    class="absolute top-3 left-3 text-[12px] font-bold tracking-wider bg-[var(--brand-red)] text-white px-3 py-1">-30%
-                                    RABATU</span>
-                                <div class="absolute top-3 right-3 flex items-center gap-2"><svg
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="lucide lucide-scale w-5 h-5 text-[#222]"
-                                        aria-hidden="true">
-                                        <path d="M12 3v18"></path>
-                                        <path d="m19 8 3 8a5 5 0 0 1-6 0zV7"></path>
-                                        <path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"></path>
-                                        <path d="m5 8 3 8a5 5 0 0 1-6 0zV7"></path>
-                                        <path d="M7 21h10"></path>
-                                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round"
-                                        class="lucide lucide-heart w-5 h-5 text-[var(--brand-red)]" aria-hidden="true">
-                                        <path
-                                            d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5">
-                                        </path>
-                                    </svg></div>
-                            </div>
-                            <div class="px-5 pt-4 pb-5 flex flex-col gap-3 flex-1">
-                                <div class="flex items-start justify-between">
-                                    <h3 class="text-[22px] font-bold text-[#222] leading-tight">Neo II</h3><svg
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="lucide lucide-scale w-5 h-5 text-[#222] mt-1"
-                                        aria-hidden="true">
-                                        <path d="M12 3v18"></path>
-                                        <path d="m19 8 3 8a5 5 0 0 1-6 0zV7"></path>
-                                        <path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"></path>
-                                        <path d="m5 8 3 8a5 5 0 0 1-6 0zV7"></path>
-                                        <path d="M7 21h10"></path>
-                                    </svg>
-                                </div>
-                                <div class="text-[13px] font-bold tracking-wider text-[var(--brand-red)]">DOM PARTEROWY
-                                </div>
-                                <div class="flex items-center gap-4 py-2 text-[13px] text-[#222]">
-                                    <div class="flex items-center gap-2"><span
-                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[10px]">◇</span><span>131,80
-                                            m2</span></div>
-                                    <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🛏</span><span>3</span>
-                                    </div>
-                                    <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🛁</span><span>2</span>
-                                    </div>
-                                    <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🚗</span><span>2</span>
-                                    </div>
-                                </div>
-                                <div class="pt-1 mt-auto">
-                                    <div class="text-[14px] text-[var(--brand-red)] line-through">4300 PLN</div>
-                                    <div class="flex items-baseline gap-2"><span
-                                            class="text-[34px] font-bold text-[var(--brand-blue-strong)] leading-none">3500</span><span
-                                            class="text-[14px] text-[var(--brand-blue-strong)] font-semibold">PLN</span><span
-                                            class="text-[13px] text-[var(--brand-blue-strong)]">netto</span></div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="swiper-slide swiper-slide-next !h-auto" data-swiper-slide-index="3"
-                        style="width: 450.667px; margin-right: 24px; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
-                        <a href="/projekt/Pelikan%20XI" class="bg-white overflow-hidden h-full flex flex-col group ">
-                            <div class="relative"><img
-                                    src="https://media.studioatrium.pl/project/948/realisation/budowa-5d690176d4fa5.jpg"
-                                    alt="Pelikan XI"
-                                    class="w-full h-[280px] object-cover transition-transform duration-500 group-hover:scale-105"
-                                    loading="lazy">
-                                <div class="absolute top-3 right-3 flex items-center gap-2"><svg
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="lucide lucide-scale w-5 h-5 text-[#222]"
-                                        aria-hidden="true">
-                                        <path d="M12 3v18"></path>
-                                        <path d="m19 8 3 8a5 5 0 0 1-6 0zV7"></path>
-                                        <path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"></path>
-                                        <path d="m5 8 3 8a5 5 0 0 1-6 0zV7"></path>
-                                        <path d="M7 21h10"></path>
-                                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round"
-                                        class="lucide lucide-heart w-5 h-5 text-[var(--brand-red)]" aria-hidden="true">
-                                        <path
-                                            d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5">
-                                        </path>
-                                    </svg></div>
-                            </div>
-                            <div class="px-5 pt-4 pb-5 flex flex-col gap-3 flex-1">
-                                <div class="flex items-start justify-between">
-                                    <h3 class="text-[22px] font-bold text-[#222] leading-tight">Pelikan XI</h3><svg
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="lucide lucide-scale w-5 h-5 text-[#222] mt-1"
-                                        aria-hidden="true">
-                                        <path d="M12 3v18"></path>
-                                        <path d="m19 8 3 8a5 5 0 0 1-6 0zV7"></path>
-                                        <path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"></path>
-                                        <path d="m5 8 3 8a5 5 0 0 1-6 0zV7"></path>
-                                        <path d="M7 21h10"></path>
-                                    </svg>
-                                </div>
-                                <div class="text-[13px] font-bold tracking-wider text-[var(--brand-red)]">DOM Z
-                                    PODDASZEM</div>
-                                <div class="flex items-center gap-4 py-2 text-[13px] text-[#222]">
-                                    <div class="flex items-center gap-2"><span
-                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[10px]">◇</span><span>148,20
-                                            m2</span></div>
-                                    <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🛏</span><span>4</span>
-                                    </div>
-                                    <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🛁</span><span>2</span>
-                                    </div>
-                                    <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🚗</span><span>2</span>
-                                    </div>
-                                </div>
-                                <div class="pt-1 mt-auto">
-                                    <div class="text-[14px] text-[var(--brand-red)] line-through">3640 PLN</div>
-                                    <div class="flex items-baseline gap-2"><span
-                                            class="text-[34px] font-bold text-[var(--brand-blue-strong)] leading-none">3285</span><span
-                                            class="text-[14px] text-[var(--brand-blue-strong)] font-semibold">PLN</span><span
-                                            class="text-[13px] text-[var(--brand-blue-strong)]">netto</span></div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="swiper-slide !h-auto" data-swiper-slide-index="4"
-                        style="width: 450.667px; margin-right: 24px; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
-                        <a href="/projekt/Lopez" class="bg-white overflow-hidden h-full flex flex-col group ">
-                            <div class="relative"><img
-                                    src="https://media.studioatrium.pl/project/1477/realisation/budowa-62bbfd6d2e4bc.jpg"
-                                    alt="Lopez"
-                                    class="w-full h-[280px] object-cover transition-transform duration-500 group-hover:scale-105"
-                                    loading="lazy"><span
-                                    class="absolute top-3 left-3 text-[12px] font-bold tracking-wider text-[var(--brand-red)]">NOWOŚĆ</span>
-                                <div class="absolute top-3 right-3 flex items-center gap-2"><svg
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="lucide lucide-scale w-5 h-5 text-[#222]"
-                                        aria-hidden="true">
-                                        <path d="M12 3v18"></path>
-                                        <path d="m19 8 3 8a5 5 0 0 1-6 0zV7"></path>
-                                        <path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"></path>
-                                        <path d="m5 8 3 8a5 5 0 0 1-6 0zV7"></path>
-                                        <path d="M7 21h10"></path>
-                                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round"
-                                        class="lucide lucide-heart w-5 h-5 text-[var(--brand-red)]" aria-hidden="true">
-                                        <path
-                                            d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5">
-                                        </path>
-                                    </svg></div>
-                            </div>
-                            <div class="px-5 pt-4 pb-5 flex flex-col gap-3 flex-1">
-                                <div class="flex items-start justify-between">
-                                    <h3 class="text-[22px] font-bold text-[#222] leading-tight">Lopez</h3><svg
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="lucide lucide-scale w-5 h-5 text-[#222] mt-1"
-                                        aria-hidden="true">
-                                        <path d="M12 3v18"></path>
-                                        <path d="m19 8 3 8a5 5 0 0 1-6 0zV7"></path>
-                                        <path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"></path>
-                                        <path d="m5 8 3 8a5 5 0 0 1-6 0zV7"></path>
-                                        <path d="M7 21h10"></path>
-                                    </svg>
-                                </div>
-                                <div class="text-[13px] font-bold tracking-wider text-[var(--brand-red)]">DOM Z
-                                    PODDASZEM</div>
-                                <div class="flex items-center gap-4 py-2 text-[13px] text-[#222]">
-                                    <div class="flex items-center gap-2"><span
-                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[10px]">◇</span><span>101,90
-                                            m2</span></div>
-                                    <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🛏</span><span>4</span>
-                                    </div>
-                                    <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🛁</span><span>2</span>
-                                    </div>
-                                    <div class="flex items-center gap-1"><span
-                                            class="w-7 h-7 border border-black/20 inline-flex items-center justify-center text-[12px]">🚗</span><span>2</span>
-                                    </div>
-                                </div>
-                                <div class="pt-1 mt-auto">
-                                    <div class="text-[14px] text-[var(--brand-red)] line-through">3895 PLN</div>
-                                    <div class="flex items-baseline gap-2"><span
-                                            class="text-[34px] font-bold text-[var(--brand-blue-strong)] leading-none">3540</span><span
-                                            class="text-[14px] text-[var(--brand-blue-strong)] font-semibold">PLN</span><span
-                                            class="text-[13px] text-[var(--brand-blue-strong)]">netto</span></div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                    {/foreach}
                 </div>
             </div>
         </div>
     </div>
 </section>
+<script>
+(function () {
+    function initIpSwiper() {
+        if (typeof Swiper === 'undefined') {
+            setTimeout(initIpSwiper, 50);
+            return;
+        }
+        var el = document.getElementById('hp-ip-swiper');
+        if (!el || el.swiper) return;
+        new Swiper(el, {
+            loop: true,
+            slidesPerView: 1.15,
+            spaceBetween: 16,
+            navigation: {
+                prevEl: '#hp-ip-prev',
+                nextEl: '#hp-ip-next'
+            },
+            breakpoints: {
+                640: { slidesPerView: 2, spaceBetween: 16 },
+                1024: { slidesPerView: 3, spaceBetween: 20 },
+                1280: { slidesPerView: 4, spaceBetween: 24 }
+            }
+        });
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initIpSwiper);
+    } else {
+        initIpSwiper();
+    }
+})();
+</script>

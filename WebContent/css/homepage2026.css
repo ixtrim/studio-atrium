@@ -66,3 +66,13 @@
   outline: none !important;
   padding: 0 !important;
 }
+
+#hp-2026 .hp-newsletter-email {
+  border: 1px solid #fff !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+#hp-2026 .hp-newsletter-email:focus {
+  border-color: var(--brand-blue) !important;
+}

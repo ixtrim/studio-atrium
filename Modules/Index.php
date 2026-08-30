@@ -152,9 +152,17 @@ class Index extends WWW\AbstractModule
 		$category = $this->_daoRepository->getProjectCategoryFinder()->getByLink(Helper\ProjectCategory::getDefaultHouseCategory());
 		$responseContext->set('description', $category->getDescription());
 		
-		//partners
-		$partners = $this->_daoRepository->getDocumentFinder()->getList(\StudioAtrium\Entity\Document::DOCTYPE_PARTNER, null, \StudioAtrium\Entity\Document::STATUS_PUBLISHED);
-		$responseContext->set('partners', $partners);
+		// Legacy document partners (project pages use this under a different key on homepage)
+		$documentPartners = $this->_daoRepository->getDocumentFinder()->getList(\StudioAtrium\Entity\Document::DOCTYPE_PARTNER, null, \StudioAtrium\Entity\Document::STATUS_PUBLISHED);
+		$responseContext->set('document_partners', $documentPartners);
+
+		try {
+			$hpCms = new \StudioAtrium\Application\WWW\SmartyFunctionsRegistry();
+			$popularCategories = $hpCms->getPopularCategoriesHomepage();
+			$responseContext->set('popular_categories_meta', $popularCategories['meta']);
+			$responseContext->set('popular_categories', $popularCategories['items']);
+		} catch (\Exception $e) {
+		}
 		
 		$params = new \Point7_AbstractDAO_FinderParams();
 		$params->addFilter('char_id', 'carousel_main_slide');

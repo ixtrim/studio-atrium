@@ -766,18 +766,32 @@ class SmartyFunctionsRegistry
             $pdo = \Point7_WebApp::getPDO();
             $this->ensureOfferTable($pdo);
             $stmt = $pdo->query(
-                'SELECT title, lead_text, button_label, button_url, quote_text, quote_badge, quote_author,
-                        logo1_url, logo1_alt, logo2_url, logo2_alt, logo3_url, logo3_alt,
-                        image_url, image_alt, image_caption
-                 FROM homepage_oferta
-                 ORDER BY id ASC
-                 LIMIT 1'
+                'SELECT * FROM homepage_oferta ORDER BY id ASC LIMIT 1'
             );
             if (!$stmt) {
                 return $defaults;
             }
             $row = $stmt->fetch(\PDO::FETCH_ASSOC);
-            return $row ? $row : $defaults;
+            if (!$row) {
+                return $defaults;
+            }
+            $row['logo1_url'] = $this->resolveHomepageImageUrl(
+                isset($row['logo1_url']) ? $row['logo1_url'] : '',
+                isset($row['logo1_path']) ? $row['logo1_path'] : ''
+            );
+            $row['logo2_url'] = $this->resolveHomepageImageUrl(
+                isset($row['logo2_url']) ? $row['logo2_url'] : '',
+                isset($row['logo2_path']) ? $row['logo2_path'] : ''
+            );
+            $row['logo3_url'] = $this->resolveHomepageImageUrl(
+                isset($row['logo3_url']) ? $row['logo3_url'] : '',
+                isset($row['logo3_path']) ? $row['logo3_path'] : ''
+            );
+            $row['image_url'] = $this->resolveHomepageImageUrl(
+                isset($row['image_url']) ? $row['image_url'] : '',
+                isset($row['image_path']) ? $row['image_path'] : ''
+            );
+            return $row;
         } catch (\Throwable $e) {
             return $defaults;
         }
@@ -787,6 +801,7 @@ class SmartyFunctionsRegistry
     {
         $exists = $pdo->query("SHOW TABLES LIKE 'homepage_oferta'");
         if ($exists && $exists->fetchColumn()) {
+            $this->ensureOfferImageColumns($pdo);
             return;
         }
 
@@ -801,12 +816,24 @@ class SmartyFunctionsRegistry
                 quote_badge VARCHAR(64) NOT NULL DEFAULT \'\',
                 quote_author VARCHAR(255) NOT NULL DEFAULT \'\',
                 logo1_url VARCHAR(512) NOT NULL DEFAULT \'\',
+                logo1_path VARCHAR(512) NOT NULL DEFAULT \'\',
+                logo1_filename VARCHAR(255) NOT NULL DEFAULT \'\',
+                logo1_original_name VARCHAR(255) NOT NULL DEFAULT \'\',
                 logo1_alt VARCHAR(255) NOT NULL DEFAULT \'\',
                 logo2_url VARCHAR(512) NOT NULL DEFAULT \'\',
+                logo2_path VARCHAR(512) NOT NULL DEFAULT \'\',
+                logo2_filename VARCHAR(255) NOT NULL DEFAULT \'\',
+                logo2_original_name VARCHAR(255) NOT NULL DEFAULT \'\',
                 logo2_alt VARCHAR(255) NOT NULL DEFAULT \'\',
                 logo3_url VARCHAR(512) NOT NULL DEFAULT \'\',
+                logo3_path VARCHAR(512) NOT NULL DEFAULT \'\',
+                logo3_filename VARCHAR(255) NOT NULL DEFAULT \'\',
+                logo3_original_name VARCHAR(255) NOT NULL DEFAULT \'\',
                 logo3_alt VARCHAR(255) NOT NULL DEFAULT \'\',
                 image_url VARCHAR(512) NOT NULL DEFAULT \'\',
+                image_path VARCHAR(512) NOT NULL DEFAULT \'\',
+                image_filename VARCHAR(255) NOT NULL DEFAULT \'\',
+                image_original_name VARCHAR(255) NOT NULL DEFAULT \'\',
                 image_alt VARCHAR(255) NOT NULL DEFAULT \'\',
                 image_caption VARCHAR(255) NOT NULL DEFAULT \'\',
                 PRIMARY KEY (id)
@@ -820,31 +847,72 @@ class SmartyFunctionsRegistry
         $stmt = $pdo->prepare(
             'INSERT INTO homepage_oferta
              (title, lead_text, button_label, button_url, quote_text, quote_badge, quote_author,
-              logo1_url, logo1_alt, logo2_url, logo2_alt, logo3_url, logo3_alt,
-              image_url, image_alt, image_caption)
+              logo1_url, logo1_path, logo1_filename, logo1_original_name, logo1_alt,
+              logo2_url, logo2_path, logo2_filename, logo2_original_name, logo2_alt,
+              logo3_url, logo3_path, logo3_filename, logo3_original_name, logo3_alt,
+              image_url, image_path, image_filename, image_original_name, image_alt, image_caption)
              VALUES
              (:title, :lead_text, :button_label, :button_url, :quote_text, :quote_badge, :quote_author,
-              :logo1_url, :logo1_alt, :logo2_url, :logo2_alt, :logo3_url, :logo3_alt,
-              :image_url, :image_alt, :image_caption)'
+              :logo1_url, :logo1_path, :logo1_filename, :logo1_original_name, :logo1_alt,
+              :logo2_url, :logo2_path, :logo2_filename, :logo2_original_name, :logo2_alt,
+              :logo3_url, :logo3_path, :logo3_filename, :logo3_original_name, :logo3_alt,
+              :image_url, :image_path, :image_filename, :image_original_name, :image_alt, :image_caption)'
         );
         $stmt->execute(array(
-            ':title'         => $defaults['title'],
-            ':lead_text'     => $defaults['lead_text'],
-            ':button_label'  => $defaults['button_label'],
-            ':button_url'    => $defaults['button_url'],
-            ':quote_text'    => $defaults['quote_text'],
-            ':quote_badge'   => $defaults['quote_badge'],
-            ':quote_author'  => $defaults['quote_author'],
-            ':logo1_url'     => $defaults['logo1_url'],
-            ':logo1_alt'     => $defaults['logo1_alt'],
-            ':logo2_url'     => $defaults['logo2_url'],
-            ':logo2_alt'     => $defaults['logo2_alt'],
-            ':logo3_url'     => $defaults['logo3_url'],
-            ':logo3_alt'     => $defaults['logo3_alt'],
-            ':image_url'     => $defaults['image_url'],
-            ':image_alt'     => $defaults['image_alt'],
-            ':image_caption' => $defaults['image_caption'],
+            ':title'                => $defaults['title'],
+            ':lead_text'            => $defaults['lead_text'],
+            ':button_label'         => $defaults['button_label'],
+            ':button_url'           => $defaults['button_url'],
+            ':quote_text'           => $defaults['quote_text'],
+            ':quote_badge'          => $defaults['quote_badge'],
+            ':quote_author'         => $defaults['quote_author'],
+            ':logo1_url'            => $defaults['logo1_url'],
+            ':logo1_path'           => '',
+            ':logo1_filename'       => '',
+            ':logo1_original_name'  => '',
+            ':logo1_alt'            => $defaults['logo1_alt'],
+            ':logo2_url'            => $defaults['logo2_url'],
+            ':logo2_path'           => '',
+            ':logo2_filename'       => '',
+            ':logo2_original_name'  => '',
+            ':logo2_alt'            => $defaults['logo2_alt'],
+            ':logo3_url'            => $defaults['logo3_url'],
+            ':logo3_path'           => '',
+            ':logo3_filename'       => '',
+            ':logo3_original_name'  => '',
+            ':logo3_alt'            => $defaults['logo3_alt'],
+            ':image_url'            => $defaults['image_url'],
+            ':image_path'           => '',
+            ':image_filename'       => '',
+            ':image_original_name'  => '',
+            ':image_alt'            => $defaults['image_alt'],
+            ':image_caption'        => $defaults['image_caption'],
         ));
+    }
+
+    private function ensureOfferImageColumns(\PDO $pdo)
+    {
+        $cols = array(
+            'logo1_path'           => "ALTER TABLE homepage_oferta ADD logo1_path VARCHAR(512) NOT NULL DEFAULT '' AFTER logo1_url",
+            'logo1_filename'       => "ALTER TABLE homepage_oferta ADD logo1_filename VARCHAR(255) NOT NULL DEFAULT '' AFTER logo1_path",
+            'logo1_original_name'  => "ALTER TABLE homepage_oferta ADD logo1_original_name VARCHAR(255) NOT NULL DEFAULT '' AFTER logo1_filename",
+            'logo2_path'           => "ALTER TABLE homepage_oferta ADD logo2_path VARCHAR(512) NOT NULL DEFAULT '' AFTER logo2_url",
+            'logo2_filename'       => "ALTER TABLE homepage_oferta ADD logo2_filename VARCHAR(255) NOT NULL DEFAULT '' AFTER logo2_path",
+            'logo2_original_name'  => "ALTER TABLE homepage_oferta ADD logo2_original_name VARCHAR(255) NOT NULL DEFAULT '' AFTER logo2_filename",
+            'logo3_path'           => "ALTER TABLE homepage_oferta ADD logo3_path VARCHAR(512) NOT NULL DEFAULT '' AFTER logo3_url",
+            'logo3_filename'       => "ALTER TABLE homepage_oferta ADD logo3_filename VARCHAR(255) NOT NULL DEFAULT '' AFTER logo3_path",
+            'logo3_original_name'  => "ALTER TABLE homepage_oferta ADD logo3_original_name VARCHAR(255) NOT NULL DEFAULT '' AFTER logo3_filename",
+            'image_path'           => "ALTER TABLE homepage_oferta ADD image_path VARCHAR(512) NOT NULL DEFAULT '' AFTER image_url",
+            'image_filename'       => "ALTER TABLE homepage_oferta ADD image_filename VARCHAR(255) NOT NULL DEFAULT '' AFTER image_path",
+            'image_original_name'  => "ALTER TABLE homepage_oferta ADD image_original_name VARCHAR(255) NOT NULL DEFAULT '' AFTER image_filename",
+        );
+        foreach ($cols as $name => $sql) {
+            $exists = $pdo->query("SHOW COLUMNS FROM homepage_oferta LIKE " . $pdo->quote($name));
+            if ($exists && $exists->fetchColumn()) {
+                continue;
+            }
+            $pdo->exec($sql);
+        }
     }
 
     private function getOfferDefaults()
@@ -1799,7 +1867,7 @@ class SmartyFunctionsRegistry
             $existsItems = $pdo->query("SHOW TABLES LIKE 'homepage_partners'");
             if ($existsItems && $existsItems->fetchColumn()) {
                 $stmt = $pdo->query(
-                    'SELECT name, logo_url, link_url, link_title, link_rel
+                    'SELECT name, logo_url, logo_path, link_url, link_title, link_rel
                      FROM homepage_partners
                      ORDER BY sorting ASC, id ASC'
                 );
@@ -1809,6 +1877,13 @@ class SmartyFunctionsRegistry
                         $partners = $rows;
                     }
                 }
+            }
+
+            foreach ($partners as $i => $partner) {
+                $partners[$i]['logo_url'] = $this->resolveHomepageImageUrl(
+                    isset($partner['logo_url']) ? $partner['logo_url'] : '',
+                    isset($partner['logo_path']) ? $partner['logo_path'] : ''
+                );
             }
 
             $marquee = array();
@@ -1834,6 +1909,285 @@ class SmartyFunctionsRegistry
                 'meta'    => $metaDefaults,
                 'items'   => $itemDefaults,
                 'marquee' => $marquee,
+            );
+        }
+    }
+
+    private function getPopularCategoriesMetaDefaults()
+    {
+        return array('section_title' => 'Popularne kategorie');
+    }
+
+    private function getPopularCategoriesDefaults()
+    {
+        return array(
+            array('label' => 'PROMOCJE', 'image_url' => 'https://media.studioatrium.pl/project/1477/realisation/budowa-62bbfdd0beec3.jpg', 'image_alt' => 'PROMOCJE', 'link_url' => 'https://www.studioatrium.pl/projekty-domow/promocje/', 'link_title' => 'Promocje na projekty domów', 'link_rel' => 'noopener noreferrer'),
+            array('label' => 'NOWOŚCI', 'image_url' => 'https://media.studioatrium.pl/project/1258/realisation/budowa-5bfce6a922dac.jpg', 'image_alt' => 'NOWOŚCI', 'link_url' => 'https://www.studioatrium.pl/projekty-domow/nowosc/', 'link_title' => 'Nowe projekty domów', 'link_rel' => 'noopener noreferrer'),
+            array('label' => 'NAJLEPSZE PROJEKTY', 'image_url' => 'https://media.studioatrium.pl/project/824/realisation/budowa-5e184f28bc334.jpg', 'image_alt' => 'NAJLEPSZE PROJEKTY', 'link_url' => 'https://www.studioatrium.pl/projekty-domow/najlepsze/', 'link_title' => 'Najlepsze projekty domów', 'link_rel' => 'noopener noreferrer'),
+            array('label' => 'MAŁE PARTEROWE', 'image_url' => 'https://media.studioatrium.pl/project/920/realisation/budowa-65e03fcb50155.jpg', 'image_alt' => 'MAŁE PARTEROWE', 'link_url' => 'https://www.studioatrium.pl/projekty-domow/parterowe-male/', 'link_title' => 'Małe domy parterowe', 'link_rel' => 'noopener noreferrer'),
+            array('label' => 'MAŁE', 'image_url' => 'https://media.studioatrium.pl/project/948/realisation/budowa-5d69012a46fbe.jpg', 'image_alt' => 'MAŁE', 'link_url' => 'https://www.studioatrium.pl/projekty-domow/male/', 'link_title' => 'Małe projekty domów', 'link_rel' => 'noopener noreferrer'),
+            array('label' => 'W STYLU STODOŁY', 'image_url' => 'https://media.studioatrium.pl/project/1477/realisation/budowa-62bbfdd0beec3.jpg', 'image_alt' => 'W STYLU STODOŁY', 'link_url' => 'https://www.studioatrium.pl/projekty-domow/stodola/', 'link_title' => 'Projekty domów w stylu stodoły', 'link_rel' => 'noopener noreferrer'),
+            array('label' => 'REGIONALNE', 'image_url' => 'https://media.studioatrium.pl/project/824/realisation/budowa-5e184f28bc334.jpg', 'image_alt' => 'REGIONALNE', 'link_url' => 'https://www.studioatrium.pl/projekty-domow/regionalne/', 'link_title' => 'Regionalne projekty domów', 'link_rel' => 'noopener noreferrer'),
+            array('label' => 'Z WJAZDEM OD POŁUDNIA', 'image_url' => 'https://media.studioatrium.pl/project/920/realisation/budowa-65e03fd2c3740.jpg', 'image_alt' => 'Z WJAZDEM OD POŁUDNIA', 'link_url' => 'https://www.studioatrium.pl/projekty-domow/wjazd-od-poludnia/', 'link_title' => 'Projekty domów z wjazdem od południa', 'link_rel' => 'noopener noreferrer'),
+            array('label' => 'BLIŹNIACZE', 'image_url' => 'https://media.studioatrium.pl/project/1258/realisation/budowa-5bfce6a922dac.jpg', 'image_alt' => 'BLIŹNIACZE', 'link_url' => 'https://www.studioatrium.pl/projekty-domow/blizniacze/', 'link_title' => 'Projekty domów bliźniaczych', 'link_rel' => 'noopener noreferrer'),
+            array('label' => 'Z PŁASKIM DACHEM', 'image_url' => 'https://media.studioatrium.pl/project/1477/realisation/budowa-62bbfdd0beec3.jpg', 'image_alt' => 'Z PŁASKIM DACHEM', 'link_url' => 'https://www.studioatrium.pl/projekty-domow/plaski-dach/', 'link_title' => 'Projekty domów z płaskim dachem', 'link_rel' => 'noopener noreferrer'),
+            array('label' => 'Z ANTRESOLĄ', 'image_url' => 'https://media.studioatrium.pl/project/948/realisation/budowa-5d69012a46fbe.jpg', 'image_alt' => 'Z ANTRESOLĄ', 'link_url' => 'https://www.studioatrium.pl/projekty-domow/z-antresola/', 'link_title' => 'Projekty domów z antresolą', 'link_rel' => 'noopener noreferrer'),
+            array('label' => 'REZYDENCJE', 'image_url' => 'https://media.studioatrium.pl/project/824/realisation/budowa-5e184f28bc334.jpg', 'image_alt' => 'REZYDENCJE', 'link_url' => 'https://www.studioatrium.pl/projekty-domow/rezydencje/', 'link_title' => 'Projekty rezydencji', 'link_rel' => 'noopener noreferrer'),
+        );
+    }
+
+    private function getPopularFamilyHomesMetaDefaults()
+    {
+        return array('section_title' => 'Popularne domy rodzinne');
+    }
+
+    private function getPopularFamilyHomesDefaults()
+    {
+        return array(
+            array('project_id' => 920, 'label' => 'DLA RODZINY 2 + 1', 'image_url' => 'https://media.studioatrium.pl/project/920/realisation/budowa-65e03fcb50155.jpg', 'image_alt' => 'DLA RODZINY 2 + 1', 'link_url' => 'https://www.studioatrium.pl/wynik-wyszukiwania/?pok_par=2', 'link_title' => 'Projekty domów dla rodziny 2+1', 'link_rel' => 'noopener noreferrer'),
+            array('project_id' => 948, 'label' => 'DLA RODZINY 2 + 2', 'image_url' => 'https://media.studioatrium.pl/project/948/realisation/budowa-5d69012a46fbe.jpg', 'image_alt' => 'DLA RODZINY 2 + 2', 'link_url' => 'https://www.studioatrium.pl/wynik-wyszukiwania/?pok_par=3', 'link_title' => 'Projekty domów dla rodziny 2+2', 'link_rel' => 'noopener noreferrer'),
+            array('project_id' => 824, 'label' => 'DLA RODZINY 2 + 3', 'image_url' => 'https://media.studioatrium.pl/project/824/realisation/budowa-5e184f28bc334.jpg', 'image_alt' => 'DLA RODZINY 2 + 3', 'link_url' => 'https://www.studioatrium.pl/wynik-wyszukiwania/?pok_par=4', 'link_title' => 'Projekty domów dla rodziny 2+3', 'link_rel' => 'noopener noreferrer'),
+            array('project_id' => 1258, 'label' => 'DWULOKALOWE', 'image_url' => 'https://media.studioatrium.pl/project/1258/realisation/budowa-5bfce6a922dac.jpg', 'image_alt' => 'DWULOKALOWE', 'link_url' => 'https://www.studioatrium.pl/projekty-domow/dwulokalowe/', 'link_title' => 'Projekty domów dwulokalowych', 'link_rel' => 'noopener noreferrer'),
+        );
+    }
+
+    private function getInteriorPlansMetaDefaults()
+    {
+        return array('section_title' => 'Projekty domów z aranżacją wnętrz');
+    }
+
+    private function getInteriorPlansDefaults()
+    {
+        return array(
+            array('project_id' => 1759, 'tag' => ''),
+            array('project_id' => 1766, 'tag' => ''),
+            array('project_id' => 1799, 'tag' => ''),
+            array('project_id' => 1776, 'tag' => ''),
+            array('project_id' => 1789, 'tag' => ''),
+            array('project_id' => 1796, 'tag' => ''),
+            array('project_id' => 1793, 'tag' => ''),
+            array('project_id' => 1794, 'tag' => ''),
+        );
+    }
+
+    private function fetchPopularCategories()
+    {
+        $metaDefaults = $this->getPopularCategoriesMetaDefaults();
+        $itemDefaults = $this->getPopularCategoriesDefaults();
+        try {
+            $pdo = \Point7_WebApp::getRegistryObject('dbconnection::pdo1');
+            if (!$pdo && method_exists('\Point7_WebApp', 'getPDO')) {
+                $pdo = \Point7_WebApp::getPDO();
+            }
+            if (!$pdo) {
+                return array('meta' => $metaDefaults, 'items' => $itemDefaults);
+            }
+            $meta = $metaDefaults;
+            $existsMeta = $pdo->query("SHOW TABLES LIKE 'homepage_popular_categories_meta'");
+            if ($existsMeta && $existsMeta->fetchColumn()) {
+                $stmt = $pdo->query('SELECT section_title FROM homepage_popular_categories_meta ORDER BY id ASC LIMIT 1');
+                if ($stmt) {
+                    $row = $stmt->fetch(\PDO::FETCH_ASSOC);
+                    if ($row) {
+                        $meta = $row;
+                    }
+                }
+            }
+
+            $items = $itemDefaults;
+            $existsItems = $pdo->query("SHOW TABLES LIKE 'homepage_popular_categories'");
+            if ($existsItems && $existsItems->fetchColumn()) {
+                $stmt = $pdo->query(
+                    'SELECT * FROM homepage_popular_categories ORDER BY sorting ASC, id ASC'
+                );
+                if ($stmt) {
+                    $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+                    $filtered = array();
+                    if (is_array($rows)) {
+                        foreach ($rows as $row) {
+                            $label = isset($row['label']) ? trim($row['label']) : '';
+                            $imageUrl = isset($row['image_url']) ? trim($row['image_url']) : '';
+                            $imagePath = isset($row['image_path']) ? trim($row['image_path']) : '';
+                            $linkUrl = isset($row['link_url']) ? trim($row['link_url']) : '';
+                            if ($label === '' && $imageUrl === '' && $imagePath === '' && $linkUrl === '') {
+                                continue;
+                            }
+                            $filtered[] = $row;
+                        }
+                    }
+                    if (!empty($filtered)) {
+                        $items = $filtered;
+                    }
+                }
+            }
+
+            foreach ($items as $i => $item) {
+                $items[$i]['image_url'] = $this->resolveHomepageImageUrl(
+                    isset($item['image_url']) ? $item['image_url'] : '',
+                    isset($item['image_path']) ? $item['image_path'] : ''
+                );
+                if (!isset($items[$i]['link_title']) || $items[$i]['link_title'] === '') {
+                    $items[$i]['link_title'] = isset($item['label']) ? $item['label'] : '';
+                }
+                if (!isset($items[$i]['image_alt']) || $items[$i]['image_alt'] === '') {
+                    $items[$i]['image_alt'] = isset($item['label']) ? $item['label'] : '';
+                }
+                if (!isset($items[$i]['link_rel']) || $items[$i]['link_rel'] === '') {
+                    $items[$i]['link_rel'] = 'noopener noreferrer';
+                }
+            }
+
+            return array(
+                'meta'  => $meta,
+                'items' => $items,
+            );
+        } catch (\Exception $e) {
+            return array(
+                'meta'  => $metaDefaults,
+                'items' => $itemDefaults,
+            );
+        }
+    }
+
+    public function getPopularCategoriesHomepage()
+    {
+        return $this->fetchPopularCategories();
+    }
+
+    private function fetchProjectThumbnailUrl(\PDO $pdo, $projectId)
+    {
+        $projectId = (int) $projectId;
+        if ($projectId <= 0) {
+            return '';
+        }
+        $stmt = $pdo->prepare(
+            "SELECT extra_data FROM project WHERE id = ? AND status = 'published' LIMIT 1"
+        );
+        $stmt->execute(array($projectId));
+        $row = $stmt->fetch(\PDO::FETCH_ASSOC);
+        if (!$row) {
+            return '';
+        }
+        $extraData = array();
+        if (!empty($row['extra_data'])) {
+            $decoded = json_decode($row['extra_data'], true);
+            if (is_array($decoded)) {
+                $extraData = $decoded;
+            }
+        }
+        if (!empty($extraData['thumbnail'])) {
+            return 'https://media.studioatrium.pl/project/' . str_replace('-200-', '-640-', $extraData['thumbnail']);
+        }
+        return 'https://media.studioatrium.pl/project/' . $projectId . '/render-box.jpg';
+    }
+
+    private function fetchPopularFamilyHomes()
+    {
+        $metaDefaults = $this->getPopularFamilyHomesMetaDefaults();
+        $itemDefaults = $this->getPopularFamilyHomesDefaults();
+        try {
+            $pdo = \Point7_WebApp::getPDO();
+            $meta = $metaDefaults;
+            $existsMeta = $pdo->query("SHOW TABLES LIKE 'homepage_popular_family_homes_meta'");
+            if ($existsMeta && $existsMeta->fetchColumn()) {
+                $stmt = $pdo->query('SELECT section_title FROM homepage_popular_family_homes_meta ORDER BY id ASC LIMIT 1');
+                if ($stmt) {
+                    $row = $stmt->fetch(\PDO::FETCH_ASSOC);
+                    if ($row) {
+                        $meta = $row;
+                    }
+                }
+            }
+
+            $items = $itemDefaults;
+            $existsItems = $pdo->query("SHOW TABLES LIKE 'homepage_popular_family_homes'");
+            if ($existsItems && $existsItems->fetchColumn()) {
+                $stmt = $pdo->query(
+                    'SELECT project_id, label, image_url, image_path, image_alt, link_url, link_title, link_rel
+                     FROM homepage_popular_family_homes
+                     ORDER BY sorting ASC, id ASC'
+                );
+                if ($stmt) {
+                    $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+                    if (!empty($rows)) {
+                        $items = $rows;
+                    }
+                }
+            }
+
+            foreach ($items as $i => $item) {
+                $items[$i]['image_url'] = $this->resolveHomepageImageUrl(
+                    isset($item['image_url']) ? $item['image_url'] : '',
+                    isset($item['image_path']) ? $item['image_path'] : ''
+                );
+                if ($items[$i]['image_url'] === '' && (int) $item['project_id'] > 0) {
+                    $items[$i]['image_url'] = $this->fetchProjectThumbnailUrl($pdo, $item['project_id']);
+                }
+                if (!isset($items[$i]['link_title']) || $items[$i]['link_title'] === '') {
+                    $items[$i]['link_title'] = $item['label'];
+                }
+                if (!isset($items[$i]['image_alt']) || $items[$i]['image_alt'] === '') {
+                    $items[$i]['image_alt'] = $item['label'];
+                }
+            }
+
+            return array(
+                'meta'  => $meta,
+                'items' => $items,
+            );
+        } catch (\Throwable $e) {
+            return array(
+                'meta'  => $metaDefaults,
+                'items' => $itemDefaults,
+            );
+        }
+    }
+
+    private function fetchInteriorPlans()
+    {
+        $metaDefaults = $this->getInteriorPlansMetaDefaults();
+        $itemDefaults = $this->getInteriorPlansDefaults();
+        try {
+            $pdo = \Point7_WebApp::getPDO();
+            $meta = $metaDefaults;
+            $existsMeta = $pdo->query("SHOW TABLES LIKE 'homepage_interior_plans_meta'");
+            if ($existsMeta && $existsMeta->fetchColumn()) {
+                $stmt = $pdo->query('SELECT section_title FROM homepage_interior_plans_meta ORDER BY id ASC LIMIT 1');
+                if ($stmt) {
+                    $row = $stmt->fetch(\PDO::FETCH_ASSOC);
+                    if ($row) {
+                        $meta = $row;
+                    }
+                }
+            }
+
+            $rows = $itemDefaults;
+            $existsItems = $pdo->query("SHOW TABLES LIKE 'homepage_interior_plans'");
+            if ($existsItems && $existsItems->fetchColumn()) {
+                $stmt = $pdo->query(
+                    'SELECT project_id, tag
+                     FROM homepage_interior_plans
+                     ORDER BY sorting ASC, id ASC
+                     LIMIT 12'
+                );
+                if ($stmt) {
+                    $dbRows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+                    if (!empty($dbRows)) {
+                        $rows = $dbRows;
+                    }
+                }
+            }
+
+            $items = $this->buildBestsellerCards($pdo, $rows);
+
+            return array(
+                'meta'  => $meta,
+                'items' => $items,
+            );
+        } catch (\Throwable $e) {
+            return array(
+                'meta'  => $metaDefaults,
+                'items' => array(),
             );
         }
     }
@@ -2217,6 +2571,11 @@ class SmartyFunctionsRegistry
         $smarty->assign('categories', $this->fetchCategories());
         $smarty->assign('bestsellers_meta', $this->fetchBestsellersMeta());
         $smarty->assign('bestsellers', $this->fetchBestsellers());
+        $popularCategories = $this->fetchPopularCategories();
+        $smarty->assign('popular_categories_meta', $popularCategories['meta']);
+        $smarty->assign('popular_categories', $popularCategories['items']);
+        $smarty->assign('popular_family_homes', $this->fetchPopularFamilyHomes());
+        $smarty->assign('interior_plans', $this->fetchInteriorPlans());
 
         // Assign products / partners / newsletter homepage sections
         $smarty->assign('products_sections', $this->fetchProductsSections());

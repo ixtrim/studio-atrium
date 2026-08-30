@@ -2,9 +2,9 @@
 {include file="Include/HeroSlider.tpl"}
 {include file="Include/Categories.tpl"}
 {include file="Include/OurBestsellers.tpl"}
-{* {include file="Include/PopularCategories.tpl"}
+{include file="Include/PopularCategories.tpl"}
 {include file="Include/PopularFamilyHomes.tpl"}
-{include file="Include/HousePlansWithInteriorDesign.tpl"} *}
+{include file="Include/HousePlansWithInteriorDesign.tpl"}
 {include file="Include/StepsToBuildingAHome.tpl"}
 {include file="Include/Testimonials.tpl"}
 {include file="Include/Contact.tpl"}
