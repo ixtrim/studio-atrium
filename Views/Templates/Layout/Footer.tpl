@@ -1009,7 +1009,11 @@
 {/if}
 
 <script>
-	lucide.createIcons();
+	if (typeof window.createLucideIcons === 'function') {
+		window.createLucideIcons();
+	} else if (typeof lucide !== 'undefined' && lucide.createIcons) {
+		lucide.createIcons();
+	}
 </script>
 
 <!-- Facebook Pixel Code -->

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-08-24 11:10:18
+/* Smarty version 3.1.48, created on 2026-09-03 14:46:14
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6a8c0a7a7606e9_89757543',
+  'unifunc' => 'content_6a996c16624766_83154517',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f68c881bff07f68173342c8f06edc155ee674935' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Footer.tpl',
-      1 => 1787562442,
+      1 => 1788437022,
       2 => 'file',
     ),
   ),
@@ -20,10 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6a8c0a7a7606e9_89757543 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/aronmaiden/studioatrium/studio-atrium/Vendors/smarty/smarty/libs/plugins/modifier.truncate.php','function'=>'smarty_modifier_truncate',),));
-?>
-<div class="blue-overlay" id="ajax-info-overlay">
+function content_6a996c16624766_83154517 (Smarty_Internal_Template $_smarty_tpl) {
+?><div class="blue-overlay" id="ajax-info-overlay">
 	<div class="over-box" id="ajax-info-over-box"></div>
 	<button type="button" id="ajax-info-overlay-close" class="blue-overlay-close">Zamknij</button>
 </div>
@@ -373,7 +371,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 								value="<?php echo $_smarty_tpl->tpl_vars['csCustomCategory']->value;?>
 "
 								<?php if ($_smarty_tpl->tpl_vars['request']->value['typ_projektu'] == $_smarty_tpl->tpl_vars['csCustomCategory']->value || $_smarty_tpl->tpl_vars['csType']->value == $_smarty_tpl->tpl_vars['csCustomCategory']->value) {?> checked<?php }?>>
-								<span><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['category']->value['name'],16,"...",true);?>
+								<span><?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'truncate' ][ 0 ], array( $_smarty_tpl->tpl_vars['category']->value['name'],16,"...",true ));?>
  <span class="count" id="typ_projektu-<?php echo $_smarty_tpl->tpl_vars['csCustomCategory']->value;?>
 -count">(0)</span></span>
 							</label>
@@ -1055,7 +1053,11 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
 
 <?php echo '<script'; ?>
 >
-	lucide.createIcons();
+	if (typeof window.createLucideIcons === 'function') {
+		window.createLucideIcons();
+	} else if (typeof lucide !== 'undefined' && lucide.createIcons) {
+		lucide.createIcons();
+	}
 <?php echo '</script'; ?>
 >
 

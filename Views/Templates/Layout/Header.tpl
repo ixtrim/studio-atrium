@@ -385,7 +385,9 @@
 				chevron.classList.toggle('text-[var(--brand-red)]', active);
 			}
 		});
-		if (typeof lucide !== 'undefined') {
+		if (typeof window.createLucideIcons === 'function') {
+			window.createLucideIcons();
+		} else if (typeof lucide !== 'undefined' && lucide.createIcons) {
 			lucide.createIcons();
 		}
 	}

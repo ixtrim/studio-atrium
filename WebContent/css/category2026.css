@@ -1,0 +1,193 @@
+/**
+ * Category listing 2026 — neutralize legacy list/common chrome inside #cat-2026.
+ * Load AFTER Tailwind CDN.
+ */
+
+#cat-2026 {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #222;
+}
+
+#cat-2026,
+#cat-2026 *::before,
+#cat-2026 *::after {
+  box-sizing: border-box;
+}
+
+#cat-2026 a {
+  color: inherit;
+  text-decoration: none;
+  background: transparent;
+}
+
+#cat-2026 a:hover,
+#cat-2026 a:focus {
+  text-decoration: none;
+}
+
+#cat-2026 h1,
+#cat-2026 h2,
+#cat-2026 h3,
+#cat-2026 h4,
+#cat-2026 p,
+#cat-2026 ul,
+#cat-2026 ol,
+#cat-2026 li,
+#cat-2026 figure,
+#cat-2026 figcaption {
+  margin: 0;
+  padding: 0;
+  text-transform: none;
+  letter-spacing: normal;
+  background: transparent;
+}
+
+/* Intro heading — explicit fallback if a utility is delayed */
+#cat-2026 h1 {
+  font-size: 26px !important;
+  font-weight: 400 !important;
+  line-height: 1.25 !important;
+  color: #222 !important;
+}
+
+#cat-2026 h3 {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+  color: #222 !important;
+}
+
+#cat-2026 .bg-\[\#ececec\] h3,
+#cat-2026 [class*="bg-[#ececec]"] h3 {
+  font-size: 24px !important;
+}
+
+#cat-2026 ul,
+#cat-2026 ol {
+  list-style: none;
+}
+
+#cat-2026 img {
+  max-width: 100%;
+  height: auto;
+  border: 0;
+  vertical-align: middle;
+}
+
+/* Project cards — ensure border/background survive legacy resets */
+#cat-2026 #project-list > a {
+  background-color: #fff !important;
+  border: 1px solid #e5e5e5 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  overflow: hidden !important;
+  text-decoration: none !important;
+}
+
+#cat-2026 #project-list > a img {
+  width: 100% !important;
+  height: 230px !important;
+  object-fit: cover !important;
+}
+
+#cat-2026 #project-list > a h3 {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  min-height: 44px;
+}
+
+/* Advisor tile */
+#cat-2026 #project-list > div.bg-\[\#ececec\],
+#cat-2026 #project-list > .cat-advisor-tile {
+  background-color: #ececec !important;
+  border: 1px solid #e5e5e5 !important;
+  min-height: 420px;
+}
+
+#cat-2026 button,
+#cat-2026 input,
+#cat-2026 select,
+#cat-2026 textarea {
+  margin: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  line-height: inherit;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-transform: none;
+  letter-spacing: inherit;
+  overflow: visible;
+  cursor: pointer;
+  box-shadow: none;
+  background-image: none;
+  border-radius: 0;
+}
+
+#cat-2026 button:not([class*="border"]),
+#cat-2026 input:not([class*="border"]),
+#cat-2026 select:not([class*="border"]) {
+  border: none;
+}
+
+#cat-2026 button:not([class*="bg-"]),
+#cat-2026 input:not([class*="bg-"]),
+#cat-2026 select:not([class*="bg-"]) {
+  background-color: transparent;
+}
+
+#cat-2026 button.cat-icon-btn {
+  padding: 0;
+  width: 20px;
+  height: 20px;
+}
+
+#cat-2026 button.cat-icon-btn svg,
+#cat-2026 .cat-icon-btn svg {
+  width: 20px !important;
+  height: 20px !important;
+  max-width: 20px !important;
+  max-height: 20px !important;
+}
+
+#cat-2026 .fav.on svg,
+#cat-2026 .compare.on svg {
+  color: var(--brand-red);
+  fill: var(--brand-red);
+}
+
+#cat-2026 .fav.on svg {
+  fill: var(--brand-red);
+}
+
+/* Spec icons inside cards */
+#cat-2026 #project-list span.w-7,
+#cat-2026 #project-list span[class*="w-7"] {
+  width: 28px !important;
+  height: 28px !important;
+  flex-shrink: 0;
+}
+
+#cat-2026 #project-list span.w-7 svg,
+#cat-2026 #project-list span[class*="w-7"] svg {
+  width: 14px !important;
+  height: 14px !important;
+  max-width: 14px !important;
+  max-height: 14px !important;
+}
+
+#cat-2026 .list-grid,
+#cat-2026 .overlay,
+#cat-2026 .list-header,
+#cat-2026 .control-box,
+#cat-2026 ul.parted {
+  display: none !important;
+}
+
+@media (max-width: 1023px) {
+  #cat-2026 aside {
+    max-width: 100%;
+  }
+}

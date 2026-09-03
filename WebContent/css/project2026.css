@@ -1,0 +1,48 @@
+/* Project detail 2026 — isolation helpers (Tailwind utilities preferred) */
+#proj-2026 svg.lucide,
+#proj-2026 svg[data-lucide] {
+	max-width: 28px !important;
+	max-height: 28px !important;
+	flex-shrink: 0;
+}
+
+#proj-2026 .proj-hotspot:hover,
+#proj-2026 .proj-hotspot.is-on {
+	fill: rgba(27, 153, 225, 0.35) !important;
+	stroke: rgba(27, 153, 225, 0.95) !important;
+}
+
+#proj-2026 .proj-room-row.is-on {
+	background: #e8f6fc;
+}
+
+#proj-2026 .proj-cost-item.is-open {
+	border-color: var(--brand-blue, #1ea7e1) !important;
+}
+
+#proj-2026 .proj-cost-item.is-open .proj-cost-body {
+	grid-template-rows: 1fr !important;
+	opacity: 1 !important;
+}
+
+#proj-2026 .proj-cost-item.is-open .proj-cost-chevron {
+	background: var(--brand-blue, #1ea7e1);
+	border-color: var(--brand-blue, #1ea7e1);
+	color: #fff;
+	transform: rotate(180deg);
+}
+
+#proj-2026 .proj-faq-item[data-open="1"] {
+	border-color: var(--brand-red, #e63329) !important;
+	box-shadow: 0 8px 24px -16px rgba(0, 0, 0, 0.35);
+}
+
+#proj-anchor-bar .proj-anchor-link.is-active {
+	color: var(--brand-red, #e63329) !important;
+}
+
+/* Soften legacy house.min.css bleed if still loaded */
+body:has(#proj-2026) .project-box,
+body:has(#proj-2026) #render-box {
+	display: none !important;
+}

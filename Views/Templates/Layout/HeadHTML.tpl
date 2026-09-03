@@ -100,6 +100,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<link rel="preload" href="{$dynamic_css}" as="style">
 	<link rel="stylesheet" href="{$dynamic_css}">
 {/if}
+
+<!-- Isolation CSS BEFORE Tailwind (legacy neutralize); Tailwind utilities load last and win -->
+<link rel="stylesheet" href="/css/search-engine.css?v={$version}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+
 <link rel="preload"  href="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" as="script">
 <link rel="preload"  href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" as="script">
 <link rel="preload" href="/js/jquery.json-2.3.min.js" as="script">
@@ -218,8 +223,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 {/literal}
 {/if}
 
-<!-- Tailwind CSS v3.4.17 (after legacy CSS; utilities use !important to beat common.min.css) -->
-<script src="https://cdn.tailwindcss.com"></script>
+<!-- Tailwind MUST be last among stylesheets: config BEFORE CDN, important:true so utilities beat legacy CSS -->
 <script>
 tailwind.config = {
 	important: true,
@@ -232,9 +236,13 @@ tailwind.config = {
 	}
 }
 </script>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Isolation AFTER Tailwind: Lucide sizes, card borders, legacy resets (ID + !important) -->
 <link rel="stylesheet" href="/css/header2026.css?v={$version}">
 <link rel="stylesheet" href="/css/homepage2026.css?v={$version}">
-<link rel="stylesheet" href="/css/search-engine.css?v={$version}">
+<link rel="stylesheet" href="/css/category2026.css?v={$version}">
+<link rel="stylesheet" href="/css/project2026.css?v={$version}">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -245,27 +253,70 @@ html, body {
 }
 </style>
 
-<!-- Swiper CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-<!-- Lucide Icons -->
-<script src="https://unpkg.com/lucide@latest"></script>
+<!-- Lucide Icons: pinned version; avoid re-running createIcons on every DOM mutation (breaks sizes after load) -->
+<script src="https://unpkg.com/lucide@0.469.0"></script>
 <script>
-	// Initialize Lucide Icons when DOM is ready
-	if (document.readyState === 'loading') {
-		document.addEventListener('DOMContentLoaded', function() {
+(function () {
+	var creating = false;
+
+	function createLucideIcons() {
+		if (creating || typeof lucide === 'undefined' || !lucide.createIcons) return;
+		creating = true;
+		try {
 			lucide.createIcons();
-		});
-	} else {
-		lucide.createIcons();
+			document.querySelectorAll('svg[data-lucide], svg.lucide').forEach(function (svg) {
+				var cls = svg.getAttribute('class') || '';
+				var mw = cls.match(/(?:^|\s)w-\[(\d+)px\]/);
+				var mh = cls.match(/(?:^|\s)h-\[(\d+)px\]/);
+				var size = (mw && mw[1]) || (mh && mh[1]);
+				if (size) {
+					svg.setAttribute('width', size);
+					svg.setAttribute('height', size);
+					svg.style.setProperty('width', size + 'px', 'important');
+					svg.style.setProperty('height', size + 'px', 'important');
+					svg.style.setProperty('max-width', size + 'px', 'important');
+					svg.style.setProperty('max-height', size + 'px', 'important');
+				}
+				svg.style.flexShrink = '0';
+			});
+		} finally {
+			creating = false;
+		}
 	}
-	
-	// Re-create icons when content changes dynamically
-	const observer = new MutationObserver(() => {
-		lucide.createIcons();
-	});
-	observer.observe(document.body, { childList: true, subtree: true });
+
+	function hasPendingIconPlaceholders(root) {
+		if (!root || root.nodeType !== 1) return false;
+		if (root.matches && root.matches('i[data-lucide], span[data-lucide], [data-lucide]:not(svg)')) return true;
+		return !!(root.querySelector && root.querySelector('i[data-lucide], span[data-lucide], [data-lucide]:not(svg)'));
+	}
+
+	function onReady() {
+		createLucideIcons();
+		if (!document.body || typeof MutationObserver === 'undefined') return;
+		var observer = new MutationObserver(function (mutations) {
+			if (creating) return;
+			for (var i = 0; i < mutations.length; i++) {
+				var nodes = mutations[i].addedNodes;
+				for (var j = 0; j < nodes.length; j++) {
+					if (hasPendingIconPlaceholders(nodes[j])) {
+						createLucideIcons();
+						return;
+					}
+				}
+			}
+		});
+		observer.observe(document.body, { childList: true, subtree: true });
+	}
+
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', onReady);
+	} else {
+		onReady();
+	}
+	window.createLucideIcons = createLucideIcons;
+})();
 </script>
 <script>
 {literal}
@@ -295,5 +346,16 @@ html, body {
 	--brand-dark: oklch(0.30 0.012 250);
 	--brand-darker: oklch(0.24 0.012 250);
 	--brand-orange: oklch(0.78 0.13 65);
+}
+
+/* Prevent Lucide SVGs from stretching after createIcons() */
+svg[data-lucide],
+svg.lucide {
+	display: inline-block !important;
+	vertical-align: middle;
+	flex-shrink: 0 !important;
+	overflow: visible;
+	max-width: 28px;
+	max-height: 28px;
 }
 </style>

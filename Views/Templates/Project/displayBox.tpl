@@ -1,73 +1,114 @@
+{if $listCards}
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 items-stretch fav-wrapper" id="project-list">
+	{foreach $listCards as $item}
+	<a href="{$item.url|escape}" class="bg-white border border-[#e5e5e5] overflow-hidden h-full flex flex-col group">
+		<div class="relative overflow-hidden">
+			<img src="{$item.image_url|escape}" alt="Projekt domu {$item.name|escape}"
+				class="w-full h-[230px] object-cover transition-transform duration-500 group-hover:scale-105"
+				loading="{if $item@iteration < 7}eager{else}lazy{/if}"
+				width="640" height="230"
+				onerror="this.onerror=null;this.src='https://media.studioatrium.pl/project/{$item.id|escape}/render-box.jpg';">
+			{if $item.badge_label}
+			<span class="absolute top-3 left-3 text-[11px] font-bold tracking-wider {if $item.badge_variant == 'new'}bg-white/90 text-[var(--brand-red)]{else}bg-[var(--brand-red)] text-white{/if} px-2.5 py-1">{$item.badge_label|escape}</span>
+			{/if}
+		</div>
+		<div class="px-4 pt-3 pb-4 flex flex-col gap-2 flex-1">
+			<div class="flex items-start justify-between gap-3">
+				<h3 class="text-[18px] font-bold text-[#222] leading-tight min-h-[44px]">{$item.name|escape}</h3>
+				<div class="flex items-center gap-2 shrink-0 mt-0.5">
+					<button type="button" aria-label="Porównaj" id="compare-{$item.id}"
+						class="compare cat-icon-btn text-[#555] hover:text-[var(--brand-red)]{if in_array($item.id, $compareIds)} on{/if}"
+						data-id="{$item.id}" onclick="event.preventDefault();event.stopPropagation();">
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5" style="width:20px;height:20px;max-width:20px;max-height:20px" aria-hidden="true"><path d="M12 3v18"></path><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"></path><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"></path><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"></path><path d="M7 21h10"></path></svg>
+					</button>
+					<button type="button" aria-label="Ulubione" id="fav-{$item.id}"
+						class="fav cat-icon-btn text-[#555] hover:text-[var(--brand-red)]{if in_array($item.id, $favouriteIds)} on{/if}"
+						data-id="{$item.id}" onclick="event.preventDefault();event.stopPropagation();">
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5" style="width:20px;height:20px;max-width:20px;max-height:20px" aria-hidden="true"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"></path></svg>
+					</button>
+				</div>
+			</div>
+			<div class="text-[13px] text-[var(--brand-red)] font-bold tracking-wide">{$item.type_label|escape}</div>
+			<div class="flex items-center flex-wrap gap-3 py-1 text-[13px] text-[#222]">
+				{if $item.area}
+				<div class="flex items-center gap-1.5">
+					<span class="w-7 h-7 border border-black/20 inline-flex items-center justify-center shrink-0 text-[#555]">
+						<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2.7 10.3a2.41 2.41 0 0 0 0 3.41l7.59 7.59a2.41 2.41 0 0 0 3.41 0l7.59-7.59a2.41 2.41 0 0 0 0-3.41L13.7 2.71a2.41 2.41 0 0 0-3.41 0z"></path></svg>
+					</span>
+					<span>{$item.area|escape}</span>
+				</div>
+				{/if}
+				{if $item.rooms != ''}
+				<div class="flex items-center gap-1.5">
+					<span class="w-7 h-7 border border-black/20 inline-flex items-center justify-center shrink-0 text-[#555]">
+						<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4v16"></path><path d="M2 8h18a2 2 0 0 1 2 2v10"></path><path d="M2 17h20"></path><path d="M6 8v9"></path></svg>
+					</span>
+					<span>{$item.rooms|escape}</span>
+				</div>
+				{/if}
+				{if $item.baths > 0}
+				<div class="flex items-center gap-1.5">
+					<span class="w-7 h-7 border border-black/20 inline-flex items-center justify-center shrink-0 text-[#555]">
+						<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 4 8 6"></path><path d="M17 19v2"></path><path d="M2 12h20"></path><path d="M7 19v2"></path><path d="M9 5 7.621 3.621A2.121 2.121 0 0 0 4 5v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"></path></svg>
+					</span>
+					<span>{$item.baths|escape}</span>
+				</div>
+				{/if}
+				{if $item.garage > 0}
+				<div class="flex items-center gap-1.5">
+					<span class="w-7 h-7 border border-black/20 inline-flex items-center justify-center shrink-0 text-[#555]">
+						<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path><circle cx="7" cy="17" r="2"></circle><path d="M9 17h6"></path><circle cx="17" cy="17" r="2"></circle></svg>
+					</span>
+					<span>{$item.garage|escape}</span>
+				</div>
+				{/if}
+			</div>
+			<div class="pt-1 mt-auto min-h-[52px] flex flex-col justify-end">
+				<div class="text-[14px] text-[var(--brand-red)] line-through min-h-[21px]{if !$item.price_old} invisible{/if}">{if $item.price_old}{$item.price_old|escape} PLN{else}—{/if}</div>
+				<div class="text-[20px] font-bold text-[var(--brand-blue-strong)] leading-none">
+					{$item.price|escape} <span class="text-[14px] font-semibold">PLN</span>
+				</div>
+			</div>
+		</div>
+	</a>
+	{/foreach}
+
+	<div class="cat-advisor-tile bg-[#ececec] p-6 flex flex-col h-full min-h-[420px] border border-[#e5e5e5]">
+		<h3 class="text-[24px] font-bold text-[#222] leading-tight">Porozmawiaj<br>z doradcą</h3>
+		<p class="text-[13px] text-[#222] mt-3 leading-relaxed">
+			Potrzebujesz porady? Nie wiesz, jaki projekt będzie odpowiedni na swoją działkę. Zadzwoń lub napisz - pomożemy
+		</p>
+		<div class="mt-4 text-[20px] font-bold text-[#222] leading-tight">
+			{if $contact.phone1}{$contact.phone1|escape}{else}33 822 94 96{/if}<br>
+			{if $contact.phone2}{$contact.phone2|escape}{else}602 303 160{/if}
+		</div>
+		<a href="/znajdziemy-dla-ciebie-projekt.html"
+			class="mt-auto inline-flex items-center justify-center bg-[var(--brand-red)] hover:bg-[var(--brand-red-hover)] text-white text-[12px] font-bold px-4 py-3 w-full tracking-wide text-center">
+			ZNAJDŹ DOM DLA SIEBIE
+		</a>
+	</div>
+</div>
+{else}
+{* Fallback for pages without enriched cards *}
 <div class="container" id="project-list">
 	<section>
 		<div class="list-grid fav-wrapper" id="overlay-group">
 		{foreach $list as $_project}
 			<div>
 				<figure>
-					{if $_project@iteration < 7}
-						<img src="{image type=render project=$_project size=box}" alt="Projekt domu {$_project.name}" width="640" height="427">
-					{else}
-						<img class="dummy" src="/img/dummy_list.png" data-uri="{image type=render project=$_project size=box}" alt="Projekt domu {$_project.name}" width="640" height="427">
-					{/if}
+					<img src="{image type=render project=$_project size=box}" alt="Projekt domu {$_project.name}" width="640" height="427" loading="lazy">
 					<figcaption>
 						<a href="{url module=project action=item id=$_project.id link_title=$_project.name catalog='projekty-domow'}">
-							<span>projekt domu {if $_project.params_general|hasFloor:true}piętrowego{elseif $_project.params_general|hasLoft:true}z poddaszem{elseif $_project.params_general|isGroundFloor:true}parterowego{/if}{if $isLocal} {$_project.symbol_alpha} {$_project.symbol_num}{/if}</span>
+							<span>projekt domu</span>
 							<strong>{$_project.name} <span>{$_project.params_general|usableArea} m<sup>2</sup></span></strong>
 						</a>
 					</figcaption>
 				</figure>
-			
-				<span class="overview" data-id="{$_project.id}" data-idx="{$_project@index}" data-img="{image type=render project=$_project size=presentation}" data-ground="{image type=sketch project=$_project}"{if $_project.params_general|hasFloor:true} data-floor="{image type=sketch project=$_project storey=1st_floor}"{/if}{if $_project.params_general|hasLoft:true} data-loft="{image type=sketch project=$_project storey=loft}"{/if} data-link="{url module=project action=item id=$_project.id link_title=$_project.name catalog='projekty-domow'}" data-price="{if $_project.price}{if $_project.discount}<strike>{$_project.price}</strike> {$_project.price-$_project.discount}{else}{$_project.price}{/if}{else}-{/if}" data-name="{$_project.name}" data-area="{$_project.params_general|usableArea}" data-parcel="{$_project.params_general|parcelWidth} x {$_project.params_general|parcelHeight}" data-height="{$_project.params_general|houseHeight}" data-angle="{$_project.params_general|roofAngle}" data-version="{if $_project.type == 'skeleton'}wersja szkieletowa{else}wersja murowana{/if}" data-rooms="{$_project.params_general|roomCount}" data-txt="{$_project.short_description}"></span>
 				<span id="compare-{$_project.id}" class="compare{if in_array($_project.id, $compareIds)} on{/if}" data-id="{$_project.id}"></span>
 				<span id="fav-{$_project.id}" class="fav{if in_array($_project.id, $favouriteIds)} on{/if}" data-id="{$_project.id}"></span>
-
-				{if $isNarrowCategory}
-				<div class="left-label">
-					<span>działka min. {$_project.params_general|parcelWidth}</span><span> m</span>
-				</div>
-				{/if}
-
-				{if $_project|isNew || $_project.discount}
-				<div>
-					{if $_project.discount}<span class="discount">rabat {$_project.discount}</span>{/if}{if $_project|isNew}<span class="new">nowość</span>{/if}
-				</div> 
-				{/if}
 			</div>
 		{/foreach}
 		</div>
 	</section>
 </div>
-
-<div class="overlay">
-	<div class="overlay-project-box" id="over-pop">
-		<div id="over-img-box">
-			<ul id="over-pics">
-				<li><span id="over-render" class="selected">Wizualizacja</span></li>
-				<li><span id="over-ground" class="noview">Rzut parteru</span></li>
-				<li><span id="over-floor" class="noview">Rzut piętra</span></li>
-				<li><span id="over-loft" class="noview">Rzut poddasza</span></li>
-			</ul>
-			<a href="">
-				<img class="preload" id="over-img" src="/img/dummy.png" width="1350" height="900" alt="Render">
-			</a>
-		</div>
-		
-		<ul id="over-params">
-			<li><h6 id="over-name"></h6></li>
-			<li class="small"><span id="over-txt"></span></li>
-			<li><span id="over-version"></span></li>
-			<li><p>ilość pokoi: <span id="over-rooms"></span></p></li>
-			<li><p>powierzchnia użytkowa: <strong id="over-area"></strong> m<sup>2</sup></p></li>
-			<li><p>min. wymiary działki: <span id="over-parcel"></span> m</p></li>
-			<li><p>wysokość budynku: <span id="over-height"></span> m</p></li>
-			<li><p>kąt nachylenia dachu: <span id="over-angle"></span></p></li>
-			<li><p>cena projektu: <span id="over-price"></span> zł</p></li>
-			<li><a href="" class="more">Zobacz szczegóły</a></li>
-		</ul>
-		
-		<button type="button" class="overlay-change prev" id="prev-overlay">poprzedni</button>
-		<button type="button" class="overlay-change next" id="next-overlay">następny</button>
-	</div>
-	
-	<button type="button" id="overlay-close" class="overlay-close">Zamknij</button>
-</div>
+{/if}

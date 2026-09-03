@@ -24,18 +24,67 @@ class Finder
         return $row ? $this->hydrate($row) : null;
     }
 
-    public function getListById(array $ids, string $status = Project::STATUS_PUBLISHED): EntityCollection
-    {
-        if (!$ids) return new EntityCollection();
+    /**
+     * Load projects by id list, optionally paginated.
+     * Signature matches production call sites:
+     * getListById($ids, $status, $preserveOrder, $pageIndex, $limit, $sortBy, $sortOrder)
+     *
+     * @param array|int $ids
+     * @param string|false|null $status  false/null/'' = any status
+     * @param bool $preserveOrder        kept for call-site compatibility
+     * @param int|null $page             0-based page index; null = no pagination
+     * @param int|string|null $limit     page size; null/0 = return all
+     * @param string $sortBy             id|name|usable_area
+     * @param string $sortOrder          ASC|DESC
+     */
+    public function getListById(
+        $ids,
+        $status = Project::STATUS_PUBLISHED,
+        $preserveOrder = true,
+        $page = null,
+        $limit = null,
+        $sortBy = 'id',
+        $sortOrder = 'ASC'
+    ): EntityCollection {
+        if (!is_array($ids)) {
+            $ids = array($ids);
+        }
+        $ids = array_values(array_filter(array_map('intval', $ids)));
+        if (!$ids) {
+            return new EntityCollection();
+        }
 
-        $ids = array_map('intval', $ids);
         $placeholders = implode(',', array_fill(0, count($ids), '?'));
+        $params = $ids;
+        $statusSql = '';
+        if ($status !== false && $status !== null && $status !== '') {
+            $statusSql = ' AND status = ?';
+            $params[] = $status;
+        }
+
+        $sortOrderSql = (strtoupper((string) $sortOrder) === 'DESC') ? 'DESC' : 'ASC';
+        if ($sortBy === 'name') {
+            $orderSql = " ORDER BY name $sortOrderSql, id $sortOrderSql";
+        } else {
+            // Category / click-search lists arrive pre-ordered; keep that order.
+            $orderSql = " ORDER BY FIELD(id, $placeholders)";
+            $params = array_merge($params, $ids);
+        }
+
         $stmt = $this->pdo->prepare(
-            "SELECT * FROM project WHERE id IN ($placeholders) AND status = ? ORDER BY FIELD(id, $placeholders)"
+            "SELECT * FROM project WHERE id IN ($placeholders)$statusSql$orderSql"
         );
-        $stmt->execute(array_merge($ids, [$status], $ids));
+        $stmt->execute($params);
         $rows = $stmt->fetchAll();
-        return new EntityCollection(array_map([$this, 'hydrate'], $rows));
+        $total = count($rows);
+
+        $limit = ($limit === null || $limit === '') ? null : (int) $limit;
+        if ($limit !== null && $limit > 0) {
+            $page = max(0, (int) $page);
+            $rows = array_slice($rows, $page * $limit, $limit);
+        }
+
+        return new EntityCollection(array_map(array($this, 'hydrate'), $rows), $total);
     }
 
     public function getList(string $status = Project::STATUS_PUBLISHED, int $limit = 50, int $offset = 0): EntityCollection

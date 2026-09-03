@@ -441,6 +441,8 @@ class Project extends WWW\AbstractModule
 	        
 	        $responseContext->set('authorizations', $authorizations);
 		}
+
+		$this->_prepareHouseDetail2026($request, $responseContext, $project, $projectParams, $params, $sketchParams, $projectSketchParams);
 	}
 	
 	
@@ -887,20 +889,37 @@ class Project extends WWW\AbstractModule
 		    die();
 		}
 
+		$limit = (int) $request->getParam('limit');
+		if ($limit <= 0) {
+			$limit = 11;
+		}
+
 		$list = $this->_projectFinder->getListById(
 			$idList, 
 			\StudioAtrium_Entity_EntityBase_Project::STATUS_PUBLISHED, 
 			true, 
 			$request->getParam('page') - 1, 
-			$request->getParam('limit'), 
+			$limit, 
 			$displayParams['sortBy'],
 			$displayParams['sortOrder']
 		);
 
 		$responseContext->set('list', $list);
+		$listCards = $this->_buildCategoryListCards($list);
+		$responseContext->set('listCards', $listCards);
+		$promoThumbs = array();
+		foreach ($listCards as $card) {
+			if (!empty($card['image_url'])) {
+				$promoThumbs[] = $card['image_url'];
+			}
+			if (count($promoThumbs) >= 3) {
+				break;
+			}
+		}
+		$responseContext->set('categoryPromoThumbs', $promoThumbs);
 		
 		
-		$pages = ceil($list->total() / $request->getParam('limit'));
+		$pages = ceil($list->total() / $limit);
 		
 		//Meta tagi i modyfikacja treści dla kolejnych stron
 		
@@ -2938,5 +2957,704 @@ class Project extends WWW\AbstractModule
 			$extras,
 			$this->_daoRepository->getSettingsFinder()
 		);
+	}
+
+	/**
+	 * Build enriched card data for the 2026 category listing grid.
+	 *
+	 * @param \StudioAtrium\Entity\EntityCollection|null $list
+	 * @return array
+	 */
+	private function _buildCategoryListCards($list)
+	{
+		$cards = array();
+		if (!$list || !count($list)) {
+			return $cards;
+		}
+
+		$ids = array();
+		foreach ($list as $project) {
+			$ids[] = (int) $project->getId();
+		}
+		$ids = array_values(array_filter($ids));
+		if (empty($ids)) {
+			return $cards;
+		}
+
+		$extras = array();
+		try {
+			$pdo = \Point7_WebApp::getPDO();
+			$placeholders = implode(',', array_fill(0, count($ids), '?'));
+			$stmt = $pdo->prepare(
+				"SELECT project_id, project_param_id, num_value
+				 FROM project_to_param
+				 WHERE project_id IN ($placeholders) AND project_param_id IN (45, 46, 78)"
+			);
+			$stmt->execute($ids);
+			foreach ($stmt->fetchAll(\PDO::FETCH_ASSOC) as $param) {
+				$pid = (int) $param['project_id'];
+				$paramId = (int) $param['project_param_id'];
+				if (!isset($extras[$pid])) {
+					$extras[$pid] = array('baths' => 0, 'garage' => 0);
+				}
+				if ($paramId === 45 || $paramId === 46) {
+					$extras[$pid]['baths'] += (int) round((float) $param['num_value']);
+				} elseif ($paramId === 78) {
+					$extras[$pid]['garage'] = (int) round((float) $param['num_value']);
+				}
+			}
+		} catch (\Throwable $e) {
+			$extras = array();
+		}
+
+		$urlGen = new \StudioAtrium\Application\WWW\UrlGenerator();
+		$paramsHelper = new \StudioAtrium\Application\WWW\ProjectParamsHelper();
+
+		foreach ($list as $project) {
+			$pid = (int) $project->getId();
+			$params = $project->getParamsGeneral(true);
+			$extraData = $project->getExtraData(true);
+			$type = $project->getType();
+
+			$areaRaw = isset($params['1']['value']) ? $params['1']['value'] : '';
+			$rooms = isset($params['68']['value']) ? $params['68']['value'] : '';
+			$area = $areaRaw !== '' ? str_replace('.', ',', (string) $areaRaw) . ' m2' : '';
+
+			$price = (float) $project->getPrice();
+			$discount = (float) $project->getDiscount();
+			$priceCurrent = $discount > 0 ? ($price - $discount) : $price;
+			$priceOld = $discount > 0 ? $price : null;
+
+			$badgeLabel = '';
+			$badgeVariant = '';
+			if ($discount > 0) {
+				$badgeLabel = 'RABAT ' . (int) round($discount) . ' zł';
+				$badgeVariant = 'discount';
+			} elseif ($paramsHelper->mIsNew($project)) {
+				$badgeLabel = 'NOWOŚĆ';
+				$badgeVariant = 'new';
+			}
+
+			$action = 'item';
+			if ($type === 'garage') {
+				$action = 'garage';
+			} elseif (!in_array($type, array('house', 'skeleton'), true)) {
+				$action = 'other';
+			}
+			$urlParams = array(
+				'module'     => 'project',
+				'action'     => $action,
+				'id'         => $pid,
+				'link_title' => $project->getName(),
+			);
+			if ($action === 'other') {
+				$urlParams['category'] = $type;
+			}
+
+			$imageUrl = '';
+			if (!empty($extraData['thumbnail'])) {
+				$imageUrl = 'https://media.studioatrium.pl/project/' . str_replace('-200-', '-640-', $extraData['thumbnail']);
+			} else {
+				$imageUrl = 'https://media.studioatrium.pl/project/' . $pid . '/render-box.jpg';
+			}
+
+			$cards[] = array(
+				'id'         => $pid,
+				'name'       => $project->getName(),
+				'url'        => $urlGen->generateUrl($urlParams),
+				'image_url'  => $imageUrl,
+				'type_label' => $this->_projectTypeLabel($params, $type),
+				'area'       => $area,
+				'rooms'      => $rooms,
+				'baths'      => isset($extras[$pid]) ? $extras[$pid]['baths'] : 0,
+				'garage'     => isset($extras[$pid]) ? $extras[$pid]['garage'] : 0,
+				'price'      => (int) round($priceCurrent),
+				'price_old'  => $priceOld !== null ? (int) round($priceOld) : null,
+				'badge_label'=> $badgeLabel,
+				'badge_variant' => $badgeVariant,
+				'is_favourite' => false,
+				'is_compare' => false,
+			);
+		}
+
+		return $cards;
+	}
+
+	/**
+	 * @param array $params
+	 * @param string $type
+	 * @return string
+	 */
+	private function _projectTypeLabel(array $params, $type)
+	{
+		if ($type === 'garage') {
+			return 'GARAŻ';
+		}
+		$prefix = ($type === 'skeleton') ? 'DOM SZKIELETOWY' : 'DOM';
+		$hasFloor = !empty($params['18']['value']);
+		$hasLoft = !empty($params['17']['value']);
+		if ($type === 'skeleton') {
+			return $prefix;
+		}
+		if ($hasFloor) {
+			return $prefix . ' PIĘTROWY';
+		}
+		if ($hasLoft) {
+			return $prefix . ' Z PODDASZEM';
+		}
+		return $prefix . ' PARTEROWY';
+	}
+
+	/**
+	 * Prepare Smarty data for the 2026 project detail layout.
+	 */
+	private function _prepareHouseDetail2026(
+		\Point7_WebApp_Request_Filtered $request,
+		WWW\ResponseContext $responseContext,
+		$project,
+		array $projectParams,
+		array $params,
+		array $sketchParams,
+		$projectSketchParams
+	) {
+		$mediaBase = rtrim((string) \Point7_WebApp::getConfigParam('static.project'), '/');
+		$isMirror = ($request->getParam('version') == 'mirror');
+		$attachments = array();
+		try {
+			$attachments = $project->getAttachments()->toArray();
+		} catch (\Throwable $e) {
+			$attachments = array();
+		}
+
+		$gallery = array();
+		foreach (array('ProjectRender', 'ProjectInterior', 'ProjectElevation') as $type) {
+			if (empty($attachments[$type]) || !is_array($attachments[$type])) {
+				continue;
+			}
+			foreach ($attachments[$type] as $att) {
+				$url = $this->_attachmentMediaUrl($att, $mediaBase, 'presentation');
+				if ($url === '') {
+					continue;
+				}
+				$gallery[] = array(
+					'src'   => $url,
+					'thumb' => $this->_attachmentMediaUrl($att, $mediaBase, 'thumb') ?: $url,
+					'alt'   => isset($att['title']) ? (string) $att['title'] : $project->getName(),
+					'type'  => $type,
+				);
+			}
+		}
+		if (empty($gallery)) {
+			$gallery[] = array(
+				'src'   => $mediaBase . '/' . (int) $project->getId() . '/render-box.jpg',
+				'thumb' => $mediaBase . '/' . (int) $project->getId() . '/render-box.jpg',
+				'alt'   => $project->getName(),
+				'type'  => 'ProjectRender',
+			);
+		}
+
+		$price = (float) $project->getPrice();
+		$discount = (float) $project->getDiscount();
+		$priceCurrent = $discount > 0 ? ($price - $discount) : $price;
+
+		$baths = 0;
+		if (!empty($projectParams[45]['num_value'])) {
+			$baths += (int) round((float) $projectParams[45]['num_value']);
+		}
+		if (!empty($projectParams[46]['num_value'])) {
+			$baths += (int) round((float) $projectParams[46]['num_value']);
+		}
+		$garage = !empty($projectParams[78]['num_value']) ? (int) round((float) $projectParams[78]['num_value']) : 0;
+		$rooms = !empty($projectParams[68]['num_value'])
+			? (string) (int) round((float) $projectParams[68]['num_value'])
+			: (!empty($projectParams[68]['string_value']) ? (string) $projectParams[68]['string_value'] : '');
+		$area = '';
+		if (!empty($projectParams[1]['num_value'])) {
+			$area = number_format((float) $projectParams[1]['num_value'], 2, ',', ' ');
+		}
+
+		$facts = array(
+			array('label' => 'Pow. użytkowa', 'value' => $area !== '' ? $area . ' m²' : '—'),
+			array('label' => 'Pokoje', 'value' => $rooms !== '' ? $rooms : '—'),
+			array('label' => 'Łazienki / WC', 'value' => $baths > 0 ? (string) $baths : '—'),
+			array('label' => 'Garaż', 'value' => $garage > 0 ? (string) $garage : '—'),
+		);
+
+		$showHeatPump = !empty($projectParams[97]) && (
+			empty($projectParams[97]['string_value']) || $projectParams[97]['string_value'] != 'pompa ciepła'
+		);
+
+		$paramsHelper = new \StudioAtrium\Application\WWW\ProjectParamsHelper();
+		$availability = 'dostępność 3–5 dni';
+		if ($paramsHelper->mIsWithdrawn($projectParams)) {
+			$availability = 'wycofany z oferty';
+		} elseif ($paramsHelper->mIsReady7days($projectParams)) {
+			$availability = 'dostępność do 7 dni';
+		} elseif ($paramsHelper->mIsReady14days($projectParams)) {
+			$availability = 'dostępność do 14 dni';
+		} elseif ($paramsHelper->mIsWT2021needful($projectParams) || $paramsHelper->mIsWT2021needfulHeat($projectParams)) {
+			$availability = 'dostępność — zapytaj o termin';
+		}
+
+		$versionLabel = ($project->getType() == 'skeleton') ? 'Wersja szkieletowa' : 'Wersja murowana';
+
+		$techRows = array();
+		$technicalList = $responseContext->get('technicalList');
+		$techParamIds = array();
+		if (is_object($technicalList) && method_exists($technicalList, 'getParams')) {
+			$techParamIds = $technicalList->getParams();
+		} elseif (is_array($technicalList) && !empty($technicalList['params'])) {
+			$techParamIds = $technicalList['params'];
+		} elseif (is_object($technicalList) && isset($technicalList->params)) {
+			$techParamIds = $technicalList->params;
+		}
+		if (is_array($techParamIds)) {
+			foreach ($techParamIds as $paramId) {
+				if (empty($params[$paramId])) {
+					continue;
+				}
+				$paramDef = $params[$paramId];
+				if (!empty($paramDef['value_type']) && $paramDef['value_type'] == 'string') {
+					$paramValue = isset($projectParams[$paramId]['string_value']) ? $projectParams[$paramId]['string_value'] : '';
+				} else {
+					$paramValue = isset($projectParams[$paramId]['num_value']) ? $projectParams[$paramId]['num_value'] : '';
+					if ($paramValue !== '' && $paramValue !== null && !empty($paramDef['value_type']) && $paramDef['value_type'] == 'number') {
+						$paramValue = number_format((float) $projectParams[$paramId]['num_value'], 2, ',', ' ');
+					}
+				}
+				if ($paramValue === '' || $paramValue === null) {
+					continue;
+				}
+				$unit = !empty($paramDef['unit']) ? ' ' . $paramDef['unit'] : '';
+				$techRows[] = array(
+					'k'    => $paramDef['name'],
+					'v'    => $paramValue . $unit,
+					'info' => !empty($paramDef['description']),
+					'id'   => (int) $paramId,
+				);
+			}
+		}
+		$paramsGeneral = $project->getParamsGeneral(true);
+		$techRows[] = array(
+			'k'    => 'Minimalne wym. działki',
+			'v'    => $paramsHelper->mParcelWidth($paramsGeneral)
+				. ' × '
+				. $paramsHelper->mParcelHeight($paramsGeneral)
+				. ' m',
+			'info' => true,
+			'id'   => ($project->getType() == 'skeleton') ? 75 : 76,
+		);
+		$mid = (int) ceil(count($techRows) / 2);
+		$techLeft = array_slice($techRows, 0, $mid);
+		$techRight = array_slice($techRows, $mid);
+
+		$floors = $this->_buildDetailFloors(
+			$attachments,
+			$mediaBase,
+			$isMirror,
+			$responseContext->get('sketchAuthorize'),
+			$responseContext->get('roomsPoints'),
+			$projectSketchParams,
+			$sketchParams,
+			$project
+		);
+
+		$costStages = array();
+		$costTotalLabel = '';
+		$noestimate = $responseContext->get('noestimate');
+		$costs = $responseContext->get('costs');
+		$buildCost = null;
+		try {
+			$buildCost = $project->getBuildCost(true);
+		} catch (\Throwable $e) {
+			$buildCost = null;
+		}
+		if (is_array($buildCost) && !empty($buildCost['open']) && (float) $buildCost['open'] > 0) {
+			$costStages = array(
+				array(
+					'id' => 's1',
+					'label' => 'Stan surowy otwarty',
+					'cost' => number_format((float) $buildCost['open'], 0, ',', ' ') . ' zł',
+					'details' => 'Szacunkowy koszt stanu surowego otwartego. ' . (!empty($buildCost['date']) ? $buildCost['date'] : ''),
+				),
+				array(
+					'id' => 's2',
+					'label' => 'Roboty wykończeniowe',
+					'cost' => number_format((float) $buildCost['finish'], 0, ',', ' ') . ' zł',
+					'details' => 'Szacunkowy koszt robót wykończeniowych.',
+				),
+				array(
+					'id' => 's3',
+					'label' => 'Instalacje',
+					'cost' => number_format((float) $buildCost['fitting'], 0, ',', ' ') . ' zł',
+					'details' => 'Szacunkowy koszt instalacji.',
+				),
+			);
+			$costTotalLabel = number_format((float) $buildCost['full'], 0, ',', ' ') . ' zł';
+		} elseif (!$noestimate && is_array($costs) && !empty($costs['rough']) && (float) $costs['rough'] > 0 && (float) $costs['total'] != -1) {
+			$costStages = array(
+				array(
+					'id' => 's1',
+					'label' => 'Stan surowy zamknięty — system gospodarczy',
+					'cost' => number_format((float) $costs['rough'], 0, ',', ' ') . ' zł',
+					'details' => 'Szacunkowy koszt stanu surowego zamkniętego w systemie gospodarczym.',
+				),
+				array(
+					'id' => 's2',
+					'label' => 'Roboty wykończeniowe — system gospodarczy',
+					'cost' => number_format((float) $costs['finish'], 0, ',', ' ') . ' zł',
+					'details' => 'Szacunkowy koszt robót wykończeniowych w systemie gospodarczym.',
+				),
+				array(
+					'id' => 's3',
+					'label' => 'Instalacje — system gospodarczy',
+					'cost' => number_format((float) $costs['installations'], 0, ',', ' ') . ' zł',
+					'details' => 'Szacunkowy koszt instalacji. Instalacje to dodatkowe ok. 20–25% wartości kosztorysu w systemie zleconym.',
+				),
+			);
+			$costTotalLabel = number_format((float) $costs['total'], 0, ',', ' ') . ' zł';
+		}
+
+		$categoryChips = array();
+		$projectCategories = $responseContext->get('projectCategories');
+		if ($projectCategories) {
+			foreach ($projectCategories as $cat) {
+				$catArr = is_object($cat) && method_exists($cat, 'toArray') ? $cat->toArray() : (array) $cat;
+				if (empty($catArr['link']) && empty($catArr['name'])) {
+					continue;
+				}
+				$categoryChips[] = array(
+					'name' => isset($catArr['name']) ? mb_strtolower((string) $catArr['name'], 'UTF-8') : '',
+					'url'  => !empty($catArr['link']) ? '/' . ltrim($catArr['link'], '/') . '/' : '/projekty-domow/',
+				);
+			}
+		}
+
+		$featureTags = array();
+		$csCloudParams = $responseContext->get('csCloudParams');
+		$csCloudSelectParams = $responseContext->get('csCloudSelectParams');
+		$csParamsValueNames = $responseContext->get('csParamsValueNames');
+		if (is_array($csCloudParams)) {
+			foreach ($csCloudParams as $key => $item) {
+				if (isset($projectParams[$key]) && !empty($item[0])) {
+					$featureTags[] = $item[0];
+				}
+			}
+		}
+		if (is_array($csCloudSelectParams)) {
+			foreach ($csCloudSelectParams as $key => $item) {
+				if (!isset($projectParams[$key]) || empty($item[0])) {
+					continue;
+				}
+				$val = isset($projectParams[$key]['string_value']) ? $projectParams[$key]['string_value'] : '';
+				$featureTags[] = $item[0] . ($val !== '' ? ': ' . $val : '');
+			}
+		}
+
+		$similarCards = array();
+		try {
+			$similarMap = $this->_daoRepository->getProjectSimiliarFinder()->getSimiliarForProject($project->getId());
+			if ($similarMap && count($similarMap)) {
+				$similarIds = array_keys($similarMap->toArray('', 'similiar_id'));
+				$similarList = $this->_projectFinder->getListById(
+					$similarIds,
+					\StudioAtrium_Entity_EntityBase_Project::STATUS_PUBLISHED,
+					true
+				);
+				$similarCards = $this->_buildCategoryListCards($similarList);
+			}
+		} catch (\Throwable $e) {
+			$similarCards = array();
+		}
+
+		$realizationImages = array();
+		foreach (array('ProjectRealisation', 'ProjectBuildingInProgress', 'ProjectRealisationInterior') as $type) {
+			if (empty($attachments[$type]) || !is_array($attachments[$type])) {
+				continue;
+			}
+			foreach ($attachments[$type] as $att) {
+				$url = $this->_attachmentMediaUrl($att, $mediaBase, 'presentation');
+				if ($url === '') {
+					$url = $this->_attachmentMediaUrl($att, $mediaBase, null);
+				}
+				if ($url !== '') {
+					$realizationImages[] = array(
+						'src' => $url,
+						'alt' => isset($att['title']) ? (string) $att['title'] : ('Realizacja ' . $project->getName()),
+					);
+				}
+			}
+		}
+
+		$faqItems = array();
+		try {
+			$faqTree = $this->_daoRepository->getProjectCommentFinder()->getTreeByProjectId(
+				$project->getId(),
+				\StudioAtrium\Entity\Project\Comment::TYPE_FAQ
+			);
+			if ($faqTree) {
+				foreach ($faqTree as $faq) {
+					$faqArr = is_array($faq) ? $faq : (method_exists($faq, 'toArray') ? $faq->toArray() : array());
+					$q = isset($faqArr['title']) ? $faqArr['title'] : (isset($faqArr['content']) ? $faqArr['content'] : '');
+					$a = isset($faqArr['answer']) ? $faqArr['answer'] : (isset($faqArr['descript']) ? $faqArr['descript'] : '');
+					if ($q === '' && isset($faqArr['content'])) {
+						$q = $faqArr['content'];
+					}
+					if (isset($faqArr['children'][0])) {
+						$child = $faqArr['children'][0];
+						if ($a === '' && !empty($child['content'])) {
+							$a = $child['content'];
+						}
+					}
+					if ($q !== '') {
+						$faqItems[] = array('q' => $q, 'a' => $a);
+					}
+				}
+			}
+		} catch (\Throwable $e) {
+			$faqItems = array();
+		}
+		if (empty($faqItems)) {
+			$faqItems = array(
+				array(
+					'q' => 'Co zawiera projekt domu?',
+					'a' => 'Projekt sprzedawany wyłącznie w formie papierowej zawiera 3 egzemplarze projektu architektoniczno-budowlanego z częścią opisową oraz 3 egzemplarze projektu technicznego (konstrukcja, charakterystyka energetyczna oraz instalacje).',
+				),
+				array(
+					'q' => 'Czy projekt dostosowany jest do nowych wymagań technicznych?',
+					'a' => 'Tak, wszystkie nasze projekty zgodne są z najnowszymi warunkami technicznymi obowiązującymi w kraju.',
+				),
+				array(
+					'q' => 'Czy istnieje odbicie lustrzane tego projektu?',
+					'a' => 'Tak, wszystkie projekty Studia Atrium są dostępne także w odbiciu lustrzanym, w tej samej cenie.',
+				),
+				array(
+					'q' => 'Czy mogę dokonać zmian w projekcie?',
+					'a' => 'Zmiany w projekcie są dopuszczalne. Wykonuje je zwykle lokalny architekt adaptujący. Uprawnia go do tego bezpłatna zgoda na zmiany, którą wydajemy do zamówionego projektu.',
+				),
+				array(
+					'q' => 'Czy Studio Atrium może dokonać zmian w projekcie zgodnie z moim pomysłem?',
+					'a' => 'Studio Atrium dokonuje tylko zmian w zakresie: kąta nachylenia dachu, podpiwniczenia, doprojektowania lub likwidacji garażu, przeprojektowania garażu na dwustanowiskowy oraz zbliźniaczenia budynków. Inne zmiany może wykonać lokalny architekt adaptujący.',
+				),
+			);
+		}
+
+		$categoryLabel = $responseContext->get('category');
+		if ($categoryLabel === 'parterowe') {
+			$categoryTitle = 'Domy parterowe';
+		} elseif ($categoryLabel === 'piętrowe') {
+			$categoryTitle = 'Domy piętrowe';
+		} elseif ($categoryLabel === 'z poddaszem') {
+			$categoryTitle = 'Domy z poddaszem';
+		} else {
+			$categoryTitle = 'Projekty domów';
+		}
+
+		$bedrooms = $rooms;
+		if (!empty($projectParams[69]['num_value'])) {
+			$bedrooms = (string) (int) round((float) $projectParams[69]['num_value']);
+		}
+
+		$responseContext->set('detail2026', true);
+		$responseContext->set('detailGallery', $gallery);
+		$responseContext->set('detailFacts', $facts);
+		$responseContext->set('detailPrice', (int) round($priceCurrent));
+		$responseContext->set('detailPriceOld', $discount > 0 ? (int) round($price) : null);
+		$responseContext->set('detailHeatPump', $showHeatPump ? 690 : 0);
+		$responseContext->set('detailAvailability', $availability);
+		$responseContext->set('detailVersionLabel', $versionLabel);
+		$responseContext->set('detailTechLeft', $techLeft);
+		$responseContext->set('detailTechRight', $techRight);
+		$responseContext->set('detailFloors', $floors);
+		$responseContext->set('detailCostStages', $costStages);
+		$responseContext->set('detailCostTotal', $costTotalLabel);
+		$responseContext->set('detailCategoryChips', $categoryChips);
+		$responseContext->set('detailFeatureTags', $featureTags);
+		$responseContext->set('detailSimilar', $similarCards);
+		$responseContext->set('detailRealizations', $realizationImages);
+		$responseContext->set('detailFaq', $faqItems);
+		$responseContext->set('detailCategoryTitle', $categoryTitle);
+		$responseContext->set('detailBedrooms', $bedrooms);
+		$responseContext->set('detailArea', $area);
+		$responseContext->set('detailGarage', $garage);
+		$responseContext->set('detailIsMirror', $isMirror);
+		$responseContext->set('detailThumb', !empty($gallery[0]['thumb']) ? $gallery[0]['thumb'] : '');
+	}
+
+	/**
+	 * @param array $attachment
+	 * @param string $mediaBase
+	 * @param string|null $preferChild
+	 * @return string
+	 */
+	private function _attachmentMediaUrl(array $attachment, $mediaBase, $preferChild = 'presentation')
+	{
+		if ($preferChild && !empty($attachment['childAttachments'][$preferChild][0]['filename'])) {
+			$child = $attachment['childAttachments'][$preferChild][0];
+			$path = isset($child['path']) ? trim((string) $child['path'], '/') : '';
+			$file = $child['filename'];
+			return $mediaBase . '/' . ($path !== '' ? $path . '/' : '') . $file;
+		}
+		if (!empty($attachment['filename'])) {
+			$path = isset($attachment['path']) ? trim((string) $attachment['path'], '/') : '';
+			return $mediaBase . '/' . ($path !== '' ? $path . '/' : '') . $attachment['filename'];
+		}
+		return '';
+	}
+
+	/**
+	 * Build interactive floor-plan data for the 2026 detail page.
+	 *
+	 * @return array
+	 */
+	private function _buildDetailFloors(
+		array $attachments,
+		$mediaBase,
+		$isMirror,
+		$sketchAuthorize,
+		$roomsPoints,
+		$projectSketchParams,
+		array $sketchParams,
+		$project
+	) {
+		$floors = array();
+		if (empty($attachments['ProjectSketch']) || !is_array($attachments['ProjectSketch'])) {
+			return $floors;
+		}
+
+		$sketchParamsById = is_array($sketchParams) ? $sketchParams : array();
+		$pspBySketch = array();
+		if ($projectSketchParams) {
+			$pspList = is_object($projectSketchParams) && method_exists($projectSketchParams, 'toArray')
+				? $projectSketchParams->toArray()
+				: (array) $projectSketchParams;
+			foreach ($pspList as $psp) {
+				$pspArr = is_array($psp) ? $psp : (method_exists($psp, 'toArray') ? $psp->toArray() : array());
+				$sid = isset($pspArr['sketch_id']) ? (int) $pspArr['sketch_id'] : 0;
+				if ($sid) {
+					$pspBySketch[$sid][] = $pspArr;
+				}
+			}
+		}
+
+		$authorizeMap = is_array($sketchAuthorize) ? $sketchAuthorize : array();
+		$roomsMap = is_array($roomsPoints) ? $roomsPoints : array();
+
+		foreach ($attachments['ProjectSketch'] as $sketch) {
+			$sketchId = isset($sketch['id']) ? (int) $sketch['id'] : 0;
+			$storey = isset($sketch['props']['storey']) ? $sketch['props']['storey'] : '';
+			$label = \StudioAtrium\Application\Helper\SketchParamsNameMapper::mapStorey($storey);
+			if ($label === '' || $label === null) {
+				$label = 'Rzut';
+			}
+			$floorId = preg_replace('/[^a-z0-9]+/i', '-', mb_strtolower((string) $label, 'UTF-8'));
+			$floorId = trim($floorId, '-') ?: ('sketch-' . $sketchId);
+
+			$img = $this->_attachmentMediaUrl($sketch, $mediaBase, 'presentation');
+			if ($img === '') {
+				$img = $this->_attachmentMediaUrl($sketch, $mediaBase, null);
+			}
+			if ($img === '') {
+				$storeySuffix = $storey !== '' && $storey !== null ? $storey : null;
+				$img = $mediaBase . '/' . (int) $project->getId() . '/' . ($storeySuffix ? 'sketch-' . $storeySuffix : 'sketch') . '.jpg';
+			}
+
+			$width = !empty($authorizeMap[$sketchId]['width'])
+				? (int) $authorizeMap[$sketchId]['width']
+				: (!empty($sketch['props']['image_size']['width']) ? (int) $sketch['props']['image_size']['width'] : 1000);
+			$height = !empty($authorizeMap[$sketchId]['height'])
+				? (int) $authorizeMap[$sketchId]['height']
+				: (!empty($sketch['props']['image_size']['height']) ? (int) $sketch['props']['image_size']['height'] : 1000);
+
+			// Prefer natural image dimensions when authorize offset is used as viewBox size
+			if (!empty($sketch['props']['image_size']['width'])) {
+				$width = (int) $sketch['props']['image_size']['width'];
+			}
+			if (!empty($sketch['props']['image_size']['height'])) {
+				$height = (int) $sketch['props']['image_size']['height'];
+			}
+
+			$rooms = array();
+			$extra = null;
+			$total = '';
+			if (!empty($pspBySketch[$sketchId])) {
+				$n = 0;
+				foreach ($pspBySketch[$sketchId] as $psp) {
+					$spid = isset($psp['sketch_param_id']) ? (int) $psp['sketch_param_id'] : 0;
+					$type = isset($sketchParamsById[$spid]['type']) ? $sketchParamsById[$spid]['type'] : 'normal';
+					$name = isset($sketchParamsById[$spid]['name']) ? $sketchParamsById[$spid]['name'] : '';
+					$areaVal = isset($psp['area']) ? number_format((float) $psp['area'], 2, ',', '') : '';
+					if ($type == 'sum') {
+						$total = $areaVal;
+						continue;
+					}
+					if ($type == 'info') {
+						continue;
+					}
+					$n++;
+					$room = array(
+						'id'   => (string) (isset($psp['id']) ? $psp['id'] : $n),
+						'n'    => !empty($psp['room_no']) ? (int) $psp['room_no'] : $n,
+						'name' => $name,
+						'area' => $areaVal,
+						'ptspid' => isset($psp['id']) ? (string) $psp['id'] : '',
+					);
+					if (mb_stripos($name, 'garaż') !== false || mb_stripos($name, 'garaz') !== false) {
+						$extra = $room;
+					} else {
+						$rooms[] = $room;
+					}
+				}
+			}
+
+			$hotspots = array();
+			$rawRooms = null;
+			if (!empty($roomsMap[$sketchId])) {
+				$rawRooms = is_string($roomsMap[$sketchId]) ? json_decode($roomsMap[$sketchId], true) : $roomsMap[$sketchId];
+			}
+			if (is_array($rawRooms)) {
+				foreach ($rawRooms as $roomId => $pointsObj) {
+					if (!is_array($pointsObj)) {
+						continue;
+					}
+					$pts = array();
+					foreach ($pointsObj as $key => $val) {
+						if (is_array($val) && isset($val['x']) && isset($val['y'])) {
+							$x = (float) $val['x'];
+							$y = (float) $val['y'];
+							if ($isMirror && $width > 0) {
+								$x = $width - $x;
+							}
+							$pts[] = $x . ',' . $y;
+						}
+					}
+					if (empty($pts)) {
+						continue;
+					}
+					$hotspots[] = array(
+						'id'     => (string) $roomId,
+						'name'   => isset($pointsObj['name']) ? (string) $pointsObj['name'] : '',
+						'desc'   => isset($pointsObj['desc']) ? (string) $pointsObj['desc'] : '',
+						'points' => implode(' ', $pts),
+						'ptspid' => isset($pointsObj['ptspid']) ? (string) $pointsObj['ptspid'] : '',
+					);
+				}
+			}
+
+			$floors[] = array(
+				'id'       => $floorId,
+				'label'    => $label,
+				'img'      => $img,
+				'width'    => $width,
+				'height'   => $height,
+				'total'    => $total,
+				'rooms'    => $rooms,
+				'extra'    => $extra,
+				'hotspots' => $hotspots,
+				'sketch_id'=> $sketchId,
+			);
+		}
+
+		return $floors;
 	}
 }

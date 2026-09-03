@@ -1,11 +1,8 @@
 /**
  * Header 2026 — legacy CSS isolation
- * Load AFTER Tailwind CDN so utilities (with important: true) win over common.min.css.
- * Covers properties Tailwind does not set on every element (appearance, inherit fixes).
+ * Load AFTER Tailwind CDN.
  */
 
-/* Rem is fixed on html for big desktops in theme2026.css (1rem = 16px).
- * Keep a local 16px text base on the header so inherited font-size stays stable. */
 #site-header {
   font-size: 16px;
 }
@@ -19,19 +16,63 @@
   font-family: "Nexa", "Montserrat", system-ui, -apple-system, sans-serif;
 }
 
-/* Lucide icons: honor explicit px width/height classes (Figma specs) */
+/*
+ * Lucide icons: NEVER use width/height 100% — that stretches icons to the
+ * parent flex/link box and is what made phone/chevrons enormous.
+ * Size from Tailwind w-[Npx]/h-[Npx] classes (important:true), with CSS fallbacks.
+ */
 #site-header svg.lucide,
-#site-header [data-lucide] {
+#site-header svg[data-lucide],
+#site-header i[data-lucide] {
   display: block;
   flex-shrink: 0;
+  max-width: 28px;
+  max-height: 28px;
+  overflow: visible;
 }
 
-#site-header svg.lucide {
-  width: 100%;
-  height: 100%;
+#site-header svg.lucide[class*="w-[14px]"],
+#site-header svg[data-lucide][class*="w-[14px]"],
+#site-header .site-mega-chevron {
+  width: 14px !important;
+  height: 14px !important;
+  max-width: 14px !important;
+  max-height: 14px !important;
 }
 
-/* Neutralize common.min.css global text-input rules (Lato, 1.8rem, 50px height, etc.) */
+#site-header svg.lucide[class*="w-[16px]"],
+#site-header svg[data-lucide][class*="w-[16px]"] {
+  width: 16px !important;
+  height: 16px !important;
+  max-width: 16px !important;
+  max-height: 16px !important;
+}
+
+#site-header svg.lucide[class*="w-[20px]"],
+#site-header svg[data-lucide][class*="w-[20px]"] {
+  width: 20px !important;
+  height: 20px !important;
+  max-width: 20px !important;
+  max-height: 20px !important;
+}
+
+#site-header svg.lucide[class*="w-[22px]"],
+#site-header svg[data-lucide][class*="w-[22px]"] {
+  width: 22px !important;
+  height: 22px !important;
+  max-width: 22px !important;
+  max-height: 22px !important;
+}
+
+#site-header svg.lucide[class*="w-[27px]"],
+#site-header svg[data-lucide][class*="w-[27px]"] {
+  width: 27px !important;
+  height: 27px !important;
+  max-width: 27px !important;
+  max-height: 27px !important;
+}
+
+/* Neutralize common.min.css global text-input rules */
 #site-header input[type="text"],
 #site-header input[type="search"],
 #site-header input[type="password"],
@@ -50,7 +91,6 @@
   max-width: none;
 }
 
-/* Reset legacy button chrome; Tailwind classes supply border/background/colors */
 #site-header button {
   margin: 0;
   appearance: none;
@@ -75,7 +115,6 @@
   background-color: transparent;
 }
 
-/* Figma Group 33 — filter bar; child buttons stay transparent so parent blue shows through */
 #site-header #site-header-filters {
   width: auto !important;
   margin-left: auto;
@@ -102,7 +141,6 @@
   opacity: 0.88;
 }
 
-/* Figma Group 32 — ZNAJDŹ PROJEKT */
 #site-header #search-trigger {
   background-color: #ed1d24 !important;
   background-image: none !important;

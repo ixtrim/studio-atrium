@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-08-24 10:50:23
+/* Smarty version 3.1.48, created on 2026-09-03 14:46:14
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6a8c05cfe8c287_64610521',
+  'unifunc' => 'content_6a996c16567f24_73840027',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8176fdb0173b230f3822c14e0cd77a18e9f5278a' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Header.tpl',
-      1 => 1787561142,
+      1 => 1788437027,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6a8c05cfe8c287_64610521 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6a996c16567f24_73840027 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['promo_marquee_text']->value) {?>
 	<div class="promo-marquee" aria-label="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['promo_marquee_text']->value, ENT_QUOTES, 'UTF-8', true);?>
 ">
@@ -125,13 +125,13 @@ if ($_smarty_tpl->tpl_vars['promo_marquee_text']->value) {?>
 							GARAŻE I INNE
 							<i data-lucide="chevron-down" class="site-mega-chevron w-[14px] h-[14px] shrink-0 transition-transform duration-300 ease-out" stroke-width="2.5"></i>
 						</a>
-						<a href="/baza-wiedzy/" data-mega="wiedza" aria-expanded="false" aria-haspopup="true"
+						<a href="javascript:" data-mega="wiedza" aria-expanded="false" aria-haspopup="true"
 							class="site-mega-trigger inline-flex items-center gap-1.5 text-[14px] font-black tracking-wider transition-colors duration-200 text-[var(--brand-darker)] hover:text-[var(--brand-red)]">
 							BAZA WIEDZY
 							<i data-lucide="chevron-down" class="site-mega-chevron w-[14px] h-[14px] shrink-0 transition-transform duration-300 ease-out" stroke-width="2.5"></i>
 						</a>
 						<a href="/kontakt/"
-							class="site-mega-trigger inline-flex items-center gap-1.5 text-[14px] font-black tracking-wider transition-colors duration-200 text-[var(--brand-red)] hover:text-[var(--brand-red)]">
+							class="inline-flex items-center gap-1.5 text-[14px] font-black tracking-wider transition-colors duration-200 text-[var(--brand-red)] hover:text-[var(--brand-red)]">
 							KONTAKT
 						</a>
 					</nav>
@@ -169,13 +169,11 @@ if (strpos($_smarty_tpl->tpl_vars['_item']->value['link'],'.html') === false) {?
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 								</ul>
-								<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'catalog','action'=>'form'),$_smarty_tpl ) );?>
-" class="mt-6 block group/cat">
+								<a href="/katalog-projektow.html" class="mt-6 block group/cat">
 									<img src="/img/catalogue.webp" alt="Katalog projektów domów"
 										class="w-full max-w-[200px] transition-transform duration-500 group-hover/cat:scale-[1.03]">
 								</a>
-								<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'catalog','action'=>'form'),$_smarty_tpl ) );?>
-"
+								<a href="/katalog-projektow.html"
 									class="mt-3 block text-[14px] font-bold text-[var(--brand-red)] hover:underline">
 									Zamów bezpłatny katalog
 								</a>
@@ -352,8 +350,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 									</a>
 								</li>
 							</ul>
-							<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'article','action'=>'hash_tag','id'=>1),$_smarty_tpl ) );?>
-" class="group/card block">
+							<a href="/baza-wiedzy,1" class="group/card block">
 								<div class="relative overflow-hidden aspect-[3/2] bg-[#e8e8e8] bg-cover bg-no-repeat"
 									style="background-image:url('/img/menu.jpg'); background-position:0 -150px;">
 									<div class="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-white/10"></div>
@@ -362,8 +359,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 									</span>
 								</div>
 							</a>
-							<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'article','action'=>'hash_tag','id'=>3),$_smarty_tpl ) );?>
-" class="group/card block">
+							<a href="/baza-wiedzy,3" class="group/card block">
 								<div class="relative overflow-hidden aspect-[3/2] bg-[#e8e8e8] bg-cover bg-no-repeat"
 									style="background-image:url('/img/menu.jpg'); background-position:0 -300px;">
 									<div class="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-white/10"></div>
@@ -372,8 +368,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 									</span>
 								</div>
 							</a>
-							<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'discuss','action'=>'forum'),$_smarty_tpl ) );?>
-" class="group/card block">
+							<a href="/forum/" class="group/card block">
 								<div class="relative overflow-hidden aspect-[3/2] bg-[#e8e8e8] bg-cover bg-no-repeat"
 									style="background-image:url('/img/menu.jpg'); background-position:0 0;">
 									<div class="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-white/10"></div>
@@ -468,7 +463,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 				chevron.classList.toggle('text-[var(--brand-red)]', active);
 			}
 		});
-		if (typeof lucide !== 'undefined') {
+		if (typeof window.createLucideIcons === 'function') {
+			window.createLucideIcons();
+		} else if (typeof lucide !== 'undefined' && lucide.createIcons) {
 			lucide.createIcons();
 		}
 	}
@@ -500,6 +497,14 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		trigger.addEventListener('mouseleave', hideMega);
 		trigger.addEventListener('focus', function () { showMega(key); });
 		trigger.addEventListener('blur', hideMega);
+		// Match production: Baza wiedzy uses href="javascript:" (no destination URL).
+		trigger.addEventListener('click', function (event) {
+			var href = trigger.getAttribute('href') || '';
+			if (href === 'javascript:' || href === '#' || href.indexOf('javascript:') === 0) {
+				event.preventDefault();
+				showMega(key);
+			}
+		});
 	});
 
 	if (megaRoot && dropdown) {

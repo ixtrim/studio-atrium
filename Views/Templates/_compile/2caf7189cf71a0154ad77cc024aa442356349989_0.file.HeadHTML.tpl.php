@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-08-24 12:40:49
+/* Smarty version 3.1.48, created on 2026-09-03 14:46:14
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/HeadHTML.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6a8c1fb16f55a1_01824534',
+  'unifunc' => 'content_6a996c1654ea17_87945330',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2caf7189cf71a0154ad77cc024aa442356349989' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/HeadHTML.tpl',
-      1 => 1787568046,
+      1 => 1788439522,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6a8c1fb16f55a1_01824534 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6a996c1654ea17_87945330 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['pageTitle']->value) {?>
 	<title><?php echo $_smarty_tpl->tpl_vars['pageTitle']->value;?>
 </title>
@@ -164,6 +164,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 	<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['dynamic_css']->value;?>
 ">
 <?php }?>
+
+<!-- Isolation CSS BEFORE Tailwind (legacy neutralize); Tailwind utilities load last and win -->
+<link rel="stylesheet" href="/css/search-engine.css?v=<?php echo $_smarty_tpl->tpl_vars['version']->value;?>
+">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+
 <link rel="preload"  href="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" as="script">
 <link rel="preload"  href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" as="script">
 <link rel="preload" href="/js/jquery.json-2.3.min.js" as="script">
@@ -339,10 +345,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
 <?php }?>
 
-<!-- Tailwind CSS v3.4.17 (after legacy CSS; utilities use !important to beat common.min.css) -->
-<?php echo '<script'; ?>
- src="https://cdn.tailwindcss.com"><?php echo '</script'; ?>
->
+<!-- Tailwind MUST be last among stylesheets: config BEFORE CDN, important:true so utilities beat legacy CSS -->
 <?php echo '<script'; ?>
 >
 tailwind.config = {
@@ -357,9 +360,18 @@ tailwind.config = {
 }
 <?php echo '</script'; ?>
 >
+<?php echo '<script'; ?>
+ src="https://cdn.tailwindcss.com"><?php echo '</script'; ?>
+>
+
+<!-- Isolation AFTER Tailwind: Lucide sizes, card borders, legacy resets (ID + !important) -->
 <link rel="stylesheet" href="/css/header2026.css?v=<?php echo $_smarty_tpl->tpl_vars['version']->value;?>
 ">
-<link rel="stylesheet" href="/css/search-engine.css?v=<?php echo $_smarty_tpl->tpl_vars['version']->value;?>
+<link rel="stylesheet" href="/css/homepage2026.css?v=<?php echo $_smarty_tpl->tpl_vars['version']->value;?>
+">
+<link rel="stylesheet" href="/css/category2026.css?v=<?php echo $_smarty_tpl->tpl_vars['version']->value;?>
+">
+<link rel="stylesheet" href="/css/project2026.css?v=<?php echo $_smarty_tpl->tpl_vars['version']->value;?>
 ">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -371,32 +383,75 @@ html, body {
 }
 </style>
 
-<!-- Swiper CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
 <!-- Swiper JS -->
 <?php echo '<script'; ?>
  src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"><?php echo '</script'; ?>
 >
-<!-- Lucide Icons -->
+<!-- Lucide Icons: pinned version; avoid re-running createIcons on every DOM mutation (breaks sizes after load) -->
 <?php echo '<script'; ?>
- src="https://unpkg.com/lucide@latest"><?php echo '</script'; ?>
+ src="https://unpkg.com/lucide@0.469.0"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
 >
-	// Initialize Lucide Icons when DOM is ready
-	if (document.readyState === 'loading') {
-		document.addEventListener('DOMContentLoaded', function() {
+(function () {
+	var creating = false;
+
+	function createLucideIcons() {
+		if (creating || typeof lucide === 'undefined' || !lucide.createIcons) return;
+		creating = true;
+		try {
 			lucide.createIcons();
-		});
-	} else {
-		lucide.createIcons();
+			document.querySelectorAll('svg[data-lucide], svg.lucide').forEach(function (svg) {
+				var cls = svg.getAttribute('class') || '';
+				var mw = cls.match(/(?:^|\s)w-\[(\d+)px\]/);
+				var mh = cls.match(/(?:^|\s)h-\[(\d+)px\]/);
+				var size = (mw && mw[1]) || (mh && mh[1]);
+				if (size) {
+					svg.setAttribute('width', size);
+					svg.setAttribute('height', size);
+					svg.style.setProperty('width', size + 'px', 'important');
+					svg.style.setProperty('height', size + 'px', 'important');
+					svg.style.setProperty('max-width', size + 'px', 'important');
+					svg.style.setProperty('max-height', size + 'px', 'important');
+				}
+				svg.style.flexShrink = '0';
+			});
+		} finally {
+			creating = false;
+		}
 	}
-	
-	// Re-create icons when content changes dynamically
-	const observer = new MutationObserver(() => {
-		lucide.createIcons();
-	});
-	observer.observe(document.body, { childList: true, subtree: true });
+
+	function hasPendingIconPlaceholders(root) {
+		if (!root || root.nodeType !== 1) return false;
+		if (root.matches && root.matches('i[data-lucide], span[data-lucide], [data-lucide]:not(svg)')) return true;
+		return !!(root.querySelector && root.querySelector('i[data-lucide], span[data-lucide], [data-lucide]:not(svg)'));
+	}
+
+	function onReady() {
+		createLucideIcons();
+		if (!document.body || typeof MutationObserver === 'undefined') return;
+		var observer = new MutationObserver(function (mutations) {
+			if (creating) return;
+			for (var i = 0; i < mutations.length; i++) {
+				var nodes = mutations[i].addedNodes;
+				for (var j = 0; j < nodes.length; j++) {
+					if (hasPendingIconPlaceholders(nodes[j])) {
+						createLucideIcons();
+						return;
+					}
+				}
+			}
+		});
+		observer.observe(document.body, { childList: true, subtree: true });
+	}
+
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', onReady);
+	} else {
+		onReady();
+	}
+	window.createLucideIcons = createLucideIcons;
+})();
 <?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
@@ -429,6 +484,17 @@ html, body {
 	--brand-dark: oklch(0.30 0.012 250);
 	--brand-darker: oklch(0.24 0.012 250);
 	--brand-orange: oklch(0.78 0.13 65);
+}
+
+/* Prevent Lucide SVGs from stretching after createIcons() */
+svg[data-lucide],
+svg.lucide {
+	display: inline-block !important;
+	vertical-align: middle;
+	flex-shrink: 0 !important;
+	overflow: visible;
+	max-width: 28px;
+	max-height: 28px;
 }
 </style>
 <?php }

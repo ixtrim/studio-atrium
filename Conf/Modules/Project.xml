@@ -30,7 +30,7 @@
 			<param name="page" required="no" default="1">
 				<validator name="Integer" />
 			</param>
-			<param name="limit" required="no" default="18">
+			<param name="limit" required="no" default="11">
 				<validator name="Integer" />
 			</param>
 		</action>
@@ -703,10 +703,10 @@
 					<param name="layout" value="Layout.tpl" />
 					<param name="template" value="Project/House.tpl" />
 					<param name="smarty.css_includes">
-						<value>["flexslider.css","house.min.css?v=20230421","uploader.css"]</value>
+						<value>["uploader.css","project2026.css?v=20260903"]</value>
 					</param>
 					<param name="smarty.js_includes">
-						<value>["jquery.flexslider-min.js","jquery.fancybox.js","jquery.mCustomScrollbar.concat.min.js","formvalidator.js","uploader.js?v=20210602","project.js?v=20240417", "forumThread.js"]</value>
+						<value>["jquery.fancybox.js","jquery.mCustomScrollbar.concat.min.js","formvalidator.js","uploader.js?v=20210602","project.js?v=20240417","forumThread.js"]</value>
 					</param>
 					<param name="smarty.pinterest" value="1"/>
 				</view>
