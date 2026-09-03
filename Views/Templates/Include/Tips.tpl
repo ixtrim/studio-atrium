@@ -21,7 +21,7 @@
                         {$item.title|escape}
                         {/if}
                     </h3>
-                    <div class="flex items-center gap-3 text-[14px] text-[var(--brand-blue-strong)]">
+                    <div class="flex items-center gap-3 text-[16px] text-[var(--brand-blue-strong)]">
                         {if $item.tag1_label}
                         <a href="{$item.tag1_url|escape}" class="hover:underline">{$item.tag1_label|escape}</a>
                         {/if}

@@ -3,7 +3,7 @@
         <div class="flex items-center justify-between mb-8">
             <h2 class="text-[32px] font-black text-[var(--brand-darker)] tracking-tight">{$categories_meta.section_title|escape}</h2>
             <a href="{$categories_meta.see_all_url|escape}"
-                class="flex items-center gap-2 text-[15px] text-[#7a7a7a] hover:text-[var(--brand-darker)]">{$categories_meta.see_all_label|escape}<span
+                class="flex items-center gap-2 text-[18px] text-[#7a7a7a] hover:text-[var(--brand-darker)]">{$categories_meta.see_all_label|escape}<span
                     class="w-7 h-7 border border-black/15 flex items-center justify-center"><svg
                         xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -45,7 +45,7 @@
                 </svg></button>
         </div>
         <a href="{$categories_meta.cta_url|escape}"
-            class="absolute left-1/2 bottom-0 translate-x-[-50%] translate-y-1/2 inline-flex items-center justify-center bg-[var(--brand-red)] hover:bg-[var(--brand-red-hover)] text-white font-black px-12 py-4 lg:h-[54px] lg:max-h-[54px] lg:py-0 leading-none text-[14px] uppercase tracking-[0.1em] z-10">{$categories_meta.cta_label|escape}</a>
+            class="absolute left-1/2 bottom-0 translate-x-[-50%] translate-y-1/2 inline-flex items-center justify-center bg-[var(--brand-red)] hover:bg-[var(--brand-red-hover)] text-white font-black px-12 py-4 lg:h-[54px] lg:max-h-[54px] lg:py-0 leading-none text-[16px] uppercase tracking-[0.1em] z-10">{$categories_meta.cta_label|escape}</a>
     </div>
 </section>
 <script>

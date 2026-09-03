@@ -155,6 +155,13 @@
     font-family: "Nexa", "Montserrat", sans-serif;
     font-weight: 700;
   }
+  .article-content p,
+  .article-content ul,
+  .article-content ul li,
+  .article-content li {
+    font-size: 18px!important;
+    line-height: 24px!important;
+  }
   button, input, select, textarea {
     font-family: inherit;
   }

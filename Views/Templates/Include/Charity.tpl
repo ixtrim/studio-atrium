@@ -6,7 +6,7 @@
 		</div>
 		<div>
 			<h2 class="text-[26px] font-bold text-[var(--brand-darker)] mb-6">{$charity.title|escape}</h2>
-			<p class="text-[15px] text-[var(--brand-darker)] leading-[1.7] max-w-[450px]">{$charity.body|escape|nl2br}</p>
+			<p class="text-[18px] leading-[24px] text-[var(--brand-darker)] max-w-[450px]">{$charity.body|escape|nl2br}</p>
 		</div>
 	</div>
 </section>

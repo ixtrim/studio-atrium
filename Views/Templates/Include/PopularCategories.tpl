@@ -16,7 +16,7 @@
                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                     {/if}
                 </div>
-                <div class="mt-5 text-[15px] font-bold tracking-[0.15em] text-[#222]">{$item.label|escape}</div>
+                <div class="mt-5 text-[18px] font-bold tracking-[0.15em] text-[#222]">{$item.label|escape}</div>
             </a>
             {/foreach}
         </div>

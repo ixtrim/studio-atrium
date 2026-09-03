@@ -11,7 +11,7 @@
                                 <h1 class="text-[42px] md:text-[48px] font-black leading-[1.05] mb-3">{$slide.title|escape}</h1>
                                 {if $slide.subtitle}<div class="text-[26px] font-light leading-tight">{$slide.subtitle|escape}</div>{/if}
                                 {if $slide.badge}<div class="text-[26px] font-black tracking-wide mb-4">{$slide.badge|escape}</div>{/if}
-                                {if $slide.body}<p class="text-[16px] font-light leading-snug whitespace-pre-line opacity-95">{$slide.body|escape}</p>{/if}
+                                {if $slide.body}<p class="text-[18px] leading-[24px] font-light whitespace-pre-line opacity-95">{$slide.body|escape}</p>{/if}
                             </div>
                         </div>
                     </a>
@@ -47,7 +47,7 @@
                 {if $safety.title_right}<span class="text-[#1ba0e2]">{$safety.title_right|escape}</span>{/if}
             </h2>
             {if $safety.subtitle}
-            <p class="text-white text-[11px] md:text-[12px] font-bold tracking-[0.12em] mt-1.5">{$safety.subtitle|escape}</p>
+            <p class="text-white text-[18px] leading-[24px] font-bold tracking-[0.12em] mt-1.5">{$safety.subtitle|escape}</p>
             {/if}
         </div>
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">

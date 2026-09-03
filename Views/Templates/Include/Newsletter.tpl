@@ -3,7 +3,7 @@
         <div class="max-w-[1480px] mx-auto px-12 py-16 grid grid-cols-12 gap-8 items-center">
             <div class="col-span-12 md:col-span-7">
                 <h2 class="text-white text-[28px] font-bold tracking-wide uppercase mb-8">{$newsletter.meta.contest_title|escape}</h2>
-                <p class="text-[var(--brand-darker)] text-[15px] font-bold uppercase leading-relaxed">{$newsletter.meta.contest_body|escape|nl2br nofilter}</p>
+                <p class="text-[var(--brand-darker)] text-[18px] leading-[24px] font-bold uppercase">{$newsletter.meta.contest_body|escape|nl2br nofilter}</p>
             </div>
             <div class="hidden md:block col-span-5 relative h-[260px] overflow-visible" style="top:-40px">
                 {foreach $newsletter.photos as $photo}
@@ -21,11 +21,11 @@
         <div class="max-w-[1480px] mx-auto px-12 py-14 grid grid-cols-12 gap-8 items-center">
             <div class="col-span-12 md:col-span-4 text-white">
                 <h3 class="text-white text-[22px] font-bold leading-snug">{$newsletter.meta.signup_title|escape|nl2br nofilter}</h3>
-                <p class="text-[14px] mt-6 leading-relaxed opacity-90">{$newsletter.meta.signup_body1|escape}</p>
-                <p class="text-[14px] mt-4 leading-relaxed opacity-90">{$newsletter.meta.signup_body2|escape}</p>
+                <p class="text-[18px] leading-[24px] mt-6 opacity-90">{$newsletter.meta.signup_body1|escape}</p>
+                <p class="text-[18px] leading-[24px] mt-4 opacity-90">{$newsletter.meta.signup_body2|escape}</p>
             </div>
             <div class="col-span-12 md:col-span-5"><input type="email" placeholder="e-mail"
-                    class="hp-newsletter-email w-full bg-white border border-white px-6 py-4 text-[14px] text-[var(--brand-darker)] focus:outline-none focus:border-[var(--brand-blue)] placeholder:text-black/40">
+                    class="hp-newsletter-email w-full bg-white border border-white px-6 py-4 text-[16px] text-[var(--brand-darker)] focus:outline-none focus:border-[var(--brand-blue)] placeholder:text-black/40">
                 <div class="flex justify-center mt-8"><button
                         class="inline-flex items-center justify-center bg-[var(--brand-blue)] hover:bg-[var(--brand-blue-strong)] text-white font-bold px-16 py-4 lg:h-[54px] lg:max-h-[54px] lg:py-0 leading-none text-[13px] uppercase tracking-wider">{$newsletter.meta.signup_button_label|escape}</button></div>
             </div>

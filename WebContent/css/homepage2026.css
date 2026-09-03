@@ -7,6 +7,14 @@
   font-size: 16px;
 }
 
+/* Body copy defaults for all MainPage sections */
+#hp-2026 p,
+#hp-2026 ul,
+#hp-2026 ol {
+  font-size: 18px !important;
+  line-height: 24px !important;
+}
+
 #hp-2026,
 #hp-2026 *::before,
 #hp-2026 *::after {

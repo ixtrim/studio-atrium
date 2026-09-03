@@ -54,9 +54,9 @@
                                 </div>
                                 <div class="pt-1 mt-auto">
                                     {if $item.price_old}
-                                    <div class="text-[14px] text-[var(--brand-red)] line-through">{$item.price_old|escape} PLN</div>
+                                    <div class="text-[16px] text-[var(--brand-red)] line-through">{$item.price_old|escape} PLN</div>
                                     {/if}
-                                    <div class="flex items-baseline gap-2"><span class="text-[34px] font-bold text-[var(--brand-blue-strong)] leading-none">{$item.price|escape}</span><span class="text-[14px] text-[var(--brand-blue-strong)] font-semibold">PLN</span></div>
+                                    <div class="flex items-baseline gap-2"><span class="text-[34px] font-bold text-[var(--brand-blue-strong)] leading-none">{$item.price|escape}</span><span class="text-[16px] text-[var(--brand-blue-strong)] font-semibold">PLN</span></div>
                                 </div>
                             </div>
                         </a>

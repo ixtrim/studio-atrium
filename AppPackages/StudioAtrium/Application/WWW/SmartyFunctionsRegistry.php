@@ -880,6 +880,7 @@ class SmartyFunctionsRegistry
         $exists = $pdo->query("SHOW TABLES LIKE 'homepage_oferta'");
         if ($exists && $exists->fetchColumn()) {
             $this->ensureOfferImageColumns($pdo);
+            $this->dropOfferQuoteBadgeColumn($pdo);
             return;
         }
 
@@ -891,7 +892,6 @@ class SmartyFunctionsRegistry
                 button_label VARCHAR(128) NOT NULL DEFAULT \'\',
                 button_url VARCHAR(512) NOT NULL DEFAULT \'\',
                 quote_text TEXT NOT NULL,
-                quote_badge VARCHAR(64) NOT NULL DEFAULT \'\',
                 quote_author VARCHAR(255) NOT NULL DEFAULT \'\',
                 logo1_url VARCHAR(512) NOT NULL DEFAULT \'\',
                 logo1_path VARCHAR(512) NOT NULL DEFAULT \'\',
@@ -924,13 +924,13 @@ class SmartyFunctionsRegistry
         $defaults = $this->getOfferDefaults();
         $stmt = $pdo->prepare(
             'INSERT INTO homepage_oferta
-             (title, lead_text, button_label, button_url, quote_text, quote_badge, quote_author,
+             (title, lead_text, button_label, button_url, quote_text, quote_author,
               logo1_url, logo1_path, logo1_filename, logo1_original_name, logo1_alt,
               logo2_url, logo2_path, logo2_filename, logo2_original_name, logo2_alt,
               logo3_url, logo3_path, logo3_filename, logo3_original_name, logo3_alt,
               image_url, image_path, image_filename, image_original_name, image_alt, image_caption)
              VALUES
-             (:title, :lead_text, :button_label, :button_url, :quote_text, :quote_badge, :quote_author,
+             (:title, :lead_text, :button_label, :button_url, :quote_text, :quote_author,
               :logo1_url, :logo1_path, :logo1_filename, :logo1_original_name, :logo1_alt,
               :logo2_url, :logo2_path, :logo2_filename, :logo2_original_name, :logo2_alt,
               :logo3_url, :logo3_path, :logo3_filename, :logo3_original_name, :logo3_alt,
@@ -942,7 +942,6 @@ class SmartyFunctionsRegistry
             ':button_label'         => $defaults['button_label'],
             ':button_url'           => $defaults['button_url'],
             ':quote_text'           => $defaults['quote_text'],
-            ':quote_badge'          => $defaults['quote_badge'],
             ':quote_author'         => $defaults['quote_author'],
             ':logo1_url'            => $defaults['logo1_url'],
             ':logo1_path'           => '',
@@ -993,6 +992,14 @@ class SmartyFunctionsRegistry
         }
     }
 
+    private function dropOfferQuoteBadgeColumn(\PDO $pdo)
+    {
+        $exists = $pdo->query("SHOW COLUMNS FROM homepage_oferta LIKE 'quote_badge'");
+        if ($exists && $exists->fetchColumn()) {
+            $pdo->exec('ALTER TABLE homepage_oferta DROP COLUMN quote_badge');
+        }
+    }
+
     private function getOfferDefaults()
     {
         return array(
@@ -1001,7 +1008,6 @@ class SmartyFunctionsRegistry
             'button_label'  => 'Sprawdź ofertę',
             'button_url'    => '#',
             'quote_text'    => 'Firma Studio Atrium jest godna zaufania i dalszego polecenia. Zaproponowane rozwiązania architektoniczne i konstrukcyjne sprawdziły się w 100%.',
-            'quote_badge'   => 'PRZEWIJANKA',
             'quote_author'  => 'Bogdan Białka',
             'logo1_url'     => '/images/logo-autobialka.png',
             'logo1_alt'     => 'Auto Białka',

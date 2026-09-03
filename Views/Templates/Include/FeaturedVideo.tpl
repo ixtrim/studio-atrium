@@ -24,7 +24,7 @@
                 </div>
                 <div class="absolute bottom-0 left-0 right-0 bg-[var(--brand-red)] text-white px-4 py-2 flex items-center justify-between z-10">
                     <div class="font-black text-[22px] tracking-wide">{$featured_video.badge_name|escape} <span
-                            class="text-[14px] font-normal align-middle">{$featured_video.badge_area|escape}</span></div>
+                            class="text-[16px] font-normal align-middle">{$featured_video.badge_area|escape}</span></div>
                     <div class="text-[13px]">{$featured_video.badge_site|escape}</div>
                 </div>
             </div>

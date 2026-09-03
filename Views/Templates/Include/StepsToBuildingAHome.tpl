@@ -17,7 +17,7 @@
                 </div>
             </div>
             <div id="step-panel-{$step@index}" class="hp-step-panel pointer-events-none">
-                <p class="mt-4 ml-11 text-[14px] leading-[1.7] text-[#555]">{$step.step_body|escape}</p>
+                <p class="mt-4 ml-11 text-[18px] leading-[24px] text-[#555]">{$step.step_body|escape}</p>
             </div>
         </div>
         {/foreach}
@@ -129,8 +129,8 @@
     <div class="max-w-[1200px] mx-auto px-4 grid grid-cols-1 md:grid-cols-2 items-center gap-8">
         <div class="py-16 md:pl-8">
             <h2 class="text-[28px] leading-[1.25] font-semibold text-[#222] uppercase tracking-wide">{$build_steps.experience.title|escape|nl2br nofilter}</h2>
-            <div class="mt-8 text-[15px] leading-[1.9] text-[#555]">{$build_steps.experience.body|escape|nl2br nofilter}</div>
-            <p class="mt-8 italic font-semibold text-[15px] text-[#222]">{$build_steps.experience.signature|escape}</p>
+            <div class="mt-8 text-[18px] leading-[24px] text-[#555]">{$build_steps.experience.body|escape|nl2br nofilter}</div>
+            <p class="mt-8 italic font-semibold text-[18px] leading-[24px] text-[#222]">{$build_steps.experience.signature|escape}</p>
             {if $build_steps.experience.button_url}
             <a href="{$build_steps.experience.button_url|escape}"
                 title="{$build_steps.experience.button_title|default:$build_steps.experience.button_label|escape}"

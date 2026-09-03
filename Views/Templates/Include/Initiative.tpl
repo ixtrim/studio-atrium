@@ -2,7 +2,7 @@
 	<div class="max-w-[1280px] mx-auto px-12 grid md:grid-cols-2 gap-16 items-center">
 		<div>
 			<h2 class="text-[26px] font-bold text-[var(--brand-darker)] mb-6">{$initiative.title|escape}</h2>
-			<p class="text-[15px] text-[var(--brand-darker)] leading-[1.7]">{$initiative.body|escape|nl2br}</p>
+			<p class="text-[18px] leading-[24px] text-[var(--brand-darker)]">{$initiative.body|escape|nl2br}</p>
 		</div>
 		<div class="flex flex-col items-center">
 			<img src="{$initiative.image_url|escape}" alt="{$initiative.image_alt|escape}" class="w-full max-w-lg object-contain">
