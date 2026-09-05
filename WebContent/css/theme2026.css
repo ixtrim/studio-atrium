@@ -261,6 +261,27 @@ strong, b {
   padding: 0 !important;
 }
 
+#hero-slider .hp-hero-arrow {
+  color: #fff !important;
+}
+
+#hero-slider .hp-hero-arrow:hover {
+  color: #1D99E1 !important;
+}
+
+#hero-slider .hp-hero-arrow:active {
+  color: #1578B0 !important;
+}
+
+#hero-slider .hp-hero-arrow svg {
+  width: 32px !important;
+  height: 32px !important;
+  max-width: 32px !important;
+  max-height: 32px !important;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 1px rgba(0, 0, 0, 0.4));
+  transition: color 0.15s ease, filter 0.15s ease;
+}
+
 @media (min-width: 1024px) {
   a.uppercase[class*="tracking-"],
   button.uppercase[class*="tracking-"],

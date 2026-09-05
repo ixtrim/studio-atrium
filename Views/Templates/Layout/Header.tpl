@@ -22,7 +22,7 @@
 {/if}
 
 <!-- New header START -->
-<header id="site-header" class="bg-white border-b border-black/5 sticky top-0 z-50 overflow-visible font-sans rounded-none">
+<header id="site-header" class="bg-white border-b border-black/5 z-50 overflow-visible font-sans rounded-none static">
 	<div class="relative" id="site-header-mega">
 		<div class="max-w-[1480px] mx-auto px-8 pt-5">
 			<div class="flex items-center justify-between gap-8 pb-4">
@@ -35,7 +35,7 @@
 							<i data-lucide="phone" class="w-[20px] h-[20px] text-[var(--brand-red)] shrink-0" stroke-width="2.2"></i>
 							<span class="text-[var(--brand-red)] font-black text-[19px] tracking-wide leading-none">33 822 94 96</span>
 						</a>
-						<form method="get" action="{url module='project' action='search'}" class="relative rounded-none" role="search">
+						<form method="get" action="projekty-domow/szukaj{url module='project' action='search'}" class="relative rounded-none" role="search">
 							<input type="text" name="query" placeholder="wyszukaj nazwę"
 								class="rounded-none bg-white border border-[#979797] h-[40px] pl-5 pr-10 text-[13px] w-[224px] leading-none text-[#343233] focus:outline-none focus:border-[var(--brand-blue)]">
 							<button type="submit" aria-label="Szukaj"
@@ -101,7 +101,7 @@
 			class="site-mega-dropdown hidden md:block absolute left-0 right-0 top-[calc(100%-12px)] pt-3 z-[60] pointer-events-none">
 			<div
 				class="site-mega-panel bg-[#f4f4f4] border-t border-black/5 shadow-[0_18px_40px_-18px_rgba(0,0,0,0.28)] origin-top transition-all duration-200 ease-out opacity-0 -translate-y-1.5 invisible">
-				<div class="max-w-[1480px] mx-auto px-8 py-8 max-h-[min(72vh,680px)] overflow-y-auto">
+				<div class="site-mega-scroll max-w-[1480px] mx-auto px-8 py-8 max-h-[min(72vh,680px)] overflow-y-auto">
 
 					<div class="site-mega-content hidden" data-mega-panel="projekty">
 						<div class="grid grid-cols-1 md:grid-cols-[220px_minmax(0,1fr)] gap-10 lg:gap-14">
@@ -135,14 +135,14 @@
 										{if $_item.menu_position == $smarty.section.col.iteration}
 											{if $_item.children}
 												<div>
-													<div class="text-[12px] font-black tracking-[0.14em] text-[var(--brand-red)] uppercase mb-[4px]">
+													<div class="text-[14px] font-medium tracking-[0.14em] text-[var(--brand-red)] uppercase mb-[4px]">
 														{$_item.name}
 													</div>
 													<ul>
 														{foreach $_item.children as $_subitem}
 															<li>
 																<a href="/{$_subitem.link}{if strpos($_subitem.link, '.html') === false}/{/if}"
-																	class="block py-[4px] text-[14px] leading-snug text-[#555] hover:text-[var(--brand-red)] transition-colors duration-150{if $_subitem.is_highlight} font-bold text-[#222]{/if}">
+																	class="block py-[2px] text-[14px] leading-snug text-[#555] hover:text-[var(--brand-red)] transition-colors duration-150{if $_subitem.is_highlight} font-bold text-[#222]{/if}">
 																	{$_subitem.name}
 																</a>
 															</li>
@@ -168,7 +168,7 @@
 					<div class="site-mega-content hidden" data-mega-panel="garaze">
 						<div class="grid grid-cols-1 sm:grid-cols-3 gap-10 lg:gap-16 py-2">
 							<div>
-								<div class="text-[12px] font-black tracking-[0.14em] text-[var(--brand-red)] uppercase mb-[4px]">
+								<div class="text-[14px] font-medium tracking-[0.14em] text-[var(--brand-red)] uppercase mb-[4px]">
 									Projekty garaży
 								</div>
 								<ul>
@@ -193,7 +193,7 @@
 								</ul>
 							</div>
 							<div>
-								<div class="text-[12px] font-black tracking-[0.14em] text-[var(--brand-red)] uppercase mb-[4px]">
+								<div class="text-[14px] font-medium tracking-[0.14em] text-[var(--brand-red)] uppercase mb-[4px]">
 									Mała architektura
 								</div>
 								<ul>
@@ -218,7 +218,7 @@
 								</ul>
 							</div>
 							<div>
-								<div class="text-[12px] font-black tracking-[0.14em] text-[var(--brand-red)] uppercase mb-[4px]">
+								<div class="text-[14px] font-medium tracking-[0.14em] text-[var(--brand-red)] uppercase mb-[4px]">
 									Inne
 								</div>
 								<ul>
@@ -338,7 +338,7 @@
 			<button type="button" id="search-trigger"
 				class="js-open-search rounded-none bg-[#ed1d24] hover:bg-[#d11a20] text-white h-[54px] w-[264px] font-black text-[14px] leading-none tracking-normal flex items-center justify-center gap-[10px] shrink-0 ml-6">
 				ZNAJDŹ PROJEKT
-				<i data-lucide="sliders-horizontal" class="w-[27px] h-[27px] shrink-0"></i>
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sliders-horizontal shrink-0" style="width:24px;height:24px;max-width:24px;max-height:24px" aria-hidden="true"><path d="M10 5H3"/><path d="M12 19H3"/><path d="M14 3v4"/><path d="M16 17v4"/><path d="M21 12h-9"/><path d="M21 19h-5"/><path d="M21 5h-7"/><path d="M8 10v4"/><path d="M8 12H3"/></svg>
 			</button>
 		</div>
 	</div>
@@ -457,8 +457,10 @@
 		}
 	}
 
-	header.querySelectorAll('.js-open-search').forEach(function (button) {
-		button.addEventListener('click', openSearchOverlay);
+	document.addEventListener('click', function (event) {
+		var button = event.target.closest('.js-open-search');
+		if (!button) return;
+		openSearchOverlay();
 	});
 })();
 {/literal}

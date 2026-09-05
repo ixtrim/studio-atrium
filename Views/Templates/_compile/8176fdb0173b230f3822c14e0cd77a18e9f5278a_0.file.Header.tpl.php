@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-03 14:46:14
+/* Smarty version 3.1.48, created on 2026-09-05 08:19:29
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6a996c16567f24_73840027',
+  'unifunc' => 'content_6a9bb471950611_39455338',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8176fdb0173b230f3822c14e0cd77a18e9f5278a' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Header.tpl',
-      1 => 1788437027,
+      1 => 1788588859,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6a996c16567f24_73840027 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6a9bb471950611_39455338 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['promo_marquee_text']->value) {?>
 	<div class="promo-marquee" aria-label="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['promo_marquee_text']->value, ENT_QUOTES, 'UTF-8', true);?>
 ">
@@ -58,7 +58,7 @@ if ($_smarty_tpl->tpl_vars['promo_marquee_text']->value) {?>
 <?php }?>
 
 <!-- New header START -->
-<header id="site-header" class="bg-white border-b border-black/5 sticky top-0 z-50 overflow-visible font-sans rounded-none">
+<header id="site-header" class="bg-white border-b border-black/5 z-50 overflow-visible font-sans rounded-none static">
 	<div class="relative" id="site-header-mega">
 		<div class="max-w-[1480px] mx-auto px-8 pt-5">
 			<div class="flex items-center justify-between gap-8 pb-4">
@@ -71,7 +71,7 @@ if ($_smarty_tpl->tpl_vars['promo_marquee_text']->value) {?>
 							<i data-lucide="phone" class="w-[20px] h-[20px] text-[var(--brand-red)] shrink-0" stroke-width="2.2"></i>
 							<span class="text-[var(--brand-red)] font-black text-[19px] tracking-wide leading-none">33 822 94 96</span>
 						</a>
-						<form method="get" action="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'project','action'=>'search'),$_smarty_tpl ) );?>
+						<form method="get" action="projekty-domow/szukaj<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'project','action'=>'search'),$_smarty_tpl ) );?>
 " class="relative rounded-none" role="search">
 							<input type="text" name="query" placeholder="wyszukaj nazwę"
 								class="rounded-none bg-white border border-[#979797] h-[40px] pl-5 pr-10 text-[13px] w-[224px] leading-none text-[#343233] focus:outline-none focus:border-[var(--brand-blue)]">
@@ -143,7 +143,7 @@ if ($_smarty_tpl->tpl_vars['promo_marquee_text']->value) {?>
 			class="site-mega-dropdown hidden md:block absolute left-0 right-0 top-[calc(100%-12px)] pt-3 z-[60] pointer-events-none">
 			<div
 				class="site-mega-panel bg-[#f4f4f4] border-t border-black/5 shadow-[0_18px_40px_-18px_rgba(0,0,0,0.28)] origin-top transition-all duration-200 ease-out opacity-0 -translate-y-1.5 invisible">
-				<div class="max-w-[1480px] mx-auto px-8 py-8 max-h-[min(72vh,680px)] overflow-y-auto">
+				<div class="site-mega-scroll max-w-[1480px] mx-auto px-8 py-8 max-h-[min(72vh,680px)] overflow-y-auto">
 
 					<div class="site-mega-content hidden" data-mega-panel="projekty">
 						<div class="grid grid-cols-1 md:grid-cols-[220px_minmax(0,1fr)] gap-10 lg:gap-14">
@@ -195,7 +195,7 @@ $_smarty_tpl->tpl_vars['_item']->do_else = false;
 										<?php if ($_smarty_tpl->tpl_vars['_item']->value['menu_position'] == (isset($_smarty_tpl->tpl_vars['__smarty_section_col']->value['iteration']) ? $_smarty_tpl->tpl_vars['__smarty_section_col']->value['iteration'] : null)) {?>
 											<?php if ($_smarty_tpl->tpl_vars['_item']->value['children']) {?>
 												<div>
-													<div class="text-[12px] font-black tracking-[0.14em] text-[var(--brand-red)] uppercase mb-[4px]">
+													<div class="text-[14px] font-medium tracking-[0.14em] text-[var(--brand-red)] uppercase mb-[4px]">
 														<?php echo $_smarty_tpl->tpl_vars['_item']->value['name'];?>
 
 													</div>
@@ -209,7 +209,7 @@ $_smarty_tpl->tpl_vars['_subitem']->do_else = false;
 															<li>
 																<a href="/<?php echo $_smarty_tpl->tpl_vars['_subitem']->value['link'];
 if (strpos($_smarty_tpl->tpl_vars['_subitem']->value['link'],'.html') === false) {?>/<?php }?>"
-																	class="block py-[4px] text-[14px] leading-snug text-[#555] hover:text-[var(--brand-red)] transition-colors duration-150<?php if ($_smarty_tpl->tpl_vars['_subitem']->value['is_highlight']) {?> font-bold text-[#222]<?php }?>">
+																	class="block py-[2px] text-[14px] leading-snug text-[#555] hover:text-[var(--brand-red)] transition-colors duration-150<?php if ($_smarty_tpl->tpl_vars['_subitem']->value['is_highlight']) {?> font-bold text-[#222]<?php }?>">
 																	<?php echo $_smarty_tpl->tpl_vars['_subitem']->value['name'];?>
 
 																</a>
@@ -245,7 +245,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 					<div class="site-mega-content hidden" data-mega-panel="garaze">
 						<div class="grid grid-cols-1 sm:grid-cols-3 gap-10 lg:gap-16 py-2">
 							<div>
-								<div class="text-[12px] font-black tracking-[0.14em] text-[var(--brand-red)] uppercase mb-[4px]">
+								<div class="text-[14px] font-medium tracking-[0.14em] text-[var(--brand-red)] uppercase mb-[4px]">
 									Projekty garaży
 								</div>
 								<ul>
@@ -270,7 +270,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 								</ul>
 							</div>
 							<div>
-								<div class="text-[12px] font-black tracking-[0.14em] text-[var(--brand-red)] uppercase mb-[4px]">
+								<div class="text-[14px] font-medium tracking-[0.14em] text-[var(--brand-red)] uppercase mb-[4px]">
 									Mała architektura
 								</div>
 								<ul>
@@ -295,7 +295,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 								</ul>
 							</div>
 							<div>
-								<div class="text-[12px] font-black tracking-[0.14em] text-[var(--brand-red)] uppercase mb-[4px]">
+								<div class="text-[14px] font-medium tracking-[0.14em] text-[var(--brand-red)] uppercase mb-[4px]">
 									Inne
 								</div>
 								<ul>

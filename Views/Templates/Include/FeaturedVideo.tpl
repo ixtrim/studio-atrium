@@ -1,7 +1,7 @@
 <section class="bg-[var(--brand-blue)]" id="featured-video">
     <div class="max-w-[1280px] mx-auto px-12 py-16 grid md:grid-cols-2 gap-12 items-center">
         <div>
-            <h2 class="text-[34px] font-bold text-[var(--brand-darker)] leading-[1.25]">{$featured_video.title|escape|nl2br}</h2>
+            <h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight leading-[1.25] uppercase">{$featured_video.title|escape|nl2br}</h2>
         </div>
         <div
             class="relative aspect-video w-full overflow-hidden cursor-pointer"

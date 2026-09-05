@@ -1,6 +1,6 @@
 <section class="w-full bg-white py-16">
     <div class="max-w-[1480px] mx-auto px-8">
-        <h2 class="pfh-title text-[34px] font-bold text-[#222] mb-10 pl-2">{$popular_family_homes.meta.section_title|escape}</h2>
+        <h2 class="pfh-title text-[36px] font-400 text-[var(--brand-darker)] tracking-tight mb-10 pl-2 uppercase">{$popular_family_homes.meta.section_title|escape}</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {foreach $popular_family_homes.items as $item}
             <a href="{$item.link_url|escape}"

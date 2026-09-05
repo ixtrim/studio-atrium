@@ -65,6 +65,9 @@ class Finder
         $sortOrderSql = (strtoupper((string) $sortOrder) === 'DESC') ? 'DESC' : 'ASC';
         if ($sortBy === 'name') {
             $orderSql = " ORDER BY name $sortOrderSql, id $sortOrderSql";
+        } elseif ($sortBy === 'id' && !$preserveOrder) {
+            // True chronological id sort (e.g. /projekty newest→oldest)
+            $orderSql = " ORDER BY id $sortOrderSql";
         } else {
             // Category / click-search lists arrive pre-ordered; keep that order.
             $orderSql = " ORDER BY FIELD(id, $placeholders)";

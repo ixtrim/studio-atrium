@@ -495,6 +495,10 @@ RewriteRule ^/?projekty-domow/opinie/,([0-9]+)?$ index.php?module=project&action
 RewriteRule ^/?projekty-domow/selfie/?$ index.php?module=selfie&action=gallery [L,NS]
 RewriteRule ^/?projekty-domow/selfie/,([0-9]+)?$ index.php?module=selfie&action=gallery&page=$1 [L,NS]
 
+#project list — /projekty = all house projects (2026 design, larger page size)
+RewriteRule ^/?projekty/?$ index.php?module=project&action=list&category=projekty-domow&all=1 [L,NS,QSA]
+RewriteRule ^/?projekty/(b|l|e{1}),(i|n|u{1}),(a|d{1})(,([0-9]*))?$ index.php?module=project&action=list&category=projekty-domow&display_type=$1&sort_by=$2&sort_order=$3&page=$5&all=1 [L,NS]
+
 #project list
 RewriteRule ^/?(projekty-domow|projekty-garazy)/?$ index.php?module=project&action=list&category=$1 [L,NS,QSA]
 RewriteRule ^/?(projekty-domow|projekty-garazy)/(b|l|e{1}),(i|n|u{1}),(a|d{1})(,([0-9]*))?$ index.php?module=project&action=list&category=$1&display_type=$2&sort_by=$3&sort_order=$4&page=$6 [L,NS]

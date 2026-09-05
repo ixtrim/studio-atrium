@@ -1286,14 +1286,15 @@ class SmartyFunctionsRegistry
             $stmt = $pdo->query(
                 'SELECT title_line1, title_line2, image_url, image_path, link_url
                  FROM homepage_categories
-                 ORDER BY sorting ASC, id ASC'
+                 ORDER BY sorting ASC, id ASC
+                 LIMIT 14'
             );
             if (!$stmt) {
-                return $defaults;
+                return array_slice($defaults, 0, 14);
             }
             $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
             if (empty($rows)) {
-                return $defaults;
+                return array_slice($defaults, 0, 14);
             }
             foreach ($rows as $i => $row) {
                 $rows[$i]['image_url'] = $this->resolveHomepageImageUrl(
@@ -1302,7 +1303,7 @@ class SmartyFunctionsRegistry
                 );
                 unset($rows[$i]['image_path']);
             }
-            return $rows;
+            return array_slice($rows, 0, 14);
         } catch (\Throwable $e) {
             return $defaults;
         }

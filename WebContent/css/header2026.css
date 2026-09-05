@@ -163,8 +163,36 @@
   text-decoration: none;
 }
 
+#site-header {
+  position: static !important;
+  top: auto !important;
+}
+
 #site-header .site-mega-panel {
   border-radius: 0 !important;
+}
+
+/* Mega menu scrollbar — gray/black, matches brand neutrals */
+#site-header .site-mega-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #555 #e8e8e8;
+}
+
+#site-header .site-mega-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+#site-header .site-mega-scroll::-webkit-scrollbar-track {
+  background: #e8e8e8;
+}
+
+#site-header .site-mega-scroll::-webkit-scrollbar-thumb {
+  background: #555;
+  border: 2px solid #e8e8e8;
+}
+
+#site-header .site-mega-scroll::-webkit-scrollbar-thumb:hover {
+  background: #222;
 }
 
 #site-mega-dropdown.is-open {

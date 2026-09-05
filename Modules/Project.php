@@ -861,6 +861,30 @@ class Project extends WWW\AbstractModule
 			}
 		}
 		
+		$isAllProjects = ((int) $request->getParam('all') === 1);
+		$listPath = $isAllProjects ? 'projekty' : rtrim($request->getParam('category'), '/');
+		$responseContext->set('isAllProjects', $isAllProjects);
+
+		// /projekty: default newest → oldest (by project id); keep curated category order elsewhere
+		if ($isAllProjects) {
+			$defaultSortOrder = 'DESC';
+			$rawForSort = $request->getRawParams();
+			$explicitSort = (isset($rawForSort['sort_order']) && $rawForSort['sort_order'] !== '')
+				|| (isset($rawForSort['sort_by']) && $rawForSort['sort_by'] !== '');
+			if (!$explicitSort) {
+				$displayParams['sortOrder'] = 'DESC';
+			}
+			if ($displayParams['sortBy'] == 'id') {
+				$sortedIds = array_values(array_filter(array_map('intval', $idList)));
+				if (strtoupper($displayParams['sortOrder']) === 'DESC') {
+					rsort($sortedIds, SORT_NUMERIC);
+				} else {
+					sort($sortedIds, SORT_NUMERIC);
+				}
+				$idList = $sortedIds;
+			}
+		}
+
 		$rawParams = $request->getRawParams();
 		$session = \Point7_WebApp::getSession();
 		
@@ -869,7 +893,7 @@ class Project extends WWW\AbstractModule
 		    $session->set('houseListPid', $rawParams['pid']);
 		    
 		    header('HTTP/1.1 301 Moved Permanently');
-		    header("Location: " . \Point7_WebApp::getConfigParam('domain.www') . '/' . $request->getParam('category') . '/');
+		    header("Location: " . \Point7_WebApp::getConfigParam('domain.www') . '/' . $listPath . '/');
 		    header('Connection: close');
 		    die();
 		} elseif ($session->get('houseListPid')) {
@@ -884,20 +908,23 @@ class Project extends WWW\AbstractModule
 		// rawParams must be client-supplied only (not XML default page=1), or this 301 loops
 		if (isset($rawParams['page']) && $rawParams['page'] !== '' && (int)$rawParams['page'] === 1) {
 		    header('HTTP/1.1 301 Moved Permanently');
-		    header("Location: " . \Point7_WebApp::getConfigParam('domain.www') . '/' . $request->getParam('category') . '/');
+		    header("Location: " . \Point7_WebApp::getConfigParam('domain.www') . '/' . $listPath . '/');
 		    header('Connection: close');
 		    die();
 		}
 
 		$limit = (int) $request->getParam('limit');
-		if ($limit <= 0) {
+		if ($isAllProjects) {
+			// More cards than category pages (11); keep 3n−1 so advisor tile fills the last grid cell
+			$limit = 23;
+		} elseif ($limit <= 0) {
 			$limit = 11;
 		}
 
 		$list = $this->_projectFinder->getListById(
 			$idList, 
 			\StudioAtrium_Entity_EntityBase_Project::STATUS_PUBLISHED, 
-			true, 
+			!$isAllProjects || $displayParams['sortBy'] != 'id',
 			$request->getParam('page') - 1, 
 			$limit, 
 			$displayParams['sortBy'],
@@ -926,19 +953,30 @@ class Project extends WWW\AbstractModule
 		if (isset($rawParams['page']) && $rawParams['page'] !== '') {
 			$responseContext->setMeta(str_replace('Studio Atrium', 'strona: ' . $request->getParam('page') . ' z ' . $pages . ' - Studio Atrium', $category->getMetaTitle()), $category->getMetaDescription());
 		} else {
-			$responseContext->setMeta($category->getMetaTitle(), $category->getMetaDescription());
-			$responseContext->set('description', $category->getDescription());
-			$responseContext->set('shortDescription', $category->getShortDescription());
-
-			//canonical na stronę główną z projektów domów (2018-01-11) - akcja mająca na celu przerankowanie na główną stronę
-			if($category->getId() == 1) {
-				$responseContext->set('canonicalUrl', \Point7_WebApp::getConfigParam('domain.www'));
+			if ($isAllProjects) {
+				$responseContext->setMeta(
+					'Wszystkie projekty domów | Studio Atrium',
+					$category->getMetaDescription() ? $category->getMetaDescription() : 'Przeglądaj wszystkie gotowe projekty domów Studio Atrium — parterowe, z poddaszem, piętrowe i nowoczesne.'
+				);
+				$responseContext->set('description', $category->getDescription());
+				$responseContext->set('shortDescription', $category->getShortDescription() ? $category->getShortDescription() : 'Kompletna lista gotowych projektów domów jednorodzinnych.');
+				$responseContext->set('canonicalUrl', \Point7_WebApp::getConfigParam('domain.www') . '/projekty/');
 				$isCanonicalSet = true;
 			} else {
-			    if(isset($rawParams['pid']) && !in_array($category->getId(), array(5, 6))) { //patrz niżej
-    			    $responseContext->set('canonicalUrl', \Point7_WebApp::getConfigParam('domain.www') . self::_houseListUrl($request->getParam('category')));
+				$responseContext->setMeta($category->getMetaTitle(), $category->getMetaDescription());
+				$responseContext->set('description', $category->getDescription());
+				$responseContext->set('shortDescription', $category->getShortDescription());
+
+				//canonical na stronę główną z projektów domów (2018-01-11) - akcja mająca na celu przerankowanie na główną stronę
+				if($category->getId() == 1) {
+					$responseContext->set('canonicalUrl', \Point7_WebApp::getConfigParam('domain.www'));
 					$isCanonicalSet = true;
-    			}
+				} else {
+				    if(isset($rawParams['pid']) && !in_array($category->getId(), array(5, 6))) { //patrz niżej
+	    			    $responseContext->set('canonicalUrl', \Point7_WebApp::getConfigParam('domain.www') . self::_houseListUrl($request->getParam('category')));
+						$isCanonicalSet = true;
+	    			}
+				}
 			}
 		}
 		
@@ -964,7 +1002,7 @@ class Project extends WWW\AbstractModule
 			if ($request->getParam('page') == 1) {
 				
 				$responseContext->set('nextUrl', \Point7_WebApp::getConfigParam('domain.www') . self::_houseListPagerUrl(
-						$request->getParam('category'),
+						$listPath,
 						$mappedDisplayType,
 						$mappedSortBy,
 						$mappedSortOrder,
@@ -977,10 +1015,10 @@ class Project extends WWW\AbstractModule
 
 			} else if ($request->getParam('page') == $pages) {
 				if($request->getParam('page') == 2) {
-					$responseContext->set('prevUrl', \Point7_WebApp::getConfigParam('domain.www') . self::_houseListUrl($request->getParam('category')));
+					$responseContext->set('prevUrl', \Point7_WebApp::getConfigParam('domain.www') . self::_houseListUrl($listPath));
 				} else {
 					$responseContext->set('prevUrl', \Point7_WebApp::getConfigParam('domain.www') . self::_houseListPagerUrl(
-							$request->getParam('category'),
+							$listPath,
 							$mappedDisplayType,
 							$mappedSortBy,
 							$mappedSortOrder,
@@ -990,7 +1028,7 @@ class Project extends WWW\AbstractModule
 				}
 			} else {
 				$responseContext->set('nextUrl', \Point7_WebApp::getConfigParam('domain.www') . self::_houseListPagerUrl(
-						$request->getParam('category'),
+						$listPath,
 						$mappedDisplayType,
 						$mappedSortBy,
 						$mappedSortOrder,
@@ -999,10 +1037,10 @@ class Project extends WWW\AbstractModule
 				);
 				
 				if($request->getParam('page') == 2) {
-					$responseContext->set('prevUrl', \Point7_WebApp::getConfigParam('domain.www') . self::_houseListUrl($request->getParam('category')));
+					$responseContext->set('prevUrl', \Point7_WebApp::getConfigParam('domain.www') . self::_houseListUrl($listPath));
 				} else {
 					$responseContext->set('prevUrl', \Point7_WebApp::getConfigParam('domain.www') . self::_houseListPagerUrl(
-							$request->getParam('category'),
+							$listPath,
 							$mappedDisplayType,
 							$mappedSortBy,
 							$mappedSortOrder,
@@ -1034,7 +1072,7 @@ class Project extends WWW\AbstractModule
 			}
 		}
 		
-		$url = self::_houseListUrl($request->getParam('category'));
+		$url = self::_houseListUrl($listPath);
 		$responseContext->set('url', $url);
 		$responseContext->set('type', $type);
 		$responseContext->set('listType', Helper\Project::getDisplayListTypes($type));

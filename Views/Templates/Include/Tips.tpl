@@ -1,6 +1,6 @@
 <section class="py-20 bg-white" id="tips">
     <div class="max-w-[1280px] mx-auto px-12">
-        <h2 class="text-[28px] font-bold text-[var(--brand-darker)] mb-12">{$porady.section_title|escape}</h2>
+        <h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight mb-12 uppercase">{$porady.section_title|escape}</h2>
         <div class="grid md:grid-cols-2 gap-x-16 gap-y-10">
             {foreach $tips as $item name=tips}
             <div class="flex gap-6 items-start{if $smarty.foreach.tips.index < 2} md:pb-10 md:border-b border-black/10{/if}">

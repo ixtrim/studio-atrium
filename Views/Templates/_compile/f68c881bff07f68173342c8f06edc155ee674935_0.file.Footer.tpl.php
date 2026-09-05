@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-03 14:46:14
+/* Smarty version 3.1.48, created on 2026-09-05 08:19:29
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6a996c16624766_83154517',
+  'unifunc' => 'content_6a9bb471997363_02950284',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f68c881bff07f68173342c8f06edc155ee674935' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Footer.tpl',
-      1 => 1788437022,
+      1 => 1788447965,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6a996c16624766_83154517 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6a9bb471997363_02950284 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="blue-overlay" id="ajax-info-overlay">
 	<div class="over-box" id="ajax-info-over-box"></div>
 	<button type="button" id="ajax-info-overlay-close" class="blue-overlay-close">Zamknij</button>
@@ -200,7 +200,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 	<div id="cs-wrapper">
 		<div class="search-header">
 			<h2 id="filter-header">Znajdź idealny projekt</h2>
-			<form method="get" action="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'project','action'=>'search'),$_smarty_tpl ) );?>
+			<form method="get" action="projekty-domow/szukaj<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'project','action'=>'search'),$_smarty_tpl ) );?>
 " id="search-form">
 				<div id="search-project">
 					<label for="search-name" class="black search-label">Wpisz nazwę projektu</label>

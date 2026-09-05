@@ -2,7 +2,7 @@
     <div class="bg-[var(--brand-blue)] relative overflow-visible">
         <div class="max-w-[1480px] mx-auto px-12 py-16 grid grid-cols-12 gap-8 items-center">
             <div class="col-span-12 md:col-span-7">
-                <h2 class="text-white text-[28px] font-bold tracking-wide uppercase mb-8">{$newsletter.meta.contest_title|escape}</h2>
+                <h2 class="text-white text-[36px] font-400 tracking-tight mb-8 uppercase">{$newsletter.meta.contest_title|escape}</h2>
                 <p class="text-[var(--brand-darker)] text-[18px] leading-[24px] font-bold uppercase">{$newsletter.meta.contest_body|escape|nl2br nofilter}</p>
             </div>
             <div class="hidden md:block col-span-5 relative h-[260px] overflow-visible" style="top:-40px">

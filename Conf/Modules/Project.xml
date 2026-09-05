@@ -33,6 +33,9 @@
 			<param name="limit" required="no" default="11">
 				<validator name="Integer" />
 			</param>
+			<param name="all" required="no" default="0">
+				<validator name="Integer" />
+			</param>
 		</action>
 		
 		<action name="House">

@@ -10,8 +10,10 @@
 		<ol class="max-w-[1480px] mx-auto px-8 py-4 flex flex-wrap items-center gap-3 text-[14px] text-[#6b6b6b] font-normal">
 			<li><a href="/" class="hover:text-[#222] transition-colors">Studio Atrium</a></li>
 			<li aria-hidden="true" class="text-[#bdbdbd]">»</li>
-			{if $category.tree == 'house'}
-			<li><a href="/projekty-domow/" class="hover:text-[#222] transition-colors">Projekty Domów</a></li>
+			{if $isAllProjects}
+			<li aria-current="page" class="text-[#6b6b6b]">Wszystkie projekty domów</li>
+			{elseif $category.tree == 'house'}
+			<li><a href="/projekty/" class="hover:text-[#222] transition-colors">Projekty Domów</a></li>
 			{if $category.link != 'projekty-domow'}
 			<li aria-hidden="true" class="text-[#bdbdbd]">»</li>
 			<li aria-current="page" class="text-[#6b6b6b]">{if $category.alternate_name}{$category.alternate_name|escape}{else}{$category.name|escape}{/if}</li>
@@ -87,7 +89,7 @@
 
 				<div class="flex-1 min-w-0">
 					<div class="bg-[#ececec] px-6 py-5 mb-6">
-						<h1 class="text-[26px] font-normal text-[#222]">{if $category.alternate_name}{$category.alternate_name|escape}{else}{$category.name|escape}{/if}</h1>
+						<h1 class="text-[26px] font-normal text-[#222]">{if $isAllProjects}Wszystkie projekty domów{elseif $category.alternate_name}{$category.alternate_name|escape}{else}{$category.name|escape}{/if}</h1>
 						<div class="text-[14px] text-[#222] mt-2">
 							<strong>Liczba projektów:</strong> {$total}
 						</div>
@@ -105,7 +107,7 @@
 							<input type="hidden" name="sort_order" value="{$sortOrder}" id="sort-order">
 							<label for="sort-select" class="text-[13px] text-[#666]">Sortowanie:</label>
 							<select id="sort-select" name="sort_by" class="border border-[#ccc] bg-white px-3 py-2 text-[13px] text-[#222]">
-								<option value="id" data-sort="asc"{if $sortBy == 'id'} selected="selected"{/if}>domyślne</option>
+								<option value="id" data-sort="{if $isAllProjects}desc{else}asc{/if}"{if $sortBy == 'id'} selected="selected"{/if}>{if $isAllProjects}od najnowszych{else}domyślne{/if}</option>
 								<option value="usable_area" data-sort="asc"{if $sortBy == 'usable_area' && $sortOrder == 'ASC'} selected="selected"{/if}>powierzchnia ↑</option>
 								<option value="usable_area" data-sort="desc"{if $sortBy == 'usable_area' && $sortOrder == 'DESC'} selected="selected"{/if}>powierzchnia ↓</option>
 								<option value="name" data-sort="asc"{if $sortBy == 'name' && $sortOrder == 'ASC'} selected="selected"{/if}>nazwa A–Z</option>
@@ -133,7 +135,7 @@
 					{else}
 						<div class="bg-[#f7f7f7] px-8 py-16 text-center">
 							<p class="text-[18px] font-bold text-[#222] mb-3">Niestety nic dla Ciebie nie znaleźliśmy</p>
-							<p class="text-[14px] text-[#555]">Zmień kryteria lub przejdź do <a href="/projekty-domow/" class="text-[var(--brand-blue-strong)] hover:underline">wszystkich projektów domów</a></p>
+							<p class="text-[14px] text-[#555]">Zmień kryteria lub przejdź do <a href="/projekty/" class="text-[var(--brand-blue-strong)] hover:underline">wszystkich projektów domów</a></p>
 						</div>
 					{/if}
 

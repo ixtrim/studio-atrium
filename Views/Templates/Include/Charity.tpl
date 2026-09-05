@@ -5,7 +5,7 @@
 			<img src="{$charity.logo2_url|escape}" alt="{$charity.logo2_alt|escape}" class="w-40 h-40 object-contain">
 		</div>
 		<div>
-			<h2 class="text-[26px] font-bold text-[var(--brand-darker)] mb-6">{$charity.title|escape}</h2>
+			<h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight mb-6 uppercase">{$charity.title|escape}</h2>
 			<p class="text-[18px] leading-[24px] text-[var(--brand-darker)] max-w-[450px]">{$charity.body|escape|nl2br}</p>
 		</div>
 	</div>

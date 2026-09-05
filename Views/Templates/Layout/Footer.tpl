@@ -238,7 +238,7 @@
 	<div id="cs-wrapper">
 		<div class="search-header">
 			<h2 id="filter-header">Znajdź idealny projekt</h2>
-			<form method="get" action="{url module='project' action='search'}" id="search-form">
+			<form method="get" action="projekty-domow/szukaj{url module='project' action='search'}" id="search-form">
 				<div id="search-project">
 					<label for="search-name" class="black search-label">Wpisz nazwę projektu</label>
 					<div class="search-input-wrapper">

@@ -21,17 +21,14 @@
   box-sizing: border-box;
 }
 
-/* Reset legacy button chrome; Tailwind utility classes supply colors/borders */
+/*
+ * Button chrome only — do NOT reset color/font/transform/letter-spacing.
+ * Tailwind utilities (important:true) must win; this file loads after Tailwind.
+ */
 #hp-2026 button {
   margin: 0;
   appearance: none;
   -webkit-appearance: none;
-  line-height: inherit;
-  font: inherit;
-  color: inherit;
-  text-align: inherit;
-  text-transform: none;
-  letter-spacing: inherit;
   overflow: visible;
   cursor: pointer;
   box-shadow: none;
@@ -73,6 +70,31 @@
   box-shadow: none !important;
   outline: none !important;
   padding: 0 !important;
+}
+
+#hp-2026 .hp-hero-arrow,
+#hero-slider .hp-hero-arrow {
+  color: #fff !important;
+}
+
+#hp-2026 .hp-hero-arrow:hover,
+#hero-slider .hp-hero-arrow:hover {
+  color: #1D99E1 !important;
+}
+
+#hp-2026 .hp-hero-arrow:active,
+#hero-slider .hp-hero-arrow:active {
+  color: #1578B0 !important;
+}
+
+#hp-2026 .hp-hero-arrow svg,
+#hero-slider .hp-hero-arrow svg {
+  width: 32px !important;
+  height: 32px !important;
+  max-width: 32px !important;
+  max-height: 32px !important;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 1px rgba(0, 0, 0, 0.4));
+  transition: color 0.15s ease, filter 0.15s ease;
 }
 
 #hp-2026 .hp-newsletter-email {

@@ -1,7 +1,7 @@
 {if $bestsellers}
 <section id="ostatnio" class="w-full bg-white py-16 scroll-mt-32">
 	<div class="max-w-[1480px] mx-auto px-8">
-		<h2 class="text-[34px] font-bold text-[#222] mb-10 pl-2">Ostatnio oglądane</h2>
+		<h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight mb-10 pl-2 uppercase">Ostatnio oglądane</h2>
 		<div class="relative">
 			<button type="button" aria-label="Poprzedni" id="cat-lv-prev"
 				class="hidden lg:flex absolute -left-10 top-[40%] -translate-y-1/2 z-10 w-8 h-8 items-center justify-center bg-transparent border-0 outline-none appearance-none p-0 shadow-none text-[#7a7a7a] hover:text-[var(--brand-darker)] cursor-pointer">
@@ -31,7 +31,7 @@
 									<div class="text-[16px] text-[var(--brand-red)] line-through">{$item.price_old|escape} PLN</div>
 									{/if}
 									<div class="flex items-baseline gap-2">
-										<span class="text-[34px] font-bold text-[var(--brand-blue-strong)] leading-none">{$item.price|escape}</span>
+										<span class="text-[34px] font-['Montserrat',sans-serif] font-semibold text-[var(--brand-blue-strong)] leading-none">{$item.price|escape}</span>
 										<span class="text-[16px] text-[var(--brand-blue-strong)] font-semibold">PLN</span>
 									</div>
 								</div>

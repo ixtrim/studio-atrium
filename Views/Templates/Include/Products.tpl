@@ -1,7 +1,7 @@
 {foreach $products_sections as $section}
 <section class="py-6" id="products-{$section.section_key|escape}">
     <div class="max-w-[1280px] mx-auto px-6">
-        <h2 class="text-[22px] font-bold text-[var(--brand-darker)] leading-tight">{$section.section_title|escape}</h2>
+        <h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight leading-tight uppercase">{$section.section_title|escape}</h2>
         <p class="text-[18px] leading-[24px] text-[var(--brand-darker)]/80 mt-1 mb-5">{$section.section_subtitle|escape}</p>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {foreach $section.items as $item}

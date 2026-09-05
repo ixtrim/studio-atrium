@@ -1,7 +1,7 @@
 <section class="bg-[#3a3a3a] text-white py-20" id="offer">
     <div class="max-w-[1280px] mx-auto px-12 grid md:grid-cols-2 gap-16 items-start">
         <div>
-            <h2 class="text-[26px] font-bold tracking-wide uppercase mb-10">{$offer.title|escape}</h2>
+            <h2 class="text-[36px] font-400 text-white tracking-tight mb-10 uppercase">{$offer.title|escape}</h2>
             <p class="text-[18px] leading-[24px] font-bold uppercase mb-8 max-w-md">{$offer.lead_text|escape|nl2br}</p>
             <a href="{$offer.button_url|escape}" class="inline-flex items-center justify-center bg-[var(--brand-red)] hover:bg-[var(--brand-red-hover)] text-white font-bold px-8 py-3 lg:h-[54px] lg:max-h-[54px] lg:py-0 leading-none text-[13px] uppercase tracking-wider mb-12">{$offer.button_label|escape}</a>
             <blockquote class="text-center text-[22px] leading-snug max-w-xl mx-auto px-4"

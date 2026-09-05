@@ -29,7 +29,7 @@
 								<div class="pt-1 mt-auto">
 									{if $item.price_old}<div class="text-[16px] text-[var(--brand-red)] line-through">{number_format($item.price_old, 0, ',', ' ')} PLN</div>{/if}
 									<div class="flex items-baseline gap-2">
-										<span class="text-[34px] font-bold text-[var(--brand-blue-strong)] leading-none">{number_format($item.price, 0, ',', ' ')}</span>
+										<span class="text-[34px] font-['Montserrat',sans-serif] font-semibold text-[var(--brand-blue-strong)] leading-none">{number_format($item.price, 0, ',', ' ')}</span>
 										<span class="text-[16px] text-[var(--brand-blue-strong)] font-semibold">PLN</span>
 									</div>
 								</div>
