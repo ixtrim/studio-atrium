@@ -126,7 +126,7 @@
 </script>
 
 <section class="w-full bg-[#f3f3f3]" id="our-experience">
-    <div class="max-w-[1200px] mx-auto px-4 grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+    <div class="max-w-[1340px] mx-auto px-4 grid grid-cols-1 md:grid-cols-2 items-center gap-8">
         <div class="py-16 md:pl-8">
             <h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight leading-[1.25] uppercase">
                 {$build_steps.experience.title|escape|nl2br nofilter}</h2>
@@ -138,10 +138,10 @@
                 <a href="{$build_steps.experience.button_url|escape}"
                     title="{$build_steps.experience.button_title|default:$build_steps.experience.button_label|escape}"
                     rel="{$build_steps.experience.button_rel|default:'noopener noreferrer'|escape}"
-                    class="mt-8 inline-flex items-center justify-center bg-[#e63329] hover:bg-[#c92a21] text-white text-[13px] font-bold tracking-wider uppercase px-12 py-4 lg:h-[54px] lg:max-h-[54px] lg:py-0 leading-none">{$build_steps.experience.button_label|escape}</a>
+                    class="mt-8 inline-flex items-center justify-center bg-[#e63329] hover:bg-[#c92a21] text-white text-[14px] font-extrabold leading-none tracking-normal uppercase px-12 py-4 lg:h-[54px] lg:max-h-[54px] lg:py-0">{$build_steps.experience.button_label|escape}</a>
             {else}
                 <button type="button"
-                    class="mt-8 inline-flex items-center justify-center bg-[#e63329] hover:bg-[#c92a21] text-white text-[13px] font-bold tracking-wider uppercase px-12 py-4 lg:h-[54px] lg:max-h-[54px] lg:py-0 leading-none border-0">{$build_steps.experience.button_label|escape}</button>
+                    class="mt-8 inline-flex items-center justify-center bg-[#e63329] hover:bg-[#c92a21] text-white text-[14px] font-extrabold leading-none tracking-normal uppercase px-12 py-4 lg:h-[54px] lg:max-h-[54px] lg:py-0 border-0">{$build_steps.experience.button_label|escape}</button>
             {/if}
         </div>
         {if $build_steps.experience.image_url}
