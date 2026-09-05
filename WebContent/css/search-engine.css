@@ -67,8 +67,12 @@
 
 
 div.blue-overlay.cs #filter-header {
-  font-size: calc(1.5 * var(--font-size-base));
-  font-weight: 700;
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  color: var(--brand-darker, #222);
+  font-family: "Nexa", "Montserrat", sans-serif;
   margin-bottom: 24px;
 }
 div.blue-overlay.cs .search-header {
@@ -703,10 +707,12 @@ div.blue-overlay.cs .search-label {
 
 /* —— Site theme: white, grays, brand red —— */
 .project-search-overlay div.blue-overlay.cs #filter-header {
-  color: var(--color-text-bright);
-  font-weight: 900;
-  letter-spacing: -0.02em;
-  text-transform: none;
+  color: var(--brand-darker, #222);
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  font-family: "Nexa", "Montserrat", sans-serif;
 }
 
 .project-search-overlay div.blue-overlay.cs .search-header {
@@ -785,7 +791,7 @@ div.blue-overlay.cs .search-label {
   filter: none;
   opacity: 0.45;
   background-color: #ccc;
-  color: #fff;
+  color: #666666;
 }
 
 .project-search-overlay #filter-labels {
@@ -841,7 +847,7 @@ div.blue-overlay.cs .search-label {
 }
 
 .project-search-overlay .filter-tab.radio-group .custom-radio span:not(.count) {
-  padding: 0 10px;
+  padding: 3px 10px;
   font-size: 12px;
   font-weight: 600;
   border: 1px solid var(--color-border);
@@ -1070,9 +1076,11 @@ div.blue-overlay.cs .search-label {
 }
 
 .project-search-overlay .quick-presets .chip span:not(.count) {
-  font-size: 13px;
+  font-size: 16px;
+  line-height: 16px;
   font-weight: 700;
   letter-spacing: 0.02em;
+  padding: 6px 10px;
 }
 
 .project-search-overlay .quick-presets .chip input:checked + span {

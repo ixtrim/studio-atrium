@@ -31,14 +31,14 @@
                 </div>
             </div>
             <button type="button" aria-label="Poprzednie" id="hp-cat-prev"
-                class="hidden lg:flex absolute -left-10 top-[40%] -translate-y-1/2 w-8 h-8 items-center justify-center bg-transparent border-0 outline-none appearance-none p-0 shadow-none text-[#7a7a7a] hover:text-[var(--brand-darker)] z-10 cursor-pointer"><svg
+                class="hidden lg:flex absolute -left-10 top-[40%] -translate-y-1/2 w-8 h-8 items-center justify-center bg-transparent border-0 outline-none appearance-none p-0 shadow-none text-black hover:text-[#179fd4] z-10 cursor-pointer"><svg
                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
                     class="lucide lucide-chevron-left w-7 h-7" aria-hidden="true">
                     <path d="m15 18-6-6 6-6"></path>
                 </svg></button>
             <button type="button" aria-label="Następne" id="hp-cat-next"
-                class="hidden lg:flex absolute -right-10 top-[40%] -translate-y-1/2 w-8 h-8 items-center justify-center bg-transparent border-0 outline-none appearance-none p-0 shadow-none text-[#7a7a7a] hover:text-[var(--brand-darker)] z-10 cursor-pointer"><svg
+                class="hidden lg:flex absolute -right-10 top-[40%] -translate-y-1/2 w-8 h-8 items-center justify-center bg-transparent border-0 outline-none appearance-none p-0 shadow-none text-black hover:text-[#179fd4] z-10 cursor-pointer"><svg
                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
                     class="lucide lucide-chevron-right w-7 h-7" aria-hidden="true">

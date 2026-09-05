@@ -237,7 +237,7 @@
 <div class="blue-overlay cs">
 	<div id="cs-wrapper">
 		<div class="search-header">
-			<h2 id="filter-header">Znajdź idealny projekt</h2>
+			<h2 id="filter-header" class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight uppercase">Znajdź idealny projekt</h2>
 			<form method="get" action="projekty-domow/szukaj{url module='project' action='search'}" id="search-form">
 				<div id="search-project">
 					<label for="search-name" class="black search-label">Wpisz nazwę projektu</label>

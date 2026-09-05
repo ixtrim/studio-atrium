@@ -58,8 +58,12 @@ body:has(.blue-overlay.cs.open) {
 }
 
 div.blue-overlay.cs #filter-header {
-  font-size: calc(1.5 * var(--font-size-base));
-  font-weight: 700;
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  color: var(--brand-darker, #222);
+  font-family: "Nexa", "Montserrat", sans-serif;
   margin-bottom: 24px;
 }
 div.blue-overlay.cs .search-header {
@@ -1424,7 +1428,11 @@ div.blue-overlay.cs {
   color: var(--color-text-bright);
 }
 div.blue-overlay.cs #filter-header {
-  color: var(--color-text-bright);
+  color: var(--brand-darker, #222);
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
   font-family: "Nexa", "Montserrat", sans-serif;
 }
 div.blue-overlay.cs .search-header {
