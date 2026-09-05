@@ -123,8 +123,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>
 {/if}
 
-<link rel="preload" as="font" type="font/ttf" href="/fonts/Nexa-ExtraLight.ttf" crossorigin>
-<link rel="preload" as="font" type="font/ttf" href="/fonts/Nexa-Heavy.ttf" crossorigin>
+<link rel="preload" as="font" type="font/otf" href="/fonts/NexaTextBook.otf" crossorigin>
+<link rel="preload" as="font" type="font/otf" href="/fonts/NexaTextRegular.otf" crossorigin>
+<link rel="preload" as="font" type="font/otf" href="/fonts/NexaTextBold.otf" crossorigin>
 
 {if $showSchemaOrganization}
 {literal}	

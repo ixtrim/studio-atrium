@@ -17,7 +17,7 @@
                     {/if}
                     <span class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-60 {if $item@first}bg-[#009D45]{else}bg-[#1D99E1]{/if}" aria-hidden="true"></span>
                 </div>
-                <div class="mt-[16px] text-[18px] font-bold text-[#222]">{$item.label|escape}</div>
+                <div class="mt-[8px] text-[18px] font-600 text-[#222]">{$item.label|escape}</div>
             </a>
             {/foreach}
         </div>

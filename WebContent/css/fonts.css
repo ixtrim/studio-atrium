@@ -2,22 +2,76 @@
 
 @media all {
 
-	/* Webfont: Nexa ExtraLight (regular / light) */
+	/* Nexa Text family (CSS name "Nexa") — see theme2026.css for primary declarations */
 	@font-face {
 	    font-family: 'Nexa';
-	    src: url('/fonts/Nexa-ExtraLight.ttf') format('truetype');
+	    src: url('/fonts/NexaTextThin.otf') format('opentype');
 	    font-style: normal;
-	    font-weight: 200 400;
+	    font-weight: 100;
 	    font-display: swap;
 	    text-rendering: optimizeLegibility;
 	}
-
-	/* Webfont: Nexa Heavy (medium / bold) */
 	@font-face {
 	    font-family: 'Nexa';
-	    src: url('/fonts/Nexa-Heavy.ttf') format('truetype');
+	    src: url('/fonts/NexaTextExtraLight.otf') format('opentype');
 	    font-style: normal;
-	    font-weight: 500 900;
+	    font-weight: 200;
+	    font-display: swap;
+	    text-rendering: optimizeLegibility;
+	}
+	@font-face {
+	    font-family: 'Nexa';
+	    src: url('/fonts/NexaTextLight.otf') format('opentype');
+	    font-style: normal;
+	    font-weight: 300;
+	    font-display: swap;
+	    text-rendering: optimizeLegibility;
+	}
+	@font-face {
+	    font-family: 'Nexa';
+	    src: url('/fonts/NexaTextBook.otf') format('opentype');
+	    font-style: normal;
+	    font-weight: 400;
+	    font-display: swap;
+	    text-rendering: optimizeLegibility;
+	}
+	@font-face {
+	    font-family: 'Nexa';
+	    src: url('/fonts/NexaTextRegular.otf') format('opentype');
+	    font-style: normal;
+	    font-weight: 450 500;
+	    font-display: swap;
+	    text-rendering: optimizeLegibility;
+	}
+	@font-face {
+	    font-family: 'Nexa';
+	    src: url('/fonts/NexaTextBold.otf') format('opentype');
+	    font-style: normal;
+	    font-weight: 600 700;
+	    font-display: swap;
+	    text-rendering: optimizeLegibility;
+	}
+	@font-face {
+	    font-family: 'Nexa';
+	    src: url('/fonts/NexaTextExtraBold.otf') format('opentype');
+	    font-style: normal;
+	    font-weight: 800;
+	    font-display: swap;
+	    text-rendering: optimizeLegibility;
+	}
+	@font-face {
+	    font-family: 'Nexa';
+	    src: url('/fonts/NexaTextHeavy.otf') format('opentype');
+	    font-style: normal;
+	    font-weight: 850;
+	    font-display: swap;
+	    text-rendering: optimizeLegibility;
+	}
+	@font-face {
+	    font-family: 'Nexa';
+	    src: url('/fonts/NexaTextBlack.otf') format('opentype');
+	    font-style: normal;
+	    font-weight: 900;
 	    font-display: swap;
 	    text-rendering: optimizeLegibility;
 	}
