@@ -7,10 +7,13 @@
   font-size: 16px;
 }
 
-/* Body copy defaults for all MainPage sections */
-#hp-2026 p,
-#hp-2026 ul,
-#hp-2026 ol {
+/*
+ * Body copy defaults — skip when a Tailwind text-[…] size utility is present
+ * so utilities (important:true) win over this post-Tailwind sheet.
+ */
+#hp-2026 p:not([class*="text-["]),
+#hp-2026 ul:not([class*="text-["]),
+#hp-2026 ol:not([class*="text-["]) {
   font-size: 18px !important;
   line-height: 24px !important;
 }

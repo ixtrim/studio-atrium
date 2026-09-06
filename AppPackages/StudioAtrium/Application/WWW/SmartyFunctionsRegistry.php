@@ -2475,13 +2475,12 @@ class SmartyFunctionsRegistry
             'attribution'  => 'Pan Gracjan o projekcie SAMBA XI',
             'medals_title' => 'Jesteśmy dumni, że od lat nas cenicie',
         );
-        $medalDefaults = array();
-        for ($i = 0; $i < 11; $i++) {
-            $medalDefaults[] = array(
+        $medalDefaults = array(
+            array(
                 'image_url' => '',
                 'image_alt' => 'Konsumencki Lider Jakości 2024',
-            );
-        }
+            ),
+        );
         try {
             $pdo = \Point7_WebApp::getPDO();
             $meta = $metaDefaults;
@@ -2504,7 +2503,7 @@ class SmartyFunctionsRegistry
             $existsMedals = $pdo->query("SHOW TABLES LIKE 'homepage_testimonials_medals'");
             if ($existsMedals && $existsMedals->fetchColumn()) {
                 $stmt = $pdo->query(
-                    'SELECT image_url, image_path, image_alt FROM homepage_testimonials_medals ORDER BY sorting ASC, id ASC'
+                    'SELECT image_url, image_path, image_alt FROM homepage_testimonials_medals ORDER BY sorting ASC, id ASC LIMIT 1'
                 );
                 if ($stmt) {
                     $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
