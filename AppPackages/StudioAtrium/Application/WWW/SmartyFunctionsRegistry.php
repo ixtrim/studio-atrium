@@ -1807,14 +1807,9 @@ class SmartyFunctionsRegistry
     private function fetchProductsSections()
     {
         $sectionDefaults = array(
-            'bestsellers'  => array('section_key' => 'bestsellers', 'section_title' => 'Nasze bestsellery', 'section_subtitle' => 'Jeśli wybudowałeś dom według naszego projektu weź udział w FOTOKONKURSIE z nagrodami'),
-            'promotions'   => array('section_key' => 'promotions', 'section_title' => 'Promocje na projekty', 'section_subtitle' => 'Jeśli wybudowałeś dom według naszego projektu weź udział w FOTOKONKURSIE z nagrodami'),
-            'most_popular' => array('section_key' => 'most_popular', 'section_title' => 'Najczęściej kupowane', 'section_subtitle' => 'Jeśli wybudowałeś dom według naszego projektu weź udział w FOTOKONKURSIE z nagrodami'),
-        );
-        $productDefaults = array(
-            'bestsellers'  => array(array('project_id' => 1759), array('project_id' => 585), array('project_id' => 1514)),
-            'promotions'   => array(array('project_id' => 1759), array('project_id' => 585), array('project_id' => 1514)),
-            'most_popular' => array(array('project_id' => 1759), array('project_id' => 585), array('project_id' => 1514)),
+            'bestsellers'  => array('section_key' => 'bestsellers', 'section_title' => 'Realizacje', 'section_subtitle' => 'Zobacz domy wybudowane według naszych projektów'),
+            'promotions'   => array('section_key' => 'promotions', 'section_title' => 'Fotokonkursy', 'section_subtitle' => 'Jeśli wybudowałeś dom według naszego projektu weź udział w FOTOKONKURSIE z nagrodami'),
+            'most_popular' => array('section_key' => 'most_popular', 'section_title' => 'Galeria inspiracji', 'section_subtitle' => 'Wybrane realizacje i zdjęcia z fotokonkursów'),
         );
 
         try {
@@ -1823,6 +1818,15 @@ class SmartyFunctionsRegistry
             $existsItems = $pdo->query("SHOW TABLES LIKE 'homepage_products'");
             if (!($existsSections && $existsSections->fetchColumn() && $existsItems && $existsItems->fetchColumn())) {
                 throw new \RuntimeException('products tables missing');
+            }
+
+            // Ensure gallery columns exist (same migration as backend)
+            foreach (array('title', 'description', 'image_url', 'image_path', 'image_filename', 'image_original_name') as $col) {
+                $colExists = $pdo->query("SHOW COLUMNS FROM homepage_products LIKE " . $pdo->quote($col));
+                if (!($colExists && $colExists->fetchColumn())) {
+                    // Backend ensureProductsTables should migrate; skip if missing
+                    break;
+                }
             }
 
             $metaStmt = $pdo->query(
@@ -1837,7 +1841,7 @@ class SmartyFunctionsRegistry
             }
 
             $itemStmt = $pdo->query(
-                'SELECT section_key, project_id, sorting
+                'SELECT section_key, title, description, image_url, image_path, sorting
                  FROM homepage_products
                  ORDER BY section_key ASC, sorting ASC, id ASC'
             );
@@ -1848,50 +1852,38 @@ class SmartyFunctionsRegistry
                 if (!isset($itemsByKey[$key])) {
                     $itemsByKey[$key] = array();
                 }
+                $imageUrl = $this->resolveHomepageImageUrl(
+                    isset($row['image_url']) ? $row['image_url'] : '',
+                    isset($row['image_path']) ? $row['image_path'] : ''
+                );
+                if ($imageUrl === '' && empty($row['title'])) {
+                    continue;
+                }
                 $itemsByKey[$key][] = array(
-                    'project_id' => (int) $row['project_id'],
-                    'sorting'    => (int) $row['sorting'],
+                    'title'       => isset($row['title']) ? $row['title'] : '',
+                    'description' => isset($row['description']) ? $row['description'] : '',
+                    'image_url'   => $imageUrl,
+                    'sorting'     => (int) $row['sorting'],
                 );
             }
 
             $sections = array();
             foreach (array('bestsellers', 'promotions', 'most_popular') as $key) {
                 $meta = isset($metaByKey[$key]) ? $metaByKey[$key] : $sectionDefaults[$key];
-                $items = !empty($itemsByKey[$key]) ? $itemsByKey[$key] : $productDefaults[$key];
-                $cards = $this->buildProductCards($pdo, $items);
+                $items = !empty($itemsByKey[$key]) ? array_slice($itemsByKey[$key], 0, 3) : array();
+                if (!$items) {
+                    continue;
+                }
                 $sections[] = array(
                     'section_key'      => $key,
                     'section_title'    => $meta['section_title'],
                     'section_subtitle' => $meta['section_subtitle'],
-                    'items'            => $cards,
+                    'items'            => $items,
                 );
             }
             return $sections;
         } catch (\Throwable $e) {
-            try {
-                $pdo = \Point7_WebApp::getPDO();
-                $sections = array();
-                foreach (array('bestsellers', 'promotions', 'most_popular') as $key) {
-                    $sections[] = array(
-                        'section_key'      => $key,
-                        'section_title'    => $sectionDefaults[$key]['section_title'],
-                        'section_subtitle' => $sectionDefaults[$key]['section_subtitle'],
-                        'items'            => $this->buildProductCards($pdo, $productDefaults[$key]),
-                    );
-                }
-                return $sections;
-            } catch (\Throwable $inner) {
-                $sections = array();
-                foreach (array('bestsellers', 'promotions', 'most_popular') as $key) {
-                    $sections[] = array(
-                        'section_key'      => $key,
-                        'section_title'    => $sectionDefaults[$key]['section_title'],
-                        'section_subtitle' => $sectionDefaults[$key]['section_subtitle'],
-                        'items'            => array(),
-                    );
-                }
-                return $sections;
-            }
+            return array();
         }
     }
 
