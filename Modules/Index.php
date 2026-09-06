@@ -181,7 +181,100 @@ class Index extends WWW\AbstractModule
 
 		// Any mobile device (phones or tablets).
 		if ( $detect->isMobile() ) {
-		    $responseContext->set("isMobile", 1);
+		$responseContext->set("isMobile", 1);
+		}
+	}
+
+	/**
+	 * Homepage newsletter signup (JSON).
+	 */
+	public function doNewsletterSubscribe(
+		\Point7_WebApp_Request_Filtered $request, WWW\AppContext $appContext, WWW\ResponseContext $responseContext
+	) {
+		$email = strtolower(trim((string) $request->getParam('email')));
+		$consent = (string) $request->getParam('consent');
+
+		if ($consent !== '1' && $consent !== 'on' && $consent !== 'true') {
+			$responseContext->setJSONResponse('feedback', array(
+				'status'  => 'fail',
+				'message' => 'Aby się zapisać, zaznacz zgodę na przetwarzanie danych.',
+			));
+			return;
+		}
+
+		if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+			$responseContext->setJSONResponse('feedback', array(
+				'status'  => 'fail',
+				'message' => 'Podaj prawidłowy adres e-mail.',
+			));
+			return;
+		}
+
+		if (strlen($email) > 191) {
+			$responseContext->setJSONResponse('feedback', array(
+				'status'  => 'fail',
+				'message' => 'Adres e-mail jest zbyt długi.',
+			));
+			return;
+		}
+
+		try {
+			$pdo = \Point7_WebApp::getPDO();
+			$exists = $pdo->query("SHOW TABLES LIKE 'homepage_newsletter_list'");
+			if (!($exists && $exists->fetchColumn())) {
+				try {
+					$pdo->exec(
+						'CREATE TABLE IF NOT EXISTS homepage_newsletter_list (
+							id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+							e_mail VARCHAR(191) NOT NULL,
+							PRIMARY KEY (id),
+							UNIQUE KEY uq_homepage_newsletter_e_mail (e_mail)
+						) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4'
+					);
+				} catch (\PDOException $createEx) {
+					$existsAfter = $pdo->query("SHOW TABLES LIKE 'homepage_newsletter_list'");
+					if (!($existsAfter && $existsAfter->fetchColumn())) {
+						throw $createEx;
+					}
+				}
+				$check = $pdo->query("SHOW TABLES LIKE 'homepage_newsletter_list'");
+				if (!($check && $check->fetchColumn())) {
+					$info = $pdo->errorInfo();
+					throw new \RuntimeException(
+						'Could not create homepage_newsletter_list: ' . (isset($info[2]) && $info[2] ? $info[2] : 'unknown')
+					);
+				}
+			}
+
+			$stmt = $pdo->prepare(
+				'INSERT INTO homepage_newsletter_list (e_mail) VALUES (:e_mail)'
+			);
+			$stmt->execute(array(':e_mail' => $email));
+
+			$responseContext->setJSONResponse('feedback', array(
+				'status'  => 'ok',
+				'message' => 'Dziękujemy! Zostałeś zapisany do newslettera.',
+			));
+		} catch (\PDOException $e) {
+			// Duplicate email
+			if ((int) $e->getCode() === 23000 || strpos($e->getMessage(), '1062') !== false) {
+				$responseContext->setJSONResponse('feedback', array(
+					'status'  => 'ok',
+					'message' => 'Ten adres e-mail jest już zapisany na liście newslettera.',
+				));
+				return;
+			}
+			\Point7_WebApp::getLogger('error')->error('Homepage newsletter subscribe failed: ' . $e->getMessage());
+			$responseContext->setJSONResponse('feedback', array(
+				'status'  => 'fail',
+				'message' => 'Nie udało się zapisać. Spróbuj ponownie.',
+			));
+		} catch (\Throwable $e) {
+			\Point7_WebApp::getLogger('error')->error('Homepage newsletter subscribe failed: ' . $e->getMessage());
+			$responseContext->setJSONResponse('feedback', array(
+				'status'  => 'fail',
+				'message' => 'Nie udało się zapisać. Spróbuj ponownie.',
+			));
 		}
 	}
 }

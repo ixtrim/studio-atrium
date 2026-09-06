@@ -14,6 +14,15 @@
 				<validator name="Integer" />
 			</param>
 		</action>
+		<action name="NewsletterSubscribe">
+			<allowed_methods post="yes" />
+			<param name="email" required="no" default="">
+				<validator name="String" />
+			</param>
+			<param name="consent" required="no" default="">
+				<validator name="String" />
+			</param>
+		</action>
 	</request>
 
 	<commands>
@@ -53,6 +62,14 @@
 			</on_exec_ok>
 			<on_exec_error>
 				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		<action name="NewsletterSubscribe">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
 			</on_exec_error>
 		</action>
 	</result_map>

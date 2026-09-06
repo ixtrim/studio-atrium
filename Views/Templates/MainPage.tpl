@@ -9,8 +9,8 @@
 {include file="Include/Testimonials.tpl"}
 {include file="Include/Contact.tpl"}
 {include file="Include/Products.tpl"}
-{include file="Include/Partners.tpl"}
 {include file="Include/Newsletter.tpl"}
+{include file="Include/Partners.tpl"}
 {include file="Include/FeaturedVideo.tpl"}
 {include file="Include/Tips.tpl"}
 {include file="Include/Offer.tpl"}

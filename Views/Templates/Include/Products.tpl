@@ -1,5 +1,5 @@
 {foreach $products_sections as $section}
-<section class="{if $section@first}pt-[75px]{else}pt-[18px]{/if} {if $section@last}pb-[75px]{else}pb-[18px]{/if}" id="gallery-{$section.section_key|escape}">
+<section class="{if $section@first}pt-[75px]{else}pt-[18px]{/if} {if $section@last}pb-[100px]{else}pb-[18px]{/if}" id="gallery-{$section.section_key|escape}">
     <div class="max-w-[1480px] mx-auto px-8">
         <h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight leading-tight uppercase">{$section.section_title|escape}</h2>
         {if $section.section_subtitle}

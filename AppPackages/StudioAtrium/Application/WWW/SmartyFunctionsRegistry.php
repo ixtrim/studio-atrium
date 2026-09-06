@@ -2293,9 +2293,9 @@ class SmartyFunctionsRegistry
             'reward_line2'        => "na zakup\nprojektu domu",
         );
         $photoDefaults = array(
-            array('image_url' => 'https://media.studioatrium.pl/stock/33/3105/69bbd5e2ca26a-projekty-domow-tanich-w-budowie.webp', 'image_alt' => 'Projekty domów tanich w budowie', 'pos_left_pct' => '0', 'pos_top_px' => -30, 'rotate_deg' => -8),
-            array('image_url' => 'https://media.studioatrium.pl/stock/33/5409/69bbc6ce5167a-projekty-szkieletowe.webp', 'image_alt' => 'Projekty szkieletowe', 'pos_left_pct' => '30', 'pos_top_px' => -50, 'rotate_deg' => 4),
-            array('image_url' => 'https://media.studioatrium.pl/stock/28/7964/68baea0b1474f-najlepsze-projekty-domow-parterowych.jpg', 'image_alt' => 'Najlepsze projekty domów parterowych', 'pos_left_pct' => '60', 'pos_top_px' => -20, 'rotate_deg' => 10),
+            array('image_url' => 'https://media.studioatrium.pl/stock/33/3105/69bbd5e2ca26a-projekty-domow-tanich-w-budowie.webp', 'image_alt' => 'Projekty domów tanich w budowie', 'pos_left_pct' => '2', 'pos_top_px' => -42, 'rotate_deg' => -7),
+            array('image_url' => 'https://media.studioatrium.pl/stock/33/5409/69bbc6ce5167a-projekty-szkieletowe.webp', 'image_alt' => 'Projekty szkieletowe', 'pos_left_pct' => '34', 'pos_top_px' => 46, 'rotate_deg' => 8),
+            array('image_url' => 'https://media.studioatrium.pl/stock/28/7964/68baea0b1474f-najlepsze-projekty-domow-parterowych.jpg', 'image_alt' => 'Najlepsze projekty domów parterowych', 'pos_left_pct' => '66', 'pos_top_px' => 134, 'rotate_deg' => -4),
         );
         try {
             $pdo = \Point7_WebApp::getPDO();
