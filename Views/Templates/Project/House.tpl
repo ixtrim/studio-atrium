@@ -17,7 +17,7 @@
 {include file="Include/Partners.tpl"}
 {include file="Include/Contact.tpl"}
 {include file="Project/Detail2026/Faq.tpl"}
-{include file="Include/NewsletterSubpage.tpl"}
+{include file="Include/Newsletter.tpl"}
 
 </div>
 <script src="/js/project2026.js?v={$version}" defer></script>

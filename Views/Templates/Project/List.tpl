@@ -6,8 +6,8 @@
 {if !$isSearch && $listType == 'house'}
 {* ===== 2026 category listing (matches atrium-design-preview /projekty) ===== *}
 <div id="cat-2026">
-	<nav aria-label="breadcrumb" class="w-full bg-white border-b border-[#e5e5e5]">
-		<ol class="max-w-[1480px] mx-auto px-8 py-4 flex flex-wrap items-center gap-3 text-[14px] text-[#6b6b6b] font-normal">
+	<nav aria-label="breadcrumb" class="w-full bg-white border-b border-[#e5e5e5] py-[12px]">
+		<ol class="max-w-[1480px] mx-auto px-8 flex flex-wrap items-center justify-center gap-3 text-[14px] text-[#6b6b6b] font-normal">
 			<li><a href="/" class="hover:text-[#222] transition-colors">Studio Atrium</a></li>
 			<li aria-hidden="true" class="text-[#bdbdbd]">»</li>
 			{if $isAllProjects}
@@ -28,7 +28,7 @@
 		<div class="max-w-[1480px] mx-auto px-8">
 			<div class="flex flex-col md:flex-row items-stretch bg-[#3a3d42] text-white mb-6">
 				<div class="flex-1 flex items-center px-8 py-5">
-					<h3 class="text-[22px] font-bold leading-tight">AKTUALNE OFERTY<br>DOTYCZĄCE KATEGORII</h3>
+					<h3 class="text-[24px] font-semibold uppercase text-white leading-tight">AKTUALNE OFERTY<br>DOTYCZĄCE KATEGORII</h3>
 				</div>
 				{if $categoryPromoThumbs}
 				<div class="flex items-center gap-3 px-4 py-4 md:py-0">
@@ -184,7 +184,8 @@
 	{include file="Include/LastViewed.tpl"}
 	{include file="Include/Contact.tpl"}
 	{include file="Include/ArticlesTicks.tpl"}
-	{include file="Include/NewsletterSubpage.tpl"}
+	{include file="Include/Partners.tpl"}
+	{include file="Include/Newsletter.tpl"}
 </div>
 
 {else}

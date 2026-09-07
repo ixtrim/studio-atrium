@@ -1,6 +1,7 @@
-<section class="w-full" id="homepage-contact">
+<section class="w-full{if $contact_in_container} my-10{/if}" id="homepage-contact">
+    {if $contact_in_container}<div class="max-w-[1480px] mx-auto px-8">{/if}
     <div class="grid grid-cols-1 md:grid-cols-12 md:items-stretch">
-        <div class="md:col-span-5 bg-[#1d99e1] text-white py-16 pl-8 md:pl-[max(2rem,calc((100vw-1320px)/2+2rem))] pr-8 flex flex-col justify-center">
+        <div class="md:col-span-5 bg-[#1d99e1] text-white py-16 {if $contact_in_container}px-8{else}pl-8 md:pl-[max(2rem,calc((100vw-1480px)/2+2rem))] pr-8{/if} flex flex-col justify-center">
             <div class="flex items-start gap-4">
             <h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight uppercase">{$homepage_contact.call_title|escape}</h2>
                 {if $homepage_contact.hostess_image_url}
@@ -18,7 +19,7 @@
                 {if $homepage_contact.hours_text}<div class="font-semibold">{$homepage_contact.hours_text|escape}</div>{/if}
             </div>
         </div>
-        <div class="md:col-span-7 bg-[#f5f5f5] py-16 pr-8 md:pr-[max(2rem,calc((100vw-1320px)/2+2rem))] pl-8 flex flex-col justify-center">
+        <div class="md:col-span-7 bg-[#f5f5f5] py-16 {if $contact_in_container}px-8{else}pr-8 md:pr-[max(2rem,calc((100vw-1480px)/2+2rem))] pl-8{/if} flex flex-col justify-center">
             <div class="grid grid-cols-1 lg:grid-cols-7 gap-8 items-center">
                 <div class="lg:col-span-3">
                     <h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight uppercase mb-5">{$homepage_contact.question_title|escape}</h2>
@@ -48,4 +49,5 @@
             </div>
         </div>
     </div>
+    {if $contact_in_container}</div>{/if}
 </section>

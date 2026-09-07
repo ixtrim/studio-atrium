@@ -944,6 +944,7 @@ class Project extends WWW\AbstractModule
 			}
 		}
 		$responseContext->set('categoryPromoThumbs', $promoThumbs);
+		$this->_assignLastViewed($request, $responseContext);
 		
 		
 		$pages = ceil($list->total() / $limit);
@@ -2998,6 +2999,65 @@ class Project extends WWW\AbstractModule
 	}
 
 	/**
+	 * Track / load recently viewed house projects for #ostatnio carousel.
+	 *
+	 * @param \Point7_WebApp_Request_Filtered $request
+	 * @param WWW\ResponseContext $responseContext
+	 * @param int|null $currentProjectId When set, prepend this id to the cookie history
+	 */
+	private function _assignLastViewed(
+		\Point7_WebApp_Request_Filtered $request,
+		WWW\ResponseContext $responseContext,
+		$currentProjectId = null
+	) {
+		$ids = array();
+		try {
+			$cookie = $request->getCookieParam('saLast');
+			if ($cookie) {
+				foreach (explode('|', (string) $cookie) as $part) {
+					$pid = (int) $part;
+					if ($pid > 0) {
+						$ids[] = $pid;
+					}
+				}
+			}
+		} catch (\Throwable $e) {
+			$ids = array();
+		}
+
+		$ids = array_values(array_unique($ids));
+		$currentProjectId = (int) $currentProjectId;
+		if ($currentProjectId > 0) {
+			$ids = array_values(array_diff($ids, array($currentProjectId)));
+			array_unshift($ids, $currentProjectId);
+			$ids = array_slice($ids, 0, 12);
+			@setcookie('saLast', implode('|', $ids), time() + 3600 * 24 * 90, '/');
+		}
+
+		$displayIds = $ids;
+		if ($currentProjectId > 0) {
+			$displayIds = array_values(array_diff($ids, array($currentProjectId)));
+		}
+		$displayIds = array_slice($displayIds, 0, 8);
+
+		$cards = array();
+		if (!empty($displayIds)) {
+			try {
+				$list = $this->_projectFinder->getListById(
+					$displayIds,
+					\StudioAtrium_Entity_EntityBase_Project::STATUS_PUBLISHED,
+					true
+				);
+				$cards = $this->_buildCategoryListCards($list);
+			} catch (\Throwable $e) {
+				$cards = array();
+			}
+		}
+
+		$responseContext->set('last_viewed', $cards);
+	}
+
+	/**
 	 * Build enriched card data for the 2026 category listing grid.
 	 *
 	 * @param \StudioAtrium\Entity\EntityCollection|null $list
@@ -3517,6 +3577,7 @@ class Project extends WWW\AbstractModule
 		$responseContext->set('detailGarage', $garage);
 		$responseContext->set('detailIsMirror', $isMirror);
 		$responseContext->set('detailThumb', !empty($gallery[0]['thumb']) ? $gallery[0]['thumb'] : '');
+		$this->_assignLastViewed($request, $responseContext, (int) $project->getId());
 	}
 
 	/**
