@@ -2688,6 +2688,60 @@ class SmartyFunctionsRegistry
         }
     }
 
+    private function fetchCategoryBanner()
+    {
+        $defaults = array(
+            'title_text'  => "AKTUALNE OFERTY\nDOTYCZĄCE KATEGORII",
+            'offer_value' => '-500 zł',
+            'offer_note'  => 'do końca grudnia',
+        );
+        try {
+            $pdo = \Point7_WebApp::getPDO();
+            $exists = $pdo->query("SHOW TABLES LIKE 'contents_category_banner'");
+            if (!($exists && $exists->fetchColumn())) {
+                $pdo->exec(
+                    'CREATE TABLE contents_category_banner (
+                        id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+                        title_text TEXT NOT NULL,
+                        offer_value VARCHAR(128) NOT NULL DEFAULT \'\',
+                        offer_note VARCHAR(255) NOT NULL DEFAULT \'\',
+                        PRIMARY KEY (id)
+                    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4'
+                );
+                $stmt = $pdo->prepare(
+                    'INSERT INTO contents_category_banner (title_text, offer_value, offer_note)
+                     VALUES (:title_text, :offer_value, :offer_note)'
+                );
+                $stmt->execute(array(
+                    ':title_text'  => $defaults['title_text'],
+                    ':offer_value' => $defaults['offer_value'],
+                    ':offer_note'  => $defaults['offer_note'],
+                ));
+                return $defaults;
+            }
+            $stmt = $pdo->query(
+                'SELECT title_text, offer_value, offer_note
+                 FROM contents_category_banner
+                 ORDER BY id ASC
+                 LIMIT 1'
+            );
+            if (!$stmt) {
+                return $defaults;
+            }
+            $row = $stmt->fetch(\PDO::FETCH_ASSOC);
+            if (!$row) {
+                return $defaults;
+            }
+            return array(
+                'title_text'  => isset($row['title_text']) && $row['title_text'] !== '' ? $row['title_text'] : $defaults['title_text'],
+                'offer_value' => isset($row['offer_value']) && $row['offer_value'] !== '' ? $row['offer_value'] : $defaults['offer_value'],
+                'offer_note'  => isset($row['offer_note']) && $row['offer_note'] !== '' ? $row['offer_note'] : $defaults['offer_note'],
+            );
+        } catch (\Throwable $e) {
+            return $defaults;
+        }
+    }
+
     private function fetchHomepageContactSection()
     {
         $defaults = array(
@@ -2842,6 +2896,7 @@ class SmartyFunctionsRegistry
         $smarty->assign('build_steps', $this->fetchBuildSteps());
         $smarty->assign('testimonials', $this->fetchTestimonials());
         $smarty->assign('homepage_contact', $this->fetchHomepageContactSection());
+        $smarty->assign('category_banner', $this->fetchCategoryBanner());
 
         // Assign footer menu columns (a/b/c) from footer_menus table
         $smarty->assign('footer_menus', $this->fetchMenuColumns());

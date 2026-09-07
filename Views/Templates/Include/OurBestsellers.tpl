@@ -17,14 +17,14 @@
                     stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
                     class="lucide lucide-chevron-right w-7 h-7" aria-hidden="true">
                     <path d="m9 18 6-6-6-6"></path>
-                </svg>
+                                    </svg>
             </button>
             <div class="swiper [&_.swiper-wrapper]:items-stretch" id="hp-bs-swiper">
                 <div class="swiper-wrapper">
                     {foreach $bestsellers as $item}
                         <div class="swiper-slide !h-auto">
                             {include file="Include/ProjectTeaserCard.tpl" item=$item teaser_interactive=false}
-                        </div>
+                                </div>
                     {/foreach}
                 </div>
             </div>

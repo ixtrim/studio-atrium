@@ -7,28 +7,30 @@
 {* ===== 2026 category listing (matches atrium-design-preview /projekty) ===== *}
 <div id="cat-2026">
 	<nav aria-label="breadcrumb" class="w-full bg-white border-b border-[#e5e5e5] py-[12px]">
-		<ol class="max-w-[1480px] mx-auto px-8 flex flex-wrap items-center justify-center gap-3 text-[14px] text-[#6b6b6b] font-normal">
-			<li><a href="/" class="hover:text-[#222] transition-colors">Studio Atrium</a></li>
-			<li aria-hidden="true" class="text-[#bdbdbd]">»</li>
-			{if $isAllProjects}
-			<li aria-current="page" class="text-[#6b6b6b]">Wszystkie projekty domów</li>
-			{elseif $category.tree == 'house'}
-			<li><a href="/projekty/" class="hover:text-[#222] transition-colors">Projekty Domów</a></li>
-			{if $category.link != 'projekty-domow'}
-			<li aria-hidden="true" class="text-[#bdbdbd]">»</li>
-			<li aria-current="page" class="text-[#6b6b6b]">{if $category.alternate_name}{$category.alternate_name|escape}{else}{$category.name|escape}{/if}</li>
-			{/if}
-			{else}
-			<li aria-current="page" class="text-[#6b6b6b]">{$category.name|escape}</li>
-			{/if}
-		</ol>
+		<div class="max-w-[1480px] mx-auto px-8">
+			<ol class="flex flex-wrap items-center gap-3 text-[14px] text-[#6b6b6b] font-normal">
+				<li><a href="/" class="hover:text-[#222] transition-colors">Studio Atrium</a></li>
+				<li aria-hidden="true" class="text-[#bdbdbd]">»</li>
+				{if $isAllProjects}
+				<li aria-current="page" class="text-[#6b6b6b]">Wszystkie projekty domów</li>
+				{elseif $category.tree == 'house'}
+				<li><a href="/projekty/" class="hover:text-[#222] transition-colors">Projekty Domów</a></li>
+				{if $category.link != 'projekty-domow'}
+				<li aria-hidden="true" class="text-[#bdbdbd]">»</li>
+				<li aria-current="page" class="text-[#6b6b6b]">{if $category.alternate_name}{$category.alternate_name|escape}{else}{$category.name|escape}{/if}</li>
+				{/if}
+				{else}
+				<li aria-current="page" class="text-[#6b6b6b]">{$category.name|escape}</li>
+				{/if}
+			</ol>
+		</div>
 	</nav>
 
 	<section class="w-full bg-white py-8">
 		<div class="max-w-[1480px] mx-auto px-8">
 			<div class="flex flex-col md:flex-row items-stretch bg-[#3a3d42] text-white mb-6">
 				<div class="flex-1 flex items-center px-8 py-5">
-					<h3 class="text-[24px] font-semibold uppercase text-white leading-tight">AKTUALNE OFERTY<br>DOTYCZĄCE KATEGORII</h3>
+					<h3 class="text-[28px] font-semibold uppercase text-white leading-tight">{$category_banner.title_text|escape|nl2br}</h3>
 				</div>
 				{if $categoryPromoThumbs}
 				<div class="flex items-center gap-3 px-4 py-4 md:py-0">
@@ -39,9 +41,9 @@
 					{/foreach}
 				</div>
 				{/if}
-				<div class="bg-white text-[#222] px-8 py-5 flex flex-col justify-center min-w-[220px] md:min-w-[260px]">
-					<div class="text-[34px] font-bold leading-none">-500 zł</div>
-					<div class="text-[14px] text-[#666] mt-1">do końca grudnia</div>
+				<div class="bg-white text-[#222] px-8 py-5 flex flex-col items-center justify-center text-center min-w-[220px] md:min-w-[260px] border-t-[5px] border-r-[5px] border-b-[5px] border-[#3a3d42]">
+					<div class="text-[34px] font-['Montserrat',sans-serif] font-semibold leading-none">{$category_banner.offer_value|escape}</div>
+					<div class="text-[14px] text-[#666] mt-1">{$category_banner.offer_note|escape}</div>
 				</div>
 			</div>
 
