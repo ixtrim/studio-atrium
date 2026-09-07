@@ -140,8 +140,19 @@
 					</script>
 					{/if}
 
-					<div id="cat-results-body">
-						{include file="Project/Ajax/CategoryFilterResults.tpl"}
+					<div id="cat-results-shell">
+						<div id="cat-results-loader" aria-hidden="true">
+							<div class="cat-loader-card" role="status" aria-live="polite">
+								<span class="cat-loader-spinner" aria-hidden="true"></span>
+								<span class="cat-loader-copy">
+									<span class="cat-loader-title">Filtrowanie projektów</span>
+									<span class="cat-loader-sub">Aktualizujemy listę…</span>
+								</span>
+							</div>
+						</div>
+						<div id="cat-results-body">
+							{include file="Project/Ajax/CategoryFilterResults.tpl"}
+						</div>
 					</div>
 
 					{if $description && $page == 1}

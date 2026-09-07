@@ -13,8 +13,10 @@
 	var body = document.getElementById('cat-results-body');
 	var totalEl = document.getElementById('cat-total-count');
 	var clearBtn = document.getElementById('cat-clear-filters');
+	var loader = document.getElementById('cat-results-loader');
 	var debounceTimer = null;
 	var requestSeq = 0;
+	var enterTimer = null;
 	var POW_BUCKETS = {
 		'0-100': { pow_min: '0', pow_max: '100' },
 		'100-150': { pow_min: '100', pow_max: '150' },
@@ -28,6 +30,24 @@
 
 	function getListUrl() {
 		return root.getAttribute('data-list-url') || window.location.pathname;
+	}
+
+	function setFiltering(on) {
+		root.classList.toggle('is-filtering', !!on);
+		root.setAttribute('aria-busy', on ? 'true' : 'false');
+		if (loader) loader.setAttribute('aria-hidden', on ? 'false' : 'true');
+	}
+
+	function playEnterAnimation() {
+		if (!body) return;
+		body.classList.remove('cat-results-enter');
+		// Force reflow so the animation can restart
+		void body.offsetWidth;
+		body.classList.add('cat-results-enter');
+		clearTimeout(enterTimer);
+		enterTimer = setTimeout(function () {
+			body.classList.remove('cat-results-enter');
+		}, 700);
 	}
 
 	function exclusiveCheck(changed) {
@@ -84,7 +104,8 @@
 			'wysokoscbudynku', 'katnachyleniadachu', 'rodzajstropu', 'spizarnia'].forEach(function (name) {
 			var val = params.get(name);
 			if (val == null || val === '') return;
-			var input = form.querySelector('.js-cat-filter[name="' + name + '"][value="' + CSS.escape(val) + '"]');
+			var escaped = (window.CSS && CSS.escape) ? CSS.escape(val) : String(val).replace(/"/g, '\\"');
+			var input = form.querySelector('.js-cat-filter[name="' + name + '"][value="' + escaped + '"]');
 			if (input) input.checked = true;
 		});
 		syncClearButton(params);
@@ -129,9 +150,14 @@
 		if (!data || data.status !== 'ok') return;
 		if (body && typeof data.html === 'string') {
 			body.innerHTML = data.html;
+			playEnterAnimation();
 		}
 		if (totalEl && data.total != null) {
+			totalEl.classList.add('cat-total-pulse');
 			totalEl.textContent = String(data.total);
+			setTimeout(function () {
+				totalEl.classList.remove('cat-total-pulse');
+			}, 450);
 		}
 		var sortForm = document.getElementById('projects-filters-form');
 		if (sortForm && typeof data.query === 'string') {
@@ -144,7 +170,7 @@
 
 	function fetchResults(filterParams, page, push) {
 		var seq = ++requestSeq;
-		if (body) body.classList.add('opacity-60');
+		setFiltering(true);
 		fetch(buildFetchUrl(filterParams, page), {
 			credentials: 'same-origin',
 			headers: { 'Accept': 'application/json', 'X-Requested-With': 'XMLHttpRequest' }
@@ -159,16 +185,18 @@
 			})
 			.catch(function () {})
 			.finally(function () {
-				if (seq === requestSeq && body) body.classList.remove('opacity-60');
+				if (seq === requestSeq) setFiltering(false);
 			});
 	}
 
 	function scheduleApply(page, push) {
 		clearTimeout(debounceTimer);
+		// Show loader immediately so the UI feels responsive during debounce
+		setFiltering(true);
 		debounceTimer = setTimeout(function () {
 			var params = collectFilters();
 			fetchResults(params, page || 1, push !== false);
-		}, 200);
+		}, 180);
 	}
 
 	form.addEventListener('change', function (e) {
