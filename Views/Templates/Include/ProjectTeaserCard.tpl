@@ -1,7 +1,6 @@
 {* Shared project teaser — layout matches OurBestsellers.tpl
    Expects $item with: url, image_url, name, type_label, area, rooms, baths, garage, price, price_old
-   Optional: tag | badge_label, badge_variant, id
-   Optional flag: $teaser_interactive (compare/favourite buttons) *}
+   Optional: tag | badge_label, badge_variant, id *}
 {assign var=_badge value=''}
 {assign var=_badgeVariant value=''}
 {if $item.badge_label}
@@ -22,26 +21,7 @@
 		{/if}
 	</div>
 	<div class="px-5 pt-4 pb-5 flex flex-col gap-3 flex-1">
-		<div class="flex items-start justify-between gap-3">
-			<h3 class="text-[22px] font-bold text-[#222] leading-tight">{$item.name|escape}</h3>
-			<div class="flex items-center gap-2 shrink-0 mt-0.5 text-[#555]">
-				{if $teaser_interactive && $item.id}
-				<button type="button" aria-label="Porównaj" id="compare-{$item.id}"
-					class="compare cat-icon-btn text-[#555] hover:text-[var(--brand-red)]{if $compareIds && in_array($item.id, $compareIds)} on{/if}"
-					data-id="{$item.id}" onclick="event.preventDefault();event.stopPropagation();">
-					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5" aria-hidden="true"><path d="M12 3v18"></path><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"></path><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"></path><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"></path><path d="M7 21h10"></path></svg>
-				</button>
-				<button type="button" aria-label="Ulubione" id="fav-{$item.id}"
-					class="fav cat-icon-btn text-[#555] hover:text-[var(--brand-red)]{if $favouriteIds && in_array($item.id, $favouriteIds)} on{/if}"
-					data-id="{$item.id}" onclick="event.preventDefault();event.stopPropagation();">
-					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5" aria-hidden="true"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"></path></svg>
-				</button>
-				{else}
-				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5" aria-hidden="true"><path d="M12 3v18"></path><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"></path><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"></path><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"></path><path d="M7 21h10"></path></svg>
-				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5" aria-hidden="true"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"></path></svg>
-				{/if}
-			</div>
-		</div>
+		<h3 class="text-[22px] font-bold text-[#222] leading-tight">{$item.name|escape}</h3>
 		<div class="text-[13px] font-bold tracking-wider text-[var(--brand-red)]">{$item.type_label|escape}</div>
 		<div class="flex items-center gap-4 py-2 text-[13px] text-[#222] flex-wrap">
 			{if $item.area}

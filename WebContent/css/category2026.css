@@ -258,6 +258,57 @@
   outline-offset: 2px;
 }
 
+/* —— Sort icon buttons —— */
+#cat-2026 .cat-sort-bar {
+	width: 100%;
+	margin-left: auto;
+	justify-content: flex-end;
+}
+
+#cat-2026 #projects-filters-form {
+	margin-left: auto;
+}
+
+#cat-2026 .cat-sort-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 36px;
+	height: 36px;
+	padding: 0;
+	border: 0;
+	background: transparent !important;
+	color: #9a9a9a;
+	cursor: pointer;
+	transition: color 0.18s ease, transform 0.18s ease;
+}
+
+#cat-2026 .cat-sort-btn svg {
+	display: block;
+	width: 20px;
+	height: 20px;
+	stroke: currentColor;
+	color: inherit;
+}
+
+#cat-2026 .cat-sort-btn:hover,
+#cat-2026 .cat-sort-btn:focus-visible {
+	color: var(--brand-blue, #5bb8e0);
+	background: transparent !important;
+	outline: none;
+}
+
+#cat-2026 .cat-sort-btn.is-active,
+#cat-2026 .cat-sort-btn.is-active:hover,
+#cat-2026 .cat-sort-btn.is-active:focus-visible {
+	color: var(--brand-red, #c8102e);
+}
+
+#cat-2026 .cat-sort-btn:active {
+	transform: scale(0.94);
+	background: transparent !important;
+}
+
 /* —— Filter results loading / enter —— */
 #cat-results-shell {
   position: relative;

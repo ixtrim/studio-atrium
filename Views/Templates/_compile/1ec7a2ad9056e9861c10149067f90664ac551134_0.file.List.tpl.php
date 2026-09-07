@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-07 21:44:43
+/* Smarty version 3.1.48, created on 2026-09-07 22:20:11
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Project/List.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6a9f142b668ac8_43550692',
+  'unifunc' => 'content_6a9f1c7be018e5_31275075',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1ec7a2ad9056e9861c10149067f90664ac551134' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Project/List.tpl',
-      1 => 1788810182,
+      1 => 1788812396,
       2 => 'file',
     ),
   ),
@@ -28,7 +28,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:Include/Pager.tpl' => 2,
   ),
 ),false)) {
-function content_6a9f142b668ac8_43550692 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6a9f1c7be018e5_31275075 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('displayMapped', call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'mapUrlParam' ][ 0 ], array( $_smarty_tpl->tpl_vars['displayType']->value,'display_type' )));
 $_smarty_tpl->_assignInScope('sortByMapped', call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'mapUrlParam' ][ 0 ], array( $_smarty_tpl->tpl_vars['sortBy']->value,'sort_by' )));
 $_smarty_tpl->_assignInScope('sortOrderMapped', call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'mapUrlParam' ][ 0 ], array( $_smarty_tpl->tpl_vars['sortOrder']->value,'sort_order' )));
@@ -171,43 +171,74 @@ echo htmlspecialchars($_smarty_tpl->tpl_vars['category']->value['name'], ENT_QUO
 					</div>
 
 					<?php if (!$_smarty_tpl->tpl_vars['sortingDisabled']->value) {?>
-					<div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+					<?php if ($_smarty_tpl->tpl_vars['isAllProjects']->value) {
+$_smarty_tpl->_assignInScope('defaultSortOrder', 'DESC');
+} else {
+$_smarty_tpl->_assignInScope('defaultSortOrder', 'ASC');
+}?>
+					<div class="flex flex-wrap items-center gap-3 mb-5">
 						<form method="post" action="<?php echo $_smarty_tpl->tpl_vars['url']->value;
 echo $_smarty_tpl->tpl_vars['query']->value;?>
-" id="projects-filters-form" class="flex items-center gap-2">
+" id="projects-filters-form" class="flex items-center gap-3">
 							<input type="hidden" name="display_type" value="box" id="display-type">
-							<input type="hidden" name="sort_order" value="<?php echo $_smarty_tpl->tpl_vars['sortOrder']->value;?>
-" id="sort-order">
-							<label for="sort-select" class="text-[13px] text-[#666]">Sortowanie:</label>
-							<select id="sort-select" name="sort_by" class="border border-[#ccc] bg-white px-3 py-2 text-[13px] text-[#222]">
-								<option value="id" data-sort="<?php if ($_smarty_tpl->tpl_vars['isAllProjects']->value) {?>desc<?php } else { ?>asc<?php }?>"<?php if ($_smarty_tpl->tpl_vars['sortBy']->value == 'id') {?> selected="selected"<?php }?>><?php if ($_smarty_tpl->tpl_vars['isAllProjects']->value) {?>od najnowszych<?php } else { ?>domyślne<?php }?></option>
-								<option value="usable_area" data-sort="asc"<?php if ($_smarty_tpl->tpl_vars['sortBy']->value == 'usable_area' && $_smarty_tpl->tpl_vars['sortOrder']->value == 'ASC') {?> selected="selected"<?php }?>>powierzchnia ↑</option>
-								<option value="usable_area" data-sort="desc"<?php if ($_smarty_tpl->tpl_vars['sortBy']->value == 'usable_area' && $_smarty_tpl->tpl_vars['sortOrder']->value == 'DESC') {?> selected="selected"<?php }?>>powierzchnia ↓</option>
-								<option value="name" data-sort="asc"<?php if ($_smarty_tpl->tpl_vars['sortBy']->value == 'name' && $_smarty_tpl->tpl_vars['sortOrder']->value == 'ASC') {?> selected="selected"<?php }?>>nazwa A–Z</option>
-								<option value="name" data-sort="desc"<?php if ($_smarty_tpl->tpl_vars['sortBy']->value == 'name' && $_smarty_tpl->tpl_vars['sortOrder']->value == 'DESC') {?> selected="selected"<?php }?>>nazwa Z–A</option>
-							</select>
+							<input type="hidden" name="sort_by" id="sort-by" value="<?php echo $_smarty_tpl->tpl_vars['sortBy']->value;?>
+">
+							<input type="hidden" name="sort_order" id="sort-order" value="<?php echo $_smarty_tpl->tpl_vars['sortOrder']->value;?>
+">
+							<span class="text-[13px] text-[#666]">Sortowanie:</span>
+							<div class="cat-sort-group flex items-center gap-1" role="group" aria-label="Sortowanie projektów">
+								<button type="button" class="cat-sort-btn<?php if ($_smarty_tpl->tpl_vars['sortBy']->value == 'id') {?> is-active<?php }?>" data-sort-by="id" data-sort-order="<?php echo $_smarty_tpl->tpl_vars['defaultSortOrder']->value;?>
+" title="<?php if ($_smarty_tpl->tpl_vars['isAllProjects']->value) {?>Od najnowszych<?php } else { ?>Domyślne<?php }?>" aria-label="<?php if ($_smarty_tpl->tpl_vars['isAllProjects']->value) {?>Od najnowszych<?php } else { ?>Domyślne<?php }?>" aria-pressed="<?php if ($_smarty_tpl->tpl_vars['sortBy']->value == 'id') {?>true<?php } else { ?>false<?php }?>">
+									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h12"/><path d="M3 12h9"/><path d="M3 19h6"/><path d="m17 8 4-4 4 4"/><path d="M21 4v12"/></svg>
+								</button>
+								<button type="button" class="cat-sort-btn<?php if ($_smarty_tpl->tpl_vars['sortBy']->value == 'usable_area' && $_smarty_tpl->tpl_vars['sortOrder']->value == 'ASC') {?> is-active<?php }?>" data-sort-by="usable_area" data-sort-order="ASC" title="Powierzchnia rosnąco" aria-label="Powierzchnia rosnąco" aria-pressed="<?php if ($_smarty_tpl->tpl_vars['sortBy']->value == 'usable_area' && $_smarty_tpl->tpl_vars['sortOrder']->value == 'ASC') {?>true<?php } else { ?>false<?php }?>">
+									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8 4-4 4 4"/><path d="M7 4v16"/><rect width="10" height="8" x="11" y="12" rx="1"/><path d="M15 8h.01"/><path d="M19 8h.01"/></svg>
+								</button>
+								<button type="button" class="cat-sort-btn<?php if ($_smarty_tpl->tpl_vars['sortBy']->value == 'usable_area' && $_smarty_tpl->tpl_vars['sortOrder']->value == 'DESC') {?> is-active<?php }?>" data-sort-by="usable_area" data-sort-order="DESC" title="Powierzchnia malejąco" aria-label="Powierzchnia malejąco" aria-pressed="<?php if ($_smarty_tpl->tpl_vars['sortBy']->value == 'usable_area' && $_smarty_tpl->tpl_vars['sortOrder']->value == 'DESC') {?>true<?php } else { ?>false<?php }?>">
+									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 16 4 4 4-4"/><path d="M7 20V4"/><rect width="10" height="8" x="11" y="4" rx="1"/><path d="M15 16h.01"/><path d="M19 16h.01"/></svg>
+								</button>
+								<button type="button" class="cat-sort-btn<?php if ($_smarty_tpl->tpl_vars['sortBy']->value == 'name' && $_smarty_tpl->tpl_vars['sortOrder']->value == 'ASC') {?> is-active<?php }?>" data-sort-by="name" data-sort-order="ASC" title="Nazwa A–Z" aria-label="Nazwa A–Z" aria-pressed="<?php if ($_smarty_tpl->tpl_vars['sortBy']->value == 'name' && $_smarty_tpl->tpl_vars['sortOrder']->value == 'ASC') {?>true<?php } else { ?>false<?php }?>">
+									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 16 4 4 4-4"/><path d="M7 20V4"/><path d="M20 8h-5"/><path d="M15 10V6.5a2.5 2.5 0 0 1 5 0V10"/><path d="M15 14h5l-5 6h5"/></svg>
+								</button>
+								<button type="button" class="cat-sort-btn<?php if ($_smarty_tpl->tpl_vars['sortBy']->value == 'name' && $_smarty_tpl->tpl_vars['sortOrder']->value == 'DESC') {?> is-active<?php }?>" data-sort-by="name" data-sort-order="DESC" title="Nazwa Z–A" aria-label="Nazwa Z–A" aria-pressed="<?php if ($_smarty_tpl->tpl_vars['sortBy']->value == 'name' && $_smarty_tpl->tpl_vars['sortOrder']->value == 'DESC') {?>true<?php } else { ?>false<?php }?>">
+									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8 4-4 4 4"/><path d="M7 4v16"/><path d="M15 4h5l-5 6h5"/><path d="M15 20v-3.5a2.5 2.5 0 0 1 5 0V20"/><path d="M20 18h-5"/></svg>
+								</button>
+							</div>
 						</form>
 					</div>
 					<?php echo '<script'; ?>
 >
 					(function () {
-						var sel = document.getElementById('sort-select');
 						var form = document.getElementById('projects-filters-form');
-						var order = document.getElementById('sort-order');
-						if (!sel || !form) return;
-						sel.addEventListener('change', function () {
-							var opt = sel.options[sel.selectedIndex];
-							if (order && opt) order.value = (opt.getAttribute('data-sort') || 'asc').toUpperCase();
-							form.submit();
+						if (!form) return;
+						var sortBy = document.getElementById('sort-by');
+						var sortOrder = document.getElementById('sort-order');
+						form.querySelectorAll('.cat-sort-btn').forEach(function (btn) {
+							btn.addEventListener('click', function () {
+								if (sortBy) sortBy.value = btn.getAttribute('data-sort-by') || 'id';
+								if (sortOrder) sortOrder.value = (btn.getAttribute('data-sort-order') || 'ASC').toUpperCase();
+								form.submit();
+							});
 						});
 					})();
 					<?php echo '</script'; ?>
 >
 					<?php }?>
 
-					<div id="cat-results-body">
-						<?php $_smarty_tpl->_subTemplateRender("file:Project/Ajax/CategoryFilterResults.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+					<div id="cat-results-shell">
+						<div id="cat-results-loader" aria-hidden="true">
+							<div class="cat-loader-card" role="status" aria-live="polite">
+								<span class="cat-loader-spinner" aria-hidden="true"></span>
+								<span class="cat-loader-copy">
+									<span class="cat-loader-title">Filtrowanie projektów</span>
+									<span class="cat-loader-sub">Aktualizujemy listę…</span>
+								</span>
+							</div>
+						</div>
+						<div id="cat-results-body">
+							<?php $_smarty_tpl->_subTemplateRender("file:Project/Ajax/CategoryFilterResults.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
+						</div>
 					</div>
 
 					<?php if ($_smarty_tpl->tpl_vars['description']->value && $_smarty_tpl->tpl_vars['page']->value == 1) {?>

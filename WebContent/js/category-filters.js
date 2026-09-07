@@ -1,6 +1,8 @@
 /**
  * Instant category sidebar filters (#cat-2026).
  * Debounced AJAX + history.pushState; SSR handles cold loads.
+ * Multi-select within each facet group (OR); groups combined with AND.
+ * Sort icons reuse the same loader / fragment refresh.
  */
 (function () {
 	'use strict';
@@ -8,21 +10,16 @@
 	var root = document.getElementById('cat-results');
 	var form = document.getElementById('cat-filter-form');
 	var sidebar = document.getElementById('cat-filter-sidebar');
-	if (!root || !form) return;
+	if (!root) return;
 
 	var body = document.getElementById('cat-results-body');
 	var totalEl = document.getElementById('cat-total-count');
 	var clearBtn = document.getElementById('cat-clear-filters');
 	var loader = document.getElementById('cat-results-loader');
+	var loaderTitle = loader ? loader.querySelector('.cat-loader-title') : null;
 	var debounceTimer = null;
 	var requestSeq = 0;
 	var enterTimer = null;
-	var POW_BUCKETS = {
-		'0-100': { pow_min: '0', pow_max: '100' },
-		'100-150': { pow_min: '100', pow_max: '150' },
-		'150-200': { pow_min: '150', pow_max: '200' },
-		'200-': { pow_min: '200' }
-	};
 
 	function getAjaxUrl() {
 		return root.getAttribute('data-ajax-url') || '/index.php?module=project&action=filter_list';
@@ -32,16 +29,18 @@
 		return root.getAttribute('data-list-url') || window.location.pathname;
 	}
 
-	function setFiltering(on) {
+	function setFiltering(on, mode) {
 		root.classList.toggle('is-filtering', !!on);
 		root.setAttribute('aria-busy', on ? 'true' : 'false');
 		if (loader) loader.setAttribute('aria-hidden', on ? 'false' : 'true');
+		if (loaderTitle) {
+			loaderTitle.textContent = mode === 'sort' ? 'Sortowanie projektów' : 'Filtrowanie projektów';
+		}
 	}
 
 	function playEnterAnimation() {
 		if (!body) return;
 		body.classList.remove('cat-results-enter');
-		// Force reflow so the animation can restart
 		void body.offsetWidth;
 		body.classList.add('cat-results-enter');
 		clearTimeout(enterTimer);
@@ -50,32 +49,19 @@
 		}, 700);
 	}
 
-	function exclusiveCheck(changed) {
-		var group = changed.getAttribute('data-group');
-		if (!group || !changed.checked) return;
-		form.querySelectorAll('.js-cat-filter[data-group="' + group + '"]').forEach(function (el) {
-			if (el !== changed) el.checked = false;
-		});
-	}
-
 	function collectFilters() {
 		var params = new URLSearchParams();
-		var seen = {};
+		if (!form) return params;
+		var multi = {};
 		form.querySelectorAll('.js-cat-filter:checked').forEach(function (el) {
 			var name = el.getAttribute('name');
 			var value = el.value;
 			if (!name) return;
-			if (name === 'pow_bucket') {
-				var bucket = POW_BUCKETS[value];
-				if (bucket) {
-					if (bucket.pow_min != null) params.set('pow_min', bucket.pow_min);
-					if (bucket.pow_max != null) params.set('pow_max', bucket.pow_max);
-				}
-				return;
-			}
-			if (seen[name]) return;
-			seen[name] = true;
-			params.set(name, value);
+			if (!multi[name]) multi[name] = [];
+			if (multi[name].indexOf(value) === -1) multi[name].push(value);
+		});
+		Object.keys(multi).forEach(function (name) {
+			params.set(name, multi[name].join(','));
 		});
 		return params;
 	}
@@ -87,28 +73,71 @@
 		clearBtn.classList.toggle('hidden', empty);
 	}
 
-	function syncCheckboxesFromParams(params) {
-		form.querySelectorAll('.js-cat-filter').forEach(function (el) {
-			el.checked = false;
-		});
-		var powMin = params.get('pow_min');
-		var powMax = params.get('pow_max') || '';
-		Object.keys(POW_BUCKETS).forEach(function (key) {
-			var b = POW_BUCKETS[key];
-			if (String(b.pow_min) === String(powMin) && String(b.pow_max || '') === String(powMax)) {
-				var input = form.querySelector('.js-cat-filter[name="pow_bucket"][value="' + key + '"]');
-				if (input) input.checked = true;
-			}
-		});
-		['typ_projektu', 'typdachu', 'dzialka_szer', 'front_szer', 'iloscpokoinaparterze',
-			'wysokoscbudynku', 'katnachyleniadachu', 'rodzajstropu', 'spizarnia'].forEach(function (name) {
-			var val = params.get(name);
-			if (val == null || val === '') return;
+	function checkCsv(name, csv) {
+		if (!form || csv == null || csv === '') return;
+		String(csv).split(',').forEach(function (val) {
+			val = String(val).trim();
+			if (!val) return;
 			var escaped = (window.CSS && CSS.escape) ? CSS.escape(val) : String(val).replace(/"/g, '\\"');
 			var input = form.querySelector('.js-cat-filter[name="' + name + '"][value="' + escaped + '"]');
 			if (input) input.checked = true;
 		});
+	}
+
+	function syncCheckboxesFromParams(params) {
+		if (!form) return;
+		form.querySelectorAll('.js-cat-filter').forEach(function (el) {
+			el.checked = false;
+		});
+
+		if (params.get('pow_bucket')) {
+			checkCsv('pow_bucket', params.get('pow_bucket'));
+		} else {
+			var powMin = params.get('pow_min');
+			var powMax = params.get('pow_max') || '';
+			var POW_BUCKETS = {
+				'0-100': { pow_min: '0', pow_max: '100' },
+				'100-150': { pow_min: '100', pow_max: '150' },
+				'150-200': { pow_min: '150', pow_max: '200' },
+				'200-': { pow_min: '200', pow_max: '' }
+			};
+			Object.keys(POW_BUCKETS).forEach(function (key) {
+				var b = POW_BUCKETS[key];
+				if (String(b.pow_min) === String(powMin) && String(b.pow_max || '') === String(powMax)) {
+					var input = form.querySelector('.js-cat-filter[name="pow_bucket"][value="' + key + '"]');
+					if (input) input.checked = true;
+				}
+			});
+		}
+
+		['typ_projektu', 'typdachu', 'dzialka_szer', 'front_szer', 'iloscpokoinaparterze',
+			'wysokoscbudynku', 'katnachyleniadachu', 'rodzajstropu', 'spizarnia'].forEach(function (name) {
+			checkCsv(name, params.get(name));
+		});
 		syncClearButton(params);
+	}
+
+	function syncSortButtons() {
+		var sortBy = (root.getAttribute('data-sort-by') || 'id').toLowerCase();
+		var sortOrder = (root.getAttribute('data-sort-order') || 'ASC').toUpperCase();
+		document.querySelectorAll('.cat-sort-btn').forEach(function (btn) {
+			var btnBy = (btn.getAttribute('data-sort-by') || '').toLowerCase();
+			var btnOrder = (btn.getAttribute('data-sort-order') || 'ASC').toUpperCase();
+			var active = btnBy === sortBy && btnOrder === sortOrder;
+			btn.classList.toggle('is-active', active);
+			btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+		});
+		var sortByInput = document.getElementById('sort-by');
+		var sortOrderInput = document.getElementById('sort-order');
+		if (sortByInput) sortByInput.value = sortBy === 'usable_area' ? 'usable_area' : sortBy;
+		if (sortOrderInput) sortOrderInput.value = sortOrder;
+	}
+
+	function setSort(sortBy, sortOrder) {
+		root.setAttribute('data-sort-by', sortBy);
+		root.setAttribute('data-sort-order', String(sortOrder || 'ASC').toUpperCase());
+		syncSortButtons();
+		scheduleApply(1, true, 'sort');
 	}
 
 	function buildFetchUrl(filterParams, page) {
@@ -126,19 +155,28 @@
 	}
 
 	function pushListUrl(filterParams, page) {
-		var path = getListUrl();
-		if (page && page > 1) {
-			var display = root.getAttribute('data-display-type') || 'box';
-			var sortBy = root.getAttribute('data-sort-by') || 'id';
-			var sortOrder = root.getAttribute('data-sort-order') || 'ASC';
-			var mapDisplay = { box: 'b', list: 'l', detail: 'e' };
-			var mapSort = { id: 'i', name: 'n', usable_area: 'u' };
-			var mapOrder = { ASC: 'a', DESC: 'd', asc: 'a', desc: 'd' };
-			path = path.replace(/\/?$/, '/') +
-				(mapDisplay[display] || 'b') + ',' +
+		var base = getListUrl().replace(/\/?(?:[ble],[inu],[ad](?:,\d+)?)?\/?$/, '/');
+		if (base.slice(-1) !== '/') base += '/';
+
+		var display = root.getAttribute('data-display-type') || 'box';
+		var sortBy = root.getAttribute('data-sort-by') || 'id';
+		var sortOrder = (root.getAttribute('data-sort-order') || 'ASC').toUpperCase();
+		var mapDisplay = { box: 'b', list: 'l', detail: 'e' };
+		var mapSort = { id: 'i', name: 'n', usable_area: 'u' };
+		var mapOrder = { ASC: 'a', DESC: 'd' };
+		var isAll = root.getAttribute('data-all') === '1';
+		var defaultOrder = isAll ? 'DESC' : 'ASC';
+		var pageNum = page || 1;
+		var needsSortPath = pageNum > 1 || sortBy !== 'id' || sortOrder !== defaultOrder;
+
+		var path = base;
+		if (needsSortPath) {
+			path += (mapDisplay[display] || 'b') + ',' +
 				(mapSort[sortBy] || 'i') + ',' +
-				(mapOrder[sortOrder] || 'a') + ',' + page;
+				(mapOrder[sortOrder] || 'a');
+			if (pageNum > 1) path += ',' + pageNum;
 		}
+
 		var qs = filterParams.toString();
 		var next = path + (qs ? ('?' + qs) : '');
 		if (next !== window.location.pathname + window.location.search) {
@@ -161,16 +199,16 @@
 		}
 		var sortForm = document.getElementById('projects-filters-form');
 		if (sortForm && typeof data.query === 'string') {
-			sortForm.setAttribute('action', getListUrl() + (data.query || ''));
+			sortForm.setAttribute('action', getListUrl().replace(/\/?(?:[ble],[inu],[ad](?:,\d+)?)?\/?$/, '/') + (data.query || ''));
 		}
 		if (typeof lucide !== 'undefined' && lucide.createIcons) {
 			try { lucide.createIcons(); } catch (e) {}
 		}
 	}
 
-	function fetchResults(filterParams, page, push) {
+	function fetchResults(filterParams, page, push, mode) {
 		var seq = ++requestSeq;
-		setFiltering(true);
+		setFiltering(true, mode || 'filter');
 		fetch(buildFetchUrl(filterParams, page), {
 			credentials: 'same-origin',
 			headers: { 'Accept': 'application/json', 'X-Requested-With': 'XMLHttpRequest' }
@@ -189,29 +227,45 @@
 			});
 	}
 
-	function scheduleApply(page, push) {
+	function scheduleApply(page, push, mode) {
 		clearTimeout(debounceTimer);
-		// Show loader immediately so the UI feels responsive during debounce
-		setFiltering(true);
+		setFiltering(true, mode || 'filter');
 		debounceTimer = setTimeout(function () {
 			var params = collectFilters();
-			fetchResults(params, page || 1, push !== false);
-		}, 180);
+			fetchResults(params, page || 1, push !== false, mode || 'filter');
+		}, mode === 'sort' ? 60 : 180);
 	}
 
-	form.addEventListener('change', function (e) {
-		var t = e.target;
-		if (!t || !t.classList || !t.classList.contains('js-cat-filter')) return;
-		exclusiveCheck(t);
-		scheduleApply(1, true);
-	});
+	if (form) {
+		form.addEventListener('change', function (e) {
+			var t = e.target;
+			if (!t || !t.classList || !t.classList.contains('js-cat-filter')) return;
+			scheduleApply(1, true, 'filter');
+		});
+	}
 
 	if (clearBtn) {
 		clearBtn.addEventListener('click', function () {
-			form.querySelectorAll('.js-cat-filter').forEach(function (el) { el.checked = false; });
-			scheduleApply(1, true);
+			if (form) {
+				form.querySelectorAll('.js-cat-filter').forEach(function (el) { el.checked = false; });
+			}
+			scheduleApply(1, true, 'filter');
 		});
 	}
+
+	document.querySelectorAll('.cat-sort-btn').forEach(function (btn) {
+		btn.addEventListener('click', function () {
+			var sortBy = btn.getAttribute('data-sort-by') || 'id';
+			var sortOrder = (btn.getAttribute('data-sort-order') || 'ASC').toUpperCase();
+			if (
+				(root.getAttribute('data-sort-by') || 'id') === sortBy &&
+				(root.getAttribute('data-sort-order') || 'ASC').toUpperCase() === sortOrder
+			) {
+				return;
+			}
+			setSort(sortBy, sortOrder);
+		});
+	});
 
 	if (body) {
 		body.addEventListener('click', function (e) {
@@ -219,7 +273,7 @@
 			if (!link) return;
 			e.preventDefault();
 			var page = parseInt(link.getAttribute('data-page') || '1', 10) || 1;
-			scheduleApply(page, true);
+			scheduleApply(page, true, 'filter');
 		});
 	}
 
@@ -229,10 +283,17 @@
 		var page = 1;
 		var m = window.location.pathname.match(/,([0-9]+)\/?$/);
 		if (m) page = parseInt(m[1], 10) || 1;
+		var sortMatch = window.location.pathname.match(/\/([ble]),([inu]),([ad])(?:,\d+)?\/?$/);
+		if (sortMatch) {
+			var sortByMap = { i: 'id', n: 'name', u: 'usable_area' };
+			var sortOrderMap = { a: 'ASC', d: 'DESC' };
+			root.setAttribute('data-sort-by', sortByMap[sortMatch[2]] || 'id');
+			root.setAttribute('data-sort-order', sortOrderMap[sortMatch[3]] || 'ASC');
+			syncSortButtons();
+		}
 		fetchResults(params, page, false);
 	});
 
-	// Expand open groups that have an active filter
 	if (sidebar) {
 		sidebar.querySelectorAll('.cat-filter-group').forEach(function (group) {
 			if (group.querySelector('.js-cat-filter:checked')) {

@@ -111,33 +111,32 @@
 					</div>
 
 					{if !$sortingDisabled}
-					<div class="flex flex-wrap items-center justify-between gap-3 mb-5">
-						<form method="post" action="{$url}{$query}" id="projects-filters-form" class="flex items-center gap-2">
+					{if $isAllProjects}{$defaultSortOrder = 'DESC'}{else}{$defaultSortOrder = 'ASC'}{/if}
+					<div class="cat-sort-bar flex flex-wrap items-center justify-end gap-3 mb-5 w-full ml-auto">
+						<form method="post" action="{$url}{$query}" id="projects-filters-form" class="flex items-center gap-3 ml-auto">
 							<input type="hidden" name="display_type" value="box" id="display-type">
-							<input type="hidden" name="sort_order" value="{$sortOrder}" id="sort-order">
-							<label for="sort-select" class="text-[13px] text-[#666]">Sortowanie:</label>
-							<select id="sort-select" name="sort_by" class="border border-[#ccc] bg-white px-3 py-2 text-[13px] text-[#222]">
-								<option value="id" data-sort="{if $isAllProjects}desc{else}asc{/if}"{if $sortBy == 'id'} selected="selected"{/if}>{if $isAllProjects}od najnowszych{else}domyślne{/if}</option>
-								<option value="usable_area" data-sort="asc"{if $sortBy == 'usable_area' && $sortOrder == 'ASC'} selected="selected"{/if}>powierzchnia ↑</option>
-								<option value="usable_area" data-sort="desc"{if $sortBy == 'usable_area' && $sortOrder == 'DESC'} selected="selected"{/if}>powierzchnia ↓</option>
-								<option value="name" data-sort="asc"{if $sortBy == 'name' && $sortOrder == 'ASC'} selected="selected"{/if}>nazwa A–Z</option>
-								<option value="name" data-sort="desc"{if $sortBy == 'name' && $sortOrder == 'DESC'} selected="selected"{/if}>nazwa Z–A</option>
-							</select>
+							<input type="hidden" name="sort_by" id="sort-by" value="{$sortBy}">
+							<input type="hidden" name="sort_order" id="sort-order" value="{$sortOrder}">
+							<span class="text-[13px] text-[#666]">Sortowanie:</span>
+							<div class="cat-sort-group flex items-center gap-1" role="group" aria-label="Sortowanie projektów">
+								<button type="button" class="cat-sort-btn{if $sortBy == 'id'} is-active{/if}" data-sort-by="id" data-sort-order="{$defaultSortOrder}" title="{if $isAllProjects}Od najnowszych{else}Domyślne{/if}" aria-label="{if $isAllProjects}Od najnowszych{else}Domyślne{/if}" aria-pressed="{if $sortBy == 'id'}true{else}false{/if}">
+									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h12"/><path d="M3 12h9"/><path d="M3 19h6"/><path d="m17 8 4-4 4 4"/><path d="M21 4v12"/></svg>
+								</button>
+								<button type="button" class="cat-sort-btn{if $sortBy == 'usable_area' && $sortOrder == 'ASC'} is-active{/if}" data-sort-by="usable_area" data-sort-order="ASC" title="Powierzchnia rosnąco" aria-label="Powierzchnia rosnąco" aria-pressed="{if $sortBy == 'usable_area' && $sortOrder == 'ASC'}true{else}false{/if}">
+									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8 4-4 4 4"/><path d="M7 4v16"/><rect width="10" height="8" x="11" y="12" rx="1"/><path d="M15 8h.01"/><path d="M19 8h.01"/></svg>
+								</button>
+								<button type="button" class="cat-sort-btn{if $sortBy == 'usable_area' && $sortOrder == 'DESC'} is-active{/if}" data-sort-by="usable_area" data-sort-order="DESC" title="Powierzchnia malejąco" aria-label="Powierzchnia malejąco" aria-pressed="{if $sortBy == 'usable_area' && $sortOrder == 'DESC'}true{else}false{/if}">
+									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 16 4 4 4-4"/><path d="M7 20V4"/><rect width="10" height="8" x="11" y="4" rx="1"/><path d="M15 16h.01"/><path d="M19 16h.01"/></svg>
+								</button>
+								<button type="button" class="cat-sort-btn{if $sortBy == 'name' && $sortOrder == 'ASC'} is-active{/if}" data-sort-by="name" data-sort-order="ASC" title="Nazwa A–Z" aria-label="Nazwa A–Z" aria-pressed="{if $sortBy == 'name' && $sortOrder == 'ASC'}true{else}false{/if}">
+									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 16 4 4 4-4"/><path d="M7 20V4"/><path d="M20 8h-5"/><path d="M15 10V6.5a2.5 2.5 0 0 1 5 0V10"/><path d="M15 14h5l-5 6h5"/></svg>
+								</button>
+								<button type="button" class="cat-sort-btn{if $sortBy == 'name' && $sortOrder == 'DESC'} is-active{/if}" data-sort-by="name" data-sort-order="DESC" title="Nazwa Z–A" aria-label="Nazwa Z–A" aria-pressed="{if $sortBy == 'name' && $sortOrder == 'DESC'}true{else}false{/if}">
+									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8 4-4 4 4"/><path d="M7 4v16"/><path d="M15 4h5l-5 6h5"/><path d="M15 20v-3.5a2.5 2.5 0 0 1 5 0V20"/><path d="M20 18h-5"/></svg>
+								</button>
+							</div>
 						</form>
 					</div>
-					<script>
-					(function () {
-						var sel = document.getElementById('sort-select');
-						var form = document.getElementById('projects-filters-form');
-						var order = document.getElementById('sort-order');
-						if (!sel || !form) return;
-						sel.addEventListener('change', function () {
-							var opt = sel.options[sel.selectedIndex];
-							if (order && opt) order.value = (opt.getAttribute('data-sort') || 'asc').toUpperCase();
-							form.submit();
-						});
-					})();
-					</script>
 					{/if}
 
 					<div id="cat-results-shell">

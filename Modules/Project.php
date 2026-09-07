@@ -2963,8 +2963,32 @@ class Project extends WWW\AbstractModule
 	}
 
 	/**
+	 * Split a raw filter value into a clean string list (supports CSV / arrays).
+	 *
+	 * @param mixed $value
+	 * @return string[]
+	 */
+	private function _parseCategoryFilterValues($value)
+	{
+		if (is_array($value)) {
+			$parts = $value;
+		} else {
+			$parts = preg_split('/\s*,\s*/', trim((string) $value));
+		}
+		$out = array();
+		foreach ($parts as $part) {
+			$part = trim((string) $part);
+			if ($part === '') {
+				continue;
+			}
+			$out[$part] = $part;
+		}
+		return array_values($out);
+	}
+
+	/**
 	 * @param \Point7_WebApp_Request_Filtered $request
-	 * @return array
+	 * @return array map of filter key => string[] (always lists for multi-select)
 	 */
 	private function _collectActiveCategoryFilters(\Point7_WebApp_Request_Filtered $request)
 	{
@@ -2974,48 +2998,46 @@ class Project extends WWW\AbstractModule
 			if (!isset($raw[$key]) || $raw[$key] === '' || $raw[$key] === null) {
 				continue;
 			}
-			$active[$key] = $raw[$key];
+			$vals = $this->_parseCategoryFilterValues($raw[$key]);
+			if ($vals) {
+				$active[$key] = $vals;
+			}
 		}
 		return $this->_normalizeCategoryFilterBuckets($active);
 	}
 
 	/**
-	 * Expand pow_bucket into pow_min/pow_max for ClickSearch + SSR checked state.
+	 * Keep pow_bucket as multi-select lists for SSR; expand legacy pow_min/max.
 	 *
 	 * @param array $filters
 	 * @return array
 	 */
 	private function _normalizeCategoryFilterBuckets(array $filters)
 	{
-		if (!empty($filters['pow_bucket']) && empty($filters['pow_min']) && empty($filters['pow_max'])) {
-			$buckets = array(
-				'0-100' => array('0', '100'),
-				'100-150' => array('100', '150'),
-				'150-200' => array('150', '200'),
-				'200-' => array('200', ''),
-			);
-			$bucket = $filters['pow_bucket'];
-			if (isset($buckets[$bucket])) {
-				$filters['pow_min'] = $buckets[$bucket][0];
-				if ($buckets[$bucket][1] !== '') {
-					$filters['pow_max'] = $buckets[$bucket][1];
-				}
-			}
-		}
-		unset($filters['pow_bucket']);
+		$bucketMap = array(
+			'0-100' => array('0', '100'),
+			'100-150' => array('100', '150'),
+			'150-200' => array('150', '200'),
+			'200-' => array('200', ''),
+		);
 
-		// Infer bucket for checkbox SSR when only min/max are present
+		if (!empty($filters['pow_bucket'])) {
+			$filters['pow_bucket'] = $this->_parseCategoryFilterValues($filters['pow_bucket']);
+			// Drop single-range params when buckets drive the filter
+			unset($filters['pow_min'], $filters['pow_max']);
+			return $filters;
+		}
+
+		// Legacy shareable URLs: ?pow_min=&pow_max=
 		if (!empty($filters['pow_min']) || !empty($filters['pow_max'])) {
-			$min = isset($filters['pow_min']) ? (string) $filters['pow_min'] : '';
-			$max = isset($filters['pow_max']) ? (string) $filters['pow_max'] : '';
-			if ($min === '0' && $max === '100') {
-				$filters['pow_bucket'] = '0-100';
-			} elseif ($min === '100' && $max === '150') {
-				$filters['pow_bucket'] = '100-150';
-			} elseif ($min === '150' && $max === '200') {
-				$filters['pow_bucket'] = '150-200';
-			} elseif ($min === '200' && $max === '') {
-				$filters['pow_bucket'] = '200-';
+			$min = isset($filters['pow_min'][0]) ? (string) $filters['pow_min'][0] : '';
+			$max = isset($filters['pow_max'][0]) ? (string) $filters['pow_max'][0] : '';
+			foreach ($bucketMap as $key => $range) {
+				if ($min === $range[0] && $max === $range[1]) {
+					$filters['pow_bucket'] = array($key);
+					unset($filters['pow_min'], $filters['pow_max']);
+					break;
+				}
 			}
 		}
 
@@ -3028,26 +3050,27 @@ class Project extends WWW\AbstractModule
 	 */
 	private function _buildCategoryFilterQueryString(array $rawParams)
 	{
-		$parts = array();
-		$keys = $this->_categoryFilterParamKeys();
-		foreach ($keys as $key) {
-			if ($key === 'pow_bucket') {
-				continue;
-			}
+		$active = array();
+		foreach ($this->_categoryFilterParamKeys() as $key) {
 			if (!isset($rawParams[$key]) || $rawParams[$key] === '' || $rawParams[$key] === null) {
 				continue;
 			}
-			$parts[$key] = $rawParams[$key];
+			$vals = $this->_parseCategoryFilterValues($rawParams[$key]);
+			if ($vals) {
+				$active[$key] = $vals;
+			}
 		}
-		// Expand bucket into min/max in the shareable URL
-		if (!empty($rawParams['pow_bucket']) && empty($parts['pow_min']) && empty($parts['pow_max'])) {
-			$normalized = $this->_normalizeCategoryFilterBuckets(array('pow_bucket' => $rawParams['pow_bucket']));
-			if (isset($normalized['pow_min'])) {
-				$parts['pow_min'] = $normalized['pow_min'];
+		$active = $this->_normalizeCategoryFilterBuckets($active);
+
+		$parts = array();
+		foreach ($active as $key => $vals) {
+			if ($key === 'pow_min' || $key === 'pow_max') {
+				continue;
 			}
-			if (isset($normalized['pow_max'])) {
-				$parts['pow_max'] = $normalized['pow_max'];
+			if (!is_array($vals) || !$vals) {
+				continue;
 			}
+			$parts[$key] = implode(',', $vals);
 		}
 		if (!$parts) {
 			return '';
@@ -3056,7 +3079,66 @@ class Project extends WWW\AbstractModule
 	}
 
 	/**
+	 * Run ClickSearch for one facet value (used for OR-within-group filtering).
+	 *
+	 * @param string $facetKey
+	 * @param string $value
+	 * @param int|null $categoryId
+	 * @param bool $sortByArea
+	 * @return int[]
+	 */
+	private function _clickSearchSingleFacet($facetKey, $value, $categoryId, $sortByArea = false)
+	{
+		$csParams = array();
+		$searchParams = array();
+		$tolerance = (float) \Point7_WebApp::getConfigParam('helpers.search_tolerance');
+
+		if ($facetKey === 'pow_bucket') {
+			$bucketMap = array(
+				'0-100' => array(0, 100),
+				'100-150' => array(100, 150),
+				'150-200' => array(150, 200),
+				'200-' => array(200, null),
+			);
+			if (!isset($bucketMap[$value])) {
+				return array();
+			}
+			$areaKey = Helper\Project::getClickSearchParamsMap('area_usable');
+			$searchParams[$areaKey]['min'] = $bucketMap[$value][0] - $tolerance;
+			if ($bucketMap[$value][1] !== null) {
+				$searchParams[$areaKey]['max'] = $bucketMap[$value][1] + $tolerance;
+			}
+		} elseif ($facetKey === 'dzialka_szer') {
+			$searchParams[Helper\Project::getClickSearchParamsMap('parcel_width')]['max'] = (float) $value;
+		} elseif ($facetKey === 'front_szer') {
+			$searchParams[Helper\Project::getClickSearchParamsMap('front_width')]['max'] = (float) $value;
+		} else {
+			$map = Helper\ClickSearchMap::getMap();
+			$paramId = array_search($facetKey, $map, true);
+			if ($paramId === false) {
+				return array();
+			}
+			if ($paramId === 'type') {
+				$csParams['_typ_projektu'] = $value;
+			} else {
+				$csParams[$paramId] = $value;
+			}
+		}
+
+		$ids = $this->_projectFinder->clickSearch(
+			$searchParams,
+			$csParams,
+			$categoryId,
+			false,
+			false,
+			$sortByArea
+		);
+		return is_array($ids) ? $ids : array();
+	}
+
+	/**
 	 * Intersect curated category IDs with ClickSearch results.
+	 * Multi-select: OR within each facet group, AND across groups.
 	 *
 	 * @param \Point7_WebApp_Request_Filtered $request
 	 * @param array $idList
@@ -3077,58 +3159,11 @@ class Project extends WWW\AbstractModule
 			return $idList;
 		}
 
-		$csParams = $this->_getClickSearchParams($request);
-		$searchParams = $this->_getSearchParams($request);
-
-		// Apply expanded ranges even if request object still lacks them
-		if (isset($active['pow_min']) && $active['pow_min'] !== '') {
-			$tolerance = \Point7_WebApp::getConfigParam('helpers.search_tolerance');
-			$areaKey = Helper\Project::getClickSearchParamsMap('area_usable');
-			$searchParams[$areaKey]['min'] = (float) $active['pow_min'] - $tolerance;
-		}
-		if (isset($active['pow_max']) && $active['pow_max'] !== '') {
-			$tolerance = \Point7_WebApp::getConfigParam('helpers.search_tolerance');
-			$areaKey = Helper\Project::getClickSearchParamsMap('area_usable');
-			$searchParams[$areaKey]['max'] = (float) $active['pow_max'] + $tolerance;
-		}
-
-		// Merge remaining active keys into csParams when request missed them (e.g. bucket-only)
-		foreach ($active as $key => $val) {
-			if ($val === '' || $val === null) {
-				continue;
-			}
-			if (in_array($key, array('pow_min', 'pow_max', 'pow_bucket'), true)) {
-				continue;
-			}
-			$map = Helper\ClickSearchMap::getMap();
-			$paramId = array_search($key, $map, true);
-			if ($paramId === false) {
-				continue;
-			}
-			if ($paramId === 'type') {
-				$csParams['_typ_projektu'] = $val;
-			} else {
-				$csParams[$paramId] = $val;
-			}
-		}
-
 		$categoryId = null;
 		if ($request->getParam('kategoria')) {
 			$categoryId = (int) str_replace('c', '', $request->getParam('kategoria'));
 		} elseif (!$isAllProjects && $category && (int) $category->getId() > 1) {
 			$categoryId = (int) $category->getId();
-		}
-
-		$searchIds = $this->_projectFinder->clickSearch(
-			$searchParams,
-			$csParams,
-			$categoryId,
-			false,
-			false,
-			$sortByArea
-		);
-		if (!$searchIds) {
-			return array();
 		}
 
 		$allowed = array();
@@ -3138,10 +3173,49 @@ class Project extends WWW\AbstractModule
 				$allowed[$id] = true;
 			}
 		}
+		if (!$allowed) {
+			return array();
+		}
+
+		$running = $allowed;
+		$facetKeys = array(
+			'typ_projektu',
+			'typdachu',
+			'pow_bucket',
+			'dzialka_szer',
+			'front_szer',
+			'iloscpokoinaparterze',
+			'iloscpokoinaiikondygnacji',
+			'wysokoscbudynku',
+			'katnachyleniadachu',
+			'rodzajstropu',
+			'spizarnia',
+		);
+
+		foreach ($facetKeys as $facetKey) {
+			if (empty($active[$facetKey]) || !is_array($active[$facetKey])) {
+				continue;
+			}
+			$union = array();
+			foreach ($active[$facetKey] as $value) {
+				foreach ($this->_clickSearchSingleFacet($facetKey, $value, $categoryId, $sortByArea) as $id) {
+					$id = (int) $id;
+					if (isset($allowed[$id])) {
+						$union[$id] = true;
+					}
+				}
+			}
+			$running = array_intersect_key($running, $union);
+			if (!$running) {
+				return array();
+			}
+		}
+
+		// Preserve curated category order
 		$out = array();
-		foreach ($searchIds as $id) {
+		foreach ($idList as $id) {
 			$id = (int) $id;
-			if (isset($allowed[$id])) {
+			if (isset($running[$id])) {
 				$out[] = $id;
 			}
 		}
