@@ -1,5 +1,5 @@
 <section class="py-20 bg-white" id="initiative">
-	<div class="max-w-[1280px] mx-auto px-12 grid md:grid-cols-2 gap-16 items-center">
+	<div class="max-w-[1480px] mx-auto px-12 grid md:grid-cols-2 gap-[48px] items-center">
 		<div>
 			<h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight mb-6 uppercase">{$initiative.title|escape}</h2>
 			<p class="text-[18px] leading-[24px] text-[var(--brand-darker)]">{$initiative.body|escape|nl2br}</p>

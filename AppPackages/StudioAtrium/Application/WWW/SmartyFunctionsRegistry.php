@@ -686,7 +686,7 @@ class SmartyFunctionsRegistry
             $pdo = \Point7_WebApp::getPDO();
             $this->ensurePoradyTables($pdo);
             $stmt = $pdo->query(
-                'SELECT title, image_url, image_alt, article_url, tag1_label, tag1_url, tag2_label, tag2_url
+                'SELECT title, image_url, image_path, image_alt, article_url, tag1_label, tag1_url, tag2_label, tag2_url
                  FROM homepage_tips
                  ORDER BY sorting ASC, id ASC'
             );
@@ -694,7 +694,16 @@ class SmartyFunctionsRegistry
                 return $defaults;
             }
             $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-            return !empty($rows) ? $rows : $defaults;
+            if (empty($rows)) {
+                return $defaults;
+            }
+            foreach ($rows as $i => $row) {
+                $rows[$i]['image_url'] = $this->resolveHomepageImageUrl(
+                    isset($row['image_url']) ? $row['image_url'] : '',
+                    isset($row['image_path']) ? $row['image_path'] : ''
+                );
+            }
+            return $rows;
         } catch (\Throwable $e) {
             return $defaults;
         }
@@ -735,6 +744,9 @@ class SmartyFunctionsRegistry
                     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
                     title VARCHAR(512) NOT NULL DEFAULT \'\',
                     image_url VARCHAR(512) NOT NULL DEFAULT \'\',
+                    image_path VARCHAR(512) NOT NULL DEFAULT \'\',
+                    image_filename VARCHAR(255) NOT NULL DEFAULT \'\',
+                    image_original_name VARCHAR(255) NOT NULL DEFAULT \'\',
                     image_alt VARCHAR(255) NOT NULL DEFAULT \'\',
                     article_url VARCHAR(512) NOT NULL DEFAULT \'\',
                     tag1_label VARCHAR(128) NOT NULL DEFAULT \'\',
@@ -771,6 +783,7 @@ class SmartyFunctionsRegistry
         }
 
         $this->ensureTipsArticleUrlColumn($pdo);
+        $this->ensureTipsImageUploadColumns($pdo);
     }
 
     private function ensureTipsArticleUrlColumn(\PDO $pdo)
@@ -780,6 +793,22 @@ class SmartyFunctionsRegistry
             return;
         }
         $pdo->exec("ALTER TABLE homepage_tips ADD article_url VARCHAR(512) NOT NULL DEFAULT '' AFTER image_alt");
+    }
+
+    private function ensureTipsImageUploadColumns(\PDO $pdo)
+    {
+        $cols = array(
+            'image_path' => "ALTER TABLE homepage_tips ADD image_path VARCHAR(512) NOT NULL DEFAULT '' AFTER image_url",
+            'image_filename' => "ALTER TABLE homepage_tips ADD image_filename VARCHAR(255) NOT NULL DEFAULT '' AFTER image_path",
+            'image_original_name' => "ALTER TABLE homepage_tips ADD image_original_name VARCHAR(255) NOT NULL DEFAULT '' AFTER image_filename",
+        );
+        foreach ($cols as $name => $sql) {
+            $col = $pdo->query("SHOW COLUMNS FROM homepage_tips LIKE " . $pdo->quote($name));
+            if ($col && $col->fetchColumn()) {
+                continue;
+            }
+            @$pdo->exec($sql);
+        }
     }
 
     private function getPoradyDefaults()
@@ -844,7 +873,9 @@ class SmartyFunctionsRegistry
             $pdo = \Point7_WebApp::getPDO();
             $this->ensureOfferTable($pdo);
             $stmt = $pdo->query(
-                'SELECT * FROM homepage_oferta ORDER BY id ASC LIMIT 1'
+                'SELECT title, lead_text, button_label, button_url,
+                        image_url, image_path, image_filename, image_original_name, image_alt, image_caption
+                 FROM homepage_oferta ORDER BY id ASC LIMIT 1'
             );
             if (!$stmt) {
                 return $defaults;
@@ -853,18 +884,6 @@ class SmartyFunctionsRegistry
             if (!$row) {
                 return $defaults;
             }
-            $row['logo1_url'] = $this->resolveHomepageImageUrl(
-                isset($row['logo1_url']) ? $row['logo1_url'] : '',
-                isset($row['logo1_path']) ? $row['logo1_path'] : ''
-            );
-            $row['logo2_url'] = $this->resolveHomepageImageUrl(
-                isset($row['logo2_url']) ? $row['logo2_url'] : '',
-                isset($row['logo2_path']) ? $row['logo2_path'] : ''
-            );
-            $row['logo3_url'] = $this->resolveHomepageImageUrl(
-                isset($row['logo3_url']) ? $row['logo3_url'] : '',
-                isset($row['logo3_path']) ? $row['logo3_path'] : ''
-            );
             $row['image_url'] = $this->resolveHomepageImageUrl(
                 isset($row['image_url']) ? $row['image_url'] : '',
                 isset($row['image_path']) ? $row['image_path'] : ''
@@ -875,12 +894,54 @@ class SmartyFunctionsRegistry
         }
     }
 
+    private function fetchOfferQuotes()
+    {
+        try {
+            $pdo = \Point7_WebApp::getPDO();
+            $this->ensureOfferTable($pdo);
+            $stmt = $pdo->query(
+                'SELECT quote_text, quote_author, logo_url, logo_path, logo_filename, logo_original_name, logo_alt, sorting
+                 FROM homepage_oferta_quotes
+                 ORDER BY sorting ASC, id ASC'
+            );
+            if (!$stmt) {
+                return array();
+            }
+            $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+            if (!is_array($rows) || empty($rows)) {
+                return array();
+            }
+            $out = array();
+            foreach ($rows as $row) {
+                $logoUrl = $this->resolveHomepageImageUrl(
+                    isset($row['logo_url']) ? $row['logo_url'] : '',
+                    isset($row['logo_path']) ? $row['logo_path'] : ''
+                );
+                $text = isset($row['quote_text']) ? trim($row['quote_text']) : '';
+                $author = isset($row['quote_author']) ? trim($row['quote_author']) : '';
+                if ($text === '' && $author === '' && $logoUrl === '') {
+                    continue;
+                }
+                $out[] = array(
+                    'quote_text'   => $text,
+                    'quote_author' => $author,
+                    'logo_url'     => $logoUrl,
+                    'logo_alt'     => isset($row['logo_alt']) ? $row['logo_alt'] : '',
+                );
+            }
+            return $out;
+        } catch (\Throwable $e) {
+            return array();
+        }
+    }
+
     private function ensureOfferTable(\PDO $pdo)
     {
         $exists = $pdo->query("SHOW TABLES LIKE 'homepage_oferta'");
         if ($exists && $exists->fetchColumn()) {
             $this->ensureOfferImageColumns($pdo);
             $this->dropOfferQuoteBadgeColumn($pdo);
+            $this->ensureOfferQuotesTable($pdo);
             return;
         }
 
@@ -965,6 +1026,109 @@ class SmartyFunctionsRegistry
             ':image_alt'            => $defaults['image_alt'],
             ':image_caption'        => $defaults['image_caption'],
         ));
+        $this->ensureOfferQuotesTable($pdo);
+    }
+
+    private function ensureOfferQuotesTable(\PDO $pdo)
+    {
+        $exists = $pdo->query("SHOW TABLES LIKE 'homepage_oferta_quotes'");
+        if (!($exists && $exists->fetchColumn())) {
+            $created = $pdo->exec(
+                'CREATE TABLE homepage_oferta_quotes (
+                    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+                    quote_text TEXT NOT NULL,
+                    quote_author VARCHAR(255) NOT NULL DEFAULT \'\',
+                    logo_url VARCHAR(512) NOT NULL DEFAULT \'\',
+                    logo_path VARCHAR(512) NOT NULL DEFAULT \'\',
+                    logo_filename VARCHAR(255) NOT NULL DEFAULT \'\',
+                    logo_original_name VARCHAR(255) NOT NULL DEFAULT \'\',
+                    logo_alt VARCHAR(255) NOT NULL DEFAULT \'\',
+                    sorting INT UNSIGNED NOT NULL DEFAULT 0,
+                    PRIMARY KEY (id)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4'
+            );
+            if ($created === false) {
+                throw new \RuntimeException('Could not create homepage_oferta_quotes');
+            }
+        }
+
+        $count = (int) $pdo->query('SELECT COUNT(*) FROM homepage_oferta_quotes')->fetchColumn();
+        if ($count > 0) {
+            return;
+        }
+
+        $legacy = $pdo->query(
+            'SELECT quote_text, quote_author,
+                    logo1_url, logo1_path, logo1_filename, logo1_original_name, logo1_alt,
+                    logo2_url, logo2_path, logo2_filename, logo2_original_name, logo2_alt,
+                    logo3_url, logo3_path, logo3_filename, logo3_original_name, logo3_alt
+             FROM homepage_oferta ORDER BY id ASC LIMIT 1'
+        );
+        $row = $legacy ? $legacy->fetch(\PDO::FETCH_ASSOC) : null;
+        if (!$row) {
+            $defaults = $this->getOfferDefaults();
+            $row = array(
+                'quote_text' => $defaults['quote_text'],
+                'quote_author' => $defaults['quote_author'],
+                'logo1_url' => $defaults['logo1_url'],
+                'logo1_path' => '',
+                'logo1_filename' => '',
+                'logo1_original_name' => '',
+                'logo1_alt' => $defaults['logo1_alt'],
+                'logo2_url' => $defaults['logo2_url'],
+                'logo2_path' => '',
+                'logo2_filename' => '',
+                'logo2_original_name' => '',
+                'logo2_alt' => $defaults['logo2_alt'],
+                'logo3_url' => $defaults['logo3_url'],
+                'logo3_path' => '',
+                'logo3_filename' => '',
+                'logo3_original_name' => '',
+                'logo3_alt' => $defaults['logo3_alt'],
+            );
+        }
+
+        $insert = $pdo->prepare(
+            'INSERT INTO homepage_oferta_quotes
+             (quote_text, quote_author, logo_url, logo_path, logo_filename, logo_original_name, logo_alt, sorting)
+             VALUES
+             (:quote_text, :quote_author, :logo_url, :logo_path, :logo_filename, :logo_original_name, :logo_alt, :sorting)'
+        );
+        $quoteText = isset($row['quote_text']) ? $row['quote_text'] : '';
+        $quoteAuthor = isset($row['quote_author']) ? $row['quote_author'] : '';
+        $sorting = 0;
+        $inserted = false;
+        for ($n = 1; $n <= 3; $n++) {
+            $url = isset($row['logo' . $n . '_url']) ? $row['logo' . $n . '_url'] : '';
+            $path = isset($row['logo' . $n . '_path']) ? $row['logo' . $n . '_path'] : '';
+            if ($url === '' && $path === '') {
+                continue;
+            }
+            $insert->execute(array(
+                ':quote_text'         => $quoteText,
+                ':quote_author'       => $quoteAuthor,
+                ':logo_url'           => $url,
+                ':logo_path'          => $path,
+                ':logo_filename'      => isset($row['logo' . $n . '_filename']) ? $row['logo' . $n . '_filename'] : '',
+                ':logo_original_name' => isset($row['logo' . $n . '_original_name']) ? $row['logo' . $n . '_original_name'] : '',
+                ':logo_alt'           => isset($row['logo' . $n . '_alt']) ? $row['logo' . $n . '_alt'] : '',
+                ':sorting'            => $sorting,
+            ));
+            $sorting++;
+            $inserted = true;
+        }
+        if (!$inserted && ($quoteText !== '' || $quoteAuthor !== '')) {
+            $insert->execute(array(
+                ':quote_text'         => $quoteText,
+                ':quote_author'       => $quoteAuthor,
+                ':logo_url'           => '',
+                ':logo_path'          => '',
+                ':logo_filename'      => '',
+                ':logo_original_name' => '',
+                ':logo_alt'           => '',
+                ':sorting'            => 0,
+            ));
+        }
     }
 
     private function ensureOfferImageColumns(\PDO $pdo)
@@ -2653,6 +2817,7 @@ class SmartyFunctionsRegistry
         $smarty->assign('porady', $this->fetchPorady());
         $smarty->assign('tips', $this->fetchTips());
         $smarty->assign('offer', $this->fetchOffer());
+        $smarty->assign('offer_quotes', $this->fetchOfferQuotes());
 
         // Assign hero slider + safety strip
         $smarty->assign('hero_slides', $this->fetchHeroSlides());

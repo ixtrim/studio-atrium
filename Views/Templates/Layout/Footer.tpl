@@ -15,10 +15,10 @@
 <footer class="bg-[#3a3a3a] text-white pt-16 pb-10">
 	<div class="max-w-[1480px] mx-auto px-12">
 		<div class="grid grid-cols-1 md:grid-cols-4 gap-10">
-			<div class="space-y-1 footer-menu-col-a">
+			<div class="space-y-[12px] footer-menu-col-a">
 				{foreach $footer_menus.a as $link}
 					<a href="{$link.url}" {if $link.target != '_self'} target="{$link.target}" {/if}
-						class="block text-white text-[15px] font-bold hover:text-[var(--brand-blue)] transition">{$link.label}</a>
+						class="block text-white text-[20px] font-normal hover:text-[var(--brand-blue)] transition">{$link.label}</a>
 				{/foreach}
 				{if $social.facebook || $social.instagram || $social.pinterest || $social.youtube}
 					<div class="flex items-center gap-3 pt-4">
@@ -66,51 +66,51 @@
 					</div>
 				{/if}
 			</div>
-			<div class="space-y-1 footer-menu-col-b">
+			<div class="space-y-[12px] footer-menu-col-b">
 				{foreach $footer_menus.b as $link}
 					<a href="{$link.url}" {if $link.target != '_self'} target="{$link.target}" {/if}
-						class="block text-white text-[15px] font-bold hover:text-[var(--brand-blue)] transition">{$link.label}</a>
+						class="block text-white text-[20px] font-normal hover:text-[var(--brand-blue)] transition">{$link.label}</a>
 				{/foreach}
 			</div>
-			<div class="space-y-1 footer-menu-col-c">
+			<div class="space-y-[12px] footer-menu-col-c">
 				{foreach $footer_menus.c as $link}
 					<a href="{$link.url}" {if $link.target != '_self'} target="{$link.target}" {/if}
-						class="block text-white text-[15px] font-bold hover:text-[var(--brand-blue)] transition">{$link.label}</a>
+						class="block text-white text-[20px] font-normal hover:text-[var(--brand-blue)] transition">{$link.label}</a>
 				{/foreach}
 			</div>
 			<div class="space-y-3">
-				<div class="text-white text-[15px] font-bold">{$contact.header|default:'Kontakt'}</div>
+				<div class="text-white text-[20px] font-semibold">{$contact.header|default:'Kontakt'}</div>
 				{if $contact.phone1}
 					<a href="tel:{$contact.phone1|replace:' ':''}"
-						class="block text-[var(--brand-red)] font-black text-[28px] leading-tight">{$contact.phone1}</a>
+						class="block text-[var(--brand-red)] font-semibold text-[28px] leading-tight">{$contact.phone1}</a>
 				{/if}
 				{if $contact.phone2}
 					<a href="tel:{$contact.phone2|replace:' ':''}"
-						class="block text-[var(--brand-red)] font-black text-[28px] leading-tight">{$contact.phone2}</a>
+						class="block text-[var(--brand-red)] font-semibold text-[28px] leading-tight -mt-[12px]">{$contact.phone2}</a>
 				{/if}
 				{if $contact.extra_phones}
 					<div class="text-[var(--brand-red)] text-[13px] font-bold">{$contact.extra_phones}</div>
 				{/if}
 				{if $contact.email}
 					<a href="mailto:{$contact.email}"
-						class="block text-white font-black text-[24px] pt-3 hover:text-[var(--brand-blue)]">{$contact.email}</a>
+						class="block text-white font-semibold text-[24px] pt-3 hover:text-[var(--brand-blue)]">{$contact.email}</a>
 				{/if}
 				{if $contact.details}
-					<div class="text-white text-[14px] font-bold pt-3 leading-relaxed">{$contact.details|nl2br}</div>
+					<div class="text-white text-[18px] font-bold pt-3 leading-relaxed">{$contact.details|nl2br}</div>
 				{/if}
 				{if $contact.map_url}
 					<a href="{$contact.map_url}"
-						class="text-[var(--brand-blue)] text-[14px] underline">{$contact.map_text|default:'zobacz dojazd'}</a>
+						class="text-[var(--brand-blue)] text-[18px] underline">{$contact.map_text|default:'zobacz dojazd'}</a>
 				{/if}
 			</div>
 		</div>
 		{if $seo_links_header || $seo_links}
 			<div class="mt-16">
-				<h3 class="text-white font-black text-[15px] tracking-wide mb-4">{$seo_links_header|escape}</h3>
-				<div class="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-7 gap-x-6 gap-y-1 text-[12px]">
+				<h3 class="text-white font-semibold text-[24px] tracking-wide mb-4">{$seo_links_header|escape}</h3>
+				<div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-x-[24px] gap-y-[12px] text-[12px]">
 					{foreach $seo_links as $sl}
 						<a href="{$sl.url|escape}"
-							class="text-white/85 hover:text-[var(--brand-blue)] truncate">{$sl.label|escape}</a>
+							class="text-white/85 text-[18px] font-normal hover:text-[var(--brand-blue)] truncate transition">{$sl.label|escape}</a>
 					{/foreach}
 				</div>
 			</div>

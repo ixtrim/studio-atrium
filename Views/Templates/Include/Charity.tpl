@@ -1,5 +1,5 @@
 <section class="py-20 bg-[#ECECEC]" id="charity">
-	<div class="max-w-[1280px] mx-auto px-12 grid md:grid-cols-2 gap-16 items-center">
+	<div class="max-w-[1480px] mx-auto px-12 grid md:grid-cols-2 gap-[48px] items-center">
 		<div class="flex items-center justify-center gap-12">
 			<img src="{$charity.logo1_url|escape}" alt="{$charity.logo1_alt|escape}" class="w-40 h-40 object-contain">
 			<img src="{$charity.logo2_url|escape}" alt="{$charity.logo2_alt|escape}" class="w-40 h-40 object-contain">
