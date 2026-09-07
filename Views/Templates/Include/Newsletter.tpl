@@ -29,7 +29,7 @@
             </style>
         </div>
     </div>
-    <div class="bg-[#3a3a3a]">
+    <div class="{if $category_newsletter_bg}bg-[#5d5b5c]{else}bg-[#3a3a3a]{/if}">
         <div class="max-w-[1480px] mx-auto px-12 py-14 grid grid-cols-12 gap-[72px] items-center">
             <div class="col-span-12 md:col-span-5 text-white">
                 <h2 class="text-[36px] font-400 text-white tracking-tight leading-tight uppercase">

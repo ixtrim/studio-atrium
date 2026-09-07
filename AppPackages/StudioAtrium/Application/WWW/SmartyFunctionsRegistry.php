@@ -2742,6 +2742,121 @@ class SmartyFunctionsRegistry
         }
     }
 
+    private function fetchCategorySidebar()
+    {
+        $defaults = array(
+            'cta_text'         => 'Bezpłatnie pomożemy wybrać najlepszy projekt domu dla Ciebie.',
+            'cta_button_label' => 'WYPEŁNIJ FORMULARZ',
+            'cta_button_url'   => '/znajdziemy-dla-ciebie-projekt.html',
+            'items'            => array(
+                array(
+                    'item_text' => "BEZPŁATNE DODATKI\nDO PROJEKTÓW",
+                    'icon_svg'  => '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-white" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg>',
+                ),
+                array(
+                    'item_text' => "BEZPŁATNA KONSULTACJA\nARCHITEKTA",
+                    'icon_svg'  => '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-white" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+                ),
+                array(
+                    'item_text' => 'POMOC W ADAPTACJI',
+                    'icon_svg'  => '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-white" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>',
+                ),
+                array(
+                    'item_text' => 'ZMIANY W PROJEKCIE',
+                    'icon_svg'  => '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-white" aria-hidden="true"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/></svg>',
+                ),
+            ),
+        );
+        try {
+            $pdo = \Point7_WebApp::getPDO();
+            $exists = $pdo->query("SHOW TABLES LIKE 'contents_category_sidebar'");
+            if (!($exists && $exists->fetchColumn())) {
+                $pdo->exec(
+                    'CREATE TABLE contents_category_sidebar (
+                        id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+                        cta_text TEXT NOT NULL,
+                        cta_button_label VARCHAR(128) NOT NULL DEFAULT \'\',
+                        cta_button_url VARCHAR(512) NOT NULL DEFAULT \'\',
+                        PRIMARY KEY (id)
+                    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4'
+                );
+                $stmt = $pdo->prepare(
+                    'INSERT INTO contents_category_sidebar (cta_text, cta_button_label, cta_button_url)
+                     VALUES (:cta_text, :cta_button_label, :cta_button_url)'
+                );
+                $stmt->execute(array(
+                    ':cta_text'         => $defaults['cta_text'],
+                    ':cta_button_label' => $defaults['cta_button_label'],
+                    ':cta_button_url'   => $defaults['cta_button_url'],
+                ));
+            }
+
+            $itemsExists = $pdo->query("SHOW TABLES LIKE 'contents_category_sidebar_items'");
+            if (!($itemsExists && $itemsExists->fetchColumn())) {
+                $pdo->exec(
+                    'CREATE TABLE contents_category_sidebar_items (
+                        id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+                        item_text TEXT NOT NULL,
+                        icon_svg MEDIUMTEXT NOT NULL,
+                        sorting INT NOT NULL DEFAULT 0,
+                        PRIMARY KEY (id),
+                        KEY sorting (sorting)
+                    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4'
+                );
+                $insert = $pdo->prepare(
+                    'INSERT INTO contents_category_sidebar_items (item_text, icon_svg, sorting)
+                     VALUES (:item_text, :icon_svg, :sorting)'
+                );
+                foreach ($defaults['items'] as $i => $item) {
+                    $insert->execute(array(
+                        ':item_text' => $item['item_text'],
+                        ':icon_svg'  => $item['icon_svg'],
+                        ':sorting'   => $i,
+                    ));
+                }
+                return $defaults;
+            }
+
+            $data = $defaults;
+            $stmt = $pdo->query(
+                'SELECT cta_text, cta_button_label, cta_button_url
+                 FROM contents_category_sidebar
+                 ORDER BY id ASC
+                 LIMIT 1'
+            );
+            if ($stmt) {
+                $row = $stmt->fetch(\PDO::FETCH_ASSOC);
+                if ($row) {
+                    $data['cta_text'] = isset($row['cta_text']) && $row['cta_text'] !== ''
+                        ? $row['cta_text'] : $defaults['cta_text'];
+                    $data['cta_button_label'] = isset($row['cta_button_label']) && $row['cta_button_label'] !== ''
+                        ? $row['cta_button_label'] : $defaults['cta_button_label'];
+                    $data['cta_button_url'] = isset($row['cta_button_url']) && $row['cta_button_url'] !== ''
+                        ? $row['cta_button_url'] : $defaults['cta_button_url'];
+                }
+            }
+
+            $itemsStmt = $pdo->query(
+                'SELECT item_text, icon_svg
+                 FROM contents_category_sidebar_items
+                 ORDER BY sorting ASC, id ASC'
+            );
+            $items = array();
+            if ($itemsStmt) {
+                foreach ($itemsStmt->fetchAll(\PDO::FETCH_ASSOC) as $item) {
+                    $items[] = array(
+                        'item_text' => isset($item['item_text']) ? $item['item_text'] : '',
+                        'icon_svg'  => isset($item['icon_svg']) ? $item['icon_svg'] : '',
+                    );
+                }
+            }
+            $data['items'] = $items ? $items : $defaults['items'];
+            return $data;
+        } catch (\Throwable $e) {
+            return $defaults;
+        }
+    }
+
     private function fetchHomepageContactSection()
     {
         $defaults = array(
@@ -2897,6 +3012,7 @@ class SmartyFunctionsRegistry
         $smarty->assign('testimonials', $this->fetchTestimonials());
         $smarty->assign('homepage_contact', $this->fetchHomepageContactSection());
         $smarty->assign('category_banner', $this->fetchCategoryBanner());
+        $smarty->assign('category_sidebar', $this->fetchCategorySidebar());
 
         // Assign footer menu columns (a/b/c) from footer_menus table
         $smarty->assign('footer_menus', $this->fetchMenuColumns());
