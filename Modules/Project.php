@@ -907,10 +907,32 @@ class Project extends WWW\AbstractModule
 		//jeżeli pierwsza strona jest podana w adresie, redirect na tę bez cyfertki - Sempai 07.04.2026
 		// rawParams must be client-supplied only (not XML default page=1), or this 301 loops
 		if (isset($rawParams['page']) && $rawParams['page'] !== '' && (int)$rawParams['page'] === 1) {
+		    $filterQs = $this->_buildCategoryFilterQueryString($rawParams);
 		    header('HTTP/1.1 301 Moved Permanently');
-		    header("Location: " . \Point7_WebApp::getConfigParam('domain.www') . '/' . $listPath . '/');
+		    header("Location: " . \Point7_WebApp::getConfigParam('domain.www') . '/' . $listPath . '/' . $filterQs);
 		    header('Connection: close');
 		    die();
+		}
+
+		$activeFilters = $this->_collectActiveCategoryFilters($request);
+		$hasCategoryFilters = !empty($activeFilters);
+		if ($hasCategoryFilters) {
+			$idList = $this->_filterCategoryIdList(
+				$request,
+				$idList,
+				$category,
+				$isAllProjects,
+				$displayParams['sortBy'] == 'usable_area'
+			);
+			if ($isAllProjects && $displayParams['sortBy'] == 'id') {
+				$sortedIds = array_values(array_filter(array_map('intval', $idList)));
+				if (strtoupper($displayParams['sortOrder']) === 'DESC') {
+					rsort($sortedIds, SORT_NUMERIC);
+				} else {
+					sort($sortedIds, SORT_NUMERIC);
+				}
+				$idList = $sortedIds;
+			}
 		}
 
 		$limit = (int) $request->getParam('limit');
@@ -984,6 +1006,12 @@ class Project extends WWW\AbstractModule
 		$noindexisset = false;
 		
 		if ($displayParams['displayType'] != $defaultDisplayType || $displayParams['sortBy'] != $defaultSortBy || $displayParams['sortOrder'] != $defaultSortOrder) {
+			$responseContext->set('noindex', true);
+			$noindexisset = true;
+		}
+
+		// Filtered category views: shareable but avoid thin duplicate indexation
+		if ($hasCategoryFilters && !$noindexisset) {
 			$responseContext->set('noindex', true);
 			$noindexisset = true;
 		}
@@ -1075,8 +1103,20 @@ class Project extends WWW\AbstractModule
 		
 		$url = self::_houseListUrl($listPath);
 		$responseContext->set('url', $url);
+		$filterQuery = $this->_buildCategoryFilterQueryString($rawParams);
+		$responseContext->set('query', $filterQuery);
+		$responseContext->set('active_filters', $activeFilters);
+		$responseContext->set('has_category_filters', $hasCategoryFilters);
 		$responseContext->set('type', $type);
 		$responseContext->set('listType', Helper\Project::getDisplayListTypes($type));
+
+		if ($hasCategoryFilters && !$isCanonicalSet) {
+			$responseContext->set(
+				'canonicalUrl',
+				\Point7_WebApp::getConfigParam('domain.www') . $url
+			);
+			$isCanonicalSet = true;
+		}
 
 		if($list->total() < 4) {
 			$responseContext->set('disableBox', 1);
@@ -1654,6 +1694,129 @@ class Project extends WWW\AbstractModule
 		$response['stats'] = $stats;
 				
 		$responseContext->setJSONREsponse('feedback' , $response);
+	}
+
+	/**
+	 * AJAX fragment for #cat-2026 sidebar filters (same category URL + query params).
+	 *
+	 * @param \Point7_WebApp_Request_Filtered $request
+	 * @param \Point7_WebApp_Context_Application $appContext
+	 * @param \Point7_WebApp_Context_Response $responseContext
+	 */
+	public function doFilterList(
+			\Point7_WebApp_Request_Filtered $request, WWW\AppContext $appContext, WWW\ResponseContext $responseContext
+	) {
+		$response = array('status' => 'error', 'html' => '', 'total' => 0, 'page' => 1, 'pages' => 0, 'query' => '');
+
+		$categoryLink = rtrim((string) $request->getParam('category'), '/');
+		if ($categoryLink === '') {
+			$categoryLink = 'projekty-domow';
+		}
+		$category = $this->_daoRepository->getProjectCategoryFinder()->getByLink($categoryLink);
+		if (!$category) {
+			$response['message'] = 'Nie znaleziono kategorii.';
+			$responseContext->setJSONREsponse('feedback', $response);
+			return;
+		}
+
+		$displayParams = $this->_getDisplayParams($request);
+		$isAllProjects = ((int) $request->getParam('all') === 1);
+		$listPath = $isAllProjects ? 'projekty' : $categoryLink;
+
+		if ($displayParams['sortBy'] != 'usable_area') {
+			$idList = explode(',', $category->getProjectList());
+		} else {
+			$catList = $category->getProjectListByArea();
+			$idList = $catList ? explode(',', $catList) : explode(',', $category->getProjectList());
+		}
+
+		if ($isAllProjects && $displayParams['sortBy'] == 'id') {
+			$sortedIds = array_values(array_filter(array_map('intval', $idList)));
+			if (strtoupper($displayParams['sortOrder']) === 'DESC') {
+				rsort($sortedIds, SORT_NUMERIC);
+			} else {
+				sort($sortedIds, SORT_NUMERIC);
+			}
+			$idList = $sortedIds;
+		}
+
+		$activeFilters = $this->_collectActiveCategoryFilters($request);
+		if (!empty($activeFilters)) {
+			$idList = $this->_filterCategoryIdList(
+				$request,
+				$idList,
+				$category,
+				$isAllProjects,
+				$displayParams['sortBy'] == 'usable_area'
+			);
+			if ($isAllProjects && $displayParams['sortBy'] == 'id') {
+				$sortedIds = array_values(array_filter(array_map('intval', $idList)));
+				if (strtoupper($displayParams['sortOrder']) === 'DESC') {
+					rsort($sortedIds, SORT_NUMERIC);
+				} else {
+					sort($sortedIds, SORT_NUMERIC);
+				}
+				$idList = $sortedIds;
+			}
+		}
+
+		$limit = (int) $request->getParam('limit');
+		if ($isAllProjects) {
+			$limit = 23;
+		} elseif ($limit <= 0) {
+			$limit = 11;
+		}
+
+		$page = max(1, (int) $request->getParam('page'));
+		$list = $this->_projectFinder->getListById(
+			$idList,
+			\StudioAtrium_Entity_EntityBase_Project::STATUS_PUBLISHED,
+			!$isAllProjects || $displayParams['sortBy'] != 'id',
+			$page - 1,
+			$limit,
+			$displayParams['sortBy'],
+			$displayParams['sortOrder']
+		);
+
+		$total = $list->total();
+		$pages = $limit > 0 ? (int) ceil($total / $limit) : 0;
+		$listCards = $this->_buildCategoryListCards($list);
+		$filterQuery = $this->_buildCategoryFilterQueryString($request->getRawParams());
+		$url = self::_houseListUrl($listPath);
+		$pagerUrl = $url
+			. Helper\UrlParamMap::getMapping('display_type', $displayParams['displayType'])
+			. ','
+			. Helper\UrlParamMap::getMapping('sort_by', $displayParams['sortBy'])
+			. ','
+			. Helper\UrlParamMap::getMapping('sort_order', $displayParams['sortOrder']);
+
+		$smartyWrapper = new \Point7_WebApp_View_Smarty3_Wrapper();
+		$smartyWrapper->template_dir = $appContext->getConfigParam('views.smarty.template_dir');
+		$smartyWrapper->compile_dir = $appContext->getConfigParam('views.smarty.compile_dir');
+		$smartyWrapper->assign('list', $list);
+		$smartyWrapper->assign('listCards', $listCards);
+		$smartyWrapper->assign('url', $url);
+		$smartyWrapper->assign('pagerUrl', $pagerUrl);
+		$smartyWrapper->assign('query', $filterQuery);
+		$smartyWrapper->assign('page', $page);
+		$smartyWrapper->assign('pages', $pages);
+		$smartyWrapper->assign('total', $total);
+		$smartyWrapper->assign('contact', array());
+		$smartyWrapper->assign('compareIds', array());
+		$smartyWrapper->assign('favouriteIds', array());
+
+		$html = $smartyWrapper->render('Project/Ajax/CategoryFilterResults.tpl');
+
+		$response = array(
+			'status' => 'ok',
+			'html' => $html,
+			'total' => $total,
+			'page' => $page,
+			'pages' => $pages,
+			'query' => $filterQuery,
+			'empty' => $total < 1,
+		);
+		$responseContext->setJSONREsponse('feedback', $response);
 	}
 	
 	
@@ -2775,6 +2938,216 @@ class Project extends WWW\AbstractModule
 	}
 	
 	
+	/**
+	 * Query keys accepted as category sidebar / ClickSearch filters.
+	 *
+	 * @return string[]
+	 */
+	private function _categoryFilterParamKeys()
+	{
+		return array(
+			'typ_projektu',
+			'typdachu',
+			'pow_min',
+			'pow_max',
+			'pow_bucket',
+			'dzialka_szer',
+			'front_szer',
+			'iloscpokoinaparterze',
+			'iloscpokoinaiikondygnacji',
+			'wysokoscbudynku',
+			'katnachyleniadachu',
+			'rodzajstropu',
+			'spizarnia',
+		);
+	}
+
+	/**
+	 * @param \Point7_WebApp_Request_Filtered $request
+	 * @return array
+	 */
+	private function _collectActiveCategoryFilters(\Point7_WebApp_Request_Filtered $request)
+	{
+		$raw = $request->getRawParams();
+		$active = array();
+		foreach ($this->_categoryFilterParamKeys() as $key) {
+			if (!isset($raw[$key]) || $raw[$key] === '' || $raw[$key] === null) {
+				continue;
+			}
+			$active[$key] = $raw[$key];
+		}
+		return $this->_normalizeCategoryFilterBuckets($active);
+	}
+
+	/**
+	 * Expand pow_bucket into pow_min/pow_max for ClickSearch + SSR checked state.
+	 *
+	 * @param array $filters
+	 * @return array
+	 */
+	private function _normalizeCategoryFilterBuckets(array $filters)
+	{
+		if (!empty($filters['pow_bucket']) && empty($filters['pow_min']) && empty($filters['pow_max'])) {
+			$buckets = array(
+				'0-100' => array('0', '100'),
+				'100-150' => array('100', '150'),
+				'150-200' => array('150', '200'),
+				'200-' => array('200', ''),
+			);
+			$bucket = $filters['pow_bucket'];
+			if (isset($buckets[$bucket])) {
+				$filters['pow_min'] = $buckets[$bucket][0];
+				if ($buckets[$bucket][1] !== '') {
+					$filters['pow_max'] = $buckets[$bucket][1];
+				}
+			}
+		}
+		unset($filters['pow_bucket']);
+
+		// Infer bucket for checkbox SSR when only min/max are present
+		if (!empty($filters['pow_min']) || !empty($filters['pow_max'])) {
+			$min = isset($filters['pow_min']) ? (string) $filters['pow_min'] : '';
+			$max = isset($filters['pow_max']) ? (string) $filters['pow_max'] : '';
+			if ($min === '0' && $max === '100') {
+				$filters['pow_bucket'] = '0-100';
+			} elseif ($min === '100' && $max === '150') {
+				$filters['pow_bucket'] = '100-150';
+			} elseif ($min === '150' && $max === '200') {
+				$filters['pow_bucket'] = '150-200';
+			} elseif ($min === '200' && $max === '') {
+				$filters['pow_bucket'] = '200-';
+			}
+		}
+
+		return $filters;
+	}
+
+	/**
+	 * @param array $rawParams
+	 * @return string empty or "?a=1&b=2"
+	 */
+	private function _buildCategoryFilterQueryString(array $rawParams)
+	{
+		$parts = array();
+		$keys = $this->_categoryFilterParamKeys();
+		foreach ($keys as $key) {
+			if ($key === 'pow_bucket') {
+				continue;
+			}
+			if (!isset($rawParams[$key]) || $rawParams[$key] === '' || $rawParams[$key] === null) {
+				continue;
+			}
+			$parts[$key] = $rawParams[$key];
+		}
+		// Expand bucket into min/max in the shareable URL
+		if (!empty($rawParams['pow_bucket']) && empty($parts['pow_min']) && empty($parts['pow_max'])) {
+			$normalized = $this->_normalizeCategoryFilterBuckets(array('pow_bucket' => $rawParams['pow_bucket']));
+			if (isset($normalized['pow_min'])) {
+				$parts['pow_min'] = $normalized['pow_min'];
+			}
+			if (isset($normalized['pow_max'])) {
+				$parts['pow_max'] = $normalized['pow_max'];
+			}
+		}
+		if (!$parts) {
+			return '';
+		}
+		return '?' . http_build_query($parts);
+	}
+
+	/**
+	 * Intersect curated category IDs with ClickSearch results.
+	 *
+	 * @param \Point7_WebApp_Request_Filtered $request
+	 * @param array $idList
+	 * @param \StudioAtrium\Entity\Project\Category $category
+	 * @param bool $isAllProjects
+	 * @param bool $sortByArea
+	 * @return array
+	 */
+	private function _filterCategoryIdList(
+		\Point7_WebApp_Request_Filtered $request,
+		array $idList,
+		$category,
+		$isAllProjects,
+		$sortByArea = false
+	) {
+		$active = $this->_collectActiveCategoryFilters($request);
+		if (empty($active)) {
+			return $idList;
+		}
+
+		$csParams = $this->_getClickSearchParams($request);
+		$searchParams = $this->_getSearchParams($request);
+
+		// Apply expanded ranges even if request object still lacks them
+		if (isset($active['pow_min']) && $active['pow_min'] !== '') {
+			$tolerance = \Point7_WebApp::getConfigParam('helpers.search_tolerance');
+			$areaKey = Helper\Project::getClickSearchParamsMap('area_usable');
+			$searchParams[$areaKey]['min'] = (float) $active['pow_min'] - $tolerance;
+		}
+		if (isset($active['pow_max']) && $active['pow_max'] !== '') {
+			$tolerance = \Point7_WebApp::getConfigParam('helpers.search_tolerance');
+			$areaKey = Helper\Project::getClickSearchParamsMap('area_usable');
+			$searchParams[$areaKey]['max'] = (float) $active['pow_max'] + $tolerance;
+		}
+
+		// Merge remaining active keys into csParams when request missed them (e.g. bucket-only)
+		foreach ($active as $key => $val) {
+			if ($val === '' || $val === null) {
+				continue;
+			}
+			if (in_array($key, array('pow_min', 'pow_max', 'pow_bucket'), true)) {
+				continue;
+			}
+			$map = Helper\ClickSearchMap::getMap();
+			$paramId = array_search($key, $map, true);
+			if ($paramId === false) {
+				continue;
+			}
+			if ($paramId === 'type') {
+				$csParams['_typ_projektu'] = $val;
+			} else {
+				$csParams[$paramId] = $val;
+			}
+		}
+
+		$categoryId = null;
+		if ($request->getParam('kategoria')) {
+			$categoryId = (int) str_replace('c', '', $request->getParam('kategoria'));
+		} elseif (!$isAllProjects && $category && (int) $category->getId() > 1) {
+			$categoryId = (int) $category->getId();
+		}
+
+		$searchIds = $this->_projectFinder->clickSearch(
+			$searchParams,
+			$csParams,
+			$categoryId,
+			false,
+			false,
+			$sortByArea
+		);
+		if (!$searchIds) {
+			return array();
+		}
+
+		$allowed = array();
+		foreach ($idList as $id) {
+			$id = (int) $id;
+			if ($id > 0) {
+				$allowed[$id] = true;
+			}
+		}
+		$out = array();
+		foreach ($searchIds as $id) {
+			$id = (int) $id;
+			if (isset($allowed[$id])) {
+				$out[] = $id;
+			}
+		}
+		return $out;
+	}
+
 	/**
 	 * @param \Point7_WebApp_Request_Filtered $request
 	 * @return array

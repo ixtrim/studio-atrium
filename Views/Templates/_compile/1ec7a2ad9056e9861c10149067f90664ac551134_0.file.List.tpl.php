@@ -1,33 +1,34 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-05 08:24:45
+/* Smarty version 3.1.48, created on 2026-09-07 21:44:43
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Project/List.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6a9bb5ad565c77_06202401',
+  'unifunc' => 'content_6a9f142b668ac8_43550692',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1ec7a2ad9056e9861c10149067f90664ac551134' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Project/List.tpl',
-      1 => 1788589476,
+      1 => 1788810182,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:Include/CategoryFilterSidebar.tpl' => 1,
-    'file:Project/displayBox.tpl' => 1,
+    'file:Project/Ajax/CategoryFilterResults.tpl' => 1,
     'file:Include/LastViewed.tpl' => 1,
     'file:Include/Contact.tpl' => 1,
     'file:Include/ArticlesTicks.tpl' => 1,
-    'file:Include/NewsletterSubpage.tpl' => 1,
+    'file:Include/Partners.tpl' => 1,
+    'file:Include/Newsletter.tpl' => 1,
     'file:Include/Pager.tpl' => 2,
   ),
 ),false)) {
-function content_6a9bb5ad565c77_06202401 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6a9f142b668ac8_43550692 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('displayMapped', call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'mapUrlParam' ][ 0 ], array( $_smarty_tpl->tpl_vars['displayType']->value,'display_type' )));
 $_smarty_tpl->_assignInScope('sortByMapped', call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'mapUrlParam' ][ 0 ], array( $_smarty_tpl->tpl_vars['sortBy']->value,'sort_by' )));
 $_smarty_tpl->_assignInScope('sortOrderMapped', call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'mapUrlParam' ][ 0 ], array( $_smarty_tpl->tpl_vars['sortOrder']->value,'sort_order' )));
@@ -35,34 +36,37 @@ $_smarty_tpl->_assignInScope('pagerUrl', ((((($_smarty_tpl->tpl_vars['url']->val
 
 <?php if (!$_smarty_tpl->tpl_vars['isSearch']->value && $_smarty_tpl->tpl_vars['listType']->value == 'house') {?>
 <div id="cat-2026">
-	<nav aria-label="breadcrumb" class="w-full bg-white border-b border-[#e5e5e5]">
-		<ol class="max-w-[1480px] mx-auto px-8 py-4 flex flex-wrap items-center gap-3 text-[14px] text-[#6b6b6b] font-normal">
-			<li><a href="/" class="hover:text-[#222] transition-colors">Studio Atrium</a></li>
-			<li aria-hidden="true" class="text-[#bdbdbd]">»</li>
-			<?php if ($_smarty_tpl->tpl_vars['isAllProjects']->value) {?>
-			<li aria-current="page" class="text-[#6b6b6b]">Wszystkie projekty domów</li>
-			<?php } elseif ($_smarty_tpl->tpl_vars['category']->value['tree'] == 'house') {?>
-			<li><a href="/projekty/" class="hover:text-[#222] transition-colors">Projekty Domów</a></li>
-			<?php if ($_smarty_tpl->tpl_vars['category']->value['link'] != 'projekty-domow') {?>
-			<li aria-hidden="true" class="text-[#bdbdbd]">»</li>
-			<li aria-current="page" class="text-[#6b6b6b]"><?php if ($_smarty_tpl->tpl_vars['category']->value['alternate_name']) {
+	<nav aria-label="breadcrumb" class="w-full bg-white border-b border-[#e5e5e5] py-[12px]">
+		<div class="max-w-[1480px] mx-auto px-8">
+			<ol class="flex flex-wrap items-center gap-3 text-[14px] text-[#6b6b6b] font-normal">
+				<li><a href="/" class="hover:text-[#222] transition-colors">Studio Atrium</a></li>
+				<li aria-hidden="true" class="text-[#bdbdbd]">»</li>
+				<?php if ($_smarty_tpl->tpl_vars['isAllProjects']->value) {?>
+				<li aria-current="page" class="text-[#6b6b6b]">Wszystkie projekty domów</li>
+				<?php } elseif ($_smarty_tpl->tpl_vars['category']->value['tree'] == 'house') {?>
+				<li><a href="/projekty/" class="hover:text-[#222] transition-colors">Projekty Domów</a></li>
+				<?php if ($_smarty_tpl->tpl_vars['category']->value['link'] != 'projekty-domow') {?>
+				<li aria-hidden="true" class="text-[#bdbdbd]">»</li>
+				<li aria-current="page" class="text-[#6b6b6b]"><?php if ($_smarty_tpl->tpl_vars['category']->value['alternate_name']) {
 echo htmlspecialchars($_smarty_tpl->tpl_vars['category']->value['alternate_name'], ENT_QUOTES, 'UTF-8', true);
 } else {
 echo htmlspecialchars($_smarty_tpl->tpl_vars['category']->value['name'], ENT_QUOTES, 'UTF-8', true);
 }?></li>
-			<?php }?>
-			<?php } else { ?>
-			<li aria-current="page" class="text-[#6b6b6b]"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['category']->value['name'], ENT_QUOTES, 'UTF-8', true);?>
+				<?php }?>
+				<?php } else { ?>
+				<li aria-current="page" class="text-[#6b6b6b]"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['category']->value['name'], ENT_QUOTES, 'UTF-8', true);?>
 </li>
-			<?php }?>
-		</ol>
+				<?php }?>
+			</ol>
+		</div>
 	</nav>
 
 	<section class="w-full bg-white py-8">
 		<div class="max-w-[1480px] mx-auto px-8">
 			<div class="flex flex-col md:flex-row items-stretch bg-[#3a3d42] text-white mb-6">
 				<div class="flex-1 flex items-center px-8 py-5">
-					<h3 class="text-[22px] font-bold leading-tight">AKTUALNE OFERTY<br>DOTYCZĄCE KATEGORII</h3>
+					<h3 class="text-[28px] font-semibold uppercase text-white leading-tight"><?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'nl2br' ][ 0 ], array( htmlspecialchars($_smarty_tpl->tpl_vars['category_banner']->value['title_text'], ENT_QUOTES, 'UTF-8', true) ));?>
+</h3>
 				</div>
 				<?php if ($_smarty_tpl->tpl_vars['categoryPromoThumbs']->value) {?>
 				<div class="flex items-center gap-3 px-4 py-4 md:py-0">
@@ -81,9 +85,11 @@ $_smarty_tpl->tpl_vars['thumb']->do_else = false;
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 				</div>
 				<?php }?>
-				<div class="bg-white text-[#222] px-8 py-5 flex flex-col justify-center min-w-[220px] md:min-w-[260px]">
-					<div class="text-[34px] font-bold leading-none">-500 zł</div>
-					<div class="text-[14px] text-[#666] mt-1">do końca grudnia</div>
+				<div class="bg-white text-[#222] px-8 py-5 flex flex-col items-center justify-center text-center min-w-[220px] md:min-w-[260px] border-t-[5px] border-r-[5px] border-b-[5px] border-[#3a3d42]">
+					<div class="text-[34px] font-['Montserrat',sans-serif] font-semibold leading-none"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['category_banner']->value['offer_value'], ENT_QUOTES, 'UTF-8', true);?>
+</div>
+					<div class="text-[14px] text-[#666] mt-1"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['category_banner']->value['offer_note'], ENT_QUOTES, 'UTF-8', true);?>
+</div>
 				</div>
 			</div>
 
@@ -130,7 +136,21 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 					</ul>
 				</aside>
 
-				<div class="flex-1 min-w-0">
+				<div class="flex-1 min-w-0"
+					id="cat-results"
+					data-list-url="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['url']->value, ENT_QUOTES, 'UTF-8', true);?>
+"
+					data-category="<?php if ($_smarty_tpl->tpl_vars['isAllProjects']->value) {?>projekty-domow<?php } else {
+echo htmlspecialchars($_smarty_tpl->tpl_vars['category']->value['link'], ENT_QUOTES, 'UTF-8', true);
+}?>"
+					data-all="<?php if ($_smarty_tpl->tpl_vars['isAllProjects']->value) {?>1<?php } else { ?>0<?php }?>"
+					data-ajax-url="/index.php?module=project&amp;action=filter_list"
+					data-sort-by="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['sortBy']->value, ENT_QUOTES, 'UTF-8', true);?>
+"
+					data-sort-order="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['sortOrder']->value, ENT_QUOTES, 'UTF-8', true);?>
+"
+					data-display-type="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['displayType']->value, ENT_QUOTES, 'UTF-8', true);?>
+">
 					<div class="bg-[#ececec] px-6 py-5 mb-6">
 						<h1 class="text-[26px] font-normal text-[#222]"><?php if ($_smarty_tpl->tpl_vars['isAllProjects']->value) {?>Wszystkie projekty domów<?php } elseif ($_smarty_tpl->tpl_vars['category']->value['alternate_name']) {
 echo htmlspecialchars($_smarty_tpl->tpl_vars['category']->value['alternate_name'], ENT_QUOTES, 'UTF-8', true);
@@ -138,8 +158,8 @@ echo htmlspecialchars($_smarty_tpl->tpl_vars['category']->value['alternate_name'
 echo htmlspecialchars($_smarty_tpl->tpl_vars['category']->value['name'], ENT_QUOTES, 'UTF-8', true);
 }?></h1>
 						<div class="text-[14px] text-[#222] mt-2">
-							<strong>Liczba projektów:</strong> <?php echo $_smarty_tpl->tpl_vars['total']->value;?>
-
+							<strong>Liczba projektów:</strong> <span id="cat-total-count"><?php echo $_smarty_tpl->tpl_vars['total']->value;?>
+</span>
 						</div>
 						<?php if ($_smarty_tpl->tpl_vars['shortDescription']->value) {?>
 						<p class="text-[13px] text-[#444] mt-3 leading-relaxed"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['shortDescription']->value, ENT_QUOTES, 'UTF-8', true);?>
@@ -185,56 +205,10 @@ echo $_smarty_tpl->tpl_vars['query']->value;?>
 >
 					<?php }?>
 
-					<?php if ($_smarty_tpl->tpl_vars['list']->value) {?>
-						<?php $_smarty_tpl->_subTemplateRender("file:Project/displayBox.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('url'=>$_smarty_tpl->tpl_vars['pagerUrl']->value,'query'=>$_smarty_tpl->tpl_vars['query']->value), 0, false);
+					<div id="cat-results-body">
+						<?php $_smarty_tpl->_subTemplateRender("file:Project/Ajax/CategoryFilterResults.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-					<?php } else { ?>
-						<div class="bg-[#f7f7f7] px-8 py-16 text-center">
-							<p class="text-[18px] font-bold text-[#222] mb-3">Niestety nic dla Ciebie nie znaleźliśmy</p>
-							<p class="text-[14px] text-[#555]">Zmień kryteria lub przejdź do <a href="/projekty/" class="text-[var(--brand-blue-strong)] hover:underline">wszystkich projektów domów</a></p>
-						</div>
-					<?php }?>
-
-					<?php if ($_smarty_tpl->tpl_vars['pages']->value > 1) {?>
-					<div class="flex items-center justify-center gap-4 mt-10 text-[14px] text-[#222]">
-						<?php if ($_smarty_tpl->tpl_vars['page']->value > 1) {?>
-							<?php if ($_smarty_tpl->tpl_vars['page']->value > 2) {?>
-							<a href="<?php echo $_smarty_tpl->tpl_vars['pagerUrl']->value;?>
-,<?php echo $_smarty_tpl->tpl_vars['page']->value-1;
-echo $_smarty_tpl->tpl_vars['query']->value;?>
-" aria-label="poprzednia" class="hover:text-[var(--brand-red)]">
-								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5"><path d="m15 18-6-6 6-6"></path></svg>
-							</a>
-							<?php } else { ?>
-							<a href="<?php echo $_smarty_tpl->tpl_vars['url']->value;
-echo $_smarty_tpl->tpl_vars['query']->value;?>
-" aria-label="poprzednia" class="hover:text-[var(--brand-red)]">
-								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5"><path d="m15 18-6-6 6-6"></path></svg>
-							</a>
-							<?php }?>
-						<?php } else { ?>
-						<span class="opacity-50" aria-hidden="true">
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5"><path d="m15 18-6-6 6-6"></path></svg>
-						</span>
-						<?php }?>
-						<span class="border border-[#bbb] px-3 py-1 bg-white"><?php echo $_smarty_tpl->tpl_vars['page']->value;?>
-</span>
-						<span>z <?php echo $_smarty_tpl->tpl_vars['pages']->value;?>
-</span>
-						<?php if ($_smarty_tpl->tpl_vars['page']->value < $_smarty_tpl->tpl_vars['pages']->value) {?>
-						<a href="<?php echo $_smarty_tpl->tpl_vars['pagerUrl']->value;?>
-,<?php echo $_smarty_tpl->tpl_vars['page']->value+1;
-echo $_smarty_tpl->tpl_vars['query']->value;?>
-" aria-label="następna" class="hover:text-[var(--brand-red)]">
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5"><path d="m9 18 6-6-6-6"></path></svg>
-						</a>
-						<?php } else { ?>
-						<span class="opacity-50" aria-hidden="true">
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5"><path d="m9 18 6-6-6-6"></path></svg>
-						</span>
-						<?php }?>
 					</div>
-					<?php }?>
 
 					<?php if ($_smarty_tpl->tpl_vars['description']->value && $_smarty_tpl->tpl_vars['page']->value == 1) {?>
 					<div class="mt-12 text-[15px] leading-relaxed text-[#444]" id="categoryDescription">
@@ -255,7 +229,9 @@ echo $_smarty_tpl->tpl_vars['query']->value;?>
 ?>
 	<?php $_smarty_tpl->_subTemplateRender("file:Include/ArticlesTicks.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-	<?php $_smarty_tpl->_subTemplateRender("file:Include/NewsletterSubpage.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+	<?php $_smarty_tpl->_subTemplateRender("file:Include/Partners.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+	<?php $_smarty_tpl->_subTemplateRender("file:Include/Newsletter.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 </div>
 

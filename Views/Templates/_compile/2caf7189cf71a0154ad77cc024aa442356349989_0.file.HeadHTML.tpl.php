@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-03 14:46:14
+/* Smarty version 3.1.48, created on 2026-09-07 21:44:43
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/HeadHTML.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6a996c1654ea17_87945330',
+  'unifunc' => 'content_6a9f142b6200b2_30871198',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2caf7189cf71a0154ad77cc024aa442356349989' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/HeadHTML.tpl',
-      1 => 1788439522,
+      1 => 1788597852,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6a996c1654ea17_87945330 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6a9f142b6200b2_30871198 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['pageTitle']->value) {?>
 	<title><?php echo $_smarty_tpl->tpl_vars['pageTitle']->value;?>
 </title>
@@ -204,8 +204,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 >
 <?php }?>
 
-<link rel="preload" as="font" type="font/ttf" href="/fonts/Nexa-ExtraLight.ttf" crossorigin>
-<link rel="preload" as="font" type="font/ttf" href="/fonts/Nexa-Heavy.ttf" crossorigin>
+<link rel="preload" as="font" type="font/otf" href="/fonts/NexaTextBook.otf" crossorigin>
+<link rel="preload" as="font" type="font/otf" href="/fonts/NexaTextRegular.otf" crossorigin>
+<link rel="preload" as="font" type="font/otf" href="/fonts/NexaTextBold.otf" crossorigin>
 
 <?php if ($_smarty_tpl->tpl_vars['showSchemaOrganization']->value) {?>
 	

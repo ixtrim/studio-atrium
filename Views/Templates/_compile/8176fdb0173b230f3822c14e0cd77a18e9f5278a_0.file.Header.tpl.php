@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-05 08:19:29
+/* Smarty version 3.1.48, created on 2026-09-07 21:44:43
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6a9bb471950611_39455338',
+  'unifunc' => 'content_6a9f142b63a834_51332164',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8176fdb0173b230f3822c14e0cd77a18e9f5278a' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Header.tpl',
-      1 => 1788588859,
+      1 => 1788592533,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6a9bb471950611_39455338 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6a9f142b63a834_51332164 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['promo_marquee_text']->value) {?>
 	<div class="promo-marquee" aria-label="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['promo_marquee_text']->value, ENT_QUOTES, 'UTF-8', true);?>
 ">
@@ -415,7 +415,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 			<button type="button" id="search-trigger"
 				class="js-open-search rounded-none bg-[#ed1d24] hover:bg-[#d11a20] text-white h-[54px] w-[264px] font-black text-[14px] leading-none tracking-normal flex items-center justify-center gap-[10px] shrink-0 ml-6">
 				ZNAJDŹ PROJEKT
-				<i data-lucide="sliders-horizontal" class="w-[27px] h-[27px] shrink-0"></i>
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sliders-horizontal shrink-0" style="width:24px;height:24px;max-width:24px;max-height:24px" aria-hidden="true"><path d="M10 5H3"/><path d="M12 19H3"/><path d="M14 3v4"/><path d="M16 17v4"/><path d="M21 12h-9"/><path d="M21 19h-5"/><path d="M21 5h-7"/><path d="M8 10v4"/><path d="M8 12H3"/></svg>
 			</button>
 		</div>
 	</div>
@@ -535,8 +535,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		}
 	}
 
-	header.querySelectorAll('.js-open-search').forEach(function (button) {
-		button.addEventListener('click', openSearchOverlay);
+	document.addEventListener('click', function (event) {
+		var button = event.target.closest('.js-open-search');
+		if (!button) return;
+		openSearchOverlay();
 	});
 })();
 

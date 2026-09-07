@@ -36,6 +36,108 @@
 			<param name="all" required="no" default="0">
 				<validator name="Integer" />
 			</param>
+			<!-- Category sidebar filters (same contract as ClickSearch; optional) -->
+			<param name="typ_projektu" required="no">
+				<validator name="String" />
+			</param>
+			<param name="typdachu" required="no">
+				<validator name="String" />
+			</param>
+			<param name="pow_min" required="no">
+				<validator name="Number" />
+			</param>
+			<param name="pow_max" required="no">
+				<validator name="Number" />
+			</param>
+			<param name="pow_bucket" required="no">
+				<validator name="String" />
+			</param>
+			<param name="dzialka_szer" required="no">
+				<validator name="Number" />
+			</param>
+			<param name="front_szer" required="no">
+				<validator name="Number" />
+			</param>
+			<param name="iloscpokoinaparterze" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="wysokoscbudynku" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="katnachyleniadachu" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="rodzajstropu" required="no">
+				<validator name="String" />
+			</param>
+			<param name="spizarnia" required="no">
+				<validator name="Integer" />
+			</param>
+		</action>
+
+		<action name="FilterList">
+			<allowed_methods get="yes" post="yes" />
+			<param name="category" required="no" default="projekty-domow">
+				<validator name="String" />
+			</param>
+			<param name="display_type" required="no" default="box">
+				<validator name="Choice" choices="box,list,detail" />
+				<filter name="Map" map="{'b': 'box', 'l': 'list', 'e': 'detail'}"/>
+			</param>
+			<param name="sort_by" required="no" default="id">
+				<validator name="\StudioAtrium\Validator\ProjectSorting" />
+				<filter name="Map" map="{'u': 'usable_area', 'n': 'name', 'i': 'id'}"/>
+			</param>
+			<param name="sort_order" required="no" default="ASC">
+				<validator name="Choice" choices="ASC,DESC"/>
+				<filter name="Map" map="{'a': 'ASC', 'd': 'DESC', 'undefined': 'ASC'}"/>
+				<filter name="StrToUpper" />
+			</param>
+			<param name="page" required="no" default="1">
+				<validator name="Integer" />
+			</param>
+			<param name="limit" required="no" default="11">
+				<validator name="Integer" />
+			</param>
+			<param name="all" required="no" default="0">
+				<validator name="Integer" />
+			</param>
+			<param name="typ_projektu" required="no">
+				<validator name="String" />
+			</param>
+			<param name="typdachu" required="no">
+				<validator name="String" />
+			</param>
+			<param name="pow_min" required="no">
+				<validator name="Number" />
+			</param>
+			<param name="pow_max" required="no">
+				<validator name="Number" />
+			</param>
+			<param name="pow_bucket" required="no">
+				<validator name="String" />
+			</param>
+			<param name="dzialka_szer" required="no">
+				<validator name="Number" />
+			</param>
+			<param name="front_szer" required="no">
+				<validator name="Number" />
+			</param>
+			<param name="iloscpokoinaparterze" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="wysokoscbudynku" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="katnachyleniadachu" required="no">
+				<validator name="Integer" />
+			</param>
+			<param name="rodzajstropu" required="no">
+				<validator name="String" />
+			</param>
+			<param name="spizarnia" required="no">
+				<validator name="Integer" />
+			</param>
 		</action>
 		
 		<action name="House">
@@ -691,13 +793,21 @@
 						<value>["list.min.css?v=20201207"]</value>
 					</param>
 					<param name="smarty.js_includes">
-						<value>["jquery.fancybox.js","jquery.mCustomScrollbar.concat.min.js","list.js?v=20191009"]</value>
+						<value>["jquery.fancybox.js","jquery.mCustomScrollbar.concat.min.js","list.js?v=20191009","category-filters.js?v=20260907"]</value>
 					</param>
 					<param name="smarty.showSearchSchema" value="1" />
 				</view>
 			</on_exec_ok>
 			<on_exec_error>
 				<forward module="Page" action="Display404" />
+			</on_exec_error>
+		</action>
+		<action name="FilterList">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
 			</on_exec_error>
 		</action>
 		<action name="House">

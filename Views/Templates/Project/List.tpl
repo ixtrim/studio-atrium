@@ -89,11 +89,19 @@
 					</ul>
 				</aside>
 
-				<div class="flex-1 min-w-0">
+				<div class="flex-1 min-w-0"
+					id="cat-results"
+					data-list-url="{$url|escape}"
+					data-category="{if $isAllProjects}projekty-domow{else}{$category.link|escape}{/if}"
+					data-all="{if $isAllProjects}1{else}0{/if}"
+					data-ajax-url="/index.php?module=project&amp;action=filter_list"
+					data-sort-by="{$sortBy|escape}"
+					data-sort-order="{$sortOrder|escape}"
+					data-display-type="{$displayType|escape}">
 					<div class="bg-[#ececec] px-6 py-5 mb-6">
 						<h1 class="text-[26px] font-normal text-[#222]">{if $isAllProjects}Wszystkie projekty domów{elseif $category.alternate_name}{$category.alternate_name|escape}{else}{$category.name|escape}{/if}</h1>
 						<div class="text-[14px] text-[#222] mt-2">
-							<strong>Liczba projektów:</strong> {$total}
+							<strong>Liczba projektów:</strong> <span id="cat-total-count">{$total}</span>
 						</div>
 						{if $shortDescription}
 						<p class="text-[13px] text-[#444] mt-3 leading-relaxed">{$shortDescription|escape}</p>
@@ -132,45 +140,9 @@
 					</script>
 					{/if}
 
-					{if $list}
-						{include file="Project/displayBox.tpl" url=$pagerUrl query=$query}
-					{else}
-						<div class="bg-[#f7f7f7] px-8 py-16 text-center">
-							<p class="text-[18px] font-bold text-[#222] mb-3">Niestety nic dla Ciebie nie znaleźliśmy</p>
-							<p class="text-[14px] text-[#555]">Zmień kryteria lub przejdź do <a href="/projekty/" class="text-[var(--brand-blue-strong)] hover:underline">wszystkich projektów domów</a></p>
-						</div>
-					{/if}
-
-					{if $pages > 1}
-					<div class="flex items-center justify-center gap-4 mt-10 text-[14px] text-[#222]">
-						{if $page > 1}
-							{if $page > 2}
-							<a href="{$pagerUrl},{$page-1}{$query}" aria-label="poprzednia" class="hover:text-[var(--brand-red)]">
-								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5"><path d="m15 18-6-6 6-6"></path></svg>
-							</a>
-							{else}
-							<a href="{$url}{$query}" aria-label="poprzednia" class="hover:text-[var(--brand-red)]">
-								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5"><path d="m15 18-6-6 6-6"></path></svg>
-							</a>
-							{/if}
-						{else}
-						<span class="opacity-50" aria-hidden="true">
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5"><path d="m15 18-6-6 6-6"></path></svg>
-						</span>
-						{/if}
-						<span class="border border-[#bbb] px-3 py-1 bg-white">{$page}</span>
-						<span>z {$pages}</span>
-						{if $page < $pages}
-						<a href="{$pagerUrl},{$page+1}{$query}" aria-label="następna" class="hover:text-[var(--brand-red)]">
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5"><path d="m9 18 6-6-6-6"></path></svg>
-						</a>
-						{else}
-						<span class="opacity-50" aria-hidden="true">
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5"><path d="m9 18 6-6-6-6"></path></svg>
-						</span>
-						{/if}
+					<div id="cat-results-body">
+						{include file="Project/Ajax/CategoryFilterResults.tpl"}
 					</div>
-					{/if}
 
 					{if $description && $page == 1}
 					<div class="mt-12 text-[15px] leading-relaxed text-[#444]" id="categoryDescription">
