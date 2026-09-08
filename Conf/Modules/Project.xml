@@ -816,7 +816,7 @@
 					<param name="layout" value="Layout.tpl" />
 					<param name="template" value="Project/House.tpl" />
 					<param name="smarty.css_includes">
-						<value>["uploader.css","project2026.css?v=20260908e"]</value>
+						<value>["uploader.css","project2026.css?v=20260908f"]</value>
 					</param>
 					<param name="smarty.js_includes">
 						<value>["jquery.fancybox.js","jquery.mCustomScrollbar.concat.min.js","formvalidator.js","uploader.js?v=20210602","project.js?v=20240417","forumThread.js"]</value>

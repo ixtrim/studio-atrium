@@ -4096,7 +4096,16 @@ class Project extends WWW\AbstractModule
 
 		foreach ($attachments['ProjectSketch'] as $sketch) {
 			$sketchId = isset($sketch['id']) ? (int) $sketch['id'] : 0;
-			$storey = isset($sketch['props']['storey']) ? $sketch['props']['storey'] : '';
+			// Attachment::toArray() leaves props as a JSON string.
+			$props = isset($sketch['props']) ? $sketch['props'] : array();
+			if (is_string($props)) {
+				$decoded = json_decode($props, true);
+				$props = is_array($decoded) ? $decoded : array();
+			} elseif (!is_array($props)) {
+				$props = array();
+			}
+
+			$storey = isset($props['storey']) ? $props['storey'] : '';
 			$label = \StudioAtrium\Application\Helper\SketchParamsNameMapper::mapStorey($storey);
 			if ($label === '' || $label === null) {
 				$label = 'Rzut';
@@ -4115,20 +4124,14 @@ class Project extends WWW\AbstractModule
 				$img = $mediaBase . '/' . (int) $project->getId() . '/' . ($storeySuffix ? 'sketch-' . $storeySuffix : 'sketch') . '.jpg';
 			}
 
-			$width = !empty($authorizeMap[$sketchId]['width'])
-				? (int) $authorizeMap[$sketchId]['width']
-				: (!empty($sketch['props']['image_size']['width']) ? (int) $sketch['props']['image_size']['width'] : 1000);
-			$height = !empty($authorizeMap[$sketchId]['height'])
-				? (int) $authorizeMap[$sketchId]['height']
-				: (!empty($sketch['props']['image_size']['height']) ? (int) $sketch['props']['image_size']['height'] : 1000);
-
-			// Prefer natural image dimensions when authorize offset is used as viewBox size
-			if (!empty($sketch['props']['image_size']['width'])) {
-				$width = (int) $sketch['props']['image_size']['width'];
-			}
-			if (!empty($sketch['props']['image_size']['height'])) {
-				$height = (int) $sketch['props']['image_size']['height'];
-			}
+			// viewBox must match the coordinate space of authorize room points (= natural image size).
+			// sketch_authorize.width/height are mirror crop offsets in legacy JS — not dimensions.
+			$width = !empty($props['image_size']['width'])
+				? (int) $props['image_size']['width']
+				: (!empty($props['width']) ? (int) $props['width'] : 1000);
+			$height = !empty($props['image_size']['height'])
+				? (int) $props['image_size']['height']
+				: 1000;
 
 			$rooms = array();
 			$extra = null;
@@ -4168,6 +4171,8 @@ class Project extends WWW\AbstractModule
 			if (!empty($roomsMap[$sketchId])) {
 				$rawRooms = is_string($roomsMap[$sketchId]) ? json_decode($roomsMap[$sketchId], true) : $roomsMap[$sketchId];
 			}
+			$maxX = 0.0;
+			$maxY = 0.0;
 			if (is_array($rawRooms)) {
 				foreach ($rawRooms as $roomId => $pointsObj) {
 					if (!is_array($pointsObj)) {
@@ -4180,6 +4185,12 @@ class Project extends WWW\AbstractModule
 							$y = (float) $val['y'];
 							if ($isMirror && $width > 0) {
 								$x = $width - $x;
+							}
+							if ($x > $maxX) {
+								$maxX = $x;
+							}
+							if ($y > $maxY) {
+								$maxY = $y;
 							}
 							$pts[] = $x . ',' . $y;
 						}
@@ -4195,6 +4206,13 @@ class Project extends WWW\AbstractModule
 						'ptspid' => isset($pointsObj['ptspid']) ? (string) $pointsObj['ptspid'] : '',
 					);
 				}
+			}
+			// Safety: expand viewBox if points exceed declared image_size.
+			if ($maxX > $width) {
+				$width = (int) ceil($maxX);
+			}
+			if ($maxY > $height) {
+				$height = (int) ceil($maxY);
 			}
 
 			$floors[] = array(

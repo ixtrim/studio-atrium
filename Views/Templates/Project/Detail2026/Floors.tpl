@@ -94,9 +94,6 @@
 						<a href="{url module=project action=item id=$project.id link_title=$project.name version=lustro catalog='projekty-domow'}#rzuty" class="w-full bg-white border border-[#e6e8eb] hover:border-[#1b2025] text-[#1b2025] h-10 text-[11px] font-bold tracking-[0.12em] uppercase flex items-center justify-center transition">Odbicie lustrzane</a>
 						{/if}
 					{/if}
-					{if $hasPlot}
-					<a href="{url module=project action=item id=$project.id link_title=$project.name catalog=usytuowanie}" class="w-full bg-white border border-[#e6e8eb] hover:border-[#1b2025] text-[#1b2025] h-10 text-[11px] font-bold tracking-[0.12em] uppercase flex items-center justify-center transition">Słońce w domu</a>
-					{/if}
 				</div>
 			</div>
 		</div>
