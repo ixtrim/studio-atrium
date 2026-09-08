@@ -1,8 +1,8 @@
-<section id="faq" class="bg-[#f5f6f7] py-14 scroll-mt-32">
+<section id="faq" class="bg-[#ffffff] py-14 scroll-mt-32">
 	<div class="max-w-[1480px] mx-auto px-8">
 		<div class="text-center mb-10">
 			<div class="text-[12px] font-bold uppercase tracking-[0.2em] text-[var(--brand-red)] mb-2">FAQ</div>
-			<h2 class="text-[28px] md:text-[34px] font-bold text-[#1b2025]">Najczęściej zadawane pytania</h2>
+			<h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight uppercase">Najczęściej zadawane pytania</h2>
 		</div>
 		<div class="space-y-3 max-w-4xl mx-auto" id="proj-faq-accordion">
 			{foreach $detailFaq as $item}

@@ -1457,6 +1457,8 @@ class Project extends WWW\AbstractModule
 				
 				$responseContext->set('sortingDisabled', $sortingDisabled);
 				$responseContext->set('list', $list);
+				$listCards = $this->_buildCategoryListCards($list);
+				$responseContext->set('listCards', $listCards);
 				
 				$url = self::_searchListUrl();
 				$responseContext->set('url', $url);
@@ -1464,27 +1466,34 @@ class Project extends WWW\AbstractModule
 				if(strpos($_SERVER['REQUEST_URI'], '?') !== false) {
 					$responseContext->set('query', substr($_SERVER['REQUEST_URI'], strpos($_SERVER['REQUEST_URI'], '?')));
 				}
-				
-				if($list->total() < 4) {
-					$responseContext->set('disableBox', 1);
-				
-					if($displayParams['displayType'] == 'box') {
-						$displayParams['displayType'] = 'detail';
-					}
-				}
 			
 				$pages = ceil($list->total() / $request->getParam('limit'));
 				$responseContext->set('total', $list->total());
 				$responseContext->set('pages', $pages);
 				$responseContext->set('page', $request->getParam('page'));
 				
-				$responseContext->set('displayType', $displayParams['displayType']);
+				$responseContext->set('displayType', 'box');
 				$responseContext->set('sortBy', $displayParams['sortBy']);
 				$responseContext->set('sortOrder', $displayParams['sortOrder']);
 				
 				$type = Helper\Project::getTypeForCategory('projekty-domow');
 				$responseContext->set('type', $type);
 				$responseContext->set('listType', Helper\Project::getDisplayListTypes($type));
+			}
+		} else {
+			$responseContext->set('listCards', array());
+			$responseContext->set('total', 0);
+			$responseContext->set('pages', 0);
+			$responseContext->set('page', 1);
+			$responseContext->set('displayType', 'box');
+			$responseContext->set('sortBy', $displayParams['sortBy']);
+			$responseContext->set('sortOrder', $displayParams['sortOrder']);
+			$responseContext->set('url', self::_searchListUrl());
+			$type = Helper\Project::getTypeForCategory('projekty-domow');
+			$responseContext->set('type', $type);
+			$responseContext->set('listType', Helper\Project::getDisplayListTypes($type));
+			if (strpos($_SERVER['REQUEST_URI'], '?') !== false) {
+				$responseContext->set('query', substr($_SERVER['REQUEST_URI'], strpos($_SERVER['REQUEST_URI'], '?')));
 			}
 		}
 	}
@@ -1524,19 +1533,18 @@ class Project extends WWW\AbstractModule
 			);
 
 			$responseContext->set('list', $list);
-			
-			if($list->total() < 4) {
-				$responseContext->set('disableBox', 1);
-			
-				if($displayParams['displayType'] == 'box') {
-					$displayParams['displayType'] = 'detail';
-				}
-			}
+			$listCards = $this->_buildCategoryListCards($list);
+			$responseContext->set('listCards', $listCards);
 			
 			$pages = ceil($list->total() / $request->getParam('limit'));
 			$responseContext->set('total', $list->total());
 			$responseContext->set('pages', $pages);
 			$responseContext->set('page', $request->getParam('page'));
+		} else {
+			$responseContext->set('listCards', array());
+			$responseContext->set('total', 0);
+			$responseContext->set('pages', 0);
+			$responseContext->set('page', 1);
 		}
 		
 		
@@ -1547,7 +1555,7 @@ class Project extends WWW\AbstractModule
 			$responseContext->set('query', substr($_SERVER['REQUEST_URI'], strpos($_SERVER['REQUEST_URI'], '?')));
 		}
 		
-		$responseContext->set('displayType', $displayParams['displayType']);
+		$responseContext->set('displayType', 'box');
 		$responseContext->set('sortBy', $displayParams['sortBy']);
 		$responseContext->set('sortOrder', $displayParams['sortOrder']);
 		
@@ -3773,7 +3781,7 @@ class Project extends WWW\AbstractModule
 				$unit = !empty($paramDef['unit']) ? ' ' . $paramDef['unit'] : '';
 				$techRows[] = array(
 					'k'    => $paramDef['name'],
-					'v'    => $paramValue . $unit,
+					'v'    => $this->_allowSimpleHtml($paramValue . $unit),
 					'info' => !empty($paramDef['description']),
 					'id'   => (int) $paramId,
 				);
@@ -4094,7 +4102,9 @@ class Project extends WWW\AbstractModule
 				$label = 'Rzut';
 			}
 			$floorId = preg_replace('/[^a-z0-9]+/i', '-', mb_strtolower((string) $label, 'UTF-8'));
-			$floorId = trim($floorId, '-') ?: ('sketch-' . $sketchId);
+			$floorId = trim((string) $floorId, '-');
+			// Labels often collide ("Rzut"); always uniquify with sketch id for tabs/panels.
+			$floorId = ($floorId !== '' ? $floorId : 'rzut') . '-' . $sketchId;
 
 			$img = $this->_attachmentMediaUrl($sketch, $mediaBase, 'presentation');
 			if ($img === '') {
@@ -4202,5 +4212,23 @@ class Project extends WWW\AbstractModule
 		}
 
 		return $floors;
+	}
+
+	/**
+	 * Allow a tiny HTML subset (e.g. m<sup>2</sup>) in tech-data values.
+	 *
+	 * @param string $html
+	 * @return string
+	 */
+	private function _allowSimpleHtml($html)
+	{
+		$html = (string) $html;
+		if ($html === '') {
+			return '';
+		}
+		if (strpos($html, '&lt;') !== false || strpos($html, '&amp;') !== false) {
+			$html = html_entity_decode($html, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+		}
+		return strip_tags($html, '<sup><sub><br><strong><em><b><i>');
 	}
 }

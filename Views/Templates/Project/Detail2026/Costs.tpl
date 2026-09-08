@@ -3,7 +3,7 @@
 	<div class="max-w-[1480px] mx-auto px-8">
 		<div class="mb-10">
 			<span class="text-[12px] uppercase tracking-[0.28em] text-[var(--brand-blue-strong)] font-semibold">Kosztorys</span>
-			<h2 class="mt-3 text-[34px] md:text-[42px] leading-tight text-[#222] font-bold tracking-tight">Koszty budowy</h2>
+			<h2 class="mt-3 text-[36px] font-400 text-[var(--brand-darker)] tracking-tight uppercase">Koszty budowy</h2>
 			<div class="mt-4 h-[3px] w-12 bg-[var(--brand-red)]"></div>
 		</div>
 		<div class="bg-white p-6 md:p-7 border border-[#e6e8eb] max-w-4xl">

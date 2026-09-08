@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-03 14:46:14
+/* Smarty version 3.1.48, created on 2026-09-08 08:15:14
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Project/Detail2026/Information.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6a996c165cc2c3_73603186',
+  'unifunc' => 'content_6a9fa7f29ad958_56681536',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '001f12fa3ed154092159442ed7fbfc59d65f1a2b' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Project/Detail2026/Information.tpl',
-      1 => 1788439400,
+      1 => 1788846933,
       2 => 'file',
     ),
   ),
@@ -20,11 +20,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6a996c165cc2c3_73603186 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6a9fa7f29ad958_56681536 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section id="informacje" class="bg-white py-14 scroll-mt-32">
 	<div class="max-w-[1480px] mx-auto px-8">
 		<div class="mb-8">
-			<h2 class="text-[22px] md:text-[26px] font-bold uppercase tracking-wide text-[#222]">Informacje o projekcie <?php echo htmlspecialchars($_smarty_tpl->tpl_vars['project']->value['name'], ENT_QUOTES, 'UTF-8', true);?>
+			<h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight uppercase">Informacje o projekcie <?php echo htmlspecialchars($_smarty_tpl->tpl_vars['project']->value['name'], ENT_QUOTES, 'UTF-8', true);?>
 </h2>
 			<div class="w-12 h-[3px] bg-[var(--brand-red)] mt-2"></div>
 		</div>

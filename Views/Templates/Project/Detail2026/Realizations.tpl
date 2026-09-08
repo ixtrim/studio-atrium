@@ -1,7 +1,7 @@
 <section id="realizacje" class="bg-white py-14 scroll-mt-32">
 	<div class="max-w-[1480px] mx-auto px-8">
 		<div class="mb-2">
-			<h2 class="text-[22px] md:text-[26px] font-bold uppercase tracking-wide text-[#1b2025]">Realizacje</h2>
+			<h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight uppercase">Realizacje</h2>
 			<div class="w-12 h-[3px] bg-[var(--brand-red)] mt-2"></div>
 		</div>
 		{if $detailRealizations}
@@ -18,7 +18,7 @@
 		{/if}
 
 		<div class="mt-14">
-			<h2 class="text-[22px] md:text-[26px] font-bold uppercase tracking-wide text-[#1b2025]">Forum dyskusyjne</h2>
+			<h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight uppercase">Forum dyskusyjne</h2>
 			<div class="text-[12px] uppercase tracking-[0.2em] text-[#6b6b6b] mt-1">Wpisy dla projektu {$project.name|escape}</div>
 			<div class="w-12 h-[3px] bg-[var(--brand-red)] mt-3"></div>
 			<p class="text-[14px] text-[#444] leading-relaxed mt-6 max-w-3xl">
@@ -42,7 +42,7 @@
 		</div>
 
 		<div class="mt-14">
-			<h2 class="text-[22px] md:text-[26px] font-bold uppercase tracking-wide text-[#1b2025]">Pliki</h2>
+			<h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight uppercase">Pliki</h2>
 			<div class="w-12 h-[3px] bg-[var(--brand-red)] mt-2"></div>
 			<p class="text-[14px] text-[#444] leading-relaxed mt-6 max-w-3xl">
 				Aby pobrać rysunki szczegółowe{if $detailCostStages}, kosztorys szacunkowy{/if}, obrysy domu lub zestawienie materiałów do tego projektu,

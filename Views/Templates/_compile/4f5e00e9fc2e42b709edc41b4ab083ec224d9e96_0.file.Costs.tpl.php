@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-03 14:46:14
+/* Smarty version 3.1.48, created on 2026-09-08 08:15:14
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Project/Detail2026/Costs.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6a996c165c5f37_14157568',
+  'unifunc' => 'content_6a9fa7f29a8429_38589638',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4f5e00e9fc2e42b709edc41b4ab083ec224d9e96' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Project/Detail2026/Costs.tpl',
-      1 => 1788439384,
+      1 => 1788846930,
       2 => 'file',
     ),
   ),
@@ -20,13 +20,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6a996c165c5f37_14157568 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6a9fa7f29a8429_38589638 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['detailCostStages']->value) {?>
 <section id="koszty" class="bg-[#f5f6f7] py-16 scroll-mt-32">
 	<div class="max-w-[1480px] mx-auto px-8">
 		<div class="mb-10">
 			<span class="text-[12px] uppercase tracking-[0.28em] text-[var(--brand-blue-strong)] font-semibold">Kosztorys</span>
-			<h2 class="mt-3 text-[34px] md:text-[42px] leading-tight text-[#222] font-bold tracking-tight">Koszty budowy</h2>
+			<h2 class="mt-3 text-[36px] font-400 text-[var(--brand-darker)] tracking-tight uppercase">Koszty budowy</h2>
 			<div class="mt-4 h-[3px] w-12 bg-[var(--brand-red)]"></div>
 		</div>
 		<div class="bg-white p-6 md:p-7 border border-[#e6e8eb] max-w-4xl">
@@ -39,7 +39,7 @@ $_smarty_tpl->tpl_vars['stage']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['stage']->value) {
 $_smarty_tpl->tpl_vars['stage']->do_else = false;
 $_smarty_tpl->tpl_vars['stage']->iteration++;
-$__foreach_stage_20_saved = $_smarty_tpl->tpl_vars['stage'];
+$__foreach_stage_16_saved = $_smarty_tpl->tpl_vars['stage'];
 ?>
 				<div class="proj-cost-item group bg-white border border-[#e6e8eb] hover:border-[#cfd3d8] transition-all duration-300" data-id="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['stage']->value['id'], ENT_QUOTES, 'UTF-8', true);?>
 ">
@@ -63,7 +63,7 @@ $__foreach_stage_20_saved = $_smarty_tpl->tpl_vars['stage'];
 					</div>
 				</div>
 				<?php
-$_smarty_tpl->tpl_vars['stage'] = $__foreach_stage_20_saved;
+$_smarty_tpl->tpl_vars['stage'] = $__foreach_stage_16_saved;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 				<?php if ($_smarty_tpl->tpl_vars['detailCostTotal']->value) {?>

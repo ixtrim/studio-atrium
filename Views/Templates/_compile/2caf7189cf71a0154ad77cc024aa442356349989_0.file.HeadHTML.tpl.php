@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-07 21:44:43
+/* Smarty version 3.1.48, created on 2026-09-08 08:15:14
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/HeadHTML.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6a9f142b6200b2_30871198',
+  'unifunc' => 'content_6a9fa7f2939328_13795929',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2caf7189cf71a0154ad77cc024aa442356349989' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/HeadHTML.tpl',
-      1 => 1788597852,
+      1 => 1788847887,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6a9f142b6200b2_30871198 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6a9fa7f2939328_13795929 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['pageTitle']->value) {?>
 	<title><?php echo $_smarty_tpl->tpl_vars['pageTitle']->value;?>
 </title>
@@ -349,7 +349,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 <!-- Tailwind MUST be last among stylesheets: config BEFORE CDN, important:true so utilities beat legacy CSS -->
 <?php echo '<script'; ?>
 >
-tailwind.config = {
+window.tailwind = window.tailwind || {};
+window.tailwind.config = {
 	important: true,
 	corePlugins: { preflight: false },
 	theme: {
@@ -358,7 +359,7 @@ tailwind.config = {
 			display: ['Nexa', 'Montserrat', 'sans-serif']
 		}
 	}
-}
+};
 <?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>

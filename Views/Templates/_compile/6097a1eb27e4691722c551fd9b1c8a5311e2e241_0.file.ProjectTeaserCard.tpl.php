@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-07 21:44:43
+/* Smarty version 3.1.48, created on 2026-09-08 08:15:14
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/ProjectTeaserCard.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6a9f142b699611_02921378',
+  'unifunc' => 'content_6a9fa7f29a1ab8_92430292',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6097a1eb27e4691722c551fd9b1c8a5311e2e241' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/ProjectTeaserCard.tpl',
-      1 => 1788766723,
+      1 => 1788812636,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6a9f142b699611_02921378 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6a9fa7f29a1ab8_92430292 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('_badge', '');
 $_smarty_tpl->_assignInScope('_badgeVariant', '');
 if ($_smarty_tpl->tpl_vars['item']->value['badge_label']) {?>
@@ -46,31 +46,8 @@ if ($_smarty_tpl->tpl_vars['item']->value['badge_label']) {?>
 		<?php }?>
 	</div>
 	<div class="px-5 pt-4 pb-5 flex flex-col gap-3 flex-1">
-		<div class="flex items-start justify-between gap-3">
-			<h3 class="text-[22px] font-bold text-[#222] leading-tight"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['name'], ENT_QUOTES, 'UTF-8', true);?>
+		<h3 class="text-[22px] font-bold text-[#222] leading-tight"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['name'], ENT_QUOTES, 'UTF-8', true);?>
 </h3>
-			<div class="flex items-center gap-2 shrink-0 mt-0.5 text-[#555]">
-				<?php if ($_smarty_tpl->tpl_vars['teaser_interactive']->value && $_smarty_tpl->tpl_vars['item']->value['id']) {?>
-				<button type="button" aria-label="Porównaj" id="compare-<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
-"
-					class="compare cat-icon-btn text-[#555] hover:text-[var(--brand-red)]<?php if ($_smarty_tpl->tpl_vars['compareIds']->value && in_array($_smarty_tpl->tpl_vars['item']->value['id'],$_smarty_tpl->tpl_vars['compareIds']->value)) {?> on<?php }?>"
-					data-id="<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
-" onclick="event.preventDefault();event.stopPropagation();">
-					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5" aria-hidden="true"><path d="M12 3v18"></path><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"></path><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"></path><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"></path><path d="M7 21h10"></path></svg>
-				</button>
-				<button type="button" aria-label="Ulubione" id="fav-<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
-"
-					class="fav cat-icon-btn text-[#555] hover:text-[var(--brand-red)]<?php if ($_smarty_tpl->tpl_vars['favouriteIds']->value && in_array($_smarty_tpl->tpl_vars['item']->value['id'],$_smarty_tpl->tpl_vars['favouriteIds']->value)) {?> on<?php }?>"
-					data-id="<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
-" onclick="event.preventDefault();event.stopPropagation();">
-					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5" aria-hidden="true"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"></path></svg>
-				</button>
-				<?php } else { ?>
-				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5" aria-hidden="true"><path d="M12 3v18"></path><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"></path><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"></path><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"></path><path d="M7 21h10"></path></svg>
-				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5" aria-hidden="true"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"></path></svg>
-				<?php }?>
-			</div>
-		</div>
 		<div class="text-[13px] font-bold tracking-wider text-[var(--brand-red)]"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['type_label'], ENT_QUOTES, 'UTF-8', true);?>
 </div>
 		<div class="flex items-center gap-4 py-2 text-[13px] text-[#222] flex-wrap">

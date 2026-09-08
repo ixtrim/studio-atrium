@@ -1,4 +1,4 @@
-<nav id="proj-anchor-bar" class="sticky z-30 bg-white border-b border-[#e5e5e5]" aria-label="Sekcje projektu" style="top:0">
+<nav id="proj-anchor-bar" class="!sticky !top-0 z-40 bg-white border-b border-[#e5e5e5]" aria-label="Sekcje projektu">
 	<div class="max-w-[1480px] mx-auto px-8 h-12 flex items-center gap-6">
 		<div class="shrink-0 text-[13px] font-black tracking-wide text-[#222] uppercase truncate max-w-[220px]">{$project.name|escape}</div>
 		<div class="flex-1 min-w-0 overflow-x-auto">

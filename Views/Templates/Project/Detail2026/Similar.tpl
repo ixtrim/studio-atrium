@@ -1,7 +1,7 @@
 {if $detailSimilar}
 <section id="podobne" class="w-full bg-white py-16 scroll-mt-32">
 	<div class="max-w-[1480px] mx-auto px-8">
-		<h2 class="text-[34px] font-bold text-[#222] mb-10 pl-2">Projekty podobne</h2>
+		<h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight mb-10 pl-2 uppercase">Projekty podobne</h2>
 		<div class="relative">
 			<button type="button" aria-label="Poprzedni" id="proj-sim-prev"
 				class="hidden lg:flex absolute -left-10 top-[40%] -translate-y-1/2 z-10 w-8 h-8 items-center justify-center bg-transparent border-0 p-0 text-[#7a7a7a] hover:text-[var(--brand-darker)] cursor-pointer">

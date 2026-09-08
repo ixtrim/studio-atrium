@@ -35,7 +35,7 @@
 							<i data-lucide="phone" class="w-[20px] h-[20px] text-[var(--brand-red)] shrink-0" stroke-width="2.2"></i>
 							<span class="text-[var(--brand-red)] font-black text-[19px] tracking-wide leading-none">33 822 94 96</span>
 						</a>
-						<form method="get" action="projekty-domow/szukaj{url module='project' action='search'}" class="relative rounded-none" role="search">
+						<form method="get" action="{url module='project' action='search'}" class="relative rounded-none" role="search">
 							<input type="text" name="query" placeholder="wyszukaj nazwę"
 								class="rounded-none bg-white border border-[#979797] h-[40px] pl-5 pr-10 text-[13px] w-[224px] leading-none text-[#343233] focus:outline-none focus:border-[var(--brand-blue)]">
 							<button type="submit" aria-label="Szukaj"

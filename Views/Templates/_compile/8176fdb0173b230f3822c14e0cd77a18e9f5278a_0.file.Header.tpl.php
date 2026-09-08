@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-07 21:44:43
+/* Smarty version 3.1.48, created on 2026-09-08 08:15:14
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6a9f142b63a834_51332164',
+  'unifunc' => 'content_6a9fa7f294ecc6_72414656',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8176fdb0173b230f3822c14e0cd77a18e9f5278a' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Header.tpl',
-      1 => 1788592533,
+      1 => 1788847248,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6a9f142b63a834_51332164 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6a9fa7f294ecc6_72414656 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['promo_marquee_text']->value) {?>
 	<div class="promo-marquee" aria-label="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['promo_marquee_text']->value, ENT_QUOTES, 'UTF-8', true);?>
 ">
@@ -71,7 +71,7 @@ if ($_smarty_tpl->tpl_vars['promo_marquee_text']->value) {?>
 							<i data-lucide="phone" class="w-[20px] h-[20px] text-[var(--brand-red)] shrink-0" stroke-width="2.2"></i>
 							<span class="text-[var(--brand-red)] font-black text-[19px] tracking-wide leading-none">33 822 94 96</span>
 						</a>
-						<form method="get" action="projekty-domow/szukaj<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'project','action'=>'search'),$_smarty_tpl ) );?>
+						<form method="get" action="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'project','action'=>'search'),$_smarty_tpl ) );?>
 " class="relative rounded-none" role="search">
 							<input type="text" name="query" placeholder="wyszukaj nazwę"
 								class="rounded-none bg-white border border-[#979797] h-[40px] pl-5 pr-10 text-[13px] w-[224px] leading-none text-[#343233] focus:outline-none focus:border-[var(--brand-blue)]">

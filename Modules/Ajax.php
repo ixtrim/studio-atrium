@@ -81,7 +81,15 @@ class Ajax extends WWW\AbstractModule
 		\Point7_WebApp_Request_Filtered $request, WWW\AppContext $appContext, WWW\ResponseContext $responseContext
 	) {
 		$param = $this->_daoRepository->getProjectParamFinder()->getById($request->getParam('id'));
-		$responseContext->set('paramInfo', $param->getDescription());
+		$html = '';
+		if ($param) {
+			$html = (string) $param->getDescription();
+			// Descriptions are often stored with HTML entities (&lt;sup&gt; etc.)
+			if ($html !== '' && strpos($html, '&lt;') !== false) {
+				$html = html_entity_decode($html, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+			}
+		}
+		$responseContext->set('paramInfo', $html);
 	}
 	
 	

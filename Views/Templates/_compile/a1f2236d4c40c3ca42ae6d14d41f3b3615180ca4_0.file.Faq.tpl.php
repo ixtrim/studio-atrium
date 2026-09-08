@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-03 14:46:14
+/* Smarty version 3.1.48, created on 2026-09-08 08:17:12
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Project/Detail2026/Faq.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6a996c165e4de8_87230287',
+  'unifunc' => 'content_6a9fa8686ce044_86592979',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a1f2236d4c40c3ca42ae6d14d41f3b3615180ca4' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Project/Detail2026/Faq.tpl',
-      1 => 1788439522,
+      1 => 1788848142,
       2 => 'file',
     ),
   ),
@@ -20,12 +20,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6a996c165e4de8_87230287 (Smarty_Internal_Template $_smarty_tpl) {
-?><section id="faq" class="bg-[#f5f6f7] py-14 scroll-mt-32">
+function content_6a9fa8686ce044_86592979 (Smarty_Internal_Template $_smarty_tpl) {
+?><section id="faq" class="bg-[#ffffff] py-14 scroll-mt-32">
 	<div class="max-w-[1480px] mx-auto px-8">
 		<div class="text-center mb-10">
 			<div class="text-[12px] font-bold uppercase tracking-[0.2em] text-[var(--brand-red)] mb-2">FAQ</div>
-			<h2 class="text-[28px] md:text-[34px] font-bold text-[#1b2025]">Najczęściej zadawane pytania</h2>
+			<h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight uppercase">Najczęściej zadawane pytania</h2>
 		</div>
 		<div class="space-y-3 max-w-4xl mx-auto" id="proj-faq-accordion">
 			<?php
@@ -36,7 +36,7 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
 $_smarty_tpl->tpl_vars['item']->do_else = false;
 $_smarty_tpl->tpl_vars['item']->index++;
 $_smarty_tpl->tpl_vars['item']->first = !$_smarty_tpl->tpl_vars['item']->index;
-$__foreach_item_27_saved = $_smarty_tpl->tpl_vars['item'];
+$__foreach_item_0_saved = $_smarty_tpl->tpl_vars['item'];
 ?>
 			<div class="proj-faq-item bg-white border border-[#e5e5e5] transition-all duration-300<?php if ($_smarty_tpl->tpl_vars['item']->first) {?> border-[var(--brand-red)] shadow-sm<?php }?>" data-open="<?php if ($_smarty_tpl->tpl_vars['item']->first) {?>1<?php } else { ?>0<?php }?>">
 				<button type="button" class="proj-faq-toggle w-full flex items-center gap-4 px-5 py-4 text-left">
@@ -52,7 +52,7 @@ $__foreach_item_27_saved = $_smarty_tpl->tpl_vars['item'];
 				</div>
 			</div>
 			<?php
-$_smarty_tpl->tpl_vars['item'] = $__foreach_item_27_saved;
+$_smarty_tpl->tpl_vars['item'] = $__foreach_item_0_saved;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		</div>

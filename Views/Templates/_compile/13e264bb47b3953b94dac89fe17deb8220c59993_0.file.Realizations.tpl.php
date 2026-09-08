@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-03 14:46:14
+/* Smarty version 3.1.48, created on 2026-09-08 08:15:14
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Project/Detail2026/Realizations.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6a996c165d3e03_17496118',
+  'unifunc' => 'content_6a9fa7f29b7020_00567354',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '13e264bb47b3953b94dac89fe17deb8220c59993' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Project/Detail2026/Realizations.tpl',
-      1 => 1788439407,
+      1 => 1788846939,
       2 => 'file',
     ),
   ),
@@ -20,11 +20,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6a996c165d3e03_17496118 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6a9fa7f29b7020_00567354 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section id="realizacje" class="bg-white py-14 scroll-mt-32">
 	<div class="max-w-[1480px] mx-auto px-8">
 		<div class="mb-2">
-			<h2 class="text-[22px] md:text-[26px] font-bold uppercase tracking-wide text-[#1b2025]">Realizacje</h2>
+			<h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight uppercase">Realizacje</h2>
 			<div class="w-12 h-[3px] bg-[var(--brand-red)] mt-2"></div>
 		</div>
 		<?php if ($_smarty_tpl->tpl_vars['detailRealizations']->value) {?>
@@ -52,7 +52,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		<?php }?>
 
 		<div class="mt-14">
-			<h2 class="text-[22px] md:text-[26px] font-bold uppercase tracking-wide text-[#1b2025]">Forum dyskusyjne</h2>
+			<h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight uppercase">Forum dyskusyjne</h2>
 			<div class="text-[12px] uppercase tracking-[0.2em] text-[#6b6b6b] mt-1">Wpisy dla projektu <?php echo htmlspecialchars($_smarty_tpl->tpl_vars['project']->value['name'], ENT_QUOTES, 'UTF-8', true);?>
 </div>
 			<div class="w-12 h-[3px] bg-[var(--brand-red)] mt-3"></div>
@@ -88,7 +88,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		</div>
 
 		<div class="mt-14">
-			<h2 class="text-[22px] md:text-[26px] font-bold uppercase tracking-wide text-[#1b2025]">Pliki</h2>
+			<h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight uppercase">Pliki</h2>
 			<div class="w-12 h-[3px] bg-[var(--brand-red)] mt-2"></div>
 			<p class="text-[14px] text-[#444] leading-relaxed mt-6 max-w-3xl">
 				Aby pobrać rysunki szczegółowe<?php if ($_smarty_tpl->tpl_vars['detailCostStages']->value) {?>, kosztorys szacunkowy<?php }?>, obrysy domu lub zestawienie materiałów do tego projektu,

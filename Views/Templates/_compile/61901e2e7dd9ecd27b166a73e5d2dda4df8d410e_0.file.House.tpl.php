@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-03 14:46:14
+/* Smarty version 3.1.48, created on 2026-09-08 08:22:24
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Project/House.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6a996c16573437_21041733',
+  'unifunc' => 'content_6a9fa9a0b8c916_88901249',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '61901e2e7dd9ecd27b166a73e5d2dda4df8d410e' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Project/House.tpl',
-      1 => 1788439143,
+      1 => 1788848524,
       2 => 'file',
     ),
   ),
@@ -34,10 +34,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:Include/Partners.tpl' => 1,
     'file:Include/Contact.tpl' => 1,
     'file:Project/Detail2026/Faq.tpl' => 1,
-    'file:Include/NewsletterSubpage.tpl' => 1,
+    'file:Include/Newsletter.tpl' => 1,
   ),
 ),false)) {
-function content_6a996c16573437_21041733 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6a9fa9a0b8c916_88901249 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div id="proj-2026" class="bg-white" data-project-id="<?php echo $_smarty_tpl->tpl_vars['project']->value['id'];?>
 " data-project-name="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['project']->value['name'], ENT_QUOTES, 'UTF-8', true);?>
 " data-price="<?php echo $_smarty_tpl->tpl_vars['detailPrice']->value;?>
@@ -62,13 +62,25 @@ $_smarty_tpl->_subTemplateRender("file:Project/Detail2026/Realizations.tpl", $_s
 $_smarty_tpl->_subTemplateRender("file:Include/Partners.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:Include/Contact.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:Project/Detail2026/Faq.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-$_smarty_tpl->_subTemplateRender("file:Include/NewsletterSubpage.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+$_smarty_tpl->_subTemplateRender("file:Include/Newsletter.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('category_newsletter_bg'=>1), 0, false);
 ?>
 
 </div>
+
+<div id="param-info-lightbox" class="proj-param-lb fixed inset-0 hidden items-center justify-center p-4 md:p-8" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Wyjaśnienie parametru">
+	<div class="proj-param-lb-backdrop absolute inset-0 bg-black/70" data-param-lb-close></div>
+	<div class="proj-param-lb-panel relative z-10 w-full max-w-[720px] max-h-[min(85vh,900px)] bg-white shadow-2xl overflow-hidden flex flex-col">
+		<div class="flex items-center justify-between gap-4 px-5 py-4 border-b border-[#eee] shrink-0">
+			<div class="text-[13px] font-bold uppercase tracking-[0.16em] text-[#222]">Wyjaśnienie parametru</div>
+			<button type="button" class="proj-param-lb-close text-[#666] hover:text-[#222] text-[22px] leading-none border-0 bg-transparent cursor-pointer p-0" data-param-lb-close aria-label="Zamknij">&times;</button>
+		</div>
+		<div id="param-info-over-box" class="proj-param-lb-body overflow-y-auto px-5 py-5 text-[15px] leading-[1.65] text-[#222]"></div>
+	</div>
+</div>
+<div id="param-info-overlay" class="hidden" aria-hidden="true"></div>
+
 <?php echo '<script'; ?>
- src="/js/project2026.js?v=<?php echo $_smarty_tpl->tpl_vars['version']->value;?>
-" defer><?php echo '</script'; ?>
+ src="/js/project2026.js?v=20260908e" defer><?php echo '</script'; ?>
 >
 <?php }
 }

@@ -3,7 +3,7 @@
 		<div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
 			<div class="lg:col-span-4">
 				<span class="text-[12px] uppercase tracking-[0.28em] text-[var(--brand-blue-strong)] font-semibold">O projekcie</span>
-				<h2 class="mt-3 text-[40px] md:text-[52px] leading-[1.05] text-[#1b2025] font-bold tracking-tight">Opis</h2>
+				<h2 class="mt-3 text-[36px] font-400 text-[var(--brand-darker)] tracking-tight uppercase">Opis</h2>
 				<div class="mt-4 h-[3px] w-12 bg-[var(--brand-red)]"></div>
 				<div class="mt-6 text-[13px] uppercase tracking-[0.18em] text-[#6b7177] font-semibold">{$detailCategoryTitle|escape}</div>
 			</div>

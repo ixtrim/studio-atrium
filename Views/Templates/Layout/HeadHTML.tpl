@@ -226,7 +226,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <!-- Tailwind MUST be last among stylesheets: config BEFORE CDN, important:true so utilities beat legacy CSS -->
 <script>
-tailwind.config = {
+window.tailwind = window.tailwind || {};
+window.tailwind.config = {
 	important: true,
 	corePlugins: { preflight: false },
 	theme: {
@@ -235,7 +236,7 @@ tailwind.config = {
 			display: ['Nexa', 'Montserrat', 'sans-serif']
 		}
 	}
-}
+};
 </script>
 <script src="https://cdn.tailwindcss.com"></script>
 

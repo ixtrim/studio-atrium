@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-03 14:46:14
+/* Smarty version 3.1.48, created on 2026-09-08 08:15:14
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Project/Detail2026/AnchorBar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6a996c165797d3_11762995',
+  'unifunc' => 'content_6a9fa7f2960b39_09365437',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b0781ca43c9e6963182129ec9d704a668157bb37' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Project/Detail2026/AnchorBar.tpl',
-      1 => 1788439236,
+      1 => 1788847126,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6a996c165797d3_11762995 (Smarty_Internal_Template $_smarty_tpl) {
-?><nav id="proj-anchor-bar" class="sticky z-30 bg-white border-b border-[#e5e5e5]" aria-label="Sekcje projektu" style="top:0">
+function content_6a9fa7f2960b39_09365437 (Smarty_Internal_Template $_smarty_tpl) {
+?><nav id="proj-anchor-bar" class="!sticky !top-0 z-40 bg-white border-b border-[#e5e5e5]" aria-label="Sekcje projektu">
 	<div class="max-w-[1480px] mx-auto px-8 h-12 flex items-center gap-6">
 		<div class="shrink-0 text-[13px] font-black tracking-wide text-[#222] uppercase truncate max-w-[220px]"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['project']->value['name'], ENT_QUOTES, 'UTF-8', true);?>
 </div>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-07 21:44:43
+/* Smarty version 3.1.48, created on 2026-09-08 08:15:14
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/Newsletter.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6a9f142b6b8c34_23510671',
+  'unifunc' => 'content_6a9fa7f29c8841_59198721',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '98046444c09a595fbf83880e0b6848b10eeaec09' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/Newsletter.tpl',
-      1 => 1788807549,
+      1 => 1788814954,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6a9f142b6b8c34_23510671 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6a9fa7f29c8841_59198721 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="relative">
     <div class="bg-[var(--brand-blue)] relative overflow-visible">
         <div class="max-w-[1480px] mx-auto px-12 py-[75px] grid grid-cols-12 gap-8 items-center relative">
@@ -41,7 +41,7 @@ $_smarty_tpl->tpl_vars['photo']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['photo']->value) {
 $_smarty_tpl->tpl_vars['photo']->do_else = false;
 $_smarty_tpl->tpl_vars['photo']->index++;
-$__foreach_photo_13_saved = $_smarty_tpl->tpl_vars['photo'];
+$__foreach_photo_23_saved = $_smarty_tpl->tpl_vars['photo'];
 ?>
                     <?php if ($_smarty_tpl->tpl_vars['photo']->value['image_url'] && $_smarty_tpl->tpl_vars['photo']->index < 3) {?>
                         <div class="hp-newsletter-photo absolute bg-white p-2 pb-8 pointer-events-auto"
@@ -60,7 +60,7 @@ if ($_smarty_tpl->tpl_vars['photo']->index == 0) {?>-7<?php } elseif ($_smarty_t
                         </div>
                     <?php }?>
                 <?php
-$_smarty_tpl->tpl_vars['photo'] = $__foreach_photo_13_saved;
+$_smarty_tpl->tpl_vars['photo'] = $__foreach_photo_23_saved;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </div>
@@ -72,7 +72,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </style>
         </div>
     </div>
-    <div class="bg-[#3a3a3a]">
+    <div class="<?php if ($_smarty_tpl->tpl_vars['category_newsletter_bg']->value) {?>bg-[#5d5b5c]<?php } else { ?>bg-[#3a3a3a]<?php }?>">
         <div class="max-w-[1480px] mx-auto px-12 py-14 grid grid-cols-12 gap-[72px] items-center">
             <div class="col-span-12 md:col-span-5 text-white">
                 <h2 class="text-[36px] font-400 text-white tracking-tight leading-tight uppercase">

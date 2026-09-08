@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-03 14:46:14
+/* Smarty version 3.1.48, created on 2026-09-08 08:15:14
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Project/Detail2026/Similar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6a996c165b9d15_47846614',
+  'unifunc' => 'content_6a9fa7f2994f90_61036234',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4bdd7e6a3e7ae68555f9839d7a6d4e2f83b97a99' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Project/Detail2026/Similar.tpl',
-      1 => 1788439370,
+      1 => 1788846936,
       2 => 'file',
     ),
   ),
@@ -20,11 +20,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6a996c165b9d15_47846614 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6a9fa7f2994f90_61036234 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['detailSimilar']->value) {?>
 <section id="podobne" class="w-full bg-white py-16 scroll-mt-32">
 	<div class="max-w-[1480px] mx-auto px-8">
-		<h2 class="text-[34px] font-bold text-[#222] mb-10 pl-2">Projekty podobne</h2>
+		<h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight mb-10 pl-2 uppercase">Projekty podobne</h2>
 		<div class="relative">
 			<button type="button" aria-label="Poprzedni" id="proj-sim-prev"
 				class="hidden lg:flex absolute -left-10 top-[40%] -translate-y-1/2 z-10 w-8 h-8 items-center justify-center bg-transparent border-0 p-0 text-[#7a7a7a] hover:text-[var(--brand-darker)] cursor-pointer">
@@ -65,7 +65,7 @@ $_smarty_tpl->tpl_vars['item']->do_else = false;
 									<?php if ($_smarty_tpl->tpl_vars['item']->value['price_old']) {?><div class="text-[16px] text-[var(--brand-red)] line-through"><?php echo number_format($_smarty_tpl->tpl_vars['item']->value['price_old'],0,',',' ');?>
  PLN</div><?php }?>
 									<div class="flex items-baseline gap-2">
-										<span class="text-[34px] font-bold text-[var(--brand-blue-strong)] leading-none"><?php echo number_format($_smarty_tpl->tpl_vars['item']->value['price'],0,',',' ');?>
+										<span class="text-[34px] font-['Montserrat',sans-serif] font-semibold text-[var(--brand-blue-strong)] leading-none"><?php echo number_format($_smarty_tpl->tpl_vars['item']->value['price'],0,',',' ');?>
 </span>
 										<span class="text-[16px] text-[var(--brand-blue-strong)] font-semibold">PLN</span>
 									</div>

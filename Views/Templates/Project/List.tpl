@@ -226,8 +226,94 @@
 		{include file="Include/Newsletter.tpl" category_newsletter_bg=1}
 	</div>
 
+{elseif $isSearch}
+	{* ===== 2026 search results — same teasers as homepage / category ===== *}
+	<div id="search-2026" class="pb-16">
+		<nav aria-label="breadcrumb" class="w-full bg-white border-b border-[#e5e5e5] py-[12px]">
+			<div class="max-w-[1480px] mx-auto px-8">
+				<ol class="flex flex-wrap items-center gap-3 text-[14px] text-[#6b6b6b] font-normal">
+					<li><a href="/" class="hover:text-[#222] transition-colors">Studio Atrium</a></li>
+					<li aria-hidden="true" class="text-[#bdbdbd]">»</li>
+					<li><a href="/projekty/" class="hover:text-[#222] transition-colors">Projekty Domów</a></li>
+					<li aria-hidden="true" class="text-[#bdbdbd]">»</li>
+					<li aria-current="page" class="text-[#6b6b6b]">Wynik wyszukiwania</li>
+				</ol>
+			</div>
+		</nav>
+
+		<div class="max-w-[1480px] mx-auto px-8 mt-8">
+			<div class="bg-[#ececec] px-6 py-5 mb-6">
+				<h1 class="text-[26px] font-normal text-[#222]">Wynik wyszukiwania</h1>
+				<div class="text-[14px] text-[#222] mt-2">
+					<strong>Liczba projektów:</strong> <span>{$total|default:0}</span>
+					{if $request.query}
+						<span class="text-[#666]"> — dla zapytania: <strong class="text-[#222]">{$request.query|escape}</strong></span>
+					{elseif $csType}
+						<span class="text-[#666]"> — <strong class="text-[#222]">{$csType|escape}</strong></span>
+					{/if}
+				</div>
+			</div>
+
+			{if !$sortingDisabled}
+				<div class="cat-sort-bar flex flex-wrap items-center justify-end gap-3 mb-5 w-full ml-auto">
+					<form method="post" action="{$url}{$query}" id="projects-filters-form"
+						class="flex items-center gap-3 ml-auto">
+						<input type="hidden" name="display_type" value="box" id="display-type">
+						<input type="hidden" name="sort_by" id="sort-by" value="{$sortBy}">
+						<input type="hidden" name="sort_order" id="sort-order" value="{$sortOrder}">
+						<span class="text-[13px] text-[#666]">Sortowanie:</span>
+						<div class="cat-sort-group flex items-center gap-1" role="group" aria-label="Sortowanie projektów">
+							<button type="button" class="cat-sort-btn{if $sortBy == 'id'} is-active{/if}"
+								data-sort-by="id" data-sort-order="ASC" title="Domyślne" aria-label="Domyślne"
+								aria-pressed="{if $sortBy == 'id'}true{else}false{/if}">
+								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h12"/><path d="M3 12h9"/><path d="M3 19h6"/><path d="m17 8 4-4 4 4"/><path d="M21 4v12"/></svg>
+							</button>
+							<button type="button" class="cat-sort-btn{if $sortBy == 'usable_area' && $sortOrder == 'ASC'} is-active{/if}"
+								data-sort-by="usable_area" data-sort-order="ASC" title="Powierzchnia rosnąco" aria-label="Powierzchnia rosnąco"
+								aria-pressed="{if $sortBy == 'usable_area' && $sortOrder == 'ASC'}true{else}false{/if}">
+								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8 4-4 4 4"/><path d="M7 4v16"/><rect width="10" height="8" x="11" y="12" rx="1"/><path d="M15 8h.01"/><path d="M19 8h.01"/></svg>
+							</button>
+							<button type="button" class="cat-sort-btn{if $sortBy == 'usable_area' && $sortOrder == 'DESC'} is-active{/if}"
+								data-sort-by="usable_area" data-sort-order="DESC" title="Powierzchnia malejąco" aria-label="Powierzchnia malejąco"
+								aria-pressed="{if $sortBy == 'usable_area' && $sortOrder == 'DESC'}true{else}false{/if}">
+								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 16 4 4 4-4"/><path d="M7 20V4"/><rect width="10" height="8" x="11" y="4" rx="1"/><path d="M15 16h.01"/><path d="M19 16h.01"/></svg>
+							</button>
+							<button type="button" class="cat-sort-btn{if $sortBy == 'name' && $sortOrder == 'ASC'} is-active{/if}"
+								data-sort-by="name" data-sort-order="ASC" title="Nazwa A–Z" aria-label="Nazwa A–Z"
+								aria-pressed="{if $sortBy == 'name' && $sortOrder == 'ASC'}true{else}false{/if}">
+								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 16 4 4 4-4"/><path d="M7 20V4"/><path d="M20 8h-5"/><path d="M15 10V6.5a2.5 2.5 0 0 1 5 0V10"/><path d="M15 14h5l-5 6h5"/></svg>
+							</button>
+							<button type="button" class="cat-sort-btn{if $sortBy == 'name' && $sortOrder == 'DESC'} is-active{/if}"
+								data-sort-by="name" data-sort-order="DESC" title="Nazwa Z–A" aria-label="Nazwa Z–A"
+								aria-pressed="{if $sortBy == 'name' && $sortOrder == 'DESC'}true{else}false{/if}">
+								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8 4-4 4 4"/><path d="M7 4v16"/><path d="M15 4h5l-5 6h5"/><path d="M15 20v-3.5a2.5 2.5 0 0 1 5 0V20"/><path d="M20 18h-5"/></svg>
+							</button>
+						</div>
+					</form>
+				</div>
+			{/if}
+
+			{include file="Project/Ajax/CategoryFilterResults.tpl"}
+		</div>
+	</div>
+	<script>
+	(function () {
+		var form = document.getElementById('projects-filters-form');
+		if (!form) return;
+		var sortBy = document.getElementById('sort-by');
+		var sortOrder = document.getElementById('sort-order');
+		form.querySelectorAll('.cat-sort-btn').forEach(function (btn) {
+			btn.addEventListener('click', function () {
+				if (sortBy) sortBy.value = btn.getAttribute('data-sort-by') || 'id';
+				if (sortOrder) sortOrder.value = btn.getAttribute('data-sort-order') || 'ASC';
+				form.submit();
+			});
+		});
+	})();
+	</script>
+
 {else}
-	{* ===== Legacy / search / non-house listings ===== *}
+	{* ===== Legacy / non-house listings ===== *}
 	{if !$isSearch}
 		<div class="list-header{if $page == 1 && ($shortDescription || $description)} activated{/if}{if $category.id == 1 || $category.id == 67 || $category.id == 23 || $category.id == 25 || $category.id == 75 || $category.id == 77} on{/if}"
 			{if $category.attachments.CategoryBg}
@@ -252,15 +338,6 @@
 								class="goto" data-id="categoryDescription">zobacz opis &raquo;</a></div>{/if}
 					</div>
 				</div>
-			</div>
-		</div>
-	{else}
-		<div class="cs-header">
-			<div>
-				<h1>Wynik wyszukiwania</h1>
-				{if $request.query}
-					<p>dla zapytania: <strong>{$request.query}</strong></p>
-				{/if}
 			</div>
 		</div>
 	{/if}
@@ -317,9 +394,7 @@
 	</div>
 
 	{if $list}
-		{if $isSearch}
-			{include file="Project/searchDisplay%type%.tpl"|replace:'%type%':ucfirst($displayType)}
-		{elseif $listType == 'house'}
+		{if $listType == 'house'}
 			{include file="Project/display%type%.tpl"|replace:'%type%':ucfirst($displayType) url=$pagerUrl query=$query}
 		{else}
 			{include file="Project/%list%Display%type%.tpl"|replace:'%list%':$listType|replace:'%type%':ucfirst($displayType) url=$pagerUrl query=$query}
