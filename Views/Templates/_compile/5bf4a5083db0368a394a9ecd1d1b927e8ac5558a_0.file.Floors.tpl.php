@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-08 08:23:32
+/* Smarty version 3.1.48, created on 2026-09-08 08:53:06
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Project/Detail2026/Floors.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6a9fa9e4c03d62_19864574',
+  'unifunc' => 'content_6a9fb0d22d40f0_26080719',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5bf4a5083db0368a394a9ecd1d1b927e8ac5558a' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Project/Detail2026/Floors.tpl',
-      1 => 1788848608,
+      1 => 1788850324,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6a9fa9e4c03d62_19864574 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6a9fb0d22d40f0_26080719 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['detailFloors']->value) {?>
 <section id="rzuty" class="bg-[#f5f6f7] py-16 scroll-mt-32">
 	<div class="max-w-[1480px] mx-auto px-8">
@@ -187,15 +187,11 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 					<?php if (call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'hasMirror' ][ 0 ], array( $_smarty_tpl->tpl_vars['projectParams']->value ))) {?>
 						<?php if ($_smarty_tpl->tpl_vars['detailIsMirror']->value) {?>
 						<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'project','action'=>'item','id'=>$_smarty_tpl->tpl_vars['project']->value['id'],'link_title'=>$_smarty_tpl->tpl_vars['project']->value['name'],'catalog'=>'projekty-domow'),$_smarty_tpl ) );?>
-#rzuty" class="w-full bg-white border border-[#e6e8eb] hover:border-[#1b2025] text-[#1b2025] h-10 text-[11px] font-bold tracking-[0.12em] uppercase flex items-center justify-center transition">Odbicie lustrzane — wersja podstawowa</a>
+#rzuty" class="w-full bg-white border border-[#e6e8eb] hover:border-[#1b2025] text-[#1b2025] h-10 text-[11px] font-bold tracking-[0.12em] uppercase flex items-center justify-center transition">Wersja podstawowa</a>
 						<?php } else { ?>
 						<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'project','action'=>'item','id'=>$_smarty_tpl->tpl_vars['project']->value['id'],'link_title'=>$_smarty_tpl->tpl_vars['project']->value['name'],'version'=>'lustro','catalog'=>'projekty-domow'),$_smarty_tpl ) );?>
 #rzuty" class="w-full bg-white border border-[#e6e8eb] hover:border-[#1b2025] text-[#1b2025] h-10 text-[11px] font-bold tracking-[0.12em] uppercase flex items-center justify-center transition">Odbicie lustrzane</a>
 						<?php }?>
-					<?php }?>
-					<?php if ($_smarty_tpl->tpl_vars['hasPlot']->value) {?>
-					<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'project','action'=>'item','id'=>$_smarty_tpl->tpl_vars['project']->value['id'],'link_title'=>$_smarty_tpl->tpl_vars['project']->value['name'],'catalog'=>'usytuowanie'),$_smarty_tpl ) );?>
-" class="w-full bg-white border border-[#e6e8eb] hover:border-[#1b2025] text-[#1b2025] h-10 text-[11px] font-bold tracking-[0.12em] uppercase flex items-center justify-center transition">Słońce w domu</a>
 					<?php }?>
 				</div>
 			</div>

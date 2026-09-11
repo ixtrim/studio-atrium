@@ -89,7 +89,7 @@
 				<div class="mt-auto pt-6 grid grid-cols-1 gap-2">
 					{if $projectParams|hasMirror}
 						{if $detailIsMirror}
-						<a href="{url module=project action=item id=$project.id link_title=$project.name catalog='projekty-domow'}#rzuty" class="w-full bg-white border border-[#e6e8eb] hover:border-[#1b2025] text-[#1b2025] h-10 text-[11px] font-bold tracking-[0.12em] uppercase flex items-center justify-center transition">Odbicie lustrzane — wersja podstawowa</a>
+						<a href="{url module=project action=item id=$project.id link_title=$project.name catalog='projekty-domow'}#rzuty" class="w-full bg-white border border-[#e6e8eb] hover:border-[#1b2025] text-[#1b2025] h-10 text-[11px] font-bold tracking-[0.12em] uppercase flex items-center justify-center transition">Wersja podstawowa</a>
 						{else}
 						<a href="{url module=project action=item id=$project.id link_title=$project.name version=lustro catalog='projekty-domow'}#rzuty" class="w-full bg-white border border-[#e6e8eb] hover:border-[#1b2025] text-[#1b2025] h-10 text-[11px] font-bold tracking-[0.12em] uppercase flex items-center justify-center transition">Odbicie lustrzane</a>
 						{/if}

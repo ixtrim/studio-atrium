@@ -63,14 +63,18 @@ class UrlGenerator
     {
         $id   = (int)($params['id'] ?? 0);
         $name = $this->slugify($params['link_title'] ?? $params['name'] ?? '');
-        return '/projekty-domow/' . ($name ? $name . ',' : '') . $id . '.html';
+        $version = (string)($params['version'] ?? 'normal');
+        $mirror = in_array($version, ['mirror', 'lustro'], true);
+        return '/projekty-domow/' . ($name ? $name . ',' : '') . $id . ($mirror ? ',lustro.html' : '.html');
     }
 
     private function garageUrl(array $params): string
     {
         $id   = (int)($params['id'] ?? 0);
         $name = $this->slugify($params['link_title'] ?? $params['name'] ?? '');
-        return '/projekty-garazy/' . ($name ? $name . ',' : '') . $id . '.html';
+        $version = (string)($params['version'] ?? 'normal');
+        $mirror = in_array($version, ['mirror', 'lustro'], true);
+        return '/projekty-garazy/' . ($name ? $name . ',' : '') . $id . ($mirror ? ',lustro.html' : '.html');
     }
 
     private function otherProjectUrl(array $params): string

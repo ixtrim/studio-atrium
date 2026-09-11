@@ -4039,21 +4039,33 @@ class Project extends WWW\AbstractModule
 	 * @param array $attachment
 	 * @param string $mediaBase
 	 * @param string|null $preferChild
+	 * @param bool $mirror Insert /mirror/ path segment (lustrzane rzuty / wizualizacje)
 	 * @return string
 	 */
-	private function _attachmentMediaUrl(array $attachment, $mediaBase, $preferChild = 'presentation')
+	private function _attachmentMediaUrl(array $attachment, $mediaBase, $preferChild = 'presentation', $mirror = false)
 	{
+		$path = '';
+		$file = '';
 		if ($preferChild && !empty($attachment['childAttachments'][$preferChild][0]['filename'])) {
 			$child = $attachment['childAttachments'][$preferChild][0];
 			$path = isset($child['path']) ? trim((string) $child['path'], '/') : '';
 			$file = $child['filename'];
-			return $mediaBase . '/' . ($path !== '' ? $path . '/' : '') . $file;
-		}
-		if (!empty($attachment['filename'])) {
+		} elseif (!empty($attachment['filename'])) {
 			$path = isset($attachment['path']) ? trim((string) $attachment['path'], '/') : '';
-			return $mediaBase . '/' . ($path !== '' ? $path . '/' : '') . $attachment['filename'];
+			$file = $attachment['filename'];
 		}
-		return '';
+		if ($file === '') {
+			return '';
+		}
+		$parts = array();
+		if ($path !== '') {
+			$parts[] = $path;
+		}
+		if ($mirror) {
+			$parts[] = 'mirror';
+		}
+		$parts[] = $file;
+		return $mediaBase . '/' . implode('/', $parts);
 	}
 
 	/**
@@ -4115,13 +4127,15 @@ class Project extends WWW\AbstractModule
 			// Labels often collide ("Rzut"); always uniquify with sketch id for tabs/panels.
 			$floorId = ($floorId !== '' ? $floorId : 'rzut') . '-' . $sketchId;
 
-			$img = $this->_attachmentMediaUrl($sketch, $mediaBase, 'presentation');
+			$img = $this->_attachmentMediaUrl($sketch, $mediaBase, 'presentation', $isMirror);
 			if ($img === '') {
-				$img = $this->_attachmentMediaUrl($sketch, $mediaBase, null);
+				$img = $this->_attachmentMediaUrl($sketch, $mediaBase, null, $isMirror);
 			}
 			if ($img === '') {
 				$storeySuffix = $storey !== '' && $storey !== null ? $storey : null;
-				$img = $mediaBase . '/' . (int) $project->getId() . '/' . ($storeySuffix ? 'sketch-' . $storeySuffix : 'sketch') . '.jpg';
+				$img = $mediaBase . '/' . (int) $project->getId() . '/'
+					. ($isMirror ? 'mirror/' : '')
+					. ($storeySuffix ? 'sketch-' . $storeySuffix : 'sketch') . '.jpg';
 			}
 
 			// viewBox must match the coordinate space of authorize room points (= natural image size).
@@ -4132,6 +4146,12 @@ class Project extends WWW\AbstractModule
 			$height = !empty($props['image_size']['height'])
 				? (int) $props['image_size']['height']
 				: 1000;
+			$mirrorOffsetX = !empty($authorizeMap[$sketchId]['width'])
+				? (float) $authorizeMap[$sketchId]['width']
+				: 0.0;
+			$mirrorOffsetY = !empty($authorizeMap[$sketchId]['height'])
+				? (float) $authorizeMap[$sketchId]['height']
+				: 0.0;
 
 			$rooms = array();
 			$extra = null;
@@ -4184,7 +4204,9 @@ class Project extends WWW\AbstractModule
 							$x = (float) $val['x'];
 							$y = (float) $val['y'];
 							if ($isMirror && $width > 0) {
-								$x = $width - $x;
+								// Match legacy SketchManager: width - (x - offsetX)
+								$x = $width - ($x - $mirrorOffsetX);
+								$y = $y - $mirrorOffsetY;
 							}
 							if ($x > $maxX) {
 								$maxX = $x;
