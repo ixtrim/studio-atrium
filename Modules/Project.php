@@ -1415,14 +1415,12 @@ class Project extends WWW\AbstractModule
 		}
 		
 				
-		$list = $this->_projectFinder->getList(
-			null,
-			true,
-			$request->getParam('page') - 1,
-			$request->getParam('limit'),
-		    $query,
-			$displayParams['sortOrder'],
+		$list = $this->_projectFinder->searchByQuery(
+			$query,
+			max(0, (int) $request->getParam('page') - 1),
+			(int) $request->getParam('limit'),
 			$displayParams['sortBy'],
+			$displayParams['sortOrder'],
 			\StudioAtrium_Entity_EntityBase_Project::STATUS_PUBLISHED
 		);
 		$responseContext->set('isSearch', 1);

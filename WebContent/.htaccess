@@ -471,7 +471,11 @@ RewriteRule ^/?archiwum/Forum/Projekt,([^,]*),([0-9]+).html$ index.php?module=fo
 RewriteRule ^/?pdf/projekt/(?:[^,\/]*),([0-9]+).html$ index.php?module=pdf&action=project&id=$1 [L,NS,QSA]
 RewriteRule  ^/?pdf/projekt/(?:[^,\/]*),([0-9]+),lustro.html$ index.php?module=pdf&action=project&id=$1&version=mirror [L,NS,QSA]
 
-#clicksearch (moved here from /wynik-wyszukiwania/ — matches the old site's URL)
+# search results always under /projekty-domow/szukaj/
+# - ?query=… → text name search (action=search)
+# - filter params / no query → click-search
+RewriteCond %{QUERY_STRING} (^|&)query=
+RewriteRule ^/?projekty-domow/szukaj/?$ index.php?module=project&action=search [L,NS,QSA]
 RewriteRule ^/?projekty-domow/szukaj/?$ index.php?module=project&action=click_search [L,NS,QSA]
 RewriteRule ^/?projekty-domow/szukaj/(b|l|e{1}),(i|n|u{1}),(a|d{1})(,([0-9]*))?$ index.php?module=project&action=click_search&display_type=$1&sort_by=$2&sort_order=$3&page=$5 [L,NS,QSA]
 

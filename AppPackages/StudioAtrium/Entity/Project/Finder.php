@@ -104,6 +104,81 @@ class Finder
     }
 
     /**
+     * Text/name search used by doSearch (/projekty-domow/szukaj/?query=…).
+     * Matches name, alternate_name, search_names, and symbol.
+     *
+     * @param string $query
+     * @param int $page 0-based page index
+     * @param int $limit
+     * @param string $sortBy id|name|usable_area
+     * @param string $sortOrder ASC|DESC
+     * @param string $status
+     */
+    public function searchByQuery(
+        $query,
+        $page = 0,
+        $limit = 12,
+        $sortBy = 'id',
+        $sortOrder = 'ASC',
+        $status = Project::STATUS_PUBLISHED
+    ): EntityCollection {
+        $query = trim((string) $query);
+        if ($query === '') {
+            return new EntityCollection([], 0);
+        }
+
+        $like = '%' . $query . '%';
+        $params = [
+            ':status' => $status,
+            ':q1' => $like,
+            ':q2' => $like,
+            ':q3' => $like,
+            ':q4' => $like,
+            ':q5' => $like,
+        ];
+
+        $where = 'status = :status AND ('
+            . 'name LIKE :q1 OR alternate_name LIKE :q2 OR search_names LIKE :q3'
+            . ' OR CONCAT(IFNULL(symbol_alpha,\'\'), IFNULL(symbol_num,\'\')) LIKE :q4'
+            . ' OR CONCAT(IFNULL(symbol_alpha,\'\'), \'-\', IFNULL(symbol_num,\'\')) LIKE :q5'
+            . ')';
+
+        $countStmt = $this->pdo->prepare("SELECT COUNT(*) FROM project WHERE $where");
+        $countStmt->execute($params);
+        $total = (int) $countStmt->fetchColumn();
+        if ($total === 0) {
+            return new EntityCollection([], 0);
+        }
+
+        $sortOrderSql = (strtoupper((string) $sortOrder) === 'DESC') ? 'DESC' : 'ASC';
+        if ($sortBy === 'name') {
+            $orderSql = " ORDER BY name $sortOrderSql, id $sortOrderSql";
+        } else {
+            $orderSql = " ORDER BY id $sortOrderSql";
+        }
+
+        $limit = max(1, (int) $limit);
+        $page = max(0, (int) $page);
+        $offset = $page * $limit;
+
+        $stmt = $this->pdo->prepare(
+            "SELECT * FROM project WHERE $where$orderSql LIMIT $limit OFFSET $offset"
+        );
+        $stmt->execute($params);
+        $rows = $stmt->fetchAll();
+
+        return new EntityCollection(array_map([$this, 'hydrate'], $rows), $total);
+    }
+
+    /**
+     * Autocomplete helper for GetProjectNames.
+     */
+    public function getListByNamePart($query, $limit = 20): EntityCollection
+    {
+        return $this->searchByQuery($query, 0, (int) $limit, 'name', 'ASC');
+    }
+
+    /**
      * Runs the "click search" filter query. The actual DB query lives in
      * site-backend's ProjectSearch module (called over HTTP, server-to-server) —
      * see AppPackages/StudioAtrium/Application/Helper/ClickSearchMap.php for how

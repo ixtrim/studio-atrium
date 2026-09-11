@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-08-24 15:53:49
+/* Smarty version 3.1.48, created on 2026-09-23 13:49:14
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/FeaturedVideo.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6a8c4ced1703f6_92808913',
+  'unifunc' => 'content_6ab3bcbab262c5_36731090',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c79ee1b69841d335bf301b734e7dacd00b0e784f' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/FeaturedVideo.tpl',
-      1 => 1787579499,
+      1 => 1788714906,
       2 => 'file',
     ),
   ),
@@ -20,11 +20,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6a8c4ced1703f6_92808913 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6ab3bcbab262c5_36731090 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="bg-[var(--brand-blue)]" id="featured-video">
-    <div class="max-w-[1280px] mx-auto px-12 py-16 grid md:grid-cols-2 gap-12 items-center">
+    <div class="max-w-[1480px] mx-auto px-12 py-16 grid md:grid-cols-2 gap-12 items-center">
         <div>
-            <h2 class="text-[34px] font-bold text-[var(--brand-darker)] leading-[1.25]"><?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'nl2br' ][ 0 ], array( htmlspecialchars($_smarty_tpl->tpl_vars['featured_video']->value['title'], ENT_QUOTES, 'UTF-8', true) ));?>
+            <h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight leading-[1.25] uppercase"><?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'nl2br' ][ 0 ], array( htmlspecialchars($_smarty_tpl->tpl_vars['featured_video']->value['title'], ENT_QUOTES, 'UTF-8', true) ));?>
 </h2>
         </div>
         <div
@@ -53,7 +53,7 @@ function content_6a8c4ced1703f6_92808913 (Smarty_Internal_Template $_smarty_tpl)
                 <div class="absolute bottom-0 left-0 right-0 bg-[var(--brand-red)] text-white px-4 py-2 flex items-center justify-between z-10">
                     <div class="font-black text-[22px] tracking-wide"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['featured_video']->value['badge_name'], ENT_QUOTES, 'UTF-8', true);?>
  <span
-                            class="text-[14px] font-normal align-middle"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['featured_video']->value['badge_area'], ENT_QUOTES, 'UTF-8', true);?>
+                            class="text-[16px] font-normal align-middle"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['featured_video']->value['badge_area'], ENT_QUOTES, 'UTF-8', true);?>
 </span></div>
                     <div class="text-[13px]"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['featured_video']->value['badge_site'], ENT_QUOTES, 'UTF-8', true);?>
 </div>

@@ -20,6 +20,9 @@ class UrlGenerator
             $url = $this->garageUrl($params);
         } elseif ($module === 'project' && $action === 'other') {
             $url = $this->otherProjectUrl($params);
+        } elseif ($module === 'project' && in_array($action, ['search', 'click_search', 'ClickSearch'], true)) {
+            // Name search + click-search share /projekty-domow/szukaj/ (?query=… or filter params)
+            $url = '/projekty-domow/szukaj/';
         } elseif ($module === 'project' && $action === 'realizations') {
             $url = '/projekty-domow/realizacje/';
         } elseif ($module === 'panel' && $action === 'account') {
