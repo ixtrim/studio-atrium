@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-07 22:20:11
+/* Smarty version 3.1.48, created on 2026-09-23 17:01:47
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/CategoryFilterSidebar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6a9f1c7be1e961_79491524',
+  'unifunc' => 'content_6ab3e9db2799f2_68924535',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9897d471ef4854389417b5d53846657d68157cf2' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/CategoryFilterSidebar.tpl',
-      1 => 1788812365,
+      1 => 1790175628,
       2 => 'file',
     ),
   ),
@@ -20,10 +20,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6a9f1c7be1e961_79491524 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6ab3e9db2799f2_68924535 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('af', array());
 if ((isset($_smarty_tpl->tpl_vars['active_filters']->value)) && $_smarty_tpl->tpl_vars['active_filters']->value) {
 $_smarty_tpl->_assignInScope('af', $_smarty_tpl->tpl_vars['active_filters']->value);
+}
+if (!(isset($_smarty_tpl->tpl_vars['filter_groups']->value)) || !$_smarty_tpl->tpl_vars['filter_groups']->value) {
+$_smarty_tpl->_assignInScope('filter_groups', array());
 }?>
 <div class="bg-[#ececec] text-[#222] overflow-hidden border border-[#e0e0e0]" id="cat-filter-sidebar">
 	<div class="px-4 pt-4 pb-3 border-b border-black/10 bg-white">
@@ -59,81 +62,56 @@ $_smarty_tpl->_assignInScope('af', $_smarty_tpl->tpl_vars['active_filters']->val
 	</div>
 
 	<div class="cat-filter-groups">
-		<div class="border-b border-black/10 bg-white cat-filter-group" data-open="1">
-			<button type="button" class="cat-filter-toggle w-full flex items-center justify-between px-4 py-3 text-[13px] hover:bg-[#f5f5f5] text-left transition-colors bg-transparent border-0 cursor-pointer text-[#222]"><span>Typ projektu</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4 opacity-60 transition-transform cat-filter-chevron rotate-180" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button>
-			<div class="cat-filter-options px-4 pb-3 pt-1 space-y-1.5 bg-[#f5f5f5]">
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="typ_projektu" value="parterowe"<?php if ((isset($_smarty_tpl->tpl_vars['af']->value['typ_projektu'])) && in_array('parterowe',(array)$_smarty_tpl->tpl_vars['af']->value['typ_projektu'])) {?> checked<?php }?>><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">Parterowy</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="typ_projektu" value="z_poddaszem"<?php if ((isset($_smarty_tpl->tpl_vars['af']->value['typ_projektu'])) && in_array('z_poddaszem',(array)$_smarty_tpl->tpl_vars['af']->value['typ_projektu'])) {?> checked<?php }?>><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">Z poddaszem</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="typ_projektu" value="pietrowe"<?php if ((isset($_smarty_tpl->tpl_vars['af']->value['typ_projektu'])) && in_array('pietrowe',(array)$_smarty_tpl->tpl_vars['af']->value['typ_projektu'])) {?> checked<?php }?>><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">Piętrowy</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="typ_projektu" value="z_garazem"<?php if ((isset($_smarty_tpl->tpl_vars['af']->value['typ_projektu'])) && in_array('z_garazem',(array)$_smarty_tpl->tpl_vars['af']->value['typ_projektu'])) {?> checked<?php }?>><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">Z garażem</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="typ_projektu" value="szkieletowe"<?php if ((isset($_smarty_tpl->tpl_vars['af']->value['typ_projektu'])) && in_array('szkieletowe',(array)$_smarty_tpl->tpl_vars['af']->value['typ_projektu'])) {?> checked<?php }?>><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">Szkieletowy</span></label>
+		<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['filter_groups']->value, 'group');
+$_smarty_tpl->tpl_vars['group']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['group']->value) {
+$_smarty_tpl->tpl_vars['group']->do_else = false;
+?>
+			<?php $_smarty_tpl->_assignInScope('groupHasActive', false);?>
+			<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['group']->value['options'], 'opt');
+$_smarty_tpl->tpl_vars['opt']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['opt']->value) {
+$_smarty_tpl->tpl_vars['opt']->do_else = false;
+?>
+				<?php if ((isset($_smarty_tpl->tpl_vars['af']->value[$_smarty_tpl->tpl_vars['opt']->value['name']])) && in_array($_smarty_tpl->tpl_vars['opt']->value['value'],(array)$_smarty_tpl->tpl_vars['af']->value[$_smarty_tpl->tpl_vars['opt']->value['name']])) {
+$_smarty_tpl->_assignInScope('groupHasActive', true);
+}?>
+			<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+			<?php $_smarty_tpl->_assignInScope('isOpen', $_smarty_tpl->tpl_vars['group']->value['open'] || $_smarty_tpl->tpl_vars['groupHasActive']->value);?>
+			<div class="border-b border-black/10 last:border-b-0 bg-white cat-filter-group" data-open="<?php if ($_smarty_tpl->tpl_vars['isOpen']->value) {?>1<?php } else { ?>0<?php }?>">
+				<button type="button" class="cat-filter-toggle w-full flex items-center justify-between px-4 py-3 text-[13px] hover:bg-[#f5f5f5] text-left transition-colors bg-transparent border-0 cursor-pointer text-[#222]">
+					<span><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['group']->value['title'], ENT_QUOTES, 'UTF-8', true);?>
+</span>
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4 opacity-60 transition-transform cat-filter-chevron<?php if ($_smarty_tpl->tpl_vars['isOpen']->value) {?> rotate-180<?php }?>" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+				</button>
+				<div class="cat-filter-options px-4 pb-3 pt-1 space-y-1.5 bg-[#f5f5f5]<?php if (!$_smarty_tpl->tpl_vars['isOpen']->value) {?> hidden<?php }?>">
+					<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['group']->value['options'], 'opt');
+$_smarty_tpl->tpl_vars['opt']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['opt']->value) {
+$_smarty_tpl->tpl_vars['opt']->do_else = false;
+?>
+						<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer">
+							<input type="checkbox" class="js-cat-filter sr-only" name="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['opt']->value['name'], ENT_QUOTES, 'UTF-8', true);?>
+" value="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['opt']->value['value'], ENT_QUOTES, 'UTF-8', true);?>
+"<?php if ((isset($_smarty_tpl->tpl_vars['af']->value[$_smarty_tpl->tpl_vars['opt']->value['name']])) && in_array($_smarty_tpl->tpl_vars['opt']->value['value'],(array)$_smarty_tpl->tpl_vars['af']->value[$_smarty_tpl->tpl_vars['opt']->value['name']])) {?> checked<?php }?>>
+							<span class="cat-check" aria-hidden="true"></span>
+							<span class="cat-filter-label"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['opt']->value['label'], ENT_QUOTES, 'UTF-8', true);?>
+</span>
+							<span class="cat-filter-count" aria-hidden="true">(0)</span>
+						</label>
+					<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+				</div>
 			</div>
-		</div>
-		<div class="border-b border-black/10 bg-white cat-filter-group" data-open="0">
-			<button type="button" class="cat-filter-toggle w-full flex items-center justify-between px-4 py-3 text-[13px] hover:bg-[#f5f5f5] text-left transition-colors bg-transparent border-0 cursor-pointer text-[#222]"><span>Typ dachu</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4 opacity-60 transition-transform cat-filter-chevron" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button>
-			<div class="cat-filter-options px-4 pb-3 pt-1 space-y-1.5 bg-[#f5f5f5] hidden">
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="typdachu" value="dwuspadowy"<?php if ((isset($_smarty_tpl->tpl_vars['af']->value['typdachu'])) && in_array('dwuspadowy',(array)$_smarty_tpl->tpl_vars['af']->value['typdachu'])) {?> checked<?php }?>><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">Dwuspadowy</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="typdachu" value="wielospadowy"<?php if ((isset($_smarty_tpl->tpl_vars['af']->value['typdachu'])) && in_array('wielospadowy',(array)$_smarty_tpl->tpl_vars['af']->value['typdachu'])) {?> checked<?php }?>><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">Czterospadowy / wielospadowy</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="typdachu" value="stropodach"<?php if ((isset($_smarty_tpl->tpl_vars['af']->value['typdachu'])) && in_array('stropodach',(array)$_smarty_tpl->tpl_vars['af']->value['typdachu'])) {?> checked<?php }?>><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">Płaski</span></label>
-			</div>
-		</div>
-		<div class="border-b border-black/10 bg-white cat-filter-group" data-open="0">
-			<button type="button" class="cat-filter-toggle w-full flex items-center justify-between px-4 py-3 text-[13px] hover:bg-[#f5f5f5] text-left transition-colors bg-transparent border-0 cursor-pointer text-[#222]"><span>Powierzchnia</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4 opacity-60 transition-transform cat-filter-chevron" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button>
-			<div class="cat-filter-options px-4 pb-3 pt-1 space-y-1.5 bg-[#f5f5f5] hidden">
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="pow_bucket" value="0-100"<?php if ((isset($_smarty_tpl->tpl_vars['af']->value['pow_bucket'])) && in_array('0-100',(array)$_smarty_tpl->tpl_vars['af']->value['pow_bucket'])) {?> checked<?php }?>><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">do 100 m²</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="pow_bucket" value="100-150"<?php if ((isset($_smarty_tpl->tpl_vars['af']->value['pow_bucket'])) && in_array('100-150',(array)$_smarty_tpl->tpl_vars['af']->value['pow_bucket'])) {?> checked<?php }?>><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">100–150 m²</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="pow_bucket" value="150-200"<?php if ((isset($_smarty_tpl->tpl_vars['af']->value['pow_bucket'])) && in_array('150-200',(array)$_smarty_tpl->tpl_vars['af']->value['pow_bucket'])) {?> checked<?php }?>><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">150–200 m²</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="pow_bucket" value="200-"<?php if ((isset($_smarty_tpl->tpl_vars['af']->value['pow_bucket'])) && in_array('200-',(array)$_smarty_tpl->tpl_vars['af']->value['pow_bucket'])) {?> checked<?php }?>><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">powyżej 200 m²</span></label>
-			</div>
-		</div>
-		<div class="border-b border-black/10 bg-white cat-filter-group" data-open="0">
-			<button type="button" class="cat-filter-toggle w-full flex items-center justify-between px-4 py-3 text-[13px] hover:bg-[#f5f5f5] text-left transition-colors bg-transparent border-0 cursor-pointer text-[#222]"><span>Szerokość działki (maks.)</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4 opacity-60 transition-transform cat-filter-chevron" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button>
-			<div class="cat-filter-options px-4 pb-3 pt-1 space-y-1.5 bg-[#f5f5f5] hidden">
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="dzialka_szer" value="18"<?php if ((isset($_smarty_tpl->tpl_vars['af']->value['dzialka_szer'])) && in_array('18',(array)$_smarty_tpl->tpl_vars['af']->value['dzialka_szer'])) {?> checked<?php }?>><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">wąska (do 18 m)</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="dzialka_szer" value="25"<?php if ((isset($_smarty_tpl->tpl_vars['af']->value['dzialka_szer'])) && in_array('25',(array)$_smarty_tpl->tpl_vars['af']->value['dzialka_szer'])) {?> checked<?php }?>><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">standardowa (do 25 m)</span></label>
-			</div>
-		</div>
-		<div class="border-b border-black/10 bg-white cat-filter-group" data-open="0">
-			<button type="button" class="cat-filter-toggle w-full flex items-center justify-between px-4 py-3 text-[13px] hover:bg-[#f5f5f5] text-left transition-colors bg-transparent border-0 cursor-pointer text-[#222]"><span>Maks. szerokość elewacji</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4 opacity-60 transition-transform cat-filter-chevron" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button>
-			<div class="cat-filter-options px-4 pb-3 pt-1 space-y-1.5 bg-[#f5f5f5] hidden">
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="front_szer" value="10"<?php if ((isset($_smarty_tpl->tpl_vars['af']->value['front_szer'])) && in_array('10',(array)$_smarty_tpl->tpl_vars['af']->value['front_szer'])) {?> checked<?php }?>><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">do 10 m</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="front_szer" value="14"<?php if ((isset($_smarty_tpl->tpl_vars['af']->value['front_szer'])) && in_array('14',(array)$_smarty_tpl->tpl_vars['af']->value['front_szer'])) {?> checked<?php }?>><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">do 14 m</span></label>
-			</div>
-		</div>
-		<div class="border-b border-black/10 bg-white cat-filter-group" data-open="0">
-			<button type="button" class="cat-filter-toggle w-full flex items-center justify-between px-4 py-3 text-[13px] hover:bg-[#f5f5f5] text-left transition-colors bg-transparent border-0 cursor-pointer text-[#222]"><span>Pomieszczenia</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4 opacity-60 transition-transform cat-filter-chevron" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button>
-			<div class="cat-filter-options px-4 pb-3 pt-1 space-y-1.5 bg-[#f5f5f5] hidden">
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="iloscpokoinaparterze" value="2"<?php if ((isset($_smarty_tpl->tpl_vars['af']->value['iloscpokoinaparterze'])) && in_array('2',(array)$_smarty_tpl->tpl_vars['af']->value['iloscpokoinaparterze'])) {?> checked<?php }?>><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">2 pokoje na parterze</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="iloscpokoinaparterze" value="3"<?php if ((isset($_smarty_tpl->tpl_vars['af']->value['iloscpokoinaparterze'])) && in_array('3',(array)$_smarty_tpl->tpl_vars['af']->value['iloscpokoinaparterze'])) {?> checked<?php }?>><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">3 pokoje na parterze</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="iloscpokoinaparterze" value="4"<?php if ((isset($_smarty_tpl->tpl_vars['af']->value['iloscpokoinaparterze'])) && in_array('4',(array)$_smarty_tpl->tpl_vars['af']->value['iloscpokoinaparterze'])) {?> checked<?php }?>><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">4 pokoje na parterze</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="spizarnia" value="1"<?php if ((isset($_smarty_tpl->tpl_vars['af']->value['spizarnia'])) && in_array('1',(array)$_smarty_tpl->tpl_vars['af']->value['spizarnia'])) {?> checked<?php }?>><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">Spiżarnia</span></label>
-			</div>
-		</div>
-		<div class="border-b border-black/10 bg-white cat-filter-group" data-open="0">
-			<button type="button" class="cat-filter-toggle w-full flex items-center justify-between px-4 py-3 text-[13px] hover:bg-[#f5f5f5] text-left transition-colors bg-transparent border-0 cursor-pointer text-[#222]"><span>Wysokość budynku</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4 opacity-60 transition-transform cat-filter-chevron" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button>
-			<div class="cat-filter-options px-4 pb-3 pt-1 space-y-1.5 bg-[#f5f5f5] hidden">
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="wysokoscbudynku" value="2"<?php if ((isset($_smarty_tpl->tpl_vars['af']->value['wysokoscbudynku'])) && in_array('2',(array)$_smarty_tpl->tpl_vars['af']->value['wysokoscbudynku'])) {?> checked<?php }?>><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">do 7 m</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="wysokoscbudynku" value="4"<?php if ((isset($_smarty_tpl->tpl_vars['af']->value['wysokoscbudynku'])) && in_array('4',(array)$_smarty_tpl->tpl_vars['af']->value['wysokoscbudynku'])) {?> checked<?php }?>><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">7–9 m</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="wysokoscbudynku" value="6"<?php if ((isset($_smarty_tpl->tpl_vars['af']->value['wysokoscbudynku'])) && in_array('6',(array)$_smarty_tpl->tpl_vars['af']->value['wysokoscbudynku'])) {?> checked<?php }?>><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">powyżej 9 m</span></label>
-			</div>
-		</div>
-		<div class="border-b border-black/10 bg-white cat-filter-group" data-open="0">
-			<button type="button" class="cat-filter-toggle w-full flex items-center justify-between px-4 py-3 text-[13px] hover:bg-[#f5f5f5] text-left transition-colors bg-transparent border-0 cursor-pointer text-[#222]"><span>Kąt nachylenia dachu</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4 opacity-60 transition-transform cat-filter-chevron" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button>
-			<div class="cat-filter-options px-4 pb-3 pt-1 space-y-1.5 bg-[#f5f5f5] hidden">
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="katnachyleniadachu" value="1"<?php if ((isset($_smarty_tpl->tpl_vars['af']->value['katnachyleniadachu'])) && in_array('1',(array)$_smarty_tpl->tpl_vars['af']->value['katnachyleniadachu'])) {?> checked<?php }?>><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">do 30°</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="katnachyleniadachu" value="2"<?php if ((isset($_smarty_tpl->tpl_vars['af']->value['katnachyleniadachu'])) && in_array('2',(array)$_smarty_tpl->tpl_vars['af']->value['katnachyleniadachu'])) {?> checked<?php }?>><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">30–35°</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="katnachyleniadachu" value="3"<?php if ((isset($_smarty_tpl->tpl_vars['af']->value['katnachyleniadachu'])) && in_array('3',(array)$_smarty_tpl->tpl_vars['af']->value['katnachyleniadachu'])) {?> checked<?php }?>><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">35–40°</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="katnachyleniadachu" value="5"<?php if ((isset($_smarty_tpl->tpl_vars['af']->value['katnachyleniadachu'])) && in_array('5',(array)$_smarty_tpl->tpl_vars['af']->value['katnachyleniadachu'])) {?> checked<?php }?>><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">powyżej 45°</span></label>
-			</div>
-		</div>
-		<div class="border-b border-black/10 last:border-b-0 bg-white cat-filter-group" data-open="0">
-			<button type="button" class="cat-filter-toggle w-full flex items-center justify-between px-4 py-3 text-[13px] hover:bg-[#f5f5f5] text-left transition-colors bg-transparent border-0 cursor-pointer text-[#222]"><span>Rodzaj stropu</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4 opacity-60 transition-transform cat-filter-chevron" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button>
-			<div class="cat-filter-options px-4 pb-3 pt-1 space-y-1.5 bg-[#f5f5f5] hidden">
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="rodzajstropu" value="drewniany_belkowy"<?php if ((isset($_smarty_tpl->tpl_vars['af']->value['rodzajstropu'])) && in_array('drewniany_belkowy',(array)$_smarty_tpl->tpl_vars['af']->value['rodzajstropu'])) {?> checked<?php }?>><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">Drewniany</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="rodzajstropu" value="plyta_zelbetowa"<?php if ((isset($_smarty_tpl->tpl_vars['af']->value['rodzajstropu'])) && in_array('plyta_zelbetowa',(array)$_smarty_tpl->tpl_vars['af']->value['rodzajstropu'])) {?> checked<?php }?>><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">Żelbetowy</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="rodzajstropu" value="gestozebrowy"<?php if ((isset($_smarty_tpl->tpl_vars['af']->value['rodzajstropu'])) && in_array('gestozebrowy',(array)$_smarty_tpl->tpl_vars['af']->value['rodzajstropu'])) {?> checked<?php }?>><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">Gęstożebrowy / Teriva</span></label>
-			</div>
-		</div>
+		<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 	</div>
 	<noscript>
 		<div class="px-4 py-3 bg-white border-t border-black/10">

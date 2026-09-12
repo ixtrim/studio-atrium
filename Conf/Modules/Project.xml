@@ -118,26 +118,136 @@
 				<validator name="String" />
 			</param>
 			<param name="dzialka_szer" required="no">
-				<validator name="Number" />
+				<validator name="String" />
+			</param>
+			<param name="dzialka_dl" required="no">
+				<validator name="String" />
 			</param>
 			<param name="front_szer" required="no">
-				<validator name="Number" />
+				<validator name="String" />
 			</param>
 			<param name="iloscpokoinaparterze" required="no">
-				<validator name="Integer" />
+				<validator name="String" />
+			</param>
+			<param name="iloscpokoinaiikondygnacji" required="no">
+				<validator name="String" />
 			</param>
 			<param name="wysokoscbudynku" required="no">
-				<validator name="Integer" />
+				<validator name="String" />
 			</param>
 			<param name="katnachyleniadachu" required="no">
-				<validator name="Integer" />
+				<validator name="String" />
 			</param>
 			<param name="rodzajstropu" required="no">
 				<validator name="String" />
 			</param>
-			<param name="spizarnia" required="no">
+			<param name="kalenica" required="no">
+				<validator name="String" />
+			</param>
+			<param name="garaz" required="no">
+				<validator name="String" />
+			</param>
+			<param name="piwnica" required="no">
+				<validator name="String" />
+			</param>
+			<param name="kolekcje" required="no">
+				<validator name="String" />
+			</param>
+			<param name="balkon" required="no"><validator name="String" /></param>
+			<param name="duza_kotlownia" required="no"><validator name="String" /></param>
+			<param name="garderoba" required="no"><validator name="String" /></param>
+			<param name="kotlownia" required="no"><validator name="String" /></param>
+			<param name="kuchniaodfrontu" required="no"><validator name="String" /></param>
+			<param name="kuchniaodogrodu" required="no"><validator name="String" /></param>
+			<param name="lukarna" required="no"><validator name="String" /></param>
+			<param name="masterbedroom" required="no"><validator name="String" /></param>
+			<param name="od_poludnia" required="no"><validator name="String" /></param>
+			<param name="antresola" required="no"><validator name="String" /></param>
+			<param name="osobnewc" required="no"><validator name="String" /></param>
+			<param name="pralnia" required="no"><validator name="String" /></param>
+			<param name="spizarnia" required="no"><validator name="String" /></param>
+			<param name="wiatagarazowa" required="no"><validator name="String" /></param>
+			<param name="zantresola" required="no"><validator name="String" /></param>
+			<param name="zestrychem" required="no"><validator name="String" /></param>
+			<param name="zadaszonytaras" required="no"><validator name="String" /></param>
+		</action>
+
+		<action name="FilterCounts">
+			<allowed_methods get="yes" post="yes" />
+			<param name="category" required="no" default="projekty-domow">
+				<validator name="String" />
+			</param>
+			<param name="all" required="no" default="0">
 				<validator name="Integer" />
 			</param>
+			<param name="typ_projektu" required="no">
+				<validator name="String" />
+			</param>
+			<param name="typdachu" required="no">
+				<validator name="String" />
+			</param>
+			<param name="pow_min" required="no">
+				<validator name="Number" />
+			</param>
+			<param name="pow_max" required="no">
+				<validator name="Number" />
+			</param>
+			<param name="pow_bucket" required="no">
+				<validator name="String" />
+			</param>
+			<param name="dzialka_szer" required="no">
+				<validator name="String" />
+			</param>
+			<param name="dzialka_dl" required="no">
+				<validator name="String" />
+			</param>
+			<param name="front_szer" required="no">
+				<validator name="String" />
+			</param>
+			<param name="iloscpokoinaparterze" required="no">
+				<validator name="String" />
+			</param>
+			<param name="iloscpokoinaiikondygnacji" required="no">
+				<validator name="String" />
+			</param>
+			<param name="wysokoscbudynku" required="no">
+				<validator name="String" />
+			</param>
+			<param name="katnachyleniadachu" required="no">
+				<validator name="String" />
+			</param>
+			<param name="rodzajstropu" required="no">
+				<validator name="String" />
+			</param>
+			<param name="kalenica" required="no">
+				<validator name="String" />
+			</param>
+			<param name="garaz" required="no">
+				<validator name="String" />
+			</param>
+			<param name="piwnica" required="no">
+				<validator name="String" />
+			</param>
+			<param name="kolekcje" required="no">
+				<validator name="String" />
+			</param>
+			<param name="balkon" required="no"><validator name="String" /></param>
+			<param name="duza_kotlownia" required="no"><validator name="String" /></param>
+			<param name="garderoba" required="no"><validator name="String" /></param>
+			<param name="kotlownia" required="no"><validator name="String" /></param>
+			<param name="kuchniaodfrontu" required="no"><validator name="String" /></param>
+			<param name="kuchniaodogrodu" required="no"><validator name="String" /></param>
+			<param name="lukarna" required="no"><validator name="String" /></param>
+			<param name="masterbedroom" required="no"><validator name="String" /></param>
+			<param name="od_poludnia" required="no"><validator name="String" /></param>
+			<param name="antresola" required="no"><validator name="String" /></param>
+			<param name="osobnewc" required="no"><validator name="String" /></param>
+			<param name="pralnia" required="no"><validator name="String" /></param>
+			<param name="spizarnia" required="no"><validator name="String" /></param>
+			<param name="wiatagarazowa" required="no"><validator name="String" /></param>
+			<param name="zantresola" required="no"><validator name="String" /></param>
+			<param name="zestrychem" required="no"><validator name="String" /></param>
+			<param name="zadaszonytaras" required="no"><validator name="String" /></param>
 		</action>
 		
 		<action name="House">
@@ -793,7 +903,7 @@
 						<value>["list.min.css?v=20201207"]</value>
 					</param>
 					<param name="smarty.js_includes">
-						<value>["jquery.fancybox.js","jquery.mCustomScrollbar.concat.min.js","list.js?v=20191009","category-filters.js?v=20260907d"]</value>
+						<value>["jquery.fancybox.js","jquery.mCustomScrollbar.concat.min.js","list.js?v=20191009","category-filters.js?v=20260923b"]</value>
 					</param>
 					<param name="smarty.showSearchSchema" value="1" />
 				</view>
@@ -803,6 +913,14 @@
 			</on_exec_error>
 		</action>
 		<action name="FilterList">
+			<on_exec_ok>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_ok>
+			<on_exec_error>
+				<view classname="Point7_WebApp_View_JSON" />
+			</on_exec_error>
+		</action>
+		<action name="FilterCounts">
 			<on_exec_ok>
 				<view classname="Point7_WebApp_View_JSON" />
 			</on_exec_ok>

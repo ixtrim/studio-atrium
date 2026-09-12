@@ -155,7 +155,8 @@ class Project
 
     public static function getProjectUID(int $id): int
     {
-        return $id;
+        // Attachment owner_uid slot formula (see Project::ATTACHMENT_SLOT).
+        return $id * 256 + 2;
     }
 
     public static function getCsCloudParams(): array

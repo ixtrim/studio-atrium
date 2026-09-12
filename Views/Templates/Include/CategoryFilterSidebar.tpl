@@ -1,5 +1,6 @@
 {$af = []}
 {if isset($active_filters) && $active_filters}{$af = $active_filters}{/if}
+{if !isset($filter_groups) || !$filter_groups}{$filter_groups = []}{/if}
 <div class="bg-[#ececec] text-[#222] overflow-hidden border border-[#e0e0e0]" id="cat-filter-sidebar">
 	<div class="px-4 pt-4 pb-3 border-b border-black/10 bg-white">
 		<div class="text-[14px] font-bold mb-2">Znajdź idealny projekt</div>
@@ -32,81 +33,29 @@
 	</div>
 
 	<div class="cat-filter-groups">
-		<div class="border-b border-black/10 bg-white cat-filter-group" data-open="1">
-			<button type="button" class="cat-filter-toggle w-full flex items-center justify-between px-4 py-3 text-[13px] hover:bg-[#f5f5f5] text-left transition-colors bg-transparent border-0 cursor-pointer text-[#222]"><span>Typ projektu</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4 opacity-60 transition-transform cat-filter-chevron rotate-180" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button>
-			<div class="cat-filter-options px-4 pb-3 pt-1 space-y-1.5 bg-[#f5f5f5]">
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="typ_projektu" value="parterowe"{if isset($af.typ_projektu) && in_array('parterowe', (array)$af.typ_projektu)} checked{/if}><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">Parterowy</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="typ_projektu" value="z_poddaszem"{if isset($af.typ_projektu) && in_array('z_poddaszem', (array)$af.typ_projektu)} checked{/if}><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">Z poddaszem</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="typ_projektu" value="pietrowe"{if isset($af.typ_projektu) && in_array('pietrowe', (array)$af.typ_projektu)} checked{/if}><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">Piętrowy</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="typ_projektu" value="z_garazem"{if isset($af.typ_projektu) && in_array('z_garazem', (array)$af.typ_projektu)} checked{/if}><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">Z garażem</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="typ_projektu" value="szkieletowe"{if isset($af.typ_projektu) && in_array('szkieletowe', (array)$af.typ_projektu)} checked{/if}><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">Szkieletowy</span></label>
+		{foreach $filter_groups as $group}
+			{$groupHasActive = false}
+			{foreach $group.options as $opt}
+				{if isset($af[$opt.name]) && in_array($opt.value, (array)$af[$opt.name])}{$groupHasActive = true}{/if}
+			{/foreach}
+			{$isOpen = $group.open || $groupHasActive}
+			<div class="border-b border-black/10 last:border-b-0 bg-white cat-filter-group" data-open="{if $isOpen}1{else}0{/if}">
+				<button type="button" class="cat-filter-toggle w-full flex items-center justify-between px-4 py-3 text-[13px] hover:bg-[#f5f5f5] text-left transition-colors bg-transparent border-0 cursor-pointer text-[#222]">
+					<span>{$group.title|escape}</span>
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4 opacity-60 transition-transform cat-filter-chevron{if $isOpen} rotate-180{/if}" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+				</button>
+				<div class="cat-filter-options px-4 pb-3 pt-1 space-y-1.5 bg-[#f5f5f5]{if !$isOpen} hidden{/if}">
+					{foreach $group.options as $opt}
+						<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer">
+							<input type="checkbox" class="js-cat-filter sr-only" name="{$opt.name|escape}" value="{$opt.value|escape}"{if isset($af[$opt.name]) && in_array($opt.value, (array)$af[$opt.name])} checked{/if}>
+							<span class="cat-check" aria-hidden="true"></span>
+							<span class="cat-filter-label">{$opt.label|escape}</span>
+							<span class="cat-filter-count" aria-hidden="true">(0)</span>
+						</label>
+					{/foreach}
+				</div>
 			</div>
-		</div>
-		<div class="border-b border-black/10 bg-white cat-filter-group" data-open="0">
-			<button type="button" class="cat-filter-toggle w-full flex items-center justify-between px-4 py-3 text-[13px] hover:bg-[#f5f5f5] text-left transition-colors bg-transparent border-0 cursor-pointer text-[#222]"><span>Typ dachu</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4 opacity-60 transition-transform cat-filter-chevron" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button>
-			<div class="cat-filter-options px-4 pb-3 pt-1 space-y-1.5 bg-[#f5f5f5] hidden">
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="typdachu" value="dwuspadowy"{if isset($af.typdachu) && in_array('dwuspadowy', (array)$af.typdachu)} checked{/if}><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">Dwuspadowy</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="typdachu" value="wielospadowy"{if isset($af.typdachu) && in_array('wielospadowy', (array)$af.typdachu)} checked{/if}><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">Czterospadowy / wielospadowy</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="typdachu" value="stropodach"{if isset($af.typdachu) && in_array('stropodach', (array)$af.typdachu)} checked{/if}><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">Płaski</span></label>
-			</div>
-		</div>
-		<div class="border-b border-black/10 bg-white cat-filter-group" data-open="0">
-			<button type="button" class="cat-filter-toggle w-full flex items-center justify-between px-4 py-3 text-[13px] hover:bg-[#f5f5f5] text-left transition-colors bg-transparent border-0 cursor-pointer text-[#222]"><span>Powierzchnia</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4 opacity-60 transition-transform cat-filter-chevron" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button>
-			<div class="cat-filter-options px-4 pb-3 pt-1 space-y-1.5 bg-[#f5f5f5] hidden">
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="pow_bucket" value="0-100"{if isset($af.pow_bucket) && in_array('0-100', (array)$af.pow_bucket)} checked{/if}><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">do 100 m²</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="pow_bucket" value="100-150"{if isset($af.pow_bucket) && in_array('100-150', (array)$af.pow_bucket)} checked{/if}><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">100–150 m²</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="pow_bucket" value="150-200"{if isset($af.pow_bucket) && in_array('150-200', (array)$af.pow_bucket)} checked{/if}><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">150–200 m²</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="pow_bucket" value="200-"{if isset($af.pow_bucket) && in_array('200-', (array)$af.pow_bucket)} checked{/if}><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">powyżej 200 m²</span></label>
-			</div>
-		</div>
-		<div class="border-b border-black/10 bg-white cat-filter-group" data-open="0">
-			<button type="button" class="cat-filter-toggle w-full flex items-center justify-between px-4 py-3 text-[13px] hover:bg-[#f5f5f5] text-left transition-colors bg-transparent border-0 cursor-pointer text-[#222]"><span>Szerokość działki (maks.)</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4 opacity-60 transition-transform cat-filter-chevron" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button>
-			<div class="cat-filter-options px-4 pb-3 pt-1 space-y-1.5 bg-[#f5f5f5] hidden">
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="dzialka_szer" value="18"{if isset($af.dzialka_szer) && in_array('18', (array)$af.dzialka_szer)} checked{/if}><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">wąska (do 18 m)</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="dzialka_szer" value="25"{if isset($af.dzialka_szer) && in_array('25', (array)$af.dzialka_szer)} checked{/if}><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">standardowa (do 25 m)</span></label>
-			</div>
-		</div>
-		<div class="border-b border-black/10 bg-white cat-filter-group" data-open="0">
-			<button type="button" class="cat-filter-toggle w-full flex items-center justify-between px-4 py-3 text-[13px] hover:bg-[#f5f5f5] text-left transition-colors bg-transparent border-0 cursor-pointer text-[#222]"><span>Maks. szerokość elewacji</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4 opacity-60 transition-transform cat-filter-chevron" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button>
-			<div class="cat-filter-options px-4 pb-3 pt-1 space-y-1.5 bg-[#f5f5f5] hidden">
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="front_szer" value="10"{if isset($af.front_szer) && in_array('10', (array)$af.front_szer)} checked{/if}><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">do 10 m</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="front_szer" value="14"{if isset($af.front_szer) && in_array('14', (array)$af.front_szer)} checked{/if}><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">do 14 m</span></label>
-			</div>
-		</div>
-		<div class="border-b border-black/10 bg-white cat-filter-group" data-open="0">
-			<button type="button" class="cat-filter-toggle w-full flex items-center justify-between px-4 py-3 text-[13px] hover:bg-[#f5f5f5] text-left transition-colors bg-transparent border-0 cursor-pointer text-[#222]"><span>Pomieszczenia</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4 opacity-60 transition-transform cat-filter-chevron" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button>
-			<div class="cat-filter-options px-4 pb-3 pt-1 space-y-1.5 bg-[#f5f5f5] hidden">
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="iloscpokoinaparterze" value="2"{if isset($af.iloscpokoinaparterze) && in_array('2', (array)$af.iloscpokoinaparterze)} checked{/if}><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">2 pokoje na parterze</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="iloscpokoinaparterze" value="3"{if isset($af.iloscpokoinaparterze) && in_array('3', (array)$af.iloscpokoinaparterze)} checked{/if}><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">3 pokoje na parterze</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="iloscpokoinaparterze" value="4"{if isset($af.iloscpokoinaparterze) && in_array('4', (array)$af.iloscpokoinaparterze)} checked{/if}><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">4 pokoje na parterze</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="spizarnia" value="1"{if isset($af.spizarnia) && in_array('1', (array)$af.spizarnia)} checked{/if}><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">Spiżarnia</span></label>
-			</div>
-		</div>
-		<div class="border-b border-black/10 bg-white cat-filter-group" data-open="0">
-			<button type="button" class="cat-filter-toggle w-full flex items-center justify-between px-4 py-3 text-[13px] hover:bg-[#f5f5f5] text-left transition-colors bg-transparent border-0 cursor-pointer text-[#222]"><span>Wysokość budynku</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4 opacity-60 transition-transform cat-filter-chevron" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button>
-			<div class="cat-filter-options px-4 pb-3 pt-1 space-y-1.5 bg-[#f5f5f5] hidden">
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="wysokoscbudynku" value="2"{if isset($af.wysokoscbudynku) && in_array('2', (array)$af.wysokoscbudynku)} checked{/if}><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">do 7 m</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="wysokoscbudynku" value="4"{if isset($af.wysokoscbudynku) && in_array('4', (array)$af.wysokoscbudynku)} checked{/if}><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">7–9 m</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="wysokoscbudynku" value="6"{if isset($af.wysokoscbudynku) && in_array('6', (array)$af.wysokoscbudynku)} checked{/if}><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">powyżej 9 m</span></label>
-			</div>
-		</div>
-		<div class="border-b border-black/10 bg-white cat-filter-group" data-open="0">
-			<button type="button" class="cat-filter-toggle w-full flex items-center justify-between px-4 py-3 text-[13px] hover:bg-[#f5f5f5] text-left transition-colors bg-transparent border-0 cursor-pointer text-[#222]"><span>Kąt nachylenia dachu</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4 opacity-60 transition-transform cat-filter-chevron" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button>
-			<div class="cat-filter-options px-4 pb-3 pt-1 space-y-1.5 bg-[#f5f5f5] hidden">
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="katnachyleniadachu" value="1"{if isset($af.katnachyleniadachu) && in_array('1', (array)$af.katnachyleniadachu)} checked{/if}><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">do 30°</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="katnachyleniadachu" value="2"{if isset($af.katnachyleniadachu) && in_array('2', (array)$af.katnachyleniadachu)} checked{/if}><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">30–35°</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="katnachyleniadachu" value="3"{if isset($af.katnachyleniadachu) && in_array('3', (array)$af.katnachyleniadachu)} checked{/if}><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">35–40°</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="katnachyleniadachu" value="5"{if isset($af.katnachyleniadachu) && in_array('5', (array)$af.katnachyleniadachu)} checked{/if}><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">powyżej 45°</span></label>
-			</div>
-		</div>
-		<div class="border-b border-black/10 last:border-b-0 bg-white cat-filter-group" data-open="0">
-			<button type="button" class="cat-filter-toggle w-full flex items-center justify-between px-4 py-3 text-[13px] hover:bg-[#f5f5f5] text-left transition-colors bg-transparent border-0 cursor-pointer text-[#222]"><span>Rodzaj stropu</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4 opacity-60 transition-transform cat-filter-chevron" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button>
-			<div class="cat-filter-options px-4 pb-3 pt-1 space-y-1.5 bg-[#f5f5f5] hidden">
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="rodzajstropu" value="drewniany_belkowy"{if isset($af.rodzajstropu) && in_array('drewniany_belkowy', (array)$af.rodzajstropu)} checked{/if}><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">Drewniany</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="rodzajstropu" value="plyta_zelbetowa"{if isset($af.rodzajstropu) && in_array('plyta_zelbetowa', (array)$af.rodzajstropu)} checked{/if}><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">Żelbetowy</span></label>
-				<label class="cat-filter-opt w-full flex items-center justify-start gap-2 text-left text-[12px] py-1.5 px-1 cursor-pointer"><input type="checkbox" class="js-cat-filter sr-only" name="rodzajstropu" value="gestozebrowy"{if isset($af.rodzajstropu) && in_array('gestozebrowy', (array)$af.rodzajstropu)} checked{/if}><span class="cat-check" aria-hidden="true"></span><span class="cat-filter-label">Gęstożebrowy / Teriva</span></label>
-			</div>
-		</div>
+		{/foreach}
 	</div>
 	<noscript>
 		<div class="px-4 py-3 bg-white border-t border-black/10">

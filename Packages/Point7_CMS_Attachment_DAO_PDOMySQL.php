@@ -171,61 +171,160 @@ class Point7_CMS_Attachment_DAO_PDOMySQL
      * @param bool $onlyPublished  Only include attachments whose project is published
      * @param int $limit
      * @param bool $withOwner  Include owner project data in result
-     * @param bool $onlyMain  (ignored — reserved for future use)
-     * @param bool $asArray  (ignored — always returns array)
+     * @param bool $onlyMain  Prefer parent/main rows when possible
+     * @param bool $asArray  (ignored — always returns array rows)
+     * @param int $page 1-based page
+     * @return array{rows:array,total:int}
      */
     public function getAttachmentsByProfile(
-        string $profile,
-        bool $onlyPublished = true,
-        int $limit = 10,
-        bool $withOwner = true,
-        bool $onlyMain = false,
-        bool $asArray = true
-    ): array {
-        if ($withOwner) {
-            $sql = "SELECT a.*, p.id AS p_id, p.name AS p_name,
-                           p.symbol_alpha, p.symbol_num, p.type AS p_type, p.status AS p_status
-                    FROM `{$this->table}` a
-                    JOIN project p ON p.id = (a.owner_uid DIV 256)
-                    WHERE a.profile_name = :profile";
-            if ($onlyPublished) {
-                $sql .= " AND p.status = 'published'";
+        $profile,
+        $onlyPublished = true,
+        $limit = 10,
+        $withOwner = true,
+        $onlyMain = false,
+        $asArray = true,
+        $page = 1
+    ) {
+        return $this->queryAttachmentsByProfile(
+            (string) $profile,
+            array(),
+            (bool) $onlyPublished,
+            (int) $limit,
+            (bool) $withOwner,
+            (bool) $onlyMain,
+            max(1, (int) $page)
+        );
+    }
+
+    /**
+     * Same as getAttachmentsByProfile but restricted to owner_uid list.
+     *
+     * @param string $profile
+     * @param array $uidList
+     * @param bool $onlyPublished
+     * @param int $limit
+     * @param int $page
+     * @return array{rows:array,total:int}
+     */
+    public function getAttachmentsByProfileAndUid(
+        $profile,
+        array $uidList,
+        $onlyPublished = true,
+        $limit = 10,
+        $page = 1
+    ) {
+        $uids = array();
+        foreach ($uidList as $uid) {
+            $uid = (int) $uid;
+            if ($uid > 0) {
+                $uids[$uid] = $uid;
             }
-            $sql .= ' ORDER BY a.id DESC LIMIT :limit';
-
-            $stmt = $this->pdo()->prepare($sql);
-            $stmt->bindValue(':profile', $profile);
-            $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
-            $stmt->execute();
-            $rows = $stmt->fetchAll();
-
-            return array_map(function (array $row) {
-                return [
-                    'id'           => (int)$row['id'],
-                    'profile_name' => $row['profile_name'],
-                    'owner_uid'    => $row['owner_uid'],
-                    'filename'     => $row['filename'],
-                    'path'         => $row['path'] ?? '',
-                    'title'        => $row['title'] ?? '',
-                    'props'        => $row['props'] ?? null,
-                    'sorting'      => (int)($row['sorting'] ?? 0),
-                    'object'       => [
-                        'id'           => (int)$row['p_id'],
-                        'name'         => $row['p_name'],
-                        'symbol_alpha' => $row['symbol_alpha'],
-                        'symbol_num'   => $row['symbol_num'],
-                        'type'         => $row['p_type'],
-                        'status'       => $row['p_status'],
-                    ],
-                ];
-            }, $rows);
+        }
+        if (!$uids) {
+            return array('rows' => array(), 'total' => 0);
         }
 
-        $sql = "SELECT * FROM `{$this->table}` WHERE profile_name = :profile ORDER BY id DESC LIMIT :limit";
+        return $this->queryAttachmentsByProfile(
+            (string) $profile,
+            array_values($uids),
+            (bool) $onlyPublished,
+            (int) $limit,
+            true,
+            false,
+            max(1, (int) $page)
+        );
+    }
+
+    /**
+     * @param string $profile
+     * @param int[] $uidList empty = no uid filter
+     * @param bool $onlyPublished
+     * @param int $limit
+     * @param bool $withOwner
+     * @param bool $onlyMain
+     * @param int $page
+     * @return array{rows:array,total:int}
+     */
+    private function queryAttachmentsByProfile(
+        $profile,
+        array $uidList,
+        $onlyPublished,
+        $limit,
+        $withOwner,
+        $onlyMain,
+        $page
+    ) {
+        $limit = max(1, (int) $limit);
+        $offset = max(0, ($page - 1) * $limit);
+        $params = array(':profile' => $profile);
+        $uidSql = '';
+        if ($uidList) {
+            $placeholders = array();
+            foreach ($uidList as $i => $uid) {
+                $key = ':uid' . $i;
+                $placeholders[] = $key;
+                $params[$key] = (int) $uid;
+            }
+            $uidSql = ' AND a.owner_uid IN (' . implode(',', $placeholders) . ')';
+        }
+
+        $mainSql = $onlyMain ? ' AND (a.parent_attachment_id IS NULL OR a.parent_attachment_id = 0)' : '';
+
+        if ($withOwner) {
+            $from = "FROM `{$this->table}` a
+                    JOIN project p ON p.id = (a.owner_uid DIV 256)
+                    WHERE a.profile_name = :profile" . $uidSql . $mainSql;
+            if ($onlyPublished) {
+                $from .= " AND p.status = 'published'";
+            }
+
+            $countStmt = $this->pdo()->prepare('SELECT COUNT(*) ' . $from);
+            $countStmt->execute($params);
+            $total = (int) $countStmt->fetchColumn();
+
+            $sql = "SELECT a.*, p.id AS p_id, p.name AS p_name,
+                           p.symbol_alpha, p.symbol_num, p.type AS p_type, p.status AS p_status
+                    " . $from . ' ORDER BY a.id DESC LIMIT ' . (int) $limit . ' OFFSET ' . (int) $offset;
+            $stmt = $this->pdo()->prepare($sql);
+            $stmt->execute($params);
+            $rows = array_map(array($this, 'mapAttachmentProfileRow'), $stmt->fetchAll());
+            return array('rows' => $rows, 'total' => $total);
+        }
+
+        $from = "FROM `{$this->table}` a WHERE a.profile_name = :profile" . $uidSql . $mainSql;
+        $countStmt = $this->pdo()->prepare('SELECT COUNT(*) ' . $from);
+        $countStmt->execute($params);
+        $total = (int) $countStmt->fetchColumn();
+
+        $sql = 'SELECT a.* ' . $from . ' ORDER BY a.id DESC LIMIT ' . (int) $limit . ' OFFSET ' . (int) $offset;
         $stmt = $this->pdo()->prepare($sql);
-        $stmt->bindValue(':profile', $profile);
-        $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
-        $stmt->execute();
-        return $stmt->fetchAll();
+        $stmt->execute($params);
+        return array('rows' => $stmt->fetchAll(), 'total' => $total);
+    }
+
+    /**
+     * @param array $row
+     * @return array
+     */
+    private function mapAttachmentProfileRow(array $row)
+    {
+        return array(
+            'id'           => (int) $row['id'],
+            'profile_name' => $row['profile_name'],
+            'owner_uid'    => $row['owner_uid'],
+            'filename'     => $row['filename'],
+            'path'         => isset($row['path']) ? $row['path'] : '',
+            'title'        => isset($row['title']) ? $row['title'] : '',
+            'props'        => isset($row['props']) ? $row['props'] : null,
+            'sorting'      => (int) (isset($row['sorting']) ? $row['sorting'] : 0),
+            'object'       => array(
+                'id'           => (int) $row['p_id'],
+                'name'         => $row['p_name'],
+                'symbol_alpha' => $row['symbol_alpha'],
+                'symbol_num'   => $row['symbol_num'],
+                'type'         => $row['p_type'],
+                'status'       => $row['p_status'],
+            ),
+        );
     }
 }

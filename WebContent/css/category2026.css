@@ -200,11 +200,40 @@
   transition: color 0.18s ease;
 }
 
+#cat-filter-sidebar .cat-filter-count {
+  margin-left: auto;
+  flex-shrink: 0;
+  color: #888;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  transition: color 0.18s ease, opacity 0.18s ease;
+}
+
 #cat-filter-sidebar .cat-filter-opt:hover,
 #cat-filter-sidebar .cat-filter-opt:hover .cat-filter-label,
 #cat-filter-sidebar .cat-filter-opt:has(.js-cat-filter:checked),
 #cat-filter-sidebar .cat-filter-opt:has(.js-cat-filter:checked) .cat-filter-label {
   color: var(--brand-red, #c8102e);
+}
+
+#cat-filter-sidebar .cat-filter-opt.is-disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  color: #777;
+}
+
+#cat-filter-sidebar .cat-filter-opt.is-disabled:hover,
+#cat-filter-sidebar .cat-filter-opt.is-disabled:hover .cat-filter-label {
+  color: #777;
+}
+
+#cat-filter-sidebar .cat-filter-opt.is-disabled .cat-filter-count {
+  color: #999;
+}
+
+#cat-filter-sidebar .cat-filter-opt.is-disabled .cat-check {
+  border-color: #d0d0d0;
+  background: #f5f5f5;
 }
 
 #cat-filter-sidebar .cat-check {

@@ -1106,6 +1106,7 @@ class Project extends WWW\AbstractModule
 		$filterQuery = $this->_buildCategoryFilterQueryString($rawParams);
 		$responseContext->set('query', $filterQuery);
 		$responseContext->set('active_filters', $activeFilters);
+		$responseContext->set('filter_groups', $this->_categoryFilterSidebarGroups());
 		$responseContext->set('has_category_filters', $hasCategoryFilters);
 		$responseContext->set('type', $type);
 		$responseContext->set('listType', Helper\Project::getDisplayListTypes($type));
@@ -1821,6 +1822,61 @@ class Project extends WWW\AbstractModule
 			'pages' => $pages,
 			'query' => $filterQuery,
 			'empty' => $total < 1,
+			'facets' => $this->_computeCategoryFilterFacets(
+				$request,
+				explode(',', $category->getProjectList()),
+				$category,
+				$isAllProjects,
+				$activeFilters
+			),
+		);
+		$responseContext->setJSONREsponse('feedback', $response);
+	}
+
+	/**
+	 * AJAX: leave-one-out facet counts for #cat-filter-sidebar options.
+	 */
+	public function doFilterCounts(
+			\Point7_WebApp_Request_Filtered $request, WWW\AppContext $appContext, WWW\ResponseContext $responseContext
+	) {
+		$response = array('status' => 'error', 'total' => 0, 'facets' => array());
+
+		$categoryLink = rtrim((string) $request->getParam('category'), '/');
+		if ($categoryLink === '') {
+			$categoryLink = 'projekty-domow';
+		}
+		$category = $this->_daoRepository->getProjectCategoryFinder()->getByLink($categoryLink);
+		if (!$category) {
+			$response['message'] = 'Nie znaleziono kategorii.';
+			$responseContext->setJSONREsponse('feedback', $response);
+			return;
+		}
+
+		$isAllProjects = ((int) $request->getParam('all') === 1);
+		$idList = explode(',', $category->getProjectList());
+		$activeFilters = $this->_collectActiveCategoryFilters($request);
+
+		$filtered = $idList;
+		if (!empty($activeFilters)) {
+			$filtered = $this->_filterCategoryIdList(
+				$request,
+				$idList,
+				$category,
+				$isAllProjects,
+				false
+			);
+		}
+
+		$response = array(
+			'status' => 'ok',
+			'total' => count(array_filter(array_map('intval', $filtered))),
+			'facets' => $this->_computeCategoryFilterFacets(
+				$request,
+				$idList,
+				$category,
+				$isAllProjects,
+				$activeFilters
+			),
 		);
 		$responseContext->setJSONREsponse('feedback', $response);
 	}
@@ -2951,21 +3007,420 @@ class Project extends WWW\AbstractModule
 	 */
 	private function _categoryFilterParamKeys()
 	{
-		return array(
+		$keys = array(
 			'typ_projektu',
 			'typdachu',
 			'pow_min',
 			'pow_max',
 			'pow_bucket',
 			'dzialka_szer',
+			'dzialka_dl',
 			'front_szer',
 			'iloscpokoinaparterze',
 			'iloscpokoinaiikondygnacji',
 			'wysokoscbudynku',
 			'katnachyleniadachu',
 			'rodzajstropu',
-			'spizarnia',
+			'kalenica',
+			'garaz',
+			'piwnica',
+			'kolekcje',
 		);
+		foreach ($this->_categoryFilterAmenityKeys() as $key) {
+			$keys[] = $key;
+		}
+		return $keys;
+	}
+
+	/**
+	 * Boolean amenity checkbox param names (overlay "Dodatkowe udogodnienia").
+	 *
+	 * @return string[]
+	 */
+	private function _categoryFilterAmenityKeys()
+	{
+		return array(
+			'balkon',
+			'duza_kotlownia',
+			'garderoba',
+			'kotlownia',
+			'kuchniaodfrontu',
+			'kuchniaodogrodu',
+			'lukarna',
+			'masterbedroom',
+			'od_poludnia',
+			'antresola',
+			'osobnewc',
+			'pralnia',
+			'spizarnia',
+			'wiatagarazowa',
+			'zantresola',
+			'zestrychem',
+			'zadaszonytaras',
+		);
+	}
+
+	/**
+	 * Sidebar accordion groups — mirrors project-search-overlay tabs/options.
+	 *
+	 * @return array[] each: title, open (bool), options[{name,value,label}]
+	 */
+	private function _categoryFilterSidebarGroups()
+	{
+		$types = array(
+			array('bez_garazu', 'Bez garażu'),
+			array('beskidzkie', 'Beskidzkie'),
+			array('blizniacze', 'Bliźniacze'),
+			array('dla_rodziny_2+2', 'Dla rodziny 2+2'),
+			array('dla_rodziny_2+3', 'Dla rodziny 2+3'),
+			array('dwulokalowe', 'Dwulokalowe'),
+			array('male_do_70m2', 'Małe do 70m²'),
+			array('na_skarpe', 'Na skarpę'),
+			array('na_waska_dzialke', 'Na wąską działkę'),
+			array('nowoczesna_stodola', 'Nowoczesna stodoła'),
+			array('nowoczesne', 'Nowoczesne'),
+			array('parterowe', 'Parterowe'),
+			array('pietrowe', 'Piętrowe'),
+			array('rezydencje', 'Rezydencje'),
+			array('szkieletowe', 'Szkieletowe'),
+			array('z_garazem', 'Z garażem'),
+			array('z_plaskim_dachem', 'Z płaskim dachem'),
+			array('z_poddaszem', 'Z poddaszem'),
+			array('z_poddaszem_do_adaptacji', 'Z poddaszem do adaptacji'),
+		);
+		$typeOpts = array();
+		foreach ($types as $pair) {
+			$typeOpts[] = array('name' => 'typ_projektu', 'value' => $pair[0], 'label' => $pair[1]);
+		}
+
+		$amenityLabels = array(
+			'balkon' => 'Balkon',
+			'duza_kotlownia' => 'Duża kotłownia',
+			'garderoba' => 'Garderoba',
+			'kotlownia' => 'Kotłownia na paliwo stałe',
+			'kuchniaodfrontu' => 'Kuchnia od frontu',
+			'kuchniaodogrodu' => 'Kuchnia od ogrodu',
+			'lukarna' => 'Lukarna',
+			'masterbedroom' => 'Master bedroom',
+			'od_poludnia' => 'Wjazd od południa',
+			'antresola' => 'Otwarta przestrzeń',
+			'osobnewc' => 'Osobne w.c.',
+			'pralnia' => 'Pralnia',
+			'spizarnia' => 'Spiżarnia',
+			'wiatagarazowa' => 'Wiata',
+			'zantresola' => 'Z antresolą',
+			'zestrychem' => 'Ze strychem',
+			'zadaszonytaras' => 'Zadaszony taras',
+		);
+		$amenityOpts = array();
+		foreach ($amenityLabels as $name => $label) {
+			$amenityOpts[] = array('name' => $name, 'value' => '1', 'label' => $label);
+		}
+
+		return array(
+			array(
+				'title' => 'Typ projektu',
+				'open' => true,
+				'options' => $typeOpts,
+			),
+			array(
+				'title' => 'Typ dachu',
+				'open' => false,
+				'options' => array(
+					array('name' => 'typdachu', 'value' => 'dwuspadowy', 'label' => 'Dwuspadowy'),
+					array('name' => 'typdachu', 'value' => 'mansardowy', 'label' => 'Mansardowy'),
+					array('name' => 'typdachu', 'value' => 'stropodach', 'label' => 'Płaski'),
+					array('name' => 'typdachu', 'value' => 'stozkowy', 'label' => 'Stożkowy'),
+					array('name' => 'typdachu', 'value' => 'wielospadowy', 'label' => 'Wielospadowy'),
+				),
+			),
+			array(
+				'title' => 'Powierzchnia użytkowa',
+				'open' => false,
+				'options' => array(
+					array('name' => 'pow_bucket', 'value' => '0-70', 'label' => 'do 70 m²'),
+					array('name' => 'pow_bucket', 'value' => '100-130', 'label' => '100–130 m²'),
+					array('name' => 'pow_bucket', 'value' => '130-180', 'label' => '130–180 m²'),
+					array('name' => 'pow_bucket', 'value' => '180-', 'label' => 'od 180 m²'),
+				),
+			),
+			array(
+				'title' => 'Szerokość działki (maks.)',
+				'open' => false,
+				'options' => array(
+					array('name' => 'dzialka_szer', 'value' => '14', 'label' => 'do 14 m'),
+					array('name' => 'dzialka_szer', 'value' => '16', 'label' => 'do 16 m'),
+					array('name' => 'dzialka_szer', 'value' => '18', 'label' => 'do 18 m'),
+					array('name' => 'dzialka_szer', 'value' => '20', 'label' => 'do 20 m'),
+					array('name' => 'dzialka_szer', 'value' => '22', 'label' => 'do 22 m'),
+					array('name' => 'dzialka_szer', 'value' => '25', 'label' => 'do 25 m'),
+				),
+			),
+			array(
+				'title' => 'Długość działki (maks.)',
+				'open' => false,
+				'options' => array(
+					array('name' => 'dzialka_dl', 'value' => '20', 'label' => 'do 20 m'),
+					array('name' => 'dzialka_dl', 'value' => '25', 'label' => 'do 25 m'),
+					array('name' => 'dzialka_dl', 'value' => '30', 'label' => 'do 30 m'),
+					array('name' => 'dzialka_dl', 'value' => '35', 'label' => 'do 35 m'),
+				),
+			),
+			array(
+				'title' => 'Maks. szerokość elewacji',
+				'open' => false,
+				'options' => array(
+					array('name' => 'front_szer', 'value' => '8', 'label' => 'do 8 m'),
+					array('name' => 'front_szer', 'value' => '10', 'label' => 'do 10 m'),
+					array('name' => 'front_szer', 'value' => '12', 'label' => 'do 12 m'),
+					array('name' => 'front_szer', 'value' => '14', 'label' => 'do 14 m'),
+					array('name' => 'front_szer', 'value' => '16', 'label' => 'do 16 m'),
+				),
+			),
+			array(
+				'title' => 'Pokoje: parter (z salonem)',
+				'open' => false,
+				'options' => array(
+					array('name' => 'iloscpokoinaparterze', 'value' => '1', 'label' => '1'),
+					array('name' => 'iloscpokoinaparterze', 'value' => '2', 'label' => '2'),
+					array('name' => 'iloscpokoinaparterze', 'value' => '3', 'label' => '3'),
+					array('name' => 'iloscpokoinaparterze', 'value' => '4', 'label' => '4'),
+					array('name' => 'iloscpokoinaparterze', 'value' => '5', 'label' => '5'),
+				),
+			),
+			array(
+				'title' => 'Pokoje: piętro',
+				'open' => false,
+				'options' => array(
+					array('name' => 'iloscpokoinaiikondygnacji', 'value' => '1', 'label' => '1'),
+					array('name' => 'iloscpokoinaiikondygnacji', 'value' => '2', 'label' => '2'),
+					array('name' => 'iloscpokoinaiikondygnacji', 'value' => '3', 'label' => '3'),
+					array('name' => 'iloscpokoinaiikondygnacji', 'value' => '4', 'label' => '4'),
+					array('name' => 'iloscpokoinaiikondygnacji', 'value' => '5', 'label' => '5'),
+				),
+			),
+			array(
+				'title' => 'Wysokość budynku',
+				'open' => false,
+				'options' => array(
+					array('name' => 'wysokoscbudynku', 'value' => '1', 'label' => 'do 6 m'),
+					array('name' => 'wysokoscbudynku', 'value' => '2', 'label' => '6–7 m'),
+					array('name' => 'wysokoscbudynku', 'value' => '3', 'label' => '7–8 m'),
+					array('name' => 'wysokoscbudynku', 'value' => '4', 'label' => '8–9 m'),
+					array('name' => 'wysokoscbudynku', 'value' => '5', 'label' => '9–10 m'),
+					array('name' => 'wysokoscbudynku', 'value' => '6', 'label' => 'powyżej 10 m'),
+				),
+			),
+			array(
+				'title' => 'Kąt nachylenia dachu',
+				'open' => false,
+				'options' => array(
+					array('name' => 'katnachyleniadachu', 'value' => '1', 'label' => 'do 30°'),
+					array('name' => 'katnachyleniadachu', 'value' => '2', 'label' => '30–35°'),
+					array('name' => 'katnachyleniadachu', 'value' => '3', 'label' => '35–40°'),
+					array('name' => 'katnachyleniadachu', 'value' => '4', 'label' => '40–45°'),
+					array('name' => 'katnachyleniadachu', 'value' => '5', 'label' => '45° i więcej'),
+				),
+			),
+			array(
+				'title' => 'Rodzaj stropu',
+				'open' => false,
+				'options' => array(
+					array('name' => 'rodzajstropu', 'value' => 'lekki', 'label' => 'Lekki'),
+					array('name' => 'rodzajstropu', 'value' => 'gestozebrowy', 'label' => 'Gęstożebrowy'),
+					array('name' => 'rodzajstropu', 'value' => 'plyta_zelbetowa', 'label' => 'Płyta żelbetowa'),
+					array('name' => 'rodzajstropu', 'value' => 'drewniany_belkowy', 'label' => 'Drewniany belkowy'),
+				),
+			),
+			array(
+				'title' => 'Kalenica',
+				'open' => false,
+				'options' => array(
+					array('name' => 'kalenica', 'value' => 'rownolegla_do_drogi', 'label' => 'Równoległa do drogi'),
+					array('name' => 'kalenica', 'value' => 'prostopadla_do_drogi', 'label' => 'Prostopadła do drogi'),
+					array('name' => 'kalenica', 'value' => 'brak', 'label' => 'Brak'),
+				),
+			),
+			array(
+				'title' => 'Dodatkowe udogodnienia',
+				'open' => false,
+				'options' => $amenityOpts,
+			),
+			array(
+				'title' => 'Garaż',
+				'open' => false,
+				'options' => array(
+					array('name' => 'garaz', 'value' => '1', 'label' => '1 stanowisko'),
+					array('name' => 'garaz', 'value' => '2', 'label' => '2 i więcej'),
+					array('name' => 'garaz', 'value' => '3', 'label' => 'Nie'),
+				),
+			),
+			array(
+				'title' => 'Piwnica',
+				'open' => false,
+				'options' => array(
+					array('name' => 'piwnica', 'value' => '1', 'label' => 'Tak'),
+					array('name' => 'piwnica', 'value' => '2', 'label' => 'Nie'),
+				),
+			),
+			array(
+				'title' => 'Kolekcje',
+				'open' => false,
+				'options' => array(
+					array('name' => 'kolekcje', 'value' => 'sardynia', 'label' => 'SARDYNIA'),
+				),
+			),
+		);
+	}
+
+	/**
+	 * Option values rendered in CategoryFilterSidebar.tpl (for facet counts).
+	 *
+	 * @return array map facetKey => string[]
+	 */
+	private function _categoryFilterOptionCatalog()
+	{
+		$catalog = array();
+		foreach ($this->_categoryFilterSidebarGroups() as $group) {
+			foreach ($group['options'] as $opt) {
+				$name = $opt['name'];
+				$value = (string) $opt['value'];
+				if (!isset($catalog[$name])) {
+					$catalog[$name] = array();
+				}
+				if (!in_array($value, $catalog[$name], true)) {
+					$catalog[$name][] = $value;
+				}
+			}
+		}
+		return $catalog;
+	}
+
+	/**
+	 * Leave-one-out counts per sidebar option within the category project set.
+	 * OR within a facet group, AND across groups — same as list filtering.
+	 *
+	 * @param \Point7_WebApp_Request_Filtered $request
+	 * @param array $idList curated category ids
+	 * @param \StudioAtrium\Entity\Project\Category $category
+	 * @param bool $isAllProjects
+	 * @param array $activeFilters
+	 * @return array map facetKey => [ value => count ]
+	 */
+	private function _computeCategoryFilterFacets(
+		$request,
+		array $idList,
+		$category,
+		$isAllProjects,
+		array $activeFilters
+	) {
+		$allowed = array();
+		foreach ($idList as $id) {
+			$id = (int) $id;
+			if ($id > 0) {
+				$allowed[$id] = true;
+			}
+		}
+		if (!$allowed) {
+			return array();
+		}
+
+		$categoryId = null;
+		if ($request->getParam('kategoria')) {
+			$categoryId = (int) str_replace('c', '', $request->getParam('kategoria'));
+		} elseif (!$isAllProjects && $category && (int) $category->getId() > 1) {
+			$categoryId = (int) $category->getId();
+		}
+
+		$catalog = $this->_categoryFilterOptionCatalog();
+		$facets = array();
+
+		foreach ($catalog as $facetKey => $values) {
+			$candidates = $this->_categoryFilterCandidatesExcept(
+				$allowed,
+				$activeFilters,
+				$facetKey,
+				$categoryId,
+				false
+			);
+			$facets[$facetKey] = array();
+			foreach ($values as $value) {
+				$match = $this->_facetMatchIdMap($facetKey, $value, $categoryId, false);
+				$facets[$facetKey][$value] = count(array_intersect_key($candidates, $match));
+			}
+		}
+
+		return $facets;
+	}
+
+	/**
+	 * Apply all active facet groups except $exceptFacet to the allowed id set.
+	 *
+	 * @param array $allowed id => true
+	 * @param array $activeFilters
+	 * @param string $exceptFacet
+	 * @param int|null $categoryId
+	 * @param bool $sortByArea
+	 * @return array id => true
+	 */
+	private function _categoryFilterCandidatesExcept(
+		array $allowed,
+		array $activeFilters,
+		$exceptFacet,
+		$categoryId,
+		$sortByArea = false
+	) {
+		$running = $allowed;
+		$facetKeys = array_keys($this->_categoryFilterOptionCatalog());
+
+		foreach ($facetKeys as $facetKey) {
+			if ($facetKey === $exceptFacet) {
+				continue;
+			}
+			if (empty($activeFilters[$facetKey]) || !is_array($activeFilters[$facetKey])) {
+				continue;
+			}
+			$union = array();
+			foreach ($activeFilters[$facetKey] as $value) {
+				$match = $this->_facetMatchIdMap($facetKey, (string) $value, $categoryId, $sortByArea);
+				foreach ($match as $id => $_) {
+					if (isset($allowed[$id])) {
+						$union[$id] = true;
+					}
+				}
+			}
+			$running = array_intersect_key($running, $union);
+			if (!$running) {
+				return array();
+			}
+		}
+
+		return $running;
+	}
+
+	/**
+	 * @param string $facetKey
+	 * @param string $value
+	 * @param int|null $categoryId
+	 * @param bool $sortByArea
+	 * @return array id => true
+	 */
+	private function _facetMatchIdMap($facetKey, $value, $categoryId, $sortByArea = false)
+	{
+		static $cache = array();
+		$cacheKey = $facetKey . '|' . $value . '|' . (int) $categoryId . '|' . ($sortByArea ? '1' : '0');
+		if (isset($cache[$cacheKey])) {
+			return $cache[$cacheKey];
+		}
+		$map = array();
+		foreach ($this->_clickSearchSingleFacet($facetKey, $value, $categoryId, $sortByArea) as $id) {
+			$id = (int) $id;
+			if ($id > 0) {
+				$map[$id] = true;
+			}
+		}
+		$cache[$cacheKey] = $map;
+		return $map;
 	}
 
 	/**
@@ -3005,6 +3460,10 @@ class Project extends WWW\AbstractModule
 				continue;
 			}
 			$vals = $this->_parseCategoryFilterValues($raw[$key]);
+			// Overlay radios use -1 / 0 as "any" sentinels — ignore them.
+			$vals = array_values(array_filter($vals, function ($v) {
+				return $v !== '-1' && $v !== '0';
+			}));
 			if ($vals) {
 				$active[$key] = $vals;
 			}
@@ -3021,6 +3480,11 @@ class Project extends WWW\AbstractModule
 	private function _normalizeCategoryFilterBuckets(array $filters)
 	{
 		$bucketMap = array(
+			'0-70' => array('0', '70'),
+			'100-130' => array('100', '130'),
+			'130-180' => array('130', '180'),
+			'180-' => array('180', ''),
+			// Legacy sidebar buckets
 			'0-100' => array('0', '100'),
 			'100-150' => array('100', '150'),
 			'150-200' => array('150', '200'),
@@ -3101,6 +3565,10 @@ class Project extends WWW\AbstractModule
 
 		if ($facetKey === 'pow_bucket') {
 			$bucketMap = array(
+				'0-70' => array(0, 70),
+				'100-130' => array(100, 130),
+				'130-180' => array(130, 180),
+				'180-' => array(180, null),
 				'0-100' => array(0, 100),
 				'100-150' => array(100, 150),
 				'150-200' => array(150, 200),
@@ -3116,8 +3584,32 @@ class Project extends WWW\AbstractModule
 			}
 		} elseif ($facetKey === 'dzialka_szer') {
 			$searchParams[Helper\Project::getClickSearchParamsMap('parcel_width')]['max'] = (float) $value;
+		} elseif ($facetKey === 'dzialka_dl') {
+			$searchParams[Helper\Project::getClickSearchParamsMap('parcel_length')]['max'] = (float) $value;
 		} elseif ($facetKey === 'front_szer') {
 			$searchParams[Helper\Project::getClickSearchParamsMap('front_width')]['max'] = (float) $value;
+		} elseif ($facetKey === 'kolekcje') {
+			// Overlay collection facet — match project name prefix (e.g. Sardynia).
+			if (strtolower($value) === 'sardynia') {
+				$list = $this->_projectFinder->searchByQuery(
+					'Sardynia',
+					0,
+					5000,
+					'id',
+					'ASC',
+					\StudioAtrium_Entity_EntityBase_Project::STATUS_PUBLISHED
+				);
+				$out = array();
+				if ($list) {
+					foreach ($list as $project) {
+						if (is_object($project) && method_exists($project, 'getId')) {
+							$out[] = (int) $project->getId();
+						}
+					}
+				}
+				return $out;
+			}
+			return array();
 		} else {
 			$map = Helper\ClickSearchMap::getMap();
 			$paramId = array_search($facetKey, $map, true);
@@ -3184,19 +3676,7 @@ class Project extends WWW\AbstractModule
 		}
 
 		$running = $allowed;
-		$facetKeys = array(
-			'typ_projektu',
-			'typdachu',
-			'pow_bucket',
-			'dzialka_szer',
-			'front_szer',
-			'iloscpokoinaparterze',
-			'iloscpokoinaiikondygnacji',
-			'wysokoscbudynku',
-			'katnachyleniadachu',
-			'rodzajstropu',
-			'spizarnia',
-		);
+		$facetKeys = array_keys($this->_categoryFilterOptionCatalog());
 
 		foreach ($facetKeys as $facetKey) {
 			if (empty($active[$facetKey]) || !is_array($active[$facetKey])) {

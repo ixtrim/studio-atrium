@@ -25,6 +25,10 @@
 		return root.getAttribute('data-ajax-url') || '/index.php?module=project&action=filter_list';
 	}
 
+	function getCountsUrl() {
+		return root.getAttribute('data-counts-url') || '/index.php?module=project&action=filter_counts';
+	}
+
 	function getListUrl() {
 		return root.getAttribute('data-list-url') || window.location.pathname;
 	}
@@ -96,6 +100,10 @@
 			var powMin = params.get('pow_min');
 			var powMax = params.get('pow_max') || '';
 			var POW_BUCKETS = {
+				'0-70': { pow_min: '0', pow_max: '70' },
+				'100-130': { pow_min: '100', pow_max: '130' },
+				'130-180': { pow_min: '130', pow_max: '180' },
+				'180-': { pow_min: '180', pow_max: '' },
 				'0-100': { pow_min: '0', pow_max: '100' },
 				'100-150': { pow_min: '100', pow_max: '150' },
 				'150-200': { pow_min: '150', pow_max: '200' },
@@ -110,8 +118,12 @@
 			});
 		}
 
-		['typ_projektu', 'typdachu', 'dzialka_szer', 'front_szer', 'iloscpokoinaparterze',
-			'wysokoscbudynku', 'katnachyleniadachu', 'rodzajstropu', 'spizarnia'].forEach(function (name) {
+		['typ_projektu', 'typdachu', 'dzialka_szer', 'dzialka_dl', 'front_szer', 'iloscpokoinaparterze',
+			'iloscpokoinaiikondygnacji', 'wysokoscbudynku', 'katnachyleniadachu', 'rodzajstropu',
+			'kalenica', 'garaz', 'piwnica', 'kolekcje', 'balkon', 'duza_kotlownia', 'garderoba',
+			'kotlownia', 'kuchniaodfrontu', 'kuchniaodogrodu', 'lukarna', 'masterbedroom',
+			'od_poludnia', 'antresola', 'osobnewc', 'pralnia', 'spizarnia', 'wiatagarazowa',
+			'zantresola', 'zestrychem', 'zadaszonytaras'].forEach(function (name) {
 			checkCsv(name, params.get(name));
 		});
 		syncClearButton(params);
@@ -184,6 +196,54 @@
 		}
 	}
 
+	function applyFacets(facets) {
+		if (!form || !facets || typeof facets !== 'object') return;
+		form.querySelectorAll('.js-cat-filter').forEach(function (input) {
+			var name = input.getAttribute('name');
+			var value = String(input.value);
+			var group = facets[name];
+			var count = 0;
+			if (group && Object.prototype.hasOwnProperty.call(group, value)) {
+				count = parseInt(group[value], 10) || 0;
+			} else if (group && Object.prototype.hasOwnProperty.call(group, String(value))) {
+				count = parseInt(group[String(value)], 10) || 0;
+			}
+			var label = input.closest('.cat-filter-opt');
+			var countEl = label ? label.querySelector('.cat-filter-count') : null;
+			if (countEl) countEl.textContent = '(' + count + ')';
+
+			// Leave-one-out: keep checked options usable so users can clear them.
+			var disable = count === 0 && !input.checked;
+			input.disabled = disable;
+			if (label) label.classList.toggle('is-disabled', disable);
+		});
+	}
+
+	function buildCountsUrl(filterParams) {
+		var url = new URL(getCountsUrl(), window.location.origin);
+		filterParams.forEach(function (value, key) {
+			url.searchParams.set(key, value);
+		});
+		url.searchParams.set('category', root.getAttribute('data-category') || 'projekty-domow');
+		url.searchParams.set('all', root.getAttribute('data-all') || '0');
+		return url.toString();
+	}
+
+	function fetchFacets(filterParams) {
+		fetch(buildCountsUrl(filterParams || collectFilters()), {
+			credentials: 'same-origin',
+			headers: { 'Accept': 'application/json', 'X-Requested-With': 'XMLHttpRequest' }
+		})
+			.then(function (res) { return res.json(); })
+			.then(function (json) {
+				var data = json.feedback || json;
+				if (data && data.status === 'ok') {
+					applyFacets(data.facets);
+				}
+			})
+			.catch(function () {});
+	}
+
 	function applyResponse(data) {
 		if (!data || data.status !== 'ok') return;
 		if (body && typeof data.html === 'string') {
@@ -196,6 +256,9 @@
 			setTimeout(function () {
 				totalEl.classList.remove('cat-total-pulse');
 			}, 450);
+		}
+		if (data.facets) {
+			applyFacets(data.facets);
 		}
 		var sortForm = document.getElementById('projects-filters-form');
 		if (sortForm && typeof data.query === 'string') {
@@ -305,4 +368,7 @@
 			}
 		});
 	}
+
+	// Initial leave-one-out counts for SSR / cold load (including URL filters).
+	fetchFacets(collectFilters());
 })();

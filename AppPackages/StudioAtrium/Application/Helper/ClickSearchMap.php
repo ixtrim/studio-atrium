@@ -45,6 +45,8 @@ class ClickSearchMap
         'c18'  => 'duza_kotlownia',
         'c19'  => 'kotlownia',
         'c26'  => 'od_poludnia',
+        'c30'  => 'zantresola',
+        'c31'  => 'zestrychem',
     ];
     private static $paramsNames = [
         26  => 'wysokość budynku',

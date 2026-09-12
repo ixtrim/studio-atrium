@@ -36,8 +36,21 @@ class EntityCollection implements \Iterator, \Countable, \ArrayAccess
     public function offsetSet($offset, $v) { if ($offset === null) $this->items[] = $v; else $this->items[$offset] = $v; }
     public function offsetUnset($offset)   { unset($this->items[$offset]); $this->items = array_values($this->items); }
 
-    public function toArray(string $_ = '', string $keyField = ''): array
+    /**
+     * @param mixed $_ Legacy first arg (ignored; callers often pass array() or '')
+     * @param mixed $keyField Field to use as array key when non-empty string
+     * @return array
+     */
+    public function toArray($_ = '', $keyField = ''): array
     {
+        // Legacy call shape: toArray(array(), 'id') — first arg is ignored.
+        if (is_array($_) && (is_string($keyField) || is_numeric($keyField))) {
+            // keep $keyField
+        } elseif (is_string($_) && ($keyField === '' || $keyField === null) && $_ !== '') {
+            $keyField = $_;
+        }
+        $keyField = ($keyField === null) ? '' : (string) $keyField;
+
         $result = [];
         foreach ($this->items as $item) {
             $arr = is_array($item) ? $item : $item->toArray();

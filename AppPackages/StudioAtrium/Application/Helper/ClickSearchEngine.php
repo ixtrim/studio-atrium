@@ -33,6 +33,8 @@ class ClickSearchEngine
 		'c18' => 18, // duza_kotlownia
 		'c19' => 19, // kotlownia
 		'c26' => 26, // od_poludnia
+		'c30' => 30, // zantresola
+		'c31' => 31, // zestrychem
 	];
 
 	/** Form slug => DB string_value for select/radio string params. */
