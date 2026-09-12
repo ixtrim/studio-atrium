@@ -1,5 +1,15 @@
 var ClickSearch = (function()
 {
+	function _byId(id)
+	{
+		if (id === undefined || id === null || id === '') {
+			return $();
+		}
+		// Prefer getElementById — jQuery '#a+b' breaks on "+" and other CSS chars.
+		var el = document.getElementById(String(id));
+		return el ? $(el) : $();
+	}
+
 	$(document).ready(function()
 	{
 		$('#click-search-form input[type=checkbox], #click-search-form input[type=radio]').on('change', _getNumbers);
@@ -165,32 +175,54 @@ var ClickSearch = (function()
 
 			success: function(response)
 			{
+				var stats = (response && response.feedback && response.feedback.stats) ? response.feedback.stats : {};
 				var element = $('#cs-category');
 				
 				if(element.length) {
 					var catId = element.val().replace('c', '');
 	
-					if($.isPlainObject(response.feedback.stats.categories)) {
-						element.siblings('span').html('(' + response.feedback.stats.categories[catId] + ')');
+					if($.isPlainObject(stats.categories)) {
+						element.siblings('span').html('(' + stats.categories[catId] + ')');
 					} else {
 						element.siblings('span').html('(0)');
 					}
 				}
 				
-				total = response.feedback.stats.total;
+				total = stats.total || 0;
 				$('#cs-fetch #total-count').text('(' + total + ')');
+
+				// Reset known counters so missing facets fall back to (0) + disabled
+				$('#click-search-form .count').each(function() {
+					var id = this.id || '';
+					if (id === 'total-count' || id === 'cs-category-count') {
+						return;
+					}
+					$(this).text('(0)');
+				});
+				$('#click-search-form input[type=checkbox], #click-search-form input[type=radio]').each(function() {
+					var $el = $(this);
+					if ($el.attr('name') === 'kategoria') {
+						return;
+					}
+					// Keep "Dowolnie" / sentinel options enabled
+					var val = String($el.val());
+					if (val === '-1' || val === '0' || $el.is('[data-keep-enabled]')) {
+						$el.prop('disabled', false);
+						return;
+					}
+					$el.prop('disabled', true);
+				});
 				
-				// "Typ projektu" jest teraz checkboxami (typ_projektu[]); wspieramy też starą wersję (radio bez [])
-				if (response.feedback && response.feedback.stats && response.feedback.stats.types) {
-				$.each(response.feedback.stats.types, function(setkey, count) {
-					// znajdź input (najpierw wersja tablicowa, potem fallback do starej)
+				// Typ projektu: id uses "plus" instead of "+" (invalid in CSS #ids)
+				if ($.isPlainObject(stats.types)) {
+				$.each(stats.types, function(setkey, count) {
+					var safeKey = String(setkey).replace(/\+/g, 'plus');
 					var $inputs = $('#filters-project-type input[name="typ_projektu[]"][value="' + setkey + '"]');
 					if (!$inputs.length) {
 						$inputs = $('#filters-project-type input[name="typ_projektu"][value="' + setkey + '"]');
 					}
 
-					// licznik: #typ_projektu-<value>-count albo .count w labelu
-					var $counter = $('#typ_projektu-' + setkey + '-count');
+					var $counter = _byId('typ_projektu-' + safeKey + '-count');
 					if (!$counter.length && $inputs.length) {
 						var $label = $inputs.first().attr('id')
 						? $('label[for="' + $inputs.first().attr('id') + '"]')
@@ -200,67 +232,53 @@ var ClickSearch = (function()
 
 					if ($counter.length) $counter.text('(' + count + ')');
 
-					// włącz/wyłącz element zgodnie z liczbą wyników
 					$inputs.each(function() {
-						var disable = (count === 0);
-						$(this).prop('disabled', disable);
+						$(this).prop('disabled', count === 0);
 					});
 				});
 				}
 				
-				$.each(response.feedback.stats.sets, function(key, set) 
+				if ($.isPlainObject(stats.sets)) {
+				$.each(stats.sets, function(key, set) 
 				{
-					element = $('#' + key);
+					element = _byId(String(key));
 		
-					//if element exists
 					if(element.length > 0) {
-						//span in select
 						switch(element[0].nodeName.toLowerCase()) {
 							case 'select':
 								$.each(set, function(setkey, count) 
 								{
-									var item = $('#' + key + '-' + setkey);
+									var item = _byId(key + '-' + setkey);
 
 									item.find('span').detach();
 									item.html(item.html().replace(/(\s?\(.*\))/, '') + ' <span>(' + count + ')</span>');
 									
-									if(count == 0) {
-										item.attr('disabled', true);
-									} else {
-										item.attr('disabled', false);
-									}
+									item.attr('disabled', count == 0);
 								});
 							break;
 						}
 						
-						//if element is custom category and has related property
 						$.each(set, function(setkey, count) 
 						{
-							if($('#' + key + '-' + setkey + '-count').length > 0) {
-								$('#' + key + '-' + setkey + '-count').html('(' + count + ')');
-								
-								if(count == 0) {
-									$('#' + key + '-' + setkey).attr('disabled', true);
-								} else {
-									$('#' + key + '-' + setkey).attr('disabled', false);
-								}
+							var $counter = _byId(key + '-' + setkey + '-count');
+							if($counter.length > 0) {
+								$counter.html('(' + count + ')');
+								_byId(key + '-' + setkey).prop('disabled', count == 0);
 							}
 						});
 					} else {
-						//checkboxes & radio
 						$.each(set, function(setkey, count) 
 						{
-							var counter = $('#' + key + '-' + setkey + '-count');
-								counter.html('(' + count + ')');
-							
-							if(counter.length && count == 0) {
-								$('#' + key + '-' + setkey).attr('disabled', true);
-							} else {
-								$('#' + key + '-' + setkey).attr('disabled', false);
+							var $counter = _byId(key + '-' + setkey + '-count');
+							if (!$counter.length) {
+								return;
 							}
+							$counter.html('(' + count + ')');
+							_byId(key + '-' + setkey).prop('disabled', count == 0);
 						});
 					}
 				});
+				}
 			},
 
 			complete: function() {

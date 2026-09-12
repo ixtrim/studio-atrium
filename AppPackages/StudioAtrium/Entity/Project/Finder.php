@@ -280,13 +280,27 @@ class Finder
 
     private function _callClickSearchApi(array $searchParams, array $csParams, $categoryId): array
     {
+        $typProjektu = $csParams['_typ_projektu'] ?? null;
+        unset($csParams['_typ_projektu']);
+
+        // Prefer local engine (correct bucketed/slugified facet keys for the overlay).
+        // Remote admin API may still return raw param histograms.
+        try {
+            $engine = new \StudioAtrium\Application\Helper\ClickSearchEngine();
+            $local = $engine->search($this->pdo, $searchParams, $csParams, $typProjektu);
+            if (is_array($local) && ($local['status'] ?? null) === 'ok') {
+                return $local;
+            }
+        } catch (\Throwable $e) {
+            \Point7_WebApp::getLogger('error')->error(
+                'clickSearch local engine failed: ' . $e->getMessage()
+            );
+        }
+
         $url = \Point7_WebApp::getConfigParam('helpers.clicksearch_api');
         if (!$url) {
             return ['projectIds' => [], 'stats' => ['total' => 0, 'types' => [], 'sets' => []]];
         }
-
-        $typProjektu = $csParams['_typ_projektu'] ?? null;
-        unset($csParams['_typ_projektu']);
 
         $payload = json_encode([
             'searchParams' => $searchParams,

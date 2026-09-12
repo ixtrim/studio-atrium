@@ -1,64 +1,27 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-23 13:49:14
+/* Smarty version 3.1.48, created on 2026-09-23 16:02:32
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/MainPage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6ab3bcbaad5900_67373353',
+  'unifunc' => 'content_6ab3dbf89426e4_27358534',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'adffd56a5b5c4e57bbe03dbaa580c7165b140ace' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/MainPage.tpl',
-      1 => 1788694265,
+      1 => 1790165005,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:Include/HeroSlider.tpl' => 1,
-    'file:Include/Categories.tpl' => 1,
-    'file:Include/OurBestsellers.tpl' => 1,
-    'file:Include/PopularCategories.tpl' => 1,
-    'file:Include/PopularFamilyHomes.tpl' => 1,
-    'file:Include/HousePlansWithInteriorDesign.tpl' => 1,
-    'file:Include/StepsToBuildingAHome.tpl' => 1,
-    'file:Include/Testimonials.tpl' => 1,
-    'file:Include/Contact.tpl' => 1,
-    'file:Include/Products.tpl' => 1,
-    'file:Include/Newsletter.tpl' => 1,
-    'file:Include/Partners.tpl' => 1,
-    'file:Include/FeaturedVideo.tpl' => 1,
-    'file:Include/Tips.tpl' => 1,
-    'file:Include/Offer.tpl' => 1,
-    'file:Include/Initiative.tpl' => 1,
-    'file:Include/Charity.tpl' => 1,
-    'file:Include/ArticlesTicks.tpl' => 1,
   ),
 ),false)) {
-function content_6ab3bcbaad5900_67373353 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6ab3dbf89426e4_27358534 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div id="hp-2026">
-<?php $_smarty_tpl->_subTemplateRender("file:Include/HeroSlider.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-$_smarty_tpl->_subTemplateRender("file:Include/Categories.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-$_smarty_tpl->_subTemplateRender("file:Include/OurBestsellers.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-$_smarty_tpl->_subTemplateRender("file:Include/PopularCategories.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-$_smarty_tpl->_subTemplateRender("file:Include/PopularFamilyHomes.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-$_smarty_tpl->_subTemplateRender("file:Include/HousePlansWithInteriorDesign.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-$_smarty_tpl->_subTemplateRender("file:Include/StepsToBuildingAHome.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-$_smarty_tpl->_subTemplateRender("file:Include/Testimonials.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-$_smarty_tpl->_subTemplateRender("file:Include/Contact.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-$_smarty_tpl->_subTemplateRender("file:Include/Products.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-$_smarty_tpl->_subTemplateRender("file:Include/Newsletter.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-$_smarty_tpl->_subTemplateRender("file:Include/Partners.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-$_smarty_tpl->_subTemplateRender("file:Include/FeaturedVideo.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-$_smarty_tpl->_subTemplateRender("file:Include/Tips.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-$_smarty_tpl->_subTemplateRender("file:Include/Offer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-$_smarty_tpl->_subTemplateRender("file:Include/Initiative.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-$_smarty_tpl->_subTemplateRender("file:Include/Charity.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-$_smarty_tpl->_subTemplateRender("file:Include/ArticlesTicks.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
 </div>
 
 <div class="overlay">

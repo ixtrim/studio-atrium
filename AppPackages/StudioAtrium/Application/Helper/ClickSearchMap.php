@@ -6,7 +6,8 @@ class ClickSearchMap
     private static $map = [
         'type' => 'typ_projektu',
         2      => 'piwnica',
-        3      => 'garaz',
+        // Overlay radios use #78-* (ilość miejsc garażowych), not area param 3.
+        78     => 'garaz',
         26     => 'wysokoscbudynku',
         27     => 'katnachyleniadachu',
         28     => 'rodzajstropu',
@@ -40,6 +41,10 @@ class ClickSearchMap
         119    => 'osobnewc',
         134    => 'sauna',
         135    => 'wyspakuchenna',
+        // Category facets (overlay counters #c18-1-count etc.)
+        'c18'  => 'duza_kotlownia',
+        'c19'  => 'kotlownia',
+        'c26'  => 'od_poludnia',
     ];
     private static $paramsNames = [
         26  => 'wysokość budynku',
@@ -77,26 +82,31 @@ class ClickSearchMap
         135 => 'wyspa kuchenna',
     ];
     private static $valueNames = [
-        'lekki'             => 'lekki',
-        'gęstożebrowy'      => 'gęstożebrowy',
-        'płyta żelbetowa'   => 'płyta żelbetowa',
-        'drewniany belkowy' => 'drewniany belkowy',
-        'dwuspadowy'        => 'dwuspadowy',
-        'wielospadowy'      => 'wielospadowy',
-        'mansardowy'        => 'mansardowy',
-        'stozkowy'          => 'stożkowy',
-        'stropodach'        => 'stropodach',
-        'rownolegla'        => 'równoległa do drogi',
-        'prostopadla'       => 'prostopadła do drogi',
-        'brak'              => 'brak',
-        'wbryle'            => 'w bryle',
-        'wpiwnicy'          => 'w piwnicy',
-        'dostawiony'        => 'dostawiony do bryły',
-        'wysuniety'         => 'wysunięty od frontu',
-        'jednobiegowe'      => 'jednobiegowe',
-        'zabiegowe'         => 'zabiegowe',
-        'krecone'           => 'kręcone',
-        'zespocznikiem'     => 'ze spocznikiem',
+        'lekki'                => 'lekki',
+        'gestozebrowy'         => 'gęstożebrowy',
+        'gęstożebrowy'         => 'gęstożebrowy',
+        'plyta_zelbetowa'      => 'płyta żelbetowa',
+        'płyta żelbetowa'      => 'płyta żelbetowa',
+        'drewniany_belkowy'    => 'drewniany belkowy',
+        'drewniany belkowy'    => 'drewniany belkowy',
+        'dwuspadowy'           => 'dwuspadowy',
+        'wielospadowy'         => 'wielospadowy',
+        'mansardowy'           => 'mansardowy',
+        'stozkowy'             => 'stożkowy',
+        'stropodach'           => 'stropodach',
+        'rownolegla'           => 'równoległa do drogi',
+        'rownolegla_do_drogi'  => 'równoległa do drogi',
+        'prostopadla'          => 'prostopadła do drogi',
+        'prostopadla_do_drogi' => 'prostopadła do drogi',
+        'brak'                 => 'brak',
+        'wbryle'               => 'w bryle',
+        'wpiwnicy'             => 'w piwnicy',
+        'dostawiony'           => 'dostawiony do bryły',
+        'wysuniety'            => 'wysunięty od frontu',
+        'jednobiegowe'         => 'jednobiegowe',
+        'zabiegowe'            => 'zabiegowe',
+        'krecone'              => 'kręcone',
+        'zespocznikiem'        => 'ze spocznikiem',
     ];
     private static $paramsUnits = [
         26 => 'm',
@@ -167,9 +177,11 @@ class ClickSearchMap
     {
         return [
             103 => [
-                'rownolegla'  => 'równoległa do drogi',
-                'prostopadla' => 'prostopadła do drogi',
-                'brak'        => 'brak',
+                'rownolegla'           => 'równoległa do drogi',
+                'rownolegla_do_drogi'  => 'równoległa do drogi',
+                'prostopadla'          => 'prostopadła do drogi',
+                'prostopadla_do_drogi' => 'prostopadła do drogi',
+                'brak'                 => 'brak',
             ],
         ];
     }

@@ -732,16 +732,18 @@ div.blue-overlay.cs .search-label {
   width: 100%;
   max-width: 420px;
   margin: 0;
-  height: 40px;
+  height: 44px;
   padding: 0 12px;
-  color: var(--color-text-bright);
+  color: #222;
   background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid #e0e0e0;
+  border-radius: 0;
   font-size: 13px;
+  transition: border-color 0.18s ease;
 }
 
 .project-search-overlay div.blue-overlay input[type="text"].long:focus {
-  border-color: var(--color-accent) !important;
+  border-color: var(--brand-red, var(--color-accent)) !important;
   outline: none;
 }
 
@@ -756,42 +758,49 @@ div.blue-overlay.cs .search-label {
   font-weight: 700;
   letter-spacing: 0.04em;
   padding: 0 20px;
-  height: 40px;
-  line-height: 38px;
-  background: var(--color-text-bright);
-  border: 1px solid var(--color-text-bright);
+  height: 44px;
+  line-height: 42px;
+  background: #222;
+  border: 1px solid #222;
+  border-radius: 0;
   text-decoration: none;
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
 }
 
 .project-search-overlay div.blue-overlay a.help:hover {
-  background: var(--color-accent);
+  background: var(--brand-red, var(--color-accent));
   color: #fff;
-  border-color: var(--color-accent);
+  border-color: var(--brand-red, var(--color-accent));
 }
 
 .project-search-overlay div.blue-overlay .baton {
-  height: 40px;
-  line-height: 40px;
+  height: 44px;
+  line-height: 44px;
   color: #fff;
   font-size: 13px;
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 0 24px;
-  background-color: var(--color-accent);
+  padding: 0 28px;
+  background-color: var(--brand-red, var(--color-accent));
   border: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition: background-color 0.18s ease, opacity 0.18s ease, color 0.18s ease;
 }
 
 .project-search-overlay div.blue-overlay .baton:not(.disabled):hover {
   filter: none;
-  background-color: var(--color-accent-hover);
+  background-color: var(--brand-red-hover, var(--color-accent-hover, #d11a20));
 }
 
-.project-search-overlay div.blue-overlay .baton.disabled {
+.project-search-overlay div.blue-overlay .baton.disabled,
+.project-search-overlay div.blue-overlay .baton:disabled {
   filter: none;
-  opacity: 0.45;
-  background-color: #ccc;
-  color: #666666;
+  opacity: 0.7;
+  background-color: #d0d0d0;
+  color: #555;
+  cursor: not-allowed;
 }
 
 .project-search-overlay #filter-labels {
@@ -847,15 +856,19 @@ div.blue-overlay.cs .search-label {
 }
 
 .project-search-overlay .filter-tab.radio-group .custom-radio span:not(.count) {
-  padding: 3px 10px;
+  padding: 8px 12px;
   font-size: 12px;
-  font-weight: 600;
-  border: 1px solid var(--color-border);
+  font-weight: 500;
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+  background: #fff;
+  transition: color 0.18s ease, background-color 0.18s ease, border-color 0.18s ease, opacity 0.18s ease;
 }
 
 .project-search-overlay .filter-tab.radio-group .custom-radio .count {
   font-size: 11px;
   font-weight: 400;
+  opacity: 0.75;
 }
 
 .project-search-overlay .inner-filter-header {
@@ -866,15 +879,20 @@ div.blue-overlay.cs .search-label {
 .project-search-overlay #filter-options .filter-tab .chip span:not(.count),
 .project-search-overlay #filter-options .filter-tab .chk span:not(.count) {
   font-size: 12px;
-  font-weight: 600;
-  padding: 5px 10px;
+  font-weight: 500;
+  padding: 7px 12px;
   min-width: 36px;
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+  background: #fff;
+  transition: color 0.18s ease, background-color 0.18s ease, border-color 0.18s ease, opacity 0.18s ease;
 }
 
 .project-search-overlay #filter-options .filter-tab .chip .count,
 .project-search-overlay #filter-options .filter-tab .chk .count {
   font-size: 11px;
   font-weight: 400;
+  opacity: 0.75;
 }
 
 .project-search-overlay #filter-options .filter-tab .rooms-box .head {
@@ -897,60 +915,108 @@ div.blue-overlay.cs .search-label {
 }
 
 .project-search-overlay .af-chip {
-  background: var(--color-background-light);
+  background: #f5f5f5;
   color: #444;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .project-search-overlay .active-filters .af-chip {
-  background: var(--color-accent);
+  background: var(--brand-red, var(--color-accent));
   color: #fff;
-  border: 1px solid var(--color-accent);
+  border: 1px solid var(--brand-red, var(--color-accent));
 }
 
 .project-search-overlay .af-x:hover {
-  color: var(--color-accent);
+  color: #fff;
+  opacity: 0.85;
 }
 
 .project-search-overlay .custom-radio {
-  color: var(--color-text-bright);
+  color: #333;
 }
 
 .project-search-overlay .custom-radio span:not(.count) {
   background: #fff;
-  border-color: var(--color-border);
-  color: var(--color-text-bright);
+  border-color: #e0e0e0;
+  color: #333;
 }
 
+/* Available: sidebar-like red hover, no scale jump */
 .project-search-overlay .custom-radio:has(input:not(:disabled)):hover span:not(.count) {
-  background: var(--color-background-light);
-  border-color: rgba(0, 0, 0, 0.2);
+  background: #f5f5f5;
+  border-color: #e0e0e0;
+  color: var(--brand-red, var(--color-accent));
+  scale: none;
+  transform: none;
 }
 
 .project-search-overlay .custom-radio input:checked + span {
   background: #fff;
-  border-color: var(--color-accent);
-  color: var(--color-accent);
+  border-color: var(--brand-red, var(--color-accent));
+  color: var(--brand-red, var(--color-accent));
   font-weight: 700;
+}
+
+/* Disabled: soft fade (no solid gray block) */
+.project-search-overlay .custom-radio:has(input:disabled) {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.project-search-overlay .custom-radio:has(input:disabled) span:not(.count) {
+  opacity: 0.7;
+  filter: none;
+  background: #fafafa;
+  border-color: #ebebeb;
+  color: #888;
+  cursor: not-allowed;
 }
 
 .project-search-overlay .chip span:not(.count) {
   background: #fff;
-  color: var(--color-text-bright);
-  border: 1px solid var(--color-border);
+  color: #333;
+  border: 1px solid #e0e0e0;
+}
+
+.project-search-overlay .chip:has(input:not(:disabled)):hover span:not(.count),
+.project-search-overlay .chk:has(input:not(:disabled)):hover span:not(.count) {
+  background: #f5f5f5;
+  color: var(--brand-red, var(--color-accent));
+  scale: none;
+  transform: none;
 }
 
 .project-search-overlay .chip input:checked + span,
 .project-search-overlay .chk input:checked + span {
-  background: var(--color-accent);
+  background: var(--brand-red, var(--color-accent));
   color: #fff;
-  border-color: var(--color-accent);
+  border-color: var(--brand-red, var(--color-accent));
 }
 
 .project-search-overlay .chk span:not(.count) {
   background: #fff;
-  color: var(--color-text-bright);
-  border: 1px solid var(--color-border);
+  color: #333;
+  border: 1px solid #e0e0e0;
+}
+
+.project-search-overlay .chip:has(input:disabled),
+.project-search-overlay .chk:has(input:disabled) {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.project-search-overlay .chip:has(input:disabled) span:not(.count),
+.project-search-overlay .chk:has(input:disabled) span:not(.count) {
+  opacity: 0.7;
+  filter: none;
+  background: #fafafa;
+  border-color: #ebebeb;
+  color: #888;
+  cursor: not-allowed;
 }
 
 .project-search-overlay .rooms-box {
@@ -1012,37 +1078,48 @@ div.blue-overlay.cs .search-label {
 }
 
 .project-search-overlay #filters-footer {
-  background-color: var(--color-background-dark);
-  border-top: 1px solid var(--color-border);
+  background-color: #ececec;
+  border-top: 1px solid #e0e0e0;
 }
 
 .project-search-overlay #filters-footer #cs-reset {
-  color: var(--color-text-muted);
+  color: #666;
   font-size: 13px;
+  font-weight: 600;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 8px 4px;
+  transition: color 0.18s ease;
 }
 
 .project-search-overlay #filters-footer #cs-reset:hover {
-  color: var(--color-accent);
+  color: var(--brand-red, var(--color-accent));
 }
 
 .project-search-overlay #filters-footer #data-read {
-  color: var(--color-text-muted);
+  color: #888;
   font-size: 13px;
 }
 
 .project-search-overlay .count {
-  color: var(--color-text-muted);
+  color: #777;
   font-weight: 400;
 }
 
 .project-search-overlay .custom-radio input:checked + span .count {
-  color: var(--color-accent);
-  opacity: 0.75;
+  color: var(--brand-red, var(--color-accent));
+  opacity: 0.85;
+}
+
+.project-search-overlay .custom-radio:has(input:disabled) span:not(.count) .count {
+  color: #999;
+  opacity: 0.85;
 }
 
 .project-search-overlay .chip input:checked + span .count,
 .project-search-overlay .chk input:checked + span .count {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .project-search-overlay div.blue-overlay .blue-overlay-close {
@@ -1053,12 +1130,13 @@ div.blue-overlay.cs .search-label {
   display: flex;
   align-items: center;
   gap: 6px;
-  color: var(--color-text-muted);
+  color: #666;
   font-size: 13px;
   font-weight: 600;
   padding: 0 10px;
   top: 20px;
   right: 20px;
+  transition: color 0.18s ease;
 }
 
 .project-search-overlay div.blue-overlay .blue-overlay-close .close-x {
@@ -1071,22 +1149,77 @@ div.blue-overlay.cs .search-label {
 
 .project-search-overlay div.blue-overlay .blue-overlay-close:hover,
 .project-search-overlay div.blue-overlay .blue-overlay-close:hover .close-x {
-  color: var(--color-accent);
+  color: var(--brand-red, var(--color-accent));
   filter: none;
 }
 
 .project-search-overlay .quick-presets .chip span:not(.count) {
-  font-size: 16px;
-  line-height: 16px;
+  font-size: 14px;
+  line-height: 1.2;
   font-weight: 700;
   letter-spacing: 0.02em;
-  padding: 6px 10px;
+  padding: 8px 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+  background: #fff;
+  color: #333;
+  transition: color 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
+}
+
+.project-search-overlay .quick-presets .chip:has(input:not(:disabled)):hover span:not(.count) {
+  background: #f5f5f5;
+  color: var(--brand-red, var(--color-accent));
+  scale: none;
 }
 
 .project-search-overlay .quick-presets .chip input:checked + span {
-  background: var(--color-accent);
+  background: var(--brand-red, var(--color-accent));
   color: #fff;
-  border-color: var(--color-accent);
+  border-color: var(--brand-red, var(--color-accent));
+}
+
+/* Left nav: listing-sidebar feel */
+.project-search-overlay .filter-tab-label {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  color: #222;
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.project-search-overlay .filter-tab-label:hover {
+  scale: none;
+  transform: none;
+  background: #f5f5f5;
+  border-top-color: transparent;
+  color: var(--brand-red, var(--color-accent));
+}
+
+.project-search-overlay .filter-tab-label.is-active {
+  background: #f5f5f5;
+  color: var(--brand-red, var(--color-accent));
+}
+
+.project-search-overlay .filter-tab-label.is-active:after {
+  color: var(--brand-red, var(--color-accent));
+}
+
+/* Name search submit (Wyszukaj) */
+.project-search-overlay #search-name-submit.baton.disabled,
+.project-search-overlay #search-name-submit.baton:disabled {
+  opacity: 0.7;
+  filter: none;
+  background-color: #d0d0d0;
+  color: #555;
+  cursor: not-allowed;
+}
+
+.project-search-overlay #pow-range.range-select.no-ui:disabled {
+  opacity: 0.7;
+  filter: none;
+  cursor: not-allowed;
+  background-color: #fafafa;
 }
 
 
