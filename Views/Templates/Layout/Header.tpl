@@ -26,7 +26,7 @@
 	<div class="relative" id="site-header-mega">
 		<div class="max-w-[1480px] mx-auto px-9 pt-3">
 			<div class="flex items-center justify-between gap-8 mb-[40px]">
-				<a href="/" class="flex items-center shrink-0">
+				<a href="/" class="flex items-center shrink-0 mt-[30px]">
 					<img src="/img/logo.svg" alt="Studio Atrium – projekty domów" class="h-[35px] w-auto shrink-0 rounded-none" id="logo" width="176" height="35">
 				</a>
 				<div class="flex flex-col items-end gap-6 min-w-0">
