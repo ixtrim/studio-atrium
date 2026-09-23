@@ -107,6 +107,14 @@
   background-image: none;
 }
 
+/* Utility row (search / ZALOGUJ / KONTO) — beat #site-header { 16px } + button font:inherit */
+#site-header form[role="search"] input[type="text"],
+#site-header .login-trigger,
+#site-header a.header-account-btn {
+  font-size: 13px !important;
+  line-height: 1 !important;
+}
+
 #site-header button:not([class*="border"]) {
   border: none;
 }

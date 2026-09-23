@@ -314,10 +314,10 @@
 .promo-marquee__group {
   display: flex;
   align-items: center;
-  height: 2.25rem; /* h-9 */
+  height: 22px;
   white-space: nowrap;
-  gap: 6rem; /* gap-24 */
-  padding: 0 2rem;
+  gap: 96px;
+  padding: 0 32px;
   flex-shrink: 0;
 }
 

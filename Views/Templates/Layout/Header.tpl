@@ -24,35 +24,35 @@
 <!-- New header START -->
 <header id="site-header" class="bg-white border-b border-black/5 z-50 overflow-visible font-sans rounded-none static">
 	<div class="relative" id="site-header-mega">
-		<div class="max-w-[1480px] mx-auto px-8 pt-5">
+		<div class="max-w-[1480px] mx-auto px-9 pt-3">
 			<div class="flex items-center justify-between gap-8 pb-4">
 				<a href="/" class="flex items-center shrink-0">
-					<img src="/img/logo.svg" alt="Studio Atrium – projekty domów" class="h-[56px] w-auto shrink-0 rounded-none" id="logo" width="281" height="56">
+					<img src="/img/logo.svg" alt="Studio Atrium – projekty domów" class="h-[35px] w-auto shrink-0 rounded-none" id="logo" width="176" height="35">
 				</a>
 				<div class="flex flex-col items-end gap-3 min-w-0">
-					<div class="flex items-center justify-end gap-6">
-						<a href="tel:+48338229496" class="flex items-center gap-2 rounded-none" rel="nofollow">
-							<i data-lucide="phone" class="w-[20px] h-[20px] text-[var(--brand-red)] shrink-0" stroke-width="2.2"></i>
-							<span class="text-[var(--brand-red)] font-black text-[19px] tracking-wide leading-none">33 822 94 96</span>
+					<div class="flex items-center justify-end gap-6 h-[34px]">
+						<a href="tel:+48338229496" class="flex items-center gap-2 h-[34px] rounded-none" rel="nofollow">
+							<i data-lucide="phone" class="w-[24px] h-[24px] text-[var(--brand-darker)] shrink-0" stroke-width="1.25" aria-hidden="true"></i>
+							<span class="text-[var(--brand-red)] leading-none" style="font-size:20px;font-style:normal;font-weight:700;">33 822 94 96</span>
 						</a>
-						<form method="get" action="{url module='project' action='search'}" class="relative rounded-none" role="search">
+						<form method="get" action="{url module='project' action='search'}" class="relative flex items-center h-[34px] rounded-none" role="search">
 							<input type="text" name="query" placeholder="wyszukaj nazwę"
-								class="rounded-none bg-white border border-[#979797] h-[40px] pl-5 pr-10 text-[13px] w-[224px] leading-none text-[#343233] focus:outline-none focus:border-[var(--brand-blue)]">
+								class="rounded-none bg-white border border-[#979797] h-[34px] pl-5 pr-10 text-[13px] font-normal tracking-wider w-[224px] leading-none text-[var(--brand-darker)] placeholder:text-[#343233] focus:outline-none focus:border-[var(--brand-blue)]">
 							<button type="submit" aria-label="Szukaj"
-								class="rounded-none absolute right-0 top-0 h-[40px] w-10 flex items-center justify-center text-[var(--brand-darker)] hover:text-[var(--brand-red)] bg-transparent">
+								class="rounded-none absolute right-0 top-0 h-[34px] w-10 flex items-center justify-center text-[var(--brand-darker)] hover:text-[var(--brand-red)] bg-transparent">
 								<i data-lucide="search" class="w-[16px] h-[16px] shrink-0"></i>
 							</button>
 						</form>
 						<a href="{url module=favourite action=list}" aria-label="Ulubione"
-							class="text-[var(--brand-darker)] hover:text-[var(--brand-red)]">
+							class="inline-flex items-center justify-center h-[34px] text-[var(--brand-darker)] hover:text-[var(--brand-red)]">
 							<i data-lucide="heart" class="w-[20px] h-[20px] shrink-0"></i>
 						</a>
 						<a href="{url module=favourite action=compare}" aria-label="Porównaj"
-							class="text-[var(--brand-darker)] hover:text-[var(--brand-red)]">
+							class="inline-flex items-center justify-center h-[34px] text-[var(--brand-darker)] hover:text-[var(--brand-red)]">
 							<i data-lucide="scale" class="w-[20px] h-[20px] shrink-0"></i>
 						</a>
 						<a href="{url module=order action=cart}" aria-label="Koszyk"
-							class="relative text-[var(--brand-darker)] hover:text-[var(--brand-red)]"{if !$basket} id="header-cart-empty"{/if}>
+							class="relative inline-flex items-center justify-center h-[34px] text-[var(--brand-darker)] hover:text-[var(--brand-red)]"{if !$basket} id="header-cart-empty"{/if}>
 							<i data-lucide="shopping-cart" class="w-[22px] h-[22px] shrink-0"></i>
 							{if $basket}
 								<span class="absolute -top-1.5 -right-1.5 min-w-[18px] h-[18px] px-1 bg-[var(--brand-red)] text-white text-[10px] font-black leading-none grid place-items-center rounded-none">
@@ -62,12 +62,12 @@
 						</a>
 						{if $user}
 							<a href="{url module=panel action=account}"
-								class="rounded-none border border-[#979797] h-[40px] px-6 text-[13px] font-bold tracking-wider text-[var(--brand-darker)] hover:border-[var(--brand-red)] hover:text-[var(--brand-red)] inline-flex items-center bg-white">
+								class="header-account-btn rounded-none border border-[#979797] h-[34px] px-3 text-[13px] font-bold tracking-wider text-[var(--brand-darker)] hover:border-[var(--brand-red)] hover:text-[var(--brand-red)] inline-flex items-center bg-white">
 								KONTO
 							</a>
 						{else}
 							<button type="button"
-								class="login-trigger rounded-none border border-[#979797] h-[40px] px-6 text-[13px] font-bold tracking-wider text-[var(--brand-darker)] hover:border-[var(--brand-red)] hover:text-[var(--brand-red)] bg-white">
+								class="login-trigger rounded-none border border-[#979797] h-[34px] px-3 text-[13px] font-bold tracking-wider text-[var(--brand-darker)] hover:border-[var(--brand-red)] hover:text-[var(--brand-red)] bg-white inline-flex items-center">
 								ZALOGUJ
 							</button>
 						{/if}
