@@ -115,6 +115,11 @@
   line-height: 1 !important;
 }
 
+#site-header form[role="search"] input[type="text"] {
+  max-width: 170px !important;
+  width: 100%;
+}
+
 #site-header button:not([class*="border"]) {
   border: none;
 }
@@ -128,7 +133,7 @@
   margin-left: auto;
   margin-right: auto;
   background-color: #1d99e1 !important;
-  height: 54px;
+  height: 45px;
 }
 
 #site-header #site-header-filters button {
@@ -153,7 +158,7 @@
   background-color: #ed1d24 !important;
   background-image: none !important;
   width: 264px;
-  height: 54px;
+  height: 45px;
   color: #fff !important;
   font-size: 14px !important;
   font-weight: 800;
@@ -172,8 +177,18 @@
 }
 
 #site-header {
-  position: static !important;
+  position: relative !important;
   top: auto !important;
+}
+
+#site-header #site-header-filter-bar {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  width: 100%;
+  max-width: 1480px;
 }
 
 #site-header .site-mega-panel {

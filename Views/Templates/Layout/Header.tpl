@@ -22,14 +22,14 @@
 {/if}
 
 <!-- New header START -->
-<header id="site-header" class="bg-white border-b border-black/5 z-50 overflow-visible font-sans rounded-none static">
+<header id="site-header" class="bg-white border-b border-black/5 z-50 overflow-visible font-sans rounded-none relative">
 	<div class="relative" id="site-header-mega">
 		<div class="max-w-[1480px] mx-auto px-9 pt-3">
-			<div class="flex items-center justify-between gap-8 pb-4">
+			<div class="flex items-center justify-between gap-8 mb-[40px]">
 				<a href="/" class="flex items-center shrink-0">
 					<img src="/img/logo.svg" alt="Studio Atrium – projekty domów" class="h-[35px] w-auto shrink-0 rounded-none" id="logo" width="176" height="35">
 				</a>
-				<div class="flex flex-col items-end gap-3 min-w-0">
+				<div class="flex flex-col items-end gap-6 min-w-0">
 					<div class="flex items-center justify-end gap-6 h-[34px]">
 						<a href="tel:+48338229496" class="flex items-center gap-2 h-[34px] rounded-none" rel="nofollow">
 							<i data-lucide="phone" class="w-[24px] h-[24px] text-[var(--brand-darker)] shrink-0" stroke-width="1.25" aria-hidden="true"></i>
@@ -37,7 +37,7 @@
 						</a>
 						<form method="get" action="{url module='project' action='search'}" class="relative flex items-center h-[34px] rounded-none" role="search">
 							<input type="text" name="query" placeholder="wyszukaj nazwę"
-								class="rounded-none bg-white border border-[#979797] h-[34px] pl-5 pr-10 text-[13px] font-normal tracking-wider w-[224px] leading-none text-[var(--brand-darker)] placeholder:text-[#343233] focus:outline-none focus:border-[var(--brand-blue)]">
+								class="rounded-none bg-white border border-[#979797] h-[34px] pl-5 pr-10 text-[13px] font-normal tracking-wider w-full max-w-[170px] leading-none text-[var(--brand-darker)] placeholder:text-[#343233] focus:outline-none focus:border-[var(--brand-blue)]">
 							<button type="submit" aria-label="Szukaj"
 								class="rounded-none absolute right-0 top-0 h-[34px] w-10 flex items-center justify-center text-[var(--brand-darker)] hover:text-[var(--brand-red)] bg-transparent">
 								<i data-lucide="search" class="w-[16px] h-[16px] shrink-0"></i>
@@ -308,11 +308,11 @@
 		</div>
 	</div>
 
-	<div class="max-w-[1480px] mx-auto px-8 pb-4">
+	<div id="site-header-filter-bar" class="max-w-[1480px] w-full mx-auto px-8 pb-4 absolute bottom-[-45px] left-1/2 -translate-x-1/2 z-10">
 		<div class="flex items-center">
 			<div class="flex-1 flex justify-center min-w-0">
 				<div id="site-header-filters"
-					class="w-auto mx-auto h-[54px] bg-[#1d99e1] rounded-none flex items-center gap-10 px-10">
+					class="w-auto mx-auto h-[45px] bg-[#1d99e1] rounded-none flex items-center gap-10 px-10">
 					<button type="button" data-search-tab="kondygnacje"
 						class="js-open-search rounded-none bg-transparent text-white font-black text-[14px] leading-none tracking-normal">
 						Kondygnacje
