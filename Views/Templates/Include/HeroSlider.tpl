@@ -58,10 +58,10 @@
                     {$safety.subtitle|escape}</p>
             {/if}
         </div>
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-[24px]">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-[48px]">
             {foreach $safety_items as $item}
                 <div class="flex items-center gap-3">
-                    <div class="text-white text-[36px] md:text-[44px] font-bold leading-none">{$item.item_number|escape}
+                    <div class="text-white text-[44px] md:text-[80px] font-bold leading-none">{$item.item_number|escape}
                     </div>
                     <div class="text-white text-[16px] leading-snug whitespace-pre-line">{$item.item_text|escape}</div>
                 </div>
