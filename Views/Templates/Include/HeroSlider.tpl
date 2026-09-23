@@ -6,8 +6,8 @@
                     <div class="swiper-slide">
                         <a href="{$slide.link_url|escape}" class="block relative h-[480px] bg-cover bg-center"
                             style="background-image:url({$slide.image_url|escape})">
-                            <div class="max-w-[1480px] mx-auto px-8 h-full flex items-center">
-                                <div class="bg-black/35 backdrop-blur-[2px] text-white px-[64px] py-[32px] max-w-[640px]">
+                            <div class="hero-slide-overlay absolute inset-y-0 left-0 flex items-center">
+                                <div class="hero-slide-overlay__panel bg-black/35 backdrop-blur-[2px] text-white py-[32px] pr-[64px]">
                                     <h1 class="text-[42px] md:text-[54px] font-medium leading-[1.05]">
                                         {$slide.title|escape}</h1>
                                     {if $slide.subtitle}<div class="text-[36px] leading-[36px] font-500">

@@ -394,6 +394,31 @@ strong, b {
   transition: color 0.15s ease, filter 0.15s ease;
 }
 
+/* Full-bleed left overlay; right edge matches old max-w-[640px] + content rail */
+#hero-slider .hero-slide-overlay {
+  pointer-events: none;
+  width: min(100%, calc(640px + 2rem + max(0px, (100vw - 1480px) / 2)));
+}
+
+#hero-slider .hero-slide-overlay__panel {
+  pointer-events: auto;
+  box-sizing: border-box;
+  width: 100%;
+  /* keep text where it was: rail + px-8 + former px-[64px] */
+  padding-left: calc(6rem + max(0px, (100vw - 1480px) / 2));
+}
+
+@media (max-width: 767px) {
+  #hero-slider .hero-slide-overlay {
+    width: 100%;
+  }
+
+  #hero-slider .hero-slide-overlay__panel {
+    padding-left: 2rem;
+    padding-right: 1.5rem;
+  }
+}
+
 @media (min-width: 1024px) {
   a.uppercase[class*="tracking-"],
   button.uppercase[class*="tracking-"],
