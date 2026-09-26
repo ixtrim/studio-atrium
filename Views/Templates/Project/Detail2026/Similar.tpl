@@ -16,8 +16,8 @@
 					{foreach $detailSimilar as $item}
 					<div class="swiper-slide !h-auto">
 						<a href="{$item.url|escape}" class="bg-white overflow-hidden h-full flex flex-col group border border-[#f5f5f5]">
-							<div class="relative overflow-hidden">
-								<img src="{$item.image_url|escape}" alt="{$item.name|escape}" class="w-full h-[280px] object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy"
+							<div class="relative overflow-hidden aspect-[3/2]">
+								<img src="{$item.image_url|escape}" alt="{$item.name|escape}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy"
 									onerror="this.onerror=null;this.src='https://media.studioatrium.pl/project/{$item.id}/render-box.jpg';">
 								{if $item.badge_label}
 								<span class="absolute top-3 left-3 text-[11px] font-bold tracking-wider {if $item.badge_variant == 'discount'}bg-[var(--brand-red)] text-white{else}bg-white/90 text-[var(--brand-red)]{/if} px-2.5 py-1">{$item.badge_label|escape}</span>

@@ -155,7 +155,7 @@
 }
 
 #site-header #search-trigger {
-  background-color: #ed1d24 !important;
+  background-color: #c61000 !important;
   background-image: none !important;
   width: 264px;
   height: 45px;
@@ -169,7 +169,7 @@
 }
 
 #site-header #search-trigger:hover {
-  background-color: #d11a20 !important;
+  background-color: #a80d00 !important;
 }
 
 #site-header a {

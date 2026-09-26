@@ -176,8 +176,8 @@
   --radius: 0.625rem;
   --background: oklch(0.985 0.002 247);
   --foreground: oklch(0.22 0.02 250);
-  --brand-red: oklch(0.62 0.22 27);
-  --brand-red-hover: oklch(0.55 0.22 27);
+  --brand-red: #c61000;
+  --brand-red-hover: #a80d00;
   --brand-blue: oklch(0.74 0.11 232);
   --brand-blue-strong: oklch(0.66 0.13 232);
   --brand-dark: oklch(0.30 0.012 250);

@@ -11,9 +11,9 @@
 {/if}
 <a href="{$item.url|escape}"
 	class="bg-white overflow-hidden h-full flex flex-col group border border-[#f5f5f5]">
-	<div class="relative overflow-hidden">
+	<div class="relative overflow-hidden aspect-[3/2]">
 		<img src="{$item.image_url|escape}" alt="{$item.name|escape}"
-			class="w-full h-[280px] object-cover transition-transform duration-500 group-hover:scale-105"
+			class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
 			loading="{if isset($teaser_eager) && $teaser_eager}eager{else}lazy{/if}"
 			{if $item.id}onerror="this.onerror=null;this.src='https://media.studioatrium.pl/project/{$item.id|escape}/render-box.jpg';"{/if}>
 		{if $_badge}

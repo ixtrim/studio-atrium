@@ -4,7 +4,7 @@
             <div class="swiper-wrapper">
                 {foreach $hero_slides as $slide}
                     <div class="swiper-slide">
-                        <a href="{$slide.link_url|escape}" class="block relative h-[480px] bg-cover bg-center"
+                        <a href="{$slide.link_url|escape}" class="block relative h-[650px] bg-cover bg-center"
                             style="background-image:url({$slide.image_url|escape})">
                             <div class="hero-slide-overlay absolute inset-y-0 left-0 flex items-center">
                                 <div class="hero-slide-overlay__panel bg-black/35 backdrop-blur-[2px] text-white py-[32px] pr-[64px]">
@@ -45,8 +45,8 @@
     </div>
 </section>
 
-<section class="bg-[#3a3d42] py-6" id="safety-experience">
-    <div class="max-w-[1480px] mx-auto px-8">
+<section class="bg-[#3a3d42] pt-6 pb-16 mb-[90px]" id="safety-experience">
+    <div class="max-w-[1480px] mx-auto px-8 pb-2">
         <div class="text-center mb-4">
             <h2 class="text-white text-[36px] font-400 tracking-tight uppercase">
                 {if $safety.title_left}<span class="text-[#1ba0e2]">{$safety.title_left|escape} </span>{/if}

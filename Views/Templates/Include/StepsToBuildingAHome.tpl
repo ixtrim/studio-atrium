@@ -138,10 +138,10 @@
                 <a href="{$build_steps.experience.button_url|escape}"
                     title="{$build_steps.experience.button_title|default:$build_steps.experience.button_label|escape}"
                     rel="{$build_steps.experience.button_rel|default:'noopener noreferrer'|escape}"
-                    class="mt-8 inline-flex items-center justify-center bg-[#e63329] hover:bg-[#c92a21] text-white text-[14px] font-extrabold leading-none tracking-normal uppercase px-12 py-4 lg:h-[54px] lg:max-h-[54px] lg:py-0">{$build_steps.experience.button_label|escape}</a>
+                    class="mt-8 inline-flex items-center justify-center bg-[#c61000] hover:bg-[#a80d00] text-white text-[14px] font-extrabold leading-none tracking-normal uppercase px-12 py-4 lg:h-[54px] lg:max-h-[54px] lg:py-0">{$build_steps.experience.button_label|escape}</a>
             {else}
                 <button type="button"
-                    class="mt-8 inline-flex items-center justify-center bg-[#e63329] hover:bg-[#c92a21] text-white text-[14px] font-extrabold leading-none tracking-normal uppercase px-12 py-4 lg:h-[54px] lg:max-h-[54px] lg:py-0 border-0">{$build_steps.experience.button_label|escape}</button>
+                    class="mt-8 inline-flex items-center justify-center bg-[#c61000] hover:bg-[#a80d00] text-white text-[14px] font-extrabold leading-none tracking-normal uppercase px-12 py-4 lg:h-[54px] lg:max-h-[54px] lg:py-0 border-0">{$build_steps.experience.button_label|escape}</button>
             {/if}
         </div>
         {if $build_steps.experience.image_url}

@@ -54,7 +54,7 @@
 }
 
 #proj-2026 .proj-faq-item[data-open="1"] {
-	border-color: var(--brand-red, #e63329) !important;
+	border-color: var(--brand-red, #c61000) !important;
 	box-shadow: 0 8px 24px -16px rgba(0, 0, 0, 0.35);
 }
 
@@ -65,7 +65,7 @@
 }
 
 #proj-anchor-bar .proj-anchor-link.is-active {
-	color: var(--brand-red, #e63329) !important;
+	color: var(--brand-red, #c61000) !important;
 }
 
 /* Floor plan lightbox */

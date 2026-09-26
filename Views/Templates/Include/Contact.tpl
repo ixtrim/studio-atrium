@@ -43,7 +43,7 @@
                             </span>
                         </label>
                         <button type="submit"
-                            class="w-full inline-flex items-center justify-center bg-[#e63329] hover:bg-[#cc2a21] text-white font-bold tracking-wider py-3 lg:h-[54px] lg:max-h-[54px] lg:py-0 leading-none text-[16px] uppercase transition-colors mt-[32px]">{$homepage_contact.submit_label|escape}</button>
+                            class="w-full inline-flex items-center justify-center bg-[#c61000] hover:bg-[#a80d00] text-white font-bold tracking-wider py-3 lg:h-[54px] lg:max-h-[54px] lg:py-0 leading-none text-[16px] uppercase transition-colors mt-[32px]">{$homepage_contact.submit_label|escape}</button>
                     </form>
                 </div>
             </div>

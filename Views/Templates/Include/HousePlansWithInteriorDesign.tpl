@@ -23,8 +23,8 @@
                     {foreach $interior_plans.items as $item}
                     <div class="swiper-slide !h-auto">
                         <a href="{$item.url|escape}" title="{$item.name|escape}" class="bg-white overflow-hidden h-full flex flex-col group">
-                            <div class="relative overflow-hidden">
-                                <img src="{$item.image_url|escape}" alt="{$item.name|escape}" class="w-full h-[280px] object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+                            <div class="relative overflow-hidden aspect-[3/2]">
+                                <img src="{$item.image_url|escape}" alt="{$item.name|escape}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
                                 {if $item.tag}
                                 <span class="absolute top-3 left-3 text-[11px] font-bold tracking-wider bg-white/90 text-[var(--brand-red)] px-2.5 py-1">{$item.tag|escape}</span>
                                 {/if}

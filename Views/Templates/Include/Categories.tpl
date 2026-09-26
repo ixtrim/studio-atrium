@@ -1,4 +1,4 @@
-<section class="relative bg-[#ececec] py-12" id="categories">
+<section class="relative bg-[#ececec] pt-6 pb-[110px]" id="categories">
     <div class="max-w-[1480px] mx-auto px-8">
         <div class="flex items-center justify-between mb-8">
             <h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight uppercase">
