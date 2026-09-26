@@ -1,4 +1,4 @@
-<section class="w-full bg-white pt-14 pb-16" id="our-bestsellers">
+<section class="w-full bg-white pt-14 pb-14" id="our-bestsellers">
     <div class="max-w-[1480px] mx-auto px-8">
         <h2 class="bs-title text-[36px] font-400 text-[var(--brand-darker)] tracking-tight mb-10 pl-2 uppercase">
             {$bestsellers_meta.section_title|escape}</h2>

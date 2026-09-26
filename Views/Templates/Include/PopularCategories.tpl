@@ -1,4 +1,4 @@
-<section class="w-full bg-white py-16" id="popular-categories">
+<section class="w-full bg-white pt-10 pb-14" id="popular-categories">
     <div class="max-w-[1480px] mx-auto px-8">
         <h2 class="pcg-title text-[36px] font-400 text-[var(--brand-darker)] tracking-tight mb-10 pl-2 uppercase">{$popular_categories_meta.section_title|escape}</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

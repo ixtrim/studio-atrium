@@ -20,8 +20,8 @@
 		<span class="absolute top-3 left-3 text-[11px] font-bold tracking-wider {if $_badgeVariant == 'discount' || $_badgeVariant == 'sale'}bg-[var(--brand-red)] text-white{else}bg-white/90 text-[var(--brand-red)]{/if} px-2.5 py-1">{$_badge|escape}</span>
 		{/if}
 	</div>
-	<div class="px-5 pt-4 pb-5 flex flex-col gap-3 flex-1">
-		<h3 class="text-[22px] font-bold text-[#222] leading-tight">{$item.name|escape}</h3>
+	<div class="px-5 pt-5 pb-5 flex flex-col gap-2 flex-1">
+		<h3 class="text-[26px] font-bold text-[#222] leading-tight">{$item.name|escape}</h3>
 		<div class="text-[13px] font-bold tracking-wider text-[var(--brand-red)]">{$item.type_label|escape}</div>
 		<div class="flex items-center gap-4 py-2 text-[13px] text-[#222] flex-wrap">
 			{if $item.area}
@@ -39,9 +39,11 @@
 		</div>
 		<div class="pt-1 mt-auto">
 			{if $item.price_old}
-			<div class="text-[16px] text-[var(--brand-red)] line-through">{$item.price_old|escape} PLN</div>
+			<div class="project-teaser-price-old text-[14px] font-medium text-[var(--brand-red)] leading-none mb-1">
+				<s>{number_format($item.price_old, 0, ',', ' ')} PLN</s>
+			</div>
 			{/if}
-			<div class="flex items-baseline gap-2"><span class="text-[34px] font-['Montserrat',sans-serif] font-semibold text-[var(--brand-blue-strong)] leading-none">{$item.price|escape}</span><span class="text-[16px] text-[var(--brand-blue-strong)] font-semibold">PLN</span></div>
+			<div class="flex items-baseline gap-2"><span class="text-[30px] font-['Montserrat',sans-serif] font-semibold text-[var(--brand-blue-strong)] leading-none">{number_format($item.price, 0, ',', ' ')}</span><span class="text-[16px] text-[var(--brand-blue-strong)] font-semibold">PLN</span></div>
 		</div>
 	</div>
 </a>

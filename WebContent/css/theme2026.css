@@ -358,6 +358,14 @@ strong, b {
   }
 }
 
+/* Promo old price on product teasers — beat legacy a { text-decoration } resets */
+.project-teaser-price-old,
+.project-teaser-price-old s {
+  text-decoration: line-through !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+}
+
 /* Header legacy isolation lives in header2026.css (loaded after Tailwind) */
 
 #hp-hero-prev,

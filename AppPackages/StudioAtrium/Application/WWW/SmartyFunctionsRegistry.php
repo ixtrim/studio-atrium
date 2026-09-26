@@ -1877,10 +1877,13 @@ class SmartyFunctionsRegistry
 
             $price = (float) $project['price'];
             $discount = (float) $project['discount'];
+            $tag = isset($row['tag']) ? trim((string) $row['tag']) : '';
+            if ($discount <= 0 && $tag !== '') {
+                $discount = $this->discountAmountFromTeaserTag($tag, $price);
+            }
             $priceCurrent = $discount > 0 ? ($price - $discount) : $price;
             $priceOld = $discount > 0 ? $price : null;
 
-            $tag = isset($row['tag']) ? trim((string) $row['tag']) : '';
             $type = $project['type'];
             $action = 'item';
             if ($type === 'garage') {
@@ -1906,12 +1909,23 @@ class SmartyFunctionsRegistry
                 $imageUrl = 'https://media.studioatrium.pl/project/' . $pid . '/render-box.jpg';
             }
 
+            $badgeLabel = $tag;
+            $badgeVariant = '';
+            if ($discount > 0) {
+                $badgeVariant = 'discount';
+                if ($badgeLabel === '') {
+                    $badgeLabel = 'RABAT ' . (int) round($discount) . ' zł';
+                }
+            }
+
             $cards[] = array(
                 'id'         => $pid,
                 'name'       => $project['name'],
                 'url'        => $urlGen->generateUrl($urlParams),
                 'image_url'  => $imageUrl,
                 'tag'        => $tag,
+                'badge_label'=> $badgeLabel,
+                'badge_variant' => $badgeVariant,
                 'type_label' => $this->projectTypeLabel($params, $type),
                 'area'       => $area,
                 'rooms'      => $rooms,
@@ -1923,6 +1937,35 @@ class SmartyFunctionsRegistry
         }
 
         return $cards;
+    }
+
+    /**
+     * Parse a homepage teaser tag like "-355 RABATU" / "RABAT 350 zł" / "-30% RABATU"
+     * into a zł discount amount when project.discount is empty.
+     *
+     * @param string $tag
+     * @param float $price
+     * @return float
+     */
+    private function discountAmountFromTeaserTag($tag, $price)
+    {
+        $tag = trim((string) $tag);
+        if ($tag === '' || stripos($tag, 'RABAT') === false) {
+            return 0.0;
+        }
+        if (preg_match('/(\d+(?:[.,]\d+)?)\s*%/', $tag, $m)) {
+            $pct = (float) str_replace(',', '.', $m[1]);
+            if ($pct > 0 && $pct < 100 && $price > 0) {
+                return round($price * ($pct / 100), 2);
+            }
+        }
+        if (preg_match('/(\d+(?:[.,]\d+)?)/', $tag, $m)) {
+            $amount = (float) str_replace(',', '.', $m[1]);
+            if ($amount > 0 && $amount < $price) {
+                return $amount;
+            }
+        }
+        return 0.0;
     }
 
     private function projectTypeLabel(array $params, $type)
