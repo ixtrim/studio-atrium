@@ -1,5 +1,5 @@
-<section class="w-full bg-[#f3f3f3] py-16" id="interior-plans">
-    <div class="max-w-[1480px] mx-auto px-8">
+<section class="w-full bg-[#f3f3f3] pt-8 pb-16" id="interior-plans">
+    <div class="max-w-[1480px] mx-auto px-8 pb-8">
         <h2 class="ip-title text-[36px] font-400 text-[var(--brand-darker)] tracking-tight mb-10 pl-2 uppercase">{$interior_plans.meta.section_title|escape}</h2>
         <div class="relative">
             <button type="button" aria-label="Poprzedni" id="hp-ip-prev"
@@ -82,8 +82,7 @@
             },
             breakpoints: {
                 640: { slidesPerView: 2, spaceBetween: 16 },
-                1024: { slidesPerView: 3, spaceBetween: 20 },
-                1280: { slidesPerView: 4, spaceBetween: 24 }
+                1024: { slidesPerView: 3, spaceBetween: 24 }
             }
         });
     }

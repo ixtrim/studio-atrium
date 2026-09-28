@@ -182,13 +182,27 @@
 }
 
 #site-header #site-header-filter-bar {
+  position: relative;
+  bottom: 0;
+  left: auto;
+  transform: none;
+  z-index: 10;
+  width: 100%;
+  max-width: 1480px;
+}
+
+@media (min-width: 1024px) {
+  body:not(:has(#hp-2026)) #site-header #site-header-filter-bar {
+    margin-top: -20px;
+  }
+}
+
+/* Homepage only: overlap hero like the design */
+body:has(#hp-2026) #site-header #site-header-filter-bar {
   position: absolute;
   bottom: -40px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 10;
-  width: 100%;
-  max-width: 1480px;
 }
 
 #site-header .site-mega-panel {

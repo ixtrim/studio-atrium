@@ -1,14 +1,14 @@
-<section class="w-full max-w-[1420px] mx-auto px-4 my-16" id="steps-to-building-a-home">
-    <h2 class="inline-block text-[36px] font-400 text-[var(--brand-darker)] tracking-tight uppercase px-10 py-4 text-center"
+<section class="w-full max-w-[1420px] mx-auto px-4 my-16 pt-4 pb-10" id="steps-to-building-a-home">
+    <h2 class="inline-block text-[36px] font-400 text-[var(--brand-darker)] tracking-tight uppercase px-10 pt-7 pb-7 text-center mb-8"
         style="background:#7ec8ee;margin-left:-1rem">{$build_steps.meta.section_title|escape}</h2>
-    <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10 px-[75px]">
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-2 md:grid-rows-[auto_auto] md:grid-flow-col gap-x-16 gap-y-5 px-[50px] md:items-start">
         {foreach $build_steps.steps as $step}
             <div class="hp-build-step cursor-pointer" data-step-item="{$step@index}" role="button" tabindex="0"
                 aria-expanded="false">
                 <div class="flex items-start gap-5 text-left">
-                    <span class="text-[34px] font-['Montserrat',sans-serif] font-semibold leading-none text-[var(--brand-blue-strong)] leading-none w-6 shrink-0 pt-1">{$step.step_number|escape}</span>
+                    <span class="text-[44px] md:text-[64px] font-bold leading-none text-[var(--brand-blue-strong)] shrink-0">{$step.step_number|escape}</span>
                     <div class="flex-1 min-w-0">
-                        <span class="block text-[#222] text-[24px] font-bold leading-snug pt-1">{$step.step_title|escape}</span>
+                        <span class="block text-[#222] text-[24px] md:text-[28px] font-bold leading-snug pt-1">{$step.step_title|escape}</span>
                         <div class="hp-step-rule-row mt-3 flex items-end">
                             <div class="hp-step-rule flex-1"></div>
                             <span class="hp-step-arrow shrink-0" aria-hidden="true"></span>

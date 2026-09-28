@@ -308,7 +308,7 @@
 		</div>
 	</div>
 
-	<div id="site-header-filter-bar" class="max-w-[1480px] w-full mx-auto px-8 pb-4 absolute bottom-[-45px] left-1/2 -translate-x-1/2 z-10">
+	<div id="site-header-filter-bar" class="max-w-[1480px] w-full mx-auto px-8 pb-4 z-10">
 		<div class="flex items-center">
 			<div class="flex-1 flex justify-center min-w-0">
 				<div id="site-header-filters"
