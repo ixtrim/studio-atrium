@@ -1,18 +1,18 @@
-<section class="bg-[#3a3a3a] text-white py-20" id="offer">
-    <div class="max-w-[1480px] mx-auto px-12 grid md:grid-cols-2 gap-16 items-start">
-        <div>
-            <h2 class="text-[36px] font-400 text-white tracking-tight mb-[24px] uppercase">{$offer.title|escape}</h2>
-            <p class="text-[18px] leading-[24px] font-bold mb-[24px]">{$offer.lead_text|escape|nl2br}</p>
+<section class="bg-[#3a3a3a] text-white pt-14 pb-8" id="offer">
+    <div class="max-w-[1480px] mx-auto px-12 flex flex-col md:flex-row gap-10 md:gap-[100px] items-start">
+        <div class="flex-1 min-w-0 gap-4">
+            <h2 class="text-[32px] font-400 text-white tracking-tight uppercase">{$offer.title|escape}</h2>
+            <p class="text-[20px] leading-[24px] font-bold pt-[45px] pb-[45px] uppercase">{$offer.lead_text|escape|nl2br}</p>
             <a href="{$offer.button_url|escape}"
-                class="inline-flex items-center justify-center bg-[var(--brand-red)] hover:bg-[var(--brand-red-hover)] text-white font-bold px-8 py-3 lg:h-[54px] lg:max-h-[54px] lg:py-0 leading-none text-[13px] uppercase tracking-wider mb-12">{$offer.button_label|escape}</a>
+                class="inline-flex items-center justify-center bg-[var(--brand-red)] hover:bg-[var(--brand-red-hover)] text-white font-bold px-[80px] py-3 lg:h-[54px] lg:max-h-[54px] lg:py-0 leading-none text-[13px] uppercase tracking-wider mb-12">{$offer.button_label|escape}</a>
 
             {if $offer_quotes}
-            <div class="hp-offer-quotes max-w-xl mx-auto" id="hp-offer-quotes" data-count="{$offer_quotes|@count}">
+            <div class="hp-offer-quotes mx-auto mt-[45px]" id="hp-offer-quotes" data-count="{$offer_quotes|@count}">
                 <div class="hp-offer-quote-stage relative overflow-hidden">
                     {foreach $offer_quotes as $q}
                     <div class="hp-offer-quote-slide{if $q@first} is-active{/if}" data-index="{$q@index}"{if !$q@first} aria-hidden="true"{/if}>
                         {if $q.quote_text}
-                        <blockquote class="text-center text-[22px] leading-snug px-4 m-0"
+                        <blockquote class="text-center text-[32px] leading-[1.15] leading-snug m-0"
                             style="font-style:normal;font-weight:500"><span>“{$q.quote_text|escape}”</span></blockquote>
                         {/if}
                         {if $q.quote_author}
@@ -323,9 +323,9 @@
             </script>
             {/if}
         </div>
-        <div class="flex flex-col items-center">
+        <div class="w-full md:w-[min(100%,28rem)] shrink-0 flex flex-col items-end">
             {if $offer.image_url}
-            <img src="{$offer.image_url|escape}" alt="{$offer.image_alt|escape}" class="w-full max-w-md aspect-square object-cover">
+            <img src="{$offer.image_url|escape}" alt="{$offer.image_alt|escape}" class="w-full aspect-square object-cover">
             {/if}
             <div class="mt-4 text-[18px] font-bold uppercase tracking-wide">{$offer.image_caption|escape}</div>
         </div>
