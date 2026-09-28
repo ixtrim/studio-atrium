@@ -1,7 +1,7 @@
 {foreach $products_sections as $section}
-<section class="{if $section@first}pt-[50px]{else}pt-[18px]{/if} {if $section@last}pb-[150px]{else}pb-[18px]{/if}" id="gallery-{$section.section_key|escape}">
-    <div class="max-w-[1480px] mx-auto px-8">
-        <h2 class="text-[28px] font-400 text-[var(--brand-darker)] tracking-tight leading-tight uppercase">{$section.section_title|escape}</h2>
+<section class="{if $section@first}pt-[50px]{else}pt-[18px]{/if} {if $section@last}pb-16 md:pb-[150px]{else}pb-[18px]{/if}" id="gallery-{$section.section_key|escape}">
+    <div class="max-w-[1480px] mx-auto px-4 sm:px-8">
+        <h2 class="text-[22px] md:text-[28px] font-400 text-[var(--brand-darker)] tracking-tight leading-tight uppercase">{$section.section_title|escape}</h2>
         {if $section.section_subtitle}
         <p class="text-[18px] leading-[24px] text-[var(--brand-darker)]/80 mt-1 mb-4">{$section.section_subtitle|escape}</p>
         {else}

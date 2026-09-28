@@ -1,6 +1,6 @@
 <section class="w-full bg-white pt-10 pb-10" id="popular-categories">
-    <div class="max-w-[1480px] mx-auto px-8">
-        <h2 class="pcg-title text-[36px] font-400 text-[var(--brand-darker)] tracking-tight mb-10 pl-2 uppercase">{$popular_categories_meta.section_title|escape}</h2>
+    <div class="max-w-[1480px] mx-auto px-4 sm:px-8">
+        <h2 class="pcg-title text-[24px] md:text-[36px] font-400 text-[var(--brand-darker)] tracking-tight mb-6 md:mb-10 pl-2 uppercase">{$popular_categories_meta.section_title|escape}</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {foreach from=$popular_categories item=item}
             <a href="{$item.link_url|escape}"

@@ -2,9 +2,9 @@
     <div class="bg-[var(--brand-blue)] relative overflow-visible">
         <div class="max-w-[1480px] mx-auto px-6 pt-[35px] pb-[42px] grid grid-cols-12 gap-8 items-center relative">
             <div class="col-span-12 md:col-span-7">
-                <h2 class="text-white text-[36px] font-400 tracking-tight mb-[40px] uppercase">
+                <h2 class="text-white text-[24px] md:text-[36px] font-400 tracking-tight mb-[40px] uppercase">
                     {$newsletter.meta.contest_title|escape}</h2>
-                <p class="text-[var(--brand-darker)] text-[20px] leading-[28px] font-bold uppercase">
+                <p class="text-[var(--brand-darker)] text-[16px] md:text-[20px] leading-[28px] font-bold uppercase">
                     {$newsletter.meta.contest_body|escape|nl2br nofilter}</p>
             </div>
             <div
@@ -30,13 +30,13 @@
         </div>
     </div>
     <div class="{if $category_newsletter_bg}bg-[#5d5b5c]{else}bg-[#3a3a3a]{/if}" id="hp-newsletter-signup">
-        <div class="hp-newsletter-signup-grid max-w-[1480px] pl-6 mx-auto pt-14 pb-[100px] grid grid-cols-1 md:grid-cols-12 md:gap-x-8 gap-y-10 items-start">
+        <div class="hp-newsletter-signup-grid max-w-[1480px] px-4 sm:px-6 mx-auto pt-14 pb-[100px] grid grid-cols-1 md:grid-cols-12 md:gap-x-8 gap-y-10 items-start">
             <div class="col-span-12 md:col-span-4 text-white">
-                <h2 class="text-[36px] font-400 text-white tracking-tight leading-tight uppercase m-0">
+                <h2 class="text-[24px] md:text-[36px] font-400 text-white tracking-tight leading-tight uppercase m-0">
                     {$newsletter.meta.signup_title|escape|nl2br nofilter}</h2>
-                <h3 class="text-white text-[32px] leading-[1.25] font-normal mt-0 mb-0">
+                <h3 class="text-white text-[22px] md:text-[32px] leading-[1.25] font-normal mt-0 mb-0">
                     {$newsletter.meta.signup_body1|escape}</h3>
-                <p class="text-[20px] leading-[24px] mt-6 mb-0">{$newsletter.meta.signup_body2|escape}</p>
+                <p class="text-[16px] md:text-[20px] leading-[24px] mt-6 mb-0">{$newsletter.meta.signup_body2|escape}</p>
             </div>
             <div class="col-span-12 md:col-span-5 pt-[45px]">
                 <form id="hp-newsletter-form" class="space-y-4 w-full max-w-full text-left" novalidate>
@@ -51,7 +51,7 @@
                     <p id="hp-newsletter-success" class="hidden text-[13px] text-[#9dffb8] leading-snug m-0" role="status"></p>
                     <div class="flex justify-start mt-4">
                         <button type="submit" id="hp-newsletter-submit"
-                            class="inline-flex items-center justify-center rounded-none bg-[var(--brand-blue)] hover:bg-[var(--brand-blue-strong)] text-white font-bold px-16 py-4 lg:h-[54px] lg:max-h-[54px] lg:py-0 leading-none text-[13px] uppercase tracking-wider border-0 cursor-pointer disabled:opacity-60 disabled:cursor-wait">{$newsletter.meta.signup_button_label|escape}</button>
+                            class="inline-flex items-center justify-center rounded-none bg-[var(--brand-blue)] hover:bg-[var(--brand-blue-strong)] text-white font-bold w-full sm:w-auto px-8 sm:px-16 py-4 lg:h-[54px] lg:max-h-[54px] lg:py-0 leading-none text-[13px] uppercase tracking-wider border-0 cursor-pointer disabled:opacity-60 disabled:cursor-wait">{$newsletter.meta.signup_button_label|escape}</button>
                     </div>
                 </form>
                 <script>
@@ -124,10 +124,10 @@
                 </script>
             </div>
             <div class="col-span-12 md:col-span-3 text-white">
-                <div class="text-[34px] font-black uppercase leading-none">{$newsletter.meta.reward_line1|escape}</div>
-                <div class="text-[40px] font-['Montserrat',sans-serif] font-black leading-none mt-3">
+                <div class="text-[26px] md:text-[34px] font-black uppercase leading-none">{$newsletter.meta.reward_line1|escape}</div>
+                <div class="text-[32px] md:text-[40px] font-['Montserrat',sans-serif] font-black leading-none mt-3">
                     {$newsletter.meta.reward_amount|escape}</div>
-                <div class="text-[34px] font-black leading-tight mt-3">
+                <div class="text-[26px] md:text-[34px] font-black leading-tight mt-3">
                     {$newsletter.meta.reward_line2|escape|replace:'/n':'<br>'|nl2br nofilter}</div>
             </div>
         </div>

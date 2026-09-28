@@ -1,7 +1,7 @@
 <section class="w-full max-w-[1420px] mx-auto px-4 my-16 pt-4 pb-10" id="steps-to-building-a-home">
-    <h2 class="inline-block text-[36px] font-400 text-[var(--brand-darker)] tracking-tight uppercase px-10 pt-7 pb-7 text-center mb-8"
-        style="background:#7ec8ee;margin-left:-1rem">{$build_steps.meta.section_title|escape}</h2>
-    <div class="mt-16 grid grid-cols-1 md:grid-cols-2 md:grid-rows-[auto_auto] md:grid-flow-col gap-x-16 gap-y-5 px-[50px] md:items-start">
+    <h2 class="inline-block text-[22px] md:text-[36px] font-400 text-[var(--brand-darker)] tracking-tight uppercase px-4 sm:px-10 pt-7 pb-7 text-center mb-8 ml-0 sm:-ml-4"
+        style="background:#7ec8ee">{$build_steps.meta.section_title|escape}</h2>
+    <div class="mt-8 md:mt-16 grid grid-cols-1 md:grid-cols-2 md:grid-rows-[auto_auto] md:grid-flow-col gap-x-16 gap-y-5 px-4 sm:px-8 md:px-[50px] md:items-start">
         {foreach $build_steps.steps as $step}
             <div class="hp-build-step cursor-pointer" data-step-item="{$step@index}" role="button" tabindex="0"
                 aria-expanded="false">
@@ -16,7 +16,7 @@
                     </div>
                 </div>
                 <div id="step-panel-{$step@index}" class="hp-step-panel pointer-events-none">
-                    <p class="mt-4 ml-11 text-[18px] leading-[24px] text-[#555]">{$step.step_body|escape}</p>
+                    <p class="mt-4 ml-0 sm:ml-11 text-[16px] md:text-[18px] leading-[24px] text-[#555]">{$step.step_body|escape}</p>
                 </div>
             </div>
         {/foreach}
@@ -128,7 +128,7 @@
 <section class="w-full bg-[#f3f3f3]" id="our-experience">
     <div class="max-w-[1340px] mx-auto px-4 grid grid-cols-1 md:grid-cols-2 items-center gap-8">
         <div class="py-16 md:pl-8 w-full max-w-[550px]">
-            <h2 class="text-[32px] font-500 text-[var(--brand-darker)] tracking-tight leading-[1.25] uppercase mt-2">
+            <h2 class="text-[24px] md:text-[32px] font-500 text-[var(--brand-darker)] tracking-tight leading-[1.25] uppercase mt-2">
                 {$build_steps.experience.title|escape|nl2br nofilter}</h2>
             <div class="mt-8 text-[18px] leading-[24px] text-[#555]">
                 {$build_steps.experience.body|escape|nl2br nofilter}</div>
@@ -148,7 +148,7 @@
             <div class="flex items-end justify-end w-full">
                 <img src="{$build_steps.experience.image_url|escape}"
                     alt="{$build_steps.experience.image_alt|escape}" width="800" height="800" loading="lazy"
-                    class="max-h-[660px] w-auto object-contain relative mt-[25px]">
+                    class="w-full max-w-full h-auto max-h-[420px] md:max-h-[660px] object-contain relative mt-[25px]">
             </div>
         {/if}
     </div>

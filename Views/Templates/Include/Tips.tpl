@@ -1,14 +1,14 @@
-<section class="pt-[85px] pb-[175px] bg-white" id="tips">
-    <div class="max-w-[1480px] mx-auto px-12">
-        <h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight mb-[80px] uppercase">
+<section class="pt-12 md:pt-[85px] pb-16 md:pb-[175px] bg-white" id="tips">
+    <div class="max-w-[1480px] mx-auto px-4 sm:px-8 md:px-12">
+        <h2 class="text-[24px] md:text-[36px] font-400 text-[var(--brand-darker)] tracking-tight mb-10 md:mb-[80px] uppercase">
             {$porady.section_title|escape}</h2>
-        <div class="grid md:grid-cols-2 gap-x-[150px] gap-y-9">
+        <div class="grid md:grid-cols-2 gap-x-8 lg:gap-x-[150px] gap-y-9">
             {foreach $tips as $item name=tips}
                 <div
-                    class="flex gap-[50px] items-center{if $smarty.foreach.tips.index < 2} md:pb-10 md:border-b border-black/10{/if}">
+                    class="flex flex-col sm:flex-row gap-4 sm:gap-[50px] items-center{if $smarty.foreach.tips.index < 2} md:pb-10 md:border-b border-black/10{/if}">
                     {if $item.article_url && $item.article_url != '#'}
                         <a href="{$item.article_url|escape}"
-                            class="group relative block w-[180px] h-[180px] overflow-hidden shrink-0 bg-[#f3f3f3]">
+                            class="group relative block w-full max-w-[180px] aspect-square sm:w-[180px] sm:h-[180px] overflow-hidden shrink-0 bg-[#f3f3f3]">
                             <img src="{$item.image_url|escape}" alt="{$item.image_alt|escape}"
                                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                                 loading="lazy">
@@ -17,7 +17,7 @@
                                 aria-hidden="true"></span>
                         </a>
                     {else}
-                        <div class="relative w-[180px] h-[180px] overflow-hidden shrink-0 bg-[#f3f3f3]">
+                        <div class="relative w-full max-w-[180px] aspect-square sm:w-[180px] sm:h-[180px] overflow-hidden shrink-0 bg-[#f3f3f3]">
                             <img src="{$item.image_url|escape}" alt="{$item.image_alt|escape}"
                                 class="absolute inset-0 w-full h-full object-cover" loading="lazy">
                         </div>

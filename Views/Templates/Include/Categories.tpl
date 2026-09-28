@@ -1,7 +1,7 @@
-<section class="relative bg-[#ececec] pt-6 pb-[110px]" id="categories">
-    <div class="max-w-[1480px] mx-auto px-8">
-        <div class="flex items-center justify-between mb-8">
-            <h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight uppercase">
+<section class="relative bg-[#ececec] pt-6 pb-16 md:pb-[110px]" id="categories">
+    <div class="max-w-[1480px] mx-auto px-4 sm:px-8">
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-8">
+            <h2 class="text-[24px] md:text-[36px] font-400 text-[var(--brand-darker)] tracking-tight uppercase">
                 {$categories_meta.section_title|escape}</h2>
             <a href="{$categories_meta.see_all_url|escape}"
                 class="flex items-center gap-2 text-[18px] text-[#7a7a7a] hover:text-[var(--brand-darker)]">{$categories_meta.see_all_label|escape}<span
@@ -46,7 +46,7 @@
                 </svg></button>
         </div>
         <button type="button"
-            class="js-open-search absolute left-1/2 bottom-0 translate-x-[-50%] translate-y-1/2 inline-flex items-center justify-center bg-[var(--brand-red)] hover:bg-[var(--brand-red-hover)] text-white font-black px-12 py-4 lg:h-[54px] lg:max-h-[54px] lg:py-0 leading-none text-[16px] uppercase tracking-[0.1em] z-10 border-0 cursor-pointer">{$categories_meta.cta_label|escape}</button>
+            class="js-open-search absolute left-1/2 bottom-0 translate-x-[-50%] translate-y-1/2 inline-flex items-center justify-center bg-[var(--brand-red)] hover:bg-[var(--brand-red-hover)] text-white font-black px-6 sm:px-12 py-4 lg:h-[54px] lg:max-h-[54px] lg:py-0 leading-none text-[16px] uppercase tracking-[0.1em] z-10 border-0 cursor-pointer w-[calc(100%-2rem)] sm:w-auto max-w-md">{$categories_meta.cta_label|escape}</button>
     </div>
 </section>
 <script>
@@ -60,7 +60,7 @@
             if (!el || el.swiper) return;
             new Swiper(el, {
                 loop: true,
-                slidesPerView: 2.4,
+                slidesPerView: 1.8,
                 spaceBetween: 12,
                 navigation: {
                     prevEl: '#hp-cat-prev',

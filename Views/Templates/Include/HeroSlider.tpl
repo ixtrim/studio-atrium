@@ -4,18 +4,18 @@
             <div class="swiper-wrapper">
                 {foreach $hero_slides as $slide}
                     <div class="swiper-slide">
-                        <a href="{$slide.link_url|escape}" class="block relative h-[650px] bg-cover bg-center"
+                        <a href="{$slide.link_url|escape}" class="block relative h-[420px] sm:h-[520px] md:h-[650px] bg-cover bg-center"
                             style="background-image:url({$slide.image_url|escape})">
                             <div class="hero-slide-overlay absolute inset-y-0 left-0 flex items-center">
-                                <div class="hero-slide-overlay__panel bg-black/35 backdrop-blur-[2px] text-white py-[32px] pr-[64px]">
-                                    <h1 class="text-[42px] md:text-[54px] font-medium leading-[1.05]">
+                                <div class="hero-slide-overlay__panel bg-black/35 backdrop-blur-[2px] text-white py-6 md:py-[32px] pr-6 md:pr-[64px]">
+                                    <h1 class="text-[28px] sm:text-[36px] md:text-[54px] font-medium leading-[1.05]">
                                         {$slide.title|escape}</h1>
-                                    {if $slide.subtitle}<div class="text-[36px] leading-[36px] font-500">
+                                    {if $slide.subtitle}<div class="text-[22px] md:text-[36px] leading-tight md:leading-[36px] font-500">
                                         {$slide.subtitle|escape}</div>{/if}
-                                    {if $slide.badge}<div class="text-[24px] font-medium my-[12px] uppercase">
+                                    {if $slide.badge}<div class="text-[18px] md:text-[24px] font-medium my-[12px] uppercase">
                                         {$slide.badge|escape}</div>{/if}
                                     {if $slide.body}<p
-                                            class="text-[20px] leading-[24px] font-normal mt-0">
+                                            class="text-[16px] md:text-[20px] leading-snug md:leading-[24px] font-normal mt-0">
                                         {$slide.body|escape}</p>{/if}
                                 </div>
                             </div>
@@ -45,10 +45,10 @@
     </div>
 </section>
 
-<section class="bg-[#3a3d42] pt-6 pb-16 mb-[90px]" id="safety-experience">
-    <div class="max-w-[1480px] mx-auto px-8 pb-2">
+<section class="bg-[#3a3d42] pt-6 pb-16 mb-12 md:mb-[90px]" id="safety-experience">
+    <div class="max-w-[1480px] mx-auto px-4 sm:px-8 pb-2">
         <div class="text-center mb-4">
-            <h2 class="text-white text-[36px] font-400 tracking-tight uppercase">
+            <h2 class="text-white text-[24px] md:text-[36px] font-400 tracking-tight uppercase">
                 {if $safety.title_left}<span class="text-[#1ba0e2]">{$safety.title_left|escape} </span>{/if}
                 {if $safety.title_bold}<span>{$safety.title_bold|escape} </span>{/if}
                 {if $safety.title_right}<span class="text-[#1ba0e2]">{$safety.title_right|escape}</span>{/if}
@@ -58,12 +58,12 @@
                     {$safety.subtitle|escape}</p>
             {/if}
         </div>
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-[48px]">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-[48px]">
             {foreach $safety_items as $item}
                 <div class="flex items-center gap-3">
-                    <div class="text-white text-[44px] md:text-[80px] font-bold leading-none">{$item.item_number|escape}
+                    <div class="text-white text-[36px] md:text-[80px] font-bold leading-none">{$item.item_number|escape}
                     </div>
-                    <div class="text-white text-[16px] leading-snug whitespace-pre-line">{$item.item_text|escape}</div>
+                    <div class="text-white text-[14px] sm:text-[16px] leading-snug whitespace-pre-line">{$item.item_text|escape}</div>
                 </div>
             {/foreach}
         </div>

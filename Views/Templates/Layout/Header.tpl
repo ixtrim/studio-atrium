@@ -24,20 +24,20 @@
 <!-- New header START -->
 <header id="site-header" class="bg-white border-b border-black/5 z-50 overflow-visible font-sans rounded-none relative">
 	<div class="relative" id="site-header-mega">
-		<div class="max-w-[1480px] mx-auto px-9 pt-3">
-			<div class="flex items-center justify-between gap-8 mb-[40px]">
-				<a href="/" class="flex items-center shrink-0 mt-[30px]">
-					<img src="/img/logo.svg" alt="Studio Atrium – projekty domów" class="h-[35px] w-auto shrink-0 rounded-none" id="logo" width="176" height="35">
+		<div class="max-w-[1480px] mx-auto px-4 sm:px-6 md:px-9 pt-3">
+			<div class="flex items-center justify-between gap-3 sm:gap-6 md:gap-8 mb-4 md:mb-[40px]">
+				<a href="/" class="flex items-center shrink-0 mt-2 md:mt-[30px]">
+					<img src="/img/logo.svg" alt="Studio Atrium – projekty domów" class="h-[28px] sm:h-[35px] w-auto shrink-0 rounded-none" id="logo" width="176" height="35">
 				</a>
-				<div class="flex flex-col items-end gap-6 min-w-0">
-					<div class="flex items-center justify-end gap-6 h-[34px]">
-						<a href="tel:+48338229496" class="flex items-center gap-2 h-[34px] rounded-none" rel="nofollow">
-							<i data-lucide="phone" class="w-[24px] h-[24px] text-[var(--brand-darker)] shrink-0" stroke-width="1.25" aria-hidden="true"></i>
-							<span class="text-[var(--brand-red)] leading-none" style="font-size:20px;font-style:normal;font-weight:700;">33 822 94 96</span>
+				<div class="flex flex-col items-end gap-3 md:gap-6 min-w-0">
+					<div class="flex items-center justify-end gap-2 sm:gap-4 md:gap-6 h-[34px]">
+						<a href="tel:+48338229496" class="flex items-center gap-2 h-[34px] rounded-none" rel="nofollow" aria-label="Zadzwoń 33 822 94 96">
+							<i data-lucide="phone" class="w-[20px] h-[20px] sm:w-[24px] sm:h-[24px] text-[var(--brand-darker)] shrink-0" stroke-width="1.25" aria-hidden="true"></i>
+							<span class="hidden lg:inline text-[var(--brand-red)] leading-none" style="font-size:20px;font-style:normal;font-weight:700;">33 822 94 96</span>
 						</a>
-						<form method="get" action="{url module='project' action='search'}" class="relative flex items-center h-[34px] rounded-none" role="search">
+						<form method="get" action="{url module='project' action='search'}" class="relative hidden sm:flex items-center h-[34px] rounded-none" role="search">
 							<input type="text" name="query" placeholder="wyszukaj nazwę"
-								class="rounded-none bg-white border border-[#979797] h-[34px] pl-5 pr-10 text-[13px] font-normal tracking-wider w-full max-w-[170px] leading-none text-[var(--brand-darker)] placeholder:text-[#343233] focus:outline-none focus:border-[var(--brand-blue)]">
+								class="rounded-none bg-white border border-[#979797] h-[34px] pl-5 pr-10 text-[13px] font-normal tracking-wider w-full max-w-[140px] md:max-w-[170px] leading-none text-[var(--brand-darker)] placeholder:text-[#343233] focus:outline-none focus:border-[var(--brand-blue)]">
 							<button type="submit" aria-label="Szukaj"
 								class="rounded-none absolute right-0 top-0 h-[34px] w-10 flex items-center justify-center text-[var(--brand-darker)] hover:text-[var(--brand-red)] bg-transparent">
 								<i data-lucide="search" class="w-[16px] h-[16px] shrink-0"></i>
@@ -48,7 +48,7 @@
 							<i data-lucide="heart" class="w-[20px] h-[20px] shrink-0"></i>
 						</a>
 						<a href="{url module=favourite action=compare}" aria-label="Porównaj"
-							class="inline-flex items-center justify-center h-[34px] text-[var(--brand-darker)] hover:text-[var(--brand-red)]">
+							class="hidden sm:inline-flex items-center justify-center h-[34px] text-[var(--brand-darker)] hover:text-[var(--brand-red)]">
 							<i data-lucide="scale" class="w-[20px] h-[20px] shrink-0"></i>
 						</a>
 						<a href="{url module=order action=cart}" aria-label="Koszyk"
@@ -62,39 +62,59 @@
 						</a>
 						{if $user}
 							<a href="{url module=panel action=account}"
-								class="header-account-btn rounded-none border border-[#979797] h-[34px] px-3 text-[13px] font-bold tracking-wider text-[var(--brand-darker)] hover:border-[var(--brand-red)] hover:text-[var(--brand-red)] inline-flex items-center bg-white">
+								class="header-account-btn hidden sm:inline-flex rounded-none border border-[#979797] h-[34px] px-3 text-[13px] font-bold tracking-wider text-[var(--brand-darker)] hover:border-[var(--brand-red)] hover:text-[var(--brand-red)] items-center bg-white">
 								KONTO
 							</a>
 						{else}
 							<button type="button"
-								class="login-trigger rounded-none border border-[#979797] h-[34px] px-3 text-[13px] font-bold tracking-wider text-[var(--brand-darker)] hover:border-[var(--brand-red)] hover:text-[var(--brand-red)] bg-white inline-flex items-center">
+								class="login-trigger hidden sm:inline-flex rounded-none border border-[#979797] h-[34px] px-3 text-[13px] font-bold tracking-wider text-[var(--brand-darker)] hover:border-[var(--brand-red)] hover:text-[var(--brand-red)] bg-white items-center">
 								ZALOGUJ
 							</button>
 						{/if}
+						<button type="button" id="site-mobile-nav-toggle" class="md:hidden inline-flex items-center justify-center h-[34px] w-[34px] text-[var(--brand-darker)] hover:text-[var(--brand-red)] bg-transparent border-0 p-0" aria-expanded="false" aria-controls="site-mobile-nav" aria-label="Otwórz menu">
+							<i data-lucide="menu" class="w-[22px] h-[22px] shrink-0 site-mobile-nav-icon-open" aria-hidden="true"></i>
+							<i data-lucide="x" class="w-[22px] h-[22px] shrink-0 site-mobile-nav-icon-close hidden" aria-hidden="true"></i>
+						</button>
 					</div>
-					<nav class="hidden md:flex items-center gap-10" aria-label="Główne menu">
+					<nav class="hidden md:flex items-center gap-6 lg:gap-10" aria-label="Główne menu">
 						<a href="/" data-mega="projekty" aria-expanded="false" aria-haspopup="true"
-							class="site-mega-trigger inline-flex items-center gap-1.5 text-[14px] font-black tracking-wider transition-colors duration-200 text-[var(--brand-darker)] hover:text-[var(--brand-red)]">
+							class="site-mega-trigger inline-flex items-center gap-1.5 text-[13px] lg:text-[14px] font-black tracking-wider transition-colors duration-200 text-[var(--brand-darker)] hover:text-[var(--brand-red)]">
 							PROJEKTY DOMÓW
 							<i data-lucide="chevron-down" class="site-mega-chevron w-[14px] h-[14px] shrink-0 transition-transform duration-300 ease-out" stroke-width="2.5"></i>
 						</a>
 						<a href="/projekty-garazy/" data-mega="garaze" aria-expanded="false" aria-haspopup="true"
-							class="site-mega-trigger inline-flex items-center gap-1.5 text-[14px] font-black tracking-wider transition-colors duration-200 text-[var(--brand-darker)] hover:text-[var(--brand-red)]">
+							class="site-mega-trigger inline-flex items-center gap-1.5 text-[13px] lg:text-[14px] font-black tracking-wider transition-colors duration-200 text-[var(--brand-darker)] hover:text-[var(--brand-red)]">
 							GARAŻE I INNE
 							<i data-lucide="chevron-down" class="site-mega-chevron w-[14px] h-[14px] shrink-0 transition-transform duration-300 ease-out" stroke-width="2.5"></i>
 						</a>
 						<a href="javascript:" data-mega="wiedza" aria-expanded="false" aria-haspopup="true"
-							class="site-mega-trigger inline-flex items-center gap-1.5 text-[14px] font-black tracking-wider transition-colors duration-200 text-[var(--brand-darker)] hover:text-[var(--brand-red)]">
+							class="site-mega-trigger inline-flex items-center gap-1.5 text-[13px] lg:text-[14px] font-black tracking-wider transition-colors duration-200 text-[var(--brand-darker)] hover:text-[var(--brand-red)]">
 							BAZA WIEDZY
 							<i data-lucide="chevron-down" class="site-mega-chevron w-[14px] h-[14px] shrink-0 transition-transform duration-300 ease-out" stroke-width="2.5"></i>
 						</a>
 						<a href="/kontakt/"
-							class="inline-flex items-center gap-1.5 text-[14px] font-black tracking-wider transition-colors duration-200 text-[var(--brand-red)] hover:text-[var(--brand-red)]">
+							class="inline-flex items-center gap-1.5 text-[13px] lg:text-[14px] font-black tracking-wider transition-colors duration-200 text-[var(--brand-red)] hover:text-[var(--brand-red)]">
 							KONTAKT
 						</a>
 					</nav>
 				</div>
 			</div>
+		</div>
+
+		<div id="site-mobile-nav" class="md:hidden hidden border-t border-black/10 bg-white" hidden>
+			<nav class="max-w-[1480px] mx-auto px-4 sm:px-6 py-4 flex flex-col gap-1" aria-label="Menu mobilne">
+				<a href="/katalog-projektow.html" class="py-3 text-[15px] font-black tracking-wider text-[var(--brand-darker)] hover:text-[var(--brand-red)] border-b border-black/5">PROJEKTY DOMÓW</a>
+				<a href="/projekty-garazy/" class="py-3 text-[15px] font-black tracking-wider text-[var(--brand-darker)] hover:text-[var(--brand-red)] border-b border-black/5">GARAŻE I INNE</a>
+				<a href="/baza-wiedzy/" class="py-3 text-[15px] font-black tracking-wider text-[var(--brand-darker)] hover:text-[var(--brand-red)] border-b border-black/5">BAZA WIEDZY</a>
+				<a href="/kontakt/" class="py-3 text-[15px] font-black tracking-wider text-[var(--brand-red)] border-b border-black/5">KONTAKT</a>
+				<a href="{url module='project' action='search'}" class="sm:hidden py-3 text-[14px] font-bold tracking-wider text-[var(--brand-darker)] hover:text-[var(--brand-red)] border-b border-black/5">Wyszukaj projekt</a>
+				{if $user}
+					<a href="{url module=panel action=account}" class="sm:hidden py-3 text-[14px] font-bold tracking-wider text-[var(--brand-darker)] hover:text-[var(--brand-red)] border-b border-black/5">Konto</a>
+				{else}
+					<button type="button" class="login-trigger sm:hidden text-left py-3 text-[14px] font-bold tracking-wider text-[var(--brand-darker)] hover:text-[var(--brand-red)] border-b border-black/5 bg-transparent border-x-0 border-t-0 w-full">Zaloguj</button>
+				{/if}
+				<a href="{url module=favourite action=compare}" class="sm:hidden py-3 text-[14px] font-bold tracking-wider text-[var(--brand-darker)] hover:text-[var(--brand-red)]">Porównaj</a>
+			</nav>
 		</div>
 
 		<div id="site-mega-dropdown"
@@ -308,35 +328,35 @@
 		</div>
 	</div>
 
-	<div id="site-header-filter-bar" class="max-w-[1480px] w-full mx-auto px-8 pb-4 z-10">
-		<div class="flex items-center">
-			<div class="flex-1 flex justify-center min-w-0">
+	<div id="site-header-filter-bar" class="max-w-[1480px] w-full mx-auto px-4 sm:px-6 md:px-8 pb-3 md:pb-4 z-10">
+		<div class="flex flex-col md:flex-row md:items-center gap-3 md:gap-0">
+			<div class="flex-1 flex justify-stretch md:justify-center min-w-0 order-2 md:order-1">
 				<div id="site-header-filters"
-					class="w-auto mx-auto h-[45px] bg-[#1d99e1] rounded-none flex items-center gap-10 px-10">
+					class="w-full md:w-auto mx-auto h-[42px] md:h-[45px] bg-[#1d99e1] rounded-none flex items-center gap-5 md:gap-10 px-4 md:px-10 overflow-x-auto scrollbar-none">
 					<button type="button" data-search-tab="kondygnacje"
-						class="js-open-search rounded-none bg-transparent text-white font-black text-[14px] leading-none tracking-normal">
+						class="js-open-search shrink-0 rounded-none bg-transparent text-white font-black text-[12px] md:text-[14px] leading-none tracking-normal">
 						Kondygnacje
 					</button>
 					<button type="button" data-search-tab="powierzchnia"
-						class="js-open-search rounded-none bg-transparent text-white font-black text-[14px] leading-none tracking-normal">
+						class="js-open-search shrink-0 rounded-none bg-transparent text-white font-black text-[12px] md:text-[14px] leading-none tracking-normal">
 						Powierzchnia
 					</button>
 					<button type="button" data-search-tab="garaz"
-						class="js-open-search rounded-none bg-transparent text-white font-black text-[14px] leading-none tracking-normal">
+						class="js-open-search shrink-0 rounded-none bg-transparent text-white font-black text-[12px] md:text-[14px] leading-none tracking-normal">
 						Garaż
 					</button>
 					<button type="button" data-search-tab="szkieletowe"
-						class="js-open-search rounded-none bg-transparent text-white font-black text-[14px] leading-none tracking-normal">
+						class="js-open-search shrink-0 rounded-none bg-transparent text-white font-black text-[12px] md:text-[14px] leading-none tracking-normal">
 						Szkieletowe
 					</button>
 					<button type="button" data-search-tab="dzialka"
-						class="js-open-search rounded-none bg-transparent text-white font-black text-[14px] leading-none tracking-normal">
+						class="js-open-search shrink-0 rounded-none bg-transparent text-white font-black text-[12px] md:text-[14px] leading-none tracking-normal">
 						Typ działki
 					</button>
 				</div>
 			</div>
 			<button type="button" id="search-trigger"
-				class="js-open-search rounded-none bg-[#c61000] hover:bg-[#a80d00] text-white h-[54px] w-[264px] font-black text-[14px] leading-none tracking-normal flex items-center justify-center gap-[10px] shrink-0 ml-6">
+				class="js-open-search order-1 md:order-2 rounded-none bg-[#c61000] hover:bg-[#a80d00] text-white h-[48px] md:h-[54px] w-full md:w-[264px] font-black text-[13px] md:text-[14px] leading-none tracking-normal flex items-center justify-center gap-[10px] shrink-0 md:ml-6">
 				ZNAJDŹ PROJEKT
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sliders-horizontal shrink-0" style="width:24px;height:24px;max-width:24px;max-height:24px" aria-hidden="true"><path d="M10 5H3"/><path d="M12 19H3"/><path d="M14 3v4"/><path d="M16 17v4"/><path d="M21 12h-9"/><path d="M21 19h-5"/><path d="M21 5h-7"/><path d="M8 10v4"/><path d="M8 12H3"/></svg>
 			</button>
@@ -462,6 +482,35 @@
 		if (!button) return;
 		openSearchOverlay();
 	});
+
+	var mobileToggle = document.getElementById('site-mobile-nav-toggle');
+	var mobileNav = document.getElementById('site-mobile-nav');
+	if (mobileToggle && mobileNav) {
+		function setMobileNav(open) {
+			mobileNav.classList.toggle('hidden', !open);
+			if (open) {
+				mobileNav.removeAttribute('hidden');
+			} else {
+				mobileNav.setAttribute('hidden', '');
+			}
+			mobileToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+			mobileToggle.setAttribute('aria-label', open ? 'Zamknij menu' : 'Otwórz menu');
+			var iconOpen = mobileToggle.querySelector('.site-mobile-nav-icon-open');
+			var iconClose = mobileToggle.querySelector('.site-mobile-nav-icon-close');
+			if (iconOpen) iconOpen.classList.toggle('hidden', open);
+			if (iconClose) iconClose.classList.toggle('hidden', !open);
+			document.body.classList.toggle('site-mobile-nav-open', open);
+		}
+		mobileToggle.addEventListener('click', function () {
+			setMobileNav(mobileNav.classList.contains('hidden'));
+		});
+		mobileNav.querySelectorAll('a, .login-trigger').forEach(function (el) {
+			el.addEventListener('click', function () { setMobileNav(false); });
+		});
+		document.addEventListener('keydown', function (event) {
+			if (event.key === 'Escape') setMobileNav(false);
+		});
+	}
 })();
 {/literal}
 </script>

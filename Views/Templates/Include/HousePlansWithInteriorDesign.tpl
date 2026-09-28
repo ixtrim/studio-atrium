@@ -1,6 +1,6 @@
 <section class="w-full bg-[#f3f3f3] pt-8 pb-16" id="interior-plans">
-    <div class="max-w-[1480px] mx-auto px-8 pb-8">
-        <h2 class="ip-title text-[36px] font-400 text-[var(--brand-darker)] tracking-tight mb-10 pl-2 uppercase">{$interior_plans.meta.section_title|escape}</h2>
+    <div class="max-w-[1480px] mx-auto px-4 sm:px-8 pb-8">
+        <h2 class="ip-title text-[24px] md:text-[36px] font-400 text-[var(--brand-darker)] tracking-tight mb-6 md:mb-10 pl-2 uppercase">{$interior_plans.meta.section_title|escape}</h2>
         <div class="relative">
             <button type="button" aria-label="Poprzedni" id="hp-ip-prev"
                 class="hidden lg:flex absolute -left-10 top-[40%] -translate-y-1/2 z-10 w-8 h-8 items-center justify-center bg-transparent border-0 outline-none appearance-none p-0 shadow-none text-black hover:text-[#179fd4] cursor-pointer">
@@ -29,10 +29,10 @@
                                 <span class="absolute top-3 left-3 text-[11px] font-bold tracking-wider bg-white/90 text-[var(--brand-red)] px-2.5 py-1">{$item.tag|escape}</span>
                                 {/if}
                             </div>
-                            <div class="px-5 pt-5 pb-5 flex flex-col gap-2 flex-1">
-                                <h3 class="text-[26px] font-bold text-[#222] leading-tight">{$item.name|escape}</h3>
+                            <div class="px-4 sm:px-5 pt-5 pb-5 flex flex-col gap-2 flex-1">
+                                <h3 class="text-[20px] sm:text-[26px] font-bold text-[#222] leading-tight">{$item.name|escape}</h3>
                                 <div class="text-[13px] font-bold tracking-wider text-[var(--brand-red)]">{$item.type_label|escape}</div>
-                                <div class="flex items-center gap-4 py-2 text-[13px] text-[#222]">
+                                <div class="flex flex-wrap items-center gap-4 py-2 text-[13px] text-[#222]">
                                     {if $item.area}
                                     <div class="flex items-center gap-2"><span class="w-[32px] h-[32px] border border-black/20 inline-flex items-center justify-center shrink-0 text-[#555]"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-vector-square" aria-hidden="true"><path d="M17.055 4.533a24 24 0 00-10.11 0"/><path d="M19.467 17.055a24 24 0 000-10.11"/><path d="M4.533 6.945a24 24 0 000 10.11"/><path d="M6.945 19.467a24 24 0 0010.11 0"/><circle cx="19" cy="19" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="5" cy="5" r="2"/></svg></span><span>{$item.area|escape}</span></div>
                                     {/if}
@@ -52,7 +52,7 @@
                                         <s>{number_format($item.price_old, 0, ',', ' ')} PLN</s>
                                     </div>
                                     {/if}
-                                    <div class="flex items-baseline gap-2"><span class="text-[30px] font-['Montserrat',sans-serif] font-semibold text-[var(--brand-blue-strong)] leading-none">{number_format($item.price, 0, ',', ' ')}</span><span class="text-[16px] text-[var(--brand-blue-strong)] font-semibold">PLN</span></div>
+                                    <div class="flex items-baseline gap-2"><span class="text-[24px] sm:text-[30px] font-['Montserrat',sans-serif] font-semibold text-[var(--brand-blue-strong)] leading-none">{number_format($item.price, 0, ',', ' ')}</span><span class="text-[16px] text-[var(--brand-blue-strong)] font-semibold">PLN</span></div>
                                 </div>
                             </div>
                         </a>

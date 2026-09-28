@@ -1,7 +1,7 @@
 <section class="bg-[var(--brand-blue)]" id="featured-video">
-    <div class="max-w-[1480px] mx-auto px-12 py-14 grid md:grid-cols-2 gap-12 items-center">
+    <div class="max-w-[1480px] mx-auto px-4 sm:px-8 md:px-12 py-14 grid md:grid-cols-2 gap-12 items-center">
         <div>
-            <h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight leading-[1.25] uppercase">{$featured_video.title|escape|nl2br}</h2>
+            <h2 class="text-[24px] md:text-[36px] font-400 text-[var(--brand-darker)] tracking-tight leading-[1.25] uppercase">{$featured_video.title|escape|nl2br}</h2>
         </div>
         <div
             class="relative aspect-video w-full overflow-hidden cursor-pointer"
@@ -22,8 +22,8 @@
                         </svg>
                     </div>
                 </div>
-                <div class="absolute bottom-0 left-0 right-0 bg-[var(--brand-red)] text-white px-4 py-2 flex items-center justify-between z-10">
-                    <div class="font-black text-[22px] tracking-wide">{$featured_video.badge_name|escape} <span
+                <div class="absolute bottom-0 left-0 right-0 bg-[var(--brand-red)] text-white px-4 py-2 flex flex-col sm:flex-row gap-1 items-center justify-between z-10">
+                    <div class="font-black text-[14px] sm:text-[22px] tracking-wide">{$featured_video.badge_name|escape} <span
                             class="text-[16px] font-normal align-middle">{$featured_video.badge_area|escape}</span></div>
                     <div class="text-[13px]">{$featured_video.badge_site|escape}</div>
                 </div>
@@ -88,6 +88,11 @@
     root.addEventListener('click', function (e) {
         if (iframe) {
             e.preventDefault();
+            return;
+        }
+        if (youtubeId) {
+            e.preventDefault();
+            play();
             return;
         }
         if (videoUrl) {

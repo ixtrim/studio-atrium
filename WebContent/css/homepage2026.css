@@ -396,18 +396,60 @@
   #homepage-contact .hp-contact-call,
   #homepage-contact .hp-contact-copy,
   #homepage-contact .hp-contact-form-wrap {
-    padding: 32px 24px;
+    padding: 28px 20px;
+  }
+
+  #homepage-contact .hp-contact-call-title {
+    font-size: 18px !important;
+    padding-right: 72px;
+  }
+
+  #homepage-contact .hp-contact-hostess {
+    top: 20px;
+    right: 16px;
+    height: 72px;
   }
 
   #homepage-contact .hp-contact-phones {
-    font-size: 60px !important;
-    line-height: 64px !important;
+    font-size: clamp(32px, 9vw, 48px) !important;
+    line-height: 1.1 !important;
     font-weight: 500 !important;
+  }
+
+  #homepage-contact .hp-contact-hours {
+    font-size: 16px !important;
+    line-height: 22px !important;
+    margin-top: 20px;
+  }
+
+  #homepage-contact .hp-contact-question-title {
+    font-size: 28px !important;
+    line-height: 1.2 !important;
+  }
+
+  #homepage-contact .hp-contact-question-body {
+    font-size: 16px !important;
+    line-height: 24px !important;
+    max-width: none;
   }
 
   #homepage-contact .hp-contact-form {
     max-width: none;
     margin-left: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 639px) {
+  #homepage-contact .hp-contact-hostess {
+    position: static;
+    display: block;
+    margin: 0 0 16px auto;
+    height: 64px;
+  }
+
+  #homepage-contact .hp-contact-call-title {
+    padding-right: 0;
   }
 }
 

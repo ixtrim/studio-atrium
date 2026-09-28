@@ -1,6 +1,6 @@
 <section class="w-full bg-white pt-14 pb-14" id="our-bestsellers">
-    <div class="max-w-[1480px] mx-auto px-8">
-        <h2 class="bs-title text-[36px] font-400 text-[var(--brand-darker)] tracking-tight mb-10 pl-2 uppercase">
+    <div class="max-w-[1480px] mx-auto px-4 sm:px-8">
+        <h2 class="bs-title text-[24px] md:text-[36px] font-400 text-[var(--brand-darker)] tracking-tight mb-6 md:mb-10 pl-2 uppercase">
             {$bestsellers_meta.section_title|escape}</h2>
         <div class="relative">
             <button type="button" aria-label="Poprzedni" id="hp-bs-prev"

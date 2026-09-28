@@ -1,10 +1,10 @@
 <section class="bg-[#3a3a3a] text-white pt-14 pb-8" id="offer">
-    <div class="max-w-[1480px] mx-auto px-12 flex flex-col md:flex-row gap-10 md:gap-[100px] items-start">
+    <div class="max-w-[1480px] mx-auto px-4 sm:px-8 md:px-12 flex flex-col md:flex-row gap-10 md:gap-12 lg:gap-[100px] items-start">
         <div class="flex-1 min-w-0 gap-4">
-            <h2 class="text-[32px] font-400 text-white tracking-tight uppercase">{$offer.title|escape}</h2>
-            <p class="text-[20px] leading-[24px] font-bold pt-[45px] pb-[45px] uppercase">{$offer.lead_text|escape|nl2br}</p>
+            <h2 class="text-[24px] md:text-[32px] font-400 text-white tracking-tight uppercase">{$offer.title|escape}</h2>
+            <p class="text-[16px] md:text-[20px] leading-[24px] font-bold pt-[45px] pb-[45px] uppercase">{$offer.lead_text|escape|nl2br}</p>
             <a href="{$offer.button_url|escape}"
-                class="inline-flex items-center justify-center bg-[var(--brand-red)] hover:bg-[var(--brand-red-hover)] text-white font-bold px-[80px] py-3 lg:h-[54px] lg:max-h-[54px] lg:py-0 leading-none text-[13px] uppercase tracking-wider mb-12">{$offer.button_label|escape}</a>
+                class="inline-flex items-center justify-center bg-[var(--brand-red)] hover:bg-[var(--brand-red-hover)] text-white font-bold px-8 sm:px-12 md:px-[80px] py-3 lg:h-[54px] lg:max-h-[54px] lg:py-0 leading-none text-[13px] uppercase tracking-wider mb-12 w-full sm:w-auto">{$offer.button_label|escape}</a>
 
             {if $offer_quotes}
             <div class="hp-offer-quotes mx-auto mt-[45px]" id="hp-offer-quotes" data-count="{$offer_quotes|@count}">
@@ -12,7 +12,7 @@
                     {foreach $offer_quotes as $q}
                     <div class="hp-offer-quote-slide{if $q@first} is-active{/if}" data-index="{$q@index}"{if !$q@first} aria-hidden="true"{/if}>
                         {if $q.quote_text}
-                        <blockquote class="text-center text-[32px] leading-[1.15] leading-snug m-0"
+                        <blockquote class="text-center text-[22px] sm:text-[28px] md:text-[32px] leading-[1.15] leading-snug m-0"
                             style="font-style:normal;font-weight:500"><span>“{$q.quote_text|escape}”</span></blockquote>
                         {/if}
                         {if $q.quote_author}

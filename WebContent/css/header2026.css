@@ -197,12 +197,47 @@
   }
 }
 
-/* Homepage only: overlap hero like the design */
+/* Homepage only: overlap hero like the design (desktop/tablet) */
 body:has(#hp-2026) #site-header #site-header-filter-bar {
   position: absolute;
   bottom: -40px;
   left: 50%;
   transform: translateX(-50%);
+}
+
+@media (max-width: 767px) {
+  body:has(#hp-2026) #site-header #site-header-filter-bar {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin-top: 0;
+  }
+
+  #site-header #search-trigger {
+    width: 100% !important;
+    margin-left: 0 !important;
+    height: 48px !important;
+  }
+
+  #site-header #site-header-filters {
+    width: 100% !important;
+    max-width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+#site-header #site-header-filters {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#site-header #site-header-filters::-webkit-scrollbar {
+  display: none;
+}
+
+body.site-mobile-nav-open {
+  overflow: hidden;
 }
 
 #site-header .site-mega-panel {

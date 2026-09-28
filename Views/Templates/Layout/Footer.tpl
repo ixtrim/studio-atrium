@@ -12,9 +12,9 @@
 </div>
 
 
-<footer class="bg-[#3a3a3a] text-white pt-16 pb-10">
-	<div class="max-w-[1480px] mx-auto px-12">
-		<div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+<footer class="bg-[#3a3a3a] text-white pt-12 md:pt-16 pb-10">
+	<div class="max-w-[1480px] mx-auto px-4 sm:px-8 md:px-12">
+		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
 			<div class="space-y-[12px] footer-menu-col-a">
 				{foreach $footer_menus.a as $link}
 					<a href="{$link.url}" {if $link.target != '_self'} target="{$link.target}" {/if}
@@ -82,18 +82,18 @@
 				<div class="text-white text-[20px] font-semibold">{$contact.header|default:'Kontakt'}</div>
 				{if $contact.phone1}
 					<a href="tel:{$contact.phone1|replace:' ':''}"
-						class="block text-[var(--brand-red)] font-semibold text-[32px] leading-tight">{$contact.phone1}</a>
+						class="block text-[var(--brand-red)] font-semibold text-[26px] md:text-[32px] leading-tight">{$contact.phone1}</a>
 				{/if}
 				{if $contact.phone2}
 					<a href="tel:{$contact.phone2|replace:' ':''}"
-						class="block text-[var(--brand-red)] font-semibold text-[32px] leading-tight -mt-[12px]">{$contact.phone2}</a>
+						class="block text-[var(--brand-red)] font-semibold text-[26px] md:text-[32px] leading-tight -mt-[12px]">{$contact.phone2}</a>
 				{/if}
 				{if $contact.extra_phones}
 					<div class="text-[var(--brand-red)] text-[13px] font-bold -mt-[12px]">{$contact.extra_phones}</div>
 				{/if}
 				{if $contact.email}
 					<a href="mailto:{$contact.email}"
-						class="block text-white font-semibold text-[24px] pt-3 hover:text-[var(--brand-blue)]">{$contact.email}</a>
+						class="block text-white font-semibold text-[18px] md:text-[24px] pt-3 hover:text-[var(--brand-blue)]">{$contact.email}</a>
 				{/if}
 				{if $contact.details}
 					<div class="text-white text-[18px] leading-[22px] font-bold pt-3">{$contact.details|nl2br}</div>
@@ -105,12 +105,12 @@
 			</div>
 		</div>
 		{if $seo_links_header || $seo_links}
-			<div class="mt-16">
-				<h3 class="text-white font-semibold text-[20px] tracking-wide mb-4">{$seo_links_header|escape}</h3>
-				<div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-x-[24px] gap-y-[1px] text-[12px]">
+			<div class="mt-10 md:mt-16">
+				<h3 class="text-white font-semibold text-[18px] md:text-[20px] tracking-wide mb-4">{$seo_links_header|escape}</h3>
+				<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-x-6 gap-y-1 text-[12px]">
 					{foreach $seo_links as $sl}
 						<a href="{$sl.url|escape}"
-							class="text-white/85 text-[14px] font-normal hover:text-[var(--brand-blue)] truncate transition">{$sl.label|escape}</a>
+							class="text-white/85 text-[14px] font-normal hover:text-[var(--brand-blue)] md:truncate transition">{$sl.label|escape}</a>
 					{/foreach}
 				</div>
 			</div>
