@@ -1,4 +1,4 @@
-<section class="bg-white py-16 overflow-hidden">
+<section class="bg-white pt-16 pb-[90px] overflow-hidden">
     <div class="max-w-[1480px] mx-auto px-12">
         <h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight mb-12 uppercase">{$partners.meta.section_title|escape}</h2>
     </div>

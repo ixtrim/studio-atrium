@@ -110,11 +110,53 @@
   border: 1px solid #fff !important;
   outline: none !important;
   box-shadow: none !important;
+  height: 45px !important;
+  min-height: 45px !important;
+  max-height: 45px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  line-height: 45px !important;
+  box-sizing: border-box;
 }
 
 #hp-2026 .hp-newsletter-email:focus {
   border-color: var(--brand-blue) !important;
 }
+
+/* Newsletter signup band — desktop column proportions match design */
+@media (min-width: 1024px) {
+  #hp-newsletter-signup .hp-newsletter-signup-grid {
+    grid-template-columns: 530px minmax(0, 1fr) minmax(0, 0.72fr);
+    column-gap: 80px;
+    row-gap: 0;
+    padding-top: 56px;
+    padding-bottom: 100px;
+    align-items: start;
+  }
+
+  #hp-newsletter-signup .hp-newsletter-signup-grid > div:nth-child(1),
+  #hp-newsletter-signup .hp-newsletter-signup-grid > div:nth-child(2),
+  #hp-newsletter-signup .hp-newsletter-signup-grid > div:nth-child(3) {
+    grid-column: auto;
+    width: 100%;
+    max-width: none;
+  }
+
+  #hp-newsletter-signup .hp-newsletter-signup-grid > div:nth-child(1) {
+    width: 530px;
+    max-width: 530px;
+  }
+
+  #hp-newsletter-signup .hp-newsletter-signup-grid > div:nth-child(3) {
+    padding-top: 20px;
+  }
+
+  #hp-newsletter-signup #hp-newsletter-form {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
 
 /* —— Homepage contact band (pixel-locked vs design) —— */
 #homepage-contact,
