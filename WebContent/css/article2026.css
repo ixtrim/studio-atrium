@@ -1,0 +1,406 @@
+/* Single article 2026 — scoped so listing / legacy article.min.css stay intact */
+
+#article-2026 .article-title {
+  margin: 0 0 1.25rem;
+  text-transform: none;
+}
+
+#article-2026 .article-title::after {
+  content: none;
+  display: none;
+}
+
+#article-2026 .net,
+#article-2026 .print {
+  display: inline;
+  width: auto;
+  height: auto;
+  margin: 0;
+  background: none !important;
+  cursor: pointer;
+}
+
+#article-2026 .article-content {
+  color: #333;
+  font-size: 16px;
+  line-height: 1.75;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+#article-2026 .article-content p,
+#article-2026 .article-content ul,
+#article-2026 .article-content ul li,
+#article-2026 .article-content ol,
+#article-2026 .article-content li {
+  font-size: 16px !important;
+  line-height: 1.75 !important;
+}
+
+#article-2026 .article-content p {
+  margin: 0 0 1.1em;
+}
+
+#article-2026 .article-content * + p,
+#article-2026 .article-content * + ul,
+#article-2026 .article-content * + ol {
+  margin-top: 0;
+}
+
+#article-2026 .article-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+}
+
+#article-2026 .article-content strong,
+#article-2026 .article-content b {
+  font-weight: 700;
+  color: #1b2025;
+}
+
+#article-2026 .article-content a {
+  color: var(--brand-blue-strong, #1d99e1);
+  text-decoration: underline;
+}
+
+#article-2026 .article-content a:hover {
+  color: var(--brand-red, #c61000);
+}
+
+#article-2026 .article-content h2,
+#article-2026 .article-content h3,
+#article-2026 .article-content h4,
+#article-2026 .article-content h5,
+#article-2026 .article-content h6 {
+  color: var(--brand-darker, #1b2025);
+  font-weight: 700;
+  line-height: 1.3;
+  text-transform: none;
+  margin: 2rem 0 0.75rem;
+}
+
+#article-2026 .article-content h2 {
+  font-size: 26px;
+}
+
+#article-2026 .article-content h3 {
+  font-size: 22px;
+}
+
+#article-2026 .article-content h4,
+#article-2026 .article-content h5,
+#article-2026 .article-content h6 {
+  font-size: 18px;
+}
+
+#article-2026 .article-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.1em;
+}
+
+#article-2026 .article-content ul li {
+  position: relative;
+  padding-left: 1.35rem;
+  margin: 0.35em 0;
+}
+
+#article-2026 .article-content ul li::before {
+  content: "";
+  position: absolute;
+  left: 0.35rem;
+  top: 0.65em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--brand-blue-strong, #1d99e1);
+}
+
+#article-2026 .article-content ul.noDot li {
+  display: inline-block;
+  max-width: 275px;
+  padding: 0 0 1.5rem;
+  text-align: center;
+  vertical-align: top;
+}
+
+#article-2026 .article-content ul.noDot li::before {
+  display: none;
+}
+
+#article-2026 .article-content ol {
+  list-style: decimal;
+  padding-left: 1.5rem;
+  margin: 0 0 1.1em;
+}
+
+#article-2026 .article-content ol li + li {
+  margin-top: 0.35em;
+}
+
+#article-2026 .article-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 15px;
+}
+
+#article-2026 .article-content table td,
+#article-2026 .article-content table th {
+  border: 1px solid #e5e5e5;
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+#article-2026 .article-content iframe,
+#article-2026 .article-content video {
+  max-width: 100%;
+}
+
+/* ——— Knowledge base listing ——— */
+
+#kb-2026 h1 {
+  margin: 0 0 0.75rem;
+  text-transform: none;
+}
+
+#kb-2026 h1::after {
+  content: none;
+  display: none;
+}
+
+#kb-2026 .kb-cat {
+  display: inline-flex;
+  align-items: center;
+  height: 34px;
+  padding: 0 14px;
+  color: #555;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid #e2e2e2;
+  transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+}
+
+#kb-2026 .kb-cat:hover {
+  color: var(--brand-blue-strong, #1d99e1);
+  border-color: var(--brand-blue-strong, #1d99e1);
+}
+
+#kb-2026 .kb-cat.is-active {
+  color: #fff;
+  background: var(--brand-blue-strong, #1d99e1);
+  border-color: var(--brand-blue-strong, #1d99e1);
+}
+
+#kb-2026 .kb-search-input::placeholder {
+  color: #999;
+}
+
+#kb-2026 .kb-tag {
+  display: inline-flex;
+  align-items: center;
+  height: 28px;
+  padding: 0 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #555;
+  background: #f0f0f0;
+  text-decoration: none;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+#kb-2026 .kb-tag:hover,
+#kb-2026 .kb-tag.is-active {
+  color: #fff;
+  background: #6b6b6b;
+}
+
+#kb-2026 .kb-pager ol.pagebar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#kb-2026 .kb-pager ol.pagebar li {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  padding: 0;
+}
+
+#kb-2026 .kb-pager ol.pagebar li.page {
+  padding: 0 4px;
+  gap: 6px;
+  font-size: 14px;
+  color: #6b6b6b;
+}
+
+#kb-2026 .kb-pager ol.pagebar li.page span.page-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 8px;
+  border: 1px solid #d5d5d5;
+  background: #fff;
+  color: var(--brand-darker, #1b2025);
+  font-weight: 600;
+  box-sizing: border-box;
+}
+
+#kb-2026 .kb-pager ol.pagebar li.prev a,
+#kb-2026 .kb-pager ol.pagebar li.next a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: none !important;
+  border: 1px solid #d5d5d5;
+  color: var(--brand-darker, #1b2025);
+  text-decoration: none;
+  position: relative;
+}
+
+#kb-2026 .kb-pager ol.pagebar li.prev a::before,
+#kb-2026 .kb-pager ol.pagebar li.next a::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+}
+
+#kb-2026 .kb-pager ol.pagebar li.prev a::before {
+  transform: rotate(-135deg);
+  margin-left: 3px;
+}
+
+#kb-2026 .kb-pager ol.pagebar li.next a::before {
+  transform: rotate(45deg);
+  margin-right: 3px;
+}
+
+#kb-2026 .kb-pager ol.pagebar li.prev a:hover,
+#kb-2026 .kb-pager ol.pagebar li.next a:hover {
+  border-color: var(--brand-blue-strong, #1d99e1);
+  color: var(--brand-blue-strong, #1d99e1);
+}
+
+@media (max-width: 1023px) {
+  #kb-2026 .kb-aside {
+    margin-top: 8px;
+  }
+}
+
+#kb-2026 .kb-aside {
+  background: #f7f7f7;
+  padding: 28px 24px;
+}
+
+#kb-2026 .kb-aside-block + .kb-aside-block {
+  margin-top: 36px;
+}
+
+#kb-2026 .kb-aside-title {
+  margin: 0 0 16px;
+  padding: 0 0 12px;
+  border-bottom: 1px solid #e2e2e2;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--brand-darker, #1b2025);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+#kb-2026 .kb-cat-list,
+#kb-2026 .kb-archive-list,
+#kb-2026 .kb-tag-cloud {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  float: none;
+}
+
+#kb-2026 .kb-cat-list li,
+#kb-2026 .kb-archive-list li {
+  float: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+#kb-2026 .kb-cat-list li + li {
+  margin-top: 2px;
+}
+
+#kb-2026 .kb-cat-link {
+  display: block;
+  padding: 10px 12px;
+  color: #555;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.35;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+
+#kb-2026 .kb-cat-link:hover {
+  color: var(--brand-blue-strong, #1d99e1);
+  background: #fff;
+  border-left-color: var(--brand-blue-strong, #1d99e1);
+}
+
+#kb-2026 .kb-cat-link.is-active {
+  color: var(--brand-blue-strong, #1d99e1);
+  background: #fff;
+  border-left-color: var(--brand-blue-strong, #1d99e1);
+  font-weight: 700;
+}
+
+#kb-2026 .kb-tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+#kb-2026 .kb-tag-cloud li {
+  float: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  background: none;
+}
+
+#kb-2026 .kb-archive-list li + li {
+  margin-top: 8px;
+}
+
+#kb-2026 .kb-archive-list a {
+  display: inline-block;
+  color: #555;
+  font-size: 13px;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+#kb-2026 .kb-archive-list a:hover {
+  color: var(--brand-blue-strong, #1d99e1);
+}

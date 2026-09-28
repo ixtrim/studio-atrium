@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-08 08:15:14
+/* Smarty version 3.1.48, created on 2026-09-28 23:10:59
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/HeadHTML.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6a9fa7f2939328_13795929',
+  'unifunc' => 'content_6abad7e39b5643_27297650',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2caf7189cf71a0154ad77cc024aa442356349989' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/HeadHTML.tpl',
-      1 => 1788847887,
+      1 => 1790188739,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6a9fa7f2939328_13795929 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6abad7e39b5643_27297650 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['pageTitle']->value) {?>
 	<title><?php echo $_smarty_tpl->tpl_vars['pageTitle']->value;?>
 </title>
@@ -64,11 +64,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <?php }?>
 <meta name="p:domain_verify" content="46eb45dafec5620ae0746f34b1c0c299">
-<meta name="google-site-verification" content="N4VPO2yZZ3HL2Yegp8cAdQAsZ4Xj17gVs1vtLramZcY" /> <meta name="theme-color" content="#ed1d24">
+<meta name="google-site-verification" content="N4VPO2yZZ3HL2Yegp8cAdQAsZ4Xj17gVs1vtLramZcY" /> <meta name="theme-color" content="#c61000">
 <link rel="shortcut icon" type="image/icon" href="/img/favicon.ico">
 <link rel="manifest" href="/manifest.json">
 <link rel="apple-touch-icon" href="/img/logo144.png">
-<meta name="apple-mobile-web-app-status-bar" content="#ed1d24">
+<meta name="apple-mobile-web-app-status-bar" content="#c61000">
 
 <?php if ($_smarty_tpl->tpl_vars['pageMetaDescription']->value) {?>
 	<meta name="description" content="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'trim' ][ 0 ], array( $_smarty_tpl->tpl_vars['pageMetaDescription']->value ));?>
@@ -479,8 +479,8 @@ html, body {
 <!-- Brand design tokens -->
 <style>
 :root {
-	--brand-red: oklch(0.62 0.22 27);
-	--brand-red-hover: oklch(0.55 0.22 27);
+	--brand-red: #c61000;
+	--brand-red-hover: #a80d00;
 	--brand-blue: oklch(0.74 0.11 232);
 	--brand-blue-strong: oklch(0.66 0.13 232);
 	--brand-dark: oklch(0.30 0.012 250);

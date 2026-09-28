@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-23 13:49:14
+/* Smarty version 3.1.48, created on 2026-09-28 23:10:59
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/PopularCategories.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6ab3bcbaaf6748_15784230',
+  'unifunc' => 'content_6abad7e3a1c0c4_58818922',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '14ef0ee710285f6e209f0c1206a1420ad0bb0bd2' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/PopularCategories.tpl',
-      1 => 1788597536,
+      1 => 1790456631,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6ab3bcbaaf6748_15784230 (Smarty_Internal_Template $_smarty_tpl) {
-?><section class="w-full bg-white py-16" id="popular-categories">
+function content_6abad7e3a1c0c4_58818922 (Smarty_Internal_Template $_smarty_tpl) {
+?><section class="w-full bg-white pt-10 pb-10" id="popular-categories">
     <div class="max-w-[1480px] mx-auto px-8">
         <h2 class="pcg-title text-[36px] font-400 text-[var(--brand-darker)] tracking-tight mb-10 pl-2 uppercase"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['popular_categories_meta']->value['section_title'], ENT_QUOTES, 'UTF-8', true);?>
 </h2>
@@ -34,7 +34,7 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
 $_smarty_tpl->tpl_vars['item']->do_else = false;
 $_smarty_tpl->tpl_vars['item']->index++;
 $_smarty_tpl->tpl_vars['item']->first = !$_smarty_tpl->tpl_vars['item']->index;
-$__foreach_item_4_saved = $_smarty_tpl->tpl_vars['item'];
+$__foreach_item_13_saved = $_smarty_tpl->tpl_vars['item'];
 ?>
             <a href="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['link_url'], ENT_QUOTES, 'UTF-8', true);?>
 "
@@ -59,7 +59,7 @@ $__foreach_item_4_saved = $_smarty_tpl->tpl_vars['item'];
 </div>
             </a>
             <?php
-$_smarty_tpl->tpl_vars['item'] = $__foreach_item_4_saved;
+$_smarty_tpl->tpl_vars['item'] = $__foreach_item_13_saved;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </div>

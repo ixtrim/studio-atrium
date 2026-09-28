@@ -6,7 +6,7 @@
 			<h2 class="mt-3 text-[36px] font-400 text-[var(--brand-darker)] tracking-tight uppercase">Koszty budowy</h2>
 			<div class="mt-4 h-[3px] w-12 bg-[var(--brand-red)]"></div>
 		</div>
-		<div class="bg-white p-6 md:p-7 border border-[#e6e8eb] max-w-4xl">
+		<div class="bg-white p-6 md:p-7 border border-[#e6e8eb]">
 			<h3 class="text-[13px] uppercase tracking-[0.2em] text-[#6b7177] font-semibold mb-5">Stan budynku</h3>
 			<div class="space-y-3" id="proj-cost-accordion">
 				{foreach $detailCostStages as $stage}

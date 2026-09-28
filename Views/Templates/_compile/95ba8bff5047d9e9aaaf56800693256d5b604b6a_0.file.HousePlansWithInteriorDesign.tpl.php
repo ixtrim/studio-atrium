@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-23 13:49:14
+/* Smarty version 3.1.48, created on 2026-09-28 23:10:59
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/HousePlansWithInteriorDesign.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6ab3bcbab04f52_64804911',
+  'unifunc' => 'content_6abad7e3a2ce27_17267578',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '95ba8bff5047d9e9aaaf56800693256d5b604b6a' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/HousePlansWithInteriorDesign.tpl',
-      1 => 1788812642,
+      1 => 1790458055,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6ab3bcbab04f52_64804911 (Smarty_Internal_Template $_smarty_tpl) {
-?><section class="w-full bg-[#f3f3f3] py-16" id="interior-plans">
-    <div class="max-w-[1480px] mx-auto px-8">
+function content_6abad7e3a2ce27_17267578 (Smarty_Internal_Template $_smarty_tpl) {
+?><section class="w-full bg-[#f3f3f3] pt-8 pb-16" id="interior-plans">
+    <div class="max-w-[1480px] mx-auto px-8 pb-8">
         <h2 class="ip-title text-[36px] font-400 text-[var(--brand-darker)] tracking-tight mb-10 pl-2 uppercase"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['interior_plans']->value['meta']['section_title'], ENT_QUOTES, 'UTF-8', true);?>
 </h2>
         <div class="relative">
@@ -54,17 +54,17 @@ $_smarty_tpl->tpl_vars['item']->do_else = false;
                         <a href="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['url'], ENT_QUOTES, 'UTF-8', true);?>
 " title="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['name'], ENT_QUOTES, 'UTF-8', true);?>
 " class="bg-white overflow-hidden h-full flex flex-col group">
-                            <div class="relative overflow-hidden">
+                            <div class="relative overflow-hidden aspect-[3/2]">
                                 <img src="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['image_url'], ENT_QUOTES, 'UTF-8', true);?>
 " alt="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['name'], ENT_QUOTES, 'UTF-8', true);?>
-" class="w-full h-[280px] object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
                                 <?php if ($_smarty_tpl->tpl_vars['item']->value['tag']) {?>
                                 <span class="absolute top-3 left-3 text-[11px] font-bold tracking-wider bg-white/90 text-[var(--brand-red)] px-2.5 py-1"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['tag'], ENT_QUOTES, 'UTF-8', true);?>
 </span>
                                 <?php }?>
                             </div>
-                            <div class="px-5 pt-4 pb-5 flex flex-col gap-3 flex-1">
-                                <h3 class="text-[22px] font-bold text-[#222] leading-tight"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['name'], ENT_QUOTES, 'UTF-8', true);?>
+                            <div class="px-5 pt-5 pb-5 flex flex-col gap-2 flex-1">
+                                <h3 class="text-[26px] font-bold text-[#222] leading-tight"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['name'], ENT_QUOTES, 'UTF-8', true);?>
 </h3>
                                 <div class="text-[13px] font-bold tracking-wider text-[var(--brand-red)]"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['type_label'], ENT_QUOTES, 'UTF-8', true);?>
 </div>
@@ -88,10 +88,12 @@ $_smarty_tpl->tpl_vars['item']->do_else = false;
                                 </div>
                                 <div class="pt-1 mt-auto">
                                     <?php if ($_smarty_tpl->tpl_vars['item']->value['price_old']) {?>
-                                    <div class="text-[16px] text-[var(--brand-red)] line-through"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['price_old'], ENT_QUOTES, 'UTF-8', true);?>
- PLN</div>
+                                    <div class="project-teaser-price-old text-[14px] font-medium text-[var(--brand-red)] leading-none mb-1">
+                                        <s><?php echo number_format($_smarty_tpl->tpl_vars['item']->value['price_old'],0,',',' ');?>
+ PLN</s>
+                                    </div>
                                     <?php }?>
-                                    <div class="flex items-baseline gap-2"><span class="text-[34px] font-['Montserrat',sans-serif] font-semibold text-[var(--brand-blue-strong)] leading-none"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['price'], ENT_QUOTES, 'UTF-8', true);?>
+                                    <div class="flex items-baseline gap-2"><span class="text-[30px] font-['Montserrat',sans-serif] font-semibold text-[var(--brand-blue-strong)] leading-none"><?php echo number_format($_smarty_tpl->tpl_vars['item']->value['price'],0,',',' ');?>
 </span><span class="text-[16px] text-[var(--brand-blue-strong)] font-semibold">PLN</span></div>
                                 </div>
                             </div>
@@ -125,8 +127,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             },
             breakpoints: {
                 640: { slidesPerView: 2, spaceBetween: 16 },
-                1024: { slidesPerView: 3, spaceBetween: 20 },
-                1280: { slidesPerView: 4, spaceBetween: 24 }
+                1024: { slidesPerView: 3, spaceBetween: 24 }
             }
         });
     }

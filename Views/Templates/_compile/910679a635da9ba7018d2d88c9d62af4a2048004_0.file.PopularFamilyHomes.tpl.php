@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-23 13:49:14
+/* Smarty version 3.1.48, created on 2026-09-28 23:10:59
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/PopularFamilyHomes.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6ab3bcbaafc1b0_77973427',
+  'unifunc' => 'content_6abad7e3a23289_36749210',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '910679a635da9ba7018d2d88c9d62af4a2048004' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/PopularFamilyHomes.tpl',
-      1 => 1788598190,
+      1 => 1790457325,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6ab3bcbaafc1b0_77973427 (Smarty_Internal_Template $_smarty_tpl) {
-?><section class="w-full bg-white pt-[15px] pb-[125px]" id="popular-family-homes">
+function content_6abad7e3a23289_36749210 (Smarty_Internal_Template $_smarty_tpl) {
+?><section class="w-full bg-white pt-4 pb-16" id="popular-family-homes">
     <div class="max-w-[1480px] mx-auto px-8">
         <h2 class="pfh-title text-[36px] font-400 text-[var(--brand-darker)] tracking-tight mb-10 pl-2 uppercase"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['popular_family_homes']->value['meta']['section_title'], ENT_QUOTES, 'UTF-8', true);?>
 </h2>

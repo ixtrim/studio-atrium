@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-23 13:49:14
+/* Smarty version 3.1.48, created on 2026-09-28 23:10:59
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/StepsToBuildingAHome.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6ab3bcbab10de4_25218222',
+  'unifunc' => 'content_6abad7e3a372c4_24347170',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '77057c4df6b55b87517e5ef47d47eb4f87fb96a1' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/StepsToBuildingAHome.tpl',
-      1 => 1788630454,
+      1 => 1790609451,
       2 => 'file',
     ),
   ),
@@ -20,12 +20,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6ab3bcbab10de4_25218222 (Smarty_Internal_Template $_smarty_tpl) {
-?><section class="w-full max-w-[1420px] mx-auto px-4 my-16" id="steps-to-building-a-home">
-    <h2 class="inline-block text-[36px] font-400 text-[var(--brand-darker)] tracking-tight uppercase px-10 py-4 text-center"
+function content_6abad7e3a372c4_24347170 (Smarty_Internal_Template $_smarty_tpl) {
+?><section class="w-full max-w-[1420px] mx-auto px-4 my-16 pt-4 pb-10" id="steps-to-building-a-home">
+    <h2 class="inline-block text-[36px] font-400 text-[var(--brand-darker)] tracking-tight uppercase px-10 pt-7 pb-7 text-center mb-8"
         style="background:#7ec8ee;margin-left:-1rem"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['build_steps']->value['meta']['section_title'], ENT_QUOTES, 'UTF-8', true);?>
 </h2>
-    <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10 px-[75px]">
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-2 md:grid-rows-[auto_auto] md:grid-flow-col gap-x-16 gap-y-5 px-[50px] md:items-start">
         <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['build_steps']->value['steps'], 'step');
 $_smarty_tpl->tpl_vars['step']->index = -1;
@@ -33,16 +33,16 @@ $_smarty_tpl->tpl_vars['step']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['step']->value) {
 $_smarty_tpl->tpl_vars['step']->do_else = false;
 $_smarty_tpl->tpl_vars['step']->index++;
-$__foreach_step_7_saved = $_smarty_tpl->tpl_vars['step'];
+$__foreach_step_16_saved = $_smarty_tpl->tpl_vars['step'];
 ?>
             <div class="hp-build-step cursor-pointer" data-step-item="<?php echo $_smarty_tpl->tpl_vars['step']->index;?>
 " role="button" tabindex="0"
                 aria-expanded="false">
                 <div class="flex items-start gap-5 text-left">
-                    <span class="text-[34px] font-['Montserrat',sans-serif] font-semibold leading-none text-[var(--brand-blue-strong)] leading-none w-6 shrink-0 pt-1"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['step']->value['step_number'], ENT_QUOTES, 'UTF-8', true);?>
+                    <span class="text-[44px] md:text-[64px] font-bold leading-none text-[var(--brand-blue-strong)] shrink-0"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['step']->value['step_number'], ENT_QUOTES, 'UTF-8', true);?>
 </span>
                     <div class="flex-1 min-w-0">
-                        <span class="block text-[#222] text-[24px] font-bold leading-snug pt-1"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['step']->value['step_title'], ENT_QUOTES, 'UTF-8', true);?>
+                        <span class="block text-[#222] text-[24px] md:text-[28px] font-bold leading-snug pt-1"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['step']->value['step_title'], ENT_QUOTES, 'UTF-8', true);?>
 </span>
                         <div class="hp-step-rule-row mt-3 flex items-end">
                             <div class="hp-step-rule flex-1"></div>
@@ -57,7 +57,7 @@ $__foreach_step_7_saved = $_smarty_tpl->tpl_vars['step'];
                 </div>
             </div>
         <?php
-$_smarty_tpl->tpl_vars['step'] = $__foreach_step_7_saved;
+$_smarty_tpl->tpl_vars['step'] = $__foreach_step_16_saved;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     </div>
@@ -169,8 +169,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
 <section class="w-full bg-[#f3f3f3]" id="our-experience">
     <div class="max-w-[1340px] mx-auto px-4 grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-        <div class="py-16 md:pl-8">
-            <h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight leading-[1.25] uppercase">
+        <div class="py-16 md:pl-8 w-full max-w-[550px]">
+            <h2 class="text-[32px] font-500 text-[var(--brand-darker)] tracking-tight leading-[1.25] uppercase mt-2">
                 <?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'nl2br' ][ 0 ], array( htmlspecialchars($_smarty_tpl->tpl_vars['build_steps']->value['experience']['title'], ENT_QUOTES, 'UTF-8', true) ));?>
 </h2>
             <div class="mt-8 text-[18px] leading-[24px] text-[#555]">
@@ -186,20 +186,22 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 "
                     rel="<?php echo htmlspecialchars((($tmp = @$_smarty_tpl->tpl_vars['build_steps']->value['experience']['button_rel'])===null||$tmp==='' ? 'noopener noreferrer' : $tmp), ENT_QUOTES, 'UTF-8', true);?>
 "
-                    class="mt-8 inline-flex items-center justify-center bg-[#e63329] hover:bg-[#c92a21] text-white text-[14px] font-extrabold leading-none tracking-normal uppercase px-12 py-4 lg:h-[54px] lg:max-h-[54px] lg:py-0"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['build_steps']->value['experience']['button_label'], ENT_QUOTES, 'UTF-8', true);?>
+                    class="mt-12 w-full inline-flex items-center justify-center bg-[#c61000] hover:bg-[#a80d00] text-white text-[14px] font-extrabold leading-none tracking-normal uppercase px-12 py-4 lg:h-[54px] lg:max-h-[54px] lg:py-0 mb-12"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['build_steps']->value['experience']['button_label'], ENT_QUOTES, 'UTF-8', true);?>
 </a>
             <?php } else { ?>
                 <button type="button"
-                    class="mt-8 inline-flex items-center justify-center bg-[#e63329] hover:bg-[#c92a21] text-white text-[14px] font-extrabold leading-none tracking-normal uppercase px-12 py-4 lg:h-[54px] lg:max-h-[54px] lg:py-0 border-0"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['build_steps']->value['experience']['button_label'], ENT_QUOTES, 'UTF-8', true);?>
+                    class="mt-12 w-full inline-flex items-center justify-center bg-[#c61000] hover:bg-[#a80d00] text-white text-[14px] font-extrabold leading-none tracking-normal uppercase px-12 py-4 lg:h-[54px] lg:max-h-[54px] lg:py-0 border-0 mb-12"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['build_steps']->value['experience']['button_label'], ENT_QUOTES, 'UTF-8', true);?>
 </button>
             <?php }?>
         </div>
         <?php if ($_smarty_tpl->tpl_vars['build_steps']->value['experience']['image_url']) {?>
-            <div class="flex items-end justify-center"><img src="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['build_steps']->value['experience']['image_url'], ENT_QUOTES, 'UTF-8', true);?>
+            <div class="flex items-end justify-end w-full">
+                <img src="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['build_steps']->value['experience']['image_url'], ENT_QUOTES, 'UTF-8', true);?>
 "
                     alt="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['build_steps']->value['experience']['image_alt'], ENT_QUOTES, 'UTF-8', true);?>
 " width="800" height="800" loading="lazy"
-                    class="max-h-[560px] w-auto object-contain relative top-[25px]"></div>
+                    class="max-h-[660px] w-auto object-contain relative mt-[25px]">
+            </div>
         <?php }?>
     </div>
 </section><?php }

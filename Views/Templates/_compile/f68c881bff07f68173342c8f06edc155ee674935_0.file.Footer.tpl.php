@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-08 08:15:14
+/* Smarty version 3.1.48, created on 2026-09-28 23:10:59
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6a9fa7f2a0f422_78626349',
+  'unifunc' => 'content_6abad7e3ad9e52_72041847',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f68c881bff07f68173342c8f06edc155ee674935' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Footer.tpl',
-      1 => 1788847249,
+      1 => 1790629162,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6a9fa7f2a0f422_78626349 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6abad7e3ad9e52_72041847 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="blue-overlay" id="ajax-info-overlay">
 	<div class="over-box" id="ajax-info-over-box"></div>
 	<button type="button" id="ajax-info-overlay-close" class="blue-overlay-close">Zamknij</button>
@@ -139,17 +139,17 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 				<?php if ($_smarty_tpl->tpl_vars['contact']->value['phone1']) {?>
 					<a href="tel:<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'replace' ][ 0 ], array( $_smarty_tpl->tpl_vars['contact']->value['phone1'],' ','' ));?>
 "
-						class="block text-[var(--brand-red)] font-semibold text-[28px] leading-tight"><?php echo $_smarty_tpl->tpl_vars['contact']->value['phone1'];?>
+						class="block text-[var(--brand-red)] font-semibold text-[32px] leading-tight"><?php echo $_smarty_tpl->tpl_vars['contact']->value['phone1'];?>
 </a>
 				<?php }?>
 				<?php if ($_smarty_tpl->tpl_vars['contact']->value['phone2']) {?>
 					<a href="tel:<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'replace' ][ 0 ], array( $_smarty_tpl->tpl_vars['contact']->value['phone2'],' ','' ));?>
 "
-						class="block text-[var(--brand-red)] font-semibold text-[28px] leading-tight -mt-[12px]"><?php echo $_smarty_tpl->tpl_vars['contact']->value['phone2'];?>
+						class="block text-[var(--brand-red)] font-semibold text-[32px] leading-tight -mt-[12px]"><?php echo $_smarty_tpl->tpl_vars['contact']->value['phone2'];?>
 </a>
 				<?php }?>
 				<?php if ($_smarty_tpl->tpl_vars['contact']->value['extra_phones']) {?>
-					<div class="text-[var(--brand-red)] text-[13px] font-bold"><?php echo $_smarty_tpl->tpl_vars['contact']->value['extra_phones'];?>
+					<div class="text-[var(--brand-red)] text-[13px] font-bold -mt-[12px]"><?php echo $_smarty_tpl->tpl_vars['contact']->value['extra_phones'];?>
 </div>
 				<?php }?>
 				<?php if ($_smarty_tpl->tpl_vars['contact']->value['email']) {?>
@@ -159,7 +159,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </a>
 				<?php }?>
 				<?php if ($_smarty_tpl->tpl_vars['contact']->value['details']) {?>
-					<div class="text-white text-[18px] font-bold pt-3 leading-relaxed"><?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'nl2br' ][ 0 ], array( $_smarty_tpl->tpl_vars['contact']->value['details'] ));?>
+					<div class="text-white text-[18px] leading-[22px] font-bold pt-3"><?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'nl2br' ][ 0 ], array( $_smarty_tpl->tpl_vars['contact']->value['details'] ));?>
 </div>
 				<?php }?>
 				<?php if ($_smarty_tpl->tpl_vars['contact']->value['map_url']) {?>
@@ -172,9 +172,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		</div>
 		<?php if ($_smarty_tpl->tpl_vars['seo_links_header']->value || $_smarty_tpl->tpl_vars['seo_links']->value) {?>
 			<div class="mt-16">
-				<h3 class="text-white font-semibold text-[24px] tracking-wide mb-4"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['seo_links_header']->value, ENT_QUOTES, 'UTF-8', true);?>
+				<h3 class="text-white font-semibold text-[20px] tracking-wide mb-4"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['seo_links_header']->value, ENT_QUOTES, 'UTF-8', true);?>
 </h3>
-				<div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-x-[24px] gap-y-[12px] text-[12px]">
+				<div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-x-[24px] gap-y-[1px] text-[12px]">
 					<?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['seo_links']->value, 'sl');
 $_smarty_tpl->tpl_vars['sl']->do_else = true;
@@ -183,7 +183,7 @@ $_smarty_tpl->tpl_vars['sl']->do_else = false;
 ?>
 						<a href="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['sl']->value['url'], ENT_QUOTES, 'UTF-8', true);?>
 "
-							class="text-white/85 text-[18px] font-normal hover:text-[var(--brand-blue)] truncate transition"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['sl']->value['label'], ENT_QUOTES, 'UTF-8', true);?>
+							class="text-white/85 text-[14px] font-normal hover:text-[var(--brand-blue)] truncate transition"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['sl']->value['label'], ENT_QUOTES, 'UTF-8', true);?>
 </a>
 					<?php
 }

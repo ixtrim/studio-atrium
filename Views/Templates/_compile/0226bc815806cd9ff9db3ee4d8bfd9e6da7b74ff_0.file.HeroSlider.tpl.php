@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-23 13:49:14
+/* Smarty version 3.1.48, created on 2026-09-28 23:10:59
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/HeroSlider.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6ab3bcbaae70d4_06506177',
+  'unifunc' => 'content_6abad7e39ee0e8_27703334',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0226bc815806cd9ff9db3ee4d8bfd9e6da7b74ff' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/HeroSlider.tpl',
-      1 => 1788594897,
+      1 => 1790189204,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6ab3bcbaae70d4_06506177 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6abad7e39ee0e8_27703334 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="relative" id="hero-slider">
     <div class="relative">
         <div class="swiper" id="hp-hero-swiper">
@@ -33,11 +33,11 @@ $_smarty_tpl->tpl_vars['slide']->do_else = false;
 ?>
                     <div class="swiper-slide">
                         <a href="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['slide']->value['link_url'], ENT_QUOTES, 'UTF-8', true);?>
-" class="block relative h-[480px] bg-cover bg-center"
+" class="block relative h-[650px] bg-cover bg-center"
                             style="background-image:url(<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['slide']->value['image_url'], ENT_QUOTES, 'UTF-8', true);?>
 )">
-                            <div class="max-w-[1480px] mx-auto px-8 h-full flex items-center">
-                                <div class="bg-black/35 backdrop-blur-[2px] text-white px-[64px] py-[32px] max-w-[640px]">
+                            <div class="hero-slide-overlay absolute inset-y-0 left-0 flex items-center">
+                                <div class="hero-slide-overlay__panel bg-black/35 backdrop-blur-[2px] text-white py-[32px] pr-[64px]">
                                     <h1 class="text-[42px] md:text-[54px] font-medium leading-[1.05]">
                                         <?php echo htmlspecialchars($_smarty_tpl->tpl_vars['slide']->value['title'], ENT_QUOTES, 'UTF-8', true);?>
 </h1>
@@ -81,8 +81,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     </div>
 </section>
 
-<section class="bg-[#3a3d42] py-6" id="safety-experience">
-    <div class="max-w-[1480px] mx-auto px-8">
+<section class="bg-[#3a3d42] pt-6 pb-16 mb-[90px]" id="safety-experience">
+    <div class="max-w-[1480px] mx-auto px-8 pb-2">
         <div class="text-center mb-4">
             <h2 class="text-white text-[36px] font-400 tracking-tight uppercase">
                 <?php if ($_smarty_tpl->tpl_vars['safety']->value['title_left']) {?><span class="text-[#1ba0e2]"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['safety']->value['title_left'], ENT_QUOTES, 'UTF-8', true);?>
@@ -98,7 +98,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </p>
             <?php }?>
         </div>
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-[24px]">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-[48px]">
             <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['safety_items']->value, 'item');
 $_smarty_tpl->tpl_vars['item']->do_else = true;
@@ -106,7 +106,7 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
 $_smarty_tpl->tpl_vars['item']->do_else = false;
 ?>
                 <div class="flex items-center gap-3">
-                    <div class="text-white text-[36px] md:text-[44px] font-bold leading-none"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['item_number'], ENT_QUOTES, 'UTF-8', true);?>
+                    <div class="text-white text-[44px] md:text-[80px] font-bold leading-none"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['item_number'], ENT_QUOTES, 'UTF-8', true);?>
 
                     </div>
                     <div class="text-white text-[16px] leading-snug whitespace-pre-line"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['item_text'], ENT_QUOTES, 'UTF-8', true);?>

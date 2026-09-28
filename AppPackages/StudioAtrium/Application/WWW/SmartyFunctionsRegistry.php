@@ -80,23 +80,83 @@ class SmartyFunctionsRegistry
         $doc = $params['document'] ?? null;
         if (!$doc) return '';
 
-        $id = is_array($doc) ? ($doc['id'] ?? 0) : (method_exists($doc, 'getId') ? $doc->getId() : 0);
+        $id = is_array($doc) ? (int)($doc['id'] ?? 0) : (method_exists($doc, 'getId') ? (int)$doc->getId() : 0);
         if (!$id) return '';
 
         static $cache = [];
         if (isset($cache[$id])) return $cache[$id];
 
-        $pdo = \Point7_WebApp::getPDO();
-        $stmt = $pdo->prepare(
-            'SELECT path, filename FROM attachment WHERE owner_uid = :slot AND profile_name = \'ProjectRender\' ORDER BY sorting ASC LIMIT 1'
-        );
-        $stmt->execute([':slot' => $id * 256 + 2]);
-        $row = $stmt->fetch();
+        $baseUrl = rtrim((string)(\Point7_WebApp::getConfigParam('static.documents') ?? 'https://media.studioatrium.pl/document'), '/');
 
-        $baseUrl = rtrim(\Point7_WebApp::getConfigParam('static.documents') ?? 'https://media.studioatrium.pl/document', '/');
-        $url = $row ? ($baseUrl . '/' . $row['path'] . '/' . $row['filename']) : '';
-        $cache[$id] = $url;
-        return $url;
+        // Articles/news store listing thumb filename in extra_data.thumbnail
+        $extra = null;
+        if (is_array($doc)) {
+            $extra = $doc['extra_data'] ?? null;
+        } elseif (method_exists($doc, 'getExtraData')) {
+            $extra = $doc->getExtraData();
+        }
+        if (is_string($extra) && $extra !== '') {
+            $decoded = json_decode($extra, true);
+            if (is_array($decoded)) {
+                $extra = $decoded;
+            }
+        }
+        if (is_array($extra) && !empty($extra['thumbnail']) && (string)$extra['thumbnail'] !== '-1') {
+            $file = basename((string)$extra['thumbnail']);
+            if ($file !== '') {
+                return $cache[$id] = $baseUrl . '/' . $id . '/' . $file;
+            }
+        }
+
+        // Local media filesystem (when mounted)
+        $localRoot = \Point7_WebApp::getConfigParam('paths.static.documents');
+        if ($localRoot) {
+            foreach (['thumb.jpg', 'bann.jpg', 'thumb.jpeg', 'bann.jpeg', 'thumb.png', 'bann.png'] as $file) {
+                $local = rtrim((string)$localRoot, '/') . '/' . $id . '/' . $file;
+                if (is_file($local)) {
+                    return $cache[$id] = $baseUrl . '/' . $id . '/' . $file;
+                }
+            }
+        }
+
+        // Attachment rows (partners still use ProjectRender; documents may use DocumentImage)
+        try {
+            $pdo = \Point7_WebApp::getPDO();
+            $stmt = $pdo->prepare(
+                'SELECT path, filename, profile_name FROM attachment
+                 WHERE owner_uid IN (:slot, :docId)
+                 ORDER BY
+                   CASE profile_name
+                     WHEN \'DocumentImage\' THEN 0
+                     WHEN \'ProjectRender\' THEN 1
+                     ELSE 2
+                   END,
+                   CASE
+                     WHEN filename LIKE \'thumb%\' THEN 0
+                     WHEN filename LIKE \'bann%\' THEN 1
+                     ELSE 2
+                   END,
+                   sorting ASC
+                 LIMIT 1'
+            );
+            $stmt->execute([
+                ':slot' => $id * 256 + 2,
+                ':docId' => $id,
+            ]);
+            $row = $stmt->fetch(\PDO::FETCH_ASSOC);
+            if ($row && !empty($row['filename'])) {
+                $path = trim((string)($row['path'] ?? ''), '/');
+                if ($path === '') {
+                    $path = (string)$id;
+                }
+                return $cache[$id] = $baseUrl . '/' . $path . '/' . $row['filename'];
+            }
+        } catch (\Throwable $e) {
+            // fall through to CDN convention
+        }
+
+        // CDN convention used by published knowledge-base articles
+        return $cache[$id] = $baseUrl . '/' . $id . '/thumb.jpg';
     }
 
     public function mProjectCatalog($type): string

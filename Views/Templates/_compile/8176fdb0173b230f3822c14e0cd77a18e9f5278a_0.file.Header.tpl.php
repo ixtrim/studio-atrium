@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-08 08:15:14
+/* Smarty version 3.1.48, created on 2026-09-28 23:10:59
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6a9fa7f294ecc6_72414656',
+  'unifunc' => 'content_6abad7e39d23f4_18296402',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8176fdb0173b230f3822c14e0cd77a18e9f5278a' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Header.tpl',
-      1 => 1788847248,
+      1 => 1790607591,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6a9fa7f294ecc6_72414656 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6abad7e39d23f4_18296402 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['promo_marquee_text']->value) {?>
 	<div class="promo-marquee" aria-label="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['promo_marquee_text']->value, ENT_QUOTES, 'UTF-8', true);?>
 ">
@@ -58,41 +58,41 @@ if ($_smarty_tpl->tpl_vars['promo_marquee_text']->value) {?>
 <?php }?>
 
 <!-- New header START -->
-<header id="site-header" class="bg-white border-b border-black/5 z-50 overflow-visible font-sans rounded-none static">
+<header id="site-header" class="bg-white border-b border-black/5 z-50 overflow-visible font-sans rounded-none relative">
 	<div class="relative" id="site-header-mega">
-		<div class="max-w-[1480px] mx-auto px-8 pt-5">
-			<div class="flex items-center justify-between gap-8 pb-4">
-				<a href="/" class="flex items-center shrink-0">
-					<img src="/img/logo.svg" alt="Studio Atrium – projekty domów" class="h-[56px] w-auto shrink-0 rounded-none" id="logo" width="281" height="56">
+		<div class="max-w-[1480px] mx-auto px-9 pt-3">
+			<div class="flex items-center justify-between gap-8 mb-[40px]">
+				<a href="/" class="flex items-center shrink-0 mt-[30px]">
+					<img src="/img/logo.svg" alt="Studio Atrium – projekty domów" class="h-[35px] w-auto shrink-0 rounded-none" id="logo" width="176" height="35">
 				</a>
-				<div class="flex flex-col items-end gap-3 min-w-0">
-					<div class="flex items-center justify-end gap-6">
-						<a href="tel:+48338229496" class="flex items-center gap-2 rounded-none" rel="nofollow">
-							<i data-lucide="phone" class="w-[20px] h-[20px] text-[var(--brand-red)] shrink-0" stroke-width="2.2"></i>
-							<span class="text-[var(--brand-red)] font-black text-[19px] tracking-wide leading-none">33 822 94 96</span>
+				<div class="flex flex-col items-end gap-6 min-w-0">
+					<div class="flex items-center justify-end gap-6 h-[34px]">
+						<a href="tel:+48338229496" class="flex items-center gap-2 h-[34px] rounded-none" rel="nofollow">
+							<i data-lucide="phone" class="w-[24px] h-[24px] text-[var(--brand-darker)] shrink-0" stroke-width="1.25" aria-hidden="true"></i>
+							<span class="text-[var(--brand-red)] leading-none" style="font-size:20px;font-style:normal;font-weight:700;">33 822 94 96</span>
 						</a>
 						<form method="get" action="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'project','action'=>'search'),$_smarty_tpl ) );?>
-" class="relative rounded-none" role="search">
+" class="relative flex items-center h-[34px] rounded-none" role="search">
 							<input type="text" name="query" placeholder="wyszukaj nazwę"
-								class="rounded-none bg-white border border-[#979797] h-[40px] pl-5 pr-10 text-[13px] w-[224px] leading-none text-[#343233] focus:outline-none focus:border-[var(--brand-blue)]">
+								class="rounded-none bg-white border border-[#979797] h-[34px] pl-5 pr-10 text-[13px] font-normal tracking-wider w-full max-w-[170px] leading-none text-[var(--brand-darker)] placeholder:text-[#343233] focus:outline-none focus:border-[var(--brand-blue)]">
 							<button type="submit" aria-label="Szukaj"
-								class="rounded-none absolute right-0 top-0 h-[40px] w-10 flex items-center justify-center text-[var(--brand-darker)] hover:text-[var(--brand-red)] bg-transparent">
+								class="rounded-none absolute right-0 top-0 h-[34px] w-10 flex items-center justify-center text-[var(--brand-darker)] hover:text-[var(--brand-red)] bg-transparent">
 								<i data-lucide="search" class="w-[16px] h-[16px] shrink-0"></i>
 							</button>
 						</form>
 						<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'favourite','action'=>'list'),$_smarty_tpl ) );?>
 " aria-label="Ulubione"
-							class="text-[var(--brand-darker)] hover:text-[var(--brand-red)]">
+							class="inline-flex items-center justify-center h-[34px] text-[var(--brand-darker)] hover:text-[var(--brand-red)]">
 							<i data-lucide="heart" class="w-[20px] h-[20px] shrink-0"></i>
 						</a>
 						<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'favourite','action'=>'compare'),$_smarty_tpl ) );?>
 " aria-label="Porównaj"
-							class="text-[var(--brand-darker)] hover:text-[var(--brand-red)]">
+							class="inline-flex items-center justify-center h-[34px] text-[var(--brand-darker)] hover:text-[var(--brand-red)]">
 							<i data-lucide="scale" class="w-[20px] h-[20px] shrink-0"></i>
 						</a>
 						<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'order','action'=>'cart'),$_smarty_tpl ) );?>
 " aria-label="Koszyk"
-							class="relative text-[var(--brand-darker)] hover:text-[var(--brand-red)]"<?php if (!$_smarty_tpl->tpl_vars['basket']->value) {?> id="header-cart-empty"<?php }?>>
+							class="relative inline-flex items-center justify-center h-[34px] text-[var(--brand-darker)] hover:text-[var(--brand-red)]"<?php if (!$_smarty_tpl->tpl_vars['basket']->value) {?> id="header-cart-empty"<?php }?>>
 							<i data-lucide="shopping-cart" class="w-[22px] h-[22px] shrink-0"></i>
 							<?php if ($_smarty_tpl->tpl_vars['basket']->value) {?>
 								<span class="absolute -top-1.5 -right-1.5 min-w-[18px] h-[18px] px-1 bg-[var(--brand-red)] text-white text-[10px] font-black leading-none grid place-items-center rounded-none">
@@ -104,12 +104,12 @@ if ($_smarty_tpl->tpl_vars['promo_marquee_text']->value) {?>
 						<?php if ($_smarty_tpl->tpl_vars['user']->value) {?>
 							<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'panel','action'=>'account'),$_smarty_tpl ) );?>
 "
-								class="rounded-none border border-[#979797] h-[40px] px-6 text-[13px] font-bold tracking-wider text-[var(--brand-darker)] hover:border-[var(--brand-red)] hover:text-[var(--brand-red)] inline-flex items-center bg-white">
+								class="header-account-btn rounded-none border border-[#979797] h-[34px] px-3 text-[13px] font-bold tracking-wider text-[var(--brand-darker)] hover:border-[var(--brand-red)] hover:text-[var(--brand-red)] inline-flex items-center bg-white">
 								KONTO
 							</a>
 						<?php } else { ?>
 							<button type="button"
-								class="login-trigger rounded-none border border-[#979797] h-[40px] px-6 text-[13px] font-bold tracking-wider text-[var(--brand-darker)] hover:border-[var(--brand-red)] hover:text-[var(--brand-red)] bg-white">
+								class="login-trigger rounded-none border border-[#979797] h-[34px] px-3 text-[13px] font-bold tracking-wider text-[var(--brand-darker)] hover:border-[var(--brand-red)] hover:text-[var(--brand-red)] bg-white inline-flex items-center">
 								ZALOGUJ
 							</button>
 						<?php }?>
@@ -385,11 +385,11 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		</div>
 	</div>
 
-	<div class="max-w-[1480px] mx-auto px-8 pb-4">
+	<div id="site-header-filter-bar" class="max-w-[1480px] w-full mx-auto px-8 pb-4 z-10">
 		<div class="flex items-center">
 			<div class="flex-1 flex justify-center min-w-0">
 				<div id="site-header-filters"
-					class="w-auto mx-auto h-[54px] bg-[#1d99e1] rounded-none flex items-center gap-10 px-10">
+					class="w-auto mx-auto h-[45px] bg-[#1d99e1] rounded-none flex items-center gap-10 px-10">
 					<button type="button" data-search-tab="kondygnacje"
 						class="js-open-search rounded-none bg-transparent text-white font-black text-[14px] leading-none tracking-normal">
 						Kondygnacje
@@ -413,7 +413,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 				</div>
 			</div>
 			<button type="button" id="search-trigger"
-				class="js-open-search rounded-none bg-[#ed1d24] hover:bg-[#d11a20] text-white h-[54px] w-[264px] font-black text-[14px] leading-none tracking-normal flex items-center justify-center gap-[10px] shrink-0 ml-6">
+				class="js-open-search rounded-none bg-[#c61000] hover:bg-[#a80d00] text-white h-[54px] w-[264px] font-black text-[14px] leading-none tracking-normal flex items-center justify-center gap-[10px] shrink-0 ml-6">
 				ZNAJDŹ PROJEKT
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sliders-horizontal shrink-0" style="width:24px;height:24px;max-width:24px;max-height:24px" aria-hidden="true"><path d="M10 5H3"/><path d="M12 19H3"/><path d="M14 3v4"/><path d="M16 17v4"/><path d="M21 12h-9"/><path d="M21 19h-5"/><path d="M21 5h-7"/><path d="M8 10v4"/><path d="M8 12H3"/></svg>
 			</button>

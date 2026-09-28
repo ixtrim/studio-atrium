@@ -2,13 +2,13 @@
 	<div class="max-w-[1480px] mx-auto px-8">
 		<div class="grid lg:grid-cols-12 gap-8">
 			<div class="lg:col-span-8">
-				<div class="relative group overflow-hidden bg-[#1b2025] aspect-[16/10]" id="proj-gallery-main">
+				<div class="relative group overflow-hidden bg-[rgb(27,32,37)] aspect-[16/10] cursor-zoom-in" id="proj-gallery-main" title="Kliknij, aby powiększyć" role="button" tabindex="0" aria-label="Powiększ zdjęcie">
 					{foreach $detailGallery as $img}
 					<img src="{$img.src|escape}" alt="{$img.alt|escape}" loading="{if $img@first}eager{else}lazy{/if}"
 						class="proj-gallery-slide absolute inset-0 w-full h-full object-cover transition-all duration-700 {if $img@first}opacity-100 scale-100{else}opacity-0 scale-105{/if}"
 						data-index="{$img@index}">
 					{/foreach}
-					<div class="absolute left-0 bottom-0 bg-[var(--brand-red)] text-white px-5 py-2 text-[11px] uppercase tracking-[0.24em] font-bold">ATRIUM</div>
+					<div class="absolute left-0 bottom-0 bg-[var(--brand-red)] text-white px-5 py-2 text-[11px] uppercase tracking-[0.24em] font-bold pointer-events-none">ATRIUM</div>
 					{if $detailGallery|@count > 1}
 					<button type="button" id="proj-gal-prev" aria-label="Poprzednie zdjęcie"
 						class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 grid place-items-center bg-black/35 hover:bg-[var(--brand-red)] text-white backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100">
@@ -19,10 +19,17 @@
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-6 h-6" style="width:24px;height:24px" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
 					</button>
 					{/if}
-					<div id="proj-gal-counter" class="absolute right-4 bottom-4 bg-black/55 text-white text-[11px] tracking-[0.2em] font-semibold px-3 py-1.5">
+					<div id="proj-gal-counter" class="absolute right-4 bottom-4 bg-black/55 text-white text-[11px] tracking-[0.2em] font-semibold px-3 py-1.5 pointer-events-none">
 						01 / {if $detailGallery|@count < 10}0{/if}{$detailGallery|@count}
 					</div>
 				</div>
+				{if $detailGallery}
+				<div class="hidden" aria-hidden="true">
+					{foreach $detailGallery as $img}
+					<a href="{$img.src|escape}" data-fancybox="proj-gallery" data-caption="{$img.alt|escape}" id="proj-gal-lb-{$img@index}"></a>
+					{/foreach}
+				</div>
+				{/if}
 
 				{if $detailGallery|@count > 1}
 				<div class="mt-4 flex items-center gap-3">

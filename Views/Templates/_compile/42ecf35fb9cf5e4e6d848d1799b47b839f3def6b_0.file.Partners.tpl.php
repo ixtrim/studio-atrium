@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-07 21:44:43
+/* Smarty version 3.1.48, created on 2026-09-28 23:10:59
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/Partners.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6a9f142b6aeaf0_47254114',
+  'unifunc' => 'content_6abad7e3a663d7_62855131',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '42ecf35fb9cf5e4e6d848d1799b47b839f3def6b' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/Partners.tpl',
-      1 => 1788714169,
+      1 => 1790622218,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6a9f142b6aeaf0_47254114 (Smarty_Internal_Template $_smarty_tpl) {
-?><section class="bg-white py-16 overflow-hidden">
+function content_6abad7e3a663d7_62855131 (Smarty_Internal_Template $_smarty_tpl) {
+?><section class="bg-white pt-16 pb-[90px] overflow-hidden">
     <div class="max-w-[1480px] mx-auto px-12">
         <h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight mb-12 uppercase"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['partners']->value['meta']['section_title'], ENT_QUOTES, 'UTF-8', true);?>
 </h2>

@@ -34,4 +34,4 @@
 {* Legacy hook kept for project.js close handlers *}
 <div id="param-info-overlay" class="hidden" aria-hidden="true"></div>
 
-<script src="/js/project2026.js?v=20260908e" defer></script>
+<script src="/js/project2026.js?v=20260928a" defer></script>

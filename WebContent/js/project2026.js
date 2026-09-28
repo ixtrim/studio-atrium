@@ -66,6 +66,37 @@
 		var tNext = qs('#proj-thumb-next', root);
 		if (tPrev) tPrev.addEventListener('click', function () { thumbStart = Math.max(0, thumbStart - 1); updateThumbs(); });
 		if (tNext) tNext.addEventListener('click', function () { thumbStart = Math.min(Math.max(0, slides.length - visible), thumbStart + 1); updateThumbs(); });
+
+		function openLightbox() {
+			var link = document.getElementById('proj-gal-lb-' + active);
+			if (link) {
+				link.click();
+				return;
+			}
+			if (typeof window.jQuery === 'undefined' || typeof window.jQuery.fancybox !== 'function') return;
+			var items = slides.map(function (el) {
+				return {
+					src: el.currentSrc || el.getAttribute('src') || '',
+					opts: { caption: el.getAttribute('alt') || '' }
+				};
+			}).filter(function (item) { return !!item.src; });
+			if (!items.length) return;
+			window.jQuery.fancybox.open(items, { loop: true }, active);
+		}
+
+		var main = qs('#proj-gallery-main', root);
+		if (main) {
+			main.addEventListener('click', function (e) {
+				if (e.target.closest('button')) return;
+				openLightbox();
+			});
+			main.addEventListener('keydown', function (e) {
+				if (e.key !== 'Enter' && e.key !== ' ') return;
+				e.preventDefault();
+				openLightbox();
+			});
+		}
+
 		setActive(0);
 	}
 

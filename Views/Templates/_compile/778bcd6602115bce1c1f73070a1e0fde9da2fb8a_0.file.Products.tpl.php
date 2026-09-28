@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-23 13:49:14
+/* Smarty version 3.1.48, created on 2026-09-28 23:10:59
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/Products.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6ab3bcbab1fc51_74770112',
+  'unifunc' => 'content_6abad7e3a54ce3_01024041',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '778bcd6602115bce1c1f73070a1e0fde9da2fb8a' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/Products.tpl',
-      1 => 1788696493,
+      1 => 1790625751,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6ab3bcbab1fc51_74770112 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6abad7e3a54ce3_01024041 (Smarty_Internal_Template $_smarty_tpl) {
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['products_sections']->value, 'section', true);
 $_smarty_tpl->tpl_vars['section']->iteration = 0;
 $_smarty_tpl->tpl_vars['section']->index = -1;
@@ -31,18 +31,18 @@ $_smarty_tpl->tpl_vars['section']->iteration++;
 $_smarty_tpl->tpl_vars['section']->index++;
 $_smarty_tpl->tpl_vars['section']->first = !$_smarty_tpl->tpl_vars['section']->index;
 $_smarty_tpl->tpl_vars['section']->last = $_smarty_tpl->tpl_vars['section']->iteration === $_smarty_tpl->tpl_vars['section']->total;
-$__foreach_section_8_saved = $_smarty_tpl->tpl_vars['section'];
+$__foreach_section_17_saved = $_smarty_tpl->tpl_vars['section'];
 ?>
-<section class="<?php if ($_smarty_tpl->tpl_vars['section']->first) {?>pt-[75px]<?php } else { ?>pt-[18px]<?php }?> <?php if ($_smarty_tpl->tpl_vars['section']->last) {?>pb-[100px]<?php } else { ?>pb-[18px]<?php }?>" id="gallery-<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['section']->value['section_key'], ENT_QUOTES, 'UTF-8', true);?>
+<section class="<?php if ($_smarty_tpl->tpl_vars['section']->first) {?>pt-[50px]<?php } else { ?>pt-[18px]<?php }?> <?php if ($_smarty_tpl->tpl_vars['section']->last) {?>pb-[150px]<?php } else { ?>pb-[18px]<?php }?>" id="gallery-<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['section']->value['section_key'], ENT_QUOTES, 'UTF-8', true);?>
 ">
     <div class="max-w-[1480px] mx-auto px-8">
-        <h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight leading-tight uppercase"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['section']->value['section_title'], ENT_QUOTES, 'UTF-8', true);?>
+        <h2 class="text-[28px] font-400 text-[var(--brand-darker)] tracking-tight leading-tight uppercase"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['section']->value['section_title'], ENT_QUOTES, 'UTF-8', true);?>
 </h2>
         <?php if ($_smarty_tpl->tpl_vars['section']->value['section_subtitle']) {?>
-        <p class="text-[18px] leading-[24px] text-[var(--brand-darker)]/80 mt-1 mb-8"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['section']->value['section_subtitle'], ENT_QUOTES, 'UTF-8', true);?>
+        <p class="text-[18px] leading-[24px] text-[var(--brand-darker)]/80 mt-1 mb-4"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['section']->value['section_subtitle'], ENT_QUOTES, 'UTF-8', true);?>
 </p>
         <?php } else { ?>
-        <div class="mb-8"></div>
+        <div class="mb-4"></div>
         <?php }?>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" data-gallery-group="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['section']->value['section_key'], ENT_QUOTES, 'UTF-8', true);?>
 ">
@@ -63,7 +63,7 @@ $_smarty_tpl->tpl_vars['item']->do_else = false;
 "
                 data-gallery-desc="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['description'], ENT_QUOTES, 'UTF-8', true);?>
 ">
-                <div class="relative w-full aspect-[4/3] overflow-hidden bg-[#f3f3f3]">
+                <div class="relative w-full aspect-[470/312] overflow-hidden bg-[#f3f3f3]">
                     <img src="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['image_url'], ENT_QUOTES, 'UTF-8', true);?>
 " alt="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['title'], ENT_QUOTES, 'UTF-8', true);?>
 "
@@ -95,7 +95,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     </div>
 </section>
 <?php
-$_smarty_tpl->tpl_vars['section'] = $__foreach_section_8_saved;
+$_smarty_tpl->tpl_vars['section'] = $__foreach_section_17_saved;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 

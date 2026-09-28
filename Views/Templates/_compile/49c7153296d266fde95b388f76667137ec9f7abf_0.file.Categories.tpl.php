@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-23 13:49:14
+/* Smarty version 3.1.48, created on 2026-09-28 23:10:59
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/Categories.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6ab3bcbaaec8b7_89168621',
+  'unifunc' => 'content_6abad7e39f77d4_89203570',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '49c7153296d266fde95b388f76667137ec9f7abf' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/Categories.tpl',
-      1 => 1788627533,
+      1 => 1790189493,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6ab3bcbaaec8b7_89168621 (Smarty_Internal_Template $_smarty_tpl) {
-?><section class="relative bg-[#ececec] py-12" id="categories">
+function content_6abad7e39f77d4_89203570 (Smarty_Internal_Template $_smarty_tpl) {
+?><section class="relative bg-[#ececec] pt-6 pb-[110px]" id="categories">
     <div class="max-w-[1480px] mx-auto px-8">
         <div class="flex items-center justify-between mb-8">
             <h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight uppercase">
