@@ -429,7 +429,7 @@ strong, b {
 
 @media (min-width: 1024px) {
   a.uppercase[class*="tracking-"],
-  button.uppercase[class*="tracking-"],
+  button.uppercase[class*="tracking-"]:not(.hp-contact-submit),
   #search-trigger,
   #site-header-filters > button {
     max-height: 54px;

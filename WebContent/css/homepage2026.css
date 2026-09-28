@@ -115,3 +115,257 @@
 #hp-2026 .hp-newsletter-email:focus {
   border-color: var(--brand-blue) !important;
 }
+
+/* —— Homepage contact band (pixel-locked vs design) —— */
+#homepage-contact,
+#homepage-contact * {
+  box-sizing: border-box;
+}
+
+#homepage-contact .hp-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  align-items: stretch;
+}
+
+#homepage-contact .hp-contact-call,
+#homepage-contact .hp-contact-copy,
+#homepage-contact .hp-contact-form-wrap {
+  position: relative;
+}
+
+#homepage-contact .hp-contact-call {
+  background: #1d99e1;
+  color: #fff;
+  padding: 40px 48px 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#homepage-contact .hp-contact-hostess {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  width: auto;
+  height: 100px;
+  object-fit: cover;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  z-index: 2;
+}
+
+#homepage-contact .hp-contact-call-title {
+  margin: 0;
+  padding-right: 90px;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--brand-darker, #222) !important;
+}
+
+#homepage-contact .hp-contact-phones {
+  margin-top: 18px;
+  color: #fff;
+  font-family: "Montserrat", "Nexa", sans-serif !important;
+  font-size: 60px !important;
+  font-weight: 500 !important;
+  line-height: 64px !important;
+}
+
+#homepage-contact .hp-contact-phones > div + div {
+  margin-top: 2px;
+}
+
+#homepage-contact .hp-contact-hours {
+  margin-top: 28px;
+  color: var(--brand-darker, #222);
+  font-size: 20px !important;
+  line-height: 24px !important;
+}
+
+#homepage-contact .hp-contact-hours-label {
+  font-weight: 700 !important;
+}
+
+#homepage-contact .hp-contact-hours-text {
+  margin-top: 10px;
+  font-weight: 500 !important;
+}
+
+#homepage-contact .hp-contact-copy {
+  background: #f3f3f3;
+  padding: 40px 40px 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#homepage-contact .hp-contact-form-wrap {
+  background: #f3f3f3;
+  padding: 40px 40px 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#homepage-contact .hp-contact-question-title {
+  margin: 0 0 18px;
+  font-size: 40px !important;
+  font-weight: 700 !important;
+  line-height: 44px !important;
+  letter-spacing: -0.01em;
+  color: #222 !important;
+  text-transform: none;
+}
+
+#homepage-contact .hp-contact-question-body {
+  margin: 0;
+  max-width: 420px;
+  font-size: 20px !important;
+  line-height: 28px !important;
+  color: #333 !important;
+}
+
+#homepage-contact .hp-contact-form {
+  width: 440px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-left: auto;
+}
+
+#homepage-contact .hp-contact-input,
+#homepage-contact .hp-contact-textarea {
+  width: 100%;
+  margin: 0;
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  background: #fff !important;
+  color: #333;
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+  padding: 12px 16px !important;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+#homepage-contact .hp-contact-textarea {
+  min-height: 112px;
+  resize: none;
+}
+
+#homepage-contact .hp-contact-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 2px 0 0;
+  font-size: 11px !important;
+  line-height: 1.4 !important;
+  color: #666 !important;
+  cursor: pointer;
+}
+
+#homepage-contact .hp-contact-consent input {
+  margin: 2px 0 0;
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  border-radius: 0 !important;
+  accent-color: #1d99e1;
+}
+
+#homepage-contact .hp-contact-consent a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+#homepage-contact .hp-contact-submit {
+  width: 100% !important;
+  max-width: none !important;
+  height: 48px !important;
+  max-height: 48px !important;
+  min-height: 48px !important;
+  margin: 4px 0 0 !important;
+  padding: 0 16px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: #c61000 !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  color: #fff !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1 !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+#homepage-contact .hp-contact-submit:hover {
+  background: #a80d00 !important;
+}
+
+@media (min-width: 1024px) {
+  /* call + copy flexible | form 440px (+ side padding) on the right */
+  #homepage-contact .hp-contact-grid {
+    grid-template-columns: minmax(0, 1.22fr) minmax(0, 1fr) auto;
+  }
+
+  #homepage-contact .hp-contact-call {
+    padding: 40px 56px 48px max(40px, calc((100vw - 1480px) / 2 + 40px));
+    width: calc(100% + 75px);
+    z-index: 1;
+  }
+
+  #homepage-contact .hp-contact-copy {
+    padding: 40px 36px 48px calc(48px + 75px);
+  }
+
+  #homepage-contact .hp-contact-form-wrap {
+    width: auto;
+    max-width: none;
+    padding: 40px max(32px, calc((100vw - 1480px) / 2 + 32px)) 48px 24px;
+    align-items: flex-end;
+  }
+
+  #homepage-contact .hp-contact-form {
+    margin-left: 0;
+    margin-right: 0;
+    width: 440px;
+    max-width: 440px;
+  }
+}
+
+@media (max-width: 1023px) {
+  #homepage-contact .hp-contact-call,
+  #homepage-contact .hp-contact-copy,
+  #homepage-contact .hp-contact-form-wrap {
+    padding: 32px 24px;
+  }
+
+  #homepage-contact .hp-contact-phones {
+    font-size: 60px !important;
+    line-height: 64px !important;
+    font-weight: 500 !important;
+  }
+
+  #homepage-contact .hp-contact-form {
+    max-width: none;
+    margin-left: 0;
+  }
+}
+
