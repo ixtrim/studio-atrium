@@ -1,11 +1,11 @@
 {foreach $products_sections as $section}
-<section class="{if $section@first}pt-[75px]{else}pt-[18px]{/if} {if $section@last}pb-[100px]{else}pb-[18px]{/if}" id="gallery-{$section.section_key|escape}">
+<section class="{if $section@first}pt-[50px]{else}pt-[18px]{/if} {if $section@last}pb-[100px]{else}pb-[18px]{/if}" id="gallery-{$section.section_key|escape}">
     <div class="max-w-[1480px] mx-auto px-8">
         <h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight leading-tight uppercase">{$section.section_title|escape}</h2>
         {if $section.section_subtitle}
-        <p class="text-[18px] leading-[24px] text-[var(--brand-darker)]/80 mt-1 mb-8">{$section.section_subtitle|escape}</p>
+        <p class="text-[18px] leading-[24px] text-[var(--brand-darker)]/80 mt-1 mb-4">{$section.section_subtitle|escape}</p>
         {else}
-        <div class="mb-8"></div>
+        <div class="mb-4"></div>
         {/if}
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" data-gallery-group="{$section.section_key|escape}">
             {foreach $section.items as $item}
@@ -16,7 +16,7 @@
                 data-gallery-src="{$item.image_url|escape}"
                 data-gallery-title="{$item.title|escape}"
                 data-gallery-desc="{$item.description|escape}">
-                <div class="relative w-full aspect-[4/3] overflow-hidden bg-[#f3f3f3]">
+                <div class="relative w-full aspect-[470/312] overflow-hidden bg-[#f3f3f3]">
                     <img src="{$item.image_url|escape}" alt="{$item.title|escape}"
                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
                     <span class="pointer-events-none absolute inset-0 bg-[#1D99E1] opacity-0 transition-opacity duration-300 group-hover:opacity-60 z-[1]" aria-hidden="true"></span>
