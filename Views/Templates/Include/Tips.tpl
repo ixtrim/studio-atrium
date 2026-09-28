@@ -1,4 +1,4 @@
-<section class="p7-[85px] pb-[175px] bg-white" id="tips">
+<section class="pt-[85px] pb-[175px] bg-white" id="tips">
     <div class="max-w-[1480px] mx-auto px-12">
         <h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight mb-[80px] uppercase">
             {$porady.section_title|escape}</h2>
