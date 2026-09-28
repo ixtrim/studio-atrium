@@ -127,8 +127,8 @@
 
 <section class="w-full bg-[#f3f3f3]" id="our-experience">
     <div class="max-w-[1340px] mx-auto px-4 grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-        <div class="py-16 md:pl-8">
-            <h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight leading-[1.25] uppercase">
+        <div class="py-16 md:pl-8 w-full max-w-[550px]">
+            <h2 class="text-[32px] font-500 text-[var(--brand-darker)] tracking-tight leading-[1.25] uppercase mt-2">
                 {$build_steps.experience.title|escape|nl2br nofilter}</h2>
             <div class="mt-8 text-[18px] leading-[24px] text-[#555]">
                 {$build_steps.experience.body|escape|nl2br nofilter}</div>
@@ -138,16 +138,18 @@
                 <a href="{$build_steps.experience.button_url|escape}"
                     title="{$build_steps.experience.button_title|default:$build_steps.experience.button_label|escape}"
                     rel="{$build_steps.experience.button_rel|default:'noopener noreferrer'|escape}"
-                    class="mt-8 inline-flex items-center justify-center bg-[#c61000] hover:bg-[#a80d00] text-white text-[14px] font-extrabold leading-none tracking-normal uppercase px-12 py-4 lg:h-[54px] lg:max-h-[54px] lg:py-0">{$build_steps.experience.button_label|escape}</a>
+                    class="mt-12 w-full inline-flex items-center justify-center bg-[#c61000] hover:bg-[#a80d00] text-white text-[14px] font-extrabold leading-none tracking-normal uppercase px-12 py-4 lg:h-[54px] lg:max-h-[54px] lg:py-0 mb-12">{$build_steps.experience.button_label|escape}</a>
             {else}
                 <button type="button"
-                    class="mt-8 inline-flex items-center justify-center bg-[#c61000] hover:bg-[#a80d00] text-white text-[14px] font-extrabold leading-none tracking-normal uppercase px-12 py-4 lg:h-[54px] lg:max-h-[54px] lg:py-0 border-0">{$build_steps.experience.button_label|escape}</button>
+                    class="mt-12 w-full inline-flex items-center justify-center bg-[#c61000] hover:bg-[#a80d00] text-white text-[14px] font-extrabold leading-none tracking-normal uppercase px-12 py-4 lg:h-[54px] lg:max-h-[54px] lg:py-0 border-0 mb-12">{$build_steps.experience.button_label|escape}</button>
             {/if}
         </div>
         {if $build_steps.experience.image_url}
-            <div class="flex items-end justify-center"><img src="{$build_steps.experience.image_url|escape}"
+            <div class="flex items-end justify-end w-full">
+                <img src="{$build_steps.experience.image_url|escape}"
                     alt="{$build_steps.experience.image_alt|escape}" width="800" height="800" loading="lazy"
-                    class="max-h-[560px] w-auto object-contain relative top-[25px]"></div>
+                    class="max-h-[660px] w-auto object-contain relative mt-[25px]">
+            </div>
         {/if}
     </div>
 </section>
