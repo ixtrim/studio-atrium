@@ -3,7 +3,7 @@
         <h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight mb-12 uppercase">{$partners.meta.section_title|escape}</h2>
     </div>
     <div class="relative w-full overflow-hidden">
-        <div class="flex gap-20 animate-[marquee_30s_linear_infinite] w-max">
+        <div class="flex gap-20 animate-[marquee_90s_linear_infinite] w-max">
             {foreach $partners.marquee as $item}
             <a href="{$item.link_url|escape}"
                 target="_blank"
