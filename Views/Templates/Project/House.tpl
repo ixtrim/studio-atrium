@@ -34,4 +34,30 @@
 {* Legacy hook kept for project.js close handlers *}
 <div id="param-info-overlay" class="hidden" aria-hidden="true"></div>
 
-<script src="/js/project2026.js?v=20260928a" defer></script>
+{if $detailGallery}
+<div id="proj-gallery-lightbox" class="proj-gal-lb fixed inset-0 hidden items-center justify-center p-3 sm:p-6 md:p-8" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Powiększone zdjęcie">
+	<div class="proj-gal-lb-backdrop absolute inset-0" data-gal-lb-close></div>
+	{if $detailGallery|@count > 1}
+	<button type="button" class="proj-gal-lb-nav proj-gal-lb-prev" data-gal-lb-prev aria-label="Poprzednie zdjęcie">
+		<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+	</button>
+	<button type="button" class="proj-gal-lb-nav proj-gal-lb-next" data-gal-lb-next aria-label="Następne zdjęcie">
+		<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+	</button>
+	{/if}
+	<figure class="proj-gal-lb-panel relative z-10 w-full max-w-[min(1200px,100%)]">
+		<button type="button" class="proj-gal-lb-close" data-gal-lb-close aria-label="Zamknij">&times;</button>
+		<div class="proj-gal-lb-stage relative overflow-hidden bg-white">
+			<div class="proj-gal-lb-media relative flex items-center justify-center bg-white p-0 m-0">
+				<img id="proj-gal-lb-img" src="" alt="" width="1400" height="900" decoding="async" class="block max-w-full max-h-[min(82vh,880px)] w-auto h-auto object-contain select-none">
+			</div>
+			<figcaption class="proj-gal-lb-caption flex items-center justify-between gap-4 px-5 py-3.5 bg-white border-t border-[rgb(232,232,232)]">
+				<div id="proj-gal-lb-caption" class="text-[13px] text-[rgb(85,85,85)] truncate"></div>
+				<div id="proj-gal-lb-counter" class="text-[12px] text-[rgb(136,136,136)] tracking-widest tabular-nums shrink-0"></div>
+			</figcaption>
+		</div>
+	</figure>
+</div>
+{/if}
+
+<script src="/js/project2026.js?v=20260928e" defer></script>

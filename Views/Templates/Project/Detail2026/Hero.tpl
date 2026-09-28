@@ -1,4 +1,4 @@
-<section id="wizualizacje" class="bg-white py-14 scroll-mt-32">
+<section id="wizualizacje" class="bg-white py-6 scroll-mt-32">
 	<div class="max-w-[1480px] mx-auto px-8">
 		<div class="grid lg:grid-cols-12 gap-8">
 			<div class="lg:col-span-8">
@@ -23,13 +23,6 @@
 						01 / {if $detailGallery|@count < 10}0{/if}{$detailGallery|@count}
 					</div>
 				</div>
-				{if $detailGallery}
-				<div class="hidden" aria-hidden="true">
-					{foreach $detailGallery as $img}
-					<a href="{$img.src|escape}" data-fancybox="proj-gallery" data-caption="{$img.alt|escape}" id="proj-gal-lb-{$img@index}"></a>
-					{/foreach}
-				</div>
-				{/if}
 
 				{if $detailGallery|@count > 1}
 				<div class="mt-4 flex items-center gap-3">
