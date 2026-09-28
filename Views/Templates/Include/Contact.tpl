@@ -28,7 +28,7 @@
 
 		{* Right — form *}
 		<div class="hp-contact-form-wrap">
-			<form class="hp-contact-form w-[440px] max-w-full">
+			<form class="hp-contact-form w-[440px] max-w-full py-[30px]">
 				<input type="email" placeholder="{$homepage_contact.email_placeholder|escape}"
 					class="hp-contact-input">
 				<textarea placeholder="{$homepage_contact.message_placeholder|escape}" rows="5"
