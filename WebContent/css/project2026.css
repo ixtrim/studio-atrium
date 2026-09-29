@@ -1,4 +1,53 @@
 /* Project detail 2026 — isolation helpers (Tailwind utilities preferred) */
+
+#proj-2026 {
+	overflow-x: clip;
+	max-width: 100%;
+}
+
+#proj-2026 #wizualizacje #proj-gallery-main {
+	max-width: 100%;
+}
+
+#proj-2026 #wizualizacje #proj-gallery-main .proj-gallery-slide {
+	max-width: 100%;
+}
+
+#proj-2026 #wizualizacje #proj-thumb-track {
+	min-width: 0;
+}
+
+/* Vertical rhythm: 64px section padding (py-16), 40px header→content (mb-10) */
+#proj-2026 > section.scroll-mt-32,
+#proj-2026 > section[id] {
+	scroll-margin-top: 8rem;
+}
+
+/*
+ * Same-background neighbors: halve the shared edge (2rem + 2rem = 4rem),
+ * so the gap optically matches a single py-16 instead of stacking two.
+ */
+#proj-2026 > section.bg-white + section.bg-white {
+	padding-top: 2rem !important;
+}
+
+#proj-2026 > section.bg-white:has(+ section.bg-white) {
+	padding-bottom: 2rem !important;
+}
+
+#proj-2026 > section[class*="bg-[#f5f6f7]"] + section[class*="bg-[#f5f6f7]"] {
+	padding-top: 2rem !important;
+}
+
+#proj-2026 > section[class*="bg-[#f5f6f7]"]:has(+ section[class*="bg-[#f5f6f7]"]) {
+	padding-bottom: 2rem !important;
+}
+
+#proj-2026 #homepage-contact {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
 #proj-2026 svg.lucide,
 #proj-2026 svg[data-lucide] {
 	max-width: 28px !important;

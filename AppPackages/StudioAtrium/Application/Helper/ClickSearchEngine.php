@@ -153,7 +153,7 @@ class ClickSearchEngine
 
 	private function _buildSearchWhere(array $searchParams): array
 	{
-		$where = ["p.status = 'published'", "p.type = 'house'"];
+		$where = ["p.status = 'published'", "p.type IN ('house', 'skeleton')"];
 		$binds = [];
 		$i     = 0;
 
@@ -341,7 +341,7 @@ class ClickSearchEngine
 			if ($slug === 'z_garazem') {
 				return $withGarage;
 			}
-			$stmt = $pdo->query("SELECT id FROM project WHERE status = 'published' AND type = 'house'");
+			$stmt = $pdo->query("SELECT id FROM project WHERE status = 'published' AND type IN ('house', 'skeleton')");
 			$allIds = array_map('intval', $stmt->fetchAll(\PDO::FETCH_COLUMN));
 			return array_values(array_diff($allIds, $withGarage));
 		}

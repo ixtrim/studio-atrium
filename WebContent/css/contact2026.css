@@ -1,0 +1,104 @@
+/**
+ * Contact page 2026 — article block + form status inside #contact-2026
+ */
+
+#contact-2026 .contact-article {
+  color: #444;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+#contact-2026 .contact-article h1,
+#contact-2026 .contact-article h2,
+#contact-2026 .contact-article h3,
+#contact-2026 .contact-article h4 {
+  color: var(--brand-darker, #2d2d2d);
+  font-family: "Nexa", "Montserrat", system-ui, sans-serif;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: -0.01em;
+  margin: 0 0 12px;
+  line-height: 1.25;
+}
+
+#contact-2026 .contact-article h2 {
+  font-size: 22px;
+}
+
+#contact-2026 .contact-article h3 {
+  font-size: 18px;
+}
+
+#contact-2026 .contact-article p {
+  margin: 0 0 14px;
+}
+
+#contact-2026 .contact-article a {
+  color: var(--brand-red, #c61000);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+#contact-2026 .contact-article a:hover {
+  color: var(--brand-red-hover, #a80d00);
+}
+
+#contact-2026 .contact-article ul,
+#contact-2026 .contact-article ol {
+  margin: 0 0 14px;
+  padding-left: 1.25rem;
+}
+
+#contact-2026 .contact-article img {
+  max-width: 100%;
+  height: auto;
+}
+
+#contact-2026 iframe {
+  display: block;
+}
+
+/* Only embed maps that look like Google Maps / OpenStreetMap embeds.
+   Plain “directions” URLs often refuse iframe embedding — hide broken frames. */
+#contact-2026 iframe[src*="google.com/maps"],
+#contact-2026 iframe[src*="maps.google"],
+#contact-2026 iframe[src*="openstreetmap"] {
+  min-height: 280px;
+}
+
+@media (max-width: 849px) {
+  #contact-2026 .contact-article {
+    font-size: 14px;
+  }
+}
+
+/* Shared form status (homepage + contact page) */
+#homepage-contact .hp-contact-phone-link {
+  display: block;
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+#homepage-contact .hp-contact-phone-link + .hp-contact-phone-link {
+  margin-top: 2px;
+}
+
+#homepage-contact .hp-contact-status {
+  margin: 0 0 12px;
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+  font-weight: 600;
+}
+
+#homepage-contact .hp-contact-status.is-ok {
+  color: #1a7a3a !important;
+}
+
+#homepage-contact .hp-contact-status.is-error {
+  color: var(--brand-red, #c61000) !important;
+}
+
+#homepage-contact .hp-contact-submit:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}

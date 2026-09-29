@@ -30,26 +30,8 @@
 
 		<section class="w-full bg-white py-8">
 			<div class="max-w-[1480px] mx-auto px-8">
-				<div class="flex flex-col md:flex-row items-stretch bg-[#3a3d42] text-white mb-6">
-					<div class="flex-1 flex items-center px-8 py-5">
-						<h3 class="text-[28px] font-semibold uppercase text-white leading-tight">
-							{$category_banner.title_text|escape|nl2br}</h3>
-					</div>
-					{if $categoryPromoThumbs}
-						<div class="flex items-center gap-3 px-4 py-4 md:py-0">
-							{foreach $categoryPromoThumbs as $thumb}
-								<div class="w-[70px] h-[70px] rounded-full overflow-hidden border-2 border-white/20 shrink-0">
-									<img src="{$thumb|escape}" alt="" class="w-full h-full object-cover" loading="lazy">
-								</div>
-							{/foreach}
-						</div>
-					{/if}
-					<div
-						class="bg-white text-[#222] px-8 py-5 flex flex-col items-center justify-center text-center min-w-[220px] md:min-w-[260px] border-t-[5px] border-r-[5px] border-b-[5px] border-[#3a3d42]">
-						<div class="text-[34px] font-['Montserrat',sans-serif] font-semibold leading-none">
-							{$category_banner.offer_value|escape}</div>
-						<div class="text-[14px] text-[#666] mt-1">{$category_banner.offer_note|escape}</div>
-					</div>
+				<div class="hidden md:block">
+					{include file="Include/CategoryPromoBanner.tpl" banner_class='mb-6'}
 				</div>
 
 				<div class="flex flex-col lg:flex-row gap-6">
@@ -208,6 +190,10 @@
 							</div>
 						</div>
 
+						<div class="md:hidden mt-10">
+							{include file="Include/CategoryPromoBanner.tpl" banner_class='mb-0'}
+						</div>
+
 						{if $description && $page == 1}
 							<div class="mt-12 text-[15px] leading-relaxed text-[#444]" id="categoryDescription">
 								<h2 class="text-[22px] font-bold text-[#222] mb-4">{$category.name|escape}</h2>
@@ -222,7 +208,7 @@
 		{include file="Include/LastViewed.tpl"}
 		{include file="Include/Contact.tpl"}
 		{include file="Include/ArticlesTicks.tpl"}
-		{include file="Include/Partners.tpl"}
+		{include file="Include/Partners.tpl" section_px='px-8' section_py='py-16'}
 		{include file="Include/Newsletter.tpl" category_newsletter_bg=1}
 	</div>
 

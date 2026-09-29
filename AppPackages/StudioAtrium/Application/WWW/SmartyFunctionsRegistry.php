@@ -3175,6 +3175,7 @@ class SmartyFunctionsRegistry
         $smarty->registerPlugin('modifier', 'inBasket',       [$this, 'mInBasket']);
         $smarty->registerPlugin('modifier', 'hideEmails',     [$this, 'mHideEmails']);
         $smarty->registerPlugin('modifier', 'fixArticleContent', [$this, 'mFixArticleContent']);
+        $smarty->registerPlugin('modifier', 'filterArticleContent', [$this, 'mFixArticleContent']);
         $smarty->registerPlugin('modifier', 'avatar',         [$this, 'mAvatar']);
         $smarty->registerPlugin('modifier', 'replace',        function($str, $find, $replace) { return str_replace($find, $replace, $str); });
         $smarty->registerPlugin('modifier', 'unescape',       function($str) { return htmlspecialchars_decode((string) $str, ENT_QUOTES); });

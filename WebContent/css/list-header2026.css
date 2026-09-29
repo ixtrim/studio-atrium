@@ -1,0 +1,260 @@
+/**
+ * Studio Atrium 2026 — subpage .list-header
+ * Replaces legacy fixed-height banner + dark overlay with a clean,
+ * responsive page title band matching project/category/homepage.
+ */
+
+div.list-header {
+  width: 100% !important;
+  background: #f5f6f7 !important;
+  background-image: none !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  font-family: "Nexa", "Montserrat", system-ui, -apple-system, sans-serif;
+  color: var(--brand-darker, #2d2d2d);
+  text-transform: none;
+  box-sizing: border-box;
+}
+
+div.list-header *,
+div.list-header *::before,
+div.list-header *::after {
+  box-sizing: border-box;
+}
+
+/* Inner shell — was fixed 260px */
+div.list-header > div {
+  position: relative !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 40px 32px 36px !important;
+}
+
+/* Dark glass box → transparent content rail */
+div.list-header div.header-wrapper {
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  height: auto !important;
+  min-height: 0 !important;
+  color: var(--brand-darker, #2d2d2d) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+  transform: none !important;
+  transition: none !important;
+  overflow: visible !important;
+  text-shadow: none !important;
+}
+
+div.list-header div.header-wrapper.main {
+  text-shadow: none !important;
+  background: none !important;
+}
+
+div.list-header div.header-wrapper > div {
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Title */
+div.list-header h1 {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 100%;
+  margin: 0 !important;
+  padding: 0 0 16px !important;
+  color: var(--brand-darker, #2d2d2d) !important;
+  font-family: inherit;
+  font-size: 36px !important;
+  font-weight: 400 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.02em !important;
+  text-align: left !important;
+  text-transform: uppercase !important;
+  white-space: normal !important;
+  transition: none !important;
+  cursor: default !important;
+}
+
+div.list-header h1 span {
+  display: inline;
+}
+
+div.list-header h1 a {
+  color: var(--brand-red, #c61000) !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+  font-size: 0.55em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-left: 12px;
+  white-space: nowrap;
+}
+
+div.list-header h1 a:hover {
+  color: var(--brand-red-hover, #a80d00) !important;
+}
+
+/* Brand red rule under title */
+div.list-header h1::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 48px !important;
+  height: 3px !important;
+  margin: 0 !important;
+  background-color: var(--brand-red, #c61000) !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Description — always in flow (no expand animation) */
+div.list-header p {
+  position: static !important;
+  display: block !important;
+  width: 100% !important;
+  max-width: 720px;
+  margin: 20px 0 0 !important;
+  padding: 0 !important;
+  opacity: 1 !important;
+  color: #555 !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  line-height: 1.55 !important;
+  text-transform: none !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+div.list-header div.header-wrapper.main p {
+  font-size: 15px !important;
+}
+
+div.list-header p > a,
+div.list-header p a {
+  color: var(--brand-red, #c61000) !important;
+  text-decoration: underline !important;
+  text-underline-offset: 2px;
+}
+
+div.list-header p > a:hover,
+div.list-header p a:hover {
+  color: var(--brand-red-hover, #a80d00) !important;
+}
+
+/* Legacy “zobacz opis” jump — keep usable, restyle */
+div.list-header #goto-box {
+  margin-top: 16px;
+}
+
+div.list-header #goto-box a,
+div.list-header a.goto {
+  display: inline-flex;
+  align-items: center;
+  color: var(--brand-blue-strong, #1b99e1) !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+}
+
+div.list-header #goto-box a:hover,
+div.list-header a.goto:hover {
+  color: var(--brand-red, #c61000) !important;
+}
+
+/* activated / on — no height expand; description already visible */
+div.list-header.activated,
+div.list-header.activated.on,
+div.list-header.on,
+div.list-header.realisation,
+div.list-header.finance,
+div.list-header.panel1,
+div.list-header.panel2 {
+  background: #f5f6f7 !important;
+  background-image: none !important;
+}
+
+div.list-header.activated > div,
+div.list-header.activated.on > div,
+div.list-header.on > div {
+  height: auto !important;
+}
+
+div.list-header.activated div.header-wrapper,
+div.list-header.activated.on div.header-wrapper,
+div.list-header.on div.header-wrapper {
+  width: 100% !important;
+  height: auto !important;
+  background: transparent !important;
+}
+
+div.list-header.activated h1,
+div.list-header.on h1 {
+  width: 100% !important;
+  white-space: normal !important;
+  cursor: default !important;
+}
+
+div.list-header.activated p,
+div.list-header.on p {
+  position: static !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* —— Responsive —— */
+@media (max-width: 1023px) {
+  div.list-header > div {
+    padding: 32px 32px 28px !important;
+  }
+
+  div.list-header h1 {
+    font-size: 30px !important;
+  }
+}
+
+@media (max-width: 849px) {
+  div.list-header > div {
+    padding: 28px 24px 24px !important;
+  }
+
+  div.list-header h1 {
+    font-size: 26px !important;
+    padding-bottom: 14px !important;
+  }
+
+  div.list-header h1 a {
+    display: inline-block;
+    margin-left: 0;
+    margin-top: 8px;
+  }
+
+  div.list-header p {
+    margin-top: 16px !important;
+    font-size: 14px !important;
+  }
+}
+
+@media (max-width: 479px) {
+  div.list-header > div {
+    padding: 24px 16px 20px !important;
+  }
+
+  div.list-header h1 {
+    font-size: 22px !important;
+    letter-spacing: -0.015em !important;
+  }
+
+  div.list-header h1::after {
+    width: 40px !important;
+  }
+}

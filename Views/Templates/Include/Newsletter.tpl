@@ -1,6 +1,6 @@
 <section class="relative">
     <div class="bg-[var(--brand-blue)] relative overflow-visible">
-        <div class="max-w-[1480px] mx-auto px-6 pt-[35px] pb-[42px] grid grid-cols-12 gap-8 items-center relative">
+        <div class="max-w-[1480px] mx-auto {if $section_px}{$section_px} pt-10 pb-10 md:pt-12 md:pb-12{else}px-6 pt-[35px] pb-[42px]{/if} grid grid-cols-12 gap-8 items-center relative">
             <div class="col-span-12 md:col-span-7">
                 <h2 class="text-white text-[24px] md:text-[36px] font-400 tracking-tight mb-[40px] uppercase">
                     {$newsletter.meta.contest_title|escape}</h2>
@@ -30,7 +30,7 @@
         </div>
     </div>
     <div class="{if $category_newsletter_bg}bg-[#5d5b5c]{else}bg-[#3a3a3a]{/if}" id="hp-newsletter-signup">
-        <div class="hp-newsletter-signup-grid max-w-[1480px] px-4 sm:px-6 mx-auto pt-14 pb-[100px] grid grid-cols-1 md:grid-cols-12 md:gap-x-8 gap-y-10 items-start">
+        <div class="hp-newsletter-signup-grid max-w-[1480px] {if $section_px}{$section_px}{else}px-4 sm:px-6{/if} mx-auto pt-14 {if $section_px}pb-16{else}pb-[100px]{/if} grid grid-cols-1 md:grid-cols-12 md:gap-x-8 gap-y-10 items-start">
             <div class="col-span-12 md:col-span-4 text-white">
                 <h2 class="text-[24px] md:text-[36px] font-400 text-white tracking-tight leading-tight uppercase m-0">
                     {$newsletter.meta.signup_title|escape|nl2br nofilter}</h2>

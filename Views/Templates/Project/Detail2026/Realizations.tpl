@@ -1,11 +1,11 @@
-<section id="realizacje" class="bg-white py-14 scroll-mt-32">
+<section id="realizacje" class="bg-white py-16 scroll-mt-32">
 	<div class="max-w-[1480px] mx-auto px-8">
-		<div class="mb-2">
+		<div class="mb-10">
 			<h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight uppercase">Realizacje</h2>
-			<div class="w-12 h-[3px] bg-[var(--brand-red)] mt-2"></div>
+			<div class="w-12 h-[3px] bg-[var(--brand-red)] mt-4"></div>
 		</div>
 		{if $detailRealizations}
-		<div class="text-center text-[#6b6b6b] uppercase tracking-[0.25em] text-[13px] my-8">Wybudowane</div>
+		<div class="text-center text-[#6b6b6b] uppercase tracking-[0.25em] text-[13px] mb-10">Wybudowane</div>
 		<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
 			{foreach $detailRealizations as $photo}
 			<a href="{$photo.src|escape}" data-fancybox="realizacje" data-caption="{$photo.alt|escape}" class="group block overflow-hidden bg-[#f5f6f7]">
@@ -17,10 +17,10 @@
 		<p class="text-[14px] text-[#666] mt-8">Brak opublikowanych realizacji dla tego projektu.</p>
 		{/if}
 
-		<div class="mt-14">
+		<div class="mt-16">
 			<h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight uppercase">Forum dyskusyjne</h2>
 			<div class="text-[12px] uppercase tracking-[0.2em] text-[#6b6b6b] mt-1">Wpisy dla projektu {$project.name|escape}</div>
-			<div class="w-12 h-[3px] bg-[var(--brand-red)] mt-3"></div>
+			<div class="w-12 h-[3px] bg-[var(--brand-red)] mt-4"></div>
 			<p class="text-[14px] text-[#444] leading-relaxed mt-6 max-w-3xl">
 				Witamy na Forum dyskusyjnym Studia Atrium. To dział naszego serwisu przeznaczony dla wszystkich zainteresowanych projektami i budową domu według naszych projektów. Poniżej znajdują się wszystkie wpisy z Forum związane z projektem domu {$project.name|escape}. Zapraszamy do dyskusji!
 			</p>
@@ -41,9 +41,9 @@
 			{/if}
 		</div>
 
-		<div class="mt-14">
+		<div class="mt-16">
 			<h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight uppercase">Pliki</h2>
-			<div class="w-12 h-[3px] bg-[var(--brand-red)] mt-2"></div>
+			<div class="w-12 h-[3px] bg-[var(--brand-red)] mt-4"></div>
 			<p class="text-[14px] text-[#444] leading-relaxed mt-6 max-w-3xl">
 				Aby pobrać rysunki szczegółowe{if $detailCostStages}, kosztorys szacunkowy{/if}, obrysy domu lub zestawienie materiałów do tego projektu,
 				{if $user}

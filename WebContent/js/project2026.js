@@ -14,9 +14,42 @@
 		var thumbs = qsa('.proj-thumb', root);
 		var counter = qs('#proj-gal-counter', root);
 		var track = qs('#proj-thumb-track', root);
+		var viewport = track ? track.parentElement : null;
 		var active = 0;
 		var thumbStart = 0;
 		var visible = 6;
+		var gap = 12;
+
+		function getGap() {
+			var w = window.innerWidth || document.documentElement.clientWidth || 0;
+			return w < 640 ? 8 : 12;
+		}
+
+		function getVisibleCount(vw) {
+			var w = window.innerWidth || document.documentElement.clientWidth || 0;
+			var target = w < 400 ? 88 : (w < 640 ? 96 : (w < 1024 ? 110 : 120));
+			var count = Math.floor((vw + gap) / (target + gap));
+			if (w < 400) count = Math.min(count, 2);
+			else if (w < 640) count = Math.min(count, 3);
+			else if (w < 1024) count = Math.min(count, 4);
+			else count = Math.min(count, 6);
+			return Math.max(2, Math.min(count, thumbs.length || count));
+		}
+
+		function layoutThumbs() {
+			if (!viewport || !thumbs.length) return;
+			gap = getGap();
+			var vw = viewport.clientWidth;
+			if (vw <= 0) return;
+			visible = getVisibleCount(vw);
+			var thumbW = Math.floor((vw - gap * (visible - 1)) / visible);
+			thumbW = Math.max(64, thumbW);
+			thumbs.forEach(function (el) {
+				el.style.width = thumbW + 'px';
+				el.style.flex = '0 0 ' + thumbW + 'px';
+			});
+			updateThumbs();
+		}
 
 		function setActive(i) {
 			active = (i + slides.length) % slides.length;
@@ -42,11 +75,12 @@
 		}
 
 		function updateThumbs() {
-			if (!track) return;
+			if (!track || !thumbs.length) return;
 			var maxStart = Math.max(0, slides.length - visible);
 			if (thumbStart > maxStart) thumbStart = maxStart;
 			if (thumbStart < 0) thumbStart = 0;
-			track.style.transform = 'translateX(-' + (thumbStart * (100 / visible)) + '%)';
+			var thumbW = thumbs[0].offsetWidth || 0;
+			track.style.transform = 'translateX(-' + (thumbStart * (thumbW + gap)) + 'px)';
 			var prev = qs('#proj-thumb-prev', root);
 			var next = qs('#proj-thumb-next', root);
 			if (prev) prev.disabled = thumbStart === 0;
@@ -86,7 +120,14 @@
 			});
 		}
 
+		var resizeTimer = null;
+		window.addEventListener('resize', function () {
+			clearTimeout(resizeTimer);
+			resizeTimer = setTimeout(layoutThumbs, 100);
+		});
+
 		window.__projGallerySetActive = setActive;
+		layoutThumbs();
 		setActive(0);
 	}
 

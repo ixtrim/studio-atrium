@@ -84,11 +84,11 @@
   list-style: none;
 }
 
-#cat-2026 img:not([class*="max-w-"]) {
+#cat-2026 img:not([class*="max-w-"]):not(.hp-contact-hostess) {
   max-width: 100%;
 }
 
-#cat-2026 img:not([class*="h-"]):not([class*="aspect-"]) {
+#cat-2026 img:not([class*="h-"]):not([class*="aspect-"]):not(.hp-contact-hostess) {
   height: auto;
 }
 

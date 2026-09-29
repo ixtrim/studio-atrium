@@ -1,4 +1,4 @@
-<section id="faq" class="bg-[#ffffff] pt-14 pb-24 scroll-mt-32">
+<section id="faq" class="bg-white py-16 scroll-mt-32">
 	<div class="max-w-[1480px] mx-auto px-8">
 		<div class="text-center mb-10">
 			<div class="text-[12px] font-bold uppercase tracking-[0.2em] text-[var(--brand-red)] mb-2">FAQ</div>

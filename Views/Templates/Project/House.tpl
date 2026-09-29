@@ -14,10 +14,10 @@
 {include file="Project/Detail2026/Costs.tpl"}
 {include file="Project/Detail2026/Information.tpl"}
 {include file="Project/Detail2026/Realizations.tpl"}
-{include file="Include/Partners.tpl"}
+{include file="Include/Partners.tpl" section_px='px-8' section_py='py-16'}
 {include file="Include/Contact.tpl"}
 {include file="Project/Detail2026/Faq.tpl"}
-{include file="Include/Newsletter.tpl" category_newsletter_bg=1}
+{include file="Include/Newsletter.tpl" category_newsletter_bg=1 section_px='px-8'}
 
 </div>
 

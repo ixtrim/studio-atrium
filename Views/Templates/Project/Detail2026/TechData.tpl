@@ -1,4 +1,4 @@
-<section id="dane-techniczne" class="bg-white pt-16 pb-4 scroll-mt-32">
+<section id="dane-techniczne" class="bg-white py-16 scroll-mt-32">
 	<div class="max-w-[1480px] mx-auto px-8">
 		<div class="mb-10">
 			<span class="text-[12px] uppercase tracking-[0.28em] text-[var(--brand-blue-strong)] font-semibold">Specyfikacja</span>

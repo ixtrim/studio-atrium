@@ -1,8 +1,8 @@
-<section id="informacje" class="bg-white py-14 scroll-mt-32">
+<section id="informacje" class="bg-white py-16 scroll-mt-32">
 	<div class="max-w-[1480px] mx-auto px-8">
-		<div class="mb-8">
+		<div class="mb-10">
 			<h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight uppercase">Informacje o projekcie {$project.name|escape}</h2>
-			<div class="w-12 h-[3px] bg-[var(--brand-red)] mt-2"></div>
+			<div class="w-12 h-[3px] bg-[var(--brand-red)] mt-4"></div>
 		</div>
 		<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 			<div class="bg-[#ececec] p-6">

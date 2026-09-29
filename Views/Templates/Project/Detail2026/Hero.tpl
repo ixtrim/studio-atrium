@@ -1,41 +1,40 @@
-<section id="wizualizacje" class="bg-white py-6 scroll-mt-32">
-	<div class="max-w-[1480px] mx-auto px-8">
-		<div class="grid lg:grid-cols-12 gap-8">
-			<div class="lg:col-span-8">
-				<div class="relative group overflow-hidden bg-[rgb(27,32,37)] aspect-[16/10] cursor-zoom-in" id="proj-gallery-main" title="Kliknij, aby powiększyć" role="button" tabindex="0" aria-label="Powiększ zdjęcie">
+<section id="wizualizacje" class="bg-white pt-8 pb-16 scroll-mt-32 overflow-x-clip">
+	<div class="w-full max-w-[1480px] mx-auto px-4 sm:px-8 box-border">
+		<div class="grid lg:grid-cols-12 gap-8 min-w-0">
+			<div class="lg:col-span-8 min-w-0 w-full">
+				<div class="relative group overflow-hidden bg-[rgb(27,32,37)] aspect-[16/10] w-full cursor-zoom-in" id="proj-gallery-main" title="Kliknij, aby powiększyć" role="button" tabindex="0" aria-label="Powiększ zdjęcie">
 					{foreach $detailGallery as $img}
 					<img src="{$img.src|escape}" alt="{$img.alt|escape}" loading="{if $img@first}eager{else}lazy{/if}"
-						class="proj-gallery-slide absolute inset-0 w-full h-full object-cover transition-all duration-700 {if $img@first}opacity-100 scale-100{else}opacity-0 scale-105{/if}"
+						class="proj-gallery-slide absolute inset-0 w-full h-full max-w-full object-cover transition-all duration-700 {if $img@first}opacity-100 scale-100{else}opacity-0 scale-105{/if}"
 						data-index="{$img@index}">
 					{/foreach}
 					<div class="absolute left-0 bottom-0 bg-[var(--brand-red)] text-white px-5 py-2 text-[11px] uppercase tracking-[0.24em] font-bold pointer-events-none">ATRIUM</div>
 					{if $detailGallery|@count > 1}
 					<button type="button" id="proj-gal-prev" aria-label="Poprzednie zdjęcie"
-						class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 grid place-items-center bg-black/35 hover:bg-[var(--brand-red)] text-white backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100">
+						class="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 grid place-items-center bg-black/35 hover:bg-[var(--brand-red)] text-white backdrop-blur-sm transition-all opacity-100 sm:opacity-0 sm:group-hover:opacity-100">
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-6 h-6" style="width:24px;height:24px" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
 					</button>
 					<button type="button" id="proj-gal-next" aria-label="Następne zdjęcie"
-						class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 grid place-items-center bg-black/35 hover:bg-[var(--brand-red)] text-white backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100">
+						class="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 grid place-items-center bg-black/35 hover:bg-[var(--brand-red)] text-white backdrop-blur-sm transition-all opacity-100 sm:opacity-0 sm:group-hover:opacity-100">
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-6 h-6" style="width:24px;height:24px" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
 					</button>
 					{/if}
-					<div id="proj-gal-counter" class="absolute right-4 bottom-4 bg-black/55 text-white text-[11px] tracking-[0.2em] font-semibold px-3 py-1.5 pointer-events-none">
+					<div id="proj-gal-counter" class="absolute right-2 sm:right-4 bottom-3 sm:bottom-4 bg-black/55 text-white text-[11px] tracking-[0.2em] font-semibold px-3 py-1.5 pointer-events-none">
 						01 / {if $detailGallery|@count < 10}0{/if}{$detailGallery|@count}
 					</div>
 				</div>
 
 				{if $detailGallery|@count > 1}
-				<div class="mt-4 flex items-center gap-3">
+				<div class="mt-4 flex items-center gap-2 sm:gap-3 min-w-0 w-full max-w-full">
 					<button type="button" id="proj-thumb-prev" aria-label="Przewiń miniatury w lewo"
-						class="w-9 h-9 grid place-items-center border border-[#e6e8eb] hover:border-[#1b2025] disabled:opacity-30 disabled:cursor-not-allowed transition">
+						class="w-8 h-8 sm:w-9 sm:h-9 shrink-0 grid place-items-center border border-[#e6e8eb] hover:border-[#1b2025] disabled:opacity-30 disabled:cursor-not-allowed transition">
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
 					</button>
-					<div class="flex-1 overflow-hidden">
-						<div id="proj-thumb-track" class="flex gap-3 transition-transform duration-500 ease-out">
+					<div class="flex-1 min-w-0 overflow-hidden">
+						<div id="proj-thumb-track" class="flex gap-2 sm:gap-3 transition-transform duration-500 ease-out will-change-transform">
 							{foreach $detailGallery as $img}
 							<button type="button" data-index="{$img@index}"
-								class="proj-thumb relative shrink-0 overflow-hidden aspect-[4/3] transition-all {if $img@first}ring-2 ring-[var(--brand-red)] ring-offset-2 ring-offset-white{else}opacity-70 hover:opacity-100{/if}"
-								style="width:calc((100% - 60px) / 6)"
+								class="proj-thumb relative shrink-0 overflow-hidden aspect-[4/3] transition-all {if $img@first}ring-2 ring-[var(--brand-red)] ring-offset-1 sm:ring-offset-2 ring-offset-white{else}opacity-70 hover:opacity-100{/if}"
 								aria-label="Pokaż zdjęcie {$img@iteration}">
 								<img src="{$img.thumb|escape}" alt="" class="w-full h-full object-cover" loading="lazy">
 							</button>
@@ -43,14 +42,14 @@
 						</div>
 					</div>
 					<button type="button" id="proj-thumb-next" aria-label="Przewiń miniatury w prawo"
-						class="w-9 h-9 grid place-items-center border border-[#e6e8eb] hover:border-[#1b2025] disabled:opacity-30 disabled:cursor-not-allowed transition">
+						class="w-8 h-8 sm:w-9 sm:h-9 shrink-0 grid place-items-center border border-[#e6e8eb] hover:border-[#1b2025] disabled:opacity-30 disabled:cursor-not-allowed transition">
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
 					</button>
 				</div>
 				{/if}
 			</div>
 
-			<div class="lg:col-span-4">
+			<div class="lg:col-span-4 min-w-0 w-full">
 				<div class="lg:sticky lg:top-[210px] space-y-5">
 					<div>
 						<span class="text-[11px] uppercase tracking-[0.28em] text-[var(--brand-blue-strong)] font-semibold">Projekt domu</span>
