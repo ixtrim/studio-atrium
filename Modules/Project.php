@@ -344,7 +344,14 @@ class Project extends WWW\AbstractModule
 		$responseContext->set('banner', $this->_daoRepository->getBannerFinder()->getRandomBanner());
 		$responseContext->set('bannerUrl', \Point7_WebApp::getConfigParam('static.banner'));
 		
-		$this->doGetPartner($request, $appContext, $responseContext);
+		// Keep CMS homepage partners ($partners) for Include/Partners.tpl.
+		// Legacy document partners stay under document_partners (AJAX GetPartner still uses doGetPartner).
+		$documentPartners = $this->_daoRepository->getDocumentFinder()->getList(
+			\StudioAtrium\Entity\Document::DOCTYPE_PARTNER,
+			null,
+			\StudioAtrium\Entity\Document::STATUS_PUBLISHED
+		);
+		$responseContext->set('document_partners', $documentPartners);
 		
 		$promoEndValue = $blackWeekValue = '';
 		//if promo price, get price_end

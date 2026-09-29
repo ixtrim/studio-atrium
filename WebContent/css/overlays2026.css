@@ -1,0 +1,508 @@
+/**
+ * Studio Atrium 2026 — login / register / forgot / share / ajax-info popups
+ * Matches homepage, category, and project theme (Nexa, brand red, white, square).
+ * Does not restyle project search (.cs) or catalog dark promo.
+ */
+
+/* —— Base panel (auth + share + ajax info) —— */
+div.blue-overlay.lb,
+div.blue-overlay.rb,
+div.blue-overlay.share,
+div.blue-overlay#fp-box,
+#fp-box.blue-overlay,
+div.blue-overlay#ajax-info-overlay {
+  --ov-text: var(--brand-darker, #2d2d2d);
+  --ov-muted: #666;
+  --ov-border: #e0e0e0;
+  --ov-input-bg: #f5f5f5;
+  --ov-accent: var(--brand-red, #c61000);
+  --ov-accent-hover: var(--brand-red-hover, #a80d00);
+
+  background: #fff !important;
+  color: var(--ov-text) !important;
+  text-transform: none !important;
+  font-family: "Nexa", "Montserrat", system-ui, -apple-system, sans-serif !important;
+  padding: 0 !important;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+}
+
+div.blue-overlay.lb *,
+div.blue-overlay.rb *,
+div.blue-overlay.share *,
+div.blue-overlay#fp-box *,
+#fp-box.blue-overlay *,
+div.blue-overlay#ajax-info-overlay * {
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+/* —— Content wrappers —— */
+div.blue-overlay.lb #lb-wrapper,
+div.blue-overlay.rb #rb-wrapper,
+div.blue-overlay.share #links-wrapper,
+div.blue-overlay#fp-box #fp-wrapper,
+#fp-box.blue-overlay #fp-wrapper,
+div.blue-overlay#ajax-info-overlay #ajax-info-over-box,
+div.blue-overlay#ajax-info-overlay .over-box,
+div.blue-overlay.lb div.form-wrapper,
+div.blue-overlay.rb div.form-wrapper {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 520px !important;
+  margin: 0 auto !important;
+  padding: 56px 24px 40px !important;
+  text-align: left !important;
+  font-size: 15px !important;
+  line-height: 1.45 !important;
+  color: var(--ov-text, var(--brand-darker, #2d2d2d)) !important;
+}
+
+div.blue-overlay.rb #rb-wrapper {
+  max-width: 560px !important;
+}
+
+div.blue-overlay#ajax-info-overlay #ajax-info-over-box,
+div.blue-overlay#ajax-info-overlay .over-box {
+  max-width: 720px !important;
+  padding-top: 64px !important;
+}
+
+/* —— Headings —— */
+div.blue-overlay.lb #lb-wrapper h4,
+div.blue-overlay.rb #rb-wrapper h4,
+div.blue-overlay.share #links-wrapper h4,
+div.blue-overlay#fp-box #fp-wrapper h4,
+#fp-box.blue-overlay #fp-wrapper h4,
+div.blue-overlay#ajax-info-overlay h4,
+div.blue-overlay.lb #lb-wrapper > p.pop-header,
+div.blue-overlay.rb #rb-wrapper > p.pop-header,
+div.blue-overlay.share #links-wrapper > p.pop-header,
+div.blue-overlay#fp-box #fp-wrapper > p.pop-header {
+  margin: 0 0 20px !important;
+  padding: 0 72px 0 0 !important;
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.02em !important;
+  text-transform: uppercase !important;
+  color: var(--brand-darker, #2d2d2d) !important;
+}
+
+div.blue-overlay.lb #lb-wrapper > form + h4,
+div.blue-overlay.rb #rb-wrapper > form + h4,
+div.blue-overlay#fp-box #fp-wrapper > form + h4 {
+  margin-top: 36px !important;
+  font-size: 18px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.02em !important;
+}
+
+/* —— Body copy —— */
+div.blue-overlay.lb #lb-wrapper > p,
+div.blue-overlay.rb #rb-wrapper > p,
+div.blue-overlay.share #links-wrapper > p,
+div.blue-overlay#fp-box #fp-wrapper > p,
+div.blue-overlay#ajax-info-overlay p {
+  margin: 0 0 16px !important;
+  max-width: none !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  text-transform: none !important;
+  color: #444 !important;
+}
+
+div.blue-overlay.lb #lb-wrapper a,
+div.blue-overlay.rb #rb-wrapper a,
+div.blue-overlay.share #links-wrapper a,
+div.blue-overlay#fp-box #fp-wrapper a,
+div.blue-overlay#ajax-info-overlay a {
+  color: var(--brand-red, #c61000) !important;
+  text-decoration: underline !important;
+  text-underline-offset: 2px;
+}
+
+div.blue-overlay.lb #lb-wrapper a:hover,
+div.blue-overlay.rb #rb-wrapper a:hover,
+div.blue-overlay.share #links-wrapper a:hover,
+div.blue-overlay#fp-box #fp-wrapper a:hover,
+div.blue-overlay#ajax-info-overlay a:hover {
+  color: var(--brand-red-hover, #a80d00) !important;
+}
+
+/* —— Forms —— */
+div.blue-overlay.lb #lb-wrapper > form,
+div.blue-overlay.rb #rb-wrapper > form,
+div.blue-overlay.share #links-wrapper > form,
+div.blue-overlay#fp-box #fp-wrapper > form {
+  margin: 8px 0 0 !important;
+  padding: 0 0 28px !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--ov-border, #e0e0e0) !important;
+}
+
+div.blue-overlay.lb #lb-wrapper > form > p,
+div.blue-overlay.rb #rb-wrapper > form > p,
+div.blue-overlay.share #links-wrapper > form > p,
+div.blue-overlay#fp-box #fp-wrapper > form > p {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: 8px !important;
+  margin: 0 0 18px !important;
+  text-align: left !important;
+}
+
+div.blue-overlay.lb #lb-wrapper > form > p.msg,
+div.blue-overlay.rb #rb-wrapper > form > p.msg,
+div.blue-overlay.share #links-wrapper > form > p.msg,
+div.blue-overlay#fp-box #fp-wrapper > form > p.msg {
+  margin: -6px 0 18px !important;
+  padding: 10px 12px !important;
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+  color: var(--brand-red, #c61000) !important;
+  background: #fdeceb !important;
+  text-transform: none !important;
+}
+
+div.blue-overlay.lb #lb-wrapper > form > p.last,
+div.blue-overlay.rb #rb-wrapper > form > p.last,
+div.blue-overlay.share #links-wrapper > form > p.last,
+div.blue-overlay#fp-box #fp-wrapper > form > p.last {
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: 12px !important;
+  margin: 8px 0 0 !important;
+}
+
+div.blue-overlay.lb #lb-wrapper > form > p.last > a,
+div.blue-overlay.rb #rb-wrapper > form > p.last > a,
+div.blue-overlay.share #links-wrapper > form > p.last > a,
+div.blue-overlay#fp-box #fp-wrapper > form > p.last > a {
+  display: inline-block !important;
+  margin: 0 !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+}
+
+div.blue-overlay.lb #lb-wrapper > form > p > label,
+div.blue-overlay.rb #rb-wrapper > form > p > label,
+div.blue-overlay.share #links-wrapper > form > p > label,
+div.blue-overlay#fp-box #fp-wrapper > form > p > label,
+div.blue-overlay.lb #lb-wrapper label.black,
+div.blue-overlay.rb #rb-wrapper label.black,
+div.blue-overlay.share #links-wrapper label.black,
+div.blue-overlay#fp-box #fp-wrapper label.black {
+  width: auto !important;
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+  letter-spacing: 0.02em !important;
+  text-transform: none !important;
+  color: var(--brand-darker, #2d2d2d) !important;
+}
+
+/* Checkbox / mailing consent rows */
+div.blue-overlay.rb #rb-wrapper > form > p:has(input[type="checkbox"]) {
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  align-items: flex-start !important;
+  gap: 8px 6px !important;
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+  color: #555 !important;
+}
+
+div.blue-overlay.rb #rb-wrapper > form > p:has(input[type="checkbox"]) label,
+div.blue-overlay.rb #rb-wrapper .accept-mailing-register-down {
+  display: inline !important;
+  width: auto !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  color: #555 !important;
+  text-align: left !important;
+}
+
+div.blue-overlay.rb #rb-wrapper input[type="checkbox"] {
+  margin-top: 3px !important;
+  width: 16px !important;
+  height: 16px !important;
+  flex-shrink: 0;
+  accent-color: var(--brand-red, #c61000);
+}
+
+/* —— Inputs —— */
+div.blue-overlay.lb input[type="text"],
+div.blue-overlay.lb input[type="password"],
+div.blue-overlay.lb input[type="email"],
+div.blue-overlay.rb input[type="text"],
+div.blue-overlay.rb input[type="password"],
+div.blue-overlay.rb input[type="email"],
+div.blue-overlay.share input[type="text"],
+div.blue-overlay.share input[type="password"],
+div.blue-overlay.share input[type="email"],
+div.blue-overlay#fp-box input[type="text"],
+div.blue-overlay#fp-box input[type="password"],
+div.blue-overlay#fp-box input[type="email"],
+#fp-box.blue-overlay input[type="text"],
+#fp-box.blue-overlay input[type="password"],
+div.blue-overlay.lb textarea,
+div.blue-overlay.rb textarea,
+div.blue-overlay.share textarea {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 48px !important;
+  margin: 0 !important;
+  padding: 0 14px !important;
+  border: 1px solid #979797 !important;
+  border-radius: 0 !important;
+  background: #fff !important;
+  color: var(--brand-darker, #2d2d2d) !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 48px !important;
+  outline: none !important;
+}
+
+div.blue-overlay.lb textarea,
+div.blue-overlay.rb textarea,
+div.blue-overlay.share textarea {
+  height: auto !important;
+  min-height: 120px !important;
+  line-height: 1.45 !important;
+  padding: 12px 14px !important;
+  resize: vertical;
+}
+
+div.blue-overlay.lb input[type="text"]:focus,
+div.blue-overlay.lb input[type="password"]:focus,
+div.blue-overlay.rb input[type="text"]:focus,
+div.blue-overlay.rb input[type="password"]:focus,
+div.blue-overlay.share input[type="text"]:focus,
+div.blue-overlay#fp-box input[type="text"]:focus,
+#fp-box.blue-overlay input[type="text"]:focus,
+div.blue-overlay.lb textarea:focus,
+div.blue-overlay.rb textarea:focus,
+div.blue-overlay.share textarea:focus {
+  border-color: var(--brand-blue, #1d99e1) !important;
+}
+
+div.blue-overlay.lb input.error_field,
+div.blue-overlay.rb input.error_field,
+div.blue-overlay.share input.error_field,
+div.blue-overlay#fp-box input.error_field {
+  border-color: var(--brand-red, #c61000) !important;
+}
+
+/* —— Primary CTA —— */
+div.blue-overlay.lb .baton,
+div.blue-overlay.rb .baton,
+div.blue-overlay.share .baton,
+div.blue-overlay#fp-box .baton,
+#fp-box.blue-overlay .baton,
+div.blue-overlay#ajax-info-overlay .baton {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 48px !important;
+  margin: 0 !important;
+  padding: 0 20px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: var(--brand-red, #c61000) !important;
+  color: #fff !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+  transition: background-color 0.15s ease !important;
+  filter: none !important;
+}
+
+div.blue-overlay.lb .baton:hover,
+div.blue-overlay.rb .baton:hover,
+div.blue-overlay.share .baton:hover,
+div.blue-overlay#fp-box .baton:hover,
+#fp-box.blue-overlay .baton:hover {
+  background: var(--brand-red-hover, #a80d00) !important;
+  filter: none !important;
+}
+
+/* —— Close control —— */
+div.blue-overlay.lb .blue-overlay-close,
+div.blue-overlay.rb .blue-overlay-close,
+div.blue-overlay.share .blue-overlay-close,
+div.blue-overlay#fp-box .blue-overlay-close,
+#fp-box.blue-overlay .blue-overlay-close,
+div.blue-overlay#ajax-info-overlay .blue-overlay-close {
+  position: absolute !important;
+  top: 16px !important;
+  right: 12px !important;
+  z-index: 5 !important;
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 8px 10px !important;
+  overflow: visible !important;
+  text-indent: 0 !important;
+  color: #666 !important;
+  background: transparent !important;
+  border: 0 !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  cursor: pointer !important;
+}
+
+div.blue-overlay.lb .blue-overlay-close:hover,
+div.blue-overlay.rb .blue-overlay-close:hover,
+div.blue-overlay.share .blue-overlay-close:hover,
+div.blue-overlay#fp-box .blue-overlay-close:hover,
+#fp-box.blue-overlay .blue-overlay-close:hover,
+div.blue-overlay#ajax-info-overlay .blue-overlay-close:hover {
+  color: var(--brand-red, #c61000) !important;
+}
+
+div.blue-overlay.lb .blue-overlay-close .close-x,
+div.blue-overlay.rb .blue-overlay-close .close-x,
+div.blue-overlay.share .blue-overlay-close .close-x,
+div.blue-overlay#fp-box .blue-overlay-close .close-x,
+div.blue-overlay#ajax-info-overlay .blue-overlay-close .close-x {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  font-size: 16px !important;
+  color: inherit !important;
+  text-indent: 0 !important;
+}
+
+/* —— Tablet+ —— */
+@media (min-width: 640px) {
+  div.blue-overlay.lb #lb-wrapper,
+  div.blue-overlay.rb #rb-wrapper,
+  div.blue-overlay.share #links-wrapper,
+  div.blue-overlay#fp-box #fp-wrapper,
+  #fp-box.blue-overlay #fp-wrapper {
+    padding: 64px 32px 48px !important;
+  }
+
+  div.blue-overlay.lb #lb-wrapper h4,
+  div.blue-overlay.rb #rb-wrapper h4,
+  div.blue-overlay.share #links-wrapper h4,
+  div.blue-overlay#fp-box #fp-wrapper h4,
+  #fp-box.blue-overlay #fp-wrapper h4,
+  div.blue-overlay.share #links-wrapper > p.pop-header {
+    font-size: 32px !important;
+  }
+
+  div.blue-overlay.lb #lb-wrapper > form > p.last,
+  div.blue-overlay.rb #rb-wrapper > form > p.last,
+  div.blue-overlay.share #links-wrapper > form > p.last,
+  div.blue-overlay#fp-box #fp-wrapper > form > p.last {
+    flex-direction: row !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+  }
+
+  div.blue-overlay.lb .baton,
+  div.blue-overlay.rb .baton,
+  div.blue-overlay.share .baton,
+  div.blue-overlay#fp-box .baton,
+  #fp-box.blue-overlay .baton {
+    width: auto !important;
+    min-width: 180px !important;
+  }
+
+  div.blue-overlay.lb .blue-overlay-close,
+  div.blue-overlay.rb .blue-overlay-close,
+  div.blue-overlay.share .blue-overlay-close,
+  div.blue-overlay#fp-box .blue-overlay-close,
+  #fp-box.blue-overlay .blue-overlay-close,
+  div.blue-overlay#ajax-info-overlay .blue-overlay-close {
+    top: 20px !important;
+    right: 20px !important;
+  }
+}
+
+/* —— Narrow phones —— */
+@media (max-width: 479px) {
+  div.blue-overlay.lb #lb-wrapper,
+  div.blue-overlay.rb #rb-wrapper,
+  div.blue-overlay.share #links-wrapper,
+  div.blue-overlay#fp-box #fp-wrapper,
+  #fp-box.blue-overlay #fp-wrapper,
+  div.blue-overlay#ajax-info-overlay #ajax-info-over-box,
+  div.blue-overlay#ajax-info-overlay .over-box {
+    padding: 52px 16px 32px !important;
+  }
+
+  div.blue-overlay.lb #lb-wrapper h4,
+  div.blue-overlay.rb #rb-wrapper h4,
+  div.blue-overlay.share #links-wrapper h4,
+  div.blue-overlay#fp-box #fp-wrapper h4,
+  #fp-box.blue-overlay #fp-wrapper h4,
+  div.blue-overlay.share #links-wrapper > p.pop-header {
+    font-size: 24px !important;
+    padding-right: 88px !important;
+  }
+
+  div.blue-overlay.lb #lb-wrapper > p,
+  div.blue-overlay.rb #rb-wrapper > p,
+  div.blue-overlay.share #links-wrapper > p,
+  div.blue-overlay#fp-box #fp-wrapper > p {
+    font-size: 14px !important;
+  }
+}
+
+/* —— Ajax info HTML content —— */
+div.blue-overlay#ajax-info-overlay #ajax-info-over-box,
+div.blue-overlay#ajax-info-overlay .over-box {
+  color: var(--brand-darker, #2d2d2d) !important;
+}
+
+div.blue-overlay#ajax-info-overlay #ajax-info-over-box h1,
+div.blue-overlay#ajax-info-overlay #ajax-info-over-box h2,
+div.blue-overlay#ajax-info-overlay #ajax-info-over-box h3,
+div.blue-overlay#ajax-info-overlay .over-box h1,
+div.blue-overlay#ajax-info-overlay .over-box h2,
+div.blue-overlay#ajax-info-overlay .over-box h3 {
+  color: var(--brand-darker, #2d2d2d) !important;
+  font-weight: 700 !important;
+  text-transform: none !important;
+  margin: 0 0 12px !important;
+}
+
+div.blue-overlay#ajax-info-overlay #ajax-info-over-box h1,
+div.blue-overlay#ajax-info-overlay .over-box h1 {
+  font-size: 28px !important;
+}
+
+div.blue-overlay#ajax-info-overlay #ajax-info-over-box h2,
+div.blue-overlay#ajax-info-overlay .over-box h2 {
+  font-size: 22px !important;
+}
+
+div.blue-overlay#ajax-info-overlay #ajax-info-over-box p,
+div.blue-overlay#ajax-info-overlay .over-box p,
+div.blue-overlay#ajax-info-overlay #ajax-info-over-box li,
+div.blue-overlay#ajax-info-overlay .over-box li {
+  font-size: 15px !important;
+  line-height: 1.55 !important;
+  color: #444 !important;
+  text-transform: none !important;
+}

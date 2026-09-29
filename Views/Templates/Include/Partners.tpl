@@ -1,3 +1,4 @@
+{if $partners.marquee|@count}
 <section class="bg-white pt-10 md:pt-16 pb-12 md:pb-[90px] overflow-hidden">
     <div class="max-w-[1480px] mx-auto px-4 sm:px-8 md:px-12">
         <h2 class="text-[24px] md:text-[36px] font-400 text-[var(--brand-darker)] tracking-tight mb-12 uppercase">{$partners.meta.section_title|escape}</h2>
@@ -16,3 +17,4 @@
         </div>
     </div>
 </section>
+{/if}

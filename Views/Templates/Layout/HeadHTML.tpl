@@ -245,6 +245,7 @@ window.tailwind.config = {
 <link rel="stylesheet" href="/css/homepage2026.css?v={$version}">
 <link rel="stylesheet" href="/css/category2026.css?v={$version}">
 <link rel="stylesheet" href="/css/project2026.css?v={$version}">
+<link rel="stylesheet" href="/css/overlays2026.css?v={$version}">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
