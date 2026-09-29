@@ -76,7 +76,7 @@ div.blue-overlay.cs #filter-header {
   margin-bottom: 24px;
 }
 div.blue-overlay.cs .search-header {
-  padding: 32px;
+  padding: 32px 120px 32px 32px;
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -563,7 +563,7 @@ div.blue-overlay.cs .search-label {
       right: 16px;
    }
    div.blue-overlay.cs .search-header {
-      padding: 24px;
+      padding: 24px 110px 24px 24px;
    }
    #filter-options {
       padding-right: 16px;
@@ -580,7 +580,7 @@ div.blue-overlay.cs .search-label {
 
 @media (max-width: 600px) {
    div.blue-overlay.cs .search-header {
-      padding: 20px;
+      padding: 20px 100px 20px 20px;
    }
 
    .blue-overlay.cs .form-box {
@@ -718,6 +718,14 @@ div.blue-overlay.cs .search-label {
 .project-search-overlay div.blue-overlay.cs .search-header {
   background: #fff;
   border-bottom: 1px solid var(--color-border);
+  padding-right: 120px;
+  box-sizing: border-box;
+}
+
+.project-search-overlay div.blue-overlay.cs #filter-header {
+  padding-right: 0;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .project-search-overlay div.blue-overlay.cs .search-label,
@@ -1134,8 +1142,10 @@ div.blue-overlay.cs .search-label {
   font-size: 13px;
   font-weight: 600;
   padding: 0 10px;
-  top: 20px;
-  right: 20px;
+  top: 16px;
+  right: 12px;
+  z-index: 5;
+  line-height: 1.2;
   transition: color 0.18s ease;
 }
 
@@ -1152,6 +1162,23 @@ div.blue-overlay.cs .search-label {
   color: var(--brand-red, var(--color-accent));
   filter: none;
 }
+
+@media (max-width: 690px) {
+  .project-search-overlay div.blue-overlay.cs .search-header {
+    padding: 20px 100px 20px 20px;
+  }
+
+  .project-search-overlay div.blue-overlay.cs #filter-header {
+    font-size: 28px;
+    line-height: 1.15;
+  }
+
+  .project-search-overlay div.blue-overlay .blue-overlay-close {
+    top: 14px;
+    right: 8px;
+  }
+}
+
 
 .project-search-overlay .quick-presets .chip span:not(.count) {
   font-size: 14px;
@@ -2093,7 +2120,7 @@ div.options ul li:hover::after {
       right: 16px;
    }
    div.blue-overlay.cs .search-header {
-      padding: 24px;
+      padding: 24px 110px 24px 24px;
    }
    #filter-options {
       padding-right: 16px;
@@ -2109,7 +2136,7 @@ div.options ul li:hover::after {
 }
 @media (max-width: 600px) {
    div.blue-overlay.cs .search-header {
-      padding: 20px;
+      padding: 20px 100px 20px 20px;
    }
 
    .blue-overlay.cs .form-box {

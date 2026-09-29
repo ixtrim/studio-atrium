@@ -55,10 +55,6 @@
 							class="inline-flex items-center justify-center h-[34px] text-[var(--brand-darker)] hover:text-[var(--brand-red)] shrink-0">
 							<i data-lucide="heart" class="w-[20px] h-[20px] shrink-0"></i>
 						</a>
-						<a href="{url module=favourite action=compare}" aria-label="Porównaj"
-							class="hidden min-[850px]:inline-flex items-center justify-center h-[34px] text-[var(--brand-darker)] hover:text-[var(--brand-red)] shrink-0">
-							<i data-lucide="scale" class="w-[20px] h-[20px] shrink-0"></i>
-						</a>
 						<a href="{url module=order action=cart}" aria-label="Koszyk"
 							class="relative inline-flex items-center justify-center h-[34px] text-[var(--brand-darker)] hover:text-[var(--brand-red)] shrink-0"{if !$basket} id="header-cart-empty"{/if}>
 							<i data-lucide="shopping-cart" class="w-[22px] h-[22px] shrink-0"></i>
@@ -122,9 +118,8 @@
 				{if $user}
 					<a href="{url module=panel action=account}" class="py-3 text-[14px] font-bold tracking-wider text-[var(--brand-darker)] hover:text-[var(--brand-red)] border-b border-black/5">Konto</a>
 				{else}
-					<button type="button" class="login-trigger text-left py-3 text-[14px] font-bold tracking-wider text-[var(--brand-darker)] hover:text-[var(--brand-red)] border-b border-black/5 bg-transparent border-x-0 border-t-0 w-full">Zaloguj</button>
+					<button type="button" class="login-trigger mt-2 w-full h-[48px] inline-flex items-center justify-center rounded-none bg-[#e8e8e8] hover:bg-[#dedede] text-[14px] font-bold tracking-wider text-[var(--brand-darker)] hover:text-[var(--brand-red)] border-0 px-4">Zaloguj</button>
 				{/if}
-				<a href="{url module=favourite action=compare}" class="py-3 text-[14px] font-bold tracking-wider text-[var(--brand-darker)] hover:text-[var(--brand-red)]">Porównaj</a>
 			</nav>
 		</div>
 
