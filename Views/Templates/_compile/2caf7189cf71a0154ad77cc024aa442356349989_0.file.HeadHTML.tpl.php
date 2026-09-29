@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-28 23:10:59
+/* Smarty version 3.1.48, created on 2026-09-29 09:49:05
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/HeadHTML.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6abad7e39b5643_27297650',
+  'unifunc' => 'content_6abb6d71d01297_94768125',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2caf7189cf71a0154ad77cc024aa442356349989' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/HeadHTML.tpl',
-      1 => 1790188739,
+      1 => 1790667985,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6abad7e39b5643_27297650 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6abb6d71d01297_94768125 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['pageTitle']->value) {?>
 	<title><?php echo $_smarty_tpl->tpl_vars['pageTitle']->value;?>
 </title>

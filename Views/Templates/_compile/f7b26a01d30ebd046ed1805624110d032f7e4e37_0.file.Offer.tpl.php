@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-28 23:10:59
+/* Smarty version 3.1.48, created on 2026-09-29 09:00:14
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/Offer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6abad7e3a87e41_40999634',
+  'unifunc' => 'content_6abb61fe859ff8_56389991',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f7b26a01d30ebd046ed1805624110d032f7e4e37' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/Offer.tpl',
-      1 => 1790627256,
+      1 => 1790634747,
       2 => 'file',
     ),
   ),
@@ -20,17 +20,17 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6abad7e3a87e41_40999634 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6abb61fe859ff8_56389991 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="bg-[#3a3a3a] text-white pt-14 pb-8" id="offer">
-    <div class="max-w-[1480px] mx-auto px-12 flex flex-col md:flex-row gap-10 md:gap-[100px] items-start">
+    <div class="max-w-[1480px] mx-auto px-4 sm:px-8 md:px-12 flex flex-col md:flex-row gap-10 md:gap-12 lg:gap-[100px] items-start">
         <div class="flex-1 min-w-0 gap-4">
-            <h2 class="text-[32px] font-400 text-white tracking-tight uppercase"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['offer']->value['title'], ENT_QUOTES, 'UTF-8', true);?>
+            <h2 class="text-[24px] md:text-[32px] font-400 text-white tracking-tight uppercase"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['offer']->value['title'], ENT_QUOTES, 'UTF-8', true);?>
 </h2>
-            <p class="text-[20px] leading-[24px] font-bold pt-[45px] pb-[45px] uppercase"><?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'nl2br' ][ 0 ], array( htmlspecialchars($_smarty_tpl->tpl_vars['offer']->value['lead_text'], ENT_QUOTES, 'UTF-8', true) ));?>
+            <p class="text-[16px] md:text-[20px] leading-[24px] font-bold pt-[45px] pb-[45px] uppercase"><?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'nl2br' ][ 0 ], array( htmlspecialchars($_smarty_tpl->tpl_vars['offer']->value['lead_text'], ENT_QUOTES, 'UTF-8', true) ));?>
 </p>
             <a href="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['offer']->value['button_url'], ENT_QUOTES, 'UTF-8', true);?>
 "
-                class="inline-flex items-center justify-center bg-[var(--brand-red)] hover:bg-[var(--brand-red-hover)] text-white font-bold px-[80px] py-3 lg:h-[54px] lg:max-h-[54px] lg:py-0 leading-none text-[13px] uppercase tracking-wider mb-12"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['offer']->value['button_label'], ENT_QUOTES, 'UTF-8', true);?>
+                class="inline-flex items-center justify-center bg-[var(--brand-red)] hover:bg-[var(--brand-red-hover)] text-white font-bold px-8 sm:px-12 md:px-[80px] py-3 lg:h-[54px] lg:max-h-[54px] lg:py-0 leading-none text-[13px] uppercase tracking-wider mb-12 w-full sm:w-auto"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['offer']->value['button_label'], ENT_QUOTES, 'UTF-8', true);?>
 </a>
 
             <?php if ($_smarty_tpl->tpl_vars['offer_quotes']->value) {?>
@@ -47,12 +47,12 @@ $_smarty_tpl->tpl_vars['q']->do_else = false;
 $_smarty_tpl->tpl_vars['q']->iteration++;
 $_smarty_tpl->tpl_vars['q']->index++;
 $_smarty_tpl->tpl_vars['q']->first = !$_smarty_tpl->tpl_vars['q']->index;
-$__foreach_q_22_saved = $_smarty_tpl->tpl_vars['q'];
+$__foreach_q_16_saved = $_smarty_tpl->tpl_vars['q'];
 ?>
                     <div class="hp-offer-quote-slide<?php if ($_smarty_tpl->tpl_vars['q']->first) {?> is-active<?php }?>" data-index="<?php echo $_smarty_tpl->tpl_vars['q']->index;?>
 "<?php if (!$_smarty_tpl->tpl_vars['q']->first) {?> aria-hidden="true"<?php }?>>
                         <?php if ($_smarty_tpl->tpl_vars['q']->value['quote_text']) {?>
-                        <blockquote class="text-center text-[32px] leading-[1.15] leading-snug m-0"
+                        <blockquote class="text-center text-[22px] sm:text-[28px] md:text-[32px] leading-[1.15] leading-snug m-0"
                             style="font-style:normal;font-weight:500"><span>“<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['q']->value['quote_text'], ENT_QUOTES, 'UTF-8', true);?>
 ”</span></blockquote>
                         <?php }?>
@@ -62,7 +62,7 @@ $__foreach_q_22_saved = $_smarty_tpl->tpl_vars['q'];
                         <?php }?>
                     </div>
                     <?php
-$_smarty_tpl->tpl_vars['q'] = $__foreach_q_22_saved;
+$_smarty_tpl->tpl_vars['q'] = $__foreach_q_16_saved;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </div>
@@ -77,7 +77,7 @@ $_smarty_tpl->tpl_vars['q']->do_else = false;
 $_smarty_tpl->tpl_vars['q']->iteration++;
 $_smarty_tpl->tpl_vars['q']->index++;
 $_smarty_tpl->tpl_vars['q']->first = !$_smarty_tpl->tpl_vars['q']->index;
-$__foreach_q_23_saved = $_smarty_tpl->tpl_vars['q'];
+$__foreach_q_17_saved = $_smarty_tpl->tpl_vars['q'];
 ?>
                     <button type="button"
                         class="hp-offer-quote-logo group border-0 p-0 bg-transparent cursor-pointer opacity-45 hover:opacity-100 transition-opacity duration-300<?php if ($_smarty_tpl->tpl_vars['q']->first) {?> is-active opacity-100<?php }?>"
@@ -99,7 +99,7 @@ echo htmlspecialchars($_smarty_tpl->tpl_vars['q']->value['logo_alt'], ENT_QUOTES
                         <?php }?>
                     </button>
                     <?php
-$_smarty_tpl->tpl_vars['q'] = $__foreach_q_23_saved;
+$_smarty_tpl->tpl_vars['q'] = $__foreach_q_17_saved;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </div>

@@ -1,49 +1,88 @@
-{if $promo_marquee_text}
-	<div class="promo-marquee" aria-label="{$promo_marquee_text|escape}">
+<?php
+/* Smarty version 3.1.48, created on 2026-09-29 09:50:45
+  from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Header.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.48',
+  'unifunc' => 'content_6abb6dd5ec08a8_05171177',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '8176fdb0173b230f3822c14e0cd77a18e9f5278a' => 
+    array (
+      0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Header.tpl',
+      1 => 1790668241,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_6abb6dd5ec08a8_05171177 (Smarty_Internal_Template $_smarty_tpl) {
+if ($_smarty_tpl->tpl_vars['promo_marquee_text']->value) {?>
+	<div class="promo-marquee" aria-label="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['promo_marquee_text']->value, ENT_QUOTES, 'UTF-8', true);?>
+">
 		<div class="promo-marquee__track">
 			<div class="promo-marquee__group">
-				<span>{$promo_marquee_text|escape}</span>
-				<span>{$promo_marquee_text|escape}</span>
-				<span>{$promo_marquee_text|escape}</span>
-				<span>{$promo_marquee_text|escape}</span>
-				<span>{$promo_marquee_text|escape}</span>
-				<span>{$promo_marquee_text|escape}</span>
+				<span><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['promo_marquee_text']->value, ENT_QUOTES, 'UTF-8', true);?>
+</span>
+				<span><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['promo_marquee_text']->value, ENT_QUOTES, 'UTF-8', true);?>
+</span>
+				<span><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['promo_marquee_text']->value, ENT_QUOTES, 'UTF-8', true);?>
+</span>
+				<span><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['promo_marquee_text']->value, ENT_QUOTES, 'UTF-8', true);?>
+</span>
+				<span><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['promo_marquee_text']->value, ENT_QUOTES, 'UTF-8', true);?>
+</span>
+				<span><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['promo_marquee_text']->value, ENT_QUOTES, 'UTF-8', true);?>
+</span>
 			</div>
 			<div class="promo-marquee__group" aria-hidden="true">
-				<span>{$promo_marquee_text|escape}</span>
-				<span>{$promo_marquee_text|escape}</span>
-				<span>{$promo_marquee_text|escape}</span>
-				<span>{$promo_marquee_text|escape}</span>
-				<span>{$promo_marquee_text|escape}</span>
-				<span>{$promo_marquee_text|escape}</span>
+				<span><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['promo_marquee_text']->value, ENT_QUOTES, 'UTF-8', true);?>
+</span>
+				<span><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['promo_marquee_text']->value, ENT_QUOTES, 'UTF-8', true);?>
+</span>
+				<span><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['promo_marquee_text']->value, ENT_QUOTES, 'UTF-8', true);?>
+</span>
+				<span><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['promo_marquee_text']->value, ENT_QUOTES, 'UTF-8', true);?>
+</span>
+				<span><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['promo_marquee_text']->value, ENT_QUOTES, 'UTF-8', true);?>
+</span>
+				<span><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['promo_marquee_text']->value, ENT_QUOTES, 'UTF-8', true);?>
+</span>
 			</div>
 		</div>
 	</div>
-{/if}
+<?php }?>
 
 <!-- New header START -->
 <header id="site-header" class="bg-white border-b border-black/5 z-50 overflow-visible font-sans rounded-none relative">
 	<div class="relative" id="site-header-mega">
 		<div class="max-w-[1480px] mx-auto px-4 sm:px-6 min-[850px]:px-9 pt-3">
 			<div class="flex items-center justify-between gap-3 sm:gap-6 min-[850px]:gap-8 mb-4 min-[850px]:mb-[40px]">
-				<a href="/" class="flex items-center shrink-0 mt-2 min-[850px]:mt-[30px]">
-					<img src="/img/logo.svg" alt="Studio Atrium – projekty domów" class="h-[28px] sm:h-[35px] w-auto shrink-0 rounded-none" id="logo" width="176" height="35">
-				</a>
-				<div class="flex flex-col items-stretch min-[850px]:items-end gap-3 min-[850px]:gap-6 min-w-0 flex-1">
-					<div class="site-header-utils flex items-center justify-end gap-2 sm:gap-4 min-[850px]:gap-6 h-[40px] w-full min-w-0">
-						<button type="button" id="site-mobile-nav-toggle" class="site-mobile-nav-toggle min-[850px]:hidden inline-flex items-center justify-center h-[40px] w-[40px] shrink-0 mr-auto text-[var(--brand-red)] hover:text-[var(--brand-red-hover)] bg-transparent border-0 p-0" aria-expanded="false" aria-controls="site-mobile-nav" aria-label="Otwórz menu">
-							<span class="site-mobile-nav-icon-open inline-flex" aria-hidden="true">
-								<i data-lucide="menu" class="w-[28px] h-[28px] shrink-0" stroke-width="2.5"></i>
-							</span>
-							<span class="site-mobile-nav-icon-close hidden inline-flex" aria-hidden="true">
-								<i data-lucide="x" class="w-[28px] h-[28px] shrink-0" stroke-width="2.5"></i>
-							</span>
-						</button>
+				<div class="flex items-center gap-3 sm:gap-4 shrink-0 min-w-0">
+					<button type="button" id="site-mobile-nav-toggle" class="site-mobile-nav-toggle min-[850px]:hidden inline-flex items-center justify-center h-[34px] w-[34px] shrink-0 text-[var(--brand-darker)] hover:text-[var(--brand-red)] bg-transparent border-0 p-0" aria-expanded="false" aria-controls="site-mobile-nav" aria-label="Otwórz menu">
+						<span class="site-mobile-nav-icon-open inline-flex" aria-hidden="true">
+							<i data-lucide="menu" class="w-[22px] h-[22px] shrink-0"></i>
+						</span>
+						<span class="site-mobile-nav-icon-close hidden inline-flex" aria-hidden="true">
+							<i data-lucide="x" class="w-[22px] h-[22px] shrink-0"></i>
+						</span>
+					</button>
+					<a href="/" class="flex items-center shrink-0 mt-2 min-[850px]:mt-[30px]">
+						<img src="/img/logo.svg" alt="Studio Atrium – projekty domów" class="h-[28px] sm:h-[35px] w-auto shrink-0 rounded-none" id="logo" width="176" height="35">
+					</a>
+				</div>
+				<div class="flex flex-col items-end gap-3 min-[850px]:gap-6 min-w-0">
+					<div class="site-header-utils flex items-center justify-end gap-2 sm:gap-4 min-[850px]:gap-6 h-[34px] min-w-0">
 						<a href="tel:+48338229496" class="flex items-center gap-2 h-[34px] rounded-none shrink-0" rel="nofollow" aria-label="Zadzwoń 33 822 94 96">
 							<i data-lucide="phone" class="w-[20px] h-[20px] sm:w-[24px] sm:h-[24px] text-[var(--brand-darker)] shrink-0" stroke-width="1.25" aria-hidden="true"></i>
 							<span class="hidden lg:inline text-[var(--brand-red)] leading-none" style="font-size:20px;font-style:normal;font-weight:700;">33 822 94 96</span>
 						</a>
-						<form method="get" action="{url module='project' action='search'}" class="site-header-search relative hidden min-[850px]:flex items-center h-[34px] rounded-none shrink-0" role="search">
+						<form method="get" action="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'project','action'=>'search'),$_smarty_tpl ) );?>
+" class="site-header-search relative hidden min-[850px]:flex items-center h-[34px] rounded-none shrink-0" role="search">
 							<input type="text" name="query" placeholder="wyszukaj nazwę"
 								class="rounded-none bg-white border border-[#979797] h-[34px] pl-5 pr-10 text-[13px] font-normal tracking-wider w-full max-w-[140px] md:max-w-[170px] leading-none text-[var(--brand-darker)] placeholder:text-[#343233] focus:outline-none focus:border-[var(--brand-blue)]">
 							<button type="submit" aria-label="Szukaj"
@@ -51,34 +90,39 @@
 								<i data-lucide="search" class="w-[16px] h-[16px] shrink-0"></i>
 							</button>
 						</form>
-						<a href="{url module=favourite action=list}" aria-label="Ulubione"
+						<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'favourite','action'=>'list'),$_smarty_tpl ) );?>
+" aria-label="Ulubione"
 							class="inline-flex items-center justify-center h-[34px] text-[var(--brand-darker)] hover:text-[var(--brand-red)] shrink-0">
 							<i data-lucide="heart" class="w-[20px] h-[20px] shrink-0"></i>
 						</a>
-						<a href="{url module=favourite action=compare}" aria-label="Porównaj"
+						<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'favourite','action'=>'compare'),$_smarty_tpl ) );?>
+" aria-label="Porównaj"
 							class="hidden min-[850px]:inline-flex items-center justify-center h-[34px] text-[var(--brand-darker)] hover:text-[var(--brand-red)] shrink-0">
 							<i data-lucide="scale" class="w-[20px] h-[20px] shrink-0"></i>
 						</a>
-						<a href="{url module=order action=cart}" aria-label="Koszyk"
-							class="relative inline-flex items-center justify-center h-[34px] text-[var(--brand-darker)] hover:text-[var(--brand-red)] shrink-0"{if !$basket} id="header-cart-empty"{/if}>
+						<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'order','action'=>'cart'),$_smarty_tpl ) );?>
+" aria-label="Koszyk"
+							class="relative inline-flex items-center justify-center h-[34px] text-[var(--brand-darker)] hover:text-[var(--brand-red)] shrink-0"<?php if (!$_smarty_tpl->tpl_vars['basket']->value) {?> id="header-cart-empty"<?php }?>>
 							<i data-lucide="shopping-cart" class="w-[22px] h-[22px] shrink-0"></i>
-							{if $basket}
+							<?php if ($_smarty_tpl->tpl_vars['basket']->value) {?>
 								<span class="absolute -top-1.5 -right-1.5 min-w-[18px] h-[18px] px-1 bg-[var(--brand-red)] text-white text-[10px] font-black leading-none grid place-items-center rounded-none">
-									{$basket|@count}
+									<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'count' ][ 0 ], array( $_smarty_tpl->tpl_vars['basket']->value ));?>
+
 								</span>
-							{/if}
+							<?php }?>
 						</a>
-						{if $user}
-							<a href="{url module=panel action=account}"
+						<?php if ($_smarty_tpl->tpl_vars['user']->value) {?>
+							<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'panel','action'=>'account'),$_smarty_tpl ) );?>
+"
 								class="header-account-btn hidden min-[850px]:inline-flex rounded-none border border-[#979797] h-[34px] px-3 text-[13px] font-bold tracking-wider text-[var(--brand-darker)] hover:border-[var(--brand-red)] hover:text-[var(--brand-red)] items-center bg-white shrink-0">
 								KONTO
 							</a>
-						{else}
+						<?php } else { ?>
 							<button type="button"
 								class="login-trigger hidden min-[850px]:inline-flex rounded-none border border-[#979797] h-[34px] px-3 text-[13px] font-bold tracking-wider text-[var(--brand-darker)] hover:border-[var(--brand-red)] hover:text-[var(--brand-red)] bg-white items-center shrink-0">
 								ZALOGUJ
 							</button>
-						{/if}
+						<?php }?>
 					</div>
 					<nav class="hidden min-[850px]:flex items-center justify-end gap-6 lg:gap-10" aria-label="Główne menu">
 						<a href="/" data-mega="projekty" aria-expanded="false" aria-haspopup="true"
@@ -111,20 +155,23 @@
 				<a href="/projekty-garazy/" class="py-3 text-[15px] font-black tracking-wider text-[var(--brand-darker)] hover:text-[var(--brand-red)] border-b border-black/5">GARAŻE I INNE</a>
 				<a href="/baza-wiedzy/" class="py-3 text-[15px] font-black tracking-wider text-[var(--brand-darker)] hover:text-[var(--brand-red)] border-b border-black/5">BAZA WIEDZY</a>
 				<a href="/kontakt/" class="py-3 text-[15px] font-black tracking-wider text-[var(--brand-red)] border-b border-black/5">KONTAKT</a>
-				<form method="get" action="{url module='project' action='search'}" class="site-mobile-search relative flex items-center w-full h-[48px] mt-3 mb-2 rounded-none" role="search">
+				<form method="get" action="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'project','action'=>'search'),$_smarty_tpl ) );?>
+" class="site-mobile-search relative flex items-center h-[42px] mt-3 mb-2 rounded-none" role="search">
 					<input type="text" name="query" placeholder="wyszukaj nazwę"
-						class="rounded-none bg-white border border-[#979797] h-[48px] pl-4 pr-12 text-[14px] font-normal tracking-wider w-full max-w-none leading-none text-[var(--brand-darker)] placeholder:text-[#343233] focus:outline-none focus:border-[var(--brand-blue)] box-border">
+						class="rounded-none bg-white border border-[#979797] h-[42px] pl-4 pr-12 text-[14px] font-normal tracking-wider w-full leading-none text-[var(--brand-darker)] placeholder:text-[#343233] focus:outline-none focus:border-[var(--brand-blue)]">
 					<button type="submit" aria-label="Szukaj"
-						class="rounded-none absolute right-0 top-0 h-[48px] w-12 flex items-center justify-center text-[var(--brand-darker)] hover:text-[var(--brand-red)] bg-transparent">
+						class="rounded-none absolute right-0 top-0 h-[42px] w-12 flex items-center justify-center text-[var(--brand-darker)] hover:text-[var(--brand-red)] bg-transparent">
 						<i data-lucide="search" class="w-[18px] h-[18px] shrink-0"></i>
 					</button>
 				</form>
-				{if $user}
-					<a href="{url module=panel action=account}" class="py-3 text-[14px] font-bold tracking-wider text-[var(--brand-darker)] hover:text-[var(--brand-red)] border-b border-black/5">Konto</a>
-				{else}
+				<?php if ($_smarty_tpl->tpl_vars['user']->value) {?>
+					<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'panel','action'=>'account'),$_smarty_tpl ) );?>
+" class="py-3 text-[14px] font-bold tracking-wider text-[var(--brand-darker)] hover:text-[var(--brand-red)] border-b border-black/5">Konto</a>
+				<?php } else { ?>
 					<button type="button" class="login-trigger text-left py-3 text-[14px] font-bold tracking-wider text-[var(--brand-darker)] hover:text-[var(--brand-red)] border-b border-black/5 bg-transparent border-x-0 border-t-0 w-full">Zaloguj</button>
-				{/if}
-				<a href="{url module=favourite action=compare}" class="py-3 text-[14px] font-bold tracking-wider text-[var(--brand-darker)] hover:text-[var(--brand-red)]">Porównaj</a>
+				<?php }?>
+				<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'favourite','action'=>'compare'),$_smarty_tpl ) );?>
+" class="py-3 text-[14px] font-bold tracking-wider text-[var(--brand-darker)] hover:text-[var(--brand-red)]">Porównaj</a>
 			</nav>
 		</div>
 
@@ -138,16 +185,25 @@
 						<div class="grid grid-cols-1 md:grid-cols-[220px_minmax(0,1fr)] gap-10 lg:gap-14">
 							<div class="mb-[40px]">
 								<ul class="space-y-1.5 text-[15px] text-[#444]">
-									{foreach $siteMenu.house as $_item}
-										{if $_item.menu_position == 1 && $_item.is_highlight}
+									<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['siteMenu']->value['house'], '_item');
+$_smarty_tpl->tpl_vars['_item']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['_item']->value) {
+$_smarty_tpl->tpl_vars['_item']->do_else = false;
+?>
+										<?php if ($_smarty_tpl->tpl_vars['_item']->value['menu_position'] == 1 && $_smarty_tpl->tpl_vars['_item']->value['is_highlight']) {?>
 											<li>
-												<a href="/{$_item.link}{if strpos($_item.link, '.html') === false}/{/if}"
-													class="block py-[4px] text-[14px] leading-snug text-[#333] hover:text-[var(--brand-red)] transition-colors duration-150{if $_item.is_highlight} font-bold text-[#222]{/if}">
-													{$_item.name}
+												<a href="/<?php echo $_smarty_tpl->tpl_vars['_item']->value['link'];
+if (strpos($_smarty_tpl->tpl_vars['_item']->value['link'],'.html') === false) {?>/<?php }?>"
+													class="block py-[4px] text-[14px] leading-snug text-[#333] hover:text-[var(--brand-red)] transition-colors duration-150<?php if ($_smarty_tpl->tpl_vars['_item']->value['is_highlight']) {?> font-bold text-[#222]<?php }?>">
+													<?php echo $_smarty_tpl->tpl_vars['_item']->value['name'];?>
+
 												</a>
 											</li>
-										{/if}
-									{/foreach}
+										<?php }?>
+									<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 								</ul>
 								<a href="/katalog-projektow.html" class="mt-6 block group/cat">
 									<img src="/img/catalogue.webp" alt="Katalog projektów domów"
@@ -160,38 +216,64 @@
 							</div>
 
 							<div class="grid grid-cols-1 sm:grid-cols-3 gap-10 lg:gap-14">
-							{section name=col loop=3}
+							<?php
+$_smarty_tpl->tpl_vars['__smarty_section_col'] = new Smarty_Variable(array());
+if (true) {
+for ($_smarty_tpl->tpl_vars['__smarty_section_col']->value['iteration'] = 1, $_smarty_tpl->tpl_vars['__smarty_section_col']->value['index'] = 0; $_smarty_tpl->tpl_vars['__smarty_section_col']->value['iteration'] <= 3; $_smarty_tpl->tpl_vars['__smarty_section_col']->value['iteration']++, $_smarty_tpl->tpl_vars['__smarty_section_col']->value['index']++){
+?>
 								<div class="space-y-1">
-									{foreach $siteMenu.house as $_item}
-										{if $_item.menu_position == $smarty.section.col.iteration}
-											{if $_item.children}
+									<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['siteMenu']->value['house'], '_item');
+$_smarty_tpl->tpl_vars['_item']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['_item']->value) {
+$_smarty_tpl->tpl_vars['_item']->do_else = false;
+?>
+										<?php if ($_smarty_tpl->tpl_vars['_item']->value['menu_position'] == (isset($_smarty_tpl->tpl_vars['__smarty_section_col']->value['iteration']) ? $_smarty_tpl->tpl_vars['__smarty_section_col']->value['iteration'] : null)) {?>
+											<?php if ($_smarty_tpl->tpl_vars['_item']->value['children']) {?>
 												<div>
 													<div class="text-[14px] font-medium tracking-[0.14em] text-[var(--brand-red)] uppercase mb-[4px]">
-														{$_item.name}
+														<?php echo $_smarty_tpl->tpl_vars['_item']->value['name'];?>
+
 													</div>
 													<ul>
-														{foreach $_item.children as $_subitem}
+														<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['_item']->value['children'], '_subitem');
+$_smarty_tpl->tpl_vars['_subitem']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['_subitem']->value) {
+$_smarty_tpl->tpl_vars['_subitem']->do_else = false;
+?>
 															<li>
-																<a href="/{$_subitem.link}{if strpos($_subitem.link, '.html') === false}/{/if}"
-																	class="block py-[2px] text-[14px] leading-snug text-[#555] hover:text-[var(--brand-red)] transition-colors duration-150{if $_subitem.is_highlight} font-bold text-[#222]{/if}">
-																	{$_subitem.name}
+																<a href="/<?php echo $_smarty_tpl->tpl_vars['_subitem']->value['link'];
+if (strpos($_smarty_tpl->tpl_vars['_subitem']->value['link'],'.html') === false) {?>/<?php }?>"
+																	class="block py-[2px] text-[14px] leading-snug text-[#555] hover:text-[var(--brand-red)] transition-colors duration-150<?php if ($_smarty_tpl->tpl_vars['_subitem']->value['is_highlight']) {?> font-bold text-[#222]<?php }?>">
+																	<?php echo $_smarty_tpl->tpl_vars['_subitem']->value['name'];?>
+
 																</a>
 															</li>
-														{/foreach}
+														<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 													</ul>
 												</div>
-											{elseif $_item.link}
+											<?php } elseif ($_smarty_tpl->tpl_vars['_item']->value['link']) {?>
 												<div>
-													<a href="/{$_item.link}{if strpos($_item.link, '.html') === false}/{/if}"
-														class="block py-[4px] text-[14px] leading-snug text-[#555] hover:text-[var(--brand-red)] transition-colors duration-150{if $_item.is_highlight} font-bold text-[#222]{/if}">
-														{$_item.name}
+													<a href="/<?php echo $_smarty_tpl->tpl_vars['_item']->value['link'];
+if (strpos($_smarty_tpl->tpl_vars['_item']->value['link'],'.html') === false) {?>/<?php }?>"
+														class="block py-[4px] text-[14px] leading-snug text-[#555] hover:text-[var(--brand-red)] transition-colors duration-150<?php if ($_smarty_tpl->tpl_vars['_item']->value['is_highlight']) {?> font-bold text-[#222]<?php }?>">
+														<?php echo $_smarty_tpl->tpl_vars['_item']->value['name'];?>
+
 													</a>
 												</div>
-											{/if}
-										{/if}
-									{/foreach}
+											<?php }?>
+										<?php }?>
+									<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 								</div>
-							{/section}
+							<?php
+}
+}
+?>
 							</div>
 						</div>
 					</div>
@@ -372,8 +454,9 @@
 		</div>
 	</div>
 </header>
-<script>
-{literal}
+<?php echo '<script'; ?>
+>
+
 (function () {
 	var header = document.getElementById('site-header');
 	if (!header) return;
@@ -540,6 +623,8 @@
 		}
 	})();
 })();
-{/literal}
-</script>
-<!-- New header END -->
+
+<?php echo '</script'; ?>
+>
+<!-- New header END --><?php }
+}

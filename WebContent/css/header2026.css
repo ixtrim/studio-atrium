@@ -91,6 +91,37 @@
   max-width: none;
 }
 
+#site-header form.site-mobile-search {
+  width: 100% !important;
+  max-width: none !important;
+  display: flex !important;
+}
+
+#site-header form.site-mobile-search[role="search"] input[type="text"],
+#site-header form.site-mobile-search input[type="text"] {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+#site-header .site-mobile-nav-toggle {
+  color: #c61000 !important;
+}
+
+#site-header .site-mobile-nav-toggle:hover {
+  color: #a80d00 !important;
+}
+
+#site-header .site-mobile-nav-toggle svg.lucide,
+#site-header .site-mobile-nav-toggle svg[data-lucide],
+#site-header .site-mobile-nav-toggle i[data-lucide] {
+  width: 28px !important;
+  height: 28px !important;
+  max-width: 28px !important;
+  max-height: 28px !important;
+  color: inherit !important;
+  stroke: currentColor !important;
+}
+
 #site-header button {
   margin: 0;
   appearance: none;
@@ -130,8 +161,8 @@
 
 #site-header #site-header-filters {
   width: auto !important;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 0;
+  margin-right: 0;
   background-color: #1d99e1 !important;
   height: 45px;
 }
@@ -165,7 +196,8 @@
   line-height: 17px;
   border: 0;
   flex-shrink: 0;
-  margin-left: auto;
+  margin-left: 0;
+  box-sizing: border-box;
 }
 
 #site-header #search-trigger:hover {
@@ -179,6 +211,17 @@
 #site-header {
   position: relative !important;
   top: auto !important;
+  overflow-x: clip;
+}
+
+/*
+ * Legacy common.js adds class "collapse" to body>header below 1240px
+ * (old sticky mini-header). Tailwind's .collapse utility means
+ * visibility:collapse — which hides the 2026 header entirely.
+ */
+#site-header.collapse,
+#site-header.collapse * {
+  visibility: visible !important;
 }
 
 #site-header #site-header-filter-bar {
@@ -191,13 +234,47 @@
   max-width: 1480px;
 }
 
+#site-header .site-header-filter-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
 @media (min-width: 1024px) {
   body:not(:has(#hp-2026)) #site-header #site-header-filter-bar {
     margin-top: -20px;
   }
+
+  #site-header .site-header-filter-row {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 0;
+    flex-wrap: nowrap;
+  }
+
+  #site-header .site-header-filter-row #site-header-filters {
+    grid-column: 2;
+    justify-self: center;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  #site-header #search-trigger {
+    grid-column: 3;
+    justify-self: end;
+    width: 264px !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
 }
 
-/* Homepage only: overlap hero like the design (desktop/tablet) */
+/* Homepage only: overlap hero like the design (desktop / wide tablet) */
 body:has(#hp-2026) #site-header #site-header-filter-bar {
   position: absolute;
   bottom: -40px;
@@ -205,7 +282,36 @@ body:has(#hp-2026) #site-header #site-header-filter-bar {
   transform: translateX(-50%);
 }
 
-@media (max-width: 767px) {
+/* —— Under 1024px: compact filter + CTA row, centered —— */
+@media (max-width: 1023px) {
+  #site-header #site-header-filters {
+    gap: 10px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    height: 42px;
+  }
+
+  #site-header #site-header-filters button {
+    font-size: 12px !important;
+  }
+
+  #site-header #search-trigger {
+    width: auto !important;
+    min-width: 0;
+    height: 48px !important;
+    margin-left: 0 !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  #site-header .site-header-filter-row {
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+/* —— Mobile header (< 850px) —— */
+@media (max-width: 849px) {
   body:has(#hp-2026) #site-header #site-header-filter-bar {
     position: relative;
     bottom: auto;
@@ -214,16 +320,17 @@ body:has(#hp-2026) #site-header #site-header-filter-bar {
     margin-top: 0;
   }
 
-  #site-header #search-trigger {
-    width: 100% !important;
-    margin-left: 0 !important;
-    height: 48px !important;
+  #site-header #site-header-filters {
+    display: none !important;
   }
 
-  #site-header #site-header-filters {
-    width: 100% !important;
+  #site-header #search-trigger {
+    width: auto !important;
     max-width: 100%;
-    justify-content: flex-start;
+  }
+
+  #site-header .site-header-utils {
+    overflow: visible;
   }
 }
 

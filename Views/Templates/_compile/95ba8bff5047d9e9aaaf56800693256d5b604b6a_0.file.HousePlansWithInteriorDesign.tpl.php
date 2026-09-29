@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-28 23:10:59
+/* Smarty version 3.1.48, created on 2026-09-29 09:00:14
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/HousePlansWithInteriorDesign.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6abad7e3a2ce27_17267578',
+  'unifunc' => 'content_6abb61fe7e6817_42032978',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '95ba8bff5047d9e9aaaf56800693256d5b604b6a' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/HousePlansWithInteriorDesign.tpl',
-      1 => 1790458055,
+      1 => 1790634669,
       2 => 'file',
     ),
   ),
@@ -20,10 +20,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6abad7e3a2ce27_17267578 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6abb61fe7e6817_42032978 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="w-full bg-[#f3f3f3] pt-8 pb-16" id="interior-plans">
-    <div class="max-w-[1480px] mx-auto px-8 pb-8">
-        <h2 class="ip-title text-[36px] font-400 text-[var(--brand-darker)] tracking-tight mb-10 pl-2 uppercase"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['interior_plans']->value['meta']['section_title'], ENT_QUOTES, 'UTF-8', true);?>
+    <div class="max-w-[1480px] mx-auto px-4 sm:px-8 pb-8">
+        <h2 class="ip-title text-[24px] md:text-[36px] font-400 text-[var(--brand-darker)] tracking-tight mb-6 md:mb-10 pl-2 uppercase"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['interior_plans']->value['meta']['section_title'], ENT_QUOTES, 'UTF-8', true);?>
 </h2>
         <div class="relative">
             <button type="button" aria-label="Poprzedni" id="hp-ip-prev"
@@ -63,12 +63,12 @@ $_smarty_tpl->tpl_vars['item']->do_else = false;
 </span>
                                 <?php }?>
                             </div>
-                            <div class="px-5 pt-5 pb-5 flex flex-col gap-2 flex-1">
-                                <h3 class="text-[26px] font-bold text-[#222] leading-tight"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['name'], ENT_QUOTES, 'UTF-8', true);?>
+                            <div class="px-4 sm:px-5 pt-5 pb-5 flex flex-col gap-2 flex-1">
+                                <h3 class="text-[20px] sm:text-[26px] font-bold text-[#222] leading-tight"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['name'], ENT_QUOTES, 'UTF-8', true);?>
 </h3>
                                 <div class="text-[13px] font-bold tracking-wider text-[var(--brand-red)]"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['type_label'], ENT_QUOTES, 'UTF-8', true);?>
 </div>
-                                <div class="flex items-center gap-4 py-2 text-[13px] text-[#222]">
+                                <div class="flex flex-wrap items-center gap-4 py-2 text-[13px] text-[#222]">
                                     <?php if ($_smarty_tpl->tpl_vars['item']->value['area']) {?>
                                     <div class="flex items-center gap-2"><span class="w-[32px] h-[32px] border border-black/20 inline-flex items-center justify-center shrink-0 text-[#555]"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-vector-square" aria-hidden="true"><path d="M17.055 4.533a24 24 0 00-10.11 0"/><path d="M19.467 17.055a24 24 0 000-10.11"/><path d="M4.533 6.945a24 24 0 000 10.11"/><path d="M6.945 19.467a24 24 0 0010.11 0"/><circle cx="19" cy="19" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="5" cy="5" r="2"/></svg></span><span><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['area'], ENT_QUOTES, 'UTF-8', true);?>
 </span></div>
@@ -93,7 +93,7 @@ $_smarty_tpl->tpl_vars['item']->do_else = false;
  PLN</s>
                                     </div>
                                     <?php }?>
-                                    <div class="flex items-baseline gap-2"><span class="text-[30px] font-['Montserrat',sans-serif] font-semibold text-[var(--brand-blue-strong)] leading-none"><?php echo number_format($_smarty_tpl->tpl_vars['item']->value['price'],0,',',' ');?>
+                                    <div class="flex items-baseline gap-2"><span class="text-[24px] sm:text-[30px] font-['Montserrat',sans-serif] font-semibold text-[var(--brand-blue-strong)] leading-none"><?php echo number_format($_smarty_tpl->tpl_vars['item']->value['price'],0,',',' ');?>
 </span><span class="text-[16px] text-[var(--brand-blue-strong)] font-semibold">PLN</span></div>
                                 </div>
                             </div>

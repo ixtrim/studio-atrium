@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-28 23:10:59
+/* Smarty version 3.1.48, created on 2026-09-29 09:00:14
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/ProjectTeaserCard.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6abad7e3a13301_75809319',
+  'unifunc' => 'content_6abb61fe7ccd88_48088519',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6097a1eb27e4691722c551fd9b1c8a5311e2e241' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/ProjectTeaserCard.tpl',
-      1 => 1790454857,
+      1 => 1790634673,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6abad7e3a13301_75809319 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6abb61fe7ccd88_48088519 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('_badge', '');
 $_smarty_tpl->_assignInScope('_badgeVariant', '');
 if ($_smarty_tpl->tpl_vars['item']->value['badge_label']) {?>
@@ -45,8 +45,8 @@ if ($_smarty_tpl->tpl_vars['item']->value['badge_label']) {?>
 </span>
 		<?php }?>
 	</div>
-	<div class="px-5 pt-5 pb-5 flex flex-col gap-2 flex-1">
-		<h3 class="text-[26px] font-bold text-[#222] leading-tight"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['name'], ENT_QUOTES, 'UTF-8', true);?>
+	<div class="px-4 sm:px-5 pt-5 pb-5 flex flex-col gap-2 flex-1">
+		<h3 class="text-[20px] sm:text-[26px] font-bold text-[#222] leading-tight"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['name'], ENT_QUOTES, 'UTF-8', true);?>
 </h3>
 		<div class="text-[13px] font-bold tracking-wider text-[var(--brand-red)]"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['type_label'], ENT_QUOTES, 'UTF-8', true);?>
 </div>
@@ -75,7 +75,7 @@ if ($_smarty_tpl->tpl_vars['item']->value['badge_label']) {?>
  PLN</s>
 			</div>
 			<?php }?>
-			<div class="flex items-baseline gap-2"><span class="text-[30px] font-['Montserrat',sans-serif] font-semibold text-[var(--brand-blue-strong)] leading-none"><?php echo number_format($_smarty_tpl->tpl_vars['item']->value['price'],0,',',' ');?>
+			<div class="flex items-baseline gap-2"><span class="text-[24px] sm:text-[30px] font-['Montserrat',sans-serif] font-semibold text-[var(--brand-blue-strong)] leading-none"><?php echo number_format($_smarty_tpl->tpl_vars['item']->value['price'],0,',',' ');?>
 </span><span class="text-[16px] text-[var(--brand-blue-strong)] font-semibold">PLN</span></div>
 		</div>
 	</div>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-28 23:10:59
+/* Smarty version 3.1.48, created on 2026-09-29 09:00:14
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/StepsToBuildingAHome.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6abad7e3a372c4_24347170',
+  'unifunc' => 'content_6abb61fe7f8597_18402006',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '77057c4df6b55b87517e5ef47d47eb4f87fb96a1' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/StepsToBuildingAHome.tpl',
-      1 => 1790609451,
+      1 => 1790634681,
       2 => 'file',
     ),
   ),
@@ -20,12 +20,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6abad7e3a372c4_24347170 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6abb61fe7f8597_18402006 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="w-full max-w-[1420px] mx-auto px-4 my-16 pt-4 pb-10" id="steps-to-building-a-home">
-    <h2 class="inline-block text-[36px] font-400 text-[var(--brand-darker)] tracking-tight uppercase px-10 pt-7 pb-7 text-center mb-8"
-        style="background:#7ec8ee;margin-left:-1rem"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['build_steps']->value['meta']['section_title'], ENT_QUOTES, 'UTF-8', true);?>
+    <h2 class="inline-block text-[22px] md:text-[36px] font-400 text-[var(--brand-darker)] tracking-tight uppercase px-4 sm:px-10 pt-7 pb-7 text-center mb-8 ml-0 sm:-ml-4"
+        style="background:#7ec8ee"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['build_steps']->value['meta']['section_title'], ENT_QUOTES, 'UTF-8', true);?>
 </h2>
-    <div class="mt-16 grid grid-cols-1 md:grid-cols-2 md:grid-rows-[auto_auto] md:grid-flow-col gap-x-16 gap-y-5 px-[50px] md:items-start">
+    <div class="mt-8 md:mt-16 grid grid-cols-1 md:grid-cols-2 md:grid-rows-[auto_auto] md:grid-flow-col gap-x-16 gap-y-5 px-4 sm:px-8 md:px-[50px] md:items-start">
         <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['build_steps']->value['steps'], 'step');
 $_smarty_tpl->tpl_vars['step']->index = -1;
@@ -33,7 +33,7 @@ $_smarty_tpl->tpl_vars['step']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['step']->value) {
 $_smarty_tpl->tpl_vars['step']->do_else = false;
 $_smarty_tpl->tpl_vars['step']->index++;
-$__foreach_step_16_saved = $_smarty_tpl->tpl_vars['step'];
+$__foreach_step_10_saved = $_smarty_tpl->tpl_vars['step'];
 ?>
             <div class="hp-build-step cursor-pointer" data-step-item="<?php echo $_smarty_tpl->tpl_vars['step']->index;?>
 " role="button" tabindex="0"
@@ -52,12 +52,12 @@ $__foreach_step_16_saved = $_smarty_tpl->tpl_vars['step'];
                 </div>
                 <div id="step-panel-<?php echo $_smarty_tpl->tpl_vars['step']->index;?>
 " class="hp-step-panel pointer-events-none">
-                    <p class="mt-4 ml-11 text-[18px] leading-[24px] text-[#555]"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['step']->value['step_body'], ENT_QUOTES, 'UTF-8', true);?>
+                    <p class="mt-4 ml-0 sm:ml-11 text-[16px] md:text-[18px] leading-[24px] text-[#555]"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['step']->value['step_body'], ENT_QUOTES, 'UTF-8', true);?>
 </p>
                 </div>
             </div>
         <?php
-$_smarty_tpl->tpl_vars['step'] = $__foreach_step_16_saved;
+$_smarty_tpl->tpl_vars['step'] = $__foreach_step_10_saved;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     </div>
@@ -170,7 +170,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 <section class="w-full bg-[#f3f3f3]" id="our-experience">
     <div class="max-w-[1340px] mx-auto px-4 grid grid-cols-1 md:grid-cols-2 items-center gap-8">
         <div class="py-16 md:pl-8 w-full max-w-[550px]">
-            <h2 class="text-[32px] font-500 text-[var(--brand-darker)] tracking-tight leading-[1.25] uppercase mt-2">
+            <h2 class="text-[24px] md:text-[32px] font-500 text-[var(--brand-darker)] tracking-tight leading-[1.25] uppercase mt-2">
                 <?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'nl2br' ][ 0 ], array( htmlspecialchars($_smarty_tpl->tpl_vars['build_steps']->value['experience']['title'], ENT_QUOTES, 'UTF-8', true) ));?>
 </h2>
             <div class="mt-8 text-[18px] leading-[24px] text-[#555]">
@@ -200,7 +200,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 "
                     alt="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['build_steps']->value['experience']['image_alt'], ENT_QUOTES, 'UTF-8', true);?>
 " width="800" height="800" loading="lazy"
-                    class="max-h-[660px] w-auto object-contain relative mt-[25px]">
+                    class="w-full max-w-full h-auto max-h-[420px] md:max-h-[660px] object-contain relative mt-[25px]">
             </div>
         <?php }?>
     </div>

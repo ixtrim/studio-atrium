@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-28 23:10:59
+/* Smarty version 3.1.48, created on 2026-09-29 09:00:14
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/Initiative.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6abad7e3a8d9b2_90035624',
+  'unifunc' => 'content_6abb61fe85f6b1_94102979',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c1b48589d508aa61260f6193da9ec2baabf7bb96' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/Initiative.tpl',
-      1 => 1790627701,
+      1 => 1790634730,
       2 => 'file',
     ),
   ),
@@ -20,13 +20,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6abad7e3a8d9b2_90035624 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6abb61fe85f6b1_94102979 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="pt-10 pb-24 bg-white" id="initiative">
-	<div class="max-w-[1480px] mx-auto px-12 grid md:grid-cols-2 gap-[48px]">
+	<div class="max-w-[1480px] mx-auto px-4 sm:px-8 md:px-12 grid md:grid-cols-2 gap-[48px]">
 		<div>
-			<h2 class="text-[36px] leading-[40px] font-400 text-[var(--brand-darker)] tracking-tight mb-8 uppercase"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['initiative']->value['title'], ENT_QUOTES, 'UTF-8', true);?>
+			<h2 class="text-[24px] md:text-[36px] leading-[40px] font-400 text-[var(--brand-darker)] tracking-tight mb-8 uppercase"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['initiative']->value['title'], ENT_QUOTES, 'UTF-8', true);?>
 </h2>
-			<p class="text-[20px] leading-[28px] text-[var(--brand-darker)]"><?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'nl2br' ][ 0 ], array( htmlspecialchars($_smarty_tpl->tpl_vars['initiative']->value['body'], ENT_QUOTES, 'UTF-8', true) ));?>
+			<p class="text-[16px] md:text-[20px] leading-[28px] text-[var(--brand-darker)]"><?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'nl2br' ][ 0 ], array( htmlspecialchars($_smarty_tpl->tpl_vars['initiative']->value['body'], ENT_QUOTES, 'UTF-8', true) ));?>
 </p>
 		</div>
 		<div class="flex flex-col items-center">

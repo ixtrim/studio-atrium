@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-28 23:10:59
+/* Smarty version 3.1.48, created on 2026-09-29 09:00:14
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/Charity.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6abad7e3a92e46_43969081',
+  'unifunc' => 'content_6abb61fe863489_60083502',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f7ac743480685bb1846724d0007b617d45f7f765' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/Charity.tpl',
-      1 => 1790628044,
+      1 => 1790634735,
       2 => 'file',
     ),
   ),
@@ -20,21 +20,21 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6abad7e3a92e46_43969081 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6abb61fe863489_60083502 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="pt-10 pb-24 bg-[#ECECEC]" id="charity">
-	<div class="max-w-[1480px] mx-auto px-12 grid md:grid-cols-2 gap-[48px] items-center pb-10">
-		<div class="flex items-center justify-center gap-12">
+	<div class="max-w-[1480px] mx-auto px-4 sm:px-8 md:px-12 grid md:grid-cols-2 gap-[48px] items-center pb-10">
+		<div class="flex items-center justify-center gap-6 sm:gap-12">
 			<img src="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['charity']->value['logo1_url'], ENT_QUOTES, 'UTF-8', true);?>
 " alt="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['charity']->value['logo1_alt'], ENT_QUOTES, 'UTF-8', true);?>
-" class="w-40 h-40 object-contain">
+" class="w-28 h-28 sm:w-40 sm:h-40 object-contain">
 			<img src="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['charity']->value['logo2_url'], ENT_QUOTES, 'UTF-8', true);?>
 " alt="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['charity']->value['logo2_alt'], ENT_QUOTES, 'UTF-8', true);?>
-" class="w-40 h-40 object-contain">
+" class="w-28 h-28 sm:w-40 sm:h-40 object-contain">
 		</div>
 		<div>
-			<h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight mb-12 uppercase"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['charity']->value['title'], ENT_QUOTES, 'UTF-8', true);?>
+			<h2 class="text-[24px] md:text-[36px] font-400 text-[var(--brand-darker)] tracking-tight mb-12 uppercase"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['charity']->value['title'], ENT_QUOTES, 'UTF-8', true);?>
 </h2>
-			<p class="text-[20px] leading-[28px] text-[var(--brand-darker)]"><?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'nl2br' ][ 0 ], array( htmlspecialchars($_smarty_tpl->tpl_vars['charity']->value['body'], ENT_QUOTES, 'UTF-8', true) ));?>
+			<p class="text-[16px] md:text-[20px] leading-[28px] text-[var(--brand-darker)]"><?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'nl2br' ][ 0 ], array( htmlspecialchars($_smarty_tpl->tpl_vars['charity']->value['body'], ENT_QUOTES, 'UTF-8', true) ));?>
 </p>
 		</div>
 	</div>

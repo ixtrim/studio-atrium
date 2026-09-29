@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-28 23:10:59
+/* Smarty version 3.1.48, created on 2026-09-29 09:00:14
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/Categories.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6abad7e39f77d4_89203570',
+  'unifunc' => 'content_6abb61fe7bb513_37312366',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '49c7153296d266fde95b388f76667137ec9f7abf' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/Categories.tpl',
-      1 => 1790189493,
+      1 => 1790634657,
       2 => 'file',
     ),
   ),
@@ -20,11 +20,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6abad7e39f77d4_89203570 (Smarty_Internal_Template $_smarty_tpl) {
-?><section class="relative bg-[#ececec] pt-6 pb-[110px]" id="categories">
-    <div class="max-w-[1480px] mx-auto px-8">
-        <div class="flex items-center justify-between mb-8">
-            <h2 class="text-[36px] font-400 text-[var(--brand-darker)] tracking-tight uppercase">
+function content_6abb61fe7bb513_37312366 (Smarty_Internal_Template $_smarty_tpl) {
+?><section class="relative bg-[#ececec] pt-6 pb-16 md:pb-[110px]" id="categories">
+    <div class="max-w-[1480px] mx-auto px-4 sm:px-8">
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-8">
+            <h2 class="text-[24px] md:text-[36px] font-400 text-[var(--brand-darker)] tracking-tight uppercase">
                 <?php echo htmlspecialchars($_smarty_tpl->tpl_vars['categories_meta']->value['section_title'], ENT_QUOTES, 'UTF-8', true);?>
 </h2>
             <a href="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['categories_meta']->value['see_all_url'], ENT_QUOTES, 'UTF-8', true);?>
@@ -84,7 +84,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </svg></button>
         </div>
         <button type="button"
-            class="js-open-search absolute left-1/2 bottom-0 translate-x-[-50%] translate-y-1/2 inline-flex items-center justify-center bg-[var(--brand-red)] hover:bg-[var(--brand-red-hover)] text-white font-black px-12 py-4 lg:h-[54px] lg:max-h-[54px] lg:py-0 leading-none text-[16px] uppercase tracking-[0.1em] z-10 border-0 cursor-pointer"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['categories_meta']->value['cta_label'], ENT_QUOTES, 'UTF-8', true);?>
+            class="js-open-search absolute left-1/2 bottom-0 translate-x-[-50%] translate-y-1/2 inline-flex items-center justify-center bg-[var(--brand-red)] hover:bg-[var(--brand-red-hover)] text-white font-black px-6 sm:px-12 py-4 lg:h-[54px] lg:max-h-[54px] lg:py-0 leading-none text-[16px] uppercase tracking-[0.1em] z-10 border-0 cursor-pointer w-[calc(100%-2rem)] sm:w-auto max-w-md"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['categories_meta']->value['cta_label'], ENT_QUOTES, 'UTF-8', true);?>
 </button>
     </div>
 </section>
@@ -100,7 +100,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             if (!el || el.swiper) return;
             new Swiper(el, {
                 loop: true,
-                slidesPerView: 2.4,
+                slidesPerView: 1.8,
                 spaceBetween: 12,
                 navigation: {
                     prevEl: '#hp-cat-prev',

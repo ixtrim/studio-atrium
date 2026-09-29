@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-28 23:10:59
+/* Smarty version 3.1.48, created on 2026-09-29 09:00:14
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/OurBestsellers.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6abad7e39fcff0_23259554',
+  'unifunc' => 'content_6abb61fe7bef55_45864201',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '60b6b95cd24a849f2261386ffc0a6bc7ac5b6fa4' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/OurBestsellers.tpl',
-      1 => 1790455212,
+      1 => 1790634659,
       2 => 'file',
     ),
   ),
@@ -21,10 +21,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:Include/ProjectTeaserCard.tpl' => 1,
   ),
 ),false)) {
-function content_6abad7e39fcff0_23259554 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6abb61fe7bef55_45864201 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="w-full bg-white pt-14 pb-14" id="our-bestsellers">
-    <div class="max-w-[1480px] mx-auto px-8">
-        <h2 class="bs-title text-[36px] font-400 text-[var(--brand-darker)] tracking-tight mb-10 pl-2 uppercase">
+    <div class="max-w-[1480px] mx-auto px-4 sm:px-8">
+        <h2 class="bs-title text-[24px] md:text-[36px] font-400 text-[var(--brand-darker)] tracking-tight mb-6 md:mb-10 pl-2 uppercase">
             <?php echo htmlspecialchars($_smarty_tpl->tpl_vars['bestsellers_meta']->value['section_title'], ENT_QUOTES, 'UTF-8', true);?>
 </h2>
         <div class="relative">
