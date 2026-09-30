@@ -128,6 +128,13 @@ class Order extends WWW\AbstractModule
 		$responseContext->set('deliveryCosts', Helper\Delivery::getCost());
 		
 		$responseContext->set('minPayment', Helper\Delivery::MIN_PAYMENT_TO_FREE_SHIPPING);
+
+		$cartPayload = Helper\EcommerceDataLayer::fromBasket($basket, $projects);
+		if (!empty($cartPayload['items'])) {
+			$responseContext->set('ecommerce_events', array(
+				Helper\EcommerceDataLayer::viewCart($cartPayload['items'], $cartPayload['value'])
+			));
+		}
 		
 		//Fotowoltaika etc
 		$session = \Point7_WebApp::getSession();
@@ -194,6 +201,19 @@ class Order extends WWW\AbstractModule
 		}
 		
 		$responseContext->set('basketUserData', json_decode($session->get('basketUserData'), 1));
+
+		$formData = json_decode($session->get('basketFormData'), 1);
+		$checkout = Helper\EcommerceDataLayer::fromBasket(is_array($basket) ? $basket : array());
+		// Prefer totals already calculated on cart form when available
+		$value = $checkout['value'];
+		if (is_array($formData) && isset($formData['total']) && $formData['total'] !== '') {
+			$value = (float) $formData['total'];
+		}
+		if (!empty($checkout['items'])) {
+			$responseContext->set('ecommerce_events', array(
+				Helper\EcommerceDataLayer::beginCheckout($checkout['items'], $value)
+			));
+		}
 	}
 	
 	
@@ -787,13 +807,84 @@ class Order extends WWW\AbstractModule
 			
 			$formData = json_decode($session->get('basketFormData'), 1);
 			
-			$responseContext->set('total', $formData['total']);
+			$responseContext->set('total', is_array($formData) && isset($formData['total']) ? $formData['total'] : 0);
+
+			$purchaseEvent = $this->_buildPurchaseEcommerceEvent($transaction, $formData);
+			if ($purchaseEvent) {
+				$responseContext->set('ecommerce_events', array($purchaseEvent));
+				$responseContext->set('ecommerce_purchase', $purchaseEvent);
+			}
 			
 			//clear basket
 			setcookie('SA_basket', null, -1, '/');
 			$session->remove('basketUserData');
 			$session->remove('basketFormData');
 		}
+	}
+
+	/**
+	 * GA4 purchase payload from stored transaction items.
+	 *
+	 * @param object $transaction
+	 * @param array|null $formData
+	 * @return array|null
+	 */
+	private function _buildPurchaseEcommerceEvent($transaction, $formData)
+	{
+		if (!$transaction || !method_exists($transaction, 'getId')) {
+			return null;
+		}
+		$transactionId = (int) $transaction->getId();
+		$items = array();
+		$value = 0.0;
+
+		try {
+			$pdo = \Point7_WebApp::getPDO();
+			$stmt = $pdo->prepare(
+				'SELECT id, type, amount, net_price, gross_price, description, props
+				 FROM transaction_item WHERE transaction_id = :tid'
+			);
+			$stmt->execute(array(':tid' => $transactionId));
+			$rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+			foreach ($rows as $row) {
+				$props = array();
+				if (!empty($row['props'])) {
+					$decoded = json_decode($row['props'], true);
+					if (is_array($decoded)) {
+						$props = $decoded;
+					}
+				}
+				$itemId = !empty($props['projectId'])
+					? $props['projectId']
+					: (!empty($props['extrasId']) ? ('extra-' . $props['extrasId']) : ('ti-' . $row['id']));
+				$price = (float) $row['gross_price'];
+				$qty = max(1, (int) $row['amount']);
+				$category = ($row['type'] === 'project') ? 'Projekt' : 'Dodatek';
+				$items[] = Helper\EcommerceDataLayer::item(
+					$itemId,
+					$row['description'] ? $row['description'] : ('Pozycja ' . $row['id']),
+					$price,
+					$category,
+					null,
+					$qty
+				);
+				$value += $price * $qty;
+			}
+		} catch (\Throwable $e) {
+			\Point7_WebApp::getLogger('error')->error(
+				'ecommerce purchase build failed: ' . $e->getMessage()
+			);
+		}
+
+		if (is_array($formData) && isset($formData['total']) && $formData['total'] !== '') {
+			$value = (float) $formData['total'];
+		}
+
+		if (empty($items) && $value <= 0) {
+			return null;
+		}
+
+		return Helper\EcommerceDataLayer::purchase($transactionId, $items, $value);
 	}
 	
 	

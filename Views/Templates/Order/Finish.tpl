@@ -53,9 +53,9 @@
 <script>
   gtag('event', 'conversion', {
       'send_to': 'AW-1069647440/o1N2CPTY-OQBENCMhv4D',
-      'value': 1.0,
+      'value': {/literal}{if $ecommerce_purchase.ecommerce.value}{$ecommerce_purchase.ecommerce.value}{elseif $total}{$total}{else}1.0{/if}{literal},
       'currency': 'PLN',
-      'transaction_id': ''
+      'transaction_id': '{/literal}{if $transaction.id}{$transaction.id}{/if}{literal}'
   });
 </script>
 {/literal}

@@ -995,6 +995,8 @@
 <script src="/js/clicksearch.js?v={$version}"></script>
 <script src="/js/common.js?v={$version}"></script>
 <script src="/js/filters.js?v={$version}"></script>
+{include file="Include/EcommercePush.tpl"}
+<script src="/js/ecommerce.js?v=20260929a"></script>
 
 {foreach $js_includes as $_js}
 	<script src="/js/{$_js}"></script>

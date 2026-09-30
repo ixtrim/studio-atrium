@@ -973,6 +973,20 @@ class Project extends WWW\AbstractModule
 			}
 		}
 		$responseContext->set('categoryPromoThumbs', $promoThumbs);
+
+		$listId = $isAllProjects ? 'projekty-domow' : (string) $category->getLink();
+		$listName = $isAllProjects
+			? 'Wszystkie projekty domów'
+			: ($category->getAlternateName() ? $category->getAlternateName() : $category->getName());
+		$listName = trim(strip_tags((string) $listName));
+		$responseContext->set('ecommerce_list_id', $listId);
+		$responseContext->set('ecommerce_list_name', $listName);
+		if (!empty($listCards)) {
+			$responseContext->set(
+				'ecommerce_events',
+				array(Helper\EcommerceDataLayer::fromListCards($listCards, $listId, $listName))
+			);
+		}
 		$this->_assignLastViewed($request, $responseContext);
 		
 		
@@ -1465,6 +1479,17 @@ class Project extends WWW\AbstractModule
 				$responseContext->set('list', $list);
 				$listCards = $this->_buildCategoryListCards($list);
 				$responseContext->set('listCards', $listCards);
+
+				$listId = 'click-search';
+				$listName = 'Wyszukiwanie projektów';
+				$responseContext->set('ecommerce_list_id', $listId);
+				$responseContext->set('ecommerce_list_name', $listName);
+				if (!empty($listCards)) {
+					$responseContext->set(
+						'ecommerce_events',
+						array(Helper\EcommerceDataLayer::fromListCards($listCards, $listId, $listName))
+					);
+				}
 				
 				$url = self::_searchListUrl();
 				$responseContext->set('url', $url);
@@ -1819,6 +1844,14 @@ class Project extends WWW\AbstractModule
 		$smartyWrapper->assign('compareIds', array());
 		$smartyWrapper->assign('favouriteIds', array());
 
+		$listId = $isAllProjects ? 'projekty-domow' : (string) $category->getLink();
+		$listName = $isAllProjects
+			? 'Wszystkie projekty domów'
+			: ($category->getAlternateName() ? $category->getAlternateName() : $category->getName());
+		$listName = trim(strip_tags((string) $listName));
+		$smartyWrapper->assign('ecommerce_list_id', $listId);
+		$smartyWrapper->assign('ecommerce_list_name', $listName);
+
 		$html = $smartyWrapper->render('Project/Ajax/CategoryFilterResults.tpl');
 
 		$response = array(
@@ -1829,6 +1862,9 @@ class Project extends WWW\AbstractModule
 			'pages' => $pages,
 			'query' => $filterQuery,
 			'empty' => $total < 1,
+			'ecommerce' => !empty($listCards)
+				? Helper\EcommerceDataLayer::fromListCards($listCards, $listId, $listName)
+				: null,
 			'facets' => $this->_computeCategoryFilterFacets(
 				$request,
 				explode(',', $category->getProjectList()),
@@ -4518,6 +4554,15 @@ class Project extends WWW\AbstractModule
 		$responseContext->set('detailIsMirror', $isMirror);
 		$responseContext->set('detailThumb', !empty($gallery[0]['thumb']) ? $gallery[0]['thumb'] : '');
 		$this->_assignLastViewed($request, $responseContext, (int) $project->getId());
+
+		$viewItem = Helper\EcommerceDataLayer::viewItem(
+			Helper\EcommerceDataLayer::itemFromProjectEntity(
+				$project,
+				(int) round($priceCurrent),
+				$categoryTitle
+			)
+		);
+		$responseContext->set('ecommerce_events', array($viewItem));
 	}
 
 	/**

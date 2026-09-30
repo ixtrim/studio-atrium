@@ -10,7 +10,8 @@
 	{assign var=_badge value=$item.tag}
 {/if}
 <a href="{$item.url|escape}"
-	class="bg-white overflow-hidden h-full flex flex-col group border border-[#f5f5f5]">
+	class="bg-white overflow-hidden h-full flex flex-col group border border-[#f5f5f5]"
+	{if $item.id}data-sa-item-id="{$item.id|escape}" data-sa-item-name="{$item.name|escape}" data-sa-item-price="{$item.price|escape}" data-sa-item-category="{$item.type_label|escape}"{if $ecommerce_list_id} data-sa-item-list-id="{$ecommerce_list_id|escape}"{/if}{if $ecommerce_list_name} data-sa-item-list-name="{$ecommerce_list_name|escape}"{/if}{if isset($item@iteration)} data-sa-item-index="{$item@iteration}"{/if}{/if}>
 	<div class="relative overflow-hidden aspect-[3/2]">
 		<img src="{$item.image_url|escape}" alt="{$item.name|escape}"
 			class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"

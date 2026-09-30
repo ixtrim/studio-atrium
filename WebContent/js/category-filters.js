@@ -260,6 +260,13 @@
 		if (data.facets) {
 			applyFacets(data.facets);
 		}
+		if (data.ecommerce && window.SAEcommerce && typeof window.SAEcommerce.push === 'function') {
+			window.SAEcommerce.push(data.ecommerce);
+		}
+		if (window.SAEcommerce && typeof window.SAEcommerce.bindSelectItem === 'function') {
+			window.SAEcommerce.bindSelectItem(document.getElementById('project-list'));
+			window.SAEcommerce.bindSelectItem(document.getElementById('cat-2026'));
+		}
 		var sortForm = document.getElementById('projects-filters-form');
 		if (sortForm && typeof data.query === 'string') {
 			sortForm.setAttribute('action', getListUrl().replace(/\/?(?:[ble],[inu],[ad](?:,\d+)?)?\/?$/, '/') + (data.query || ''));
