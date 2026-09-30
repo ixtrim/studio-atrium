@@ -1011,6 +1011,24 @@
 {/if}
 
 <script>
+{literal}
+(function () {
+	if (typeof window.jQuery === 'undefined' || !jQuery.fancybox || !jQuery.fancybox.defaults) return;
+	var d = jQuery.fancybox.defaults;
+	d.loop = true;
+	d.toolbar = true;
+	d.buttons = ['slideShow', 'fullScreen', 'thumbs', 'close'];
+	d.thumbs = d.thumbs || {};
+	d.thumbs.autoStart = false;
+	d.thumbs.hideOnClose = true;
+	d.slideShow = d.slideShow || {};
+	d.slideShow.autoStart = false;
+	d.slideShow.speed = 4000;
+})();
+{/literal}
+</script>
+
+<script>
 	if (typeof window.createLucideIcons === 'function') {
 		window.createLucideIcons();
 	} else if (typeof lucide !== 'undefined' && lucide.createIcons) {

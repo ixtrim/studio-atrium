@@ -1000,9 +1000,10 @@ div.blue-overlay.cs .search-label {
 
 .project-search-overlay .chip input:checked + span,
 .project-search-overlay .chk input:checked + span {
-  background: var(--brand-red, var(--color-accent));
-  color: #fff;
+  background: #fff;
+  color: var(--brand-red, var(--color-accent));
   border-color: var(--brand-red, var(--color-accent));
+  font-weight: 700;
 }
 
 .project-search-overlay .chk span:not(.count) {
@@ -1127,7 +1128,8 @@ div.blue-overlay.cs .search-label {
 
 .project-search-overlay .chip input:checked + span .count,
 .project-search-overlay .chk input:checked + span .count {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--brand-red, var(--color-accent));
+  opacity: 0.9;
 }
 
 .project-search-overlay div.blue-overlay .blue-overlay-close {
@@ -1200,9 +1202,10 @@ div.blue-overlay.cs .search-label {
 }
 
 .project-search-overlay .quick-presets .chip input:checked + span {
-  background: var(--brand-red, var(--color-accent));
-  color: #fff;
+  background: #fff;
+  color: var(--brand-red, var(--color-accent));
   border-color: var(--brand-red, var(--color-accent));
+  font-weight: 700;
 }
 
 /* Left nav: listing-sidebar feel */

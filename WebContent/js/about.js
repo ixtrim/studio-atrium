@@ -29,6 +29,9 @@
 			        success : function(data)
 			        {
 			        	$.fancybox.open(data.data, {
+			        		loop: true,
+			        		toolbar: true,
+			        		buttons: ['slideShow', 'fullScreen', 'thumbs', 'close'],
 			        		onActivate: function()
 							{
 								$('#tool-box').addClass('off');

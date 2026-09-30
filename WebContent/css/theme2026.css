@@ -465,3 +465,31 @@ strong, b {
     padding-bottom: 0;
   }
 }
+/* Fancybox galleries — dark overlay + top-right toolbar (sitewide) */
+.fancybox-bg {
+  background: #14181c !important;
+}
+.fancybox-is-open .fancybox-bg {
+  opacity: 0.92 !important;
+}
+.fancybox-toolbar {
+  top: 10px !important;
+  right: 10px !important;
+  background: transparent !important;
+}
+.fancybox-button {
+  background: transparent !important;
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+.fancybox-button:hover {
+  color: #fff !important;
+}
+.fancybox-navigation .fancybox-arrow {
+  color: rgba(255, 255, 255, 0.75) !important;
+  background: transparent !important;
+}
+.fancybox-caption-wrap,
+.fancybox-caption {
+  background: transparent !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+}

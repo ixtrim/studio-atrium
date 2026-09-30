@@ -5,7 +5,7 @@
         <span class="align-top ml-2">“</span>
     </p>
     <p class="mt-[50px] text-[20px] leading-[24px] text-[#7a7a7a] mb-[0px]">{$testimonials.meta.attribution|escape}</p>
-    <h3 class="mt-10 text-[24px] leading-snug sm:text-[32px] md:text-[40px] md:leading-[44px] font-bold text-[#222] text-center md:text-left -mb-[24px]">{$testimonials.meta.medals_title|escape}</h3>
+    <h3 class="mt-10 text-[24px] leading-snug sm:text-[32px] md:text-[32px] md:leading-[32px] font-bold text-[#222] text-center md:text-left -mb-[24px]">{$testimonials.meta.medals_title|escape}</h3>
     <div class="mt-16 flex justify-center">
         {if $testimonials.medals.0.image_url}
             <img src="{$testimonials.medals.0.image_url|escape}" alt="{$testimonials.medals.0.image_alt|escape}"

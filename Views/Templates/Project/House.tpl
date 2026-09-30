@@ -35,29 +35,61 @@
 <div id="param-info-overlay" class="hidden" aria-hidden="true"></div>
 
 {if $detailGallery}
-<div id="proj-gallery-lightbox" class="proj-gal-lb fixed inset-0 hidden items-center justify-center p-3 sm:p-6 md:p-8" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Powiększone zdjęcie">
+<div id="proj-gallery-lightbox" class="proj-gal-lb fixed inset-0 hidden items-center justify-center" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Powiększone zdjęcie">
 	<div class="proj-gal-lb-backdrop absolute inset-0" data-gal-lb-close></div>
+
+	<div class="proj-gal-lb-toolbar" role="toolbar" aria-label="Narzędzia galerii">
+		{if $detailGallery|@count > 1}
+		<button type="button" class="proj-gal-lb-tool" data-gal-lb-thumbs aria-label="Miniatury" title="Miniatury" aria-pressed="false">
+			<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="3" y="3" width="5" height="5" fill="currentColor"/><rect x="10" y="3" width="5" height="5" fill="currentColor"/><rect x="17" y="3" width="5" height="5" fill="currentColor"/><rect x="3" y="10" width="5" height="5" fill="currentColor"/><rect x="10" y="10" width="5" height="5" fill="currentColor"/><rect x="17" y="10" width="5" height="5" fill="currentColor"/><rect x="3" y="17" width="5" height="5" fill="currentColor"/><rect x="10" y="17" width="5" height="5" fill="currentColor"/><rect x="17" y="17" width="5" height="5" fill="currentColor"/></svg>
+		</button>
+		<button type="button" class="proj-gal-lb-tool" data-gal-lb-play aria-label="Pokaz slajdów" title="Pokaz slajdów" aria-pressed="false">
+			<svg class="proj-gal-lb-icon-play" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+			<svg class="proj-gal-lb-icon-pause hidden" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
+		</button>
+		{/if}
+		<button type="button" class="proj-gal-lb-tool" data-gal-lb-fs aria-label="Pełny ekran" title="Pełny ekran">
+			<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg>
+		</button>
+		<button type="button" class="proj-gal-lb-tool" data-gal-lb-zoom aria-label="Powiększ" title="Powiększ" aria-pressed="false">
+			<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></svg>
+		</button>
+		<button type="button" class="proj-gal-lb-tool" data-gal-lb-close aria-label="Zamknij" title="Zamknij">
+			<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+		</button>
+	</div>
+
 	{if $detailGallery|@count > 1}
 	<button type="button" class="proj-gal-lb-nav proj-gal-lb-prev" data-gal-lb-prev aria-label="Poprzednie zdjęcie">
-		<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+		<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
 	</button>
 	<button type="button" class="proj-gal-lb-nav proj-gal-lb-next" data-gal-lb-next aria-label="Następne zdjęcie">
-		<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+		<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
 	</button>
 	{/if}
-	<figure class="proj-gal-lb-panel relative z-10 w-full max-w-[min(1200px,100%)]">
-		<button type="button" class="proj-gal-lb-close" data-gal-lb-close aria-label="Zamknij">&times;</button>
-		<div class="proj-gal-lb-stage relative overflow-hidden bg-white">
-			<div class="proj-gal-lb-media relative flex items-center justify-center bg-white p-0 m-0">
-				<img id="proj-gal-lb-img" src="" alt="" width="1400" height="900" decoding="async" class="block max-w-full max-h-[min(82vh,880px)] w-auto h-auto object-contain select-none">
+
+	<figure class="proj-gal-lb-panel relative z-10 w-full max-w-[min(1280px,94vw)] px-2">
+		<div class="proj-gal-lb-stage relative overflow-hidden">
+			<div class="proj-gal-lb-media relative flex items-center justify-center p-0 m-0">
+				<img id="proj-gal-lb-img" src="" alt="" width="1400" height="900" decoding="async" class="block max-w-full max-h-[min(86vh,920px)] w-auto h-auto object-contain select-none">
 			</div>
-			<figcaption class="proj-gal-lb-caption flex items-center justify-between gap-4 px-5 py-3.5 bg-white border-t border-[rgb(232,232,232)]">
-				<div id="proj-gal-lb-caption" class="text-[13px] text-[rgb(85,85,85)] truncate"></div>
-				<div id="proj-gal-lb-counter" class="text-[12px] text-[rgb(136,136,136)] tracking-widest tabular-nums shrink-0"></div>
-			</figcaption>
 		</div>
+		<div class="proj-gal-lb-meta">
+			<div id="proj-gal-lb-caption" class="proj-gal-lb-caption-text"></div>
+			<div id="proj-gal-lb-counter" class="proj-gal-lb-counter-text"></div>
+		</div>
+		{if $detailGallery|@count > 1}
+		<div class="proj-gal-lb-thumbs" id="proj-gal-lb-thumbs" hidden>
+			{foreach $detailGallery as $img}
+			<button type="button" class="proj-gal-lb-thumb" data-gal-lb-thumb="{$img@index}" aria-label="Zdjęcie {$img@iteration}">
+				<img src="{$img.thumb|escape}" alt="" loading="lazy">
+			</button>
+			{/foreach}
+		</div>
+		<div class="proj-gal-lb-progress" aria-hidden="true"><span id="proj-gal-lb-progress-bar"></span></div>
+		{/if}
 	</figure>
 </div>
 {/if}
 
-<script src="/js/project2026.js?v=20260928e" defer></script>
+<script src="/js/project2026.js?v=20260930a" defer></script>

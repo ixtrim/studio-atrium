@@ -101,8 +101,24 @@
 	</div>
 </section>
 
-<div id="proj-floor-lightbox" class="proj-floor-lb fixed inset-0 hidden items-center justify-center p-4 md:p-8" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Powiększony rzut">
-	<div class="proj-floor-lb-backdrop absolute inset-0 bg-black/75" data-floor-lb-close></div>
+<div id="proj-floor-lightbox" class="proj-floor-lb fixed inset-0 hidden items-center justify-center" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Powiększony rzut">
+	<div class="proj-floor-lb-backdrop absolute inset-0" data-floor-lb-close></div>
+
+	<div class="proj-gal-lb-toolbar" role="toolbar" aria-label="Narzędzia rzutu">
+		{if $detailFloors|@count > 1}
+		<button type="button" class="proj-gal-lb-tool" data-floor-lb-play aria-label="Pokaz slajdów" title="Pokaz slajdów" aria-pressed="false">
+			<svg class="proj-gal-lb-icon-play" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+			<svg class="proj-gal-lb-icon-pause hidden" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
+		</button>
+		{/if}
+		<button type="button" class="proj-gal-lb-tool" data-floor-lb-fs aria-label="Pełny ekran" title="Pełny ekran">
+			<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg>
+		</button>
+		<button type="button" class="proj-gal-lb-tool" data-floor-lb-close aria-label="Zamknij" title="Zamknij">
+			<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+		</button>
+	</div>
+
 	{if $detailFloors|@count > 1}
 	<button type="button" class="proj-floor-lb-nav proj-floor-lb-prev" data-floor-lb-prev aria-label="Poprzedni rzut">
 		<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
@@ -111,19 +127,18 @@
 		<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
 	</button>
 	{/if}
-	<figure class="proj-floor-lb-panel relative z-10 w-full max-w-[min(920px,100%)]">
-		<button type="button" class="proj-floor-lb-close absolute -top-11 right-0 text-white/85 hover:text-white text-[32px] leading-none border-0 bg-transparent cursor-pointer p-0" data-floor-lb-close aria-label="Zamknij">&times;</button>
-		<div class="proj-floor-lb-stage relative overflow-hidden bg-white shadow-2xl">
-			<div class="proj-floor-lb-media relative flex items-center justify-center bg-[#f7f7f7] px-4 py-5 md:px-8 md:py-7">
-				<img id="proj-floor-lb-img" src="" alt="" width="900" height="700" decoding="async" class="block max-w-full max-h-[min(78vh,820px)] w-auto h-auto object-contain">
+	<figure class="proj-floor-lb-panel relative z-10 w-full max-w-[min(1100px,94vw)] px-2">
+		<div class="proj-floor-lb-stage relative overflow-hidden">
+			<div class="proj-floor-lb-media relative flex items-center justify-center bg-transparent px-2 py-2">
+				<img id="proj-floor-lb-img" src="" alt="" width="900" height="700" decoding="async" class="block max-w-full max-h-[min(82vh,860px)] w-auto h-auto object-contain bg-white">
 			</div>
-			<figcaption class="proj-floor-lb-caption flex items-center justify-between gap-4 px-5 py-3.5 bg-white border-t border-[#eee]">
-				<div>
-					<div id="proj-floor-lb-label" class="text-[13px] font-bold uppercase tracking-[0.16em] text-[#222]"></div>
-					<div id="proj-floor-lb-caption" class="text-[12px] text-[#666] mt-0.5"></div>
-				</div>
-				<div id="proj-floor-lb-counter" class="text-[12px] text-[#888] tracking-widest tabular-nums shrink-0"></div>
-			</figcaption>
+		</div>
+		<div class="proj-gal-lb-meta">
+			<div>
+				<div id="proj-floor-lb-label" class="proj-gal-lb-caption-text"></div>
+				<div id="proj-floor-lb-caption" class="text-[12px] text-white/60 mt-0.5"></div>
+			</div>
+			<div id="proj-floor-lb-counter" class="proj-gal-lb-counter-text"></div>
 		</div>
 	</figure>
 </div>

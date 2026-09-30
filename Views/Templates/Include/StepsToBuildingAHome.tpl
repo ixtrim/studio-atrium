@@ -8,7 +8,7 @@
                 <div class="flex items-start gap-5 text-left">
                     <span class="text-[44px] md:text-[64px] font-bold leading-none text-[var(--brand-blue-strong)] shrink-0">{$step.step_number|escape}</span>
                     <div class="flex-1 min-w-0">
-                        <span class="block text-[#222] text-[24px] md:text-[28px] font-bold leading-snug pt-1">{$step.step_title|escape}</span>
+                        <span class="block text-[#222] text-[24px] md:text-[25px] font-bold leading-snug pt-1">{$step.step_title|escape}</span>
                         <div class="hp-step-rule-row mt-3 flex items-end">
                             <div class="hp-step-rule flex-1"></div>
                             <span class="hp-step-arrow shrink-0" aria-hidden="true"></span>
