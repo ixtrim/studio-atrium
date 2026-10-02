@@ -117,7 +117,7 @@ class Finder
     public function searchByQuery(
         $query,
         $page = 0,
-        $limit = 12,
+        $limit = 8,
         $sortBy = 'id',
         $sortOrder = 'ASC',
         $status = Project::STATUS_PUBLISHED

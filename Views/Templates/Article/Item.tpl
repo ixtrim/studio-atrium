@@ -25,7 +25,7 @@
 </nav>
 
 <article id="article-2026" class="bg-white py-12">
-	<div class="max-w-[920px] mx-auto px-8">
+	<div class="article-shell">
 		<div class="flex flex-wrap items-center justify-between gap-4 mb-6">
 			<p class="m-0">
 				{if $backTagId}

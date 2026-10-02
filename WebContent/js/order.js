@@ -16,38 +16,37 @@
 // czy to może tak być - chodzi o kompatybilność z danymi ze Storage?
 		//calculate and update delivery price
 		_updateDeliveryCost();
-		
-		//change payment selector
-		$("#payment-type").selectmenu({
-			appendTo: "#payment-box",
-			select: function(event, ui) {
-				_updateDeliveryCost();
+
+		// Shipping / payment modern radios (keeps hidden <select> for form + delivery calc)
+		$('#order-2026 .order-radios').on('change', 'input[type="radio"]', function() {
+			var $input = $(this);
+			var $group = $input.closest('.order-radios');
+			var $select = $($group.data('select'));
+			$group.find('.order-radio').removeClass('is-checked');
+			$input.closest('.order-radio').addClass('is-checked');
+			if ($select.length) {
+				$select.val(String($input.val())).trigger('change');
 			}
 		});
-		
-		//change delivery selector
-		$("#dispatch-type").selectmenu({
-			  appendTo: "#dispatch-box",
-			  select: function(event, ui) {
-				  
-				  _updateDeliveryCost();
-				  
-//				if (_totalPayment == 0) {
-//					  _totalPayment = parseFloat($('#basketTotalInput').val());	 
-//				}
-//				var payment = 0;
-//				var totalPayment = _totalPayment - parseFloat($('#deliveryPriceField').val());
-//				if (totalPayment < $('#dispatch-type').attr('data-min-payment')) {
-//					payment = $(this).find(":selected").attr('data-payment');	
-//				}
-//
-//				$('#basketTotalInput').val(parseFloat(totalPayment) + parseFloat(payment));
-//				$('#basketTotal').html(parseFloat(totalPayment) + parseFloat(payment));
-//				
-//				$('#deliveryPrice').html(payment);
-//				$('#deliveryPriceField').val(payment);
-//				_totalPayment = parseFloat(totalPayment) + parseFloat(payment);
-			  }
+
+		$('#payment-type, #dispatch-type').on('change', function() {
+			_updateDeliveryCost();
+		});
+
+		// Sync radio UI from select values
+		$('#payment-type, #dispatch-type').each(function() {
+			var $select = $(this);
+			var val = $select.val();
+			var $group = $('#order-2026 .order-radios[data-select="#' + this.id + '"]');
+			if (!$group.length || !val) {
+				return;
+			}
+			var $input = $group.find('input[type="radio"][value="' + val + '"]');
+			if ($input.length) {
+				$input.prop('checked', true);
+				$group.find('.order-radio').removeClass('is-checked');
+				$input.closest('.order-radio').addClass('is-checked');
+			}
 		});
 
 		//get selected values connected with extras
@@ -220,96 +219,165 @@
 
 		
 		//check promo code
+		function _setDiscountMessage(message, state)
+		{
+			var $result = $('#discount_result');
+			var $input = $('#discount-code');
+
+			$result
+				.removeClass('is-error is-success is-pending')
+				.addClass(state ? 'is-' + state : '')
+				.html(message)
+				.show();
+
+			if (state === 'error') {
+				$input.addClass('is-invalid').attr('aria-invalid', 'true');
+			} else {
+				$input.removeClass('is-invalid').attr('aria-invalid', 'false');
+			}
+		}
+
+		function _validateDiscountCodeField()
+		{
+			var code = $.trim($('#discount-code').val() || '');
+
+			$('#discount-code').val(code);
+
+			if (!code) {
+				_setDiscountMessage('Wpisz kod rabatowy.', 'error');
+				$('#discount-code').focus();
+				return false;
+			}
+
+			if (code.length < 3) {
+				_setDiscountMessage('Kod rabatowy jest zbyt krótki.', 'error');
+				$('#discount-code').focus();
+				return false;
+			}
+
+			if (!/^[A-Za-z0-9._\-]+$/.test(code)) {
+				_setDiscountMessage('Kod może zawierać tylko litery, cyfry, myślnik, kropkę lub podkreślenie.', 'error');
+				$('#discount-code').focus();
+				return false;
+			}
+
+			return true;
+		}
+
+		$('#discount-code').on('input', function()
+		{
+			if ($(this).hasClass('is-invalid')) {
+				$(this).removeClass('is-invalid').attr('aria-invalid', 'false');
+				$('#discount_result').removeClass('is-error').hide().empty();
+			}
+		}).on('keydown', function(event)
+		{
+			if (event.key === 'Enter' || event.which === 13) {
+				event.preventDefault();
+				$('#check-code').trigger('click');
+			}
+		});
+
 		$('#check-code').on('click', function()
 		{
-			//if ($('#discount-code').val() && $('#discount-code-hidden').val() != $('#discount-code').val() && !_checkingInProgress) {
-			if ($('#discount-code').val() && !_checkingInProgress) {
-				_checkingInProgress = true;
-				var sum = parseFloat($('#basketTotal').html());
-				$('#discount_result').html('Trwa weryfikowanie kodu...').show();
-				$.ajax({
-					url: '/index.php?module=ajax&action=validate_discount_code',
-					data: {
-						code: $('#discount-code').val(),
-						projects_id: $('#projects-id').val(),
-						projects_percent_id: $('#projects-percent-id').val(),
-						selected_extras: StorageManager.get('basketExtras'),
-					},
-					type: 'post',
-					dataType: 'json',
-					
-					success: function(response)
-					{
-						if (response.status == 'ok') {
-							if ($('#registerUserDiscount').length) {
-								if (response.code.exclude_other == 1 && $('#registerUserDiscount').val() == 100) {
-									$('#discount-field-100').hide();
-									$('#registerUserDiscount').val(0);
-									sum = sum+100;
-								} else if ($('#registerUserDiscount').val() == 0) {
-									$('#discount-field-100').show();
-									$('#registerUserDiscount').val(100);
-									sum = sum-100;
-								}
-							}
-							
-							if ($('#discount-code-hidden').val()) {
-								if (response.code.discount_type == 'percent') {
-									$('#discount_result').html('Kod poprawny. Rabat '+response.code.discount_value+'% dla projektów objętych promocją został doliczony.');
-									sumAfter = (sum+_discountValue) - parseFloat(response.code.percent_discount_value);
-								} else {
-									$('#discount_result').html('Kod poprawny. Rabat '+response.code.discount_value+' zł został doliczony.');
-									sumAfter = (sum+_discountValue) - parseFloat(response.code.discount_value);
-								}
-							} else {
-								if (response.code.discount_type == 'percent') {
-									$('#discount_result').html('Kod poprawny. Rabat '+response.code.discount_value+'% dla projektów objętych promocją został doliczony.');
-									sumAfter = sum - parseFloat(response.code.percent_discount_value);
-								} else {
-									$('#discount_result').html('Kod poprawny. Rabat '+response.code.discount_value+' zł został doliczony.');
-									sumAfter = sum - parseFloat(response.code.discount_value);
-								}
-							}
-							$('#discount-name').html(response.code.title);
-							if (response.code.discount_type == 'percent') {
-								$('#discount-value').html(response.code.percent_discount_value);
-								_discountValue = parseFloat(response.code.percent_discount_value);
-							} else {
-								$('#discount-value').html(response.code.discount_value);
-								_discountValue = parseFloat(response.code.discount_value);
-							}
-							$('#discount-field').fadeIn();
-							$('#basketTotal').html(sumAfter);
-							$('#basketTotalInput').val(sumAfter);
-							$('#discount-code-hidden').val($('#discount-code').val());
-							StorageManager.store('basketDiscount', $.toJSON(response.code));
-							_totalPayment = sumAfter;
-						} else {
-							if ($('#registerUserDiscount').length && $('#registerUserDiscount').val() == 0) {
+			if (_checkingInProgress) {
+				return;
+			}
+
+			if (!_validateDiscountCodeField()) {
+				return;
+			}
+
+			_checkingInProgress = true;
+			var sum = parseFloat($('#basketTotal').html());
+			_setDiscountMessage('Trwa weryfikowanie kodu...', 'pending');
+			$.ajax({
+				url: '/index.php?module=ajax&action=validate_discount_code',
+				data: {
+					code: $('#discount-code').val(),
+					projects_id: $('#projects-id').val(),
+					projects_percent_id: $('#projects-percent-id').val(),
+					selected_extras: StorageManager.get('basketExtras'),
+				},
+				type: 'post',
+				dataType: 'json',
+				
+				success: function(response)
+				{
+					if (response.status == 'ok') {
+						if ($('#registerUserDiscount').length) {
+							if (response.code.exclude_other == 1 && $('#registerUserDiscount').val() == 100) {
+								$('#discount-field-100').hide();
+								$('#registerUserDiscount').val(0);
+								sum = sum+100;
+							} else if ($('#registerUserDiscount').val() == 0) {
 								$('#discount-field-100').show();
 								$('#registerUserDiscount').val(100);
 								sum = sum-100;
 							}
-							
-							msg_er = 'Błędny kod, promocja już się skończyła lub nie łączy się inną aktualną promocją.';
-							if (response.msg_er) {
-								msg_er = response.msg_er;
-							}
-							
-							$('#discount_result').html(msg_er);
-							$('#discount-field').hide();
-							StorageManager.remove('basketDiscount');
-							sum = (sum+_discountValue);
-							_discountValue = 0;
-							_totalPayment = sum;
-							$('#basketTotal').html(sum);
-							$('#basketTotalInput').val(sum);
-							$('#discount-code-hidden').val('');
 						}
-						_checkingInProgress = false;
+						
+						if ($('#discount-code-hidden').val()) {
+							if (response.code.discount_type == 'percent') {
+								_setDiscountMessage('Kod poprawny. Rabat '+response.code.discount_value+'% dla projektów objętych promocją został doliczony.', 'success');
+								sumAfter = (sum+_discountValue) - parseFloat(response.code.percent_discount_value);
+							} else {
+								_setDiscountMessage('Kod poprawny. Rabat '+response.code.discount_value+' zł został doliczony.', 'success');
+								sumAfter = (sum+_discountValue) - parseFloat(response.code.discount_value);
+							}
+						} else {
+							if (response.code.discount_type == 'percent') {
+								_setDiscountMessage('Kod poprawny. Rabat '+response.code.discount_value+'% dla projektów objętych promocją został doliczony.', 'success');
+								sumAfter = sum - parseFloat(response.code.percent_discount_value);
+							} else {
+								_setDiscountMessage('Kod poprawny. Rabat '+response.code.discount_value+' zł został doliczony.', 'success');
+								sumAfter = sum - parseFloat(response.code.discount_value);
+							}
+						}
+						$('#discount-name').html(response.code.title);
+						if (response.code.discount_type == 'percent') {
+							$('#discount-value').html(response.code.percent_discount_value);
+							_discountValue = parseFloat(response.code.percent_discount_value);
+						} else {
+							$('#discount-value').html(response.code.discount_value);
+							_discountValue = parseFloat(response.code.discount_value);
+						}
+						$('#discount-field').fadeIn();
+						$('#basketTotal').html(sumAfter);
+						$('#basketTotalInput').val(sumAfter);
+						$('#discount-code-hidden').val($('#discount-code').val());
+						StorageManager.store('basketDiscount', $.toJSON(response.code));
+						_totalPayment = sumAfter;
+					} else {
+						if ($('#registerUserDiscount').length && $('#registerUserDiscount').val() == 0) {
+							$('#discount-field-100').show();
+							$('#registerUserDiscount').val(100);
+							sum = sum-100;
+						}
+						
+						msg_er = 'Błędny kod, promocja już się skończyła lub nie łączy się z inną aktualną promocją.';
+						if (response.msg_er) {
+							msg_er = response.msg_er;
+						}
+						
+						_setDiscountMessage(msg_er, 'error');
+						$('#discount-field').hide();
+						StorageManager.remove('basketDiscount');
+						sum = (sum+_discountValue);
+						_discountValue = 0;
+						_totalPayment = sum;
+						$('#basketTotal').html(sum);
+						$('#basketTotalInput').val(sum);
+						$('#discount-code-hidden').val('');
 					}
-				});
-			}
+					_checkingInProgress = false;
+				},
+				error: function()
+				{
+					_setDiscountMessage('Nie udało się sprawdzić kodu. Spróbuj ponownie.', 'error');
+					_checkingInProgress = false;
+				}
+			});
 		});
 		
 //		$('#info-pop-close').on('click', function()

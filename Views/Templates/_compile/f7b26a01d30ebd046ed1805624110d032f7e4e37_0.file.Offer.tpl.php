@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-29 09:00:14
+/* Smarty version 3.1.48, created on 2026-10-01 22:08:30
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/Offer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6abb61fe859ff8_56389991',
+  'unifunc' => 'content_6abebdbe060076_41651225',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f7b26a01d30ebd046ed1805624110d032f7e4e37' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/Offer.tpl',
-      1 => 1790634747,
+      1 => 1790764582,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6abb61fe859ff8_56389991 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6abebdbe060076_41651225 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="bg-[#3a3a3a] text-white pt-14 pb-8" id="offer">
     <div class="max-w-[1480px] mx-auto px-4 sm:px-8 md:px-12 flex flex-col md:flex-row gap-10 md:gap-12 lg:gap-[100px] items-start">
         <div class="flex-1 min-w-0 gap-4">
@@ -47,7 +47,7 @@ $_smarty_tpl->tpl_vars['q']->do_else = false;
 $_smarty_tpl->tpl_vars['q']->iteration++;
 $_smarty_tpl->tpl_vars['q']->index++;
 $_smarty_tpl->tpl_vars['q']->first = !$_smarty_tpl->tpl_vars['q']->index;
-$__foreach_q_16_saved = $_smarty_tpl->tpl_vars['q'];
+$__foreach_q_6_saved = $_smarty_tpl->tpl_vars['q'];
 ?>
                     <div class="hp-offer-quote-slide<?php if ($_smarty_tpl->tpl_vars['q']->first) {?> is-active<?php }?>" data-index="<?php echo $_smarty_tpl->tpl_vars['q']->index;?>
 "<?php if (!$_smarty_tpl->tpl_vars['q']->first) {?> aria-hidden="true"<?php }?>>
@@ -62,7 +62,7 @@ $__foreach_q_16_saved = $_smarty_tpl->tpl_vars['q'];
                         <?php }?>
                     </div>
                     <?php
-$_smarty_tpl->tpl_vars['q'] = $__foreach_q_16_saved;
+$_smarty_tpl->tpl_vars['q'] = $__foreach_q_6_saved;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </div>
@@ -77,7 +77,7 @@ $_smarty_tpl->tpl_vars['q']->do_else = false;
 $_smarty_tpl->tpl_vars['q']->iteration++;
 $_smarty_tpl->tpl_vars['q']->index++;
 $_smarty_tpl->tpl_vars['q']->first = !$_smarty_tpl->tpl_vars['q']->index;
-$__foreach_q_17_saved = $_smarty_tpl->tpl_vars['q'];
+$__foreach_q_7_saved = $_smarty_tpl->tpl_vars['q'];
 ?>
                     <button type="button"
                         class="hp-offer-quote-logo group border-0 p-0 bg-transparent cursor-pointer opacity-45 hover:opacity-100 transition-opacity duration-300<?php if ($_smarty_tpl->tpl_vars['q']->first) {?> is-active opacity-100<?php }?>"
@@ -99,7 +99,7 @@ echo htmlspecialchars($_smarty_tpl->tpl_vars['q']->value['logo_alt'], ENT_QUOTES
                         <?php }?>
                     </button>
                     <?php
-$_smarty_tpl->tpl_vars['q'] = $__foreach_q_17_saved;
+$_smarty_tpl->tpl_vars['q'] = $__foreach_q_7_saved;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </div>
@@ -399,7 +399,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 " alt="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['offer']->value['image_alt'], ENT_QUOTES, 'UTF-8', true);?>
 " class="w-full aspect-square object-cover">
             <?php }?>
-            <div class="mt-4 text-[18px] font-bold uppercase tracking-wide"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['offer']->value['image_caption'], ENT_QUOTES, 'UTF-8', true);?>
+            <div class="mt-4 w-full text-center text-[18px] font-bold uppercase tracking-wide"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['offer']->value['image_caption'], ENT_QUOTES, 'UTF-8', true);?>
 </div>
         </div>
     </div>

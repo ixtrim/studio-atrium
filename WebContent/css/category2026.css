@@ -506,3 +506,85 @@
     opacity: 0.5;
   }
 }
+
+/*
+ * CMS category description — normalize headings and legacy "Zobacz również"
+ * chip-links into a modern marked list matching the 15px body type.
+ */
+#cat-2026 #categoryDescription h4 {
+  font-size: inherit;
+  font-weight: 700;
+  line-height: inherit;
+  color: #222;
+  margin: 1.25em 0 0.5em;
+}
+
+/* Related-links paragraph: vertical list (full width) */
+#cat-2026 #categoryDescription p:has(a[style*="background"]),
+#cat-2026 #categoryDescription p:has(a[style*="inline-block"]) {
+  display: flex !important;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.15em;
+  text-align: left !important;
+  margin: 0.35em 0 0;
+  padding: 0;
+}
+
+#cat-2026 #categoryDescription a[style*="background"],
+#cat-2026 #categoryDescription a[style*="inline-block"] {
+  display: flex !important;
+  align-items: center;
+  gap: 0.7em;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  padding: 0.4em 0 !important;
+  margin: 0 !important;
+  font-size: inherit !important;
+  line-height: 1.45 !important;
+  font-weight: 600 !important;
+  color: var(--brand-blue-strong, #1d99e1) !important;
+  text-decoration: none !important;
+  vertical-align: baseline !important;
+  box-shadow: none !important;
+  transition: color 0.15s ease;
+}
+
+#cat-2026 #categoryDescription a[style*="background"]::before,
+#cat-2026 #categoryDescription a[style*="inline-block"]::before {
+  content: "";
+  flex-shrink: 0;
+  width: 0.4em;
+  height: 0.4em;
+  margin-top: 0.05em;
+  background: var(--brand-red, #c61000);
+}
+
+#cat-2026 #categoryDescription a[style*="background"]:hover,
+#cat-2026 #categoryDescription a[style*="background"]:focus,
+#cat-2026 #categoryDescription a[style*="inline-block"]:hover,
+#cat-2026 #categoryDescription a[style*="inline-block"]:focus {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  color: var(--brand-red, #c61000) !important;
+  text-decoration: underline !important;
+}
+
+/* Normal prose links (no legacy chip inline style) */
+#cat-2026 #categoryDescription a:not([style*="background"]):not([style*="inline-block"]) {
+  color: var(--brand-blue-strong, #1d99e1);
+  text-decoration: underline;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+#cat-2026 #categoryDescription a:not([style*="background"]):not([style*="inline-block"]):hover,
+#cat-2026 #categoryDescription a:not([style*="background"]):not([style*="inline-block"]):focus {
+  color: var(--brand-red, #c61000);
+}

@@ -78,13 +78,17 @@
 						<div class="text-[10px] uppercase tracking-[0.22em] text-[#6b7177] font-semibold">
 							{$detailVersionLabel|escape} · {$detailAvailability|escape}
 						</div>
-						<div class="mt-3 flex items-baseline gap-2 flex-wrap">
+						<div class="mt-3">
 							{if $detailPriceOld}
-							<span class="text-[18px] text-[#999] line-through tabular-nums">{number_format($detailPriceOld, 0, ',', ' ')}</span>
+							<div class="project-detail-price-old text-[16px] font-medium text-black leading-none mb-1.5 tabular-nums">
+								<s>{number_format($detailPriceOld, 0, ',', ' ')} PLN</s>
+							</div>
 							{/if}
-							<span id="proj-price-display" class="text-[42px] font-black text-[var(--brand-red)] leading-none tabular-nums">{number_format($detailPrice, 0, ',', ' ')}</span>
-							<span class="text-[16px] font-bold text-[var(--brand-red)]">PLN</span>
-							<span class="text-[11px] text-[#6b7177] ml-1">w tym 23% VAT</span>
+							<div class="flex items-baseline gap-2 flex-wrap">
+								<span id="proj-price-display" class="text-[42px] font-black text-[var(--brand-red)] leading-none tabular-nums">{number_format($detailPrice, 0, ',', ' ')}</span>
+								<span class="text-[16px] font-bold text-[var(--brand-red)]">PLN</span>
+								<span class="text-[11px] text-[#6b7177] ml-1">w tym 23% VAT</span>
+							</div>
 						</div>
 
 						{if $project|inBasket:$request.version}

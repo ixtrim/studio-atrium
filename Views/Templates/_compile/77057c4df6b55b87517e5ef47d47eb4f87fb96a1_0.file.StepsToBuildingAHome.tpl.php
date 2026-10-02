@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-29 09:00:14
+/* Smarty version 3.1.48, created on 2026-10-01 22:08:30
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/StepsToBuildingAHome.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6abb61fe7f8597_18402006',
+  'unifunc' => 'content_6abebdbe0473d5_28155534',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '77057c4df6b55b87517e5ef47d47eb4f87fb96a1' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/StepsToBuildingAHome.tpl',
-      1 => 1790634681,
+      1 => 1790762021,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6abb61fe7f8597_18402006 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6abebdbe0473d5_28155534 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="w-full max-w-[1420px] mx-auto px-4 my-16 pt-4 pb-10" id="steps-to-building-a-home">
     <h2 class="inline-block text-[22px] md:text-[36px] font-400 text-[var(--brand-darker)] tracking-tight uppercase px-4 sm:px-10 pt-7 pb-7 text-center mb-8 ml-0 sm:-ml-4"
         style="background:#7ec8ee"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['build_steps']->value['meta']['section_title'], ENT_QUOTES, 'UTF-8', true);?>
@@ -33,7 +33,7 @@ $_smarty_tpl->tpl_vars['step']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['step']->value) {
 $_smarty_tpl->tpl_vars['step']->do_else = false;
 $_smarty_tpl->tpl_vars['step']->index++;
-$__foreach_step_10_saved = $_smarty_tpl->tpl_vars['step'];
+$__foreach_step_5_saved = $_smarty_tpl->tpl_vars['step'];
 ?>
             <div class="hp-build-step cursor-pointer" data-step-item="<?php echo $_smarty_tpl->tpl_vars['step']->index;?>
 " role="button" tabindex="0"
@@ -42,7 +42,7 @@ $__foreach_step_10_saved = $_smarty_tpl->tpl_vars['step'];
                     <span class="text-[44px] md:text-[64px] font-bold leading-none text-[var(--brand-blue-strong)] shrink-0"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['step']->value['step_number'], ENT_QUOTES, 'UTF-8', true);?>
 </span>
                     <div class="flex-1 min-w-0">
-                        <span class="block text-[#222] text-[24px] md:text-[28px] font-bold leading-snug pt-1"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['step']->value['step_title'], ENT_QUOTES, 'UTF-8', true);?>
+                        <span class="block text-[#222] text-[24px] md:text-[25px] font-bold leading-snug pt-1"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['step']->value['step_title'], ENT_QUOTES, 'UTF-8', true);?>
 </span>
                         <div class="hp-step-rule-row mt-3 flex items-end">
                             <div class="hp-step-rule flex-1"></div>
@@ -57,7 +57,7 @@ $__foreach_step_10_saved = $_smarty_tpl->tpl_vars['step'];
                 </div>
             </div>
         <?php
-$_smarty_tpl->tpl_vars['step'] = $__foreach_step_10_saved;
+$_smarty_tpl->tpl_vars['step'] = $__foreach_step_5_saved;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     </div>

@@ -1,26 +1,27 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-29 09:00:14
+/* Smarty version 3.1.48, created on 2026-10-01 21:30:17
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6abb61fe8a8471_51827404',
+  'unifunc' => 'content_6abeb4c96a4cc8_78201512',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f68c881bff07f68173342c8f06edc155ee674935' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Footer.tpl',
-      1 => 1790634604,
+      1 => 1790760647,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:Include/EcommercePush.tpl' => 1,
   ),
 ),false)) {
-function content_6abb61fe8a8471_51827404 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6abeb4c96a4cc8_78201512 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="blue-overlay" id="ajax-info-overlay">
 	<div class="over-box" id="ajax-info-over-box"></div>
 	<button type="button" id="ajax-info-overlay-close" class="blue-overlay-close">Zamknij</button>
@@ -1009,6 +1010,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
  src="/js/filters.js?v=<?php echo $_smarty_tpl->tpl_vars['version']->value;?>
 "><?php echo '</script'; ?>
 >
+<?php $_smarty_tpl->_subTemplateRender("file:Include/EcommercePush.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+echo '<script'; ?>
+ src="/js/ecommerce.js?v=20260929a"><?php echo '</script'; ?>
+>
 
 <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['js_includes']->value, '_js');
@@ -1050,6 +1055,26 @@ $_smarty_tpl->tpl_vars['_js']->do_else = false;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
 }?>
+
+<?php echo '<script'; ?>
+>
+
+(function () {
+	if (typeof window.jQuery === 'undefined' || !jQuery.fancybox || !jQuery.fancybox.defaults) return;
+	var d = jQuery.fancybox.defaults;
+	d.loop = true;
+	d.toolbar = true;
+	d.buttons = ['slideShow', 'fullScreen', 'thumbs', 'close'];
+	d.thumbs = d.thumbs || {};
+	d.thumbs.autoStart = false;
+	d.thumbs.hideOnClose = true;
+	d.slideShow = d.slideShow || {};
+	d.slideShow.autoStart = false;
+	d.slideShow.speed = 4000;
+})();
+
+<?php echo '</script'; ?>
+>
 
 <?php echo '<script'; ?>
 >

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-29 09:00:14
+/* Smarty version 3.1.48, created on 2026-10-01 21:43:04
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/Newsletter.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6abb61fe82eb70_98622243',
+  'unifunc' => 'content_6abeb7c8e38f80_67005417',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '98046444c09a595fbf83880e0b6848b10eeaec09' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/Newsletter.tpl',
-      1 => 1790634719,
+      1 => 1790673310,
       2 => 'file',
     ),
   ),
@@ -20,10 +20,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6abb61fe82eb70_98622243 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6abeb7c8e38f80_67005417 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="relative">
     <div class="bg-[var(--brand-blue)] relative overflow-visible">
-        <div class="max-w-[1480px] mx-auto px-6 pt-[35px] pb-[42px] grid grid-cols-12 gap-8 items-center relative">
+        <div class="max-w-[1480px] mx-auto <?php if ($_smarty_tpl->tpl_vars['section_px']->value) {
+echo $_smarty_tpl->tpl_vars['section_px']->value;?>
+ pt-10 pb-10 md:pt-12 md:pb-12<?php } else { ?>px-6 pt-[35px] pb-[42px]<?php }?> grid grid-cols-12 gap-8 items-center relative">
             <div class="col-span-12 md:col-span-7">
                 <h2 class="text-white text-[24px] md:text-[36px] font-400 tracking-tight mb-[40px] uppercase">
                     <?php echo htmlspecialchars($_smarty_tpl->tpl_vars['newsletter']->value['meta']['contest_title'], ENT_QUOTES, 'UTF-8', true);?>
@@ -41,7 +43,7 @@ $_smarty_tpl->tpl_vars['photo']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['photo']->value) {
 $_smarty_tpl->tpl_vars['photo']->do_else = false;
 $_smarty_tpl->tpl_vars['photo']->index++;
-$__foreach_photo_13_saved = $_smarty_tpl->tpl_vars['photo'];
+$__foreach_photo_19_saved = $_smarty_tpl->tpl_vars['photo'];
 ?>
                     <?php if ($_smarty_tpl->tpl_vars['photo']->value['image_url'] && $_smarty_tpl->tpl_vars['photo']->index < 3) {?>
                         <div class="hp-newsletter-photo absolute bg-white p-2 pb-8 pointer-events-auto"
@@ -56,7 +58,7 @@ $__foreach_photo_13_saved = $_smarty_tpl->tpl_vars['photo'];
                         </div>
                     <?php }?>
                 <?php
-$_smarty_tpl->tpl_vars['photo'] = $__foreach_photo_13_saved;
+$_smarty_tpl->tpl_vars['photo'] = $__foreach_photo_19_saved;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </div>
@@ -69,7 +71,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </div>
     </div>
     <div class="<?php if ($_smarty_tpl->tpl_vars['category_newsletter_bg']->value) {?>bg-[#5d5b5c]<?php } else { ?>bg-[#3a3a3a]<?php }?>" id="hp-newsletter-signup">
-        <div class="hp-newsletter-signup-grid max-w-[1480px] px-4 sm:px-6 mx-auto pt-14 pb-[100px] grid grid-cols-1 md:grid-cols-12 md:gap-x-8 gap-y-10 items-start">
+        <div class="hp-newsletter-signup-grid max-w-[1480px] <?php if ($_smarty_tpl->tpl_vars['section_px']->value) {
+echo $_smarty_tpl->tpl_vars['section_px']->value;
+} else { ?>px-4 sm:px-6<?php }?> mx-auto pt-14 <?php if ($_smarty_tpl->tpl_vars['section_px']->value) {?>pb-16<?php } else { ?>pb-[100px]<?php }?> grid grid-cols-1 md:grid-cols-12 md:gap-x-8 gap-y-10 items-start">
             <div class="col-span-12 md:col-span-4 text-white">
                 <h2 class="text-[24px] md:text-[36px] font-400 text-white tracking-tight leading-tight uppercase m-0">
                     <?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'nl2br' ][ 0 ], array( htmlspecialchars($_smarty_tpl->tpl_vars['newsletter']->value['meta']['signup_title'], ENT_QUOTES, 'UTF-8', true) ));?>

@@ -1,5 +1,37 @@
 /* Single article 2026 — scoped so listing / legacy article.min.css stay intact */
 
+#article-2026 {
+  max-width: none !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  box-sizing: border-box;
+}
+
+#article-2026 .article-shell {
+  max-width: 1480px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  #article-2026 .article-shell {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  #article-2026 .article-shell {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
 #article-2026 .article-title {
   margin: 0 0 1.25rem;
   text-transform: none;

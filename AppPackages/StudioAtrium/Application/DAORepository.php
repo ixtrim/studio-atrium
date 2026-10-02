@@ -1293,10 +1293,8 @@ class DAORepository extends \Point7_WebApp_DAORepository
 	public function getDiscountFinder()
 	{
 		if (is_null($this->_discountFinder)) {
-			$this->_discountFinder = new Entities\Discount\Finder();
-			$this->_discountFinder->configure(array(
-					'dao_discount' => $this->getDiscountDAO()
-			));
+			// DAO PDOMySQL was never ported — same gap as Extras/HashTag Finders.
+			$this->_discountFinder = new Entities\Discount\Finder($this->getPDO());
 		}
 		return $this->_discountFinder;
 	}
@@ -1489,11 +1487,10 @@ class DAORepository extends \Point7_WebApp_DAORepository
 	public function getShowroomFinder()
 	{	    
 	    if (is_null($this->_showroomFinder)) {
-	        $this->_showroomFinder = new Entities\ShowroomProduct\Finder();
-	        $this->_showroomFinder->configure(array(
-	            'dao_showroom' => $this->getShowroomDAO(),
-	            'dao_attachments' => $this->getAttachmentDAO()
-	        ));
+	        // getShowroomDAO() goes through _getDAO('dao::showroom'), which needs
+	        // StudioAtrium\Entity\ShowroomProduct\DAO\PDOMySQL — never written during
+	        // the rewrite. Built on PDO instead (same pattern as getExtrasFinder).
+	        $this->_showroomFinder = new Entities\ShowroomProduct\Finder($this->getPDO());
 	    }
 	    return $this->_showroomFinder;
 	}

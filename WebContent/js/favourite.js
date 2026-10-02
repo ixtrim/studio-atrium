@@ -2,21 +2,25 @@
 {
 	$(document).ready(function()
 	{
-		$('.forcompare').on('click', _compare);
-		
-		$('.forfav').on('click', function(event)
-		{
-			var trigger = $(event.target);
-			Fav.fav(trigger);
-		});
-		
 		$('.share-links').on('click', function()
 		{
 			$('#links-pop').addClass('open');
 			
-			if(Utils.isPopHeigherThanViewport($('.blue-overlay.cs')[0])) {
+			var pop = document.getElementById('links-pop');
+			if (pop && typeof Utils !== 'undefined' && Utils.isPopHeigherThanViewport && Utils.isPopHeigherThanViewport(pop)) {
 				$('body').addClass('noScroll');
 			}
+		});
+
+		$('.forcompare, .forfav').on('click', function (event) {
+			event.preventDefault();
+			event.stopPropagation();
+		});
+		$('.forcompare').on('click', _compare);
+		$('.forfav').on('click', function(event)
+		{
+			var trigger = $(event.currentTarget);
+			Fav.fav(trigger);
 		});
 		
 		$('.remove-all').on('click', function()

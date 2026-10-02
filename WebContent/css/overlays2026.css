@@ -285,15 +285,31 @@ div.blue-overlay.share textarea {
 
 div.blue-overlay.lb input[type="text"]:focus,
 div.blue-overlay.lb input[type="password"]:focus,
+div.blue-overlay.lb input[type="email"]:focus,
 div.blue-overlay.rb input[type="text"]:focus,
 div.blue-overlay.rb input[type="password"]:focus,
+div.blue-overlay.rb input[type="email"]:focus,
 div.blue-overlay.share input[type="text"]:focus,
+div.blue-overlay.share input[type="password"]:focus,
+div.blue-overlay.share input[type="email"]:focus,
 div.blue-overlay#fp-box input[type="text"]:focus,
+div.blue-overlay#fp-box input[type="password"]:focus,
+div.blue-overlay#fp-box input[type="email"]:focus,
 #fp-box.blue-overlay input[type="text"]:focus,
+#fp-box.blue-overlay input[type="password"]:focus,
+#fp-box.blue-overlay input[type="email"]:focus,
 div.blue-overlay.lb textarea:focus,
 div.blue-overlay.rb textarea:focus,
-div.blue-overlay.share textarea:focus {
-  border-color: var(--brand-blue, #1d99e1) !important;
+div.blue-overlay.share textarea:focus,
+div.blue-overlay.lb #login-form input.long:focus,
+div.blue-overlay.lb #email:focus,
+div.blue-overlay.lb #password:focus {
+  border: 1px solid var(--brand-red, #c61000) !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-color: var(--brand-red, #c61000) !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 div.blue-overlay.lb input.error_field,

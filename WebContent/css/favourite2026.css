@@ -1,0 +1,99 @@
+/**
+ * Favourites list 2026 — align with category/search shells.
+ */
+
+#fav-2026 {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #222;
+  background: #fff;
+}
+
+#fav-2026,
+#fav-2026 *::before,
+#fav-2026 *::after {
+  box-sizing: border-box;
+}
+
+#fav-2026 a:not([class*="text-"]):not(.fav-action-btn):not(.fav-tool-btn) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.fav-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 18px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 0;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.fav-action-btn--ghost {
+  background: #fff;
+  color: #222;
+  border: 1px solid #d0d0d0;
+}
+
+.fav-action-btn--ghost:hover {
+  border-color: #222;
+  color: #222;
+}
+
+.fav-action-btn--primary {
+  background: var(--brand-red, #c61000);
+  color: #fff !important;
+  border: 1px solid var(--brand-red, #c61000);
+}
+
+.fav-action-btn--primary:hover {
+  background: var(--brand-red-hover, #a80d00);
+  border-color: var(--brand-red-hover, #a80d00);
+  color: #fff !important;
+}
+
+.fav-card-tools {
+  pointer-events: none;
+}
+
+.fav-tool-btn {
+  pointer-events: auto;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: #555;
+  cursor: pointer;
+  padding: 0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.fav-tool-btn:hover {
+  color: var(--brand-red, #c61000);
+  border-color: rgba(198, 16, 0, 0.25);
+}
+
+.fav-tool-btn.on {
+  color: var(--brand-red, #c61000);
+}
+
+.fav-tool-btn.forcompare.on {
+  background: var(--brand-red, #c61000);
+  border-color: var(--brand-red, #c61000);
+  color: #fff;
+}
+
+/* Share overlay inherits overlays2026 .share rules when class="share" is set */
+#fav-2026 #links-pop.blue-overlay {
+  z-index: 10050;
+}

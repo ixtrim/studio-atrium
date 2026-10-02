@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-29 09:00:14
+/* Smarty version 3.1.48, created on 2026-10-01 22:08:30
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/HeroSlider.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6abb61fe7b4c91_76481910',
+  'unifunc' => 'content_6abebdbe0360e8_36065582',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0226bc815806cd9ff9db3ee4d8bfd9e6da7b74ff' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/HeroSlider.tpl',
-      1 => 1790634651,
+      1 => 1790773489,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6abb61fe7b4c91_76481910 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6abebdbe0360e8_36065582 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="relative" id="hero-slider">
     <div class="relative">
         <div class="swiper" id="hp-hero-swiper">
@@ -98,14 +98,14 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </p>
             <?php }?>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-[48px]">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap lg:flex-nowrap items-center justify-center lg:justify-between gap-8 sm:gap-6 lg:gap-4 mt-[48px] w-full">
             <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['safety_items']->value, 'item');
 $_smarty_tpl->tpl_vars['item']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
 $_smarty_tpl->tpl_vars['item']->do_else = false;
 ?>
-                <div class="flex items-center gap-3">
+                <div class="flex items-center justify-center gap-3 w-full sm:w-[calc(50%-0.75rem)] lg:w-auto lg:flex-1 min-w-0">
                     <div class="text-white text-[36px] md:text-[80px] font-bold leading-none"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['item_number'], ENT_QUOTES, 'UTF-8', true);?>
 
                     </div>

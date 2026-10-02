@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-08 08:53:06
+/* Smarty version 3.1.48, created on 2026-10-01 21:43:04
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Project/Detail2026/Floors.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6a9fb0d22d40f0_26080719',
+  'unifunc' => 'content_6abeb7c8dd5d45_73001917',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5bf4a5083db0368a394a9ecd1d1b927e8ac5558a' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Project/Detail2026/Floors.tpl',
-      1 => 1788850324,
+      1 => 1790760424,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6a9fb0d22d40f0_26080719 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6abeb7c8dd5d45_73001917 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['detailFloors']->value) {?>
 <section id="rzuty" class="bg-[#f5f6f7] py-16 scroll-mt-32">
 	<div class="max-w-[1480px] mx-auto px-8">
@@ -40,7 +40,7 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['floor']->value) 
 $_smarty_tpl->tpl_vars['floor']->do_else = false;
 $_smarty_tpl->tpl_vars['floor']->index++;
 $_smarty_tpl->tpl_vars['floor']->first = !$_smarty_tpl->tpl_vars['floor']->index;
-$__foreach_floor_0_saved = $_smarty_tpl->tpl_vars['floor'];
+$__foreach_floor_4_saved = $_smarty_tpl->tpl_vars['floor'];
 ?>
 				<button type="button" role="tab" data-floor="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['floor']->value['id'], ENT_QUOTES, 'UTF-8', true);?>
 "
@@ -49,7 +49,7 @@ $__foreach_floor_0_saved = $_smarty_tpl->tpl_vars['floor'];
 
 				</button>
 				<?php
-$_smarty_tpl->tpl_vars['floor'] = $__foreach_floor_0_saved;
+$_smarty_tpl->tpl_vars['floor'] = $__foreach_floor_4_saved;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 			</div>
@@ -64,7 +64,7 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['floor']->value) 
 $_smarty_tpl->tpl_vars['floor']->do_else = false;
 $_smarty_tpl->tpl_vars['floor']->index++;
 $_smarty_tpl->tpl_vars['floor']->first = !$_smarty_tpl->tpl_vars['floor']->index;
-$__foreach_floor_1_saved = $_smarty_tpl->tpl_vars['floor'];
+$__foreach_floor_5_saved = $_smarty_tpl->tpl_vars['floor'];
 ?>
 		<div class="proj-floor-panel grid lg:grid-cols-12 gap-6<?php if (!$_smarty_tpl->tpl_vars['floor']->first) {?> hidden<?php }?>" data-floor="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['floor']->value['id'], ENT_QUOTES, 'UTF-8', true);?>
 ">
@@ -197,14 +197,30 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 			</div>
 		</div>
 		<?php
-$_smarty_tpl->tpl_vars['floor'] = $__foreach_floor_1_saved;
+$_smarty_tpl->tpl_vars['floor'] = $__foreach_floor_5_saved;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 	</div>
 </section>
 
-<div id="proj-floor-lightbox" class="proj-floor-lb fixed inset-0 hidden items-center justify-center p-4 md:p-8" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Powiększony rzut">
-	<div class="proj-floor-lb-backdrop absolute inset-0 bg-black/75" data-floor-lb-close></div>
+<div id="proj-floor-lightbox" class="proj-floor-lb fixed inset-0 hidden items-center justify-center" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Powiększony rzut">
+	<div class="proj-floor-lb-backdrop absolute inset-0" data-floor-lb-close></div>
+
+	<div class="proj-gal-lb-toolbar" role="toolbar" aria-label="Narzędzia rzutu">
+		<?php if (call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'count' ][ 0 ], array( $_smarty_tpl->tpl_vars['detailFloors']->value )) > 1) {?>
+		<button type="button" class="proj-gal-lb-tool" data-floor-lb-play aria-label="Pokaz slajdów" title="Pokaz slajdów" aria-pressed="false">
+			<svg class="proj-gal-lb-icon-play" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+			<svg class="proj-gal-lb-icon-pause hidden" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
+		</button>
+		<?php }?>
+		<button type="button" class="proj-gal-lb-tool" data-floor-lb-fs aria-label="Pełny ekran" title="Pełny ekran">
+			<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg>
+		</button>
+		<button type="button" class="proj-gal-lb-tool" data-floor-lb-close aria-label="Zamknij" title="Zamknij">
+			<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+		</button>
+	</div>
+
 	<?php if (call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'count' ][ 0 ], array( $_smarty_tpl->tpl_vars['detailFloors']->value )) > 1) {?>
 	<button type="button" class="proj-floor-lb-nav proj-floor-lb-prev" data-floor-lb-prev aria-label="Poprzedni rzut">
 		<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
@@ -213,19 +229,18 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
 	</button>
 	<?php }?>
-	<figure class="proj-floor-lb-panel relative z-10 w-full max-w-[min(920px,100%)]">
-		<button type="button" class="proj-floor-lb-close absolute -top-11 right-0 text-white/85 hover:text-white text-[32px] leading-none border-0 bg-transparent cursor-pointer p-0" data-floor-lb-close aria-label="Zamknij">&times;</button>
-		<div class="proj-floor-lb-stage relative overflow-hidden bg-white shadow-2xl">
-			<div class="proj-floor-lb-media relative flex items-center justify-center bg-[#f7f7f7] px-4 py-5 md:px-8 md:py-7">
-				<img id="proj-floor-lb-img" src="" alt="" width="900" height="700" decoding="async" class="block max-w-full max-h-[min(78vh,820px)] w-auto h-auto object-contain">
+	<figure class="proj-floor-lb-panel relative z-10 w-full max-w-[min(1100px,94vw)] px-2">
+		<div class="proj-floor-lb-stage relative overflow-hidden">
+			<div class="proj-floor-lb-media relative flex items-center justify-center bg-transparent px-2 py-2">
+				<img id="proj-floor-lb-img" src="" alt="" width="900" height="700" decoding="async" class="block max-w-full max-h-[min(82vh,860px)] w-auto h-auto object-contain bg-white">
 			</div>
-			<figcaption class="proj-floor-lb-caption flex items-center justify-between gap-4 px-5 py-3.5 bg-white border-t border-[#eee]">
-				<div>
-					<div id="proj-floor-lb-label" class="text-[13px] font-bold uppercase tracking-[0.16em] text-[#222]"></div>
-					<div id="proj-floor-lb-caption" class="text-[12px] text-[#666] mt-0.5"></div>
-				</div>
-				<div id="proj-floor-lb-counter" class="text-[12px] text-[#888] tracking-widest tabular-nums shrink-0"></div>
-			</figcaption>
+		</div>
+		<div class="proj-gal-lb-meta">
+			<div>
+				<div id="proj-floor-lb-label" class="proj-gal-lb-caption-text"></div>
+				<div id="proj-floor-lb-caption" class="text-[12px] text-white/60 mt-0.5"></div>
+			</div>
+			<div id="proj-floor-lb-counter" class="proj-gal-lb-counter-text"></div>
 		</div>
 	</figure>
 </div>

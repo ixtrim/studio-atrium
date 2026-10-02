@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-29 09:49:05
+/* Smarty version 3.1.48, created on 2026-10-01 21:30:17
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/HeadHTML.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6abb6d71d01297_94768125',
+  'unifunc' => 'content_6abeb4c956c3f9_80218227',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2caf7189cf71a0154ad77cc024aa442356349989' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/HeadHTML.tpl',
-      1 => 1790667985,
+      1 => 1790674277,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6abb6d71d01297_94768125 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6abeb4c956c3f9_80218227 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['pageTitle']->value) {?>
 	<title><?php echo $_smarty_tpl->tpl_vars['pageTitle']->value;?>
 </title>
@@ -374,6 +374,12 @@ window.tailwind.config = {
 <link rel="stylesheet" href="/css/category2026.css?v=<?php echo $_smarty_tpl->tpl_vars['version']->value;?>
 ">
 <link rel="stylesheet" href="/css/project2026.css?v=<?php echo $_smarty_tpl->tpl_vars['version']->value;?>
+">
+<link rel="stylesheet" href="/css/overlays2026.css?v=<?php echo $_smarty_tpl->tpl_vars['version']->value;?>
+">
+<link rel="stylesheet" href="/css/list-header2026.css?v=<?php echo $_smarty_tpl->tpl_vars['version']->value;?>
+">
+<link rel="stylesheet" href="/css/contact2026.css?v=<?php echo $_smarty_tpl->tpl_vars['version']->value;?>
 ">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">

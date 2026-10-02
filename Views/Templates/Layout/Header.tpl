@@ -39,9 +39,9 @@
 								<i data-lucide="x" class="w-[28px] h-[28px] shrink-0" stroke-width="2.5"></i>
 							</span>
 						</button>
-						<a href="tel:+48338229496" class="flex items-center gap-2 h-[34px] rounded-none shrink-0" rel="nofollow" aria-label="Zadzwoń 33 822 94 96">
+						<a href="tel:+48602303160" class="flex items-center gap-2 h-[34px] rounded-none shrink-0" rel="nofollow" aria-label="Zadzwoń 602 303 160">
 							<i data-lucide="phone" class="w-[20px] h-[20px] sm:w-[24px] sm:h-[24px] text-[var(--brand-darker)] shrink-0" stroke-width="1.25" aria-hidden="true"></i>
-							<span class="hidden lg:inline text-[var(--brand-red)] leading-none" style="font-size:20px;font-style:normal;font-weight:700;">33 822 94 96</span>
+							<span class="hidden lg:inline text-[var(--brand-red)] leading-none" style="font-size:20px;font-style:normal;font-weight:700;">602 303 160</span>
 						</a>
 						<form method="get" action="{url module='project' action='search'}" class="site-header-search relative hidden min-[850px]:flex items-center h-[34px] rounded-none shrink-0" role="search">
 							<input type="text" name="query" placeholder="wyszukaj nazwę"
@@ -144,14 +144,6 @@
 										{/if}
 									{/foreach}
 								</ul>
-								<a href="/katalog-projektow.html" class="mt-6 block group/cat">
-									<img src="/img/catalogue.webp" alt="Katalog projektów domów"
-										class="w-full max-w-[200px] transition-transform duration-500 group-hover/cat:scale-[1.03]">
-								</a>
-								<a href="/katalog-projektow.html"
-									class="mt-3 block text-[14px] font-bold text-[var(--brand-red)] hover:underline">
-									Zamów bezpłatny katalog
-								</a>
 							</div>
 
 							<div class="grid grid-cols-1 sm:grid-cols-3 gap-10 lg:gap-14">
@@ -378,7 +370,6 @@
 	var panelShell = dropdown ? dropdown.querySelector('.site-mega-panel') : null;
 	var panels = header.querySelectorAll('[data-mega-panel]');
 	var triggers = header.querySelectorAll('[data-mega]');
-	var closeTimer = null;
 	var openKey = null;
 
 	function setMega(key) {
@@ -416,52 +407,45 @@
 		}
 	}
 
-	function showMega(key) {
-		if (closeTimer) {
-			clearTimeout(closeTimer);
-			closeTimer = null;
-		}
-		setMega(key);
-	}
-
-	function hideMega() {
-		if (closeTimer) {
-			clearTimeout(closeTimer);
-		}
-		closeTimer = setTimeout(function () {
-			setMega(null);
-		}, 160);
-	}
-
 	triggers.forEach(function (trigger) {
 		var key = trigger.getAttribute('data-mega');
 		if (!key) {
-			trigger.addEventListener('mouseenter', function () { setMega(null); });
 			return;
 		}
-		trigger.addEventListener('mouseenter', function () { showMega(key); });
-		trigger.addEventListener('mouseleave', hideMega);
-		trigger.addEventListener('focus', function () { showMega(key); });
-		trigger.addEventListener('blur', hideMega);
-		// Match production: Baza wiedzy uses href="javascript:" (no destination URL).
 		trigger.addEventListener('click', function (event) {
-			var href = trigger.getAttribute('href') || '';
-			if (href === 'javascript:' || href === '#' || href.indexOf('javascript:') === 0) {
-				event.preventDefault();
-				showMega(key);
+			event.preventDefault();
+			event.stopPropagation();
+			if (openKey === key) {
+				setMega(null);
+			} else {
+				setMega(key);
 			}
 		});
 	});
 
-	if (megaRoot && dropdown) {
-		dropdown.addEventListener('mouseenter', function () {
-			if (closeTimer) {
-				clearTimeout(closeTimer);
-				closeTimer = null;
+	document.addEventListener('click', function (event) {
+		if (!openKey) {
+			return;
+		}
+		var target = event.target;
+		if (!target) {
+			return;
+		}
+		// Keep open when interacting with the active trigger or the panel itself
+		var onTrigger = false;
+		triggers.forEach(function (trigger) {
+			if (trigger.contains(target)) {
+				onTrigger = true;
 			}
 		});
-		dropdown.addEventListener('mouseleave', hideMega);
-	}
+		if (onTrigger) {
+			return;
+		}
+		if (dropdown && dropdown.contains(target)) {
+			return;
+		}
+		setMega(null);
+	});
 
 	document.addEventListener('keydown', function (event) {
 		if (event.key === 'Escape') {
@@ -469,22 +453,49 @@
 		}
 	});
 
-	function openSearchOverlay() {
+	function openSearchOverlay(fromButton) {
 		var overlay = document.querySelector('.blue-overlay.cs');
 		if (!overlay) return;
 		overlay.classList.add('open');
 		if (typeof Utils !== 'undefined' && Utils.isPopHeigherThanViewport && Utils.isPopHeigherThanViewport(overlay)) {
 			document.body.classList.add('noScroll');
 		}
-		if (typeof ClickSearch !== 'undefined' && ClickSearch.getNumbers) {
-			ClickSearch.getNumbers();
+
+		var tabKey = fromButton && fromButton.getAttribute('data-search-tab');
+		var tabMap = {
+			kondygnacje: { target: '#filters-project-type' },
+			powierzchnia: { target: '#filters-pow' },
+			garaz: { target: '#filters-garaz' },
+			szkieletowe: { target: '#filters-project-type', inputId: 'typ_projektu-szkieletowe' },
+			dzialka: { target: '#filters-parcel' }
+		};
+		var spec = tabKey ? tabMap[tabKey] : null;
+		var inputId = (fromButton && fromButton.getAttribute('data-search-input')) || (spec && spec.inputId) || '';
+		var target = (fromButton && fromButton.getAttribute('data-search-target')) || (spec && spec.target) || '';
+
+		function applyFocus() {
+			if (window.ProjectSearchFilters) {
+				if (target && ProjectSearchFilters.activateTab) {
+					ProjectSearchFilters.activateTab(target);
+				}
+				if (inputId && ProjectSearchFilters.selectInput) {
+					ProjectSearchFilters.selectInput(inputId);
+				}
+			}
+			if (typeof ClickSearch !== 'undefined' && ClickSearch.getNumbers) {
+				ClickSearch.getNumbers();
+			}
 		}
+
+		requestAnimationFrame(function () {
+			requestAnimationFrame(applyFocus);
+		});
 	}
 
 	document.addEventListener('click', function (event) {
 		var button = event.target.closest('.js-open-search');
 		if (!button) return;
-		openSearchOverlay();
+		openSearchOverlay(button);
 	});
 
 	var mobileToggle = document.getElementById('site-mobile-nav-toggle');

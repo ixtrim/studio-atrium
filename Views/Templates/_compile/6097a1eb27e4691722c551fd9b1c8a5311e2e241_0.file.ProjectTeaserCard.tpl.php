@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-29 09:00:14
+/* Smarty version 3.1.48, created on 2026-10-01 21:43:04
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/ProjectTeaserCard.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6abb61fe7ccd88_48088519',
+  'unifunc' => 'content_6abeb7c8df8642_08899282',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6097a1eb27e4691722c551fd9b1c8a5311e2e241' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Include/ProjectTeaserCard.tpl',
-      1 => 1790634673,
+      1 => 1790681103,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6abb61fe7ccd88_48088519 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6abeb7c8df8642_08899282 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('_badge', '');
 $_smarty_tpl->_assignInScope('_badgeVariant', '');
 if ($_smarty_tpl->tpl_vars['item']->value['badge_label']) {?>
@@ -31,7 +31,18 @@ if ($_smarty_tpl->tpl_vars['item']->value['badge_label']) {?>
 }?>
 <a href="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['url'], ENT_QUOTES, 'UTF-8', true);?>
 "
-	class="bg-white overflow-hidden h-full flex flex-col group border border-[#f5f5f5]">
+	class="bg-white overflow-hidden h-full flex flex-col group border border-[#f5f5f5]"
+	<?php if ($_smarty_tpl->tpl_vars['item']->value['id']) {?>data-sa-item-id="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['id'], ENT_QUOTES, 'UTF-8', true);?>
+" data-sa-item-name="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['name'], ENT_QUOTES, 'UTF-8', true);?>
+" data-sa-item-price="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['price'], ENT_QUOTES, 'UTF-8', true);?>
+" data-sa-item-category="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['type_label'], ENT_QUOTES, 'UTF-8', true);?>
+"<?php if ($_smarty_tpl->tpl_vars['ecommerce_list_id']->value) {?> data-sa-item-list-id="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['ecommerce_list_id']->value, ENT_QUOTES, 'UTF-8', true);?>
+"<?php }
+if ($_smarty_tpl->tpl_vars['ecommerce_list_name']->value) {?> data-sa-item-list-name="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['ecommerce_list_name']->value, ENT_QUOTES, 'UTF-8', true);?>
+"<?php }
+if ((isset($_smarty_tpl->tpl_vars['item']->iteration))) {?> data-sa-item-index="<?php echo $_smarty_tpl->tpl_vars['item']->iteration;?>
+"<?php }
+}?>>
 	<div class="relative overflow-hidden aspect-[3/2]">
 		<img src="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['image_url'], ENT_QUOTES, 'UTF-8', true);?>
 " alt="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['name'], ENT_QUOTES, 'UTF-8', true);?>

@@ -134,10 +134,10 @@
 					<param name="layout" value="Layout.tpl" />
 					<param name="template" value="Order/Cart.tpl" />
 					<param name="smarty.css_includes">
-						<value>["order.min.css?v=20190523"]</value>
+						<value>["order2026.css?v=20261001e"]</value>
 					</param>
 					<param name="smarty.js_includes">
-						<value>["jquery.mCustomScrollbar.concat.min.js","order.js?v=20251203"]</value>
+						<value>["jquery.mCustomScrollbar.concat.min.js","order.js?v=20261001e"]</value>
 					</param>
 				</view>
 			</on_exec_ok>
@@ -159,10 +159,10 @@
 					<param name="layout" value="Layout.tpl" />
 					<param name="template" value="Order/Data.tpl" />
 					<param name="smarty.css_includes">
-						<value>["order.min.css?v=20190212"]</value>
+						<value>["order2026.css?v=20261001e"]</value>
 					</param>
 					<param name="smarty.js_includes">
-						<value>["order.js?v=20230414", "formvalidator.js"]</value>
+						<value>["order.js?v=20261001e", "formvalidator.js"]</value>
 					</param>
 				</view>
 			</on_exec_ok>
@@ -184,7 +184,7 @@
 					<param name="layout" value="Layout.tpl" />
 					<param name="template" value="Order/Error.tpl" />
 					<param name="smarty.css_includes">
-						<value>["order.min.css?v=20190212"]</value>
+						<value>["order2026.css?v=20261001e"]</value>
 					</param>
 				</view>
 			</on_exec_ok>
@@ -198,7 +198,7 @@
 					<param name="layout" value="Layout.tpl" />
 					<param name="template" value="Order/Summary.tpl" />
 					<param name="smarty.css_includes">
-						<value>["order.min.css?v=20190212"]</value>
+						<value>["order2026.css?v=20261001e"]</value>
 					</param>
 				</view>
 			</on_exec_ok>
@@ -223,7 +223,7 @@
 					<param name="layout" value="Layout.tpl" />
 					<param name="template" value="Order/Finish.tpl" />
 					<param name="smarty.css_includes">
-						<value>["order.min.css?v=20190212"]</value>
+						<value>["order2026.css?v=20261001e"]</value>
 					</param>
 				</view>
 			</on_exec_ok>
@@ -237,7 +237,7 @@
 					<param name="layout" value="Layout.tpl" />
 					<param name="template" value="Order/PhoneConfirm.tpl" />
 					<param name="smarty.css_includes">
-						<value>["order.min.css?v=20190212"]</value>
+						<value>["order2026.css?v=20261001e"]</value>
 					</param>
 				</view>
 			</on_exec_ok>

@@ -30,7 +30,7 @@
 			<param name="page" required="no" default="1">
 				<validator name="Integer" />
 			</param>
-			<param name="limit" required="no" default="11">
+			<param name="limit" required="no" default="8">
 				<validator name="Integer" />
 			</param>
 			<param name="all" required="no" default="0">
@@ -96,7 +96,7 @@
 			<param name="page" required="no" default="1">
 				<validator name="Integer" />
 			</param>
-			<param name="limit" required="no" default="11">
+			<param name="limit" required="no" default="8">
 				<validator name="Integer" />
 			</param>
 			<param name="all" required="no" default="0">
@@ -334,7 +334,7 @@
 			<param name="page" required="no" default="1">
 				<validator name="Integer" />
 			</param>
-			<param name="limit" required="no" default="12">
+			<param name="limit" required="no" default="8">
 				<validator name="Integer" />
 			</param>
 		</action>
@@ -498,7 +498,7 @@
 			<param name="page" required="no" default="1">
 				<validator name="Integer" />
 			</param>
-			<param name="limit" required="no" default="12">
+			<param name="limit" required="no" default="8">
 				<validator name="Integer" />
 			</param>
 			<param name="sort_by" required="no" default="id">

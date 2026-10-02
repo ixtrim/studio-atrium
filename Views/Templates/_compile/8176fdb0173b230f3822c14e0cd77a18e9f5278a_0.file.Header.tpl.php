@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-29 09:50:45
+/* Smarty version 3.1.48, created on 2026-10-01 22:10:34
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6abb6dd5ec08a8_05171177',
+  'unifunc' => 'content_6abebe3a3c0cf7_19600097',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8176fdb0173b230f3822c14e0cd77a18e9f5278a' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Header.tpl',
-      1 => 1790668241,
+      1 => 1790885429,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6abb6dd5ec08a8_05171177 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6abebe3a3c0cf7_19600097 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['promo_marquee_text']->value) {?>
 	<div class="promo-marquee" aria-label="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['promo_marquee_text']->value, ENT_QUOTES, 'UTF-8', true);?>
 ">
@@ -62,24 +62,22 @@ if ($_smarty_tpl->tpl_vars['promo_marquee_text']->value) {?>
 	<div class="relative" id="site-header-mega">
 		<div class="max-w-[1480px] mx-auto px-4 sm:px-6 min-[850px]:px-9 pt-3">
 			<div class="flex items-center justify-between gap-3 sm:gap-6 min-[850px]:gap-8 mb-4 min-[850px]:mb-[40px]">
-				<div class="flex items-center gap-3 sm:gap-4 shrink-0 min-w-0">
-					<button type="button" id="site-mobile-nav-toggle" class="site-mobile-nav-toggle min-[850px]:hidden inline-flex items-center justify-center h-[34px] w-[34px] shrink-0 text-[var(--brand-darker)] hover:text-[var(--brand-red)] bg-transparent border-0 p-0" aria-expanded="false" aria-controls="site-mobile-nav" aria-label="Otwórz menu">
-						<span class="site-mobile-nav-icon-open inline-flex" aria-hidden="true">
-							<i data-lucide="menu" class="w-[22px] h-[22px] shrink-0"></i>
-						</span>
-						<span class="site-mobile-nav-icon-close hidden inline-flex" aria-hidden="true">
-							<i data-lucide="x" class="w-[22px] h-[22px] shrink-0"></i>
-						</span>
-					</button>
-					<a href="/" class="flex items-center shrink-0 mt-2 min-[850px]:mt-[30px]">
-						<img src="/img/logo.svg" alt="Studio Atrium – projekty domów" class="h-[28px] sm:h-[35px] w-auto shrink-0 rounded-none" id="logo" width="176" height="35">
-					</a>
-				</div>
-				<div class="flex flex-col items-end gap-3 min-[850px]:gap-6 min-w-0">
-					<div class="site-header-utils flex items-center justify-end gap-2 sm:gap-4 min-[850px]:gap-6 h-[34px] min-w-0">
-						<a href="tel:+48338229496" class="flex items-center gap-2 h-[34px] rounded-none shrink-0" rel="nofollow" aria-label="Zadzwoń 33 822 94 96">
+				<a href="/" class="flex items-center shrink-0 mt-2 min-[850px]:mt-[30px]">
+					<img src="/img/logo.svg" alt="Studio Atrium – projekty domów" class="h-[28px] sm:h-[35px] w-auto shrink-0 rounded-none" id="logo" width="176" height="35">
+				</a>
+				<div class="flex flex-col items-stretch min-[850px]:items-end gap-3 min-[850px]:gap-6 min-w-0 flex-1">
+					<div class="site-header-utils flex items-center justify-end gap-2 sm:gap-4 min-[850px]:gap-6 h-[40px] w-full min-w-0">
+						<button type="button" id="site-mobile-nav-toggle" class="site-mobile-nav-toggle min-[850px]:hidden inline-flex items-center justify-center h-[40px] w-[40px] shrink-0 mr-auto text-[var(--brand-red)] hover:text-[var(--brand-red-hover)] bg-transparent border-0 p-0" aria-expanded="false" aria-controls="site-mobile-nav" aria-label="Otwórz menu">
+							<span class="site-mobile-nav-icon-open inline-flex" aria-hidden="true">
+								<i data-lucide="menu" class="w-[28px] h-[28px] shrink-0" stroke-width="2.5"></i>
+							</span>
+							<span class="site-mobile-nav-icon-close hidden inline-flex" aria-hidden="true">
+								<i data-lucide="x" class="w-[28px] h-[28px] shrink-0" stroke-width="2.5"></i>
+							</span>
+						</button>
+						<a href="tel:+48602303160" class="flex items-center gap-2 h-[34px] rounded-none shrink-0" rel="nofollow" aria-label="Zadzwoń 602 303 160">
 							<i data-lucide="phone" class="w-[20px] h-[20px] sm:w-[24px] sm:h-[24px] text-[var(--brand-darker)] shrink-0" stroke-width="1.25" aria-hidden="true"></i>
-							<span class="hidden lg:inline text-[var(--brand-red)] leading-none" style="font-size:20px;font-style:normal;font-weight:700;">33 822 94 96</span>
+							<span class="hidden lg:inline text-[var(--brand-red)] leading-none" style="font-size:20px;font-style:normal;font-weight:700;">602 303 160</span>
 						</a>
 						<form method="get" action="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'project','action'=>'search'),$_smarty_tpl ) );?>
 " class="site-header-search relative hidden min-[850px]:flex items-center h-[34px] rounded-none shrink-0" role="search">
@@ -94,11 +92,6 @@ if ($_smarty_tpl->tpl_vars['promo_marquee_text']->value) {?>
 " aria-label="Ulubione"
 							class="inline-flex items-center justify-center h-[34px] text-[var(--brand-darker)] hover:text-[var(--brand-red)] shrink-0">
 							<i data-lucide="heart" class="w-[20px] h-[20px] shrink-0"></i>
-						</a>
-						<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'favourite','action'=>'compare'),$_smarty_tpl ) );?>
-" aria-label="Porównaj"
-							class="hidden min-[850px]:inline-flex items-center justify-center h-[34px] text-[var(--brand-darker)] hover:text-[var(--brand-red)] shrink-0">
-							<i data-lucide="scale" class="w-[20px] h-[20px] shrink-0"></i>
 						</a>
 						<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'order','action'=>'cart'),$_smarty_tpl ) );?>
 " aria-label="Koszyk"
@@ -156,11 +149,11 @@ if ($_smarty_tpl->tpl_vars['promo_marquee_text']->value) {?>
 				<a href="/baza-wiedzy/" class="py-3 text-[15px] font-black tracking-wider text-[var(--brand-darker)] hover:text-[var(--brand-red)] border-b border-black/5">BAZA WIEDZY</a>
 				<a href="/kontakt/" class="py-3 text-[15px] font-black tracking-wider text-[var(--brand-red)] border-b border-black/5">KONTAKT</a>
 				<form method="get" action="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'project','action'=>'search'),$_smarty_tpl ) );?>
-" class="site-mobile-search relative flex items-center h-[42px] mt-3 mb-2 rounded-none" role="search">
+" class="site-mobile-search relative flex items-center w-full h-[48px] mt-3 mb-2 rounded-none" role="search">
 					<input type="text" name="query" placeholder="wyszukaj nazwę"
-						class="rounded-none bg-white border border-[#979797] h-[42px] pl-4 pr-12 text-[14px] font-normal tracking-wider w-full leading-none text-[var(--brand-darker)] placeholder:text-[#343233] focus:outline-none focus:border-[var(--brand-blue)]">
+						class="rounded-none bg-white border border-[#979797] h-[48px] pl-4 pr-12 text-[14px] font-normal tracking-wider w-full max-w-none leading-none text-[var(--brand-darker)] placeholder:text-[#343233] focus:outline-none focus:border-[var(--brand-blue)] box-border">
 					<button type="submit" aria-label="Szukaj"
-						class="rounded-none absolute right-0 top-0 h-[42px] w-12 flex items-center justify-center text-[var(--brand-darker)] hover:text-[var(--brand-red)] bg-transparent">
+						class="rounded-none absolute right-0 top-0 h-[48px] w-12 flex items-center justify-center text-[var(--brand-darker)] hover:text-[var(--brand-red)] bg-transparent">
 						<i data-lucide="search" class="w-[18px] h-[18px] shrink-0"></i>
 					</button>
 				</form>
@@ -168,10 +161,8 @@ if ($_smarty_tpl->tpl_vars['promo_marquee_text']->value) {?>
 					<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'panel','action'=>'account'),$_smarty_tpl ) );?>
 " class="py-3 text-[14px] font-bold tracking-wider text-[var(--brand-darker)] hover:text-[var(--brand-red)] border-b border-black/5">Konto</a>
 				<?php } else { ?>
-					<button type="button" class="login-trigger text-left py-3 text-[14px] font-bold tracking-wider text-[var(--brand-darker)] hover:text-[var(--brand-red)] border-b border-black/5 bg-transparent border-x-0 border-t-0 w-full">Zaloguj</button>
+					<button type="button" class="login-trigger mt-2 w-full h-[48px] inline-flex items-center justify-center rounded-none bg-[#e8e8e8] hover:bg-[#dedede] text-[14px] font-bold tracking-wider text-[var(--brand-darker)] hover:text-[var(--brand-red)] border-0 px-4">Zaloguj</button>
 				<?php }?>
-				<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'favourite','action'=>'compare'),$_smarty_tpl ) );?>
-" class="py-3 text-[14px] font-bold tracking-wider text-[var(--brand-darker)] hover:text-[var(--brand-red)]">Porównaj</a>
 			</nav>
 		</div>
 
@@ -205,14 +196,6 @@ if (strpos($_smarty_tpl->tpl_vars['_item']->value['link'],'.html') === false) {?
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 								</ul>
-								<a href="/katalog-projektow.html" class="mt-6 block group/cat">
-									<img src="/img/catalogue.webp" alt="Katalog projektów domów"
-										class="w-full max-w-[200px] transition-transform duration-500 group-hover/cat:scale-[1.03]">
-								</a>
-								<a href="/katalog-projektow.html"
-									class="mt-3 block text-[14px] font-bold text-[var(--brand-red)] hover:underline">
-									Zamów bezpłatny katalog
-								</a>
 							</div>
 
 							<div class="grid grid-cols-1 sm:grid-cols-3 gap-10 lg:gap-14">
@@ -466,7 +449,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 	var panelShell = dropdown ? dropdown.querySelector('.site-mega-panel') : null;
 	var panels = header.querySelectorAll('[data-mega-panel]');
 	var triggers = header.querySelectorAll('[data-mega]');
-	var closeTimer = null;
 	var openKey = null;
 
 	function setMega(key) {
@@ -504,52 +486,45 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		}
 	}
 
-	function showMega(key) {
-		if (closeTimer) {
-			clearTimeout(closeTimer);
-			closeTimer = null;
-		}
-		setMega(key);
-	}
-
-	function hideMega() {
-		if (closeTimer) {
-			clearTimeout(closeTimer);
-		}
-		closeTimer = setTimeout(function () {
-			setMega(null);
-		}, 160);
-	}
-
 	triggers.forEach(function (trigger) {
 		var key = trigger.getAttribute('data-mega');
 		if (!key) {
-			trigger.addEventListener('mouseenter', function () { setMega(null); });
 			return;
 		}
-		trigger.addEventListener('mouseenter', function () { showMega(key); });
-		trigger.addEventListener('mouseleave', hideMega);
-		trigger.addEventListener('focus', function () { showMega(key); });
-		trigger.addEventListener('blur', hideMega);
-		// Match production: Baza wiedzy uses href="javascript:" (no destination URL).
 		trigger.addEventListener('click', function (event) {
-			var href = trigger.getAttribute('href') || '';
-			if (href === 'javascript:' || href === '#' || href.indexOf('javascript:') === 0) {
-				event.preventDefault();
-				showMega(key);
+			event.preventDefault();
+			event.stopPropagation();
+			if (openKey === key) {
+				setMega(null);
+			} else {
+				setMega(key);
 			}
 		});
 	});
 
-	if (megaRoot && dropdown) {
-		dropdown.addEventListener('mouseenter', function () {
-			if (closeTimer) {
-				clearTimeout(closeTimer);
-				closeTimer = null;
+	document.addEventListener('click', function (event) {
+		if (!openKey) {
+			return;
+		}
+		var target = event.target;
+		if (!target) {
+			return;
+		}
+		// Keep open when interacting with the active trigger or the panel itself
+		var onTrigger = false;
+		triggers.forEach(function (trigger) {
+			if (trigger.contains(target)) {
+				onTrigger = true;
 			}
 		});
-		dropdown.addEventListener('mouseleave', hideMega);
-	}
+		if (onTrigger) {
+			return;
+		}
+		if (dropdown && dropdown.contains(target)) {
+			return;
+		}
+		setMega(null);
+	});
 
 	document.addEventListener('keydown', function (event) {
 		if (event.key === 'Escape') {
@@ -557,22 +532,49 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		}
 	});
 
-	function openSearchOverlay() {
+	function openSearchOverlay(fromButton) {
 		var overlay = document.querySelector('.blue-overlay.cs');
 		if (!overlay) return;
 		overlay.classList.add('open');
 		if (typeof Utils !== 'undefined' && Utils.isPopHeigherThanViewport && Utils.isPopHeigherThanViewport(overlay)) {
 			document.body.classList.add('noScroll');
 		}
-		if (typeof ClickSearch !== 'undefined' && ClickSearch.getNumbers) {
-			ClickSearch.getNumbers();
+
+		var tabKey = fromButton && fromButton.getAttribute('data-search-tab');
+		var tabMap = {
+			kondygnacje: { target: '#filters-project-type' },
+			powierzchnia: { target: '#filters-pow' },
+			garaz: { target: '#filters-garaz' },
+			szkieletowe: { target: '#filters-project-type', inputId: 'typ_projektu-szkieletowe' },
+			dzialka: { target: '#filters-parcel' }
+		};
+		var spec = tabKey ? tabMap[tabKey] : null;
+		var inputId = (fromButton && fromButton.getAttribute('data-search-input')) || (spec && spec.inputId) || '';
+		var target = (fromButton && fromButton.getAttribute('data-search-target')) || (spec && spec.target) || '';
+
+		function applyFocus() {
+			if (window.ProjectSearchFilters) {
+				if (target && ProjectSearchFilters.activateTab) {
+					ProjectSearchFilters.activateTab(target);
+				}
+				if (inputId && ProjectSearchFilters.selectInput) {
+					ProjectSearchFilters.selectInput(inputId);
+				}
+			}
+			if (typeof ClickSearch !== 'undefined' && ClickSearch.getNumbers) {
+				ClickSearch.getNumbers();
+			}
 		}
+
+		requestAnimationFrame(function () {
+			requestAnimationFrame(applyFocus);
+		});
 	}
 
 	document.addEventListener('click', function (event) {
 		var button = event.target.closest('.js-open-search');
 		if (!button) return;
-		openSearchOverlay();
+		openSearchOverlay(button);
 	});
 
 	var mobileToggle = document.getElementById('site-mobile-nav-toggle');

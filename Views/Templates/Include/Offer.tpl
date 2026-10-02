@@ -327,7 +327,7 @@
             {if $offer.image_url}
             <img src="{$offer.image_url|escape}" alt="{$offer.image_alt|escape}" class="w-full aspect-square object-cover">
             {/if}
-            <div class="mt-4 text-[18px] font-bold uppercase tracking-wide">{$offer.image_caption|escape}</div>
+            <div class="mt-4 w-full text-center text-[18px] font-bold uppercase tracking-wide">{$offer.image_caption|escape}</div>
         </div>
     </div>
 </section>

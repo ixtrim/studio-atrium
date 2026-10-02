@@ -15,6 +15,11 @@
 			{if $detailThumb}
 			<img src="{$detailThumb|escape}" alt="" class="w-full aspect-[4/3] object-cover mb-3" loading="lazy">
 			{/if}
+			{if $detailPriceOld}
+			<div class="project-detail-price-old text-[13px] font-medium text-black leading-none mb-1 tabular-nums">
+				<s>{number_format($detailPriceOld, 0, ',', ' ')} PLN</s>
+			</div>
+			{/if}
 			<div class="text-[22px] font-black text-[var(--brand-red)] tabular-nums">{number_format($detailPrice, 0, ',', ' ')} PLN</div>
 			{if !$projectParams|isWithdrawn && !$project|inBasket:$request.version}
 			<button type="button" id="proj-float-cart-btn"

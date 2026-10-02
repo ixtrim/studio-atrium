@@ -44,10 +44,10 @@
 					<param name="layout" value="Layout.tpl" />
 					<param name="template" value="Favourite/List.tpl" />
 					<param name="smarty.css_includes">
-						<value>["favourite.min.css?v=20190129"]</value>
+						<value>["favourite2026.css?v=20261001"]</value>
 					</param>
 					<param name="smarty.js_includes">
-						<value>["jquery.mCustomScrollbar.concat.min.js","favourite.js?v=20190129"]</value>
+						<value>["favourite.js?v=20261001"]</value>
 					</param>
 				</view>
 			</on_exec_ok>

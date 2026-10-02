@@ -8,7 +8,36 @@ document.addEventListener("DOMContentLoaded", () => {
 		tabs.forEach(tab => tab.classList.toggle('active', '#'+tab.id === targetSel));
 		// lewa lista
 		labels.forEach(l => l.classList.toggle('is-active', l.dataset.target === targetSel));
+
+		var activeLabel = Array.from(labels).find(l => l.dataset.target === targetSel);
+		if (activeLabel && typeof activeLabel.scrollIntoView === 'function') {
+			activeLabel.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+		}
+		var activeTab = Array.from(tabs).find(tab => '#' + tab.id === targetSel);
+		if (activeTab && typeof activeTab.scrollIntoView === 'function') {
+			activeTab.scrollIntoView({ block: 'nearest' });
+		}
 	}
+
+	function selectInputById(inputId) {
+		if (!inputId) return false;
+		var el = document.getElementById(inputId);
+		if (!el) return false;
+		if (el.type === 'radio' || el.type === 'checkbox') {
+			el.checked = true;
+		}
+		el.dispatchEvent(new Event('change', { bubbles: true }));
+		var label = el.closest('label') || document.querySelector('label[for="' + CSS.escape(inputId) + '"]');
+		if (label && typeof label.scrollIntoView === 'function') {
+			label.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+		}
+		return true;
+	}
+
+	window.ProjectSearchFilters = {
+		activateTab: activate,
+		selectInput: selectInputById
+	};
 
 	labels.forEach(label => {
 		label.addEventListener('click', (e) => {

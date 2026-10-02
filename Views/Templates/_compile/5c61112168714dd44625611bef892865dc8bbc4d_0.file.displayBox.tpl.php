@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-09-07 21:44:50
+/* Smarty version 3.1.48, created on 2026-10-02 09:23:57
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Project/displayBox.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6a9f1432258a60_97189606',
+  'unifunc' => 'content_6abf5c0d566122_12234976',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5c61112168714dd44625611bef892865dc8bbc4d' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Project/displayBox.tpl',
-      1 => 1788766776,
+      1 => 1790925828,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:Include/ProjectTeaserCard.tpl' => 1,
   ),
 ),false)) {
-function content_6a9f1432258a60_97189606 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6abf5c0d566122_12234976 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['listCards']->value) {?>
 <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 items-stretch fav-wrapper" id="project-list">
 	<?php
@@ -36,6 +36,7 @@ $_smarty_tpl->tpl_vars['item']->do_else = false;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
+		<?php if ((call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'count' ][ 0 ], array( $_smarty_tpl->tpl_vars['listCards']->value )))%3 != 0) {?>
 	<div class="cat-advisor-tile bg-[#ececec] p-6 flex flex-col h-full min-h-[420px] border border-[#f5f5f5]">
 		<h3 class="text-[24px] font-bold text-[#222] leading-tight">Porozmawiaj<br>z doradcą</h3>
 		<p class="text-[13px] text-[#222] mt-3 leading-relaxed">
@@ -54,6 +55,7 @@ echo htmlspecialchars($_smarty_tpl->tpl_vars['contact']->value['phone2'], ENT_QU
 			ZNAJDŹ DOM DLA SIEBIE
 		</a>
 	</div>
+	<?php }?>
 </div>
 <?php } else { ?>
 <div class="container" id="project-list">

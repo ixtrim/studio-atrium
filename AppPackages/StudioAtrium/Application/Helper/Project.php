@@ -153,6 +153,91 @@ class Project
         return 0.0;
     }
 
+    /**
+     * Parse a homepage teaser tag like "-355 RABATU" / "RABAT 350 zł" / "-30% RABATU"
+     * into a zł discount amount when project.discount is empty.
+     *
+     * @param string $tag
+     * @param float $price
+     * @return float
+     */
+    public static function discountAmountFromTeaserTag($tag, $price)
+    {
+        $tag = trim((string) $tag);
+        if ($tag === '' || stripos($tag, 'RABAT') === false) {
+            return 0.0;
+        }
+        $price = (float) $price;
+        if (preg_match('/(\d+(?:[.,]\d+)?)\s*%/', $tag, $m)) {
+            $pct = (float) str_replace(',', '.', $m[1]);
+            if ($pct > 0 && $pct < 100 && $price > 0) {
+                return round($price * ($pct / 100), 2);
+            }
+        }
+        if (preg_match('/(\d+(?:[.,]\d+)?)/', $tag, $m)) {
+            $amount = (float) str_replace(',', '.', $m[1]);
+            if ($amount > 0 && $amount < $price) {
+                return $amount;
+            }
+        }
+        return 0.0;
+    }
+
+    /**
+     * Homepage bestsellers badge tag for a project (e.g. "-355 RABATU"), if any.
+     *
+     * @param int $projectId
+     * @return string
+     */
+    public static function getHomepageBestsellerTag($projectId)
+    {
+        $projectId = (int) $projectId;
+        if ($projectId <= 0) {
+            return '';
+        }
+        try {
+            $pdo = \Point7_WebApp::getPDO();
+            $exists = $pdo->query("SHOW TABLES LIKE 'homepage_bestsellers'");
+            if (!($exists && $exists->fetchColumn())) {
+                return '';
+            }
+            $stmt = $pdo->prepare(
+                'SELECT tag FROM homepage_bestsellers WHERE project_id = :id ORDER BY sorting ASC LIMIT 1'
+            );
+            $stmt->execute(array(':id' => $projectId));
+            $tag = $stmt->fetchColumn();
+            return ($tag !== false) ? trim((string) $tag) : '';
+        } catch (\Throwable $e) {
+            return '';
+        }
+    }
+
+    /**
+     * Effective sale pricing: project.discount, or homepage teaser RABAT tag fallback.
+     *
+     * @param float $price
+     * @param float $discount
+     * @param string $teaserTag
+     * @return array{price:float,discount:float,current:float,old:?float}
+     */
+    public static function resolveSalePricing($price, $discount, $teaserTag = '')
+    {
+        $price = (float) $price;
+        $discount = (float) $discount;
+        if ($discount <= 0 && $teaserTag !== '') {
+            $fromTag = self::discountAmountFromTeaserTag($teaserTag, $price);
+            if ($fromTag > 0) {
+                $discount = $fromTag;
+            }
+        }
+        return array(
+            'price'    => $price,
+            'discount' => $discount,
+            'current'  => $discount > 0 ? ($price - $discount) : $price,
+            'old'      => $discount > 0 ? $price : null,
+        );
+    }
+
     public static function getProjectUID(int $id): int
     {
         // Attachment owner_uid slot formula (see Project::ATTACHMENT_SLOT).

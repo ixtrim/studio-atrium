@@ -71,7 +71,7 @@
 					<param name="layout" value="Layout.tpl" />
 					<param name="template" value="Article/HashTag.tpl" />
 					<param name="smarty.css_includes">
-						<value>["article.min.css","article2026.css"]</value>
+						<value>["article.min.css","article2026.css?v=20261001a"]</value>
 					</param>
 				</view>
 			</on_exec_ok>
@@ -85,7 +85,7 @@
 					<param name="layout" value="Layout.tpl" />
 					<param name="template" value="Article/Item.tpl" />
 					<param name="smarty.css_includes">
-						<value>["article.min.css","article2026.css"]</value>
+						<value>["article.min.css","article2026.css?v=20261001a"]</value>
 					</param>
 					<param name="smarty.js_includes">
 						<value>["article.js","jquery.fancybox.js"]</value>

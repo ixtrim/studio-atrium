@@ -4,6 +4,8 @@
 	{include file="Include/ProjectTeaserCard.tpl" item=$item teaser_interactive=true}
 	{/foreach}
 
+	{* Advisor fills the last cell of the last row (page size is 3n−1). Skip when the row is already full. *}
+	{if ($listCards|@count) % 3 != 0}
 	<div class="cat-advisor-tile bg-[#ececec] p-6 flex flex-col h-full min-h-[420px] border border-[#f5f5f5]">
 		<h3 class="text-[24px] font-bold text-[#222] leading-tight">Porozmawiaj<br>z doradcą</h3>
 		<p class="text-[13px] text-[#222] mt-3 leading-relaxed">
@@ -18,6 +20,7 @@
 			ZNAJDŹ DOM DLA SIEBIE
 		</a>
 	</div>
+	{/if}
 </div>
 {else}
 {* Fallback for pages without enriched cards *}

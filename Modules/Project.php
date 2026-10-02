@@ -944,10 +944,10 @@ class Project extends WWW\AbstractModule
 
 		$limit = (int) $request->getParam('limit');
 		if ($isAllProjects) {
-			// More cards than category pages (11); keep 3n−1 so advisor tile fills the last grid cell
+			// More cards than category pages (8); keep 3n−1 so advisor tile fills the last grid cell
 			$limit = 23;
 		} elseif ($limit <= 0) {
-			$limit = 11;
+			$limit = 8;
 		}
 
 		$list = $this->_projectFinder->getListById(
@@ -1437,10 +1437,14 @@ class Project extends WWW\AbstractModule
 		}
 		
 				
+		$limit = (int) $request->getParam('limit');
+		if ($limit <= 0) {
+			$limit = 8;
+		}
 		$list = $this->_projectFinder->searchByQuery(
 			$query,
 			max(0, (int) $request->getParam('page') - 1),
-			(int) $request->getParam('limit'),
+			$limit,
 			$displayParams['sortBy'],
 			$displayParams['sortOrder'],
 			\StudioAtrium_Entity_EntityBase_Project::STATUS_PUBLISHED
@@ -1498,7 +1502,7 @@ class Project extends WWW\AbstractModule
 					$responseContext->set('query', substr($_SERVER['REQUEST_URI'], strpos($_SERVER['REQUEST_URI'], '?')));
 				}
 			
-				$pages = ceil($list->total() / $request->getParam('limit'));
+				$pages = ceil($list->total() / $limit);
 				$responseContext->set('total', $list->total());
 				$responseContext->set('pages', $pages);
 				$responseContext->set('page', $request->getParam('page'));
@@ -1553,12 +1557,16 @@ class Project extends WWW\AbstractModule
 		$projectsId = $this->_projectFinder->clickSearch($searchParams, $csParams, $categoryId, false, false, $sortByArea);
 
 		if($projectsId) {
+			$limit = (int) $request->getParam('limit');
+			if ($limit <= 0) {
+				$limit = 8;
+			}
 			$list = $this->_projectFinder->getListById(
 				$projectsId,
 				\StudioAtrium_Entity_EntityBase_Project::STATUS_PUBLISHED,
 				true,
 				$request->getParam('page') - 1,
-				$request->getParam('limit'),
+				$limit,
 				$displayParams['sortBy'],
 				$displayParams['sortOrder']
 			);
@@ -1567,7 +1575,7 @@ class Project extends WWW\AbstractModule
 			$listCards = $this->_buildCategoryListCards($list);
 			$responseContext->set('listCards', $listCards);
 			
-			$pages = ceil($list->total() / $request->getParam('limit'));
+			$pages = ceil($list->total() / $limit);
 			$responseContext->set('total', $list->total());
 			$responseContext->set('pages', $pages);
 			$responseContext->set('page', $request->getParam('page'));
@@ -1803,7 +1811,7 @@ class Project extends WWW\AbstractModule
 		if ($isAllProjects) {
 			$limit = 23;
 		} elseif ($limit <= 0) {
-			$limit = 11;
+			$limit = 8;
 		}
 
 		$page = max(1, (int) $request->getParam('page'));
@@ -4227,9 +4235,18 @@ class Project extends WWW\AbstractModule
 			);
 		}
 
-		$price = (float) $project->getPrice();
-		$discount = (float) $project->getDiscount();
-		$priceCurrent = $discount > 0 ? ($price - $discount) : $price;
+		$sale = Helper\Project::resolveSalePricing(
+			$project->getPrice(),
+			$project->getDiscount(),
+			Helper\Project::getHomepageBestsellerTag((int) $project->getId())
+		);
+		$price = $sale['price'];
+		$discount = $sale['discount'];
+		$priceCurrent = $sale['current'];
+		// Align in-request entity so templates / schema see the same promo as homepage teasers.
+		if ($discount > 0 && (float) $project->getDiscount() <= 0) {
+			$project->setDiscount($discount);
+		}
 
 		$baths = 0;
 		if (!empty($projectParams[45]['num_value'])) {
@@ -4533,7 +4550,12 @@ class Project extends WWW\AbstractModule
 		$responseContext->set('detailGallery', $gallery);
 		$responseContext->set('detailFacts', $facts);
 		$responseContext->set('detailPrice', (int) round($priceCurrent));
-		$responseContext->set('detailPriceOld', $discount > 0 ? (int) round($price) : null);
+		$responseContext->set('detailPriceOld', $sale['old'] !== null ? (int) round($sale['old']) : null);
+		$schemaProduct = $responseContext->get('schemaProduct');
+		if (is_array($schemaProduct) && $discount > 0) {
+			$schemaProduct['price'] = (int) round($priceCurrent);
+			$responseContext->set('schemaProduct', $schemaProduct);
+		}
 		$responseContext->set('detailHeatPump', $showHeatPump ? 690 : 0);
 		$responseContext->set('detailAvailability', $availability);
 		$responseContext->set('detailVersionLabel', $versionLabel);

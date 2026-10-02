@@ -58,9 +58,9 @@
                     {$safety.subtitle|escape}</p>
             {/if}
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-[48px]">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap lg:flex-nowrap items-center justify-center lg:justify-between gap-8 sm:gap-6 lg:gap-4 mt-[48px] w-full">
             {foreach $safety_items as $item}
-                <div class="flex items-center gap-3">
+                <div class="flex items-center justify-center gap-3 w-full sm:w-[calc(50%-0.75rem)] lg:w-auto lg:flex-1 min-w-0">
                     <div class="text-white text-[36px] md:text-[80px] font-bold leading-none">{$item.item_number|escape}
                     </div>
                     <div class="text-white text-[14px] sm:text-[16px] leading-snug whitespace-pre-line">{$item.item_text|escape}</div>

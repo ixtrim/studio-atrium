@@ -41,6 +41,7 @@ class Favourite extends WWW\AbstractModule
 		$user = $appContext->getUser();
 		
 		$favouriteIds = array();
+		$list = null;
 		
 		if($user) {
 			$props = $user->getProps(true) or $props = array();
@@ -88,12 +89,161 @@ class Favourite extends WWW\AbstractModule
 			$comparedIds = explode('|', $comparedCookie);
 		}
 		$responseContext->set('comparedIds', $comparedIds);
+
+		$listCards = array();
+		if (!empty($list) && count($list)) {
+			$listCards = $this->_buildFavouriteCards($list, $comparedIds);
+		}
+		$responseContext->set('listCards', $listCards);
 	}
-	
+
 	/**
-	 * @param \Point7_WebApp_Context_Response_Filtered $request
-	 * @param \Point7_WebApp_Context_Application $appContext
-	 * @param \Point7_WebApp_Context_Response_Filtered $responseContext
+	 * Build 2026 teaser cards for the favourites grid.
+	 *
+	 * @param \StudioAtrium\Entity\EntityCollection|iterable $list
+	 * @param array $comparedIds
+	 * @return array
+	 */
+	private function _buildFavouriteCards($list, array $comparedIds)
+	{
+		$cards = array();
+		$ids = array();
+		foreach ($list as $project) {
+			$ids[] = (int) $project->getId();
+		}
+		$ids = array_values(array_filter($ids));
+		$extras = array();
+		if (!empty($ids)) {
+			try {
+				$pdo = \Point7_WebApp::getPDO();
+				$placeholders = implode(',', array_fill(0, count($ids), '?'));
+				$stmt = $pdo->prepare(
+					"SELECT project_id, project_param_id, num_value
+					 FROM project_to_param
+					 WHERE project_id IN ($placeholders) AND project_param_id IN (45, 46, 78)"
+				);
+				$stmt->execute($ids);
+				foreach ($stmt->fetchAll(\PDO::FETCH_ASSOC) as $param) {
+					$pid = (int) $param['project_id'];
+					$paramId = (int) $param['project_param_id'];
+					if (!isset($extras[$pid])) {
+						$extras[$pid] = array('baths' => 0, 'garage' => 0);
+					}
+					if ($paramId === 45 || $paramId === 46) {
+						$extras[$pid]['baths'] += (int) round((float) $param['num_value']);
+					} elseif ($paramId === 78) {
+						$extras[$pid]['garage'] = (int) round((float) $param['num_value']);
+					}
+				}
+			} catch (\Throwable $e) {
+				$extras = array();
+			}
+		}
+
+		$urlGen = new WWW\UrlGenerator();
+		$paramsHelper = new WWW\ProjectParamsHelper();
+		$comparedMap = array_fill_keys(array_map('strval', $comparedIds), true);
+
+		foreach ($list as $project) {
+			$pid = (int) $project->getId();
+			$params = $project->getParamsGeneral(true);
+			$extraData = $project->getExtraData(true);
+			$type = $project->getType();
+
+			$areaRaw = isset($params['1']['value']) ? $params['1']['value'] : '';
+			$rooms = isset($params['68']['value']) ? $params['68']['value'] : '';
+			$area = $areaRaw !== '' ? str_replace('.', ',', (string) $areaRaw) . ' m2' : '';
+
+			$sale = \StudioAtrium\Application\Helper\Project::resolveSalePricing(
+				$project->getPrice(),
+				$project->getDiscount(),
+				\StudioAtrium\Application\Helper\Project::getHomepageBestsellerTag($pid)
+			);
+
+			$badgeLabel = '';
+			$badgeVariant = '';
+			if ($sale['discount'] > 0) {
+				$badgeLabel = 'RABAT ' . (int) round($sale['discount']) . ' zł';
+				$badgeVariant = 'discount';
+			} elseif ($paramsHelper->mIsNew($project)) {
+				$badgeLabel = 'NOWOŚĆ';
+				$badgeVariant = 'new';
+			}
+
+			$action = 'item';
+			if ($type === 'garage') {
+				$action = 'garage';
+			} elseif (!in_array($type, array('house', 'skeleton'), true)) {
+				$action = 'other';
+			}
+			$urlParams = array(
+				'module'     => 'project',
+				'action'     => $action,
+				'id'         => $pid,
+				'link_title' => $project->getName(),
+			);
+			if ($action === 'other') {
+				$urlParams['category'] = $type;
+			}
+
+			$imageUrl = '';
+			if (!empty($extraData['thumbnail'])) {
+				$imageUrl = 'https://media.studioatrium.pl/project/' . str_replace('-200-', '-640-', $extraData['thumbnail']);
+			} else {
+				$imageUrl = 'https://media.studioatrium.pl/project/' . $pid . '/render-box.jpg';
+			}
+
+			$cards[] = array(
+				'id'            => $pid,
+				'name'          => $project->getName(),
+				'url'           => $urlGen->generateUrl($urlParams),
+				'image_url'     => $imageUrl,
+				'type_label'    => $this->_favouriteTypeLabel($params, $type),
+				'area'          => $area,
+				'rooms'         => $rooms,
+				'baths'         => isset($extras[$pid]) ? $extras[$pid]['baths'] : 0,
+				'garage'        => isset($extras[$pid]) ? $extras[$pid]['garage'] : 0,
+				'price'         => (int) round($sale['current']),
+				'price_old'     => $sale['old'] !== null ? (int) round($sale['old']) : null,
+				'badge_label'   => $badgeLabel,
+				'badge_variant' => $badgeVariant,
+				'is_favourite'  => true,
+				'is_compare'    => isset($comparedMap[(string) $pid]),
+			);
+		}
+
+		return $cards;
+	}
+
+	/**
+	 * @param array $params
+	 * @param string $type
+	 * @return string
+	 */
+	private function _favouriteTypeLabel(array $params, $type)
+	{
+		if ($type === 'garage') {
+			return 'GARAŻ';
+		}
+		$prefix = ($type === 'skeleton') ? 'DOM SZKIELETOWY' : 'DOM';
+		if ($type === 'skeleton') {
+			return $prefix;
+		}
+		$hasFloor = !empty($params['18']['value']);
+		$hasLoft = !empty($params['17']['value']);
+		if ($hasFloor) {
+			return $prefix . ' PIĘTROWY';
+		}
+		if ($hasLoft) {
+			return $prefix . ' Z PODDASZEM';
+		}
+		return $prefix . ' PARTEROWY';
+	}
+
+	/**
+	 * @param \Point7_WebApp_Request_Filtered $request
+	 * @param WWW\AppContext $appContext
+	 * @param WWW\ResponseContext $responseContext
 	 */
 	public function doCompare(
 		\Point7_WebApp_Request_Filtered $request, WWW\AppContext $appContext, WWW\ResponseContext $responseContext
