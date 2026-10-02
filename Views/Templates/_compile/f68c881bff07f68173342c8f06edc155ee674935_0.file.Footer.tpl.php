@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-10-01 21:30:17
+/* Smarty version 3.1.48, created on 2026-10-02 10:21:21
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6abeb4c96a4cc8_78201512',
+  'unifunc' => 'content_6abf6981602ce3_72378772',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:Include/EcommercePush.tpl' => 1,
   ),
 ),false)) {
-function content_6abeb4c96a4cc8_78201512 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6abf6981602ce3_72378772 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="blue-overlay" id="ajax-info-overlay">
 	<div class="over-box" id="ajax-info-over-box"></div>
 	<button type="button" id="ajax-info-overlay-close" class="blue-overlay-close">Zamknij</button>

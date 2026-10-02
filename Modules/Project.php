@@ -46,30 +46,18 @@ class Project extends WWW\AbstractModule
 		\Point7_WebApp_Request_Filtered $request, WWW\AppContext $appContext, WWW\ResponseContext $responseContext
 	) {
 		$project = $this->_projectFinder->getById($request->getParam('id'));
+		$this->_requirePublishedProject($project, $request, 'Nie znaleziono projektu domu');
 
-		if (!$project) {
-			if (($alternativeProjectLink = $this->_daoRepository->getProjectToParamFinder()->getParamForProject($request->getParam('id'), Helper\Project::getParamsMap('alternative_link')))
-					&& ($url = $alternativeProjectLink->getStringValue())) {
-				header('HTTP/1.1 301 Moved Permanently');
-				header("Location: " . $url);
-				header('Connection: close');
-				die();
-			} else {
-				\Point7_WebApp::getLogger('notfound')->error(
-					\StudioAtrium\Application\Exception\Helper::format404Message('Nie znaleziono projektu domu', 'Project', 'House')
-				);
-				$this->_exit();
-			}
-		} elseif ($project->getType() == 'export' && !$responseContext->get('isLocal')) {
+		if ($project->getType() == 'export' && !$responseContext->get('isLocal')) {
 			\Point7_WebApp::getLogger('notfound')->error(
 				\StudioAtrium\Application\Exception\Helper::format404Message('Nie znaleziono projektu domu', 'Project', 'House (export)')
 			);
-			$this->_exit();
+			$this->_exit(false);
 		} elseif (!in_array($project->getType(), array('house', 'skeleton'))) {
 		    \Point7_WebApp::getLogger('notfound')->error(
 		        \StudioAtrium\Application\Exception\Helper::format404Message('Nieprawidłowy typ projektu domu', 'Project', 'House (not house or skeleton)')
 	        );
-		    $this->_exit();
+		    $this->_exit(false);
 		}
 	
 		//validate url and move 301 to a valid one - 2025-11-24 - sempai
@@ -509,12 +497,13 @@ class Project extends WWW\AbstractModule
 		\Point7_WebApp_Request_Filtered $request, WWW\AppContext $appContext, WWW\ResponseContext $responseContext
 	) {
 		$project = $this->_projectFinder->getById($request->getParam('id'));
+		$this->_requirePublishedProject($project, $request, 'Nie znaleziono projektu garażu');
 
-		if (!$project || $project->getType() != 'garage') {
+		if ($project->getType() != 'garage') {
 			\Point7_WebApp::getLogger('notfound')->error(
 				\StudioAtrium\Application\Exception\Helper::format404Message('Nie znaleziono projektu garażu', 'Project', 'Garage')
 			);
-			$this->_exit();
+			$this->_exit(false);
 		}
 		
 		//validate url and move 301 to a valid one - 2025-11-28 - sempai
@@ -664,15 +653,7 @@ class Project extends WWW\AbstractModule
 		\Point7_WebApp_Request_Filtered $request, WWW\AppContext $appContext, WWW\ResponseContext $responseContext
 	) {
 		$project = $this->_projectFinder->getById($request->getParam('id'));
-
-		if (!$project) {
-			$responseContext->setErrorMessage('Przykro nam, nie udało się znaleźć takiego projektu');
-			
-			\Point7_WebApp::getLogger('notfound')->error(
-				\StudioAtrium\Application\Exception\Helper::format404Message('Nie znaleziono projektu', 'Project', 'Other')
-			);
-			$this->_exit();
-		}
+		$this->_requirePublishedProject($project, $request, 'Nie znaleziono projektu');
 		
 		$type = Helper\Project::getTypeForCategory($request->getParam('category'));
 
@@ -4039,6 +4020,43 @@ class Project extends WWW\AbstractModule
 		}
 
 		$responseContext->set('last_viewed', $cards);
+	}
+
+	/**
+	 * Soft-deleted (hidden) and draft projects must not be publicly viewable.
+	 * Missing / non-published ids follow alternative_link when set, otherwise 404.
+	 *
+	 * @param \StudioAtrium\Entity\Project|null $project
+	 * @param \Point7_WebApp_Request_Filtered $request
+	 * @param string $logMessage
+	 */
+	private function _requirePublishedProject($project, $request, $logMessage)
+	{
+		if ($project && $project->getStatus() === \StudioAtrium\Entity\Project::STATUS_PUBLISHED) {
+			return;
+		}
+
+		$id = (int) $request->getParam('id');
+		if ($id > 0) {
+			$alternativeProjectLink = $this->_daoRepository
+				->getProjectToParamFinder()
+				->getParamForProject($id, Helper\Project::getParamsMap('alternative_link'));
+			if ($alternativeProjectLink && ($url = $alternativeProjectLink->getStringValue())) {
+				header('HTTP/1.1 301 Moved Permanently');
+				header('Location: ' . $url);
+				header('Connection: close');
+				die();
+			}
+		}
+
+		\Point7_WebApp::getLogger('notfound')->error(
+			\StudioAtrium\Application\Exception\Helper::format404Message(
+				$logMessage,
+				'Project',
+				$this->_action . ($project ? ' (' . $project->getStatus() . ')' : '')
+			)
+		);
+		$this->_exit(false);
 	}
 
 	/**

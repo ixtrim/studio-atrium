@@ -1,0 +1,287 @@
+/**
+ * Project helper form — 2026
+ * Modern checkbox options + consent rows matching Studio Atrium brand.
+ */
+
+#helper-2026 .ph-form {
+  margin: 0;
+}
+
+#helper-2026 .ph-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+#helper-2026 .ph-field--short {
+  width: 120px;
+}
+
+#helper-2026 .ph-label {
+  display: block;
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6b7177;
+}
+
+#helper-2026 .ph-input,
+#helper-2026 .ph-textarea {
+  display: block;
+  width: 100%;
+  margin: 0;
+  border: 1px solid #d0d0d0;
+  border-radius: 0;
+  background: #fff;
+  color: #222;
+  font-size: 15px;
+  line-height: 1.4;
+  box-shadow: none;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+#helper-2026 .ph-input {
+  height: 48px;
+  padding: 0 14px;
+}
+
+#helper-2026 .ph-textarea {
+  min-height: 128px;
+  padding: 12px 14px;
+  resize: vertical;
+}
+
+#helper-2026 .ph-input:focus,
+#helper-2026 .ph-textarea:focus {
+  outline: none;
+  border-color: var(--brand-red, #c61000);
+  box-shadow: 0 0 0 1px var(--brand-red, #c61000);
+}
+
+#helper-2026 .ph-options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+@media (min-width: 640px) {
+  #helper-2026 .ph-options {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Selectable option cards (multi-check) */
+#helper-2026 .ph-option {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 0;
+  padding: 14px 16px;
+  border: 1px solid #d8d8d8;
+  background: #fff;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+  user-select: none;
+}
+
+#helper-2026 .ph-option:hover {
+  border-color: #aaa;
+}
+
+#helper-2026 .ph-option input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  pointer-events: none;
+}
+
+#helper-2026 .ph-option__mark {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  border: 1.5px solid #9a9a9a;
+  background: #fff;
+  position: relative;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+#helper-2026 .ph-option__mark::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) scale(0);
+  transition: transform 0.12s ease;
+}
+
+#helper-2026 .ph-option__text {
+  flex: 1 1 auto;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #222;
+}
+
+#helper-2026 .ph-option:has(input:checked),
+#helper-2026 .ph-option.is-checked {
+  border-color: var(--brand-red, #c61000);
+  background: #fff8f7;
+}
+
+#helper-2026 .ph-option:has(input:checked) .ph-option__mark,
+#helper-2026 .ph-option.is-checked .ph-option__mark {
+  border-color: var(--brand-red, #c61000);
+  background: var(--brand-red, #c61000);
+}
+
+#helper-2026 .ph-option:has(input:checked) .ph-option__mark::after,
+#helper-2026 .ph-option.is-checked .ph-option__mark::after {
+  transform: rotate(45deg) scale(1);
+}
+
+#helper-2026 .ph-option input[type="checkbox"]:focus-visible + .ph-option__mark {
+  outline: 2px solid var(--brand-red, #c61000);
+  outline-offset: 2px;
+}
+
+/* Consent rows */
+#helper-2026 .ph-consent {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+#helper-2026 .ph-consent input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  pointer-events: none;
+}
+
+#helper-2026 .ph-consent__mark {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  border: 1.5px solid #9a9a9a;
+  background: #fff;
+  position: relative;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+#helper-2026 .ph-consent__mark::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) scale(0);
+  transition: transform 0.12s ease;
+}
+
+#helper-2026 .ph-consent:has(input:checked) .ph-consent__mark,
+#helper-2026 .ph-consent.is-checked .ph-consent__mark {
+  border-color: var(--brand-red, #c61000);
+  background: var(--brand-red, #c61000);
+}
+
+#helper-2026 .ph-consent:has(input:checked) .ph-consent__mark::after,
+#helper-2026 .ph-consent.is-checked .ph-consent__mark::after {
+  transform: rotate(45deg) scale(1);
+}
+
+#helper-2026 .ph-consent input[type="checkbox"]:focus-visible + .ph-consent__mark {
+  outline: 2px solid var(--brand-red, #c61000);
+  outline-offset: 2px;
+}
+
+#helper-2026 .ph-consent__text {
+  flex: 1 1 auto;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #444;
+}
+
+#helper-2026 .ph-details {
+  color: var(--brand-red, #c61000);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#helper-2026 .ph-details:hover {
+  color: var(--brand-red-hover, #a80d00);
+}
+
+#helper-2026 .ph-newsletter-extra[hidden] {
+  display: none !important;
+}
+
+#helper-2026 .ph-newsletter-extra:not([hidden]) {
+  display: block;
+  padding-top: 4px;
+}
+
+#helper-2026 .ph-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 52px;
+  margin: 0;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 0;
+  background: var(--brand-red, #c61000);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+#helper-2026 .ph-submit:hover {
+  background: var(--brand-red-hover, #a80d00);
+}
+
+/* Validation hooks used by formvalidator.js */
+#helper-2026 .error_field .ph-input,
+#helper-2026 .error_field .ph-textarea,
+#helper-2026 .ph-field.error_field .ph-input,
+#helper-2026 .ph-field.error_field .ph-textarea,
+#helper-2026 .ph-consent.error_field .ph-consent__mark {
+  border-color: var(--brand-red, #c61000);
+}
+
+#helper-2026 .error_message {
+  margin: 6px 0 0;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--brand-red, #c61000);
+  font-weight: 600;
+}

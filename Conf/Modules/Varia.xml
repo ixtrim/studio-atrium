@@ -212,10 +212,10 @@
 					<param name="layout" value="Layout.tpl" />
 					<param name="template" value="Varia/ProjectHelper.tpl" />
 					<param name="smarty.css_includes">
-						<value>["about.min.css?v=20220630"]</value>
+						<value>["helper2026.css?v=20261002a"]</value>
 					</param>
 					<param name="smarty.js_includes">
-						<value>["askforproject.js","formvalidator.js"]</value>
+						<value>["askforproject.js?v=20261002a","formvalidator.js"]</value>
 					</param>
 				</view>
 			</on_exec_ok>

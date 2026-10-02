@@ -192,7 +192,16 @@ class Varia extends WWW\AbstractModule
 	public function doProjectHelper(
 	    \Point7_WebApp_Request_Filtered $request, WWW\AppContext $appContext, WWW\ResponseContext $responseContext
     ) {
-	    
+		$reqUri = (string) ($_SERVER['REQUEST_URI'] ?? '');
+		if (preg_match('/(?:^|[?&])module=varia(?:&|$)/i', $reqUri)
+			&& preg_match('/(?:^|[?&])action=project_helper(?:&|$)/i', $reqUri)
+		) {
+			$this->_redirect('/znajdziemy-dla-ciebie-projekt.html', 301);
+		}
+
+		$responseContext->set('pageTitle', 'Znajdziemy dla Ciebie projekt - Studio Atrium');
+		$responseContext->set('pageMetaDescription', 'Wypełnij formularz, a konsultanci Studio Atrium pomogą znaleźć projekt domu dopasowany do Twojej działki i potrzeb.');
+		$responseContext->set('canonicalUrl', \Point7_WebApp::getConfigParam('domain.www') . '/znajdziemy-dla-ciebie-projekt.html');
 	}
 	
 	

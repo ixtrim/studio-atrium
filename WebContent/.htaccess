@@ -148,6 +148,10 @@ RewriteRule ^/?realizacje/?$ /projekty-domow/realizacje/ [L,R=301]
 RewriteCond %{QUERY_STRING} ^module=compare&action=list_favourites$
 RewriteRule ^ /ulubione/lista.html? [L,R=301]
 
+# Pretty URL for project helper form
+RewriteCond %{THE_REQUEST} \s/+(?:index\.php)?\?[^?\s]*\bmodule=varia\b[^?\s]*\baction=project_helper\b [NC]
+RewriteRule ^ /znajdziemy-dla-ciebie-projekt.html? [L,R=301]
+
 RewriteCond %{QUERY_STRING} ^module=project&action=list_categories$
 RewriteRule ^ /projekty-domow/? [L,R=301]
 

@@ -55,6 +55,8 @@ class UrlGenerator
             $url = '/kontakt';
         } elseif ($module === 'varia' && $action === 'addons') {
             $url = '/dodatki/';
+        } elseif ($module === 'varia' && in_array($action, ['project_helper', 'ProjectHelper'], true)) {
+            $url = '/znajdziemy-dla-ciebie-projekt.html';
         } else {
             $url = '/?module=' . urlencode($module) . '&action=' . urlencode($action) . $this->extraParams($params);
         }
