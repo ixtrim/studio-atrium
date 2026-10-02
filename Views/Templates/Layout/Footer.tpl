@@ -12,6 +12,33 @@
 </div>
 
 
+{if !$user}
+<section class="bg-[var(--brand-blue)]" id="register-promo" aria-label="Rabat za rejestrację">
+	<div class="max-w-[1480px] mx-auto px-4 sm:px-8 md:px-12 py-6 md:py-7">
+		<div class="flex flex-col md:flex-row md:items-center gap-5 md:gap-8">
+			<div class="shrink-0 self-start md:self-center">
+				<div class="bg-white text-[var(--brand-blue)] w-[72px] h-[72px] md:w-[80px] md:h-[80px] flex flex-col items-center justify-center leading-none">
+					<span class="text-[28px] md:text-[32px] font-black tracking-tight">100</span>
+					<span class="text-[13px] font-bold -mt-0.5">zł</span>
+				</div>
+			</div>
+			<p class="flex-1 text-white text-[14px] md:text-[15px] leading-relaxed m-0">
+				Zarejestruj się w naszym serwisie. Nie przegap informacji o nowościach i promocjach.
+				Twoje konto to swoboda korzystania z narzędzi gdziekolwiek jesteś.
+				Dodatkowo za założenie konta otrzymujesz od nas w prezencie <strong class="font-bold">100&nbsp;zł rabatu</strong> na zakup projektu domu.
+			</p>
+			<div class="shrink-0">
+				<a href="javascript:" class="register-trigger inline-flex items-center gap-2 border border-white text-white no-underline px-5 py-3 text-[12px] md:text-[13px] font-bold uppercase tracking-[0.12em] hover:bg-white hover:text-[var(--brand-blue)] transition-colors">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+					Załóż konto
+					<span aria-hidden="true">›</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+{/if}
+
 <footer class="bg-[#3a3a3a] text-white pt-12 md:pt-16 pb-10">
 	<div class="max-w-[1480px] mx-auto px-4 sm:px-8 md:px-12">
 		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
@@ -256,7 +283,7 @@
 					<input type="radio" data-type="parterowe"> <span>Parterowe</span>
 				</label>
 				<label class="chip">
-					<input type="radio" data-type="z_poddaszem_do_adaptacji"> <span>Z poddaszem użytkowym</span>
+					<input type="radio" data-type="z_poddaszem"> <span>Z poddaszem użytkowym</span>
 				</label>
 				<label class="chip">
 					<input type="radio" data-type="pietrowe"> <span>Piętrowe</span>
@@ -994,7 +1021,7 @@
 <script src="/js/storage.js"></script>
 <script src="/js/clicksearch.js?v={$version}"></script>
 <script src="/js/common.js?v={$version}"></script>
-<script src="/js/filters.js?v={$version}"></script>
+<script src="/js/filters.js?v={$version}-20261002b"></script>
 {include file="Include/EcommercePush.tpl"}
 <script src="/js/ecommerce.js?v=20260929a"></script>
 

@@ -139,6 +139,53 @@ class Url
         return trim($text, '-');
     }
 
+    /** /forum/ */
+    public static function buildForumUrl()
+    {
+        return '/forum/';
+    }
+
+    /** /forum/{id} or /forum/{id},{page} */
+    public static function buildForumCategoryUrl($categoryId, $page = null)
+    {
+        $url = '/forum/' . (int) $categoryId;
+        if ($page && (int) $page > 1) {
+            $url .= ',' . (int) $page;
+        }
+        return $url;
+    }
+
+    /** /forum/post,{id} or /forum/post,{id},{page} */
+    public static function buildForumPostUrl($post, $page = null)
+    {
+        $id = is_object($post) ? $post->getId() : (int) $post;
+        $url = '/forum/post,' . $id;
+        if ($page && (int) $page > 1) {
+            $url .= ',' . (int) $page;
+        }
+        return $url;
+    }
+
+    /** /forum/szukaj base (query string appended by caller) */
+    public static function buildForumSearchUrl($page = null)
+    {
+        $url = '/forum/szukaj';
+        if ($page && (int) $page > 1) {
+            $url .= ',' . (int) $page;
+        }
+        return $url;
+    }
+
+    /** /forum/komentarze or /forum/komentarze,{page} */
+    public static function buildForumCommentsUrl($page = null)
+    {
+        $url = '/forum/komentarze';
+        if ($page && (int) $page > 1) {
+            $url .= ',' . (int) $page;
+        }
+        return $url;
+    }
+
     private static function buildSimplePagerUrl($base, $page = null)
     {
         if ($page !== null && $page !== '' && (int)$page > 1) {

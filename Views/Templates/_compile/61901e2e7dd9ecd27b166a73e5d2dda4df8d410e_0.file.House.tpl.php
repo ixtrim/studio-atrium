@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-10-01 21:43:04
+/* Smarty version 3.1.48, created on 2026-10-02 16:05:01
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Project/House.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6abeb7c8da1b51_49652256',
+  'unifunc' => 'content_6abfba0d7822f7_53131368',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '61901e2e7dd9ecd27b166a73e5d2dda4df8d410e' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Project/House.tpl',
-      1 => 1790760402,
+      1 => 1790949869,
       2 => 'file',
     ),
   ),
@@ -37,7 +37,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:Include/Newsletter.tpl' => 1,
   ),
 ),false)) {
-function content_6abeb7c8da1b51_49652256 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6abfba0d7822f7_53131368 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div id="proj-2026" class="bg-white" data-project-id="<?php echo $_smarty_tpl->tpl_vars['project']->value['id'];?>
 " data-project-name="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['project']->value['name'], ENT_QUOTES, 'UTF-8', true);?>
 " data-price="<?php echo $_smarty_tpl->tpl_vars['detailPrice']->value;?>
@@ -154,7 +154,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 <?php }?>
 
 <?php echo '<script'; ?>
- src="/js/project2026.js?v=20260930a" defer><?php echo '</script'; ?>
+ src="/js/project2026.js?v=20261002b" defer><?php echo '</script'; ?>
 >
 <?php }
 }

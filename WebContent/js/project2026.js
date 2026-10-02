@@ -662,6 +662,8 @@
 				qsa(itemSel, root).forEach(function (other) {
 					other.classList.remove(openClass);
 					other.setAttribute('data-open', '0');
+					// Drop any leftover Tailwind border/shadow classes so only data-open drives the active look
+					other.classList.remove('border-[var(--brand-red)]', 'shadow-sm');
 					var icon = qs('.proj-faq-icon', other);
 					if (icon) icon.textContent = '+';
 					var body = qs('.proj-faq-body', other);

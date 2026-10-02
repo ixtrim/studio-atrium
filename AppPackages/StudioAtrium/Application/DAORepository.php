@@ -1405,7 +1405,7 @@ class DAORepository extends \Point7_WebApp_DAORepository
 	{
 		if (is_null($this->_discussFinder)) {
 			// NOTE: Entities\Discuss\Finder was never built; Entities\Discuss\Post\Finder
-			// implements the only method callers currently use (getLastPosts()).
+			// covers forum index helpers (getLastPosts / getLastThreads) and related reads.
 			$this->_discussFinder = new Entities\Discuss\Post\Finder($this->getPDO());
 		}
 		return $this->_discussFinder;

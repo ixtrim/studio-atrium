@@ -41,6 +41,9 @@ abstract class Point7_WebApp_DAORepository
             case 'dao::adwords_clicks':
                 $dao = new \StudioAtrium\Entity\Adwords\Clicks\DAO($this->pdo);
                 break;
+            case 'dao::discuss_post':
+                $dao = new \StudioAtrium\Entity\Discuss\Post\DAO($this->pdo);
+                break;
             default:
                 $dao = null;
         }

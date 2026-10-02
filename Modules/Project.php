@@ -2977,14 +2977,19 @@ class Project extends WWW\AbstractModule
 	private function _getDisplayParams(\Point7_WebApp_Request_Filtered $request)
 	{
 		$displayParams = array();
-		
+
+		$raw = method_exists($request, 'getRawParams') ? $request->getRawParams() : array();
+		$hasExplicitSort = is_array($raw) && (
+			array_key_exists('sort_by', $raw) || array_key_exists('sort_order', $raw)
+		);
+
 		$displayCookie = $request->getCookieParam('sa-display');
-		
-		if($displayCookie) {
+		$display = null;
+		if ($displayCookie && !$hasExplicitSort) {
 			$display = explode('|', $displayCookie);
 		}
-		
-		if(isset($display)) {
+
+		if (is_array($display) && count($display) >= 3) {
 			$displayParams['sortBy'] = $display[0];
 			$displayParams['sortOrder'] = strtoupper($display[1]);
 			$displayParams['displayType'] = $display[2];
@@ -2993,7 +2998,7 @@ class Project extends WWW\AbstractModule
 			$displayParams['sortOrder'] = $request->getParam('sort_order');
 			$displayParams['displayType'] = $request->getParam('display_type');
 		}
-		
+
 		return $displayParams;
 	}
 	

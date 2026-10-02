@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-10-01 21:43:04
+/* Smarty version 3.1.48, created on 2026-10-02 16:05:01
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Project/Detail2026/Faq.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6abeb7c8e2d2a1_03859656',
+  'unifunc' => 'content_6abfba0d78cef6_78124044',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a1f2236d4c40c3ca42ae6d14d41f3b3615180ca4' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Project/Detail2026/Faq.tpl',
-      1 => 1790673276,
+      1 => 1790949847,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6abeb7c8e2d2a1_03859656 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6abfba0d78cef6_78124044 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section id="faq" class="bg-white py-16 scroll-mt-32">
 	<div class="max-w-[1480px] mx-auto px-8">
 		<div class="text-center mb-10">
@@ -36,9 +36,9 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
 $_smarty_tpl->tpl_vars['item']->do_else = false;
 $_smarty_tpl->tpl_vars['item']->index++;
 $_smarty_tpl->tpl_vars['item']->first = !$_smarty_tpl->tpl_vars['item']->index;
-$__foreach_item_18_saved = $_smarty_tpl->tpl_vars['item'];
+$__foreach_item_1_saved = $_smarty_tpl->tpl_vars['item'];
 ?>
-			<div class="proj-faq-item bg-white border border-[#e5e5e5] transition-all duration-300<?php if ($_smarty_tpl->tpl_vars['item']->first) {?> border-[var(--brand-red)] shadow-sm<?php }?>" data-open="<?php if ($_smarty_tpl->tpl_vars['item']->first) {?>1<?php } else { ?>0<?php }?>">
+			<div class="proj-faq-item bg-white border border-[#e5e5e5] transition-all duration-300" data-open="<?php if ($_smarty_tpl->tpl_vars['item']->first) {?>1<?php } else { ?>0<?php }?>">
 				<button type="button" class="proj-faq-toggle w-full flex items-center gap-4 px-5 py-4 text-left">
 					<span class="flex-1 text-[15px] md:text-[16px] font-semibold text-[#1b2025]"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['item']->value['q'], ENT_QUOTES, 'UTF-8', true);?>
 </span>
@@ -52,7 +52,7 @@ $__foreach_item_18_saved = $_smarty_tpl->tpl_vars['item'];
 				</div>
 			</div>
 			<?php
-$_smarty_tpl->tpl_vars['item'] = $__foreach_item_18_saved;
+$_smarty_tpl->tpl_vars['item'] = $__foreach_item_1_saved;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		</div>

@@ -2522,12 +2522,12 @@ class SmartyFunctionsRegistry
             'contest_title'       => 'Konkurs fotograficzny',
             'contest_body'        => "Wybudowałeś dom z naszego projektu?\nWyślij zdjęcie domu jaki zbudowałeś i wygraj cenne nagrody!",
             'signup_title'        => "Zarejestruj się w naszym serwisie.\nNie przegap informacji o nowościach\ni promocjach.",
-            'signup_body1'        => 'Zarejestruj się i korzystaj z dogodnych narzędzi wszędzie gdzie jesteś. Będziemy także zawiadamiać Cię o rabatach i promocjach.',
-            'signup_body2'        => 'Twoje konto to swoboda korzystania z narzędzi gdziekolwiek jesteś.',
+            'signup_body1'        => 'Twoje konto to swoboda korzystania z narzędzi gdziekolwiek jesteś. Będziemy też zawiadamiać Cię o nowościach i promocjach.',
+            'signup_body2'        => 'Dodatkowo za założenie konta otrzymujesz od nas w prezencie 100 zł rabatu na zakup projektu domu.',
             'signup_button_label' => 'Zarejestruj się',
-            'reward_line1'        => 'Odbierz',
+            'reward_line1'        => 'Za rejestrację',
             'reward_amount'       => '100 zł',
-            'reward_line2'        => "na zakup\nprojektu domu",
+            'reward_line2'        => "rabatu na zakup\nprojektu domu",
         );
         $photoDefaults = array(
             array('image_url' => 'https://media.studioatrium.pl/stock/33/3105/69bbd5e2ca26a-projekty-domow-tanich-w-budowie.webp', 'image_alt' => 'Projekty domów tanich w budowie', 'pos_left_pct' => '2', 'pos_top_px' => -42, 'rotate_deg' => -7),

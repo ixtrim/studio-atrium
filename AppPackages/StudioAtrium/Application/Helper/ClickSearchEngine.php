@@ -11,7 +11,7 @@ class ClickSearchEngine
 	private static $typeCategoryMap = [
 		'parterowe'                => 5,
 		'z_poddaszem'              => 6,
-		'z_poddaszem_do_adaptacji' => 6,
+		'z_poddaszem_do_adaptacji' => 47,
 		'pietrowe'                 => 7,
 		'nowoczesne'               => 13,
 		'beskidzkie'               => 14,
@@ -34,7 +34,7 @@ class ClickSearchEngine
 		'c19' => 19, // kotlownia
 		'c26' => 26, // od_poludnia
 		'c30' => 30, // zantresola
-		'c31' => 31, // zestrychem
+		'c31' => 47, // zestrychem (DOM id c31; category 47 = ze-strychem)
 	];
 
 	/** Form slug => DB string_value for select/radio string params. */

@@ -92,4 +92,4 @@
 </div>
 {/if}
 
-<script src="/js/project2026.js?v=20260930a" defer></script>
+<script src="/js/project2026.js?v=20261002b" defer></script>

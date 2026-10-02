@@ -346,19 +346,27 @@ document.addEventListener("DOMContentLoaded", () => {
 				?.dispatchEvent(new Event('change', { bubbles: true }));
 		});
 
-	// Zmiana w "Typ projektu" -> zdejmij preset jeśli stan nie pasuje
-	typesWrap?.addEventListener('change', () => {
-		if (applying || !active) return;
+	// Zmiana w "Typ projektu" (prawa lista) -> zaznacz pasujący chip na górze
+	const syncPresetFromTypes = () => {
+		if (applying) return;
 
-		const picked = form.querySelectorAll(PT_SELECTOR + ':checked');
-		const target = active.dataset.type || null;
+		const picked = form.querySelector(PT_SELECTOR + ':checked');
+		const val = picked ? (picked.value || '') : '';
+		const match = presets.find(r => (r.dataset.type || '') === val) || null;
 
-		const matches =
-			(target === null && picked.length === 0) ||                		// "Wszystkie": nic nie zaznaczone
-			(target && picked.length === 1 && picked[0].value === target); // inny preset: dokładnie jeden typ
+		if (match) {
+			presets.forEach(x => { x.checked = (x === match); });
+			active = match;
+			return;
+		}
 
-		if (!matches) clearPreset();
-	}, true);
+		// Brak odpowiadającego chipa (np. nowoczesne) — odznacz górną listę
+		clearPreset();
+	};
+
+	typesWrap?.addEventListener('change', syncPresetFromTypes, true);
+	// stan początkowy (np. typ z URL)
+	syncPresetFromTypes();
 
 });
 

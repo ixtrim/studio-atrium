@@ -255,7 +255,7 @@
 					<param name="layout" value="Layout.tpl" />
 					<param name="template" value="Discuss/Forum.tpl" />
 					<param name="smarty.css_includes">
-						<value>["discuss.min.css"]</value>
+						<value>["forum2026.css?v=20261002a"]</value>
 					</param>
 					<param name="smarty.js_includes">
 						<value>["forum.js"]</value>
@@ -272,7 +272,7 @@
 					<param name="layout" value="Layout.tpl" />
 					<param name="template" value="Discuss/Search.tpl" />
 					<param name="smarty.css_includes">
-						<value>["discuss.min.css"]</value>
+						<value>["forum2026.css?v=20261002a"]</value>
 					</param>
 					<param name="smarty.js_includes">
 						<value>["jquery.mCustomScrollbar.concat.min.js","forum.js","forumCategory.js"]</value>
@@ -289,7 +289,7 @@
 					<param name="layout" value="Layout.tpl" />
 					<param name="template" value="Discuss/Comments.tpl" />
 					<param name="smarty.css_includes">
-						<value>["discuss.min.css"]</value>
+						<value>["forum2026.css?v=20261002a"]</value>
 					</param>
 					<param name="smarty.js_includes">
 						<value>["forum.js"]</value>
@@ -306,7 +306,7 @@
 					<param name="layout" value="Layout.tpl" />
 					<param name="template" value="Discuss/Category.tpl" />
 					<param name="smarty.css_includes">
-						<value>["discuss.min.css","uploader.css"]</value>
+						<value>["forum2026.css?v=20261002a","uploader.css"]</value>
 					</param>
 					<param name="smarty.js_includes">
 						<value>["jquery.mCustomScrollbar.concat.min.js","formvalidator.js","forum.js","forumCategory.js?v=20180925","forumForm.js","uploader.js"]</value>
@@ -331,7 +331,7 @@
 					<param name="layout" value="Layout.tpl" />
 					<param name="template" value="Discuss/Thread.tpl" />
 					<param name="smarty.css_includes">
-						<value>["discuss.min.css","uploader.css"]</value>
+						<value>["forum2026.css?v=20261002a","uploader.css"]</value>
 					</param>
 					<param name="smarty.js_includes">
 						<value>["jquery.mCustomScrollbar.concat.min.js","jquery.fancybox.js","formvalidator.js","forum.js","forumThread.js","uploader.js"]</value>
@@ -356,7 +356,7 @@
 					<param name="layout" value="Layout.tpl" />
 					<param name="template" value="Discuss/EditThread.tpl" />
 					<param name="smarty.css_includes">
-						<value>["discuss.min.css","uploader.css"]</value>
+						<value>["forum2026.css?v=20261002a","uploader.css"]</value>
 					</param>
 					<param name="smarty.js_includes">
 						<value>["jquery.fancybox.js","formvalidator.js","forumForm.js","forumThread.js","uploader.js"]</value>
@@ -381,7 +381,7 @@
 					<param name="layout" value="Layout.tpl" />
 					<param name="template" value="Discuss/EditPost.tpl" />
 					<param name="smarty.css_includes">
-						<value>["discuss.min.css","uploader.css"]</value>
+						<value>["forum2026.css?v=20261002a","uploader.css"]</value>
 					</param>
 					<param name="smarty.js_includes">
 						<value>["jquery.fancybox.js","formvalidator.js","forumThread.js","uploader.js"]</value>
@@ -425,6 +425,5 @@
 				<view classname="Point7_WebApp_View_JSON" />
 			</on_exec_error>
 		</action>
->>>>>>> .r4899
 	</result_map>
 </module>

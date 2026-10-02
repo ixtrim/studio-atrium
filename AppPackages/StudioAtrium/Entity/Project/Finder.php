@@ -58,24 +58,29 @@ class Finder
         $params = $ids;
         $statusSql = '';
         if ($status !== false && $status !== null && $status !== '') {
-            $statusSql = ' AND status = ?';
+            $statusSql = ' AND project.status = ?';
             $params[] = $status;
         }
 
         $sortOrderSql = (strtoupper((string) $sortOrder) === 'DESC') ? 'DESC' : 'ASC';
-        if ($sortBy === 'name') {
-            $orderSql = " ORDER BY name $sortOrderSql, id $sortOrderSql";
+        $fromSql = 'project';
+        if ($sortBy === 'usable_area') {
+            $fromSql = 'project LEFT JOIN project_to_param ptp_area'
+                . ' ON ptp_area.project_id = project.id AND ptp_area.project_param_id = 1';
+            $orderSql = " ORDER BY ptp_area.num_value $sortOrderSql, project.id $sortOrderSql";
+        } elseif ($sortBy === 'name') {
+            $orderSql = " ORDER BY project.name $sortOrderSql, project.id $sortOrderSql";
         } elseif ($sortBy === 'id' && !$preserveOrder) {
             // True chronological id sort (e.g. /projekty newest→oldest)
-            $orderSql = " ORDER BY id $sortOrderSql";
+            $orderSql = " ORDER BY project.id $sortOrderSql";
         } else {
             // Category / click-search lists arrive pre-ordered; keep that order.
-            $orderSql = " ORDER BY FIELD(id, $placeholders)";
+            $orderSql = " ORDER BY FIELD(project.id, $placeholders)";
             $params = array_merge($params, $ids);
         }
 
         $stmt = $this->pdo->prepare(
-            "SELECT * FROM project WHERE id IN ($placeholders)$statusSql$orderSql"
+            "SELECT project.* FROM $fromSql WHERE project.id IN ($placeholders)$statusSql$orderSql"
         );
         $stmt->execute($params);
         $rows = $stmt->fetchAll();
@@ -137,10 +142,10 @@ class Finder
             ':q5' => $like,
         ];
 
-        $where = 'status = :status AND ('
-            . 'name LIKE :q1 OR alternate_name LIKE :q2 OR search_names LIKE :q3'
-            . ' OR CONCAT(IFNULL(symbol_alpha,\'\'), IFNULL(symbol_num,\'\')) LIKE :q4'
-            . ' OR CONCAT(IFNULL(symbol_alpha,\'\'), \'-\', IFNULL(symbol_num,\'\')) LIKE :q5'
+        $where = 'project.status = :status AND ('
+            . 'project.name LIKE :q1 OR project.alternate_name LIKE :q2 OR project.search_names LIKE :q3'
+            . ' OR CONCAT(IFNULL(project.symbol_alpha,\'\'), IFNULL(project.symbol_num,\'\')) LIKE :q4'
+            . ' OR CONCAT(IFNULL(project.symbol_alpha,\'\'), \'-\', IFNULL(project.symbol_num,\'\')) LIKE :q5'
             . ')';
 
         $countStmt = $this->pdo->prepare("SELECT COUNT(*) FROM project WHERE $where");
@@ -151,10 +156,16 @@ class Finder
         }
 
         $sortOrderSql = (strtoupper((string) $sortOrder) === 'DESC') ? 'DESC' : 'ASC';
-        if ($sortBy === 'name') {
-            $orderSql = " ORDER BY name $sortOrderSql, id $sortOrderSql";
+        $fromSql = 'project';
+        $selectSql = 'project.*';
+        if ($sortBy === 'usable_area') {
+            $fromSql = 'project LEFT JOIN project_to_param ptp_area'
+                . ' ON ptp_area.project_id = project.id AND ptp_area.project_param_id = 1';
+            $orderSql = " ORDER BY ptp_area.num_value $sortOrderSql, project.id $sortOrderSql";
+        } elseif ($sortBy === 'name') {
+            $orderSql = " ORDER BY project.name $sortOrderSql, project.id $sortOrderSql";
         } else {
-            $orderSql = " ORDER BY id $sortOrderSql";
+            $orderSql = " ORDER BY project.id $sortOrderSql";
         }
 
         $limit = max(1, (int) $limit);
@@ -162,7 +173,7 @@ class Finder
         $offset = $page * $limit;
 
         $stmt = $this->pdo->prepare(
-            "SELECT * FROM project WHERE $where$orderSql LIMIT $limit OFFSET $offset"
+            "SELECT $selectSql FROM $fromSql WHERE $where$orderSql LIMIT $limit OFFSET $offset"
         );
         $stmt->execute($params);
         $rows = $stmt->fetchAll();

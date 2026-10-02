@@ -6,7 +6,7 @@
 		</div>
 		<div class="space-y-3 max-w-4xl mx-auto" id="proj-faq-accordion">
 			{foreach $detailFaq as $item}
-			<div class="proj-faq-item bg-white border border-[#e5e5e5] transition-all duration-300{if $item@first} border-[var(--brand-red)] shadow-sm{/if}" data-open="{if $item@first}1{else}0{/if}">
+			<div class="proj-faq-item bg-white border border-[#e5e5e5] transition-all duration-300" data-open="{if $item@first}1{else}0{/if}">
 				<button type="button" class="proj-faq-toggle w-full flex items-center gap-4 px-5 py-4 text-left">
 					<span class="flex-1 text-[15px] md:text-[16px] font-semibold text-[#1b2025]">{$item.q|escape}</span>
 					<span class="proj-faq-icon w-8 h-8 rounded-full border border-[#ddd] flex items-center justify-center text-[#666] shrink-0 text-[18px] font-light leading-none">

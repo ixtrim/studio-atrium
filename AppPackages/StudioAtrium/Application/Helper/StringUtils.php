@@ -19,4 +19,16 @@ class StringUtils
         $text = preg_replace('/[^a-z0-9]+/', '-', $text);
         return trim($text, '-');
     }
+
+    /**
+     * Words skipped when highlighting forum search hits.
+     * @return string[]
+     */
+    public static function getHiliteExcludes()
+    {
+        return [
+            'a', 'i', 'o', 'u', 'w', 'z', 'na', 'do', 'od', 'po', 'za', 'nie',
+            'się', 'to', 'jest', 'jak', 'czy', 'oraz', 'lub', 'ale', 'the', 'and', 'of',
+        ];
+    }
 }

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-10-02 10:21:21
+/* Smarty version 3.1.48, created on 2026-10-02 16:04:41
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6abf6981602ce3_72378772',
+  'unifunc' => 'content_6abfb9f9443bf2_89532499',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f68c881bff07f68173342c8f06edc155ee674935' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Footer.tpl',
-      1 => 1790760647,
+      1 => 1790949863,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:Include/EcommercePush.tpl' => 1,
   ),
 ),false)) {
-function content_6abf6981602ce3_72378772 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6abfb9f9443bf2_89532499 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="blue-overlay" id="ajax-info-overlay">
 	<div class="over-box" id="ajax-info-over-box"></div>
 	<button type="button" id="ajax-info-overlay-close" class="blue-overlay-close">Zamknij</button>
@@ -33,6 +33,33 @@ function content_6abf6981602ce3_72378772 (Smarty_Internal_Template $_smarty_tpl)
 	<button type="button" id="catalog-overlay-close" class="blue-overlay-close">Zamknij</button>
 </div>
 
+
+<?php if (!$_smarty_tpl->tpl_vars['user']->value) {?>
+<section class="bg-[var(--brand-blue)]" id="register-promo" aria-label="Rabat za rejestrację">
+	<div class="max-w-[1480px] mx-auto px-4 sm:px-8 md:px-12 py-6 md:py-7">
+		<div class="flex flex-col md:flex-row md:items-center gap-5 md:gap-8">
+			<div class="shrink-0 self-start md:self-center">
+				<div class="bg-white text-[var(--brand-blue)] w-[72px] h-[72px] md:w-[80px] md:h-[80px] flex flex-col items-center justify-center leading-none">
+					<span class="text-[28px] md:text-[32px] font-black tracking-tight">100</span>
+					<span class="text-[13px] font-bold -mt-0.5">zł</span>
+				</div>
+			</div>
+			<p class="flex-1 text-white text-[14px] md:text-[15px] leading-relaxed m-0">
+				Zarejestruj się w naszym serwisie. Nie przegap informacji o nowościach i promocjach.
+				Twoje konto to swoboda korzystania z narzędzi gdziekolwiek jesteś.
+				Dodatkowo za założenie konta otrzymujesz od nas w prezencie <strong class="font-bold">100&nbsp;zł rabatu</strong> na zakup projektu domu.
+			</p>
+			<div class="shrink-0">
+				<a href="javascript:" class="register-trigger inline-flex items-center gap-2 border border-white text-white no-underline px-5 py-3 text-[12px] md:text-[13px] font-bold uppercase tracking-[0.12em] hover:bg-white hover:text-[var(--brand-blue)] transition-colors">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+					Załóż konto
+					<span aria-hidden="true">›</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+<?php }?>
 
 <footer class="bg-[#3a3a3a] text-white pt-12 md:pt-16 pb-10">
 	<div class="max-w-[1480px] mx-auto px-4 sm:px-8 md:px-12">
@@ -221,7 +248,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 					<input type="radio" data-type="parterowe"> <span>Parterowe</span>
 				</label>
 				<label class="chip">
-					<input type="radio" data-type="z_poddaszem_do_adaptacji"> <span>Z poddaszem użytkowym</span>
+					<input type="radio" data-type="z_poddaszem"> <span>Z poddaszem użytkowym</span>
 				</label>
 				<label class="chip">
 					<input type="radio" data-type="pietrowe"> <span>Piętrowe</span>
@@ -1008,7 +1035,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 >
 <?php echo '<script'; ?>
  src="/js/filters.js?v=<?php echo $_smarty_tpl->tpl_vars['version']->value;?>
-"><?php echo '</script'; ?>
+-20261002b"><?php echo '</script'; ?>
 >
 <?php $_smarty_tpl->_subTemplateRender("file:Include/EcommercePush.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 echo '<script'; ?>

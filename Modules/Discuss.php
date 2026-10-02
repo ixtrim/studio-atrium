@@ -182,6 +182,58 @@ class Discuss extends WWW\AbstractModule
 	 * @param \Point7_WebApp_Context_Application $appContext
 	 * @param \Point7_WebApp_Context_Response $responseContext
 	 */
+	public function doComments(
+		\Point7_WebApp_Request_Filtered $request, WWW\AppContext $appContext, WWW\ResponseContext $responseContext
+	) {
+		$responseContext->set('categories', Helper\Discuss::getCategories());
+		$responseContext->set('adminIds', Helper\User::getAdmins());
+
+		$offset = ($request->getParam('page') - 1) * $request->getParam('limit');
+		$comments = $this->_discussFinder->getLatestProjectComments(
+			$offset,
+			$request->getParam('limit')
+		);
+
+		if ($comments) {
+			$projectIds = [];
+			foreach ($comments['list'] as $item) {
+				if (!empty($item['project_id'])) {
+					$projectIds[] = $item['project_id'];
+				}
+			}
+			$projects = [];
+			if ($projectIds) {
+				$projectFinder = $this->_daoRepository->getProjectFinder(
+					\Point7_WebApp::getConfigParam('paths.clicksearch_sets')
+				);
+				$projects = $projectFinder->getListById($projectIds)->toArray('', 'id');
+			}
+
+			$threads = [];
+			foreach ($comments['list'] as $item) {
+				$pid = (int) $item['project_id'];
+				if (!isset($projects[$pid])) {
+					continue;
+				}
+				$item['project'] = $projects[$pid];
+				$threads[] = $item;
+			}
+
+			$responseContext->set('threads', $threads);
+			$responseContext->set('pages', ceil($comments['count'] / $request->getParam('limit')));
+			$responseContext->set('page', $request->getParam('page'));
+			$responseContext->set('url', Helper\Url::buildForumCommentsUrl());
+		} else {
+			$responseContext->set('threads', []);
+			$responseContext->set('pages', 0);
+			$responseContext->set('page', 1);
+			$responseContext->set('url', Helper\Url::buildForumCommentsUrl());
+		}
+
+		$responseContext->set('noindex', 1);
+	}
+
+
 	public function doCategory(
 		\Point7_WebApp_Request_Filtered $request, WWW\AppContext $appContext, WWW\ResponseContext $responseContext
 	) {
