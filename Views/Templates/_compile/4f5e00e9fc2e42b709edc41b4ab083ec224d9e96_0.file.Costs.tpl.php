@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-10-01 21:43:04
+/* Smarty version 3.1.48, created on 2026-10-03 09:36:05
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Project/Detail2026/Costs.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6abeb7c8dff7d0_65854651',
+  'unifunc' => 'content_6ac0b0653129b7_69076389',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4f5e00e9fc2e42b709edc41b4ab083ec224d9e96' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Project/Detail2026/Costs.tpl',
-      1 => 1790630235,
+      1 => 1791012833,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6abeb7c8dff7d0_65854651 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6ac0b0653129b7_69076389 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['detailCostStages']->value) {?>
 <section id="koszty" class="bg-[#f5f6f7] py-16 scroll-mt-32">
 	<div class="max-w-[1480px] mx-auto px-8">
@@ -39,7 +39,7 @@ $_smarty_tpl->tpl_vars['stage']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['stage']->value) {
 $_smarty_tpl->tpl_vars['stage']->do_else = false;
 $_smarty_tpl->tpl_vars['stage']->iteration++;
-$__foreach_stage_11_saved = $_smarty_tpl->tpl_vars['stage'];
+$__foreach_stage_7_saved = $_smarty_tpl->tpl_vars['stage'];
 ?>
 				<div class="proj-cost-item group bg-white border border-[#e6e8eb] hover:border-[#cfd3d8] transition-all duration-300" data-id="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['stage']->value['id'], ENT_QUOTES, 'UTF-8', true);?>
 ">
@@ -63,7 +63,7 @@ $__foreach_stage_11_saved = $_smarty_tpl->tpl_vars['stage'];
 					</div>
 				</div>
 				<?php
-$_smarty_tpl->tpl_vars['stage'] = $__foreach_stage_11_saved;
+$_smarty_tpl->tpl_vars['stage'] = $__foreach_stage_7_saved;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 				<?php if ($_smarty_tpl->tpl_vars['detailCostTotal']->value) {?>
@@ -74,11 +74,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 				</div>
 				<?php }?>
 			</div>
-			<?php if (!$_smarty_tpl->tpl_vars['noestimate']->value && $_smarty_tpl->tpl_vars['project']->value['type'] != 'skeleton') {?>
-			<button type="button" class="filesDloadTrigger mt-6 text-[12px] font-bold uppercase tracking-wider text-[var(--brand-blue-strong)] hover:text-[var(--brand-red)]">
-				Pobierz kosztorys →
-			</button>
-			<?php }?>
 		</div>
 	</div>
 </section>

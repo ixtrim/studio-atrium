@@ -66,8 +66,8 @@
 			<input type="checkbox" name="accept" id="fr-accept" value="on"> <label for="fr-accept">Wyrażam zgodę</label> na przetwarzanie moich danych osobowych w celu otrzymywania materiałów do projektu oraz informacji o promocjach i ofercie projektowej. <span class="ajax-info" data-url="{url module=ajax action=get_files_regulations}" data-scroll="ajax-regulations">Szczegóły</span>
 		</p>
 		
-		<div class="info-box">
-			<p class="nocaps info" id="fr-fail-box" style="font-weight: bold;">&nbsp;</p>
+		<div class="info-box" style="display:none">
+			<p class="msg nocaps info" id="fr-fail-box" style="display:none;font-weight:bold;"></p>
 		</div>
 		
 		<div class="submit-box">

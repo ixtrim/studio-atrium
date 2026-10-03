@@ -112,7 +112,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preload"  href="/js/enquire.min.js" as="script">
 <link rel="preload" href="/js/storage.js" as="script">
 <link rel="preload" href="/js/clicksearch.js?v={$version}" as="script">
-<link rel="preload" href="/js/common.js?v={$version}" as="script">
+<link rel="preload" href="/js/common.js?v=20261003a" as="script">
 {foreach $js_includes as $_js}
 	<link rel="preload" href="/js/{$_js}" as="script">
 {/foreach}
@@ -244,8 +244,8 @@ window.tailwind.config = {
 <link rel="stylesheet" href="/css/header2026.css?v={$version}">
 <link rel="stylesheet" href="/css/homepage2026.css?v={$version}">
 <link rel="stylesheet" href="/css/category2026.css?v={$version}">
-<link rel="stylesheet" href="/css/project2026.css?v={$version}">
-<link rel="stylesheet" href="/css/overlays2026.css?v={$version}">
+<link rel="stylesheet" href="/css/project2026.css?v=20261003f">
+<link rel="stylesheet" href="/css/overlays2026.css?v=20261003d">
 <link rel="stylesheet" href="/css/list-header2026.css?v={$version}">
 <link rel="stylesheet" href="/css/contact2026.css?v={$version}">
 

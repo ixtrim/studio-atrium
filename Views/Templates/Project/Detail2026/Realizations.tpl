@@ -8,7 +8,7 @@
 		<div class="text-center text-[#6b6b6b] uppercase tracking-[0.25em] text-[13px] mb-10">Wybudowane</div>
 		<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
 			{foreach $detailRealizations as $photo}
-			<a href="{$photo.src|escape}" data-fancybox="realizacje" data-caption="{$photo.alt|escape}" class="group block overflow-hidden bg-[#f5f6f7]">
+			<a href="{$photo.src|escape}" data-realizacje-lb="{$photo@index}" data-src="{$photo.src|escape}" data-caption="{$photo.alt|escape}" class="group block overflow-hidden bg-[#f5f6f7]">
 				<img src="{$photo.src|escape}" alt="{$photo.alt|escape}" loading="lazy" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105">
 			</a>
 			{/foreach}

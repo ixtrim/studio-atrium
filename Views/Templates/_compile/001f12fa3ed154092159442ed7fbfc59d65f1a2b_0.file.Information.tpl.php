@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-10-01 21:43:04
+/* Smarty version 3.1.48, created on 2026-10-03 09:36:05
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Project/Detail2026/Information.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6abeb7c8e05835_27483359',
+  'unifunc' => 'content_6ac0b06531b4e4_75914401',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '001f12fa3ed154092159442ed7fbfc59d65f1a2b' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Project/Detail2026/Information.tpl',
-      1 => 1790673299,
+      1 => 1791012915,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6abeb7c8e05835_27483359 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6ac0b06531b4e4_75914401 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section id="informacje" class="bg-white py-16 scroll-mt-32">
 	<div class="max-w-[1480px] mx-auto px-8">
 		<div class="mb-10">
@@ -89,7 +89,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 				</ul>
 				<div class="grid grid-cols-2 gap-3 mt-auto">
 					<button type="button" class="filesDloadTrigger bg-white border border-[#d9dde0] text-[#222] text-[12px] font-bold uppercase tracking-wider py-3 px-3 hover:bg-[var(--brand-blue)] hover:text-white hover:border-[var(--brand-blue)] transition-colors">Pliki do pobrania</button>
-					<a href="/dokumenty/Zmiany-w-projekcie.html" class="bg-white border border-[#d9dde0] text-[#222] text-[12px] font-bold uppercase tracking-wider py-3 px-3 hover:bg-[var(--brand-red)] hover:text-white hover:border-[var(--brand-red)] transition-colors text-center">Zmiany w projekcie</a>
+					<button type="button" id="changes" class="bg-white border border-[#d9dde0] text-[#222] text-[12px] font-bold uppercase tracking-wider py-3 px-3 hover:bg-[var(--brand-red)] hover:text-white hover:border-[var(--brand-red)] transition-colors text-center"
+						data-txt="Na życzenie Inwestora, wprowadzamy odpłatnie zmiany w naszych projektach. Ceny i możliwość wykonania zmian w wybranym projekcie ustalane są indywidualnie. Na pozostałe zmiany wydajemy bezpłatną zgodę jako autorzy projektu, na podstawie której lokalny projektant może wykonać adaptacje.">Zmiany w projekcie</button>
 				</div>
 			</div>
 		</div>

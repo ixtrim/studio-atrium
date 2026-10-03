@@ -40,7 +40,8 @@
 				</ul>
 				<div class="grid grid-cols-2 gap-3 mt-auto">
 					<button type="button" class="filesDloadTrigger bg-white border border-[#d9dde0] text-[#222] text-[12px] font-bold uppercase tracking-wider py-3 px-3 hover:bg-[var(--brand-blue)] hover:text-white hover:border-[var(--brand-blue)] transition-colors">Pliki do pobrania</button>
-					<a href="/dokumenty/Zmiany-w-projekcie.html" class="bg-white border border-[#d9dde0] text-[#222] text-[12px] font-bold uppercase tracking-wider py-3 px-3 hover:bg-[var(--brand-red)] hover:text-white hover:border-[var(--brand-red)] transition-colors text-center">Zmiany w projekcie</a>
+					<button type="button" id="changes" class="bg-white border border-[#d9dde0] text-[#222] text-[12px] font-bold uppercase tracking-wider py-3 px-3 hover:bg-[var(--brand-red)] hover:text-white hover:border-[var(--brand-red)] transition-colors text-center"
+						data-txt="Na życzenie Inwestora, wprowadzamy odpłatnie zmiany w naszych projektach. Ceny i możliwość wykonania zmian w wybranym projekcie ustalane są indywidualnie. Na pozostałe zmiany wydajemy bezpłatną zgodę jako autorzy projektu, na podstawie której lokalny projektant może wykonać adaptacje.">Zmiany w projekcie</button>
 				</div>
 			</div>
 		</div>

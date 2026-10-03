@@ -1,6 +1,9 @@
 <div class="blue-overlay" id="ajax-info-overlay">
 	<div class="over-box" id="ajax-info-over-box"></div>
-	<button type="button" id="ajax-info-overlay-close" class="blue-overlay-close">Zamknij</button>
+	<button type="button" id="ajax-info-overlay-close" class="blue-overlay-close">
+		<span class="close-x" aria-hidden="true">✖</span>
+		<span>Zamknij</span>
+	</button>
 </div>
 
 <div class="blue-overlay catalog">
@@ -1020,7 +1023,7 @@
 <script src="/js/enquire.min.js"></script>
 <script src="/js/storage.js"></script>
 <script src="/js/clicksearch.js?v={$version}"></script>
-<script src="/js/common.js?v={$version}"></script>
+<script src="/js/common.js?v=20261003a"></script>
 <script src="/js/filters.js?v={$version}-20261002b"></script>
 {include file="Include/EcommercePush.tpl"}
 <script src="/js/ecommerce.js?v=20260929a"></script>

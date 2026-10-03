@@ -21,6 +21,10 @@
 			<param name="validate_form" required="yes">
 				<validator name="Integer" />
 			</param>
+			<param name="validate_form_id" required="no">
+				<filter name="Trim" />
+				<validator name="String" />
+			</param>
 		</action>
 	</request>
 

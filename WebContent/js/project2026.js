@@ -131,32 +131,29 @@
 		setActive(0);
 	}
 
-	function initGalleryLightbox() {
-		var lb = document.getElementById('proj-gallery-lightbox');
-		if (!lb || lb.dataset.init === '1') return;
+	function bindMediaLightbox(config) {
+		var lb = document.getElementById(config.id);
+		if (!lb || lb.dataset.init === '1') return null;
 		lb.dataset.init = '1';
 
-		var root = document.getElementById('proj-2026');
-		var slides = qsa('.proj-gallery-slide', root || document).map(function (el) {
-			return {
-				src: el.getAttribute('src') || el.currentSrc || '',
-				caption: el.getAttribute('alt') || ''
-			};
-		}).filter(function (s) { return !!s.src; });
-		if (!slides.length) return;
+		var slides = config.slides || [];
+		if (!slides.length) return null;
 
-		var img = qs('#proj-gal-lb-img', lb);
-		var captionEl = qs('#proj-gal-lb-caption', lb);
-		var counterEl = qs('#proj-gal-lb-counter', lb);
+		var prefix = config.prefix;
+		var img = qs('#' + prefix + '-img', lb);
+		var captionEl = qs('#' + prefix + '-caption', lb);
+		var counterEl = qs('#' + prefix + '-counter', lb);
 		var media = qs('.proj-gal-lb-media', lb);
-		var prevBtn = qs('[data-gal-lb-prev]', lb);
-		var nextBtn = qs('[data-gal-lb-next]', lb);
-		var thumbsWrap = qs('#proj-gal-lb-thumbs', lb);
-		var progressBar = qs('#proj-gal-lb-progress-bar', lb);
-		var playBtn = qs('[data-gal-lb-play]', lb);
-		var thumbsBtn = qs('[data-gal-lb-thumbs]', lb);
-		var fsBtn = qs('[data-gal-lb-fs]', lb);
-		var zoomBtn = qs('[data-gal-lb-zoom]', lb);
+		var prevBtn = qs('[data-' + config.attr + '-prev]', lb);
+		var nextBtn = qs('[data-' + config.attr + '-next]', lb);
+		var thumbsWrap = qs('#' + prefix + '-thumbs', lb);
+		var progressBar = qs('#' + prefix + '-progress-bar', lb);
+		var playBtn = qs('[data-' + config.attr + '-play]', lb);
+		var thumbsBtn = qs('[data-' + config.attr + '-thumbs]', lb);
+		var fsBtn = qs('[data-' + config.attr + '-fs]', lb);
+		var zoomBtn = qs('[data-' + config.attr + '-zoom]', lb);
+		var thumbAttr = 'data-' + config.attr + '-thumb';
+		var closeAttr = '[data-' + config.attr + '-close]';
 		var CLOSE_MS = 320;
 		var PLAY_MS = 4000;
 		var index = 0;
@@ -166,6 +163,7 @@
 		var zoomed = false;
 		var playTimer = null;
 		var preloadCache = {};
+		var defaultAlt = config.defaultAlt || 'Zdjęcie';
 
 		function preload(i) {
 			var slide = slides[i];
@@ -182,7 +180,7 @@
 		}
 
 		function syncThumbs() {
-			qsa('[data-gal-lb-thumb]', lb).forEach(function (btn, i) {
+			qsa('[' + thumbAttr + ']', lb).forEach(function (btn, i) {
 				btn.classList.toggle('is-active', i === index);
 			});
 		}
@@ -193,10 +191,10 @@
 			if (zoomBtn) zoomBtn.setAttribute('aria-pressed', zoomed ? 'true' : 'false');
 		}
 
-		function applyContent(slide, syncGallery) {
+		function applyContent(slide, notify) {
 			if (!slide || !img) return;
 			setZoom(false);
-			img.alt = slide.caption || 'Zdjęcie projektu';
+			img.alt = slide.caption || defaultAlt;
 			if (captionEl) captionEl.textContent = slide.caption || '';
 			if (counterEl) {
 				counterEl.textContent = slides.length > 1 ? (index + 1) + ' / ' + slides.length : '';
@@ -209,8 +207,8 @@
 			if (slides.length > 1) preload((index - 1 + slides.length) % slides.length);
 			updateProgress();
 			syncThumbs();
-			if (syncGallery && typeof window.__projGallerySetActive === 'function') {
-				window.__projGallerySetActive(index);
+			if (notify && typeof config.onIndexChange === 'function') {
+				config.onIndexChange(index);
 			}
 		}
 
@@ -330,9 +328,7 @@
 			}, 140);
 		}
 
-		window.__projOpenGalleryLightbox = openLb;
-
-		qsa('[data-gal-lb-close]', lb).forEach(function (el) {
+		qsa(closeAttr, lb).forEach(function (el) {
 			el.addEventListener('click', closeLb);
 		});
 		if (prevBtn) prevBtn.addEventListener('click', function () { go(-1); });
@@ -341,9 +337,9 @@
 		if (thumbsBtn) thumbsBtn.addEventListener('click', toggleThumbs);
 		if (fsBtn) fsBtn.addEventListener('click', toggleFullscreen);
 		if (zoomBtn) zoomBtn.addEventListener('click', function () { setZoom(!zoomed); });
-		qsa('[data-gal-lb-thumb]', lb).forEach(function (btn) {
+		qsa('[' + thumbAttr + ']', lb).forEach(function (btn) {
 			btn.addEventListener('click', function () {
-				var i = parseInt(btn.getAttribute('data-gal-lb-thumb'), 10);
+				var i = parseInt(btn.getAttribute(thumbAttr), 10);
 				if (isNaN(i) || i === index) return;
 				index = i;
 				applyContent(slides[index], true);
@@ -359,6 +355,60 @@
 				e.preventDefault();
 				togglePlay();
 			}
+		});
+
+		return { open: openLb, close: closeLb };
+	}
+
+	function initGalleryLightbox() {
+		var root = document.getElementById('proj-2026');
+		var slides = qsa('.proj-gallery-slide', root || document).map(function (el) {
+			return {
+				src: el.getAttribute('src') || el.currentSrc || '',
+				caption: el.getAttribute('alt') || ''
+			};
+		}).filter(function (s) { return !!s.src; });
+
+		var api = bindMediaLightbox({
+			id: 'proj-gallery-lightbox',
+			prefix: 'proj-gal-lb',
+			attr: 'gal-lb',
+			slides: slides,
+			defaultAlt: 'Zdjęcie projektu',
+			onIndexChange: function (index) {
+				if (typeof window.__projGallerySetActive === 'function') {
+					window.__projGallerySetActive(index);
+				}
+			}
+		});
+		if (api) window.__projOpenGalleryLightbox = api.open;
+	}
+
+	function initRealizationsLightbox() {
+		var root = document.getElementById('proj-2026');
+		var triggers = qsa('[data-realizacje-lb]', root || document);
+		var slides = triggers.map(function (el) {
+			return {
+				src: el.getAttribute('data-src') || el.getAttribute('href') || '',
+				caption: el.getAttribute('data-caption') || ''
+			};
+		}).filter(function (s) { return !!s.src; });
+
+		var api = bindMediaLightbox({
+			id: 'proj-realizations-lightbox',
+			prefix: 'proj-real-lb',
+			attr: 'real-lb',
+			slides: slides,
+			defaultAlt: 'Realizacja'
+		});
+		if (!api) return;
+
+		triggers.forEach(function (el) {
+			el.addEventListener('click', function (e) {
+				e.preventDefault();
+				var i = parseInt(el.getAttribute('data-realizacje-lb'), 10);
+				api.open(isNaN(i) ? 0 : i);
+			});
 		});
 	}
 
@@ -819,6 +869,7 @@
 		var root = qs('#proj-2026');
 		if (!root) return;
 		initGalleryLightbox();
+		initRealizationsLightbox();
 		initGallery(root);
 		initFloors(root);
 		initAccordion(root, '.proj-cost-item', '.proj-cost-toggle', 'is-open');
@@ -828,6 +879,67 @@
 		initHeatPump(root);
 		initSimilarSwiper();
 		initParamInfo(root);
+		initDownloadsOverlay(root);
+	}
+
+	function initDownloadsOverlay(root) {
+		var overlay = document.getElementById('proj-dload-overlay');
+		if (!overlay) return;
+
+		function openDload() {
+			if (overlay.parentNode !== document.body) {
+				document.body.appendChild(overlay);
+			}
+			overlay.classList.add('open');
+			overlay.setAttribute('aria-hidden', 'false');
+			if (typeof window.Utils !== 'undefined' && typeof window.Utils.isPopHeigherThanViewport === 'function') {
+				if (window.Utils.isPopHeigherThanViewport(overlay)) {
+					document.body.classList.add('noScroll');
+				}
+			}
+			if (typeof window.Tawk_API !== 'undefined' && typeof window.Tawk_API.hideWidget === 'function') {
+				window.Tawk_API.hideWidget();
+			}
+		}
+
+		function closeDload() {
+			overlay.classList.remove('open');
+			overlay.setAttribute('aria-hidden', 'true');
+			if (!document.querySelector('.blue-overlay.open') && document.body.classList.contains('noScroll')) {
+				document.body.classList.remove('noScroll');
+			}
+			if (typeof window.Tawk_API !== 'undefined' && typeof window.Tawk_API.showWidget === 'function') {
+				window.Tawk_API.showWidget();
+			}
+		}
+
+		document.addEventListener('click', function (e) {
+			var trigger = e.target && e.target.closest ? e.target.closest('.filesDloadTrigger') : null;
+			if (!trigger) return;
+			e.preventDefault();
+			e.stopPropagation();
+			openDload();
+		}, true);
+
+		var closeBtn = document.getElementById('proj-dload-overlay-close');
+		if (closeBtn) {
+			closeBtn.addEventListener('click', function (e) {
+				e.preventDefault();
+				closeDload();
+			});
+		}
+		overlay.addEventListener('click', function (e) {
+			if (e.target === overlay) closeDload();
+		});
+		document.addEventListener('keydown', function (e) {
+			if (e.key === 'Escape' && overlay.classList.contains('open')) closeDload();
+		});
+
+		// Login / file-request links close this overlay so the next popup is on top
+		overlay.addEventListener('click', function (e) {
+			var next = e.target && e.target.closest ? e.target.closest('.login-trigger, .ajax-info') : null;
+			if (next) closeDload();
+		});
 	}
 
 	function initParamInfo(root) {
@@ -922,6 +1034,14 @@
 		// Document capture: works even if a late overlay sits above in bubble phase,
 		// and survives tech-data re-renders.
 		document.addEventListener('click', function (e) {
+			var changes = e.target && e.target.closest ? e.target.closest('#changes') : null;
+			if (changes) {
+				e.preventDefault();
+				e.stopPropagation();
+				var txt = changes.getAttribute('data-txt') || '';
+				showHtml('<p><strong>Zmiany w projekcie</strong></p><p>' + txt + '</p>');
+				return;
+			}
 			var trigger = e.target && e.target.closest ? e.target.closest('.param-info') : null;
 			if (!trigger || !scope.contains(trigger)) return;
 			e.preventDefault();

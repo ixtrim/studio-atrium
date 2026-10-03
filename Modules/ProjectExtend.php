@@ -23,10 +23,16 @@ class ProjectExtend extends WWW\AbstractModule
 		$this->_projectFinder = $this->_daoRepository->getProjectFinder(\Point7_WebApp::getConfigParam('paths.clicksearch_sets'));
 	
 		if (!$request->isValid() && !$request->isParamAllowed('skip_validation_error')) {
+			// AJAX/JSON actions return their own error payloads in do*
+			$jsonActions = array('PromoNotify', 'GetSituation', 'GetRooms', 'ProjectAddons');
+			if (in_array($action, $jsonActions, true)) {
+				return;
+			}
+
 			$responseContext->set('error', 'Brak wymaganych parametrów.');
 			
 			\Point7_WebApp::getLogger('notfound')->error(
-				\StudioAtrium\Application\Exception\Helper::format404Message('Błąd ogólny', 'ProjectExtend', $action)
+				'Błąd ogólny ProjectExtend/' . $action
 			);
 			$this->_exit();
 		}
@@ -326,8 +332,12 @@ class ProjectExtend extends WWW\AbstractModule
 
         if (!$request->isValid()) {
             $status = 'error';
+        } elseif (!class_exists('\StudioAtrium\Entity\Project\Promo\Notify')) {
+            \Point7_WebApp::getLogger('error')->error(
+                'Promo notify entity missing — pid: ' . $request->getParam('pid') . ', email: ' . $request->getParam('email')
+            );
+            $status = 'fail';
         } else {
-            
             $entity = new \StudioAtrium\Entity\Project\Promo\Notify();
 
             $entity->setProjectId($request->getParam('pid'));
@@ -345,7 +355,7 @@ class ProjectExtend extends WWW\AbstractModule
                     $status = 'duplicated';
                 } else {
                     \Point7_WebApp::getLogger('error')->error(
-                        \StudioAtrium\Application\Exception\Helper::formatLoggerMessage($e, 'Error during store promo notify - pid: ' . $request->getParam('pid') . ', email: ' . $request->getParam('email'))
+                        'Error during store promo notify - pid: ' . $request->getParam('pid') . ', email: ' . $request->getParam('email') . ' — ' . $e->getMessage()
                     );
 
                     $status = 'fail';

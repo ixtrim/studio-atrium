@@ -35,6 +35,28 @@ class Category implements \ArrayAccess
     public function setName(string $v) { $this->name = $v; }
     public function getAlternateName() { return $this->alternateName; }
     public function setAlternateName($v) { $this->alternateName = $v; }
+
+    /**
+     * CMS category labels sometimes include HTML (e.g. &lt;strong&gt;…&lt;/strong&gt;).
+     * Use this for breadcrumbs, schema, titles — never show raw tags after escaping.
+     */
+    public function getPlainName(): string
+    {
+        return self::plainLabel($this->name);
+    }
+
+    public function getPlainAlternateName(): string
+    {
+        return self::plainLabel((string) $this->alternateName);
+    }
+
+    public static function plainLabel($value): string
+    {
+        // Decode first so entity-encoded tags (&lt;strong&gt;) are stripped too.
+        $text = html_entity_decode((string) $value, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+        $text = strip_tags($text);
+        return trim(preg_replace('/\s+/u', ' ', $text));
+    }
     public function getParentId() { return $this->parentId; }
     public function setParentId($v) { $this->parentId = $v; }
     public function getDescription() { return $this->description; }
@@ -84,8 +106,11 @@ class Category implements \ArrayAccess
         return [
             'id'                   => $this->id,
             'tree'                 => $this->tree,
-            'name'                 => $this->name,
-            'alternate_name'       => $this->alternateName,
+            // Expose plain labels so escaped Smarty output never shows raw CMS HTML tags.
+            'name'                 => self::plainLabel($this->name),
+            'alternate_name'       => $this->alternateName !== null && $this->alternateName !== ''
+                ? self::plainLabel($this->alternateName)
+                : $this->alternateName,
             'parent_id'            => $this->parentId,
             'description'          => $this->description,
             'short_description'    => $this->shortDescription,

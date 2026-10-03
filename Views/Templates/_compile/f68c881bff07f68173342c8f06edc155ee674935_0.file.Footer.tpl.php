@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2026-10-02 16:04:41
+/* Smarty version 3.1.48, created on 2026-10-03 09:31:23
   from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6abfb9f9443bf2_89532499',
+  'unifunc' => 'content_6ac0af4b687155_25675039',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f68c881bff07f68173342c8f06edc155ee674935' => 
     array (
       0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/Footer.tpl',
-      1 => 1790949863,
+      1 => 1791012681,
       2 => 'file',
     ),
   ),
@@ -21,10 +21,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:Include/EcommercePush.tpl' => 1,
   ),
 ),false)) {
-function content_6abfb9f9443bf2_89532499 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6ac0af4b687155_25675039 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="blue-overlay" id="ajax-info-overlay">
 	<div class="over-box" id="ajax-info-over-box"></div>
-	<button type="button" id="ajax-info-overlay-close" class="blue-overlay-close">Zamknij</button>
+	<button type="button" id="ajax-info-overlay-close" class="blue-overlay-close">
+		<span class="close-x" aria-hidden="true">✖</span>
+		<span>Zamknij</span>
+	</button>
 </div>
 
 <div class="blue-overlay catalog">
@@ -1030,8 +1033,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 "><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
- src="/js/common.js?v=<?php echo $_smarty_tpl->tpl_vars['version']->value;?>
-"><?php echo '</script'; ?>
+ src="/js/common.js?v=20261003a"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
  src="/js/filters.js?v=<?php echo $_smarty_tpl->tpl_vars['version']->value;?>

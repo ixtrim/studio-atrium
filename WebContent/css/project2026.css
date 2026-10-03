@@ -262,17 +262,20 @@
 	flex-shrink: 0;
 }
 
-/* Gallery lightbox — dark Fancybox-style chrome */
-#proj-gallery-lightbox {
+/* Gallery / realizations lightbox — dark Fancybox-style chrome */
+#proj-gallery-lightbox,
+#proj-realizations-lightbox {
 	z-index: 2147483646 !important;
 	isolation: isolate;
 }
-#proj-gallery-lightbox .proj-gal-lb-backdrop {
+#proj-gallery-lightbox .proj-gal-lb-backdrop,
+#proj-realizations-lightbox .proj-gal-lb-backdrop {
 	background: rgba(20, 24, 28, 0.92);
 	opacity: 0;
 	transition: opacity 0.32s cubic-bezier(0.22, 1, 0.36, 1);
 }
-#proj-gallery-lightbox .proj-gal-lb-panel {
+#proj-gallery-lightbox .proj-gal-lb-panel,
+#proj-realizations-lightbox .proj-gal-lb-panel {
 	opacity: 0;
 	transform: translateY(14px) scale(0.98);
 	transition: opacity 0.36s cubic-bezier(0.22, 1, 0.36, 1),
@@ -280,39 +283,47 @@
 	will-change: opacity, transform;
 }
 #proj-gallery-lightbox .proj-gal-lb-stage,
-#proj-gallery-lightbox .proj-gal-lb-media {
+#proj-gallery-lightbox .proj-gal-lb-media,
+#proj-realizations-lightbox .proj-gal-lb-stage,
+#proj-realizations-lightbox .proj-gal-lb-media {
 	background: transparent;
 	box-shadow: none;
 	padding: 0;
 	margin: 0;
 	line-height: 0;
 }
-#proj-gallery-lightbox .proj-gal-lb-media {
+#proj-gallery-lightbox .proj-gal-lb-media,
+#proj-realizations-lightbox .proj-gal-lb-media {
 	transition: opacity 0.2s ease, transform 0.2s ease;
 	will-change: opacity, transform;
 }
-#proj-gallery-lightbox .proj-gal-lb-media.is-swap {
+#proj-gallery-lightbox .proj-gal-lb-media.is-swap,
+#proj-realizations-lightbox .proj-gal-lb-media.is-swap {
 	opacity: 0;
 	transform: scale(0.99);
 }
-#proj-gallery-lightbox .proj-gal-lb-media.is-zoomed {
+#proj-gallery-lightbox .proj-gal-lb-media.is-zoomed,
+#proj-realizations-lightbox .proj-gal-lb-media.is-zoomed {
 	cursor: zoom-out;
 	overflow: auto;
-	max-height: min(86vh, 920px);
+	max-height: min(92vh, 1080px);
 }
-#proj-gallery-lightbox .proj-gal-lb-media.is-zoomed img {
+#proj-gallery-lightbox .proj-gal-lb-media.is-zoomed img,
+#proj-realizations-lightbox .proj-gal-lb-media.is-zoomed img {
 	max-height: none;
-	max-width: min(160vw, 2200px);
+	max-width: min(160vw, 2880px);
 	transform: scale(1.35);
 }
-#proj-gallery-lightbox .proj-gal-lb-media img {
+#proj-gallery-lightbox .proj-gal-lb-media img,
+#proj-realizations-lightbox .proj-gal-lb-media img {
 	display: block;
 	margin: 0 auto;
 	padding: 0;
 	vertical-align: top;
 	transition: transform 0.25s ease;
 }
-#proj-gallery-lightbox .proj-gal-lb-nav {
+#proj-gallery-lightbox .proj-gal-lb-nav,
+#proj-realizations-lightbox .proj-gal-lb-nav {
 	position: absolute;
 	top: 50%;
 	z-index: 30;
@@ -331,21 +342,26 @@
 	opacity: 0;
 	transition: opacity 0.28s ease 0.06s, color 0.2s ease, transform 0.2s ease;
 }
-#proj-gallery-lightbox .proj-gal-lb-prev {
+#proj-gallery-lightbox .proj-gal-lb-prev,
+#proj-realizations-lightbox .proj-gal-lb-prev {
 	left: max(0.35rem, env(safe-area-inset-left, 0px) + 0.35rem);
 }
-#proj-gallery-lightbox .proj-gal-lb-next {
+#proj-gallery-lightbox .proj-gal-lb-next,
+#proj-realizations-lightbox .proj-gal-lb-next {
 	right: max(0.35rem, env(safe-area-inset-right, 0px) + 0.35rem);
 }
-#proj-gallery-lightbox .proj-gal-lb-nav:hover {
+#proj-gallery-lightbox .proj-gal-lb-nav:hover,
+#proj-realizations-lightbox .proj-gal-lb-nav:hover {
 	color: #fff;
 	transform: translateY(-50%) scale(1.06);
 }
-#proj-gallery-lightbox .proj-gal-lb-nav.is-hidden {
+#proj-gallery-lightbox .proj-gal-lb-nav.is-hidden,
+#proj-realizations-lightbox .proj-gal-lb-nav.is-hidden {
 	visibility: hidden;
 	pointer-events: none;
 }
-#proj-gallery-lightbox .proj-gal-lb-thumbs {
+#proj-gallery-lightbox .proj-gal-lb-thumbs,
+#proj-realizations-lightbox .proj-gal-lb-thumbs {
 	display: flex;
 	gap: 8px;
 	justify-content: center;
@@ -355,10 +371,12 @@
 	padding: 4px 2px 8px;
 	scrollbar-width: thin;
 }
-#proj-gallery-lightbox .proj-gal-lb-thumbs[hidden] {
+#proj-gallery-lightbox .proj-gal-lb-thumbs[hidden],
+#proj-realizations-lightbox .proj-gal-lb-thumbs[hidden] {
 	display: none !important;
 }
-#proj-gallery-lightbox .proj-gal-lb-thumb {
+#proj-gallery-lightbox .proj-gal-lb-thumb,
+#proj-realizations-lightbox .proj-gal-lb-thumb {
 	flex: 0 0 auto;
 	width: 64px;
 	height: 48px;
@@ -371,17 +389,21 @@
 	transition: opacity 0.15s ease, border-color 0.15s ease;
 }
 #proj-gallery-lightbox .proj-gal-lb-thumb.is-active,
-#proj-gallery-lightbox .proj-gal-lb-thumb:hover {
+#proj-gallery-lightbox .proj-gal-lb-thumb:hover,
+#proj-realizations-lightbox .proj-gal-lb-thumb.is-active,
+#proj-realizations-lightbox .proj-gal-lb-thumb:hover {
 	opacity: 1;
 	border-color: #fff;
 }
-#proj-gallery-lightbox .proj-gal-lb-thumb img {
+#proj-gallery-lightbox .proj-gal-lb-thumb img,
+#proj-realizations-lightbox .proj-gal-lb-thumb img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 	display: block;
 }
-#proj-gallery-lightbox .proj-gal-lb-progress {
+#proj-gallery-lightbox .proj-gal-lb-progress,
+#proj-realizations-lightbox .proj-gal-lb-progress {
 	height: 2px;
 	margin: 14px auto 0;
 	max-width: 180px;
@@ -389,28 +411,35 @@
 	border-radius: 1px;
 	overflow: hidden;
 }
-#proj-gallery-lightbox .proj-gal-lb-progress > span {
+#proj-gallery-lightbox .proj-gal-lb-progress > span,
+#proj-realizations-lightbox .proj-gal-lb-progress > span {
 	display: block;
 	height: 100%;
 	width: 0;
 	background: rgba(255, 255, 255, 0.85);
 	transition: width 0.25s ease;
 }
-#proj-gallery-lightbox.is-open {
+#proj-gallery-lightbox.is-open,
+#proj-realizations-lightbox.is-open {
 	display: flex !important;
 }
-#proj-gallery-lightbox.is-open .proj-gal-lb-backdrop {
+#proj-gallery-lightbox.is-open .proj-gal-lb-backdrop,
+#proj-realizations-lightbox.is-open .proj-gal-lb-backdrop {
 	opacity: 1;
 }
-#proj-gallery-lightbox.is-open .proj-gal-lb-panel {
+#proj-gallery-lightbox.is-open .proj-gal-lb-panel,
+#proj-realizations-lightbox.is-open .proj-gal-lb-panel {
 	opacity: 1;
 	transform: translateY(0) scale(1);
 }
 #proj-gallery-lightbox.is-open .proj-gal-lb-nav:not(.is-hidden),
-#proj-gallery-lightbox.is-open .proj-gal-lb-toolbar {
+#proj-gallery-lightbox.is-open .proj-gal-lb-toolbar,
+#proj-realizations-lightbox.is-open .proj-gal-lb-nav:not(.is-hidden),
+#proj-realizations-lightbox.is-open .proj-gal-lb-toolbar {
 	opacity: 1;
 }
-#proj-gal-lb-caption:empty {
+#proj-gal-lb-caption:empty,
+#proj-real-lb-caption:empty {
 	display: none;
 }
 

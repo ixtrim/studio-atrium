@@ -2,13 +2,12 @@
 	<div class="w-full max-w-[1480px] mx-auto px-4 sm:px-8 box-border">
 		<div class="grid lg:grid-cols-12 gap-8 min-w-0">
 			<div class="lg:col-span-8 min-w-0 w-full">
-				<div class="relative group overflow-hidden bg-[rgb(27,32,37)] aspect-[16/10] w-full cursor-zoom-in" id="proj-gallery-main" title="Kliknij, aby powiększyć" role="button" tabindex="0" aria-label="Powiększ zdjęcie">
+				<div class="relative group overflow-hidden bg-[rgb(27,32,37)] aspect-[3/2] w-full cursor-zoom-in" id="proj-gallery-main" title="Kliknij, aby powiększyć" role="button" tabindex="0" aria-label="Powiększ zdjęcie">
 					{foreach $detailGallery as $img}
 					<img src="{$img.src|escape}" alt="{$img.alt|escape}" loading="{if $img@first}eager{else}lazy{/if}"
 						class="proj-gallery-slide absolute inset-0 w-full h-full max-w-full object-cover transition-all duration-700 {if $img@first}opacity-100 scale-100{else}opacity-0 scale-105{/if}"
 						data-index="{$img@index}">
 					{/foreach}
-					<div class="absolute left-0 bottom-0 bg-[var(--brand-red)] text-white px-5 py-2 text-[11px] uppercase tracking-[0.24em] font-bold pointer-events-none">ATRIUM</div>
 					{if $detailGallery|@count > 1}
 					<button type="button" id="proj-gal-prev" aria-label="Poprzednie zdjęcie"
 						class="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 grid place-items-center bg-black/35 hover:bg-[var(--brand-red)] text-white backdrop-blur-sm transition-all opacity-100 sm:opacity-0 sm:group-hover:opacity-100">
@@ -122,10 +121,14 @@
 						{/if}
 
 						<div class="mt-3 grid grid-cols-1 gap-2">
-							<a href="{if $user}{url module=panel action=message project_id=$project.id}{else}javascript:{/if}"
-								class="w-full bg-white border border-[#e6e8eb] hover:border-[#1b2025] text-[#1b2025] h-10 text-[11px] font-bold tracking-[0.14em] uppercase transition flex items-center justify-center{if !$user} consultant{/if}">
+							<span
+								class="ajax-info w-full bg-white border border-[#e6e8eb] hover:border-[#1b2025] text-[#1b2025] h-10 text-[11px] font-bold tracking-[0.14em] uppercase transition flex items-center justify-center cursor-pointer"
+								data-url="{url module=project_extend action=promo_info_notify}"
+								data-call="PromoNotify.registerForm"
+								role="button"
+								tabindex="0">
 								Powiadom o promocji
-							</a>
+							</span>
 							<a href="{if $user}{url module=panel action=message project_id=$project.id}{else}javascript:{/if}"
 								class="w-full bg-white border border-[#e6e8eb] hover:border-[#1b2025] text-[#1b2025] h-10 text-[11px] font-bold tracking-[0.14em] uppercase transition flex items-center justify-center{if !$user} consultant{/if}">
 								Znalazłeś projekt taniej? Napisz

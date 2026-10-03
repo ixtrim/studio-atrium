@@ -11,11 +11,15 @@ class RequestResolver
 
     public function getModule(): string
     {
-        return ucfirst(strtolower((string)($this->request->getParam('module') ?? 'index')));
+        $name = (string)($this->request->getParam('module') ?? 'index');
+        // 'index' → 'Index', 'project_extend' → 'ProjectExtend'
+        return str_replace('_', '', ucwords(strtolower($name), '_'));
     }
 
     public function getAction(): string
     {
-        return ucfirst(strtolower((string)($this->request->getParam('action') ?? '')));
+        $name = (string)($this->request->getParam('action') ?? '');
+        // 'promo_info_notify' → 'PromoInfoNotify'
+        return str_replace('_', '', ucwords(strtolower($name), '_'));
     }
 }

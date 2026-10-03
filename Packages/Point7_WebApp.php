@@ -82,8 +82,9 @@ class Point7_WebApp
 
     public static function run()
     {
-        $moduleName = ucfirst(strtolower($_GET['module'] ?? 'index'));
-        $moduleName = self::normalizeModuleName($moduleName);
+        // formvalidator and many AJAX forms send module/action in POST body
+        $moduleName = $_GET['module'] ?? $_POST['module'] ?? 'index';
+        $moduleName = self::normalizeModuleName((string)$moduleName);
 
         self::dispatch($moduleName, null, 0);
     }
@@ -104,7 +105,7 @@ class Point7_WebApp
 
         $moduleConfig = self::parseModuleXml($moduleXml);
         $actionName   = $forcedAction
-            ?? self::normalizeActionName($_GET['action'] ?? '')
+            ?? self::normalizeActionName((string)($_GET['action'] ?? $_POST['action'] ?? ''))
             ?: $moduleConfig['default_action'];
 
         // Load module PHP file from APP_PATH/Modules/ before class_exists check
@@ -403,9 +404,12 @@ class Point7_WebApp
 
             if ($value === null || $value === '') {
                 if ($paramDef['required'] ?? false) {
-                    $msg = $paramDef['msg_required'] ?? "Parametr '{$paramName}' jest wymagany.";
+                    $msg = trim((string)($paramDef['msg_required'] ?? ''));
+                    if ($msg === '') {
+                        $msg = "Parametr '{$paramName}' jest wymagany.";
+                    }
                     $request->markInvalid($paramName, $msg);
-                } elseif (isset($paramDef['default'])) {
+                } elseif (array_key_exists('default', $paramDef) && $paramDef['default'] !== null) {
                     // Inject default into globals so getParam() picks it up
                     $_GET[$paramName] = $paramDef['default'];
                 }
@@ -416,7 +420,11 @@ class Point7_WebApp
             }
         }
 
-        // Re-populate with defaults applied for getParam(), but keep raw = client-only
+        // Preserve validation errors across rebuild (defaults may have been injected into $_GET)
+        $valid         = $request->isValid();
+        $errors        = $request->getErrorMessages();
+        $invalidFields = $request->getInvalidFields();
+
         $request = new Point7_WebApp_Request_Filtered(
             $_GET    ?? [],
             $_POST   ?? [],
@@ -426,6 +434,7 @@ class Point7_WebApp
         );
         $request->setAllowedParams($allowedNames);
         $request->replaceRawParams(array_merge($clientGet, $clientPost));
+        $request->restoreValidationState($valid, $errors, $invalidFields);
 
         return $request;
     }
@@ -457,6 +466,14 @@ class Point7_WebApp
                 }
                 break;
             case 'String':
+                if (isset($paramDef['value']) && (string)$value !== (string)$paramDef['value']) {
+                    $msg = trim((string)($paramDef['msg_required'] ?? ''));
+                    if ($msg === '') {
+                        $msg = "Parametr '{$paramName}' ma nieprawidłową wartość.";
+                    }
+                    $request->markInvalid($paramName, $msg);
+                    break;
+                }
                 $len = strlen((string)$value);
                 if (isset($paramDef['min_length']) && $len < (int)$paramDef['min_length']) {
                     $msg = $paramDef['msg_min_length'] ?? "Parametr '{$paramName}' jest za krótki.";
@@ -467,6 +484,55 @@ class Point7_WebApp
                 }
                 break;
         }
+    }
+
+    /**
+     * Validate arbitrary data against a module action's XML param rules.
+     * Used by the Validator AJAX endpoint (formvalidator.js).
+     *
+     * @return array{status:string,errors?:array<string,list<string>>}
+     */
+    public static function validateModuleActionData(string $module, string $action, array $data): array
+    {
+        $moduleName = self::normalizeModuleName($module);
+        $actionName = self::normalizeActionName($action);
+        $moduleXml  = APP_PATH . '/Conf/Modules/' . $moduleName . '.xml';
+        if (!file_exists($moduleXml)) {
+            return ['status' => 'error', 'errors' => ['_module' => ['Nieznany moduł.']]];
+        }
+
+        $moduleConfig = self::parseModuleXml($moduleXml);
+        $actionConfig = $moduleConfig['actions'][$actionName] ?? null;
+        if (!$actionConfig) {
+            return ['status' => 'error', 'errors' => ['_action' => ['Nieznana akcja.']]];
+        }
+
+        $request = new Point7_WebApp_Request_Filtered($data, [], [], [], 'POST');
+        foreach ($actionConfig['params'] ?? [] as $paramName => $paramDef) {
+            $value = $data[$paramName] ?? null;
+            if ($value === null || $value === '') {
+                if ($paramDef['required'] ?? false) {
+                    $msg = trim((string)($paramDef['msg_required'] ?? ''));
+                    if ($msg === '') {
+                        $msg = "Parametr '{$paramName}' jest wymagany.";
+                    }
+                    $request->markInvalid($paramName, $msg);
+                }
+            } else {
+                self::applyValidator(
+                    $request,
+                    $paramName,
+                    $value,
+                    $paramDef['validator'] ?? 'String',
+                    $paramDef
+                );
+            }
+        }
+
+        if (!$request->isValid()) {
+            return ['status' => 'error', 'errors' => $request->getErrorMessages()];
+        }
+        return ['status' => 'ok'];
     }
 
     // -------------------------------------------------------------------------
@@ -801,8 +867,8 @@ class Point7_WebApp
 
     private static function normalizeModuleName(string $name): string
     {
-        // 'index' → 'Index', 'project' → 'Project'
-        return ucfirst(strtolower($name));
+        // 'index' → 'Index', 'project' → 'Project', 'project_extend' → 'ProjectExtend'
+        return str_replace('_', '', ucwords(strtolower($name), '_'));
     }
 
     private static function normalizeActionName(string $name): string

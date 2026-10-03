@@ -38,8 +38,16 @@ class Contact extends WWW\AbstractModule
 		
 // 		$result = false;
 		
-		//\Point7_WebApp::getLogger('consultant')->info("Email: " . $request->getParam('email') . "\nQuery: " . $request->getParam('query') . "\n----------------------------\n");
-		\Point7_WebApp::getLogger('consultant')->info(\StudioAtrium\Application\Helper\Logger::formatLoggerMessage('Wiadomo�� od: ' . $request->getParam('email'), $request->getParam('query')));
+		$logMsg = 'Wiadomość od: ' . $request->getParam('email') . "\n" . $request->getParam('query');
+		if (class_exists('\StudioAtrium\Application\Helper\Logger')
+			&& method_exists('\StudioAtrium\Application\Helper\Logger', 'formatLoggerMessage')
+		) {
+			$logMsg = \StudioAtrium\Application\Helper\Logger::formatLoggerMessage(
+				'Wiadomość od: ' . $request->getParam('email'),
+				$request->getParam('query')
+			);
+		}
+		\Point7_WebApp::getLogger('consultant')->info($logMsg);
 
 		if ($mailerConfig = $appContext->getConfigParam('mailer.sender')) {
 			
@@ -49,18 +57,26 @@ class Contact extends WWW\AbstractModule
 					$content .= '<br><br>Zapytanie dotyczy projektu: <strong>' . $project->getSymbolAlpha() . ' ' . $project->getSymbolNum() . ' ' . $project->getName() . '</strong>';
 				}
 			}
-// 			$result = 
-			if ($this->_sendMail($appContext->getConfigParam('mailer.consultant'), 'Konsultant studioatrium.pl', $content, $mailerConfig, true, $request->getParam('email'))) {
-				$responseContext->setJSONResponse('status', 'ok');
+			$sent = false;
+			if (method_exists($this, '_sendMail')) {
+				$sent = (bool)$this->_sendMail(
+					$appContext->getConfigParam('mailer.consultant'),
+					'Konsultant studioatrium.pl',
+					$content,
+					$mailerConfig,
+					true,
+					$request->getParam('email')
+				);
 			} else {
-				$responseContext->setJSONResponse('status', 'error');
+				\Point7_WebApp::getLogger('error')->error('Contact::_sendMail() missing — cannot send consultant message');
 			}
-			
+
+			$responseContext->setJSONResponse('status', $sent ? 'ok' : 'error');
 			$this->_exit();
 			
 		} else {
 			\Point7_WebApp::getLogger('error')->error('Error during sending e-mail from consultant box - no mailer config');
-			$responseContext->setJSONREsponse('status', 'error');
+			$responseContext->setJSONResponse('status', 'error');
 			$this->_exit();
 		}
 		

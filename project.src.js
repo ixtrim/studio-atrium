@@ -1287,9 +1287,10 @@ var PromoNotify = (function()
 	{
 		Validator.registerForm($('#project-promo-notify-box form'));
 		AjaxInfo.register('#project-promo-notify-box .ajax-info');
-		
-		$('#promo-notify-pid').val($('#title').data('id'))
-		
+
+		var pid = $('#title').data('id') || $('#proj-2026').data('project-id') || 0;
+		$('#promo-notify-pid').val(pid);
+
 		$('#promo-notify-form').on('submit', _submit);
 		$('#ajax-info-overlay-close').on('click', _unregister);
 	}
@@ -1307,7 +1308,7 @@ var PromoNotify = (function()
 	{
 		if($('#promo-notify-form .error_field').size() > 0) {
 			
-			$('#promo-notify-box').text('Wypełnij poprawnie formularz');
+			$('#promo-notify-box').text('Wypełnij poprawnie formularz').show();
 			$('#promo-notify-waiter').hide();
 			
 			if($('#promo-notify-button').prop('disabled')) {
@@ -1332,7 +1333,7 @@ var PromoNotify = (function()
 				dataType: 'json',
 		
 				beforeSend: function() {
-					$('#promo-notify-box').text('');
+					$('#promo-notify-box').text('').hide();
 					$('#promo-notify-waiter').show();
 				},
 				
@@ -1340,21 +1341,21 @@ var PromoNotify = (function()
 				{
 					switch (response.status) {
 						case 'ok':
-							$('#promo-notify-box').text('Twój e-mail został zarejestrowany.');
+							$('#promo-notify-box').text('Twój e-mail został zarejestrowany.').show();
 							$('#promo-notify-button').hide();
 						break;
 						
 						case 'duplicated':
-							$('#promo-notify-box').text('Twój e-mail już jest zarejestrowany dla tego projektu.');
+							$('#promo-notify-box').text('Twój e-mail już jest zarejestrowany dla tego projektu.').show();
 							$('#promo-notify-button').hide();
 						break;
 						
 						case 'error':
-							$('#promo-notify-box').text('Nieprawidłowy email.');
+							$('#promo-notify-box').text('Nieprawidłowy email.').show();
 						break;
 		
 						default:
-							$('#promo-notify-box').text('Rejestracja nie powiodła się. Spróbuj ponownie, bądź skontaktuj się z nami telefonicznie.');
+							$('#promo-notify-box').text('Rejestracja nie powiodła się. Spróbuj ponownie, bądź skontaktuj się z nami telefonicznie.').show();
 					
 					}
 					
@@ -1461,7 +1462,8 @@ var ProjectRequest = (function()
 				$('#fr-time-box').parent().addClass('error_field');
 			}
 			
-			$('#fr-fail-box').text('Wypełnij poprawnie formularz');
+			$('#fr-fail-box').text('Wypełnij poprawnie formularz').show();
+			$('#fr-fail-box').closest('.info-box').show();
 			$('#fr-waiter').hide();
 			
 			if($('#request-file-trigger').prop('disabled')) {
@@ -1484,7 +1486,8 @@ var ProjectRequest = (function()
 				
 				beforeSend: function() {
 					_isLocked = true;
-					$('#fr-fail-box').text('');
+					$('#fr-fail-box').text('').hide();
+					$('#fr-fail-box').closest('.info-box').hide();
 					$('#fr-waiter').show();
 				},
 				
@@ -1492,14 +1495,17 @@ var ProjectRequest = (function()
 				{
 					$('#request-file-trigger').hide();
 					if (response.feedback.status == 'download') {
-						$('#fr-fail-box').text('Dziękujemy za pobranie pliku.');
+						$('#fr-fail-box').text('Dziękujemy za pobranie pliku.').show();
+						$('#fr-fail-box').closest('.info-box').show();
 						$('body').append('<a id="openLinkNewTab" href="/pobierz-plik/' + response.feedback.file + '" download="' + response.feedback.name + '"><span></span></a>').find('#openLinkNewTab span').click().remove();
 						_isLocked = false;
 					} else if(response.feedback.status == 'ok') {
-						$('#fr-fail-box').text('Zamówienie zostało zarejestrowane. Plik zostanie wysłany do Ciebie e-mailem.');
+						$('#fr-fail-box').text('Zamówienie zostało zarejestrowane. Plik zostanie wysłany do Ciebie e-mailem.').show();
+						$('#fr-fail-box').closest('.info-box').show();
 						_isLocked = false;
 					} else {
-						$('#fr-fail-box').text(response.feedback.error);
+						$('#fr-fail-box').text(response.feedback.error).show();
+						$('#fr-fail-box').closest('.info-box').show();
 						_isLocked = true;
 					}
 					

@@ -34,11 +34,6 @@
 				</div>
 				{/if}
 			</div>
-			{if !$noestimate && $project.type != 'skeleton'}
-			<button type="button" class="filesDloadTrigger mt-6 text-[12px] font-bold uppercase tracking-wider text-[var(--brand-blue-strong)] hover:text-[var(--brand-red)]">
-				Pobierz kosztorys →
-			</button>
-			{/if}
 		</div>
 	</div>
 </section>

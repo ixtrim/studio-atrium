@@ -318,8 +318,10 @@ class Project extends WWW\AbstractModule
 				
 				if($subCategory) {
 					if(!in_array($matches[0], array('projekty-domow/parterowe', 'projekty-domow/z-poddaszem-uzytkowym', 'projekty-domow/pietrowe'))) {
-						
-						$responseContext->set('subCategory', strtolower($subCategory->getName()));
+						// Category names in CMS sometimes wrap labels in HTML (e.g. <strong>…</strong>).
+						// Breadcrumbs must stay plain text — strip tags before display.
+						$subCategoryLabel = \StudioAtrium\Entity\Project\Category::plainLabel($subCategory->getName());
+						$responseContext->set('subCategory', mb_strtolower($subCategoryLabel, 'UTF-8'));
 						$responseContext->set('subCategoryLink', '/' . $matches[0] . '/');
 					}
 				}
@@ -1191,11 +1193,11 @@ class Project extends WWW\AbstractModule
 			$breadcrumbs[1]['name'] = "Projekty domów";
 			if ($category->getLink() != 'projekty-domow') {
 				$breadcrumbs[2]['id'] = "https://www.studioatrium.pl/" . $category->getLink() . "/";
-				$breadcrumbs[2]['name'] = str_replace('"', "'", $category->getName());
+				$breadcrumbs[2]['name'] = str_replace('"', "'", $category->getPlainName());
 			}
 		} else {
 			$breadcrumbs[1]['id'] = "https://www.studioatrium.pl/".$category->getLink()."/";
-			$breadcrumbs[1]['name'] = str_replace('"', "'", $category->getName());
+			$breadcrumbs[1]['name'] = str_replace('"', "'", $category->getPlainName());
 		}
 		
 		$responseContext->set('schemaBreadcrumbs', $breadcrumbs);
