@@ -1,0 +1,506 @@
+<?php
+/* Smarty version 3.1.48, created on 2026-10-03 20:24:32
+  from '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/HeadHTML.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.48',
+  'unifunc' => 'content_6ac1486084ca60_22358930',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '2caf7189cf71a0154ad77cc024aa442356349989' => 
+    array (
+      0 => '/var/www/aronmaiden/studioatrium/studio-atrium/Views/Templates/Layout/HeadHTML.tpl',
+      1 => 1791051566,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_6ac1486084ca60_22358930 (Smarty_Internal_Template $_smarty_tpl) {
+if ($_smarty_tpl->tpl_vars['pageTitle']->value) {?>
+	<title><?php echo $_smarty_tpl->tpl_vars['pageTitle']->value;?>
+</title>
+<?php } else { ?>
+	<title>Projekty domów - STUDIO ATRIUM - Gotowe projekty domów jednorodzinnych parterowych i z poddaszem, garaże.</title>
+<?php }?>
+
+<link rel="preconnect" href="https://media.studioatrium.pl">
+<link rel="preconnect" href="https://ajax.googleapis.com">
+
+<?php if (!$_smarty_tpl->tpl_vars['isLocal']->value) {?>
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<!-- Google Tag Manager -->
+
+<?php echo '<script'; ?>
+>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5X8XP43');<?php echo '</script'; ?>
+>
+
+<!-- End Google Tag Manager -->
+	
+<!-- Global site tag (gtag.js) - Google Ads: 1069647440 -->
+<?php echo '<script'; ?>
+ async src="https://www.googletagmanager.com/gtag/js?id=AW-1069647440"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+>
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-1069647440');
+
+<?php echo '</script'; ?>
+>
+
+<?php }?>
+<meta name="p:domain_verify" content="46eb45dafec5620ae0746f34b1c0c299">
+<meta name="google-site-verification" content="N4VPO2yZZ3HL2Yegp8cAdQAsZ4Xj17gVs1vtLramZcY" /> <meta name="theme-color" content="#c61000">
+<link rel="shortcut icon" type="image/icon" href="/img/favicon.ico">
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/img/logo144.png">
+<meta name="apple-mobile-web-app-status-bar" content="#c61000">
+
+<?php if ($_smarty_tpl->tpl_vars['pageMetaDescription']->value) {?>
+	<meta name="description" content="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'trim' ][ 0 ], array( $_smarty_tpl->tpl_vars['pageMetaDescription']->value ));?>
+">
+<?php } else { ?>
+	<meta name="description" content="">
+<?php }
+if ($_smarty_tpl->tpl_vars['noindex']->value) {?>
+	<meta name="robots" content="noindex, follow">
+<?php } elseif ($_smarty_tpl->tpl_vars['noindexNofollow']->value) {?>
+	<meta name="robots" content="noindex, nofollow">	
+<?php } else { ?>
+	<meta name="robots" content="index, follow">
+<?php }?>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<?php if ($_smarty_tpl->tpl_vars['ogTags']->value) {?>
+	<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['ogTags']->value, 'value', false, 'key');
+$_smarty_tpl->tpl_vars['value']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['key']->value => $_smarty_tpl->tpl_vars['value']->value) {
+$_smarty_tpl->tpl_vars['value']->do_else = false;
+?>
+	<meta property="og:<?php echo $_smarty_tpl->tpl_vars['key']->value;?>
+" content="<?php echo $_smarty_tpl->tpl_vars['value']->value;?>
+">
+	<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
+}?>
+
+<meta name="google-play-app" content="app-id=pl.studioatrium.studioatrium">
+
+<?php if ($_smarty_tpl->tpl_vars['canonicalUrl']->value) {?>
+	<link rel="canonical" href="<?php echo $_smarty_tpl->tpl_vars['canonicalUrl']->value;?>
+">
+<?php }
+if ($_smarty_tpl->tpl_vars['prevUrl']->value) {?>
+	<link rel="prev" href="<?php echo $_smarty_tpl->tpl_vars['prevUrl']->value;?>
+">
+<?php }
+if ($_smarty_tpl->tpl_vars['nextUrl']->value) {?>
+	<link rel="next" href="<?php echo $_smarty_tpl->tpl_vars['nextUrl']->value;?>
+">
+<?php }?>
+
+<?php if ($_smarty_tpl->tpl_vars['img_preload']->value) {?>
+	<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['img_preload']->value, '_imgpre');
+$_smarty_tpl->tpl_vars['_imgpre']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['_imgpre']->value) {
+$_smarty_tpl->tpl_vars['_imgpre']->do_else = false;
+?>
+		<link rel="preload" fetchpriority="high" as="image" href="<?php echo $_smarty_tpl->tpl_vars['_imgpre']->value;?>
+" type="image/webp">
+	<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
+}?>
+
+<link rel="dns-prefetch" href="https://media.studioatrium.pl">
+<link rel="dns-prefetch" href="https://ajax.googleapis.com">
+
+
+<link rel="preload" href="/css/common.min.css?v=<?php echo $_smarty_tpl->tpl_vars['version']->value;?>
+" as="style">
+<link rel="stylesheet" href="/css/common.min.css?v=<?php echo $_smarty_tpl->tpl_vars['version']->value;?>
+">
+
+<!-- Theme 2026 - High Priority -->
+<link rel="preload" href="/css/theme2026.css?v=<?php echo $_smarty_tpl->tpl_vars['version']->value;?>
+" as="style">
+<link rel="stylesheet" href="/css/theme2026.css?v=<?php echo $_smarty_tpl->tpl_vars['version']->value;?>
+">
+
+<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['css_includes']->value, '_css');
+$_smarty_tpl->tpl_vars['_css']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['_css']->value) {
+$_smarty_tpl->tpl_vars['_css']->do_else = false;
+?>
+	<link rel="preload" href="/css/<?php echo $_smarty_tpl->tpl_vars['_css']->value;?>
+" as="style">
+	<link rel="stylesheet" href="/css/<?php echo $_smarty_tpl->tpl_vars['_css']->value;?>
+">
+<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+
+<?php if ($_smarty_tpl->tpl_vars['dynamic_css']->value) {?>
+	<link rel="preload" href="<?php echo $_smarty_tpl->tpl_vars['dynamic_css']->value;?>
+" as="style">
+	<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['dynamic_css']->value;?>
+">
+<?php }?>
+
+<!-- Isolation CSS BEFORE Tailwind (legacy neutralize); Tailwind utilities load last and win -->
+<link rel="stylesheet" href="/css/search-engine.css?v=<?php echo $_smarty_tpl->tpl_vars['version']->value;?>
+">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+
+<link rel="preload"  href="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" as="script">
+<link rel="preload"  href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" as="script">
+<link rel="preload" href="/js/jquery.json-2.3.min.js" as="script">
+<?php echo '<script'; ?>
+ async defer src="/js/underscore.js"><?php echo '</script'; ?>
+>
+<link rel="preload"  href="/js/enquire.min.js" as="script">
+<link rel="preload" href="/js/storage.js" as="script">
+<link rel="preload" href="/js/clicksearch.js?v=<?php echo $_smarty_tpl->tpl_vars['version']->value;?>
+" as="script">
+<link rel="preload" href="/js/common.js?v=20261003a" as="script">
+<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['js_includes']->value, '_js');
+$_smarty_tpl->tpl_vars['_js']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['_js']->value) {
+$_smarty_tpl->tpl_vars['_js']->do_else = false;
+?>
+	<link rel="preload" href="/js/<?php echo $_smarty_tpl->tpl_vars['_js']->value;?>
+" as="script">
+<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+
+<?php echo '<script'; ?>
+ src="https://apis.google.com/js/platform.js" async defer>{lang: 'pl'}<?php echo '</script'; ?>
+>
+
+<?php if ($_smarty_tpl->tpl_vars['pinterest']->value) {?>
+	<?php echo '<script'; ?>
+ type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"><?php echo '</script'; ?>
+>
+<?php }?>
+
+<link rel="preload" as="font" type="font/otf" href="/fonts/NexaTextBook.otf" crossorigin>
+<link rel="preload" as="font" type="font/otf" href="/fonts/NexaTextRegular.otf" crossorigin>
+<link rel="preload" as="font" type="font/otf" href="/fonts/NexaTextBold.otf" crossorigin>
+
+<?php if ($_smarty_tpl->tpl_vars['showSchemaOrganization']->value) {?>
+	
+	<?php echo '<script'; ?>
+ type="application/ld+json">{
+		"@context": "https://schema.org",
+		"@type":"Organization",
+		"name":"Studio Atrium - Projekty domów",
+		"description":"Studio projektowe Atrium - Gotowe projekty domów - Domy parterowe, piętrowe, z poddaszem. O różnej powierzchni. Ponad 1400 projektów. Zapewniamy doradztwo ekspertów.",
+		"telephone":"33 822 94 96",
+		"email":"atrium@studioatrium.pl",
+		"url":"https://www.studioatrium.pl/",
+		"logo":"https://www.studioatrium.pl/img/logo.png", 
+		"address":[{
+			"@type":"PostalAddress",
+			"streetAddress":"Malczewskiego 1",
+			"addressLocality":"Bielsko-Biała",
+			"postalCode":"43-300",
+			"addressCountry":"PL"
+		}],
+		"sameAs":[
+			"https://www.facebook.com/studioatrium",
+			"https://www.instagram.com/studioatrium.pl/",
+			"https://www.pinterest.com/studioatrium/",
+			"https://www.youtube.com/user/StudioAtrium"
+		]
+}<?php echo '</script'; ?>
+>
+
+<?php }
+if ($_smarty_tpl->tpl_vars['showSchemaBrand']->value) {?>
+	
+	<?php echo '<script'; ?>
+ type="application/ld+json">{
+		"@context": "https://schema.org",
+		"@type":"Brand",
+		"name":"Studio Atrium - Gotowe Projekty Domów",
+		"description":"Biuro projektowe Studio Atrium. Oferujemy ponad 1400 gotowych projektów domów, projekty domów parterowych, piętrowych, z poddaszem i innych. Zapewniamy doradztwo ekspertów z branży."
+}<?php echo '</script'; ?>
+>
+
+<?php }
+if ($_smarty_tpl->tpl_vars['schemaBreadcrumbs']->value) {?>
+
+	<?php echo '<script'; ?>
+ type="application/ld+json">{
+		"@context":"http://schema.org",
+		"@type":"BreadcrumbList",
+		"itemListElement":[
+			<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['schemaBreadcrumbs']->value, 'cramb', false, 'cKey');
+$_smarty_tpl->tpl_vars['cramb']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['cKey']->value => $_smarty_tpl->tpl_vars['cramb']->value) {
+$_smarty_tpl->tpl_vars['cramb']->do_else = false;
+?>
+			<?php if ($_smarty_tpl->tpl_vars['cKey']->value > 1) {?>,<?php }?>{"@type":"ListItem",
+			"position":<?php echo $_smarty_tpl->tpl_vars['cKey']->value;?>
+,
+			"item":{"@id":"<?php echo $_smarty_tpl->tpl_vars['cramb']->value['id'];?>
+","name":"<?php echo $_smarty_tpl->tpl_vars['cramb']->value['name'];?>
+"}}
+			<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+		]}<?php echo '</script'; ?>
+>
+
+<?php }
+if ($_smarty_tpl->tpl_vars['schemaProduct']->value) {?>
+
+	<?php echo '<script'; ?>
+ type="application/ld+json">{
+        "@context": "http://schema.org",
+        "@type": "Product",
+        "name": "<?php echo $_smarty_tpl->tpl_vars['schemaProduct']->value['name'];?>
+",
+        "image": "<?php echo $_smarty_tpl->tpl_vars['schemaProduct']->value['image'];?>
+",
+        "description": "<?php echo $_smarty_tpl->tpl_vars['schemaProduct']->value['description'];?>
+",
+        "brand": "Studio Atrium - Gotowe Projekty Domów",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "PLN",
+          "price": "<?php echo $_smarty_tpl->tpl_vars['schemaProduct']->value['price'];?>
+",
+		  <?php if ($_smarty_tpl->tpl_vars['schemaProduct']->value['priceValid']) {?>"priceValidUntil": "<?php echo $_smarty_tpl->tpl_vars['schemaProduct']->value['priceValid'];?>
+",<?php }?>
+		  "url": "<?php echo $_smarty_tpl->tpl_vars['schemaProduct']->value['url'];?>
+",
+          "itemCondition": "http://schema.org/NewCondition",
+          "availability": "http://schema.org/InStock",
+          "seller": {
+            "@type": "Organization",
+            "name": "Studio Atrium"
+          }
+        }
+      }
+    <?php echo '</script'; ?>
+>
+
+<?php }?>
+
+<?php if ($_smarty_tpl->tpl_vars['showSearchSchema']->value && $_smarty_tpl->tpl_vars['mobileGoogleSearch']->value) {?>
+
+	<?php echo '<script'; ?>
+ type="application/ld+json">{
+        "@context": "http://schema.org",
+		"@type":"ItemList",
+		"ItemListElement": [
+		<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['mobileGoogleSearch']->value, 'item', true);
+$_smarty_tpl->tpl_vars['item']->iteration = 0;
+$_smarty_tpl->tpl_vars['item']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
+$_smarty_tpl->tpl_vars['item']->do_else = false;
+$_smarty_tpl->tpl_vars['item']->iteration++;
+$_smarty_tpl->tpl_vars['item']->last = $_smarty_tpl->tpl_vars['item']->iteration === $_smarty_tpl->tpl_vars['item']->total;
+$__foreach_item_5_saved = $_smarty_tpl->tpl_vars['item'];
+?>{
+			"@type": "ListItem",
+			"position": <?php echo $_smarty_tpl->tpl_vars['item']->iteration;?>
+,
+			"name":"<?php echo $_smarty_tpl->tpl_vars['item']->value['name'];?>
+",
+			"url":"https://www.studioatrium.pl<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('module'=>'project','action'=>'item','id'=>$_smarty_tpl->tpl_vars['item']->value['id'],'link_title'=>$_smarty_tpl->tpl_vars['item']->value['name'],'catalog'=>'projekty-domow'),$_smarty_tpl ) );?>
+"
+			}<?php if (!$_smarty_tpl->tpl_vars['item']->last) {?>,<?php }?>
+		<?php
+$_smarty_tpl->tpl_vars['item'] = $__foreach_item_5_saved;
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+		]
+      }
+    <?php echo '</script'; ?>
+>
+
+<?php }?>
+
+<!-- Tailwind MUST be last among stylesheets: config BEFORE CDN, important:true so utilities beat legacy CSS -->
+<?php echo '<script'; ?>
+>
+window.tailwind = window.tailwind || {};
+window.tailwind.config = {
+	important: true,
+	corePlugins: { preflight: false },
+	theme: {
+		fontFamily: {
+			sans: ['Nexa', 'Montserrat', 'sans-serif'],
+			display: ['Nexa', 'Montserrat', 'sans-serif']
+		}
+	}
+};
+<?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="https://cdn.tailwindcss.com"><?php echo '</script'; ?>
+>
+
+<!-- Isolation AFTER Tailwind: Lucide sizes, card borders, legacy resets (ID + !important) -->
+<link rel="stylesheet" href="/css/header2026.css?v=<?php echo $_smarty_tpl->tpl_vars['version']->value;?>
+">
+<link rel="stylesheet" href="/css/homepage2026.css?v=<?php echo $_smarty_tpl->tpl_vars['version']->value;?>
+">
+<link rel="stylesheet" href="/css/category2026.css?v=<?php echo $_smarty_tpl->tpl_vars['version']->value;?>
+">
+<link rel="stylesheet" href="/css/project2026.css?v=20261003f">
+<link rel="stylesheet" href="/css/overlays2026.css?v=20261003g">
+<link rel="stylesheet" href="/css/list-header2026.css?v=<?php echo $_smarty_tpl->tpl_vars['version']->value;?>
+">
+<link rel="stylesheet" href="/css/contact2026.css?v=<?php echo $_smarty_tpl->tpl_vars['version']->value;?>
+">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+html, body {
+	font-family: "Nexa", "Montserrat", system-ui, -apple-system, sans-serif;
+}
+</style>
+
+<!-- Swiper JS -->
+<?php echo '<script'; ?>
+ src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"><?php echo '</script'; ?>
+>
+<!-- Lucide Icons: pinned version; avoid re-running createIcons on every DOM mutation (breaks sizes after load) -->
+<?php echo '<script'; ?>
+ src="https://unpkg.com/lucide@0.469.0"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+>
+(function () {
+	var creating = false;
+
+	function createLucideIcons() {
+		if (creating || typeof lucide === 'undefined' || !lucide.createIcons) return;
+		creating = true;
+		try {
+			lucide.createIcons();
+			document.querySelectorAll('svg[data-lucide], svg.lucide').forEach(function (svg) {
+				var cls = svg.getAttribute('class') || '';
+				var mw = cls.match(/(?:^|\s)w-\[(\d+)px\]/);
+				var mh = cls.match(/(?:^|\s)h-\[(\d+)px\]/);
+				var size = (mw && mw[1]) || (mh && mh[1]);
+				if (size) {
+					svg.setAttribute('width', size);
+					svg.setAttribute('height', size);
+					svg.style.setProperty('width', size + 'px', 'important');
+					svg.style.setProperty('height', size + 'px', 'important');
+					svg.style.setProperty('max-width', size + 'px', 'important');
+					svg.style.setProperty('max-height', size + 'px', 'important');
+				}
+				svg.style.flexShrink = '0';
+			});
+		} finally {
+			creating = false;
+		}
+	}
+
+	function hasPendingIconPlaceholders(root) {
+		if (!root || root.nodeType !== 1) return false;
+		if (root.matches && root.matches('i[data-lucide], span[data-lucide], [data-lucide]:not(svg)')) return true;
+		return !!(root.querySelector && root.querySelector('i[data-lucide], span[data-lucide], [data-lucide]:not(svg)'));
+	}
+
+	function onReady() {
+		createLucideIcons();
+		if (!document.body || typeof MutationObserver === 'undefined') return;
+		var observer = new MutationObserver(function (mutations) {
+			if (creating) return;
+			for (var i = 0; i < mutations.length; i++) {
+				var nodes = mutations[i].addedNodes;
+				for (var j = 0; j < nodes.length; j++) {
+					if (hasPendingIconPlaceholders(nodes[j])) {
+						createLucideIcons();
+						return;
+					}
+				}
+			}
+		});
+		observer.observe(document.body, { childList: true, subtree: true });
+	}
+
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', onReady);
+	} else {
+		onReady();
+	}
+	window.createLucideIcons = createLucideIcons;
+})();
+<?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+>
+
+(function () {
+	document.documentElement.style.userSelect = 'text';
+	document.onselectstart = null;
+	document.oncopy = null;
+	document.oncontextmenu = null;
+	document.addEventListener('copy', function (e) {
+		var t = e.target;
+		if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+		var sel = window.getSelection ? window.getSelection().toString() : '';
+		if (!sel) return;
+		e.clipboardData.setData('text/plain', sel + '\n\nŹródło: ' + window.location.href);
+		e.preventDefault();
+	});
+})();
+
+<?php echo '</script'; ?>
+>
+<!-- Brand design tokens -->
+<style>
+:root {
+	--brand-red: #c61000;
+	--brand-red-hover: #a80d00;
+	--brand-blue: oklch(0.74 0.11 232);
+	--brand-blue-strong: oklch(0.66 0.13 232);
+	--brand-dark: oklch(0.30 0.012 250);
+	--brand-darker: oklch(0.24 0.012 250);
+	--brand-orange: oklch(0.78 0.13 65);
+}
+
+/* Prevent Lucide SVGs from stretching after createIcons() */
+svg[data-lucide],
+svg.lucide {
+	display: inline-block !important;
+	vertical-align: middle;
+	flex-shrink: 0 !important;
+	overflow: visible;
+	max-width: 28px;
+	max-height: 28px;
+}
+</style>
+<?php }
+}

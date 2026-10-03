@@ -79,7 +79,7 @@
 				<validator name="Integer" min="1" />
 			</param>
 			<param name="email" required="yes">
-				<validator name="Email" msg_required="Podaj nr telefonu"/>
+				<validator name="Email" msg_required="Podaj adres e-mail"/>
 			</param>
 			<param name="accept" required="yes">
 				<validator name="String" value="on" msg_required="Aby otrzymać powiadomienie o promocji musisz zaakceptować powyższe oświadczenie" />

@@ -440,10 +440,17 @@ div.blue-overlay.share p.error_message,
 div.blue-overlay.help p.error_message,
 div.blue-overlay#fp-box p.error_message,
 div.blue-overlay#ajax-info-overlay p.error_message,
+div.blue-overlay.lb .error_message,
+div.blue-overlay.rb .error_message,
+div.blue-overlay.share .error_message,
+div.blue-overlay.help .error_message,
+div.blue-overlay#fp-box .error_message,
+div.blue-overlay#ajax-info-overlay .error_message,
 div.blue-overlay.lb form p.error_field > p.error_message,
 div.blue-overlay.rb form p.error_field > p.error_message,
 div.blue-overlay.help form p.error_field > p.error_message,
-div.blue-overlay#ajax-info-overlay form p.error_field > p.error_message {
+div.blue-overlay#ajax-info-overlay form p.error_field > p.error_message,
+div.blue-overlay#ajax-info-overlay form p.error_field > .error_message {
   display: block !important;
   margin: 4px 0 0 !important;
   padding: 0 !important;

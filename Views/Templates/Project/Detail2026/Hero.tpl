@@ -88,6 +88,26 @@
 								<span class="text-[16px] font-bold text-[var(--brand-red)]">PLN</span>
 								<span class="text-[11px] text-[#6b7177] ml-1">w tym 23% VAT</span>
 							</div>
+							{if $detailPriceOld || $project.discount}
+							<div class="mt-3 border-l-4 border-[var(--brand-red)] bg-white px-3 py-2.5">
+								<div class="text-[10px] uppercase tracking-[0.16em] text-[var(--brand-red)] font-bold">Obniżka ceny</div>
+								<div class="mt-1 text-[13px] text-[#1b2025] font-semibold leading-snug">
+									Najniższa cena z 30 dni przed obniżką:
+									<span class="text-[var(--brand-red)] font-black tabular-nums whitespace-nowrap">
+										{if $projectParams|isBlackWeek}
+											{number_format($detailPrice, 0, ',', ' ')}
+										{elseif $projectParams|lowestPrice}
+											{$projectParams|lowestPrice}
+										{elseif $detailPriceOld}
+											{number_format($detailPriceOld, 0, ',', ' ')}
+										{else}
+											{number_format($project.price, 0, ',', ' ')}
+										{/if}
+										PLN
+									</span>
+								</div>
+							</div>
+							{/if}
 						</div>
 
 						{if $project|inBasket:$request.version}

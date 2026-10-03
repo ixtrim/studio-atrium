@@ -1285,19 +1285,23 @@ var PromoNotify = (function()
 	
 	function _registerForm()
 	{
-		Validator.registerForm($('#project-promo-notify-box form'));
+		var form = document.getElementById('promo-notify-form');
+		if (!form) {
+			form = $('#project-promo-notify-box form').get(0);
+		}
+		Validator.registerForm(form);
 		AjaxInfo.register('#project-promo-notify-box .ajax-info');
 
 		var pid = $('#title').data('id') || $('#proj-2026').data('project-id') || 0;
 		$('#promo-notify-pid').val(pid);
 
-		$('#promo-notify-form').on('submit', _submit);
-		$('#ajax-info-overlay-close').on('click', _unregister);
+		$('#promo-notify-form').off('submit', _submit).on('submit', _submit);
+		$('#ajax-info-overlay-close').off('click', _unregister).on('click', _unregister);
 	}
 	
 	function _unregister()
 	{
-		Validator.unregisterForm($('#project-promo-notify-box form'));
+		Validator.unregisterForm(document.getElementById('promo-notify-form') || $('#project-promo-notify-box form').get(0));
 		AjaxInfo.unregister('#project-promo-notify-box .ajax-info');
 		
 		$('#promo-notify-form').off('submit', _submit);
@@ -1307,8 +1311,7 @@ var PromoNotify = (function()
 	function _onSend()
 	{
 		if($('#promo-notify-form .error_field').size() > 0) {
-			
-			$('#promo-notify-box').text('Wypełnij poprawnie formularz').show();
+			$('#promo-notify-box').text('Wypełnij poprawnie formularz').css('display', 'block');
 			$('#promo-notify-waiter').hide();
 			
 			if($('#promo-notify-button').prop('disabled')) {

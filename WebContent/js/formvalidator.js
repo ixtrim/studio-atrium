@@ -20,44 +20,59 @@ var Validator = (function ()
 	
 	function _registerForm(element)
 	{
+		element = $(element).get(0);
+		if (!element) {
+			return;
+		}
 		_index = _index + 1;
 		_register(_index, element);
 	}
 	
 	function _unregisterForm(element)
 	{
+		element = $(element).get(0);
+		if (!element) {
+			return;
+		}
 		$(element).off('submit');
 		_index = _index - 1;
 	}
 	
 	function _register(index, element)
 	{
+		element = $(element).get(0);
+		if (!element) {
+			return;
+		}
+
 		$(element).on('submit', function(event)
 		{
 			var formData = {};
+			var formEl = this;
 
-			if ($.inArray(this, _validatedForms) >= 0) {
+			if ($.inArray(formEl, _validatedForms) >= 0) {
 				return true;
 			}
 
 			event.preventDefault();
 
-			$.each($(this).serializeArray(), function(idx, item)
+			$.each($(formEl).serializeArray(), function(idx, item)
 			{
 				if ($.trim(item.value) != '') {
 					formData[item.name] = item.value;
 				}
 			});
 
-			$('form.validable .error_field').each(function(idx, item)
-			{
-				$(item).removeClass('error_field');
-			});
+			// Keep module/action even if somehow empty — required by validator endpoint
+			if (!formData.module) {
+				formData.module = $(formEl).find('[name="module"]').val() || '';
+			}
+			if (!formData.action) {
+				formData.action = $(formEl).find('[name="action"]').val() || '';
+			}
 
-			$('form.validable .error_message').each(function(idx, item)
-			{
-				$(item).remove();
-			});
+			$(formEl).find('.error_field').removeClass('error_field');
+			$(formEl).find('.error_message').remove();
 
 			$.ajax({
 				url: '/index.php',
@@ -66,7 +81,7 @@ var Validator = (function ()
 					validate_module: formData.module,
 					validate_action: formData.action,
 					validate_form: index,
-					validate_form_id: element.id,
+					validate_form_id: formEl.id || element.id || '',
 					validate_data: $.toJSON(formData),
 				},
 				type: 'post',
@@ -74,13 +89,20 @@ var Validator = (function ()
 
 				complete: function(transport)
 				{
-					var response = transport.responseJSON,
+					var response = transport.responseJSON || {},
 						form = undefined;
 				
-					if(response.form_id) {
+					if (response.form_id) {
 						form = $('#' + response.form_id).get(0);
-					} else {
+					}
+					if (!form) {
+						form = formEl;
+					}
+					if (!form) {
 						form = $('form.validable')[response.form];
+					}
+					if (!form) {
+						return;
 					}
 					
 					if($(form).data('validate')) {
@@ -100,10 +122,14 @@ var Validator = (function ()
 						$(form).find('input, textarea, select').each(function (index, item)
 						{
 							var mbox = undefined,
-								messages = undefined;
+								messages = undefined,
+								fieldWrap = $(item).closest('p, .field, .form-row').first();
+							if (!fieldWrap.length) {
+								fieldWrap = $(item).parent();
+							}
 
 							if (response.errors && response.errors[item.name]) {
-								$(item).parent().addClass('error_field');
+								fieldWrap.addClass('error_field');
 								messages = _.reduce(
 									response.errors[item.name],
 									function(acc, substr){
@@ -112,25 +138,28 @@ var Validator = (function ()
 									''
 								);
 
-								if($(item).parent().children('.error_message').size() == 0) {
-									mbox = $(document.createElement('p')).addClass('error_message').html(messages);
-									mbox.appendTo($(item).parent());
+								if(fieldWrap.children('.error_message').size() == 0) {
+									mbox = $(document.createElement('span')).addClass('error_message').html(messages);
+									mbox.appendTo(fieldWrap);
 								}
 							}
 							
 							if (_callbackErrors[form.id] && _callbackErrors[form.id][item.name]) {
-								$(item).parent().addClass('error_field');
-								mbox = $(document.createElement('p')).addClass('error_message').html(_callbackErrors[form.id][item.name]);
-								mbox.appendTo($(item).parent());
+								fieldWrap.addClass('error_field');
+								mbox = $(document.createElement('span')).addClass('error_message').html(_callbackErrors[form.id][item.name]);
+								mbox.appendTo(fieldWrap);
 							}
 						});
 						
 						if($(form).data('call')) {
 							Callback.callFunction($(form).data('call'));
 						} else {
-							$('html, body').animate({
-								scrollTop: $($(form).find('.error_field').get(0)).offset().top - 120
-							}, 500);
+							var firstError = $(form).find('.error_field').get(0);
+							if (firstError) {
+								$('html, body').animate({
+									scrollTop: $(firstError).offset().top - 120
+								}, 500);
+							}
 						}
 					}
 				}

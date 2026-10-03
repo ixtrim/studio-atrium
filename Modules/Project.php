@@ -4593,6 +4593,15 @@ class Project extends WWW\AbstractModule
 		$responseContext->set('detailFeatureTags', $featureTags);
 		$responseContext->set('detailSimilar', $similarCards);
 		$responseContext->set('detailRealizations', $realizationImages);
+		$includedExtras = array();
+		try {
+			$includedExtras = $this->_daoRepository->getExtrasFinder()->getIncludedInPriceForProject(
+				(int) $project->getId()
+			);
+		} catch (\Throwable $e) {
+			$includedExtras = array();
+		}
+		$responseContext->set('detailIncludedExtras', $includedExtras);
 		$responseContext->set('detailFaq', $faqItems);
 		$responseContext->set('detailCategoryTitle', $categoryTitle);
 		$responseContext->set('detailBedrooms', $bedrooms);

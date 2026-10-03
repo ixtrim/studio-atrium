@@ -28,16 +28,22 @@
 			</div>
 			<div class="bg-[#ececec] p-6 flex flex-col">
 				<h3 class="text-[13px] font-bold uppercase tracking-[0.16em] text-[#222] mb-4">Dodatki w cenie</h3>
+				{if $detailIncludedExtras}
 				<ul class="space-y-3 mb-6">
+					{foreach $detailIncludedExtras as $extra}
 					<li class="flex items-start gap-3 text-[14px] text-[#333]">
 						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-[var(--brand-red)] shrink-0 mt-0.5" style="width:20px;height:20px" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-						schemat centralnego odkurzacza
+						{if $extra.url}
+						<a href="{$extra.url|escape}" class="external hover:text-[var(--brand-red)] transition-colors" target="_blank" rel="noopener">{$extra.label|escape}</a>
+						{else}
+						{$extra.label|escape}
+						{/if}
 					</li>
-					<li class="flex items-start gap-3 text-[14px] text-[#333]">
-						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-[var(--brand-red)] shrink-0 mt-0.5" style="width:20px;height:20px" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-						projekt instalacji fotowoltaicznej
-					</li>
+					{/foreach}
 				</ul>
+				{else}
+				<p class="text-[13px] text-[#666] mb-6">Brak dodatkowych pozycji w cenie dla tego projektu.</p>
+				{/if}
 				<div class="grid grid-cols-2 gap-3 mt-auto">
 					<button type="button" class="filesDloadTrigger bg-white border border-[#d9dde0] text-[#222] text-[12px] font-bold uppercase tracking-wider py-3 px-3 hover:bg-[var(--brand-blue)] hover:text-white hover:border-[var(--brand-blue)] transition-colors">Pliki do pobrania</button>
 					<button type="button" id="changes" class="bg-white border border-[#d9dde0] text-[#222] text-[12px] font-bold uppercase tracking-wider py-3 px-3 hover:bg-[var(--brand-red)] hover:text-white hover:border-[var(--brand-red)] transition-colors text-center"

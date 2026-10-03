@@ -245,7 +245,7 @@ window.tailwind.config = {
 <link rel="stylesheet" href="/css/homepage2026.css?v={$version}">
 <link rel="stylesheet" href="/css/category2026.css?v={$version}">
 <link rel="stylesheet" href="/css/project2026.css?v=20261003f">
-<link rel="stylesheet" href="/css/overlays2026.css?v=20261003d">
+<link rel="stylesheet" href="/css/overlays2026.css?v=20261003g">
 <link rel="stylesheet" href="/css/list-header2026.css?v={$version}">
 <link rel="stylesheet" href="/css/contact2026.css?v={$version}">
 

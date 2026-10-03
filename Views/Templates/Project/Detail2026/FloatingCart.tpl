@@ -21,6 +21,26 @@
 			</div>
 			{/if}
 			<div class="text-[22px] font-black text-[var(--brand-red)] tabular-nums">{number_format($detailPrice, 0, ',', ' ')} PLN</div>
+			{if $detailPriceOld || $project.discount}
+			<div class="mt-2 border-l-4 border-[var(--brand-red)] bg-[#f5f6f7] px-2.5 py-2">
+				<div class="text-[10px] uppercase tracking-[0.14em] text-[var(--brand-red)] font-bold">Obniżka ceny</div>
+				<div class="mt-0.5 text-[11px] text-[#1b2025] font-semibold leading-snug">
+					Najniższa cena z 30 dni przed obniżką:
+					<span class="text-[var(--brand-red)] font-black tabular-nums whitespace-nowrap">
+						{if $projectParams|isBlackWeek}
+							{number_format($detailPrice, 0, ',', ' ')}
+						{elseif $projectParams|lowestPrice}
+							{$projectParams|lowestPrice}
+						{elseif $detailPriceOld}
+							{number_format($detailPriceOld, 0, ',', ' ')}
+						{else}
+							{number_format($project.price, 0, ',', ' ')}
+						{/if}
+						PLN
+					</span>
+				</div>
+			</div>
+			{/if}
 			{if !$projectParams|isWithdrawn && !$project|inBasket:$request.version}
 			<button type="button" id="proj-float-cart-btn"
 				class="mt-3 w-full bg-[var(--brand-red)] hover:bg-[var(--brand-red-hover)] text-white h-11 text-[11px] font-black tracking-[0.14em] uppercase transition border-0 cursor-pointer">
